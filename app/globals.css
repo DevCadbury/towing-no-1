@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-900;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-orange-600 hover:from-primary-dark hover:to-orange-700 text-white font-bold py-3 px-8 transition-all duration-300 shadow-lg;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary {
+    @apply bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 transition-all duration-300;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn-secondary:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .card {
+    @apply bg-white p-6 shadow-md transition-all duration-300;
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+  }
+  
+  .nav-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+}
+
+/* Custom 3D effects */
+.logo-3d {
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.4s ease;
+}
+
+.logo-3d:hover {
+  transform: perspective(1000px) rotateY(-5deg) translateZ(10px);
+}
+
+/* Smooth animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #dc2626 0%, #ff9900 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
