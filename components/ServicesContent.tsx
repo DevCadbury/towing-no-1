@@ -13,6 +13,7 @@ export default function ServicesContent() {
           src="/service.jpg"
           alt="Our Services"
           fill
+          sizes="100vw"
           className="object-cover brightness-50"
           priority
         />
@@ -47,6 +48,7 @@ export default function ServicesContent() {
                   src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1200"
                   alt="Emergency towing service"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/80 via-orange-600/40 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-300"></div>
@@ -138,6 +140,7 @@ export default function ServicesContent() {
                   src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=1200"
                   alt="Flat tire assistance"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tl from-primary/80 via-orange-600/40 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-300"></div>
@@ -164,6 +167,7 @@ export default function ServicesContent() {
                   src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1200"
                   alt="Battery boost and jumpstart service"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-orange-600/40 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-300"></div>
@@ -255,6 +259,7 @@ export default function ServicesContent() {
                   src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1200"
                   alt="Vehicle recovery service"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-bl from-primary/80 via-orange-600/40 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-300"></div>
@@ -281,6 +286,7 @@ export default function ServicesContent() {
                   src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200"
                   alt="Lockout service"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/80 via-orange-600/40 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-300"></div>
@@ -372,6 +378,7 @@ export default function ServicesContent() {
                   src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1200"
                   alt="Long distance towing"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-bl from-primary/80 via-orange-600/40 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-300"></div>

@@ -31,6 +31,7 @@ export default function Logo({
         alt="TowingNo.1 - Emergency & Roadside Services"
         width={width}
         height={height}
+        style={{ width: 'auto', height: 'auto' }}
         className={`${className} ${filterStyles[variant]}`}
         priority
       />
@@ -55,6 +56,7 @@ export default function Logo({
         alt="TowingNo.1 - Emergency & Roadside Services"
         width={width}
         height={height}
+        style={{ width: 'auto', height: 'auto' }}
         className={`${className} ${filterStyles[variant]}`}
         priority
       />

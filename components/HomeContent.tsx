@@ -14,6 +14,7 @@ export default function HomeContent() {
           src="/background_home.jpg"
           alt="Emergency Towing Service"
           fill
+          sizes="100vw"
           className="object-cover brightness-50"
           priority
         />
@@ -62,6 +63,7 @@ export default function HomeContent() {
                 src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800"
                 alt="Emergency Towing"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
@@ -86,6 +88,7 @@ export default function HomeContent() {
                 src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800"
                 alt="Flat Tire Assistance"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
@@ -110,6 +113,7 @@ export default function HomeContent() {
                 src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=800"
                 alt="Battery Boost"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
@@ -134,6 +138,7 @@ export default function HomeContent() {
                 src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=800"
                 alt="Vehicle Recovery"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
@@ -158,6 +163,7 @@ export default function HomeContent() {
                 src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800"
                 alt="Lockout Service"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
@@ -182,6 +188,7 @@ export default function HomeContent() {
                 src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800"
                 alt="Long Distance Towing"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
