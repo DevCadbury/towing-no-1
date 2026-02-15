@@ -14,7 +14,6 @@ export default function HomeContent() {
           src="/background_home.jpg"
           alt="Emergency Towing Service"
           fill
-          sizes="100vw"
           className="object-cover brightness-50"
           priority
         />
@@ -69,9 +68,9 @@ export default function HomeContent() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                 <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-                  <h3 className="text-2xl font-bold mb-2">Emergency Towing</h3>
+                  <h3 className="text-2xl font-bold mb-2">Emergency Towing (24/7 Service)</h3>
                   <p className="text-gray-200 leading-relaxed">
-                    Fast response 24/7 for all your emergency towing needs
+                    We tow cars, SUVs, and light trucks safely at any time. Fast response 24/7.
                   </p>
                 </motion.div>
               </div>
@@ -94,9 +93,9 @@ export default function HomeContent() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                 <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-                  <h3 className="text-2xl font-bold mb-2">Flat Tire Service</h3>
+                  <h3 className="text-2xl font-bold mb-2">Flat Tire Help</h3>
                   <p className="text-gray-200 leading-relaxed">
-                    Quick tire changes to get you back on the road safely
+                    We replace or fix flat tires on-site so you can continue your trip.
                   </p>
                 </motion.div>
               </div>
@@ -119,9 +118,9 @@ export default function HomeContent() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                 <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-                  <h3 className="text-2xl font-bold mb-2">Battery Boost</h3>
+                  <h3 className="text-2xl font-bold mb-2">Battery Boost and Jumpstart</h3>
                   <p className="text-gray-200 leading-relaxed">
-                    Dead battery? We'll jump-start your vehicle quickly
+                    If your vehicle won't start, we jump-start it immediately.
                   </p>
                 </motion.div>
               </div>
@@ -144,9 +143,9 @@ export default function HomeContent() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                 <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-                  <h3 className="text-2xl font-bold mb-2">Vehicle Recovery</h3>
+                  <h3 className="text-2xl font-bold mb-2">Accident Recovery</h3>
                   <p className="text-gray-200 leading-relaxed">
-                    Stuck in a ditch? We'll safely recover your vehicle
+                    We handle accident recovery carefully with safety and efficiency.
                   </p>
                 </motion.div>
               </div>
@@ -171,7 +170,7 @@ export default function HomeContent() {
                 <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
                   <h3 className="text-2xl font-bold mb-2">Lockout Service</h3>
                   <p className="text-gray-200 leading-relaxed">
-                    Locked out? We'll help you regain access safely
+                    If you lock your keys inside, our team opens your vehicle safely.
                   </p>
                 </motion.div>
               </div>
@@ -194,9 +193,59 @@ export default function HomeContent() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                 <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-                  <h3 className="text-2xl font-bold mb-2">Long Distance</h3>
+                  <h3 className="text-2xl font-bold mb-2">Vehicle Transport</h3>
                   <p className="text-gray-200 leading-relaxed">
-                    Need to go far? We provide long-distance towing
+                    We move vehicles securely between locations with on-time pickup.
+                  </p>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="group relative h-[320px] overflow-hidden shadow-lg cursor-pointer"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1585574701537-7bbed9a60757?q=80&w=800"
+                alt="Fuel Delivery"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+                  <h3 className="text-2xl font-bold mb-2">Fuel Delivery</h3>
+                  <p className="text-gray-200 leading-relaxed">
+                    If you run out of fuel, we deliver what you need to reach the nearest station.
+                  </p>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="group relative h-[320px] overflow-hidden shadow-lg cursor-pointer"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800"
+                alt="Winching and Extraction"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+                  <h3 className="text-2xl font-bold mb-2">Winching and Extraction</h3>
+                  <p className="text-gray-200 leading-relaxed">
+                    If your vehicle gets stuck in mud, snow, or a ditch, we pull it out safely.
                   </p>
                 </motion.div>
               </div>
