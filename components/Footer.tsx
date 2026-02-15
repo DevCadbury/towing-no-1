@@ -2,103 +2,122 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <div className="mb-4">
+    <footer className="bg-navy-950 text-white relative overflow-hidden">
+      {/* Gradient top border */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-amber-400 via-fire to-amber-600" />
+
+      <div className="container-custom py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand */}
+          <div className="space-y-5">
+            <Link href="/" className="block relative h-12 w-48">
               <Image
                 src="/logo.png"
-                alt="TowingNo.1 - Emergency & Roadside Services"
-                width={200}
-                height={55}
-                className="h-12 w-auto brightness-0 invert"
+                alt="TowingNo.1"
+                fill
+                className="object-contain brightness-0 invert"
               />
-            </div>
-            <p className="text-gray-400 text-sm">
-              Fast, reliable 24/7 emergency towing and roadside assistance serving Surrey, British Columbia.
+            </Link>
+            <p className="text-slate-400 leading-relaxed text-sm">
+              Your trusted partner for 24/7 emergency towing and roadside assistance in Surrey, BC. Fast, professional, and affordable.
             </p>
+            {/* Social icons */}
+            <div className="flex space-x-3">
+              {[
+                { label: "Facebook", path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" },
+                { label: "Instagram", path: "M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01M6.5 2h11A4.5 4.5 0 0122 6.5v11a4.5 4.5 0 01-4.5 4.5h-11A4.5 4.5 0 012 17.5v-11A4.5 4.5 0 016.5 2z" },
+                { label: "Twitter", path: "M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" },
+              ].map((social, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  aria-label={social.label}
+                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-amber-500 hover:text-navy-900 hover:border-amber-500 transition-all duration-300"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d={social.path} />
+                  </svg>
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/" className="text-gray-400 hover:text-primary transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-400 hover:text-primary transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-gray-400 hover:text-primary transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-400 hover:text-primary transition-colors">
-                  Contact
-                </Link>
-              </li>
+            <h4 className="text-lg font-bold mb-5 text-white">Quick Links</h4>
+            <ul className="space-y-3">
+              <FooterLink href="/">Home</FooterLink>
+              <FooterLink href="/about">About Us</FooterLink>
+              <FooterLink href="/services">Services</FooterLink>
+              <FooterLink href="/blog">Blog</FooterLink>
+              <FooterLink href="/contact">Contact</FooterLink>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-bold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm">
-              <li className="text-gray-400">Emergency Towing</li>
-              <li className="text-gray-400">Flat Tire Assistance</li>
-              <li className="text-gray-400">Battery Boost</li>
-              <li className="text-gray-400">Vehicle Recovery</li>
-              <li className="text-gray-400">Lockout Services</li>
-              <li className="text-gray-400">Long Distance Towing</li>
+            <h4 className="text-lg font-bold mb-5 text-white">Services</h4>
+            <ul className="space-y-3">
+              <FooterLink href="/services">Emergency Towing</FooterLink>
+              <FooterLink href="/services">Flat Tire Help</FooterLink>
+              <FooterLink href="/services">Battery Boost</FooterLink>
+              <FooterLink href="/services">Lockout Service</FooterLink>
+              <FooterLink href="/services">Fuel Delivery</FooterLink>
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
-            <h4 className="font-bold mb-4">Contact Info</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>
-                <strong className="text-white">Phone:</strong><br />
-                <a href="tel:+16045551234" className="hover:text-primary transition-colors">
+            <h4 className="text-lg font-bold mb-5 text-white">Contact Us</h4>
+            <ul className="space-y-4 text-slate-400">
+              <li className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+                <span className="text-sm">Surrey, BC, Canada<br />Serving Greater Vancouver</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <a href="tel:+16045551234" className="hover:text-amber-400 transition-colors text-sm font-semibold">
                   (604) 555-1234
                 </a>
               </li>
-              <li>
-                <strong className="text-white">Email:</strong><br />
-                <a href="mailto:info@towing-no-1.com" className="hover:text-primary transition-colors">
+              <li className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                <a href="mailto:info@towing-no-1.com" className="hover:text-amber-400 transition-colors text-sm">
                   info@towing-no-1.com
                 </a>
-              </li>
-              <li>
-                <strong className="text-white">Address:</strong><br />
-                Surrey, BC, Canada
-              </li>
-              <li>
-                <strong className="text-white">Hours:</strong><br />
-                24/7 - Always Available
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>© 2026 TowingNo.1 - All Rights Reserved</p>
-          <p className="mt-1">
-            <a href="https://www.towing-no-1.com" className="hover:text-primary transition-colors">
-              www.towing-no-1.com
-            </a>
-          </p>
+        <div className="border-t border-white/10 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+          <p>© {currentYear} TowingNo.1. All rights reserved.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link href="/privacy" className="hover:text-amber-400 transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-amber-400 transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <li>
+      <Link href={href} className="text-slate-400 hover:text-amber-400 hover:pl-1.5 transition-all duration-300 block text-sm">
+        {children}
+      </Link>
+    </li>
   );
 }
