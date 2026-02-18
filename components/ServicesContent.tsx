@@ -112,7 +112,7 @@ export default function ServicesContent() {
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative h-[420px] flex items-center justify-center text-white overflow-hidden">
         <Image
-          src="/image/Emergency_Towin.png"
+          src="/service.jpg"
           alt="Our Services"
           fill
           className="object-cover object-center"
