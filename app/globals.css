@@ -163,6 +163,11 @@
   pointer-events: none;
 }
 
+/* Custom transition duration */
+.transition-all.duration-350 {
+  transition-duration: 350ms;
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;

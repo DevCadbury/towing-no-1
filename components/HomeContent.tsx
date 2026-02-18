@@ -2,346 +2,371 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Counter from "@/components/Counter";
-import BespokeFeatures from "@/components/BespokeFeatures";
+import { useState } from "react";
+
+const services = [
+  {
+    src: "/image/Emergency_Towing.png",
+    alt: "Emergency Towing",
+    title: "Emergency Towing",
+    desc: "24/7 towing for cars, SUVs, and light trucks. Fast response, safe transport.",
+    anchor: "#emergency-towing",
+  },
+  {
+    src: "/image/Flat_Tire_Help.png",
+    alt: "Flat Tire Help",
+    title: "Flat Tire Help",
+    desc: "On-site tire change or tow to the nearest shop — back on the road fast.",
+    anchor: "#flat-tire",
+  },
+  {
+    src: "/image/Battery_Boost .png",
+    alt: "Battery Boost",
+    title: "Battery Boost",
+    desc: "Dead battery? We jump-start your vehicle on the spot, any time of day.",
+    anchor: "#battery-boost",
+  },
+  {
+    src: "/image/Accident_Recovery.png",
+    alt: "Accident Recovery",
+    title: "Accident Recovery",
+    desc: "Careful recovery and transport of damaged vehicles from any collision scene.",
+    anchor: "#accident-recovery",
+  },
+  {
+    src: "/image/Lockout_Service.png",
+    alt: "Lockout Service",
+    title: "Lockout Service",
+    desc: "Locked your keys inside? Our team opens your vehicle safely and quickly.",
+    anchor: "#lockout",
+  },
+  {
+    src: "/image/Vehicle_Transport.png",
+    alt: "Vehicle Transport",
+    title: "Vehicle Transport",
+    desc: "Secure, on-time vehicle moves between locations across the Lower Mainland.",
+    anchor: "#vehicle-transport",
+  },
+  {
+    src: "/image/Fuel_Delivery.png",
+    alt: "Fuel Delivery",
+    title: "Fuel Delivery",
+    desc: "Run out of fuel? We deliver enough to get you to the nearest station.",
+    anchor: "#fuel-delivery",
+  },
+  {
+    src: "/image/Winching_Extraction.png",
+    alt: "Winching & Extraction",
+    title: "Winching & Extraction",
+    desc: "Stuck in mud, snow, or a ditch? We pull your vehicle out safely.",
+    anchor: "#winching",
+  },
+  {
+    src: "/image/Roadside_Assistance.png",
+    alt: "Roadside Assistance",
+    title: "Roadside Assistance",
+    desc: "General roadside help when you need it most — fast, professional, anytime.",
+    anchor: "#roadside-assistance",
+  },
+];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 28 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.7, ease: "easeOut" as const },
+    transition: { duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   }),
 };
 
 export default function HomeContent() {
   return (
     <>
-      {/* ═══ HERO SECTION ═══ */}
-      <section className="relative min-h-screen flex items-center text-white overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-navy-950">
-          <Image
-            src="https://images.unsplash.com/photo-1615900119312-2a3a7b3605d7?q=80&w=2000"
-            alt="Emergency Towing Service"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-          {/* Multi-layer overlays */}
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/70 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/40" />
-          {/* Ambient glow */}
-          <div className="absolute bottom-0 left-[20%] w-[500px] h-[500px] bg-amber-500/10 blur-[120px] rounded-full" />
-        </div>
-
-        <div className="relative z-10 container-custom pt-32 pb-20">
-          <div className="max-w-4xl">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              viewport={{ once: true }}
-            >
-              {/* Badge */}
-              <motion.div custom={0} variants={fadeUp}>
-                <span className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-sm font-medium tracking-wider uppercase">
-                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                  Surrey&apos;s Premier Roadside Assistance
-                </span>
-              </motion.div>
-
-              {/* Heading */}
-              <motion.h1
-                custom={1}
-                variants={fadeUp}
-                className="text-5xl sm:text-6xl md:text-8xl font-black mb-8 leading-[0.95] tracking-tight"
-              >
-                PROS IN <br />
-                <span className="text-gradient-gold">
-                  MOTION
-                </span>
-              </motion.h1>
-
-              {/* Subtext */}
-              <motion.p
-                custom={2}
-                variants={fadeUp}
-                className="text-lg md:text-xl mb-12 text-slate-300 max-w-2xl font-light leading-relaxed"
-              >
-                When the unexpected happens, we redefine the standard for{" "}
-                <span className="text-amber-400 font-medium">speed</span>,{" "}
-                <span className="text-amber-400 font-medium">safety</span>, and{" "}
-                <span className="text-amber-400 font-medium">service</span>.
-              </motion.p>
-
-              {/* CTAs */}
-              <motion.div custom={3} variants={fadeUp} className="flex flex-col sm:flex-row gap-4 items-start">
-                <a
-                  href="tel:+16045551234"
-                  className="group btn-primary text-lg px-10 py-4 flex items-center gap-3"
-                >
-                  <svg className="w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  (604) 555-1234
-                </a>
-                <Link
-                  href="/contact"
-                  className="group flex items-center gap-3 px-8 py-4 text-white bg-white/5 backdrop-blur-sm border border-white/15 rounded-xl hover:bg-amber-500 hover:text-navy-900 hover:border-amber-500 transition-all duration-500 font-semibold"
-                >
-                  Request Service
-                  <span className="group-hover:translate-x-1.5 transition-transform duration-300">→</span>
-                </Link>
-              </motion.div>
-            </motion.div>
-          </div>
-
-          {/* Floating Stats Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"
-          >
-            {[
-              { value: 15, suffix: "+", label: "Years Experience" },
-              { value: 5000, suffix: "+", label: "Happy Customers" },
-              { value: 30, suffix: " min", label: "Avg Response" },
-              { value: 98, suffix: "%", label: "On-Time Rate" },
-            ].map((stat, i) => (
-              <div
-                key={i}
-                className="card-glass text-center !p-5 md:!p-6 group hover:border-amber-500/30 transition-all duration-500"
-              >
-                <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                  <Counter value={stat.value} duration={2.5} suffix={stat.suffix} />
-                </div>
-                <p className="text-xs md:text-sm text-slate-400 uppercase tracking-wider font-medium">{stat.label}</p>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══ BESPOKE FEATURES ═══ */}
-      <BespokeFeatures />
-
-      {/* ═══ PROCESS SECTION (NEW) ═══ */}
-      <section className="py-24 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">How It Works</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-navy-900">Get Help in 3 Simple Steps</h2>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-              We&apos;ve streamlined our process to get you back on the road as quickly as possible.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12 relative">
-            {/* Connecting line */}
-            <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-slate-100 -z-10"></div>
-
-            {[
-              {
-                step: "01",
-                title: "Call Us",
-                desc: "Dial our 24/7 hotline. Our dispatch team answers immediately.",
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                )
-              },
-              {
-                step: "02",
-                title: "Dispatch",
-                desc: "We locate the nearest truck and send them your exact coordinates.",
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                )
-              },
-              {
-                step: "03",
-                title: "Recovery",
-                desc: "Our driver arrives, secures your vehicle, and transports you safely.",
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                )
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                className="bg-white p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-slate-100 text-center group"
-              >
-                <div className="w-20 h-20 mx-auto bg-slate-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-50 group-hover:scale-110 transition-all duration-500 relative">
-                  <div className="absolute top-0 right-0 bg-amber-500 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
-                    {item.step}
-                  </div>
-                  <div className="text-navy-900 group-hover:text-amber-600 transition-colors">
-                    {item.icon}
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-navy-900 mb-3">{item.title}</h3>
-                <p className="text-slate-500 leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SERVICES SHOWCASE ═══ */}
-      <section className="py-28 bg-slate-50">
-        <div className="container-custom">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-            <div className="max-w-2xl">
-              <motion.span
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block"
-              >
-                What We Do
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-bold mb-5 text-navy-900"
-              >
-                Comprehensive Solutions.
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-lg text-slate-500 font-light"
-              >
-                From heavy-duty recovery to simple lockouts, our fleet handles it all with precision.
-              </motion.p>
-            </div>
-            <Link href="/services" className="hidden md:flex items-center gap-2 text-amber-600 font-bold hover:gap-4 transition-all group">
-              VIEW ALL SERVICES <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 rounded-2xl overflow-hidden">
-            <ServiceHighlight
-              image="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800"
-              title="Emergency Towing"
-              category="24/7 Service"
-            />
-            <ServiceHighlight
-              image="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800"
-              title="Roadside Assistance"
-              category="Tires & Battery"
-            />
-            <ServiceHighlight
-              image="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=800"
-              title="Specialized Recovery"
-              category="Heavy Duty"
-            />
-          </div>
-          <div className="mt-10 text-center md:hidden">
-            <Link href="/services" className="btn-amber inline-block">
-              View All Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ TESTIMONIAL ═══ */}
-      <section className="py-28 bg-navy-950 text-white overflow-hidden relative">
-        {/* Background accents */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-navy-900/50 skew-x-12 transform origin-top-right" />
-        <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] bg-amber-500/5 blur-[100px] rounded-full" />
-
-        <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <div className="text-amber-400 text-7xl font-serif mb-6 leading-none">&ldquo;</div>
-              <h2 className="text-2xl md:text-4xl font-bold leading-snug mb-10 text-white/95">
-                They turned a nightmare on the highway into a safe, calm experience. The professionalism was unmatched.
-              </h2>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
-                  <span className="text-navy-900 font-bold text-lg">SJ</span>
-                </div>
-                <div>
-                  <p className="font-bold text-white">Sarah Jenkins</p>
-                  <div className="flex items-center gap-2">
-                    <div className="flex gap-0.5">
-                      {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-                    <span className="text-slate-500 text-sm">via Google</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="grid grid-cols-2 gap-4"
-            >
-              <div className="card-glass !p-8 hover:border-amber-500/30 transition-all duration-500 text-center">
-                <h3 className="text-4xl font-bold text-white mb-2">
-                  <Counter value={4.9} duration={2} decimals={1} />
-                </h3>
-                <p className="text-slate-400 text-xs uppercase tracking-widest font-medium">Average Rating</p>
-              </div>
-              <div className="card-glass !p-8 hover:border-amber-500/30 transition-all duration-500 text-center">
-                <h3 className="text-4xl font-bold text-white mb-2">
-                  <Counter value={98} duration={2} suffix="%" />
-                </h3>
-                <p className="text-slate-400 text-xs uppercase tracking-widest font-medium">Arrival On Time</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ CTA SECTION ═══ */}
-      <section className="relative py-28 md:py-36 overflow-hidden group">
-        <div className="absolute inset-0 bg-gradient-to-r from-fire to-fire-dark" />
+      {/* ── Hero ───────────────────────────────────────────────────── */}
+      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
+        {/* Background image */}
         <Image
-          src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2000"
-          alt="Truck on road"
+          src="/background_home.png"
+          alt="Emergency Towing Surrey BC"
           fill
-          className="object-cover opacity-15 group-hover:opacity-10 transition-opacity duration-700"
+          className="object-cover object-center"
+          priority
+          quality={90}
         />
-        {/* Ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[150px] rounded-full" />
+        {/* Layered overlay: solid dark base + left-side text-column darkening */}
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
 
-        <div className="relative z-10 text-center text-white container-custom">
+        {/* Content */}
+        <div className="relative z-10 container-custom px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            {/* Eyebrow label */}
+            <motion.span
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="inline-block text-xs font-semibold tracking-[0.18em] uppercase text-amber-400 mb-6 border border-amber-400/30 rounded-full px-4 py-1.5"
+            >
+              Surrey, BC · Serving the Lower Mainland
+            </motion.span>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.06] tracking-tight mb-6 [text-shadow:0_2px_24px_rgba(0,0,0,0.7)]"
+            >
+              24/7 Emergency<br />
+              <span className="text-amber-400 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">Towing</span> You Can<br />
+              Count On
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.32 }}
+              className="text-lg md:text-xl text-white/90 mb-10 max-w-xl leading-relaxed [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]"
+            >
+              Fast, professional roadside assistance across Surrey and the
+              Lower Mainland — day or night, whatever the situation.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.44 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <a
+                href="tel:+16045551234"
+                className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-gray-900 font-bold py-4 px-8 rounded-xl text-base transition-all duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0">
+                  <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
+                </svg>
+                Call Now: (604) 555-1234
+              </a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl text-base border border-white/25 transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5"
+              >
+                Request Service
+              </Link>
+            </motion.div>
+
+            {/* Trust bar */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.62 }}
+              className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-white text-sm font-semibold [text-shadow:0_1px_8px_rgba(0,0,0,0.7)]"
+            >
+              <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> &lt;30 min response</span>
+              <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> Licensed &amp; insured</span>
+              <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> Flat-rate pricing</span>
+              <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> All vehicle types</span>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bottom fade for smooth section transition */}
+        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-slate-50 via-slate-50/60 to-transparent" />
+      </section>
+
+      {/* ── Services ───────────────────────────────────────────────── */}
+      <section className="pt-16 pb-24 bg-slate-50">
+        <div className="container-custom">
+          {/* Section header */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.5 }}
+            className="mb-14"
           >
-            <h2 className="text-5xl md:text-7xl font-black mb-3 tracking-tighter">DON&apos;T STRAND.</h2>
-            <h2 className="text-5xl md:text-7xl font-black mb-12 tracking-tighter text-white/20 group-hover:text-white transition-colors duration-700">JUST CALL.</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">What we do</p>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+                Full-Service Roadside<br className="hidden md:block" /> Assistance
+              </h2>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-amber-500 transition-colors group shrink-0"
+              >
+                View all services
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 group-hover:translate-x-0.5 transition-transform">
+                  <path fillRule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+          </motion.div>
+          {/* Cards grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((svc, i) => (
+              <motion.div
+                key={svc.title}
+                custom={i}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-40px" }}
+                className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-amber-400/60 shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-all duration-300 ease-out hover:-translate-y-1.5 cursor-pointer flex flex-col"
+              >
+                {/* Card image */}
+                <div className="relative h-52 overflow-hidden shrink-0 bg-slate-100">
+                  <Image
+                    src={svc.src}
+                    alt={svc.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                  />
+                  {/* Subtle label badge */}
+                  <div className="absolute top-3 left-3">
+                    <span className="inline-block bg-amber-400 text-gray-900 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
+                      24/7
+                    </span>
+                  </div>
+                </div>
+                {/* Card body */}
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="font-bold text-gray-900 text-[15px] mb-1.5 leading-snug">{svc.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed flex-1">{svc.desc}</p>
+                  {/* Footer link */}
+                  <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <Link
+                      href={`/services${svc.anchor}`}
+                      className="text-xs font-semibold text-amber-500 hover:text-amber-600 transition-colors inline-flex items-center gap-1 group/link"
+                    >
+                      Learn more
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform">
+                        <path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd" />
+                      </svg>
+                    </Link>
+                    <div className="w-2 h-2 rounded-full bg-amber-400 group-hover:scale-125 transition-transform" />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why Choose Us (stats strip) ────────────────────────────── */}
+      <section className="py-20 bg-white border-y border-slate-100">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-14"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Why us</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+              Trusted Across Surrey
+            </h2>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+            {[
+              { stat: "24/7", label: "Always Available", sub: "Round-the-clock, every day of the year", delay: 0.1 },
+              { stat: null, label: "Fast Response", sub: "Average response time under 30 minutes", delay: 0.2, counter: true, value: 30, suffix: " min" },
+              { stat: null, label: "Years Experience", sub: "Serving Surrey communities since 2009", delay: 0.3, counter: true, value: 15, suffix: "+" },
+              { stat: "$", label: "Affordable Rates", sub: "Flat-rate pricing, no hidden fees", delay: 0.4 },
+            ].map((item, i) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: item.delay }}
+                className="text-center px-4"
+              >
+                <div className="text-4xl md:text-5xl font-extrabold text-amber-500 mb-3 tabular-nums">
+                  {item.counter ? (
+                    <>{"<"}<Counter value={item.value!} duration={2} suffix={item.suffix} /></>
+                  ) : (
+                    item.stat
+                  )}
+                </div>
+                <h3 className="text-base font-bold text-gray-900 mb-1">{item.label}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{item.sub}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials ───────────────────────────────────────────── */}
+      <section className="py-20 bg-slate-50">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-14"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Reviews</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+              What Our Customers Say
+            </h2>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { body: "Called TowingNo.1 at 2 AM when my car broke down on the highway. They arrived in 20 minutes and had me home safely. Excellent service!", name: "Sarah M." },
+              { body: "Professional, friendly, and fast. The driver took great care of my vehicle. Will definitely use them again if needed.", name: "Michael T." },
+              { body: "Best towing company in Surrey! Fair prices and they really care about helping people. Highly recommend.", name: "Jennifer L." },
+            ].map((t, i) => (
+              <motion.div
+                key={t.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-[0_2px_16px_rgba(0,0,0,0.06)] border border-slate-100/80"
+              >
+                <div className="flex gap-0.5 mb-5">
+                  {Array.from({ length: 5 }).map((_, s) => (
+                    <svg key={s} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-amber-400">
+                      <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clipRule="evenodd" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-6 text-sm">"{t.body}"</p>
+                <p className="font-semibold text-gray-900 text-sm">— {t.name}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* ── FAQ ───────────────────────────────────────────────── */}
+      <FaqSection />
+      {/* ── CTA Banner ─────────────────────────────────────────────── */}
+      <section className="py-20 bg-gray-900">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="max-w-2xl mx-auto text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
+              Stranded? We're One Call Away.
+            </h2>
+            <p className="text-white/60 mb-10 text-base">
+              Available 24 hours a day, 7 days a week — including holidays.
+            </p>
             <a
               href="tel:+16045551234"
-              className="inline-flex items-center gap-3 bg-white text-fire hover:bg-navy-900 hover:text-white font-bold py-5 px-14 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:-translate-y-1"
+              className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-gray-900 font-bold py-4 px-10 rounded-xl text-base transition-all duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
               </svg>
               (604) 555-1234
             </a>
@@ -352,26 +377,146 @@ export default function HomeContent() {
   );
 }
 
-function ServiceHighlight({ image, title, category }: { image: string; title: string; category: string }) {
+/* ─── FAQ accordion ───────────────────────────────────────── */
+const faqs = [
+  {
+    q: "How quickly can you reach me in Surrey?",
+    a: "Our average response time in Surrey is under 30 minutes. We dispatch the closest available driver the moment you call — day or night, weekends and holidays included.",
+  },
+  {
+    q: "Do you tow all types of vehicles?",
+    a: "Yes. We tow cars, SUVs, pickup trucks, motorcycles, and light commercial vehicles. If you’re unsure whether your vehicle qualifies, just call us and we’ll confirm instantly.",
+  },
+  {
+    q: "What areas do you cover?",
+    a: "We primarily serve Surrey, BC, and surrounding areas including Delta, Langley, Burnaby, Richmond, White Rock, and the broader Metro Vancouver / Lower Mainland region.",
+  },
+  {
+    q: "How much does a tow cost?",
+    a: "Our pricing is flat-rate with no hidden fees. Cost depends on vehicle type and distance. Call us for an instant quote — we’ll give you a firm price before we dispatch.",
+  },
+  {
+    q: "Can you help if I’m locked out of my car?",
+    a: "Absolutely. Our lockout service gets you back in your vehicle safely without causing damage to the lock or door. We arrive fast and handle all makes and models.",
+  },
+  {
+    q: "Do you offer roadside assistance without towing?",
+    a: "Yes — if your issue can be solved on the spot (flat tire, dead battery, out of fuel, locked out) we’ll fix it right there. Towing is only arranged when the vehicle truly can’t be driven.",
+  },
+  {
+    q: "Are you available on holidays and weekends?",
+    a: "We operate 24 hours a day, 7 days a week, including all statutory holidays. Emergencies don’t follow business hours, and neither do we.",
+  },
+  {
+    q: "Is my vehicle insured while being towed?",
+    a: "We are fully licensed and insured. Your vehicle is handled with professional care using proper equipment throughout every tow.",
+  },
+];
+
+function FaqSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
-    <div className="group relative h-[420px] overflow-hidden cursor-pointer">
-      <Image
-        src={image}
-        alt={title}
-        fill
-        className="object-cover transition-all duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
-      />
-      <div className="absolute inset-0 bg-navy-950/50 group-hover:bg-navy-950/30 transition-colors duration-500" />
-      {/* Bottom gradient */}
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-navy-950/90 to-transparent" />
-      <div className="absolute bottom-0 left-0 p-8 text-white w-full">
-        <span className="text-xs font-bold tracking-widest uppercase text-amber-400 mb-2 block opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500">
-          {category}
-        </span>
-        <h3 className="text-2xl md:text-3xl font-bold transform transition-transform duration-500 group-hover:-translate-y-1">
-          {title}
-        </h3>
+    <section className="py-24 bg-white">
+      <div className="container-custom">
+        <div className="max-w-3xl mx-auto">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-14 text-center"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Got questions?</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-4 text-gray-500 text-base max-w-xl mx-auto leading-relaxed">
+              Everything you need to know about our towing and roadside services in Surrey.
+            </p>
+          </motion.div>
+
+          {/* Accordion */}
+          <div className="flex flex-col divide-y divide-slate-100">
+            {faqs.map((faq, i) => {
+              const isOpen = openIndex === i;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-16px" }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                >
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between gap-6 py-5 text-left group"
+                    aria-expanded={isOpen}
+                  >
+                    <span className={`text-[15px] font-semibold leading-snug transition-colors duration-200 ${
+                      isOpen ? "text-amber-500" : "text-gray-900 group-hover:text-amber-500"
+                    }`}>
+                      {faq.q}
+                    </span>
+                    {/* Plus / minus icon */}
+                    <span className={`shrink-0 w-7 h-7 rounded-full border flex items-center justify-center transition-all duration-200 ${
+                      isOpen
+                        ? "bg-amber-400 border-amber-400 text-gray-900"
+                        : "border-slate-200 text-slate-400 group-hover:border-amber-400 group-hover:text-amber-500"
+                    }`}>
+                      <motion.svg
+                        animate={{ rotate: isOpen ? 45 : 0 }}
+                        transition={{ duration: 0.22, ease: "easeInOut" }}
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5"
+                      >
+                        <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+                      </motion.svg>
+                    </span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="answer"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <p className="pb-5 text-[14.5px] text-gray-500 leading-relaxed pr-12">
+                          {faq.a}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Bottom CTA nudge */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-12 flex flex-col sm:flex-row items-center gap-4 bg-slate-50 rounded-2xl px-6 py-5 border border-slate-100"
+          >
+            <p className="text-sm text-gray-600 flex-1">Still have a question? We’re available 24/7 and happy to help.</p>
+            <a
+              href="tel:+16045551234"
+              className="shrink-0 inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-gray-900 font-bold text-sm py-2.5 px-5 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                <path fillRule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 16.352V17.5a1.5 1.5 0 0 1-1.5 1.5H15c-8.284 0-15-6.716-15-15V3.5Z" clipRule="evenodd" />
+              </svg>
+              Call (604) 555-1234
+            </a>
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
