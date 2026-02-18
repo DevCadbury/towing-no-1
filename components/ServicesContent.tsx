@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const allServices = [
   {
     id: "emergency-towing",
-    img: "/image/Emergency_Towing.png",
+    img: "/image/Emergency_Towin.png",
     title: "Emergency Towing (24/7 Service)",
     badge: "24/7",
     paras: [
@@ -18,7 +18,7 @@ const allServices = [
   },
   {
     id: "flat-tire",
-    img: "/image/Flat_Tire_Help.png",
+    img: "/image/Flat_Tire_Hel.png",
     title: "Flat Tire Help",
     badge: "Fast",
     paras: [
@@ -29,7 +29,7 @@ const allServices = [
   },
   {
     id: "battery-boost",
-    img: "/image/Battery_Boost .png",
+    img: "/image/Battery_Boost.png",
     title: "Battery Boost and Jumpstart",
     badge: "Quick",
     paras: [
@@ -40,7 +40,7 @@ const allServices = [
   },
   {
     id: "accident-recovery",
-    img: "/image/Accident_Recovery.png",
+    img: "/image/Accident_Recover.png",
     title: "Accident Recovery",
     badge: "Expert",
     paras: [
@@ -51,7 +51,7 @@ const allServices = [
   },
   {
     id: "lockout",
-    img: "/image/Lockout_Service.png",
+    img: "/image/Lockout_Servic.png",
     title: "Lockout Service",
     badge: "No damage",
     paras: [
@@ -62,7 +62,7 @@ const allServices = [
   },
   {
     id: "vehicle-transport",
-    img: "/image/Vehicle_Transport.png",
+    img: "/image/Vehicle_Transpor.png",
     title: "Vehicle Transport",
     badge: "Secure",
     paras: [
@@ -73,7 +73,7 @@ const allServices = [
   },
   {
     id: "fuel-delivery",
-    img: "/image/Fuel_Delivery.png",
+    img: "/image/Fuel_Deliver.png",
     title: "Fuel Delivery",
     badge: "Emergency",
     paras: [
@@ -84,7 +84,7 @@ const allServices = [
   },
   {
     id: "winching",
-    img: "/image/Winching_Extraction.png",
+    img: "/image/Winching_Extractio.png",
     title: "Winching and Extraction",
     badge: "Heavy-duty",
     paras: [
@@ -95,7 +95,7 @@ const allServices = [
   },
   {
     id: "roadside-assistance",
-    img: "/image/Roadside_Assistance.png",
+    img: "/image/Roadside_Assistanc.png",
     title: "General Roadside Assistance",
     badge: "All-in-one",
     paras: [
@@ -112,7 +112,7 @@ export default function ServicesContent() {
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative h-[420px] flex items-center justify-center text-white overflow-hidden">
         <Image
-          src="/image/Emergency_Towing.png"
+          src="/image/Emergency_Towin.png"
           alt="Our Services"
           fill
           className="object-cover object-center"
