@@ -5,6 +5,75 @@ export const alt = '24/7 Emergency Towing BC | TowingNo.1 - We Are Coming To You
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
+export default async function Image() {
+  const imageData = await fetch(
+    new URL('https://towing-no-1.vercel.app/og-preview.jpg')
+  ).then((res) => res.arrayBuffer())
+
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          display: 'flex',
+          width: '1200px',
+          height: '630px',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        {/* Full bleed truck photo */}
+        {/* @ts-expect-error ImageResponse accepts ArrayBuffer src */}
+        <img
+          src={imageData}
+          width={1200}
+          height={630}
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
+        {/* Bottom title bar */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '18px 40px',
+            background: 'linear-gradient(0deg, rgba(5,13,31,0.92) 0%, rgba(5,13,31,0.6) 80%, transparent 100%)',
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+            <span style={{ color: '#fbbf24', fontSize: '28px', fontWeight: 900, fontFamily: 'sans-serif', letterSpacing: '-0.3px' }}>
+              TowingNo.1 — We Are Coming To You!
+            </span>
+            <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '20px', fontWeight: 500, fontFamily: 'sans-serif' }}>
+              24/7 Emergency Towing BC · Fast · Licensed &amp; Insured
+            </span>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              background: '#fbbf24',
+              color: '#050d1f',
+              fontWeight: 900,
+              fontSize: '22px',
+              fontFamily: 'sans-serif',
+              padding: '12px 28px',
+              borderRadius: '10px',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Call Now 24/7
+          </div>
+        </div>
+      </div>
+    ),
+    { ...size }
+  )
+}
+
+
 export default function Image() {
   return new ImageResponse(
     (
