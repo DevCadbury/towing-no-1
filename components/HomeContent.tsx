@@ -79,29 +79,21 @@ export default function HomeContent() {
     <>
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section
-        className="relative flex items-center justify-center overflow-hidden bg-navy-950"
-        style={{ minHeight: "100svh" }}
+        className="relative flex items-center justify-center overflow-hidden bg-navy-950 py-28 md:py-0 md:min-h-screen"
       >
-        {/* Hidden Next.js Image just for preload/priority — not displayed */}
+        {/* Background: cover on all sizes, anchored to top on mobile so the truck is visible */}
         <Image
           src="/background_home.png"
-          alt=""
+          alt="Emergency Towing BC"
           fill
-          className="sr-only"
+          className="object-cover object-top md:object-center"
           priority
-          sizes="1px"
-          aria-hidden
+          quality={90}
+          sizes="100vw"
         />
-        {/* Background:
-            Mobile  — bg-contain: full image visible (zoomed out), no cropping
-            Desktop — bg-cover:   fills viewport, image cropped to fill */}
-        <div
-          className="absolute inset-0 bg-no-repeat bg-center bg-contain md:bg-cover"
-          style={{ backgroundImage: "url('/background_home.png')" }}
-        />
-        {/* Overlay — lighter on mobile (image still visible), richer on desktop for text */}
-        <div className="absolute inset-0 bg-navy-950/30 md:bg-black/55" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/70 via-navy-950/20 to-transparent md:from-black/70 md:via-black/30 md:to-transparent" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-navy-950/50 md:bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-950/30 to-transparent md:from-black/70 md:via-black/30 md:to-transparent" />
 
         {/* Content */}
         <div className="relative z-10 container-custom px-4 sm:px-6 lg:px-8">
@@ -163,7 +155,7 @@ export default function HomeContent() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.62 }}
-              className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-white text-sm font-semibold [text-shadow:0_1px_8px_rgba(0,0,0,0.7)]"
+              className="mt-10 grid grid-cols-2 sm:flex sm:flex-wrap gap-x-8 gap-y-3 text-white text-sm font-semibold [text-shadow:0_1px_8px_rgba(0,0,0,0.7)]"
             >
               <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> &lt;30 min response</span>
               <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> Licensed &amp; insured</span>
@@ -172,9 +164,6 @@ export default function HomeContent() {
             </motion.div>
           </div>
         </div>
-
-        {/* Bottom fade for smooth section transition */}
-        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-slate-50 via-slate-50/60 to-transparent" />
       </section>
 
       {/* ── Services ───────────────────────────────────────────────── */}

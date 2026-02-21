@@ -32,7 +32,7 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 bg-[#0f172a] border-b border-white/8 shadow-[0_2px_24px_rgba(0,0,0,0.45)]">
       <div className="container-custom">
-        <div className="flex justify-between items-center h-[70px]">
+        <div className="flex justify-between items-center h-[76px]">
 
           {/* Logo */}
           <Link href="/" className="relative z-50 shrink-0">
@@ -42,7 +42,7 @@ export default function Navbar() {
               transition={{ duration: 0.45 }}
               whileHover={{ scale: 1.02 }}
             >
-              <Logo height={52} className="" />
+              <Logo height={60} className="" />
             </motion.div>
           </Link>
 
