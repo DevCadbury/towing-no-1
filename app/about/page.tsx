@@ -32,7 +32,7 @@ export default function About() {
               About <span className="text-gradient-gold">TowingNo.1</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-light">
-              Serving Surrey and surrounding areas with pride, professionalism, and speed.
+              Serving the Lower Mainland with pride, professionalism, and speed.
             </p>
           </motion.div>
         </div>
@@ -53,13 +53,13 @@ export default function About() {
               <div className="w-16 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mb-8 rounded-full" />
               <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  Founded in 2010, TowingNo.1 began with a single truck and a clear mission: to provide the most reliable and honest towing service in Surrey. We saw too many people stranded and stressed, dealing with hidden fees and long wait times.
+                  Founded in 2010, TowingNo.1 began with a single truck and a clear mission: to provide the most reliable and honest towing service in the Lower Mainland. We saw too many people stranded and stressed, dealing with hidden fees and long wait times.
                 </p>
                 <p>
                   Over the years, we&apos;ve grown into a full fleet operation, but our core values haven&apos;t changed. We treat every customer like family, understanding that when you call us, you&apos;re likely in a stressful situation.
                 </p>
                 <p>
-                  Today, we are proud to be Surrey&apos;s top-rated towing service, known for our fast response times, professional drivers, and transparent pricing.
+                  Today, we are proud to be the top-rated towing service in BC, known for our fast response times, professional drivers, and transparent pricing.
                 </p>
               </div>
             </motion.div>

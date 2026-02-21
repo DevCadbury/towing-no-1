@@ -3,11 +3,11 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog - Towing Tips & Road Safety | TowingNo.1 Surrey BC",
-  description: "Read helpful articles about vehicle maintenance, road safety, and towing tips from the experts at TowingNo.1 in Surrey, BC.",
+  title: "Blog - Towing Tips & Road Safety | TowingNo.1 BC",
+  description: "Read helpful articles about vehicle maintenance, road safety, and towing tips from the experts at TowingNo.1 in BC.",
   openGraph: {
     title: "TowingNo.1 Blog - Road Safety & Towing Tips",
-    description: "Expert advice on vehicle maintenance, road safety, and emergency preparedness from Surrey's trusted towing company.",
+    description: "Expert advice on vehicle maintenance, road safety, and emergency preparedness from BC's trusted towing company.",
   },
 };
 
@@ -90,7 +90,7 @@ export default function Blog() {
             Tips, Advice & <span className="text-gradient-gold">Insights</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-xl mb-8">
-            Expert road safety knowledge for Surrey drivers.
+            Expert road safety knowledge for BC drivers.
           </p>
           {featured && (
             <Link

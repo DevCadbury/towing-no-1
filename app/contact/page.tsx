@@ -20,7 +20,7 @@ export default function Contact() {
   };
 
   const faqs = [
-    { q: "How fast can you get to me?", a: "We aim for a 30-minute arrival time or less, depending on traffic and your location within Surrey." },
+    { q: "How fast can you get to me?", a: "We aim for a 30-minute arrival time or less, depending on traffic and your location." },
     { q: "Do you accept credit cards?", a: "Yes, our drivers carry wireless terminals and accept all major credit cards, debit, and cash." },
     { q: "Can you tow my motorcycle?", a: "Absolutely. We have specialized equipment to safely tow motorcycles without damage." },
     { q: "Are you insured?", a: "Yes, we are fully licensed and insured. Your vehicle is protected while in our care." },
@@ -105,7 +105,7 @@ export default function Contact() {
                       type="text"
                       id="location"
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all bg-slate-50/50"
-                      placeholder="Surrey, BC"
+                      placeholder="Your city, BC"
                       value={formState.location}
                       onChange={(e) => setFormState({ ...formState, location: e.target.value })}
                     />
@@ -170,7 +170,7 @@ export default function Contact() {
                       ),
                       title: "Service Area",
                       sub: "",
-                      content: <p className="text-slate-500 text-sm">Proudly serving Surrey, Delta, White Rock, Langley, and surrounding areas in British Columbia.</p>,
+                      content: <p className="text-slate-500 text-sm">Proudly serving Delta, White Rock, Langley, Burnaby, and surrounding areas in British Columbia.</p>,
                     },
                   ].map((item, i) => (
                     <div key={i} className="card !p-5 flex items-start gap-5">
@@ -191,7 +191,7 @@ export default function Contact() {
               <div className="bg-navy-900 rounded-2xl h-[200px] w-full relative overflow-hidden flex items-center justify-center border border-navy-700">
                 <div className="absolute inset-0 bg-gradient-to-br from-navy-800 to-navy-950 opacity-80" />
                 <div className="bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10 relative z-10 text-center">
-                  <p className="font-bold text-white">Serving Surrey & Beyond</p>
+                  <p className="font-bold text-white">Serving the Lower Mainland</p>
                   <p className="text-sm text-slate-400">Fast response times guaranteed</p>
                 </div>
               </div>

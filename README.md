@@ -1,6 +1,6 @@
 # TowingNo.1 - Professional Towing Website
 
-A premium, high-performance Next.js 16 website for TowingNo.1, a 24/7 emergency towing and roadside assistance company serving Surrey, British Columbia, and Greater Vancouver.
+A premium, high-performance Next.js 16 website for TowingNo.1, a 24/7 emergency towing and roadside assistance company serving British Columbia and the Lower Mainland.
 
 ## 🚀 Features
 
@@ -50,11 +50,11 @@ npm start
 ```
 
 ## 🔍 SEO & Keywords
-Targeting Surrey-specific towing keywords for maximum local visibility:
-- *Emergency Towing Surrey*
-- *Cheap Towing Surrey*
-- *Surrey Wide Towing*
-- *Roadside Assistance Surrey BC*
+Targeting BC-wide towing keywords for maximum local visibility:
+- *Emergency Towing BC*
+- *Affordable Towing BC*
+- *Lower Mainland Towing*
+- *Roadside Assistance BC*
 
 ## 🌐 Deployment
 
@@ -70,4 +70,4 @@ No additional configuration is required.
 
 ---
 
-**Built with ❤️ for TowingNo.1 - Surrey's Trusted Roadside Assistance Provider**
+**Built with ❤️ for TowingNo.1 - BC's Trusted Roadside Assistance Provider**

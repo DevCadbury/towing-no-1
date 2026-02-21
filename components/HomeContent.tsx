@@ -63,13 +63,6 @@ const services = [
     desc: "Stuck in mud, snow, or a ditch? We pull your vehicle out safely.",
     anchor: "#winching",
   },
-  {
-    src: "/image/Roadside_Assistanc.png",
-    alt: "Roadside Assistance",
-    title: "Roadside Assistance",
-    desc: "General roadside help when you need it most — fast, professional, anytime.",
-    anchor: "#roadside-assistance",
-  },
 ];
 
 const fadeUp = {
@@ -85,19 +78,30 @@ export default function HomeContent() {
   return (
     <>
       {/* ── Hero ───────────────────────────────────────────────────── */}
-      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
-        {/* Background image */}
+      <section
+        className="relative flex items-center justify-center overflow-hidden bg-navy-950"
+        style={{ minHeight: "100svh" }}
+      >
+        {/* Hidden Next.js Image just for preload/priority — not displayed */}
         <Image
           src="/background_home.png"
-          alt="Emergency Towing Surrey BC"
+          alt=""
           fill
-          className="object-cover object-center"
+          className="sr-only"
           priority
-          quality={90}
+          sizes="1px"
+          aria-hidden
         />
-        {/* Layered overlay: solid dark base + left-side text-column darkening */}
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+        {/* Background:
+            Mobile  — bg-contain: full image visible (zoomed out), no cropping
+            Desktop — bg-cover:   fills viewport, image cropped to fill */}
+        <div
+          className="absolute inset-0 bg-no-repeat bg-center bg-contain md:bg-cover"
+          style={{ backgroundImage: "url('/background_home.png')" }}
+        />
+        {/* Overlay — lighter on mobile (image still visible), richer on desktop for text */}
+        <div className="absolute inset-0 bg-navy-950/30 md:bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/70 via-navy-950/20 to-transparent md:from-black/70 md:via-black/30 md:to-transparent" />
 
         {/* Content */}
         <div className="relative z-10 container-custom px-4 sm:px-6 lg:px-8">
@@ -109,7 +113,7 @@ export default function HomeContent() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="inline-block text-xs font-semibold tracking-[0.18em] uppercase text-amber-400 mb-6 border border-amber-400/30 rounded-full px-4 py-1.5"
             >
-              Surrey, BC · Serving the Lower Mainland
+              BC · Serving the Lower Mainland
             </motion.span>
 
             <motion.h1
@@ -118,9 +122,8 @@ export default function HomeContent() {
               transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.06] tracking-tight mb-6 [text-shadow:0_2px_24px_rgba(0,0,0,0.7)]"
             >
-              24/7 Emergency<br />
-              <span className="text-amber-400 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">Towing</span> You Can<br />
-              Count On
+              24/7 Emergency <span className="text-amber-400 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">Towing Service</span><br />
+              – We Come to You!
             </motion.h1>
 
             <motion.p
@@ -129,8 +132,7 @@ export default function HomeContent() {
               transition={{ duration: 0.6, delay: 0.32 }}
               className="text-lg md:text-xl text-white/90 mb-10 max-w-xl leading-relaxed [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]"
             >
-              Fast, professional roadside assistance across Surrey and the
-              Lower Mainland — day or night, whatever the situation.
+              Fast, professional roadside assistance across the Lower Mainland — day or night, whatever the situation.
             </motion.p>
 
             <motion.div
@@ -266,7 +268,7 @@ export default function HomeContent() {
           >
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Why us</p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-              Trusted Across Surrey
+              Trusted Across the Lower Mainland
             </h2>
           </motion.div>
 
@@ -274,7 +276,7 @@ export default function HomeContent() {
             {[
               { stat: "24/7", label: "Always Available", sub: "Round-the-clock, every day of the year", delay: 0.1 },
               { stat: null, label: "Fast Response", sub: "Average response time under 30 minutes", delay: 0.2, counter: true, value: 30, suffix: " min" },
-              { stat: null, label: "Years Experience", sub: "Serving Surrey communities since 2009", delay: 0.3, counter: true, value: 15, suffix: "+" },
+              { stat: null, label: "Years Experience", sub: "Serving BC communities since 2009", delay: 0.3, counter: true, value: 15, suffix: "+" },
               { stat: "$", label: "Affordable Rates", sub: "Flat-rate pricing, no hidden fees", delay: 0.4 },
             ].map((item, i) => (
               <motion.div
@@ -319,7 +321,7 @@ export default function HomeContent() {
             {[
               { body: "Called TowingNo.1 at 2 AM when my car broke down on the highway. They arrived in 20 minutes and had me home safely. Excellent service!", name: "Sarah M." },
               { body: "Professional, friendly, and fast. The driver took great care of my vehicle. Will definitely use them again if needed.", name: "Michael T." },
-              { body: "Best towing company in Surrey! Fair prices and they really care about helping people. Highly recommend.", name: "Jennifer L." },
+              { body: "Best towing company around! Fair prices and they really care about helping people. Highly recommend.", name: "Jennifer L." },
             ].map((t, i) => (
               <motion.div
                 key={t.name}
@@ -380,8 +382,8 @@ export default function HomeContent() {
 /* ─── FAQ accordion ───────────────────────────────────────── */
 const faqs = [
   {
-    q: "How quickly can you reach me in Surrey?",
-    a: "Our average response time in Surrey is under 30 minutes. We dispatch the closest available driver the moment you call — day or night, weekends and holidays included.",
+    q: "How quickly can you reach me?",
+    a: "Our average response time is under 30 minutes. We dispatch the closest available driver the moment you call — day or night, weekends and holidays included.",
   },
   {
     q: "Do you tow all types of vehicles?",
@@ -389,7 +391,7 @@ const faqs = [
   },
   {
     q: "What areas do you cover?",
-    a: "We primarily serve Surrey, BC, and surrounding areas including Delta, Langley, Burnaby, Richmond, White Rock, and the broader Metro Vancouver / Lower Mainland region.",
+    a: "We serve the Lower Mainland including Delta, Langley, Burnaby, Richmond, White Rock, and the broader Metro Vancouver region.",
   },
   {
     q: "How much does a tow cost?",
@@ -433,7 +435,7 @@ function FaqSection() {
               Frequently Asked Questions
             </h2>
             <p className="mt-4 text-gray-500 text-base max-w-xl mx-auto leading-relaxed">
-              Everything you need to know about our towing and roadside services in Surrey.
+              Everything you need to know about our towing and roadside services.
             </p>
           </motion.div>
 

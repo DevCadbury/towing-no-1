@@ -42,7 +42,7 @@ export default function Navbar() {
               transition={{ duration: 0.45 }}
               whileHover={{ scale: 1.02 }}
             >
-              <Logo width={180} height={50} className="" />
+              <Logo height={52} className="" />
             </motion.div>
           </Link>
 
@@ -262,7 +262,7 @@ function ServicesDropdown({ pathname }: { pathname: string }) {
 
             {/* Footer row */}
             <div className="border-t border-white/8 px-4 py-3 flex items-center justify-between">
-              <span className="text-xs text-slate-500">All roadside services in Surrey, BC</span>
+              <span className="text-xs text-slate-500">All roadside services across the Lower Mainland</span>
               <Link
                 href="/services"
                 onClick={() => setOpen(false)}

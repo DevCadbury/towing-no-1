@@ -93,17 +93,6 @@ const allServices = [
     ],
     bullets: ["Safe winching techniques", "Mud, snow, and ditch recovery", "Professional equipment", "Minimal vehicle damage"],
   },
-  {
-    id: "roadside-assistance",
-    img: "/image/Roadside_Assistanc.png",
-    title: "General Roadside Assistance",
-    badge: "All-in-one",
-    paras: [
-      "Comprehensive roadside help for situations that don't fit a single category. Our team handles it all, fast.",
-      "From minor mechanical issues to unexpected breakdowns, we dispatch the right crew with the right equipment.",
-    ],
-    bullets: ["Wide range of roadside help", "Certified technicians", "Fast dispatch citywide", "Available 24/7"],
-  },
 ];
 
 export default function ServicesContent() {
@@ -131,7 +120,7 @@ export default function ServicesContent() {
               Our Services
             </h1>
             <p className="text-white/85 text-lg md:text-xl max-w-xl [text-shadow:0_1px_10px_rgba(0,0,0,0.5)]">
-              Comprehensive roadside assistance and towing solutions — available 24/7 across Surrey and the Lower Mainland.
+              Comprehensive roadside assistance and towing solutions — available 24/7 across the Lower Mainland.
             </p>
           </motion.div>
         </div>

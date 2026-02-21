@@ -12,14 +12,15 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.towing-no-1.com'),
   title: {
-    default: "TowingNo.1 - 24/7 Emergency Towing Surrey BC | Roadside Assistance",
+    default: "TowingNo.1 - 24/7 Emergency Towing BC | Roadside Assistance",
     template: "%s | TowingNo.1"
   },
-  description: "Fast, reliable 24/7 emergency towing and roadside assistance in Surrey, British Columbia. Affordable towing services, battery boost, flat tire help, and vehicle recovery.",
-  keywords: ["towing Surrey BC", "emergency towing Surrey", "24/7 roadside assistance Surrey", "affordable towing Surrey BC", "tow truck Surrey", "vehicle recovery Surrey"],
+  description: "Fast, reliable 24/7 emergency towing and roadside assistance in British Columbia. Affordable towing services, battery boost, flat tire help, and vehicle recovery.",
+  keywords: ["emergency towing BC", "24/7 roadside assistance", "affordable towing BC", "tow truck BC", "vehicle recovery BC", "towing Lower Mainland"],
   authors: [{ name: "TowingNo.1" }],
   icons: {
-    icon: '/logo.png',
+    icon: [{ url: '/logo.png', type: 'image/png' }],
+    shortcut: '/logo.png',
     apple: '/logo.png',
   },
   openGraph: {
@@ -27,21 +28,21 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://www.towing-no-1.com",
     siteName: "TowingNo.1",
-    title: "TowingNo.1 - 24/7 Emergency Towing Surrey BC",
-    description: "Fast, reliable 24/7 emergency towing and roadside assistance in Surrey, British Columbia.",
+    title: "TowingNo.1 - 24/7 Emergency Towing BC",
+    description: "Fast, reliable 24/7 emergency towing and roadside assistance in British Columbia.",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "TowingNo.1 - Emergency Towing Surrey BC"
+        alt: "TowingNo.1 - Emergency Towing BC"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "TowingNo.1 - 24/7 Emergency Towing Surrey BC",
-    description: "Fast, reliable 24/7 emergency towing and roadside assistance in Surrey, British Columbia.",
+    title: "TowingNo.1 - 24/7 Emergency Towing BC",
+    description: "Fast, reliable 24/7 emergency towing and roadside assistance in British Columbia.",
   },
   robots: {
     index: true,

@@ -13,16 +13,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-5">
-            <Link href="/" className="block relative h-12 w-48">
+            <Link href="/" className="block">
               <Image
                 src="/logo.png"
                 alt="TowingNo.1"
-                fill
-                className="object-contain brightness-0 invert"
+                width={684}
+                height={365}
+                style={{ height: '56px', width: 'auto' }}
+                className="object-contain"
               />
             </Link>
             <p className="text-slate-400 leading-relaxed text-sm">
-              Your trusted partner for 24/7 emergency towing and roadside assistance in Surrey, BC. Fast, professional, and affordable.
+              Your trusted partner for 24/7 emergency towing and roadside assistance in BC. Fast, professional, and affordable.
             </p>
             {/* Social icons */}
             <div className="flex space-x-3">
@@ -78,7 +80,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
-                <span className="text-sm">Surrey, BC, Canada<br />Serving Greater Vancouver</span>
+                <span className="text-sm">British Columbia, Canada<br />Serving the Lower Mainland</span>
               </li>
               <li className="flex items-center gap-3">
                 <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
