@@ -7,14 +7,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "24/7 Emergency Towing BC | TowingNo.1 - We Are Coming To You",
     description: "Fast, reliable 24/7 emergency towing and roadside assistance in British Columbia.",
-    images: [
-      {
-        url: "https://towing-no-1.vercel.app/background_home.png",
-        width: 2752,
-        height: 1536,
-        alt: "TowingNo.1 tow truck - 24/7 Emergency Towing BC, We Are Coming To You"
-      }
-    ],
   },
 };
 
