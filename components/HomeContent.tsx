@@ -291,49 +291,8 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* ── Testimonials ───────────────────────────────────────────── */}
-      <section className="py-20 bg-slate-50">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-14"
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Reviews</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-              What Our Customers Say
-            </h2>
-          </motion.div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { body: "Called TowingNo.1 at 2 AM when my car broke down on the highway. They arrived in 20 minutes and had me home safely. Excellent service!", name: "Sarah M." },
-              { body: "Professional, friendly, and fast. The driver took great care of my vehicle. Will definitely use them again if needed.", name: "Michael T." },
-              { body: "Best towing company around! Fair prices and they really care about helping people. Highly recommend.", name: "Jennifer L." },
-            ].map((t, i) => (
-              <motion.div
-                key={t.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-[0_2px_16px_rgba(0,0,0,0.06)] border border-slate-100/80"
-              >
-                <div className="flex gap-0.5 mb-5">
-                  {Array.from({ length: 5 }).map((_, s) => (
-                    <svg key={s} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-amber-400">
-                      <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clipRule="evenodd" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-600 leading-relaxed mb-6 text-sm">"{t.body}"</p>
-                <p className="font-semibold text-gray-900 text-sm">— {t.name}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── Testimonials carousel ──────────────────────────────────── */}
+      <TestimonialsCarousel />
       {/* ── FAQ ───────────────────────────────────────────────── */}
       <FaqSection />
       {/* ── CTA Banner ─────────────────────────────────────────────── */}
@@ -365,6 +324,96 @@ export default function HomeContent() {
         </div>
       </section>
     </>
+  );
+}
+
+/* ─── Testimonials carousel ──────────────────────────────────── */
+const testimonials = [
+  { body: "Called TowingNo.1 at 2 AM when my car broke down on the highway. They arrived in 20 minutes and had me home safely. Excellent service!", name: "Sarah M.", title: "Verified Customer" },
+  { body: "Professional, friendly, and fast. The driver took great care of my vehicle. Will definitely use them again if needed.", name: "Michael T.", title: "Verified Customer" },
+  { body: "Best towing company around! Fair prices and they really care about helping people. Highly recommend.", name: "Jennifer L.", title: "Verified Customer" },
+  { body: "Got a flat tire on the highway at rush hour. They were there in under 25 minutes and had me on my way. Unbelievable response time!", name: "David K.", title: "Verified Customer" },
+  { body: "Locked my keys in the car at the mall. They opened it in minutes without any damage. Friendly and professional — saved my day!", name: "Lisa R.", title: "Verified Customer" },
+  { body: "Needed a battery boost early in the morning before work. Quick, easy, and priced fairly. Definitely calling them again.", name: "Tom W.", title: "Verified Customer" },
+  { body: "Had my car stuck in a ditch after a snowstorm. The team pulled it out carefully and got me moving again. Truly lifesavers!", name: "Amanda P.", title: "Verified Customer" },
+];
+
+function TestimonialsCarousel() {
+  const [isPaused, setIsPaused] = useState(false);
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+  // Duplicate for seamless infinite loop
+  const items = [...testimonials, ...testimonials];
+
+  return (
+    <section className="py-20 bg-slate-50 overflow-hidden">
+      <div className="container-custom mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Reviews</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+            What Our Customers Say
+          </h2>
+        </motion.div>
+      </div>
+
+      {/* Carousel track */}
+      <div
+        className="relative flex w-full select-none"
+        style={{ maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)" }}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => { setIsPaused(false); setActiveCard(null); }}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setTimeout(() => { setIsPaused(false); setActiveCard(null); }, 1800)}
+      >
+        <div
+          className="flex gap-5"
+          style={{
+            animation: "marquee 38s linear infinite",
+            animationPlayState: isPaused ? "paused" : "running",
+            width: "max-content",
+          }}
+        >
+          {items.map((t, i) => (
+            <div
+              key={i}
+              onClick={() => setActiveCard(activeCard === i ? null : i)}
+              className={`w-[300px] sm:w-[340px] shrink-0 bg-white rounded-2xl p-6 shadow-[0_2px_16px_rgba(0,0,0,0.07)] flex flex-col cursor-pointer transition-all duration-200 ${
+                activeCard === i
+                  ? "border-2 border-amber-400 shadow-[0_8px_32px_rgba(251,191,36,0.18)] -translate-y-1"
+                  : "border-2 border-slate-100 hover:border-amber-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:-translate-y-1"
+              }`}
+            >
+              {/* Stars */}
+              <div className="flex gap-0.5 mb-4">
+                {Array.from({ length: 5 }).map((_, s) => (
+                  <svg key={s} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-amber-400">
+                    <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clipRule="evenodd" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-600 leading-relaxed text-sm flex-1">&ldquo;{t.body}&rdquo;</p>
+              <div className="mt-5 pt-4 border-t border-slate-100 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-amber-400 flex items-center justify-center text-gray-900 font-bold text-sm shrink-0">
+                  {t.name.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900 text-sm leading-none">{t.name}</p>
+                  <p className="text-xs text-slate-400 mt-0.5">{t.title}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Pause indicator */}
+      {isPaused }
+    </section>
   );
 }
 

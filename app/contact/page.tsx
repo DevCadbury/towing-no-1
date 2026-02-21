@@ -187,13 +187,18 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="bg-navy-900 rounded-2xl h-[200px] w-full relative overflow-hidden flex items-center justify-center border border-navy-700">
-                <div className="absolute inset-0 bg-gradient-to-br from-navy-800 to-navy-950 opacity-80" />
-                <div className="bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10 relative z-10 text-center">
-                  <p className="font-bold text-white">Serving the Lower Mainland</p>
-                  <p className="text-sm text-slate-400">Fast response times guaranteed</p>
-                </div>
+              {/* Google Map */}
+              <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-card h-[260px] w-full">
+                <iframe
+                  title="TowingNo.1 Service Area – Lower Mainland BC"
+                  src="https://maps.google.com/maps?q=Metro+Vancouver,BC,Canada&t=m&z=10&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </motion.div>
           </div>
