@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: "Fast, reliable 24/7 emergency towing and roadside assistance in British Columbia.",
     images: [
       {
-        url: "https://towing-no-1.vercel.app/opengraph-image",
+        url: "https://towing-no-1.vercel.app/preview.jpg",
         width: 1200,
         height: 630,
         alt: "24/7 Emergency Towing BC | TowingNo.1 - We Are Coming To You"
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "24/7 Emergency Towing BC | TowingNo.1 - We Are Coming To You",
     description: "Fast, reliable 24/7 emergency towing and roadside assistance in British Columbia.",
-    images: ["https://towing-no-1.vercel.app/opengraph-image"],
+    images: ["https://towing-no-1.vercel.app/preview.jpg"],
   },
   robots: {
     index: true,

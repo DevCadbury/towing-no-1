@@ -80,28 +80,13 @@ export default function HomeContent() {
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative bg-navy-950">
 
-        {/* ── MOBILE: image at natural 16:9 — zero cropping ── */}
-        <div className="relative w-full aspect-[16/9] md:hidden">
-          <Image
-            src="/background_home.png"
-            alt="TowingNo.1 tow truck on the road"
-            fill
-            className="object-cover object-center"
-            priority
-            quality={90}
-            sizes="100vw"
-          />
-          {/* subtle darkening so truck stays vivid */}
-          <div className="absolute inset-0 bg-navy-950/30" />
-        </div>
-
-        {/* ── DESKTOP: full-viewport background ── */}
+        {/* ── DESKTOP ONLY: full-viewport background ── */}
         <div className="hidden md:block absolute inset-0">
           <Image
             src="/background_home.png"
             alt="TowingNo.1 tow truck on the road"
             fill
-            className="object-cover object-center"
+            className="object-cover object-[center_60%]"
             priority
             quality={90}
             sizes="100vw"
@@ -110,10 +95,10 @@ export default function HomeContent() {
           <div className="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-950/40 to-navy-950/10" />
         </div>
 
-        {/* ── Content — dark card on mobile, overlay on desktop ── */}
-        <div className="relative z-10 md:min-h-screen md:flex md:items-center bg-navy-950/90 md:bg-transparent">
-          <div className="w-full container-custom px-4 sm:px-6 lg:px-8 py-10 md:py-0 flex flex-col items-center text-center md:items-start md:text-left">
-          <div className="max-w-2xl">
+        {/* ── Content ── */}
+        <div className="relative z-10 md:min-h-screen md:flex md:items-center">
+          <div className="w-full container-custom px-4 sm:px-6 lg:px-8 pt-10 pb-0 md:py-0 flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="max-w-2xl w-full">
             {/* Eyebrow label */}
             <motion.span
               initial={{ opacity: 0, y: 12 }}
@@ -179,9 +164,30 @@ export default function HomeContent() {
               <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> Flat-rate pricing</span>
               <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> All vehicle types</span>
             </motion.div>
+
+            {/* ── MOBILE ONLY: truck image below content ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.72 }}
+              className="relative w-full aspect-[16/9] mt-8 md:hidden rounded-2xl overflow-hidden"
+            >
+              <Image
+                src="/background_home.png"
+                alt="TowingNo.1 tow truck on the road"
+                fill
+                className="object-cover object-center"
+                priority
+                quality={90}
+                sizes="100vw"
+              />
+            </motion.div>
           </div>
           </div>
         </div>
+
+        {/* bottom padding for mobile so image isn't flush with next section */}
+        <div className="h-8 md:hidden" />
       </section>
 
       {/* ── Services ───────────────────────────────────────────────── */}
@@ -282,7 +288,7 @@ export default function HomeContent() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
             {[
               { stat: "24/7", label: "Always Available", sub: "Round-the-clock, every day of the year", delay: 0.1 },
-              { stat: null, label: "Fast Response", sub: "Average response time under 30 minutes", delay: 0.2, counter: true, value: 30, suffix: " min" },
+              { stat: null, label: "Fast Response", sub: "Average response time under 15 minutes", delay: 0.2, counter: true, value: 15, suffix: " min" },
               { stat: null, label: "Years Experience", sub: "Serving BC communities since 2009", delay: 0.3, counter: true, value: 15, suffix: "+" },
               { stat: "$", label: "Affordable Rates", sub: "Flat-rate pricing, no hidden fees", delay: 0.4 },
             ].map((item, i) => (
