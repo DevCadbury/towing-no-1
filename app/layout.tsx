@@ -12,8 +12,8 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.towing-no-1.com'),
   title: {
-    default: "TowingNo.1 - 24/7 Emergency Towing BC | Roadside Assistance",
-    template: "%s | TowingNo.1"
+    default: "TowingNo.1 – We Come to You | 24/7 Emergency Towing BC",
+    template: "%s | TowingNo.1 – We Come to You"
   },
   description: "Fast, reliable 24/7 emergency towing and roadside assistance in British Columbia. Affordable towing services, battery boost, flat tire help, and vehicle recovery.",
   keywords: ["emergency towing BC", "24/7 roadside assistance", "affordable towing BC", "tow truck BC", "vehicle recovery BC", "towing Lower Mainland"],
@@ -28,21 +28,22 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://www.towing-no-1.com",
     siteName: "TowingNo.1",
-    title: "TowingNo.1 - 24/7 Emergency Towing BC",
+    title: "TowingNo.1 – We Come to You | 24/7 Emergency Towing BC",
     description: "Fast, reliable 24/7 emergency towing and roadside assistance in British Columbia.",
     images: [
       {
-        url: "/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "TowingNo.1 - Emergency Towing BC"
+        url: "/background_home.png",
+        width: 2752,
+        height: 1536,
+        alt: "TowingNo.1 tow truck – We Come to You, 24/7 Emergency Towing BC"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "TowingNo.1 - 24/7 Emergency Towing BC",
+    title: "TowingNo.1 – We Come to You | 24/7 Emergency Towing BC",
     description: "Fast, reliable 24/7 emergency towing and roadside assistance in British Columbia.",
+    images: ["/background_home.png"],
   },
   robots: {
     index: true,

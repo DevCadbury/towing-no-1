@@ -78,26 +78,42 @@ export default function HomeContent() {
   return (
     <>
       {/* ── Hero ───────────────────────────────────────────────────── */}
-      <section
-        className="relative flex items-center justify-center overflow-hidden bg-navy-950 py-28 md:py-0 md:min-h-screen"
-      >
-        {/* Background: cover on all sizes, anchored to top on mobile so the truck is visible */}
-        <Image
-          src="/background_home.png"
-          alt="Emergency Towing BC"
-          fill
-          className="object-cover object-top md:object-center"
-          priority
-          quality={90}
-          sizes="100vw"
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-navy-950/50 md:bg-black/55" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-950/30 to-transparent md:from-black/70 md:via-black/30 md:to-transparent" />
+      <section className="relative bg-navy-950">
 
-        {/* Content */}
-        <div className="relative z-10 container-custom px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+        {/* ── MOBILE: image at natural 16:9 — zero cropping ── */}
+        <div className="relative w-full aspect-[16/9] md:hidden">
+          <Image
+            src="/background_home.png"
+            alt="TowingNo.1 tow truck on the road"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={90}
+            sizes="100vw"
+          />
+          {/* subtle darkening so truck stays vivid */}
+          <div className="absolute inset-0 bg-navy-950/30" />
+        </div>
+
+        {/* ── DESKTOP: full-viewport background ── */}
+        <div className="hidden md:block absolute inset-0">
+          <Image
+            src="/background_home.png"
+            alt="TowingNo.1 tow truck on the road"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={90}
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-navy-950/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-950/40 to-navy-950/10" />
+        </div>
+
+        {/* ── Content — dark card on mobile, overlay on desktop ── */}
+        <div className="relative z-10 md:min-h-screen md:flex md:items-center bg-navy-950/90 md:bg-transparent">
+          <div className="w-full container-custom px-4 sm:px-6 lg:px-8 py-10 md:py-0 flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="max-w-2xl">
             {/* Eyebrow label */}
             <motion.span
               initial={{ opacity: 0, y: 12 }}
@@ -112,17 +128,18 @@ export default function HomeContent() {
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.06] tracking-tight mb-6 [text-shadow:0_2px_24px_rgba(0,0,0,0.7)]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.06] tracking-tight mb-6 [text-shadow:0_2px_24px_rgba(0,0,0,0.75)]"
             >
-              24/7 Emergency <span className="text-amber-400 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">Towing Service</span><br />
-              – We Come to You!
+              24/7 Emergency{" "}
+              <span className="text-amber-400 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">Towing Service</span>
+              <br />– We Come to You!
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.32 }}
-              className="text-lg md:text-xl text-white/90 mb-10 max-w-xl leading-relaxed [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]"
+              className="text-base md:text-xl text-white/90 mb-10 max-w-xl leading-relaxed [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]"
             >
               Fast, professional roadside assistance across the Lower Mainland — day or night, whatever the situation.
             </motion.p>
@@ -131,7 +148,7 @@ export default function HomeContent() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.44 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             >
               <a
                 href="tel:+16045551234"
@@ -162,6 +179,7 @@ export default function HomeContent() {
               <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> Flat-rate pricing</span>
               <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> All vehicle types</span>
             </motion.div>
+          </div>
           </div>
         </div>
       </section>

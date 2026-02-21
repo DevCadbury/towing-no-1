@@ -35,7 +35,8 @@ export default function Contact() {
             src="https://images.unsplash.com/photo-1516733968668-dbdce39c4651?q=80&w=2000"
             alt="Contact TowingNo.1"
             fill
-            className="object-cover opacity-25"
+            className="object-cover object-top md:object-center opacity-25"
+            sizes="100vw"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/50 to-navy-950" />
@@ -142,40 +143,27 @@ export default function Contact() {
                 <div className="space-y-4">
                   {[
                     {
-                      icon: (
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                      ),
+                      icon: "/assets/phone-call.png",
                       title: "Phone",
                       sub: "24/7 Emergency Dispatch",
                       content: <a href="tel:+16045551234" className="text-xl font-bold text-fire hover:text-amber-600 transition-colors">(604) 555-1234</a>,
                     },
                     {
-                      icon: (
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                        </svg>
-                      ),
+                      icon: "/assets/message.png",
                       title: "Email",
                       sub: "For non-urgent inquiries",
                       content: <a href="mailto:info@towingno1.ca" className="text-lg font-medium text-navy-900 hover:text-amber-600 transition-colors">info@towingno1.ca</a>,
                     },
                     {
-                      icon: (
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                        </svg>
-                      ),
+                      icon: "/assets/map.png",
                       title: "Service Area",
                       sub: "",
                       content: <p className="text-slate-500 text-sm">Proudly serving Delta, White Rock, Langley, Burnaby, and surrounding areas in British Columbia.</p>,
                     },
                   ].map((item, i) => (
                     <div key={i} className="card !p-5 flex items-start gap-5">
-                      <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center flex-shrink-0 text-white shadow-lg">
-                        {item.icon}
+                      <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg p-2.5">
+                        <Image src={item.icon} alt={item.title} width={28} height={28} className="object-contain brightness-0 invert" />
                       </div>
                       <div>
                         <h3 className="text-lg font-bold text-navy-900 mb-0.5">{item.title}</h3>

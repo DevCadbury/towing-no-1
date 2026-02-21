@@ -14,7 +14,8 @@ export default function About() {
             src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2000"
             alt="About TowingNo.1"
             fill
-            className="object-cover opacity-30"
+            className="object-cover object-top md:object-center opacity-30"
+            sizes="100vw"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/50 to-navy-950" />
