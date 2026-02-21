@@ -14,7 +14,7 @@ export default function BespokeFeatures() {
     const features = [
         {
             title: "Rapid Response",
-            desc: "Our GPS-dispatched fleet ensures we're on-site in 30 mins or less.",
+            desc: "Our GPS-dispatched fleet ensures we're on-site in 15 mins or less.",
             IconComponent: ThunderboltIcon,
         },
         {

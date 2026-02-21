@@ -159,7 +159,7 @@ export default function HomeContent() {
               transition={{ duration: 0.5, delay: 0.62 }}
               className="mt-10 grid grid-cols-2 sm:flex sm:flex-wrap gap-x-8 gap-y-3 text-white text-sm font-semibold [text-shadow:0_1px_8px_rgba(0,0,0,0.7)]"
             >
-              <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> &lt;30 min response</span>
+              <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> &lt;15 min response</span>
               <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> Licensed &amp; insured</span>
               <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> Flat-rate pricing</span>
               <span className="flex items-center gap-1.5"><span className="text-amber-400">✓</span> All vehicle types</span>
@@ -445,7 +445,7 @@ function TestimonialsCarousel() {
 const faqs = [
   {
     q: "How quickly can you reach me?",
-    a: "Our average response time is under 30 minutes. We dispatch the closest available driver the moment you call — day or night, weekends and holidays included.",
+    a: "Our average response time is under 15 minutes. We dispatch the closest available driver the moment you call — day or night, weekends and holidays included.",
   },
   {
     q: "Do you tow all types of vehicles?",

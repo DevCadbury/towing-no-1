@@ -20,7 +20,7 @@ export default function Contact() {
   };
 
   const faqs = [
-    { q: "How fast can you get to me?", a: "We aim for a 30-minute arrival time or less, depending on traffic and your location." },
+    { q: "How fast can you get to me?", a: "We aim for a 15-minute arrival time or less, depending on traffic and your location." },
     { q: "Do you accept credit cards?", a: "Yes, our drivers carry wireless terminals and accept all major credit cards, debit, and cash." },
     { q: "Can you tow my motorcycle?", a: "Absolutely. We have specialized equipment to safely tow motorcycles without damage." },
     { q: "Are you insured?", a: "Yes, we are fully licensed and insured. Your vehicle is protected while in our care." },
