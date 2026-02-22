@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Counter from "@/components/Counter";
+import CallDialog from "@/components/CallDialog";
 import { useState } from "react";
 
 const services = [
@@ -75,6 +76,7 @@ const fadeUp = {
 };
 
 export default function HomeContent() {
+  const [callOpen, setCallOpen] = useState(false);
   return (
     <>
       {/* ── Hero ───────────────────────────────────────────────────── */}
@@ -135,15 +137,15 @@ export default function HomeContent() {
               transition={{ duration: 0.5, delay: 0.44 }}
               className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             >
-              <a
-                href="tel:+16045551234"
+              <button
+                onClick={() => setCallOpen(true)}
                 className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-gray-900 font-bold py-4 px-8 rounded-xl text-base transition-all duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0">
                   <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
                 </svg>
-                Call Now: (604) 555-1234
-              </a>
+                Call Now
+              </button>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl text-base border border-white/25 transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5"
@@ -335,18 +337,19 @@ export default function HomeContent() {
             <p className="text-white/60 mb-10 text-base">
               Available 24 hours a day, 7 days a week — including holidays.
             </p>
-            <a
-              href="tel:+16045551234"
+            <button
+              onClick={() => setCallOpen(true)}
               className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-gray-900 font-bold py-4 px-10 rounded-xl text-base transition-all duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                 <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
               </svg>
-              (604) 555-1234
-            </a>
+              Call Now
+            </button>
           </motion.div>
         </div>
       </section>
+      <CallDialog open={callOpen} onClose={() => setCallOpen(false)} />
     </>
   );
 }
@@ -479,6 +482,7 @@ const faqs = [
 
 function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [callOpen, setCallOpen] = useState(false);
 
   return (
     <section className="py-24 bg-white">
@@ -569,18 +573,19 @@ function FaqSection() {
             className="mt-12 flex flex-col sm:flex-row items-center gap-4 bg-slate-50 rounded-2xl px-6 py-5 border border-slate-100"
           >
             <p className="text-sm text-gray-600 flex-1">Still have a question? We’re available 24/7 and happy to help.</p>
-            <a
-              href="tel:+16045551234"
+            <button
+              onClick={() => setCallOpen(true)}
               className="shrink-0 inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-gray-900 font-bold text-sm py-2.5 px-5 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                 <path fillRule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 16.352V17.5a1.5 1.5 0 0 1-1.5 1.5H15c-8.284 0-15-6.716-15-15V3.5Z" clipRule="evenodd" />
               </svg>
-              Call (604) 555-1234
-            </a>
+              Call Now
+            </button>
           </motion.div>
         </div>
       </div>
+      <CallDialog open={callOpen} onClose={() => setCallOpen(false)} />
     </section>
   );
 }

@@ -146,7 +146,12 @@ export default function Contact() {
                       icon: "/assets/phone-call.png",
                       title: "Phone",
                       sub: "24/7 Emergency Dispatch",
-                      content: <a href="tel:+16045551234" className="text-xl font-bold text-fire hover:text-amber-600 transition-colors">(604) 555-1234</a>,
+                      content: (
+                        <div className="flex flex-col gap-1 mt-0.5">
+                          <a href="tel:+17788591457" className="text-xl font-bold text-fire hover:text-amber-600 transition-colors">(778) 859-1457</a>
+                          <a href="tel:+16045551234" className="text-base font-semibold text-slate-500 hover:text-amber-600 transition-colors">(604) 555-1234</a>
+                        </div>
+                      ),
                     },
                     {
                       icon: "/assets/message.png",

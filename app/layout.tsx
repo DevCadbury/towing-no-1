@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -57,11 +58,49 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={outfit.className}>
         <Navbar />
         <main>{children}</main>
         <Footer />
+
+        {/* ── Reamaze live-chat widget ──────────────────────────────── */}
+        <Script id="reamaze-config" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
+          var _support = _support || { 'ui': {}, 'user': {} };
+          _support['account'] = '14d9241b-cb1a-4379-a0d3-f9cb700e9592';
+          _support['ui']['contactMode'] = 'mixed';
+          _support['ui']['enableKb'] = 'true';
+          _support['ui']['mailbox'] = '76149070';
+          _support['ui']['styles'] = {
+            widgetColor: '#a6170e',
+            gradient: true,
+          };
+          _support['ui']['shoutboxFacesMode'] = '';
+          _support['ui']['widget'] = {
+            allowBotProcessing: 'false',
+            slug: 'towing-no-1',
+            label: {
+              text: '\\u{1F44B} Hi there! Need roadside help?\\nWe\u2019re available 24/7 across the Lower Mainland.\\nHow can we assist you today?',
+              mode: 'notification',
+              delay: 3,
+              duration: 30,
+              primary: '\\u{1F44B} Hi there! Need roadside help?\\nWe\u2019re available 24/7 across the Lower Mainland with an average response time under 15 minutes.\\n\\nHow can we help you today?',
+              secondary: '',
+              sound: true,
+            },
+            position: 'bottom-right',
+          };
+          _support['ui']['overrides'] = _support['ui']['overrides'] || {};
+          _support['ui']['overrides']['confirmationMessage'] = 'Thank you! We\u2019ve received your request.\\nA dispatcher is reviewing your details now.\\nWe\u2019ll respond shortly with your ETA and pricing.\\n\\nIf this is urgent, please tap Call Now for immediate assistance.';
+          _support['apps'] = {
+            recentConversations: {},
+            faq: { enabled: true },
+          };
+        `}} />
+        <Script
+          src="https://cdn.reamaze.com/assets/reamaze-loader.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
