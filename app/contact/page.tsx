@@ -26,6 +26,60 @@ export default function Contact() {
     { q: "Are you insured?", a: "Yes, we are fully licensed and insured. Your vehicle is protected while in our care." },
   ];
 
+  const contactItems = [
+    {
+      icon: (
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7">
+          <path d="M10 14C10 11.8 11.8 10 14 10h3.5a2 2 0 0 1 1.9 1.37l2 6a2 2 0 0 1-.57 2.14L18.7 21.4a22 22 0 0 0 7.9 7.9l1.9-2.14a2 2 0 0 1 2.14-.57l6 2A2 2 0 0 1 38 30.5V34c0 2.2-1.8 4-4 4h-2C16.5 38 10 31.5 10 16v-2Z" fill="url(#ph1)" />
+          <defs>
+            <linearGradient id="ph1" x1="10" y1="10" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#38bdf8"/>
+              <stop offset="1" stopColor="#3b82f6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      ),
+      title: "Phone",
+      sub: "24/7 Emergency Dispatch",
+      content: (
+        <div className="flex flex-col gap-1 mt-0.5">
+          <a href="tel:+17788591457" className="text-xl font-bold text-fire hover:text-amber-600 transition-colors">(778) 859-1457</a>
+          <a href="tel:+16045551234" className="text-base font-semibold text-slate-500 hover:text-amber-600 transition-colors">(604) 555-1234</a>
+        </div>
+      ),
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7">
+          <rect x="6" y="12" width="36" height="26" rx="4" fill="#818cf8"/>
+          <path d="M6 16l18 13L42 16" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      title: "Email",
+      sub: "For non-urgent inquiries",
+      content: <a href="mailto:info@towingno1.ca" className="text-lg font-medium text-navy-900 hover:text-amber-600 transition-colors">info@towingno1.ca</a>,
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7">
+          <ellipse cx="24" cy="34" rx="10" ry="3" fill="#fbbf24" opacity="0.4"/>
+          <path d="M24 4C17.4 4 12 9.4 12 16c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12Z" fill="#ef4444"/>
+          <path d="M24 4C17.4 4 12 9.4 12 16c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12Z" fill="url(#mp1)"/>
+          <circle cx="24" cy="16" r="5" fill="#fff"/>
+          <defs>
+            <linearGradient id="mp1" x1="12" y1="4" x2="36" y2="40" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#f87171"/>
+              <stop offset="1" stopColor="#dc2626"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      ),
+      title: "Service Area",
+      sub: "",
+      content: <p className="text-slate-500 text-sm">Proudly serving Delta, White Rock, Langley, Burnaby, and surrounding areas in British Columbia.</p>,
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -141,34 +195,10 @@ export default function Contact() {
               <div>
                 <h2 className="text-2xl font-bold mb-6 text-navy-900">Contact Information</h2>
                 <div className="space-y-4">
-                  {[
-                    {
-                      icon: "/assets/phone-call.png",
-                      title: "Phone",
-                      sub: "24/7 Emergency Dispatch",
-                      content: (
-                        <div className="flex flex-col gap-1 mt-0.5">
-                          <a href="tel:+17788591457" className="text-xl font-bold text-fire hover:text-amber-600 transition-colors">(778) 859-1457</a>
-                          <a href="tel:+16045551234" className="text-base font-semibold text-slate-500 hover:text-amber-600 transition-colors">(604) 555-1234</a>
-                        </div>
-                      ),
-                    },
-                    {
-                      icon: "/assets/message.png",
-                      title: "Email",
-                      sub: "For non-urgent inquiries",
-                      content: <a href="mailto:info@towingno1.ca" className="text-lg font-medium text-navy-900 hover:text-amber-600 transition-colors">info@towingno1.ca</a>,
-                    },
-                    {
-                      icon: "/assets/map.png",
-                      title: "Service Area",
-                      sub: "",
-                      content: <p className="text-slate-500 text-sm">Proudly serving Delta, White Rock, Langley, Burnaby, and surrounding areas in British Columbia.</p>,
-                    },
-                  ].map((item, i) => (
+                  {contactItems.map((item, i) => (
                     <div key={i} className="card !p-5 flex items-start gap-5">
-                      <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg p-2.5">
-                        <Image src={item.icon} alt={item.title} width={28} height={28} className="object-contain brightness-0 invert" />
+                      <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md border border-slate-100 p-2">
+                        {item.icon}
                       </div>
                       <div>
                         <h3 className="text-lg font-bold text-navy-900 mb-0.5">{item.title}</h3>
