@@ -179,12 +179,7 @@ export default function Blog() {
               </svg>
               (778) 859-1457
             </a>
-            <a
-              href="tel:+16045551234"
-              className="btn-secondary inline-flex items-center gap-2 text-lg py-4 px-10"
-            >
-              (604) 555-1234
-            </a>
+
           </div>
         </div>
       </section>

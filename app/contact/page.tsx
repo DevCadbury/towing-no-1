@@ -7,16 +7,32 @@ import { useState } from "react";
 export default function Contact() {
   const [formState, setFormState] = useState({
     name: "",
+    email: "",
     phone: "",
-    location: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thanks for contacting us! We'll call you immediately.");
-    setFormState({ name: "", phone: "", location: "", message: "" });
+    setStatus("submitting");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.error || "Submission failed.");
+      setStatus("success");
+      setFormState({ name: "", email: "", phone: "", message: "" });
+    } catch (err: unknown) {
+      setStatus("error");
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    }
   };
 
   const faqs = [
@@ -42,10 +58,7 @@ export default function Contact() {
       title: "Phone",
       sub: "24/7 Emergency Dispatch",
       content: (
-        <div className="flex flex-col gap-1 mt-0.5">
-          <a href="tel:+17788591457" className="text-xl font-bold text-fire hover:text-amber-600 transition-colors">(778) 859-1457</a>
-          <a href="tel:+16045551234" className="text-base font-semibold text-slate-500 hover:text-amber-600 transition-colors">(604) 555-1234</a>
-        </div>
+        <a href="tel:+17788591457" className="text-xl font-bold text-fire hover:text-amber-600 transition-colors">(778) 859-1457</a>
       ),
     },
     {
@@ -57,7 +70,7 @@ export default function Contact() {
       ),
       title: "Email",
       sub: "For non-urgent inquiries",
-      content: <a href="mailto:info@towingno1.ca" className="text-lg font-medium text-navy-900 hover:text-amber-600 transition-colors">info@towingno1.ca</a>,
+      content: <a href="mailto:info@towing-no-1.com" className="text-lg font-medium text-navy-900 hover:text-amber-600 transition-colors">info@towing-no-1.com</a>,
     },
     {
       icon: (
@@ -128,43 +141,56 @@ export default function Contact() {
             >
               <h2 className="text-2xl font-bold mb-2 text-navy-900">Send us a Message</h2>
               <p className="text-slate-400 mb-8 text-sm">We&apos;ll get back to you within minutes.</p>
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block text-navy-900 font-medium mb-2 text-sm">Your Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all bg-slate-50/50"
-                    placeholder="John Doe"
-                    value={formState.name}
-                    onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  />
+              {status === "success" ? (
+                <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
+                  <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center">
+                    <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-navy-900">Message Sent</h3>
+                  <p className="text-slate-500 text-sm max-w-xs">Thank you. We have received your request and will be in touch shortly. A confirmation has been sent to your email.</p>
+                  <button onClick={() => setStatus("idle")} className="mt-2 text-sm text-amber-600 hover:underline font-medium">Send another message</button>
                 </div>
+              ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid md:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="phone" className="block text-navy-900 font-medium mb-2 text-sm">Phone Number</label>
+                    <label htmlFor="name" className="block text-navy-900 font-medium mb-2 text-sm">Full Name</label>
                     <input
-                      type="tel"
-                      id="phone"
+                      type="text"
+                      id="name"
                       required
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all bg-slate-50/50"
-                      placeholder="(604) 555-0123"
-                      value={formState.phone}
-                      onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                      placeholder="John Doe"
+                      value={formState.name}
+                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     />
                   </div>
                   <div>
-                    <label htmlFor="location" className="block text-navy-900 font-medium mb-2 text-sm">Location (Optional)</label>
+                    <label htmlFor="email" className="block text-navy-900 font-medium mb-2 text-sm">Email Address</label>
                     <input
-                      type="text"
-                      id="location"
+                      type="email"
+                      id="email"
+                      required
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all bg-slate-50/50"
-                      placeholder="Your city, BC"
-                      value={formState.location}
-                      onChange={(e) => setFormState({ ...formState, location: e.target.value })}
+                      placeholder="you@example.com"
+                      value={formState.email}
+                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     />
                   </div>
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-navy-900 font-medium mb-2 text-sm">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all bg-slate-50/50"
+                    placeholder="(778) 555-0100"
+                    value={formState.phone}
+                    onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                  />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-navy-900 font-medium mb-2 text-sm">How can we help?</label>
@@ -178,10 +204,18 @@ export default function Contact() {
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                   />
                 </div>
-                <button type="submit" className="w-full btn-primary py-4 text-lg">
-                  Send Message
+                {status === "error" && (
+                  <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{errorMsg}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={status === "submitting"}
+                  className="w-full btn-primary py-4 text-lg disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {status === "submitting" ? "Sending..." : "Send Message"}
                 </button>
               </form>
+              )}
             </motion.div>
 
             {/* Contact Info */}

@@ -17,7 +17,21 @@ export const metadata: Metadata = {
     template: "%s | TowingNo.1 - We Are Coming To You"
   },
   description: "Fast, reliable 24/7 emergency towing and roadside assistance in British Columbia. Affordable towing services, battery boost, flat tire help, and vehicle recovery.",
-  keywords: ["emergency towing BC", "24/7 roadside assistance", "affordable towing BC", "tow truck BC", "vehicle recovery BC", "towing Lower Mainland"],
+  keywords: [
+    "emergency towing BC",
+    "24/7 roadside assistance BC",
+    "affordable towing Lower Mainland",
+    "tow truck Vancouver",
+    "vehicle recovery BC",
+    "towing Delta",
+    "towing White Rock",
+    "towing Langley",
+    "towing Burnaby",
+    "battery boost BC",
+    "flat tire help BC",
+    "roadside assistance Surrey",
+    "TowingNo1",
+  ],
   authors: [{ name: "TowingNo.1" }],
   icons: {
     icon: [{ url: '/logo.png', type: 'image/png' }],
@@ -59,6 +73,54 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/logo.png" type="image/png" sizes="any" />
+        <link rel="shortcut icon" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="canonical" href="https://towing-no-1.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "https://towing-no-1.com",
+            "name": "TowingNo.1",
+            "description": "24/7 emergency towing and roadside assistance in British Columbia. Serving Delta, White Rock, Langley, Burnaby and the Lower Mainland.",
+            "url": "https://towing-no-1.com",
+            "telephone": "+17788591457",
+            "email": "info@towing-no-1.com",
+            "image": "https://towing-no-1.vercel.app/preview.jpg",
+            "logo": "https://towing-no-1.vercel.app/logo.png",
+            "priceRange": "$$",
+            "openingHours": "Mo-Su 00:00-23:59",
+            "areaServed": [
+              "Delta, BC",
+              "White Rock, BC",
+              "Langley, BC",
+              "Burnaby, BC",
+              "Surrey, BC",
+              "Lower Mainland, BC"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressRegion": "BC",
+              "addressCountry": "CA"
+            },
+            "sameAs": [
+              "https://towing-no-1.com",
+              "https://towing-no-1.vercel.app"
+            ],
+            "serviceType": [
+              "Emergency Towing",
+              "Roadside Assistance",
+              "Battery Boost",
+              "Flat Tire Change",
+              "Vehicle Recovery",
+              "Lockout Service"
+            ]
+          }) }}
+        />
+      </head>
       <body className={outfit.className}>
         <Navbar />
         <main>{children}</main>

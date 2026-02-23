@@ -211,13 +211,7 @@ href="tel:+17788591457"
               </svg>
               (778) 859-1457
             </a>
-            &nbsp;&nbsp;
-            <a
-              href="tel:+16045551234"
-              className="inline-flex items-center gap-3 btn-secondary text-lg py-4 px-10 !rounded-full"
-            >
-              (604) 555-1234
-            </a>
+
           </motion.div>
         </div>
       </section>

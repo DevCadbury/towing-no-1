@@ -218,12 +218,7 @@ export default function ServicesContent() {
                 </svg>
                 (778) 859-1457
               </a>
-              <a
-                href="tel:+16045551234"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl text-base border border-white/25 transition-all duration-200 hover:-translate-y-0.5"
-              >
-                (604) 555-1234
-              </a>
+
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-10 rounded-xl text-base border border-white/25 transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5"
