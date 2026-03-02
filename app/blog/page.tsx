@@ -1,67 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
   title: "Blog - Towing Tips & Road Safety | TowingNo.1 BC",
   description: "Read helpful articles about vehicle maintenance, road safety, and towing tips from the experts at TowingNo.1 in BC.",
+  alternates: {
+    canonical: "https://towing-no-1.com/blog",
+  },
   openGraph: {
-    title: "TowingNo.1 Blog - Road Safety & Towing Tips",
+    type: "website",
+    url: "https://towing-no-1.com/blog",
+    title: "Blog - Towing Tips & Road Safety | TowingNo.1 BC",
+    description: "Expert advice on vehicle maintenance, road safety, and emergency preparedness from BC's trusted towing company.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog - Towing Tips & Road Safety | TowingNo.1 BC",
     description: "Expert advice on vehicle maintenance, road safety, and emergency preparedness from BC's trusted towing company.",
   },
 };
-
-const blogPosts = [
-  {
-    id: 1,
-    title: "What to Do When Your Car Breaks Down on the Highway",
-    excerpt: "A step-by-step guide to staying safe when your vehicle breaks down on busy roads. Learn the essential safety measures every driver should know.",
-    date: "February 10, 2026",
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=800",
-    slug: "what-to-do-car-breaks-down-highway",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "How to Prepare Your Vehicle for Winter in BC",
-    excerpt: "Winter driving in British Columbia requires preparation. Discover essential maintenance tips to keep your vehicle running smoothly during cold weather.",
-    date: "February 5, 2026",
-    image: "https://images.unsplash.com/photo-1511994714008-b6d68a8b32c2?q=80&w=800",
-    slug: "prepare-vehicle-winter-bc",
-  },
-  {
-    id: 3,
-    title: "5 Signs Your Car Battery is Dying",
-    excerpt: "Don't get caught with a dead battery. Learn to recognize the warning signs that your car battery needs replacement before it fails.",
-    date: "January 28, 2026",
-    image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=800",
-    slug: "signs-car-battery-dying",
-  },
-  {
-    id: 4,
-    title: "Emergency Kit Essentials Every Driver Needs",
-    excerpt: "Be prepared for any roadside emergency with these must-have items. A well-stocked emergency kit can make all the difference.",
-    date: "January 20, 2026",
-    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=800",
-    slug: "emergency-kit-essentials",
-  },
-  {
-    id: 5,
-    title: "When to Call for a Tow vs. Fix it Yourself",
-    excerpt: "Some roadside issues can be handled yourself, while others require professional help. Learn when it's safe to DIY and when to call for assistance.",
-    date: "January 12, 2026",
-    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800",
-    slug: "when-call-tow-vs-fix-yourself",
-  },
-  {
-    id: 6,
-    title: "Understanding Different Types of Towing Services",
-    excerpt: "Not all towing is the same. Explore the different types of towing services available and when each one is appropriate for your situation.",
-    date: "January 5, 2026",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=800",
-    slug: "understanding-towing-services",
-  },
-];
 
 export default function Blog() {
   const featured = blogPosts.find((p) => p.featured);
@@ -119,6 +78,8 @@ export default function Blog() {
                     alt={post.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
