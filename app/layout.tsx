@@ -168,18 +168,6 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
 
-        {/* ── Google Analytics ─────────────────────────────────────── */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-30WWS5SMCS"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-30WWS5SMCS');
-        `}} />
-
         {/* ── Reamaze live-chat widget ──────────────────────────────── */}
         <Script id="reamaze-config" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
           var _support = _support || { 'ui': {}, 'user': {} };
@@ -217,6 +205,18 @@ export default function RootLayout({
           src="https://cdn.reamaze.com/assets/reamaze-loader.js"
           strategy="afterInteractive"
         />
+
+        {/* ── Google Analytics (GA4) ────────────────────────────────── */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-30WWS5SMCS"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-30WWS5SMCS');
+        `}} />
       </body>
     </html>
   );
