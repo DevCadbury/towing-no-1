@@ -132,34 +132,22 @@ export default function AboutContent() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                icon: (
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                ),
+                imageSrc: "/assets/Safety_First.png",
+                imageAlt: "Safety First",
                 title: "Safety First",
                 desc: "We never compromise on safety. Our drivers are trained to handle every situation with the utmost care for you, your vehicle, and other road users.",
-                gradient: "from-amber-400 to-amber-600",
               },
               {
-                icon: (
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                  </svg>
-                ),
+                imageSrc: "/assets/Rapid_Response.png",
+                imageAlt: "Rapid Response",
                 title: "Rapid Response",
                 desc: "We understand that time is of the essence. We invest in dispatch technology and strategic fleet positioning to get to you as fast as possible.",
-                gradient: "from-fire to-amber-500",
               },
               {
-                icon: (
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                ),
+                imageSrc: "/assets/Integrity.png",
+                imageAlt: "Integrity",
                 title: "Integrity",
                 desc: "Honest pricing and transparent communication. No hidden fees or surprise charges. We treat you with the respect you deserve.",
-                gradient: "from-amber-500 to-fire",
               },
             ].map((value, i) => (
               <motion.div
@@ -168,10 +156,16 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="card group hover:shadow-card-hover"
+                className="card group hover:shadow-card-hover flex flex-col h-full"
               >
-                <div className={`w-14 h-14 bg-gradient-to-br ${value.gradient} rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  {value.icon}
+                <div className="relative w-20 h-20 rounded-2xl overflow-hidden mb-6 bg-white border border-slate-200 shadow-sm">
+                  <Image
+                    src={value.imageSrc}
+                    alt={value.imageAlt}
+                    fill
+                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                    sizes="80px"
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-navy-900">{value.title}</h3>
                 <p className="text-slate-500 leading-relaxed">{value.desc}</p>
@@ -203,13 +197,13 @@ export default function AboutContent() {
               Experience the difference of a towing service that puts you first.
             </p>
             <a
-              href="tel:+17788591457"
+              href="tel:+17788380014"
               className="inline-flex items-center gap-3 btn-amber text-lg py-4 px-12 !rounded-full shadow-glow-amber"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              (778) 859-1457
+              (778) 838-0014
             </a>
           </motion.div>
         </div>

@@ -66,7 +66,7 @@ export default function ContactPage() {
 ### Meta Description
 - Property: `metadata.description`
 - **Rules:** 120–155 characters. One call-to-action. Include phone number or service area.
-- **Example:** `"Fast 24/7 emergency towing in Delta, BC. Call TowingNo.1 at (778) 859-1457 for battery boost, flat tire, lockout, and vehicle recovery."`
+- **Example:** `"Fast 24/7 emergency towing in Delta, BC. Call TowingNo.1 at (778) 838-0014 for battery boost, flat tire, lockout, and vehicle recovery."`
 
 ### Open Graph
 Update `openGraph.title`, `openGraph.description`, and `openGraph.url` to match the page title/description and page canonical URL. The OG image at `https://towing-no-1.com/preview.jpg` is used sitewide — replace with a page-specific image if available.

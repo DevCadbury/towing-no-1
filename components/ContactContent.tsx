@@ -58,7 +58,7 @@ export default function ContactContent() {
       title: "Phone",
       sub: "24/7 Emergency Dispatch",
       content: (
-        <a href="tel:+17788591457" className="text-xl font-bold text-fire hover:text-amber-600 transition-colors">(778) 859-1457</a>
+        <a href="tel:+17788380014" className="text-xl font-bold text-fire hover:text-amber-600 transition-colors">(778) 838-0014</a>
       ),
     },
     {

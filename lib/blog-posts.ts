@@ -37,7 +37,7 @@ If you carry emergency triangles or flares, place them 30–60 metres behind you
 
 ## Step 4: Call for Help
 
-In BC, dial **#77** on your cell to reach RCMP and highway patrol, or call us directly at **(778) 859-1457** for immediate 24/7 towing and roadside assistance. Share your exact location, the highway number, and the nearest kilometre marker if visible.
+In BC, dial **#77** on your cell to reach RCMP and highway patrol, or call us directly at **(778) 838-0014** for immediate 24/7 towing and roadside assistance. Share your exact location, the highway number, and the nearest kilometre marker if visible.
 
 ## Step 5: Wait Safely
 
@@ -81,7 +81,7 @@ A well-stocked kit should include: ice scraper and snow brush, jumper cables or 
 
 ---
 
-**Need a battery boost or stuck in snow? Call TowingNo.1 at (778) 859-1457 — we're available 24/7 across the Lower Mainland.**
+**Need a battery boost or stuck in snow? Call TowingNo.1 at (778) 838-0014 — we're available 24/7 across the Lower Mainland.**
     `,
   },
   {
@@ -117,7 +117,7 @@ Car batteries typically last 3–5 years in the Lower Mainland climate. If yours
 
 ---
 
-**Battery dead? TowingNo.1 offers 24/7 battery boost and jump-start service across Delta, Surrey, Langley, White Rock, and Burnaby. Call (778) 859-1457.**
+**Battery dead? TowingNo.1 offers 24/7 battery boost and jump-start service across Delta, Surrey, Langley, White Rock, and Burnaby. Call (778) 838-0014.**
     `,
   },
   {
@@ -166,7 +166,7 @@ Whether you're driving through the Lower Mainland or heading up to Whistler, a r
 
 ---
 
-**Even with the best kit, some situations require professional help. Save TowingNo.1 in your contacts: (778) 859-1457 — available 24/7 across the Lower Mainland.**
+**Even with the best kit, some situations require professional help. Save TowingNo.1 in your contacts: (778) 838-0014 — available 24/7 across the Lower Mainland.**
     `,
   },
   {
@@ -202,7 +202,7 @@ Not every breakdown needs a tow truck — but knowing the difference can save yo
 
 ---
 
-**TowingNo.1 is available 24/7 at (778) 859-1457. We serve Delta, Surrey, Langley, Burnaby, White Rock, and all of Metro Vancouver.**
+**TowingNo.1 is available 24/7 at (778) 838-0014. We serve Delta, Surrey, Langley, Burnaby, White Rock, and all of Metro Vancouver.**
     `,
   },
   {
@@ -245,7 +245,7 @@ Not technically a tow — winching uses a cable and pulley system to drag a stuc
 
 ---
 
-**TowingNo.1 operates flatbed, wheel-lift, and heavy-duty trucks across the Lower Mainland. Call (778) 859-1457 for fast, professional service any time of day.**
+**TowingNo.1 operates flatbed, wheel-lift, and heavy-duty trucks across the Lower Mainland. Call (778) 838-0014 for fast, professional service any time of day.**
     `,
   },
 ];

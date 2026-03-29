@@ -167,7 +167,7 @@ function buildConfirmationEmail(name: string, email: string, phone: string, mess
               </p>
               <p style="margin:12px 0 0;color:#374151;font-size:14px;line-height:1.8;">
                 If your situation requires immediate assistance, please call us directly at
-                <a href="tel:+17788591457" style="color:#d97706;text-decoration:none;font-weight:600;">(778) 859-1457</a>.
+                <a href="tel:+17788380014" style="color:#d97706;text-decoration:none;font-weight:600;">(778) 838-0014</a>.
                 We are available 24 hours a day, 7 days a week.
               </p>
             </td>
@@ -224,7 +224,7 @@ function buildConfirmationEmail(name: string, email: string, phone: string, mess
                 <tr>
                   <td style="padding:4px 0;font-size:13px;color:#374151;">Phone:</td>
                   <td style="padding:4px 0 4px 10px;font-size:13px;">
-                    <a href="tel:+17788591457" style="color:#d97706;text-decoration:none;font-weight:600;">(778) 859-1457</a>
+                    <a href="tel:+17788380014" style="color:#d97706;text-decoration:none;font-weight:600;">(778) 838-0014</a>
                   </td>
                 </tr>
                 <tr>

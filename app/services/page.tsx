@@ -36,7 +36,7 @@ const servicesSchema = {
         "description": "24/7 emergency towing for cars, SUVs, and light trucks across the Lower Mainland BC.",
         "provider": { "@type": "LocalBusiness", "name": "TowingNo.1", "@id": "https://towing-no-1.com/#localbusiness" },
         "areaServed": "Lower Mainland, BC",
-        "availableChannel": { "@type": "ServiceChannel", "servicePhone": "+1-778-859-1457" }
+        "availableChannel": { "@type": "ServiceChannel", "servicePhone": "+1-778-838-0014" }
       }
     },
     {

@@ -3,7 +3,7 @@ import ContactContent from "@/components/ContactContent";
 
 export const metadata: Metadata = {
   title: "Contact TowingNo.1 | 24/7 Emergency Towing BC",
-  description: "Contact TowingNo.1 for fast, reliable roadside assistance in BC. Call (778) 859-1457 anytime — available 24/7 for emergency towing across the Lower Mainland.",
+  description: "Contact TowingNo.1 for fast, reliable roadside assistance in BC. Call (778) 838-0014 anytime — available 24/7 for emergency towing across the Lower Mainland.",
   alternates: {
     canonical: "https://towing-no-1.com/contact",
   },

@@ -203,8 +203,11 @@ function ServicesDropdown({ pathname }: { pathname: string }) {
   return (
     <div className="relative" onMouseEnter={show} onMouseLeave={hide}>
       <button
+        type="button"
+        onClick={() => setOpen((prev) => !prev)}
         className={`relative group flex items-center gap-1.5 px-4 py-2 rounded-lg cursor-pointer select-none`}
         aria-expanded={open}
+        aria-haspopup="menu"
       >
         <span className={`text-[14.5px] font-medium transition-colors duration-200 ${
           isActive ? "text-amber-400" : "text-slate-300 group-hover:text-white"

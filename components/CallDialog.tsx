@@ -64,7 +64,7 @@ export default function CallDialog({ open, onClose }: CallDialogProps) {
         <div className="px-5 py-4 space-y-3">
           {/* Primary */}
           <a
-            href="tel:+17788591457"
+            href="tel:+17788380014"
             className="flex items-center gap-4 w-full bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-gray-900 rounded-xl px-5 py-4 transition-colors group"
             onClick={onClose}
           >
@@ -75,7 +75,7 @@ export default function CallDialog({ open, onClose }: CallDialogProps) {
             </span>
             <div className="text-left">
               <p className="text-[11px] font-semibold uppercase tracking-widest opacity-70 mb-0.5">Main Line · 24/7</p>
-              <p className="text-xl font-extrabold tracking-tight">(778) 859-1457</p>
+              <p className="text-xl font-extrabold tracking-tight">(778) 838-0014</p>
             </div>
           </a>
 
