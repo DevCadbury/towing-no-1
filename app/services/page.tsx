@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import ServicesContent from "@/components/ServicesContent";
 
 export const metadata: Metadata = {
-  title: "Towing Services BC | Emergency Towing & Roadside Assistance",
-  description: "24/7 towing and roadside assistance in BC. Emergency towing, flat tire help, battery boost, vehicle recovery, and lockout service across the Lower Mainland.",
+  title: "Towing Services Surrey | 24/7 Tow Truck Near Me",
+  description: "Need towing near me in Surrey? We offer 24/7 tow truck service, battery boosts, flat tire help, lockout support, and recovery across the Lower Mainland.",
   alternates: {
     canonical: "https://towing-no-1.com/services",
   },
   openGraph: {
     type: "website",
     url: "https://towing-no-1.com/services",
-    title: "Towing Services BC | Emergency Towing & Roadside Assistance",
-    description: "Complete towing and roadside assistance services in BC. Emergency towing, flat tire help, battery boost, vehicle recovery, and lockout service.",
+    title: "Towing Services Surrey | 24/7 Tow Truck Near Me",
+    description: "24/7 towing and roadside assistance in Surrey and the Lower Mainland with fast dispatch and upfront pricing.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Towing Services BC | Emergency Towing & Roadside Assistance",
-    description: "Complete towing and roadside assistance services in BC. Emergency towing, flat tire help, battery boost, vehicle recovery, and lockout service.",
+    title: "Towing Services Surrey | 24/7 Tow Truck Near Me",
+    description: "24/7 towing and roadside assistance in Surrey and the Lower Mainland with fast dispatch and upfront pricing.",
   },
 };
 

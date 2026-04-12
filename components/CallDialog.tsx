@@ -47,7 +47,8 @@ export default function CallDialog({ open, onClose }: CallDialogProps) {
         <div className="px-6 pt-4 pb-3 flex items-center justify-between border-b border-slate-100">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-amber-500 mb-0.5">TowingNo.1</p>
-            <h2 className="text-lg font-bold text-slate-900 leading-tight">Choose a number to call</h2>
+            <h2 className="text-lg font-bold text-slate-900 leading-tight">Call Dispatch for Immediate Help</h2>
+            <p className="text-xs text-slate-500 mt-1">Free quote before dispatch</p>
           </div>
           <button
             onClick={onClose}
@@ -65,7 +66,7 @@ export default function CallDialog({ open, onClose }: CallDialogProps) {
           {/* Primary */}
           <a
             href="tel:+17788380014"
-            className="flex items-center gap-4 w-full bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-gray-900 rounded-xl px-5 py-4 transition-colors group"
+            className="btn-call-highlight flex items-center gap-4 w-full rounded-xl px-5 py-4 group"
             onClick={onClose}
           >
             <span className="w-10 h-10 rounded-full bg-gray-900/10 flex items-center justify-center shrink-0">
@@ -74,7 +75,7 @@ export default function CallDialog({ open, onClose }: CallDialogProps) {
               </svg>
             </span>
             <div className="text-left">
-              <p className="text-[11px] font-semibold uppercase tracking-widest opacity-70 mb-0.5">Main Line · 24/7</p>
+              <p className="text-[11px] font-semibold uppercase tracking-widest opacity-70 mb-0.5">Main Line · 24/7 · Free Quote</p>
               <p className="text-xl font-extrabold tracking-tight">(778) 838-0014</p>
             </div>
           </a>

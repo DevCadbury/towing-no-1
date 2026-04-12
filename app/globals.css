@@ -58,6 +58,42 @@
     @apply relative overflow-hidden bg-gradient-to-r from-amber-500 to-amber-600 text-navy-900 font-bold py-3.5 px-8 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-glow-amber active:translate-y-0;
   }
 
+  .btn-call-highlight {
+    @apply relative overflow-hidden bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 text-gray-900 font-extrabold transition-all duration-200 hover:-translate-y-0.5;
+    box-shadow: 0 12px 32px rgba(245, 158, 11, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.35) inset;
+  }
+
+  .btn-call-highlight:hover {
+    filter: saturate(1.08);
+    box-shadow: 0 16px 40px rgba(245, 158, 11, 0.52), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  }
+
+  .btn-call-highlight::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid rgba(251, 191, 36, 0.55);
+    pointer-events: none;
+    animation: call-ring 1.9s ease-out infinite;
+  }
+
+  .btn-call-highlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.26) 50%, transparent 80%);
+    pointer-events: none;
+    animation: call-shine 2.6s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-call-highlight::before,
+    .btn-call-highlight::after {
+      animation: none;
+    }
+  }
+
   .section-padding {
     @apply py-20 md:py-28;
   }
@@ -141,6 +177,33 @@
 
   100% {
     background-position: 200% 0;
+  }
+}
+
+@keyframes call-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+
+  70% {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+}
+
+@keyframes call-shine {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(120%);
   }
 }
 

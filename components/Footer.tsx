@@ -56,6 +56,7 @@ export default function Footer() {
               <FooterLink href="/">Home</FooterLink>
               <FooterLink href="/about">About Us</FooterLink>
               <FooterLink href="/services">Services</FooterLink>
+              <FooterLink href="/locations">Service Areas</FooterLink>
               <FooterLink href="/blog">Blog</FooterLink>
               <FooterLink href="/contact">Contact</FooterLink>
             </ul>
@@ -65,11 +66,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-5 text-white">Services</h4>
             <ul className="space-y-3">
-              <FooterLink href="/services">Emergency Towing</FooterLink>
-              <FooterLink href="/services">Flat Tire Help</FooterLink>
-              <FooterLink href="/services">Battery Boost</FooterLink>
-              <FooterLink href="/services">Lockout Service</FooterLink>
-              <FooterLink href="/services">Fuel Delivery</FooterLink>
+              <FooterLink href="/services#emergency-towing">Emergency Towing</FooterLink>
+              <FooterLink href="/services#flat-tire">Flat Tire Help</FooterLink>
+              <FooterLink href="/services#battery-boost">Battery Boost</FooterLink>
+              <FooterLink href="/services#lockout">Lockout Service</FooterLink>
+              <FooterLink href="/services#fuel-delivery">Fuel Delivery</FooterLink>
             </ul>
           </div>
 

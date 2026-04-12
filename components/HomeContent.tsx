@@ -66,6 +66,15 @@ const services = [
   },
 ];
 
+const featuredAreas = [
+  { href: "/locations/surrey", title: "Tow Truck Surrey", subtitle: "Fast 24/7 dispatch across Surrey" },
+  { href: "/locations/langley", title: "Towing Langley", subtitle: "Emergency and scheduled towing support" },
+  { href: "/locations/coquitlam", title: "Coquitlam Tow Truck", subtitle: "Roadside help and local recovery" },
+  { href: "/locations/burnaby", title: "Burnaby Towing", subtitle: "Battery, lockout, and tow assistance" },
+  { href: "/locations/richmond", title: "Richmond Tow Service", subtitle: "Rapid response for breakdowns" },
+  { href: "/locations/white-rock", title: "White Rock Towing", subtitle: "24/7 roadside and towing support" },
+];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: (i: number) => ({
@@ -117,9 +126,9 @@ export default function HomeContent() {
               transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.06] tracking-tight mb-6 [text-shadow:0_2px_24px_rgba(0,0,0,0.75)]"
             >
-              24/7 Emergency{" "}
-              <span className="text-amber-400 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">Towing Service</span>
-              <br />– We Come to You!
+              24/7 Tow Truck{" "}
+              <span className="text-amber-400 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">Surrey &amp; Lower Mainland</span>
+              <br />Emergency Help in Minutes
             </motion.h1>
 
             <motion.p
@@ -128,7 +137,7 @@ export default function HomeContent() {
               transition={{ duration: 0.6, delay: 0.32 }}
               className="text-base md:text-xl text-white/90 mb-10 max-w-xl leading-relaxed [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]"
             >
-              Fast, professional roadside assistance across the Lower Mainland — day or night, whatever the situation.
+              Need a tow truck near you in Surrey or anywhere in the Lower Mainland? Call now for immediate dispatch, upfront rates, and a free quote in under 60 seconds.
             </motion.p>
 
             <motion.div
@@ -139,20 +148,24 @@ export default function HomeContent() {
             >
               <button
                 onClick={() => setCallOpen(true)}
-                className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-gray-900 font-bold py-4 px-8 rounded-xl text-base transition-all duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl"
+                className="btn-call-highlight inline-flex items-center justify-center gap-2 py-4 px-8 rounded-xl text-base"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0">
                   <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
                 </svg>
-                Call Now
+                Call Now - Free Quote
               </button>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl text-base border border-white/25 transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5"
               >
-                Request Service
+                Request Service Online
               </Link>
             </motion.div>
+
+            <p className="mt-4 text-xs md:text-sm text-amber-100/95 font-semibold tracking-wide">
+              Speak directly with dispatch now. No hidden fees. Fast ETA updates.
+            </p>
 
             {/* Trust bar */}
             <motion.div
@@ -317,6 +330,63 @@ export default function HomeContent() {
         </div>
       </section>
 
+      {/* ── Service Areas ───────────────────────────────────────────── */}
+      <section className="py-20 bg-slate-50">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-10"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Where we operate</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-3">
+              Popular Tow Truck Service Areas
+            </h2>
+            <p className="text-slate-600 max-w-3xl leading-relaxed">
+              Looking for towing near you? Explore our local pages for Surrey, Langley, Coquitlam, Burnaby, Richmond,
+              White Rock, and nearby communities across the Lower Mainland.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {featuredAreas.map((area, i) => (
+              <motion.div
+                key={area.href}
+                custom={i}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-40px" }}
+              >
+                <Link
+                  href={area.href}
+                  className="group block bg-white border border-slate-200 rounded-2xl p-5 hover:border-amber-400/60 hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
+                >
+                  <h3 className="text-lg font-extrabold text-gray-900 group-hover:text-amber-600 transition-colors mb-1">
+                    {area.title}
+                  </h3>
+                  <p className="text-sm text-slate-600">{area.subtitle}</p>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <Link
+              href="/locations"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-700 transition-colors"
+            >
+              View all service areas
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4">
+                <path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── Testimonials carousel ──────────────────────────────────── */}
       <TestimonialsCarousel />
       {/* ── FAQ ───────────────────────────────────────────────── */}
@@ -339,12 +409,12 @@ export default function HomeContent() {
             </p>
             <button
               onClick={() => setCallOpen(true)}
-              className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-gray-900 font-bold py-4 px-10 rounded-xl text-base transition-all duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl"
+              className="btn-call-highlight inline-flex items-center justify-center gap-2 py-4 px-10 rounded-xl text-base"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                 <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
               </svg>
-              Call Now
+              Call Now - Free Quote
             </button>
           </motion.div>
         </div>
@@ -575,12 +645,12 @@ function FaqSection() {
             <p className="text-sm text-gray-600 flex-1">Still have a question? We’re available 24/7 and happy to help.</p>
             <button
               onClick={() => setCallOpen(true)}
-              className="shrink-0 inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-gray-900 font-bold text-sm py-2.5 px-5 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
+              className="btn-call-highlight shrink-0 inline-flex items-center gap-2 text-sm py-2.5 px-5 rounded-xl"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                 <path fillRule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 16.352V17.5a1.5 1.5 0 0 1-1.5 1.5H15c-8.284 0-15-6.716-15-15V3.5Z" clipRule="evenodd" />
               </svg>
-              Call Now
+              Call Now - Free Quote
             </button>
           </motion.div>
         </div>
