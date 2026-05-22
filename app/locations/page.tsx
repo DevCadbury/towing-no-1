@@ -3,22 +3,22 @@ import Link from "next/link";
 import { serviceAreas } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
-  title: "Service Areas | Tow Truck Surrey and Lower Mainland",
+  title: "Tow Truck Service Areas | Surrey, Langley, Burnaby & Lower Mainland",
   description:
-    "Explore TowingNo.1 service areas across Surrey and the Lower Mainland. Find 24/7 towing and roadside support near you with fast dispatch.",
+    "TowingNo.1 covers Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, Maple Ridge, Vancouver, and surrounding Lower Mainland communities. 24/7 dispatch with upfront pricing.",
   alternates: {
-    canonical: "https://towing-no-1.com/locations",
+    canonical: "https://www.towingno1.com/locations",
   },
   openGraph: {
     type: "website",
-    url: "https://towing-no-1.com/locations",
-    title: "Service Areas | Tow Truck Surrey and Lower Mainland",
+    url: "https://www.towingno1.com/locations",
+    title: "Tow Truck Service Areas | Surrey, Langley, Burnaby & Lower Mainland",
     description:
-      "City-based towing and roadside support pages for Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, and Vancouver.",
+      "City-based towing and roadside support pages for Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, Maple Ridge, and Vancouver.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Service Areas | Tow Truck Surrey and Lower Mainland",
+    title: "Tow Truck Service Areas | Surrey, Langley, Burnaby & Lower Mainland",
     description:
       "Find local 24/7 towing coverage across Surrey and the Lower Mainland with fast dispatch and upfront quotes.",
   },
@@ -31,29 +31,42 @@ const serviceAreaListSchema = {
   itemListElement: serviceAreas.map((area, index) => ({
     "@type": "ListItem",
     position: index + 1,
-    url: `https://towing-no-1.com/locations/${area.slug}`,
+    url: `https://www.towingno1.com/locations/${area.slug}`,
     name: `${area.city} Tow Truck Service`,
   })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.towingno1.com" },
+    { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.towingno1.com/locations" },
+  ],
 };
 
 export default function LocationsPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceAreaListSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceAreaListSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <section className="section-padding bg-slate-50">
         <div className="container-custom">
           <div className="max-w-3xl">
+            <nav aria-label="Breadcrumb" className="mb-6">
+              <ol className="flex items-center gap-2 text-xs text-slate-500">
+                <li><Link href="/" className="hover:text-amber-600 transition-colors">Home</Link></li>
+                <li aria-hidden="true">/</li>
+                <li className="text-amber-600">Service Areas</li>
+              </ol>
+            </nav>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Service Areas</p>
             <h1 className="text-3xl md:text-5xl font-extrabold text-navy-900 leading-tight mb-5">
               24/7 Tow Truck Coverage Across Surrey and the Lower Mainland
             </h1>
             <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-              Looking for towing near you? Choose your city below to see local service coverage, common response zones,
-              and direct dispatch support.
+              Looking for towing near you? Choose your city below to see local service coverage, common response zones, major highways covered, and direct dispatch support. We serve 9 cities across the Lower Mainland with the same 24/7 response and upfront flat-rate pricing.
             </p>
           </div>
 
@@ -69,7 +82,10 @@ export default function LocationsPage() {
                   {area.headline}
                 </h2>
                 <p className="text-sm text-slate-600 leading-relaxed mb-4">{area.summary}</p>
-                <p className="text-xs text-slate-500">Popular areas: {area.neighborhoods.slice(0, 3).join(", ")}</p>
+                <p className="text-xs text-slate-500 mb-2">Popular areas: {area.neighborhoods.slice(0, 3).join(", ")}</p>
+                {area.highways.length > 0 && (
+                  <p className="text-xs text-slate-400">Routes: {area.highways.slice(0, 2).join(", ")}</p>
+                )}
               </Link>
             ))}
           </div>
@@ -80,10 +96,10 @@ export default function LocationsPage() {
               <p className="text-slate-300">Call dispatch for immediate response and a free quote before dispatch.</p>
             </div>
             <a href="tel:+17788380014" className="btn-call-highlight inline-flex items-center justify-center gap-2 rounded-xl py-3.5 px-7 w-full md:w-auto">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call Now - Free Quote
+              Call Now — Free Quote
             </a>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+﻿import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -22,19 +22,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: post.excerpt,
     keywords: post.keywords,
     alternates: {
-      canonical: `https://towing-no-1.com/blog/${post.slug}`,
+      canonical: `https://www.towingno1.com/blog/${post.slug}`,
     },
     openGraph: {
       type: "article",
-      url: `https://towing-no-1.com/blog/${post.slug}`,
+      url: `https://www.towingno1.com/blog/${post.slug}`,
       title: post.title,
       description: post.excerpt,
       publishedTime: new Date(post.date).toISOString(),
       images: [
         {
-          url: post.image,
-          width: 800,
-          height: 600,
+          url: `https://www.towingno1.com${post.image}`,
+          width: 1200,
+          height: 630,
           alt: post.title,
         },
       ],
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: [post.image],
+      images: [`https://www.towingno1.com${post.image}`],
     },
   };
 }
@@ -63,25 +63,40 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
-    image: post.image,
+    image: `https://www.towingno1.com${post.image}`,
     datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
     author: {
       "@type": "Organization",
       name: "TowingNo.1",
-      url: "https://towing-no-1.com",
+      url: "https://www.towingno1.com",
     },
     publisher: {
       "@type": "Organization",
       name: "TowingNo.1",
       logo: {
         "@type": "ImageObject",
-        url: "https://towing-no-1.com/logo.png",
+        url: "https://www.towingno1.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://towing-no-1.com/blog/${post.slug}`,
+      "@id": `https://www.towingno1.com/blog/${post.slug}`,
     },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [".article-excerpt"],
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.towingno1.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.towingno1.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://www.towingno1.com/blog/${post.slug}` },
+    ],
   };
 
   return (
@@ -89,6 +104,10 @@ export default async function BlogPostPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero */}
@@ -123,7 +142,7 @@ export default async function BlogPostPage({ params }: Props) {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
-            <p className="text-xl text-slate-500 leading-relaxed mb-10 border-l-4 border-amber-500 pl-6 italic">
+            <p className="article-excerpt text-xl text-slate-500 leading-relaxed mb-10 border-l-4 border-amber-500 pl-6 italic">
               {post.excerpt}
             </p>
 
@@ -183,6 +202,25 @@ export default async function BlogPostPage({ params }: Props) {
                 </svg>
                 (778) 838-0014
               </a>
+            </div>
+
+            {/* Internal links */}
+            <div className="mt-8 p-6 bg-slate-50 rounded-2xl border border-slate-200">
+              <h3 className="font-bold text-navy-900 mb-4 text-sm uppercase tracking-wide">Related Services & Areas</h3>
+              <div className="grid sm:grid-cols-2 gap-2">
+                {[
+                  { href: "/services/emergency-towing", label: "Emergency Towing Surrey" },
+                  { href: "/services/battery-boost", label: "Battery Boost Service" },
+                  { href: "/services/lockout-service", label: "Lockout Service" },
+                  { href: "/services/flat-tire-help", label: "Flat Tire Help" },
+                  { href: "/locations/surrey", label: "Tow Truck Surrey" },
+                  { href: "/locations/langley", label: "Towing Langley" },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} className="text-sm text-amber-600 hover:text-amber-700 font-medium flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5 shrink-0" aria-hidden="true"><path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd"/></svg> {link.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

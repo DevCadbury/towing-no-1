@@ -66,11 +66,12 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-5 text-white">Services</h4>
             <ul className="space-y-3">
-              <FooterLink href="/services#emergency-towing">Emergency Towing</FooterLink>
-              <FooterLink href="/services#flat-tire">Flat Tire Help</FooterLink>
-              <FooterLink href="/services#battery-boost">Battery Boost</FooterLink>
-              <FooterLink href="/services#lockout">Lockout Service</FooterLink>
-              <FooterLink href="/services#fuel-delivery">Fuel Delivery</FooterLink>
+              <FooterLink href="/services/emergency-towing">Emergency Towing</FooterLink>
+              <FooterLink href="/services/flat-tire-help">Flat Tire Help</FooterLink>
+              <FooterLink href="/services/battery-boost">Battery Boost</FooterLink>
+              <FooterLink href="/services/lockout-service">Lockout Service</FooterLink>
+              <FooterLink href="/services/fuel-delivery">Fuel Delivery</FooterLink>
+              <FooterLink href="/services/winching-extraction">Winching & Extraction</FooterLink>
             </ul>
           </div>
 
@@ -98,8 +99,8 @@ export default function Footer() {
                 <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                 </svg>
-                <a href="mailto:info@towing-no-1.com" className="hover:text-amber-400 transition-colors text-sm">
-                  info@towing-no-1.com
+                <a href="mailto:info@towingno1.com" className="hover:text-amber-400 transition-colors text-sm">
+                  info@towingno1.com
                 </a>
               </li>
             </ul>

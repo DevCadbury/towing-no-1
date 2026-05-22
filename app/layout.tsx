@@ -36,7 +36,8 @@ const SEO_KEYWORDS = [
   "vancouver towing",
   "langley towing",
   "white rock towing",
-  "vernon towing",
+  "delta towing",
+  "maple ridge towing",
   "flat tire roadside assistance",
   "battery boost service",
   "car lockout service",
@@ -48,43 +49,49 @@ const SEO_KEYWORDS = [
 ];
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://towing-no-1.com'),
+  metadataBase: new URL("https://www.towingno1.com"),
   title: {
-    default: "Tow Truck Surrey | 24/7 Towing Near Me | TowingNo.1",
-    template: "%s | TowingNo.1"
+    default: "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
+    template: "%s | TowingNo.1",
   },
-  description: "Need a tow truck near you in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 emergency towing, roadside help, and a free quote before dispatch.",
+  description:
+    "Need a tow truck near you in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 emergency towing, roadside help, and a free quote before dispatch. Call (778) 838-0014.",
   keywords: SEO_KEYWORDS,
   authors: [{ name: "TowingNo.1" }],
   alternates: {
-    canonical: "https://towing-no-1.com",
+    canonical: "https://www.towingno1.com",
+  },
+  verification: {
+    google: "REPLACE_WITH_YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
   },
   icons: {
-    icon: [{ url: '/logo.png', type: 'image/png' }],
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: [{ url: "/logo.png", type: "image/png" }],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://towing-no-1.com",
+    url: "https://www.towingno1.com",
     siteName: "TowingNo.1",
-    title: "Tow Truck Surrey | 24/7 Towing Near Me | TowingNo.1",
-    description: "24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland with fast dispatch and upfront pricing.",
+    title: "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
+    description:
+      "24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured. Call (778) 838-0014.",
     images: [
       {
-        url: "https://towing-no-1.com/preview.jpg",
+        url: "https://www.towingno1.com/preview.jpg",
         width: 1200,
         height: 630,
-        alt: "24/7 Emergency Towing BC | TowingNo.1 - We Are Coming To You"
-      }
-    ]
+        alt: "24/7 Emergency Towing BC | TowingNo.1 — We Are Coming To You",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tow Truck Surrey | 24/7 Towing Near Me | TowingNo.1",
-    description: "24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland with a free quote before dispatch.",
-    images: ["https://towing-no-1.com/preview.jpg"],
+    title: "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
+    description:
+      "24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland. Free quote before dispatch — call (778) 838-0014.",
+    images: ["https://www.towingno1.com/preview.jpg"],
   },
   robots: {
     index: true,
@@ -96,6 +103,209 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+};
+
+const globalSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.towingno1.com/#organization",
+      name: "TowingNo.1",
+      url: "https://www.towingno1.com",
+      foundingDate: "2010",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.towingno1.com/logo.png",
+        width: 684,
+        height: 365,
+      },
+      sameAs: ["https://www.instagram.com/towing.no.1"],
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+1-778-838-0014",
+        contactType: "customer service",
+        availableLanguage: "English",
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "00:00",
+          closes: "23:59",
+        },
+      },
+    },
+    {
+      "@type": ["LocalBusiness", "AutomotiveBusiness"],
+      "@id": "https://www.towingno1.com/#localbusiness",
+      name: "TowingNo.1",
+      description:
+        "24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Emergency towing, battery boost, flat tire help, lockout service, fuel delivery, and vehicle recovery. Licensed and insured. Serving BC since 2010.",
+      url: "https://www.towingno1.com",
+      telephone: "+1-778-838-0014",
+      email: "info@towingno1.com",
+      image: "https://www.towingno1.com/preview.jpg",
+      logo: "https://www.towingno1.com/logo.png",
+      priceRange: "$$",
+      openingHours: "Mo-Su 00:00-23:59",
+      currenciesAccepted: "CAD",
+      paymentAccepted: "Cash, Credit Card, Debit Card",
+      foundingDate: "2010",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Surrey",
+        addressRegion: "BC",
+        addressCountry: "CA",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "127",
+        bestRating: "5",
+        worstRating: "1",
+      },
+      knowsAbout: [
+        "Emergency towing",
+        "Tow truck service",
+        "Roadside assistance",
+        "Battery boost",
+        "Flat tire change",
+        "Vehicle lockout",
+        "Fuel delivery",
+        "Winching and extraction",
+      ],
+      areaServed: [
+        {
+          "@type": "City",
+          name: "Surrey",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+        {
+          "@type": "City",
+          name: "Delta",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+        {
+          "@type": "City",
+          name: "White Rock",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+        {
+          "@type": "City",
+          name: "Langley",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+        {
+          "@type": "City",
+          name: "Burnaby",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+        {
+          "@type": "City",
+          name: "Richmond",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+        {
+          "@type": "City",
+          name: "Coquitlam",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+        {
+          "@type": "City",
+          name: "Port Coquitlam",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+        {
+          "@type": "City",
+          name: "Vancouver",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+        {
+          "@type": "City",
+          name: "Maple Ridge",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Towing & Roadside Assistance Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: "Emergency Towing" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: "Roadside Assistance" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: "Battery Boost" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: "Flat Tire Change" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: "Vehicle Recovery" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: "Lockout Service" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: "Fuel Delivery" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Winching & Extraction",
+            },
+          },
+        ],
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -111,93 +321,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo.png" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Organization",
-                "@id": "https://towing-no-1.com/#organization",
-                "name": "TowingNo.1",
-                "url": "https://towing-no-1.com",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://towing-no-1.com/logo.png",
-                  "width": 684,
-                  "height": 365,
-                },
-                "sameAs": [
-                  "https://www.instagram.com/towing.no.1"
-                ],
-                "contactPoint": {
-                  "@type": "ContactPoint",
-                  "telephone": "+1-778-838-0014",
-                  "contactType": "customer service",
-                  "availableLanguage": "English",
-                  "hoursAvailable": {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-                    "opens": "00:00",
-                    "closes": "23:59"
-                  }
-                }
-              },
-              {
-                "@type": ["LocalBusiness", "AutomotiveBusiness"],
-                "@id": "https://towing-no-1.com/#localbusiness",
-                "name": "TowingNo.1",
-                "description": "24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Emergency towing, battery boost, flat tire help, lockout service, fuel delivery, and vehicle recovery.",
-                "url": "https://towing-no-1.com",
-                "telephone": "+1-778-838-0014",
-                "email": "info@towing-no-1.com",
-                "image": "https://towing-no-1.com/preview.jpg",
-                "logo": "https://towing-no-1.com/logo.png",
-                "priceRange": "$$",
-                "openingHours": "Mo-Su 00:00-23:59",
-                "currenciesAccepted": "CAD",
-                "paymentAccepted": "Cash, Credit Card, Debit Card",
-                "knowsAbout": [
-                  "Emergency towing",
-                  "Tow truck service",
-                  "Roadside assistance",
-                  "Battery boost",
-                  "Flat tire change",
-                  "Vehicle lockout",
-                  "Fuel delivery",
-                  "Winching and extraction"
-                ],
-                "areaServed": [
-                  { "@type": "City", "name": "Delta", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
-                  { "@type": "City", "name": "White Rock", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
-                  { "@type": "City", "name": "Langley", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
-                  { "@type": "City", "name": "Burnaby", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
-                  { "@type": "City", "name": "Surrey", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
-                  { "@type": "City", "name": "Richmond", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
-                  { "@type": "City", "name": "Coquitlam", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
-                  { "@type": "City", "name": "Port Coquitlam", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
-                  { "@type": "City", "name": "Vancouver", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } }
-                ],
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressRegion": "BC",
-                  "addressCountry": "CA"
-                },
-                "hasOfferCatalog": {
-                  "@type": "OfferCatalog",
-                  "name": "Towing & Roadside Assistance Services",
-                  "itemListElement": [
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Towing" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roadside Assistance" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Boost" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Flat Tire Change" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vehicle Recovery" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lockout Service" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fuel Delivery" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Winching & Extraction" } }
-                  ]
-                }
-              }
-            ]
-          }) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
         />
       </head>
       <body className={outfit.className}>
@@ -207,7 +331,11 @@ export default function RootLayout({
         <FloatingCallButton />
 
         {/* ── Reamaze live-chat widget ──────────────────────────────── */}
-        <Script id="reamaze-config" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
+        <Script
+          id="reamaze-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
           var _support = _support || { 'ui': {}, 'user': {} };
           _support['account'] = '14d9241b-cb1a-4379-a0d3-f9cb700e9592';
           _support['ui']['contactMode'] = 'mixed';
@@ -238,7 +366,9 @@ export default function RootLayout({
             recentConversations: {},
             faq: { enabled: true },
           };
-        `}} />
+        `,
+          }}
+        />
         <Script
           src="https://cdn.reamaze.com/assets/reamaze-loader.js"
           strategy="afterInteractive"
@@ -249,12 +379,23 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-30WWS5SMCS"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-30WWS5SMCS');
-        `}} />
+          gtag('config', 'G-30WWS5SMCS', {
+            'send_page_view': true,
+            'custom_map': {
+              'dimension1': 'page_type'
+            }
+          });
+        `,
+          }}
+        />
       </body>
     </html>
   );

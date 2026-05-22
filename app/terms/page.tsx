@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   description:
     "Read the service terms for TowingNo.1 emergency towing and roadside assistance across Surrey and the Lower Mainland.",
   alternates: {
-    canonical: "https://towing-no-1.com/terms",
+    canonical: "https://www.towingno1.com/terms",
   },
   openGraph: {
     type: "website",
-    url: "https://towing-no-1.com/terms",
+    url: "https://www.towingno1.com/terms",
     title: "Terms of Service | TowingNo.1",
     description:
       "Service terms, dispatch conditions, and customer responsibilities for TowingNo.1 roadside services.",
@@ -70,7 +70,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-xl font-bold text-navy-900 mb-2">Contact</h2>
             <p>
-              For questions about these terms, email <a href="mailto:info@towing-no-1.com" className="text-amber-600 font-semibold hover:text-amber-700">info@towing-no-1.com</a> or call <a href="tel:+17788380014" className="text-amber-600 font-semibold hover:text-amber-700">(778) 838-0014</a>.
+              For questions about these terms, email <a href="mailto:info@towingno1.com" className="text-amber-600 font-semibold hover:text-amber-700">info@towingno1.com</a> or call <a href="tel:+17788380014" className="text-amber-600 font-semibold hover:text-amber-700">(778) 838-0014</a>.
             </p>
           </div>
         </div>

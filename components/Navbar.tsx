@@ -8,14 +8,14 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const serviceItems = [
-  { href: "/services#emergency-towing",   label: "Emergency Towing",     desc: "24/7 fast response, any time" },
-  { href: "/services#flat-tire",          label: "Flat Tire Help",        desc: "On-site change or tow-in" },
-  { href: "/services#battery-boost",      label: "Battery Boost",         desc: "Jump-start in minutes" },
-  { href: "/services#accident-recovery",  label: "Accident Recovery",     desc: "Careful collision towing" },
-  { href: "/services#lockout",            label: "Lockout Service",       desc: "Keys locked inside? We help" },
-  { href: "/services#vehicle-transport",  label: "Vehicle Transport",     desc: "Secure inter-city moves" },
-  { href: "/services#fuel-delivery",      label: "Fuel Delivery",         desc: "Emergency fuel drop-off" },
-  { href: "/services#winching",           label: "Winching & Extraction", desc: "Stuck in mud, snow, or ditch" },
+  { href: "/services/emergency-towing",   label: "Emergency Towing",     desc: "24/7 fast response, any time" },
+  { href: "/services/flat-tire-help",     label: "Flat Tire Help",        desc: "On-site change or tow-in" },
+  { href: "/services/battery-boost",      label: "Battery Boost",         desc: "Jump-start in minutes" },
+  { href: "/services/accident-recovery",  label: "Accident Recovery",     desc: "Careful collision towing" },
+  { href: "/services/lockout-service",    label: "Lockout Service",       desc: "Keys locked inside? We help" },
+  { href: "/services/vehicle-transport",  label: "Vehicle Transport",     desc: "Secure inter-city moves" },
+  { href: "/services/fuel-delivery",      label: "Fuel Delivery",         desc: "Emergency fuel drop-off" },
+  { href: "/services/winching-extraction", label: "Winching & Extraction", desc: "Stuck in mud, snow, or ditch" },
 ];
 
 const navLinks = [
@@ -338,7 +338,8 @@ function MobileServicesMenu({ pathname, onClose }: { pathname: string; onClose: 
                 onClick={onClose}
                 className="flex items-center gap-2 py-2 px-3 mt-1 text-[13px] font-semibold text-amber-400 hover:text-amber-300 transition-colors"
               >
-                View all services →
+                View all services
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true"><path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd"/></svg>
               </Link>
             </div>
           </motion.div>

@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
     title: "What to Do When Your Car Breaks Down on the Highway",
     excerpt: "A step-by-step guide to staying safe when your vehicle breaks down on busy roads. Learn the essential safety measures every driver should know.",
     date: "February 10, 2026",
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=800",
+    image: "/blog/car-breaks-down-highway.jpg",
     slug: "what-to-do-car-breaks-down-highway",
     featured: true,
     keywords: ["car breakdown highway", "vehicle breakdown safety", "highway emergency BC"],
@@ -53,7 +53,7 @@ While waiting for a tow truck, stay alert and visible. If night-time, hold a fla
     title: "How to Prepare Your Vehicle for Winter in BC",
     excerpt: "Winter driving in British Columbia requires preparation. Discover essential maintenance tips to keep your vehicle running smoothly during cold weather.",
     date: "February 5, 2026",
-    image: "https://images.unsplash.com/photo-1511994714008-b6d68a8b32c2?q=80&w=800",
+    image: "/blog/prepare-vehicle-winter-bc.jpg",
     slug: "prepare-vehicle-winter-bc",
     keywords: ["winter driving BC", "winter car maintenance", "winter tires BC", "prepare car winter"],
     content: `
@@ -89,7 +89,7 @@ A well-stocked kit should include: ice scraper and snow brush, jumper cables or 
     title: "5 Signs Your Car Battery is Dying",
     excerpt: "Don't get caught with a dead battery. Learn to recognize the warning signs that your car battery needs replacement before it fails.",
     date: "January 28, 2026",
-    image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=800",
+    image: "/blog/car-battery-dying.jpg",
     slug: "signs-car-battery-dying",
     keywords: ["car battery dying signs", "dead battery symptoms", "battery replacement BC"],
     content: `
@@ -125,7 +125,7 @@ Car batteries typically last 3–5 years in the Lower Mainland climate. If yours
     title: "Emergency Kit Essentials Every Driver Needs",
     excerpt: "Be prepared for any roadside emergency with these must-have items. A well-stocked emergency kit can make all the difference.",
     date: "January 20, 2026",
-    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=800",
+    image: "/blog/emergency-kit-essentials.jpg",
     slug: "emergency-kit-essentials",
     keywords: ["car emergency kit", "roadside emergency supplies", "car breakdown kit BC"],
     content: `
@@ -161,7 +161,7 @@ Whether you're driving through the Lower Mainland or heading up to Whistler, a r
 
 ## Seasonal Additions
 
-**Winter:** Ice scraper, kitty litter (traction), snow chains, hand warmers  
+**Winter:** Ice scraper, kitty litter (traction), snow chains, hand warmers
 **Summer:** Extra water, sunscreen, small umbrella
 
 ---
@@ -174,7 +174,7 @@ Whether you're driving through the Lower Mainland or heading up to Whistler, a r
     title: "When to Call for a Tow vs. Fix it Yourself",
     excerpt: "Some roadside issues can be handled yourself, while others require professional help. Learn when it's safe to DIY and when to call for assistance.",
     date: "January 12, 2026",
-    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800",
+    image: "/blog/when-to-call-tow.jpg",
     slug: "when-call-tow-vs-fix-yourself",
     keywords: ["when to call tow truck", "roadside DIY vs tow", "tow truck BC"],
     content: `
@@ -210,7 +210,7 @@ Not every breakdown needs a tow truck — but knowing the difference can save yo
     title: "Understanding Different Types of Towing Services",
     excerpt: "Not all towing is the same. Explore the different types of towing services available and when each one is appropriate for your situation.",
     date: "January 5, 2026",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=800",
+    image: "/blog/types-of-towing.jpg",
     slug: "understanding-towing-services",
     keywords: ["types of towing services", "flatbed tow truck", "emergency towing BC", "towing services explained"],
     content: `

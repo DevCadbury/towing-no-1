@@ -101,7 +101,7 @@ jobs:
 
       - name: Check robots.ts has correct sitemap URL
         run: |
-          if grep -q "www.towing-no-1.com" app/robots.ts; then
+          if grep -q "www.towingno1.com" app/robots.ts; then
             echo "ERROR: robots.ts still references www domain"
             exit 1
           fi
@@ -121,7 +121,7 @@ jobs:
 
       - name: Check no hardcoded canonical in layout head
         run: |
-          if grep -A2 'rel="canonical"' app/layout.tsx | grep -q 'towing-no-1.com"; then
+          if grep -A2 'rel="canonical"' app/layout.tsx | grep -q 'towingno1.com"; then
             echo "WARNING: Hardcoded canonical tag found in layout.tsx head"
           fi
           echo "Canonical check: OK"

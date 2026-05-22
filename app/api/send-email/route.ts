@@ -37,7 +37,7 @@ async function getAccessToken(): Promise<string> {
 
 /* ─── Send via Microsoft Graph API ─────────────────────────────── */
 async function sendMail(accessToken: string, payload: object): Promise<void> {
-  const sender = process.env.EMAIL_FROM!;   // info@towing-no-1.com
+  const sender = process.env.EMAIL_FROM!;   // info@towingno1.com
 
   const res = await fetch(
     `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(sender)}/sendMail`,
@@ -230,7 +230,7 @@ function buildConfirmationEmail(name: string, email: string, phone: string, mess
                 <tr>
                   <td style="padding:4px 0;font-size:13px;color:#374151;">Email:</td>
                   <td style="padding:4px 0 4px 10px;font-size:13px;">
-                    <a href="mailto:info@towing-no-1.com" style="color:#2563eb;text-decoration:none;">info@towing-no-1.com</a>
+                    <a href="mailto:info@towingno1.com" style="color:#2563eb;text-decoration:none;">info@towingno1.com</a>
                   </td>
                 </tr>
                 <tr>
@@ -258,7 +258,7 @@ function buildConfirmationEmail(name: string, email: string, phone: string, mess
               <p style="margin:0;color:#9ca3af;font-size:12px;">TowingNo.1 &mdash; 24/7 Emergency Towing &amp; Roadside Assistance</p>
               <p style="margin:4px 0 0;color:#9ca3af;font-size:12px;">Serving Delta, White Rock, Langley, Burnaby and surrounding areas in British Columbia</p>
               <p style="margin:8px 0 0;color:#d1d5db;font-size:11px;">
-                You are receiving this email because you submitted a contact form at towing-no-1.com.
+                You are receiving this email because you submitted a contact form at towingno1.com.
               </p>
             </td>
           </tr>
@@ -303,7 +303,7 @@ export async function POST(req: NextRequest) {
         subject: `New Contact Form Submission — ${name}`,
         body: { contentType: "HTML", content: buildBusinessEmail(name, email, phone, message) },
         from: { emailAddress: { address: process.env.EMAIL_FROM! } },
-        toRecipients: [{ emailAddress: { address: "info@towing-no-1.com" } }],
+        toRecipients: [{ emailAddress: { address: "info@towingno1.com" } }],
         replyTo:      [{ emailAddress: { address: email } }],
       },
       saveToSentItems: true,
@@ -316,7 +316,7 @@ export async function POST(req: NextRequest) {
         body: { contentType: "HTML", content: buildConfirmationEmail(name, email, phone, message) },
         from: { emailAddress: { address: process.env.EMAIL_FROM! } },
         toRecipients: [{ emailAddress: { address: email } }],
-        replyTo:      [{ emailAddress: { address: "info@towing-no-1.com" } }],
+        replyTo:      [{ emailAddress: { address: "info@towingno1.com" } }],
       },
       saveToSentItems: true,
     });

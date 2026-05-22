@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   description:
     "Read how TowingNo.1 collects, uses, and protects personal information for towing and roadside assistance requests across Surrey and the Lower Mainland.",
   alternates: {
-    canonical: "https://towing-no-1.com/privacy",
+    canonical: "https://www.towingno1.com/privacy",
   },
   openGraph: {
     type: "website",
-    url: "https://towing-no-1.com/privacy",
+    url: "https://www.towingno1.com/privacy",
     title: "Privacy Policy | TowingNo.1",
     description:
       "How TowingNo.1 collects and protects customer information for 24/7 towing and roadside service dispatch.",
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
           <div>
             <h2 className="text-xl font-bold text-navy-900 mb-2">Contact</h2>
             <p>
-              For privacy questions, contact us at <a href="mailto:info@towing-no-1.com" className="text-amber-600 font-semibold hover:text-amber-700">info@towing-no-1.com</a> or call <a href="tel:+17788380014" className="text-amber-600 font-semibold hover:text-amber-700">(778) 838-0014</a>.
+              For privacy questions, contact us at <a href="mailto:info@towingno1.com" className="text-amber-600 font-semibold hover:text-amber-700">info@towingno1.com</a> or call <a href="tel:+17788380014" className="text-amber-600 font-semibold hover:text-amber-700">(778) 838-0014</a>.
             </p>
           </div>
         </div>

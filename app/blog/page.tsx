@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   title: "Blog - Towing Tips & Road Safety | TowingNo.1 BC",
   description: "Read helpful articles about vehicle maintenance, road safety, and towing tips from the experts at TowingNo.1 in BC.",
   alternates: {
-    canonical: "https://towing-no-1.com/blog",
+    canonical: "https://www.towingno1.com/blog",
   },
   openGraph: {
     type: "website",
-    url: "https://towing-no-1.com/blog",
+    url: "https://www.towingno1.com/blog",
     title: "Blog - Towing Tips & Road Safety | TowingNo.1 BC",
     description: "Expert advice on vehicle maintenance, road safety, and emergency preparedness from BC's trusted towing company.",
   },
@@ -57,7 +57,7 @@ export default function Blog() {
               className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/15 text-white px-6 py-3 rounded-xl hover:bg-amber-500 hover:text-navy-900 hover:border-amber-500 transition-all duration-500 font-semibold"
             >
               Read Featured Post
-              <span>→</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4" aria-hidden="true"><path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd"/></svg>
             </Link>
           )}
         </div>
@@ -93,9 +93,10 @@ export default function Blog() {
                   </p>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="text-amber-600 font-bold text-sm hover:gap-2 inline-flex items-center gap-1 transition-all"
+                    className="text-amber-600 font-bold text-sm inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
                   >
-                    Read More <span>→</span>
+                    Read More
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true"><path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd"/></svg>
                   </Link>
                 </div>
               </article>

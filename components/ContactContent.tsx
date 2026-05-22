@@ -70,7 +70,7 @@ export default function ContactContent() {
       ),
       title: "Email",
       sub: "For non-urgent inquiries",
-      content: <a href="mailto:info@towing-no-1.com" className="text-lg font-medium text-navy-900 hover:text-amber-600 transition-colors">info@towing-no-1.com</a>,
+      content: <a href="mailto:info@towingno1.com" className="text-lg font-medium text-navy-900 hover:text-amber-600 transition-colors">info@towingno1.com</a>,
     },
     {
       icon: (
@@ -99,7 +99,7 @@ export default function ContactContent() {
       <section className="relative h-[40vh] min-h-[320px] flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 bg-navy-950">
           <Image
-            src="https://images.unsplash.com/photo-1516733968668-dbdce39c4651?q=80&w=2000"
+            src="/assets/contact-hero.jpg"
             alt="Contact TowingNo.1 for 24/7 roadside assistance"
             fill
             className="object-cover object-top md:object-center opacity-25"

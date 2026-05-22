@@ -104,7 +104,7 @@ function buildTestEmail(): string {
                 </tr>
                 <tr style="background-color:#f9fafb;">
                   <td style="padding:11px 16px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid #e5e7eb;">Sender</td>
-                  <td style="padding:11px 16px;font-size:13px;color:#111827;border-bottom:1px solid #e5e7eb;">info@towing-no-1.com</td>
+                  <td style="padding:11px 16px;font-size:13px;color:#111827;border-bottom:1px solid #e5e7eb;">info@towingno1.com</td>
                 </tr>
                 <tr>
                   <td style="padding:11px 16px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;">Method</td>
@@ -148,7 +148,7 @@ export async function GET() {
         body: { contentType: "HTML", content: html },
         from:         { emailAddress: { address: sender } },
         toRecipients: [{ emailAddress: { address: "prince844121@gmail.com" } }],
-        replyTo:      [{ emailAddress: { address: "info@towing-no-1.com" } }],
+        replyTo:      [{ emailAddress: { address: "info@towingno1.com" } }],
       },
       saveToSentItems: true,
     });
@@ -159,8 +159,8 @@ export async function GET() {
         subject: "[Delivery Verify] TowingNo.1 Email System Test",
         body: { contentType: "HTML", content: html },
         from:         { emailAddress: { address: sender } },
-        toRecipients: [{ emailAddress: { address: "info@towing-no-1.com" } }],
-        replyTo:      [{ emailAddress: { address: "info@towing-no-1.com" } }],
+        toRecipients: [{ emailAddress: { address: "info@towingno1.com" } }],
+        replyTo:      [{ emailAddress: { address: "info@towingno1.com" } }],
       },
       saveToSentItems: true,
     });
@@ -171,7 +171,7 @@ export async function GET() {
       sender,
       results: {
         external: { to: "prince844121@gmail.com", httpStatus: statusExternal, note: "202 = accepted by Microsoft. Check spam/junk if not in inbox." },
-        internal: { to: "info@towing-no-1.com",   httpStatus: statusInternal, note: "Should appear in Sent Items of the mailbox." },
+        internal: { to: "info@towingno1.com",   httpStatus: statusInternal, note: "Should appear in Sent Items of the mailbox." },
       },
     });
   } catch (err) {

@@ -11,7 +11,7 @@ export default function AboutContent() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 bg-navy-950">
           <Image
-            src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2000"
+            src="/assets/about-team.jpg"
             alt="TowingNo.1 team serving the Lower Mainland"
             fill
             className="object-cover object-top md:object-center opacity-30"
@@ -49,7 +49,7 @@ export default function AboutContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">Since 2010</span>
+              <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">Licensed &amp; Insured Since 2010</span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-navy-900">Our Story</h2>
               <div className="w-16 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mb-8 rounded-full" />
               <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
@@ -73,7 +73,7 @@ export default function AboutContent() {
               className="relative h-[500px] rounded-2xl overflow-hidden shadow-card-hover group"
             >
               <Image
-                src="https://images.unsplash.com/photo-1596726584282-358c3886e588?q=80&w=800"
+                src="/assets/about-fleet.jpg"
                 alt="TowingNo.1 tow truck fleet in British Columbia"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -179,7 +179,7 @@ export default function AboutContent() {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-navy-950">
           <Image
-            src="https://images.unsplash.com/photo-1504981157121-654877ee5ee5?q=80&w=1200"
+            src="/assets/about-cta.jpg"
             alt="TowingNo.1 dispatchers ready to help"
             fill
             className="object-cover opacity-15"

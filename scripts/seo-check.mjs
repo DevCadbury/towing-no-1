@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * SEO Audit Script — towing-no-1.com
+ * SEO Audit Script — towingno1.com
  * Scans all pages in the app/ directory for SEO completeness
  * and outputs a CSV report of issues.
  *
