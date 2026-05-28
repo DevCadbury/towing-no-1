@@ -323,6 +323,14 @@ export default function RootLayout({
           }}
         />
         {/* End Google Tag Manager */}
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2962382436663193"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
+        {/* End Google AdSense */}
         <link rel="icon" href="/logo.png" type="image/png" sizes="any" />
         <link rel="shortcut icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />
