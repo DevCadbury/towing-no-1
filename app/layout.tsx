@@ -49,7 +49,7 @@ const SEO_KEYWORDS = [
 ];
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.towingno1.com"),
+  metadataBase: new URL("https://towingno1.com"),
   title: {
     default: "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
     template: "%s | TowingNo.1",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   keywords: SEO_KEYWORDS,
   authors: [{ name: "TowingNo.1" }],
   alternates: {
-    canonical: "https://www.towingno1.com",
+    canonical: "https://towingno1.com",
   },
   verification: {
     google: "REPLACE_WITH_YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
@@ -72,14 +72,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://www.towingno1.com",
+    url: "https://towingno1.com",
     siteName: "TowingNo.1",
     title: "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
     description:
       "24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured. Call (778) 838-0014.",
     images: [
       {
-        url: "https://www.towingno1.com/preview.jpg",
+        url: "https://towingno1.com/preview.jpg",
         width: 1200,
         height: 630,
         alt: "24/7 Emergency Towing BC | TowingNo.1 — We Are Coming To You",
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     title: "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
     description:
       "24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland. Free quote before dispatch — call (778) 838-0014.",
-    images: ["https://www.towingno1.com/preview.jpg"],
+    images: ["https://towingno1.com/preview.jpg"],
   },
   robots: {
     index: true,
@@ -110,13 +110,13 @@ const globalSchema = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://www.towingno1.com/#organization",
+      "@id": "https://towingno1.com/#organization",
       name: "TowingNo.1",
-      url: "https://www.towingno1.com",
+      url: "https://towingno1.com",
       foundingDate: "2010",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.towingno1.com/logo.png",
+        url: "https://towingno1.com/logo.png",
         width: 684,
         height: 365,
       },
@@ -144,15 +144,15 @@ const globalSchema = {
     },
     {
       "@type": ["LocalBusiness", "AutomotiveBusiness"],
-      "@id": "https://www.towingno1.com/#localbusiness",
+      "@id": "https://towingno1.com/#localbusiness",
       name: "TowingNo.1",
       description:
         "24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Emergency towing, battery boost, flat tire help, lockout service, fuel delivery, and vehicle recovery. Licensed and insured.",
-      url: "https://www.towingno1.com",
+      url: "https://towingno1.com",
       telephone: "+1-778-838-0014",
       email: "info@towingno1.com",
-      image: "https://www.towingno1.com/preview.jpg",
-      logo: "https://www.towingno1.com/logo.png",
+      image: "https://towingno1.com/preview.jpg",
+      logo: "https://towingno1.com/logo.png",
       priceRange: "$$",
       openingHours: "Mo-Su 00:00-23:59",
       currenciesAccepted: "CAD",
@@ -324,10 +324,9 @@ export default function RootLayout({
         />
         {/* End Google Tag Manager */}
         {/* Google AdSense */}
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2962382436663193"
-          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
         {/* End Google AdSense */}
