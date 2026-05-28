@@ -48,7 +48,7 @@ export default function VehicleTransportPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <section className="relative h-[380px] flex items-center overflow-hidden bg-navy-950">
-        <Image src="/image/Vehicle_Transpor.png" alt="Vehicle transport service Lower Mainland — car on flatbed truck" fill className="object-cover opacity-30" priority sizes="100vw" />
+        <Image src="/image/Vehicle_Transpor.png" alt="Vehicle transport service Lower Mainland — car on truck" fill className="object-cover opacity-30" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />
         <div className="relative z-10 container-custom">
           <nav aria-label="Breadcrumb" className="mb-4">
@@ -77,7 +77,7 @@ export default function VehicleTransportPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Vehicle Transport in Surrey, BC</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Whether you&apos;re relocating, buying a vehicle from another city, or need to move a non-running car, TowingNo.1 provides secure vehicle transport across Surrey and the Lower Mainland. We use flatbed and wheel-lift trucks to transport your vehicle safely from pickup to delivery.
+                  Whether you&apos;re relocating, buying a vehicle from another city, or need to move a non-running car, TowingNo.1 provides secure vehicle transport across Surrey and the Lower Mainland. We use wheel-lift trucks to transport your vehicle safely from pickup to delivery.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Our drivers are trained, licensed, and insured in BC. We handle your vehicle with professional care and provide an upfront flat-rate quote before dispatch.
@@ -87,7 +87,7 @@ export default function VehicleTransportPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">What We Transport</h2>
                 <ul className="grid sm:grid-cols-2 gap-3">
-                  {["Running and non-running vehicles", "Cars, SUVs, and trucks", "Electric vehicles (flatbed)", "Motorcycles", "Classic and collector cars", "Dealership transfers"].map((item) => (
+                  {["Running and non-running vehicles", "Cars, SUVs, and trucks", "Electric vehicles", "Classic and collector cars", "Dealership transfers", "Light commercial vehicles"].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm text-slate-700">
                       <span className="w-5 h-5 rounded-full bg-amber-400/20 border border-amber-400 flex items-center justify-center shrink-0" aria-hidden="true">
                         <svg viewBox="0 0 12 12" fill="none" className="w-2.5 h-2.5"><path d="M2 6l3 3 5-5" stroke="#d97706" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -109,7 +109,7 @@ export default function VehicleTransportPage() {
                   (778) 838-0014
                 </a>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed &amp; wheel-lift trucks</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Wheel-lift trucks</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Upfront flat-rate pricing</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 availability</li>

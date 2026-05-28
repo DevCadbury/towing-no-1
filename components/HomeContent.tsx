@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { motion, AnimatePresence } from "framer-motion";
 import Counter from "@/components/Counter";
-import CallDialog from "@/components/CallDialog";
 import { useState } from "react";
 
 declare global {
@@ -121,13 +121,6 @@ function trackCallClick(location: string) {
 }
 
 export default function HomeContent() {
-  const [callOpen, setCallOpen] = useState(false);
-
-  function openCall(location: string) {
-    trackCallClick(location);
-    setCallOpen(true);
-  }
-
   return (
     <>
       {/* ── Hero ───────────────────────────────────────────────────── */}
@@ -155,7 +148,7 @@ export default function HomeContent() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="inline-block text-xs font-semibold tracking-[0.18em] uppercase text-amber-400 mb-6 border border-amber-400/30 rounded-full px-4 py-1.5"
               >
-                BC · Serving the Lower Mainland Since 2010
+                BC · Serving the Lower Mainland
               </motion.span>
 
               <motion.h1
@@ -176,7 +169,7 @@ export default function HomeContent() {
                 transition={{ duration: 0.6, delay: 0.32 }}
                 className="text-base md:text-xl text-white/90 mb-10 max-w-xl leading-relaxed [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]"
               >
-                Need a tow truck near you in Surrey or anywhere in the Lower Mainland? Call now for immediate dispatch, upfront flat-rate pricing, and a free quote in under 60 seconds. Licensed &amp; insured since 2010.
+                Need a tow truck near you in Surrey or anywhere in the Lower Mainland? Call now for immediate dispatch, upfront flat-rate pricing, and a free quote in under 60 seconds. Licensed &amp; insured.
               </motion.p>
 
               <motion.div
@@ -185,8 +178,9 @@ export default function HomeContent() {
                 transition={{ duration: 0.5, delay: 0.44 }}
                 className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
               >
-                <button
-                  onClick={() => openCall("hero")}
+                <a
+                  href="tel:+17788380014"
+                  onClick={() => trackCallClick("hero")}
                   className="btn-call-highlight inline-flex items-center justify-center gap-2 py-4 px-8 rounded-xl text-base"
                   aria-label="Call TowingNo.1 for a free quote"
                 >
@@ -194,7 +188,7 @@ export default function HomeContent() {
                     <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
                   </svg>
                   Call Now — Free Quote in 60 Sec
-                </button>
+                </a>
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl text-base border border-white/25 transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5"
@@ -389,7 +383,7 @@ export default function HomeContent() {
           >
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Why us</p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-              Trusted Across the Lower Mainland Since 2010
+              Trusted Across the Lower Mainland
             </h2>
           </motion.div>
 
@@ -398,7 +392,7 @@ export default function HomeContent() {
               [
               { stat: "24/7", label: "Always Available", sub: "Round-the-clock, every day of the year including holidays", delay: 0.1 },
               { stat: null, label: "Fast Response", sub: "Average response time under 15 minutes across Surrey", delay: 0.2, counter: true, value: 15, suffix: " min" },
-              { stat: null, label: "Years Experience", sub: "Serving BC communities since 2010", delay: 0.3, counter: true, value: 15, suffix: "+" },
+              { stat: null, label: "Years Experience", sub: "Serving BC communities", delay: 0.3, counter: true, value: 15, suffix: "+" },
               { stat: "4.9", label: "Customer Rating", sub: "Flat-rate pricing, licensed & insured, no hidden fees", delay: 0.4, isStar: true },
               ] as Array<{ stat: string | null; label: string; sub: string; delay: number; counter?: boolean; value?: number; suffix?: string; isStar?: boolean }>
             ).map((item) => (
@@ -438,7 +432,7 @@ export default function HomeContent() {
           >
             {[
               { label: "Licensed & Insured in BC" },
-              { label: "Flatbed & Wheel-Lift Trucks" },
+              { label: "Wheel-Lift Trucks" },
               { label: "EV-Friendly Towing" },
               { label: "Free Quote Before Dispatch" },
               { label: "No Hidden Fees" },
@@ -513,7 +507,7 @@ export default function HomeContent() {
       {/* ── Testimonials carousel ──────────────────────────────────── */}
       <TestimonialsCarousel />
       {/* ── FAQ ───────────────────────────────────────────────── */}
-      <FaqSection openCall={() => openCall("faq")} />
+      <FaqSection />
       {/* ── CTA Banner ─────────────────────────────────────────────── */}
       <section className="py-20 bg-gray-900" aria-label="Call to action">
         <div className="container-custom">
@@ -530,8 +524,9 @@ export default function HomeContent() {
             <p className="text-white/60 mb-10 text-base">
               Available 24 hours a day, 7 days a week — including all holidays.
             </p>
-            <button
-              onClick={() => openCall("bottom-cta")}
+            <a
+              href="tel:+17788380014"
+              onClick={() => trackCallClick("bottom-cta")}
               className="btn-call-highlight inline-flex items-center justify-center gap-2 py-4 px-10 rounded-xl text-base"
               aria-label="Call TowingNo.1 for emergency towing"
             >
@@ -539,11 +534,10 @@ export default function HomeContent() {
                 <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
               </svg>
               Call Now — Free Quote in 60 Sec
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
-      <CallDialog open={callOpen} onClose={() => setCallOpen(false)} />
     </>
   );
 }
@@ -560,77 +554,33 @@ const testimonials = [
 ];
 
 function TestimonialsCarousel() {
-  const [isPaused, setIsPaused] = useState(false);
-  const [activeCard, setActiveCard] = useState<number | null>(null);
-  const items = [...testimonials, ...testimonials];
-
   return (
-    <section className="py-20 bg-slate-50 overflow-hidden" aria-label="Customer reviews">
-      <div className="container-custom mb-12">
+    <section className="py-16 bg-slate-50 overflow-hidden" aria-label="Customer reviews">
+      <div className="container-custom mb-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Reviews</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-2">Reviews</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
             What Our Customers Say
           </h2>
-          <p className="mt-3 text-slate-500 text-sm">4.9 ★ average rating · 127+ verified reviews</p>
         </motion.div>
       </div>
 
-      <div
-        className="relative flex w-full select-none"
-        style={{ maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)" }}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => { setIsPaused(false); setActiveCard(null); }}
-        onTouchStart={() => setIsPaused(true)}
-        onTouchEnd={() => setTimeout(() => { setIsPaused(false); setActiveCard(null); }, 1800)}
-        aria-label="Customer testimonials carousel"
-      >
+      {/* EmbedSocial Google Reviews Widget */}
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div
-          className="flex gap-5"
-          style={{
-            animation: "marquee 38s linear infinite",
-            animationPlayState: isPaused ? "paused" : "running",
-            width: "max-content",
-          }}
-        >
-          {items.map((t, i) => (
-            <div
-              key={i}
-              onClick={() => setActiveCard(activeCard === i ? null : i)}
-              className={`w-[300px] sm:w-[340px] shrink-0 bg-white rounded-2xl p-6 shadow-[0_2px_16px_rgba(0,0,0,0.07)] flex flex-col cursor-pointer transition-all duration-200 ${
-                activeCard === i
-                  ? "border-2 border-amber-400 shadow-[0_8px_32px_rgba(251,191,36,0.18)] -translate-y-1"
-                  : "border-2 border-slate-100 hover:border-amber-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:-translate-y-1"
-              }`}
-              role="article"
-              aria-label={`Review by ${t.name}`}
-            >
-              <div className="flex gap-0.5 mb-4" aria-label="5 star rating">
-                {Array.from({ length: 5 }).map((_, s) => (
-                  <svg key={s} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-amber-400" aria-hidden="true">
-                    <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clipRule="evenodd" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-600 leading-relaxed text-sm flex-1">&ldquo;{t.body}&rdquo;</p>
-              <div className="mt-5 pt-4 border-t border-slate-100 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-amber-400 flex items-center justify-center text-gray-900 font-bold text-sm shrink-0" aria-hidden="true">
-                  {t.name.charAt(0)}
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900 text-sm leading-none">{t.name}</p>
-                  <p className="text-xs text-slate-400 mt-0.5">{t.title}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+          className="embedsocial-hashtag"
+          data-ref="5ca59e6bae5ffcc7fa5ba8cfb145115ed3ebc7a0"
+          data-lazyload="yes"
+        />
+        <Script
+          src="https://embedsocial.com/cdn/ht.js"
+          strategy="afterInteractive"
+        />
       </div>
     </section>
   );
@@ -648,7 +598,7 @@ const faqs = [
   },
   {
     q: "Do you tow all types of vehicles?",
-    a: "Yes. We tow cars, SUVs, pickup trucks, motorcycles, electric vehicles, and light commercial vehicles. EVs must be transported on a flatbed — we have flatbed trucks available 24/7.",
+    a: "Yes. We tow cars, SUVs, pickup trucks, electric vehicles, and light commercial vehicles. EVs must be transported on a wheel-lift truck — we have trucks available 24/7.",
   },
   {
     q: "What areas do you cover?",
@@ -672,11 +622,7 @@ const faqs = [
   },
 ];
 
-interface FaqSectionProps {
-  openCall: () => void;
-}
-
-function FaqSection({ openCall }: FaqSectionProps) {
+function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -764,8 +710,8 @@ function FaqSection({ openCall }: FaqSectionProps) {
             className="mt-12 flex flex-col sm:flex-row items-center gap-4 bg-slate-50 rounded-2xl px-6 py-5 border border-slate-100"
           >
             <p className="text-sm text-gray-600 flex-1">Still have a question? We&apos;re available 24/7 and happy to help.</p>
-            <button
-              onClick={openCall}
+            <a
+              href="tel:+17788380014"
               className="btn-call-highlight shrink-0 inline-flex items-center gap-2 text-sm py-2.5 px-5 rounded-xl"
               aria-label="Call TowingNo.1 for help"
             >
@@ -773,7 +719,7 @@ function FaqSection({ openCall }: FaqSectionProps) {
                 <path fillRule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 16.352V17.5a1.5 1.5 0 0 1-1.5 1.5H15c-8.284 0-15-6.716-15-15V3.5Z" clipRule="evenodd" />
               </svg>
               Call Now — Free Quote
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>

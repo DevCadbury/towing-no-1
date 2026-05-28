@@ -49,7 +49,7 @@ export default function AboutContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">Licensed &amp; Insured Since 2010</span>
+              <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">Licensed &amp; Insured</span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-navy-900">Our Story</h2>
               <div className="w-16 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mb-8 rounded-full" />
               <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
@@ -80,7 +80,7 @@ export default function AboutContent() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 to-transparent" />
               <div className="absolute bottom-6 left-6">
-                <span className="bg-amber-500 text-navy-900 px-4 py-2 rounded-full text-sm font-bold">Serving since 2010</span>
+                <span className="bg-amber-500 text-navy-900 px-4 py-2 rounded-full text-sm font-bold">Serving BC</span>
               </div>
             </motion.div>
           </div>

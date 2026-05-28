@@ -261,3 +261,45 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-amber-600;
 }
+
+
+/* EmbedSocial Google Reviews Widget - White Theme */
+.embedsocial-hashtag {
+  background: #ffffff !important;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.embedsocial-hashtag .embedsocial-widget,
+.embedsocial-hashtag .es-widget,
+.embedsocial-hashtag .es-review,
+.embedsocial-hashtag .es-item {
+  background: #ffffff !important;
+  border-color: #f1f5f9 !important;
+}
+
+.embedsocial-hashtag .es-review-content,
+.embedsocial-hashtag .es-text,
+.embedsocial-hashtag .es-review-text {
+  color: #334155 !important;
+}
+
+.embedsocial-hashtag .es-author-name,
+.embedsocial-hashtag .es-name {
+  color: #1e293b !important;
+}
+
+.embedsocial-hashtag .es-date,
+.embedsocial-hashtag .es-time {
+  color: #64748b !important;
+}
+
+/* Hide EmbedSocial Branding */
+.embedsocial-hashtag .feed-powered-by-es,
+.embedsocial-hashtag .es-widget-branding,
+.embedsocial-hashtag [class*="powered-by"],
+.embedsocial-hashtag a[href*="embedsocial.com"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}

@@ -147,7 +147,7 @@ const globalSchema = {
       "@id": "https://www.towingno1.com/#localbusiness",
       name: "TowingNo.1",
       description:
-        "24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Emergency towing, battery boost, flat tire help, lockout service, fuel delivery, and vehicle recovery. Licensed and insured. Serving BC since 2010.",
+        "24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Emergency towing, battery boost, flat tire help, lockout service, fuel delivery, and vehicle recovery. Licensed and insured.",
       url: "https://www.towingno1.com",
       telephone: "+1-778-838-0014",
       email: "info@towingno1.com",
