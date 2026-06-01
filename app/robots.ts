@@ -22,7 +22,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://towingno1.com/sitemap.xml",
-    host: "https://towingno1.com",
+    sitemap: "https://www.towingno1.com/sitemap.xml",
+    host: "https://www.towingno1.com",
   };
 }

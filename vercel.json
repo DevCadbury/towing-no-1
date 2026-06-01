@@ -15,6 +15,12 @@
       "has": [{ "type": "host", "value": "www.towing-no-1.com" }],
       "destination": "https://www.towingno1.com/$1",
       "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "towingno1.com" }],
+      "destination": "https://www.towingno1.com/$1",
+      "permanent": true
     }
   ],
   "headers": [
