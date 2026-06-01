@@ -5,21 +5,29 @@
   "installCommand": "npm install",
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
+      "has": [
+        { "type": "header", "key": "x-forwarded-proto", "value": "http" }
+      ],
+      "destination": "https://www.towingno1.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "towing-no-1.com" }],
-      "destination": "https://www.towingno1.com/$1",
+      "destination": "https://www.towingno1.com/:path*",
       "permanent": true
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "www.towing-no-1.com" }],
-      "destination": "https://www.towingno1.com/$1",
+      "destination": "https://www.towingno1.com/:path*",
       "permanent": true
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "towingno1.com" }],
-      "destination": "https://www.towingno1.com/$1",
+      "destination": "https://www.towingno1.com/:path*",
       "permanent": true
     }
   ],

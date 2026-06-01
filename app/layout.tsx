@@ -316,22 +316,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* Google Analytics (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-30WWS5SMCS"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-30WWS5SMCS');
-            `,
-          }}
-        />
-        {/* End Google Analytics */}
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -355,6 +339,25 @@ export default function RootLayout({
         />
       </head>
       <body className={outfit.className}>
+        {/* Google Analytics (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-30WWS5SMCS"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-30WWS5SMCS');
+            `,
+          }}
+        />
+        {/* End Google Analytics */}
+        
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
