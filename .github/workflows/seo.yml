@@ -101,12 +101,20 @@ jobs:
 
       - name: Check robots.ts has correct sitemap URL
         run: |
-          if grep -q "www.towingno1.com" app/robots.ts; then
-            echo "ERROR: robots.ts still references www domain"
+          # Canonical domain is https://www.towingno1.com (see middleware.ts and
+          # vercel.json, which 301-redirect every other host to www). robots.ts
+          # must reference that canonical host and must NOT use the Vercel
+          # preview domain or the hyphenated towing-no-1.com domain.
+          if grep -q "towing-no-1.vercel.app" app/robots.ts; then
+            echo "ERROR: robots.ts references vercel preview domain"
             exit 1
           fi
-          if grep -q "towing-no-1.vercel.app" app/robots.ts; then
-            echo "ERROR: robots.ts references vercel domain"
+          if grep -q "towing-no-1\.com" app/robots.ts; then
+            echo "ERROR: robots.ts references the non-canonical towing-no-1.com domain"
+            exit 1
+          fi
+          if ! grep -q "https://www.towingno1.com/sitemap.xml" app/robots.ts; then
+            echo "ERROR: robots.ts is missing the canonical sitemap URL (https://www.towingno1.com/sitemap.xml)"
             exit 1
           fi
           echo "robots.ts: OK"
