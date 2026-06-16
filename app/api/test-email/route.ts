@@ -41,9 +41,9 @@ async function getAccessToken(): Promise<string> {
 }
 
 /* ─── Send via Graph API ───────────────────────────────────────── */
-async function sendMail(accessToken: string, payload: object): Promise<number> {
+async function sendMail(accessToken: string, mailbox: string, payload: object): Promise<number> {
   const res = await fetch(
-    `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(SENDER_MAILBOX)}/sendMail`,
+    `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(mailbox)}/sendMail`,
     {
       method: "POST",
       headers: {
@@ -153,20 +153,39 @@ export async function GET() {
     const accessToken = await getAccessToken();
 
     // 1) External deliverability test — customer-style email FROM the dispatch
-    //    alias, sent to the configured test inbox.
-    const statusExternal = await sendMail(accessToken, {
-      message: {
-        subject: "TowingNo.1 — Email System Test (Customer Confirmation)",
-        body: { contentType: "HTML", content: buildTestEmail("Customer Confirmation", EMAIL_TEST, EMAIL_DISPATCH) },
-        from: { emailAddress: { address: EMAIL_DISPATCH, name: "TowingNo.1 Dispatch" } },
-        toRecipients: [{ emailAddress: { address: EMAIL_TEST } }],
-        replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
-      },
-      saveToSentItems: true,
-    });
+    //    alias, sent to the configured test inbox. Falls back to the main
+    //    mailbox if the tenant denies sending as the dispatch alias.
+    let customerFrom = EMAIL_DISPATCH;
+    let statusExternal: number;
+    try {
+      if (!EMAIL_DISPATCH || EMAIL_DISPATCH === SENDER_MAILBOX) throw new Error("no separate dispatch mailbox");
+      statusExternal = await sendMail(accessToken, EMAIL_DISPATCH, {
+        message: {
+          subject: "TowingNo.1 — Email System Test (Customer Confirmation)",
+          body: { contentType: "HTML", content: buildTestEmail("Customer Confirmation", EMAIL_TEST, EMAIL_DISPATCH) },
+          from: { emailAddress: { address: EMAIL_DISPATCH, name: "TowingNo.1 Dispatch" } },
+          toRecipients: [{ emailAddress: { address: EMAIL_TEST } }],
+          replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
+        },
+        saveToSentItems: true,
+      });
+    } catch {
+      // Fallback: send through the main mailbox as the business address.
+      customerFrom = `${EMAIL_FROM} (dispatch alias denied — sent via main mailbox)`;
+      statusExternal = await sendMail(accessToken, SENDER_MAILBOX, {
+        message: {
+          subject: "TowingNo.1 — Email System Test (Customer Confirmation)",
+          body: { contentType: "HTML", content: buildTestEmail("Customer Confirmation", EMAIL_TEST, EMAIL_FROM) },
+          from: { emailAddress: { address: EMAIL_FROM, name: "TowingNo.1 Dispatch" } },
+          toRecipients: [{ emailAddress: { address: EMAIL_TEST } }],
+          replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
+        },
+        saveToSentItems: true,
+      });
+    }
 
     // 2) Admin notification test — FROM the business address, to all admins.
-    const statusAdmin = await sendMail(accessToken, {
+    const statusAdmin = await sendMail(accessToken, SENDER_MAILBOX, {
       message: {
         subject: "[Test] New Contact Form Submission — TowingNo.1",
         body: { contentType: "HTML", content: buildTestEmail("Admin Notification", ADMIN_RECIPIENTS.join(", "), EMAIL_FROM) },
@@ -183,7 +202,7 @@ export async function GET() {
       senderMailbox: SENDER_MAILBOX,
       results: {
         customerConfirmation: {
-          from: EMAIL_DISPATCH,
+          from: customerFrom,
           to: EMAIL_TEST,
           httpStatus: statusExternal,
           note: "202 = accepted by Microsoft. Check spam/junk if not in inbox.",

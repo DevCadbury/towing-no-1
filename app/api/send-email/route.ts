@@ -56,12 +56,11 @@ async function getAccessToken(): Promise<string> {
 }
 
 /* ─── Send via Microsoft Graph API ─────────────────────────────── */
-// The mail is always submitted through SENDER_MAILBOX (the mailbox the Azure
-// app is granted Mail.Send on); the visible "From" is set per-message so the
-// customer confirmation can appear from the dispatch alias.
-async function sendMail(accessToken: string, payload: object): Promise<void> {
+// The message is submitted through `mailbox` (the /users/{mailbox}/sendMail
+// endpoint). The Azure app must have application Mail.Send rights for it.
+async function sendMail(accessToken: string, mailbox: string, payload: object): Promise<void> {
   const res = await fetch(
-    `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(SENDER_MAILBOX)}/sendMail`,
+    `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(mailbox)}/sendMail`,
     {
       method: "POST",
       headers: {
@@ -76,6 +75,48 @@ async function sendMail(accessToken: string, payload: object): Promise<void> {
     const err = await res.text();
     throw new Error(`Graph sendMail failed (${res.status}): ${err}`);
   }
+}
+
+/* ─── Customer confirmation with dispatch-alias fallback ───────── */
+// Preferred: send truly as the dispatch mailbox/alias so the customer sees a
+// "dispatch" sender. If the tenant denies that (ErrorSendAsDenied, or the app
+// lacks access to that mailbox), fall back to sending through the main mailbox
+// as the business address with a "TowingNo.1 Dispatch" display name. This keeps
+// the contact form working without requiring Microsoft 365 admin changes.
+async function sendConfirmation(accessToken: string, content: string, customerEmail: string): Promise<void> {
+  const subject = "We have received your request — TowingNo.1";
+
+  // Attempt 1 — send through the dispatch mailbox, from the dispatch address.
+  if (EMAIL_DISPATCH && EMAIL_DISPATCH !== SENDER_MAILBOX) {
+    try {
+      await sendMail(accessToken, EMAIL_DISPATCH, {
+        message: {
+          subject,
+          body: { contentType: "HTML", content },
+          from: { emailAddress: { address: EMAIL_DISPATCH, name: "TowingNo.1 Dispatch" } },
+          toRecipients: [{ emailAddress: { address: customerEmail } }],
+          replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
+        },
+        saveToSentItems: true,
+      });
+      return;
+    } catch (err) {
+      console.warn("[send-email] dispatch-alias send failed, falling back to main mailbox:", err);
+    }
+  }
+
+  // Attempt 2 (fallback) — send through the main mailbox as the business
+  // address, keeping a recognizable "Dispatch" display name.
+  await sendMail(accessToken, SENDER_MAILBOX, {
+    message: {
+      subject,
+      body: { contentType: "HTML", content },
+      from: { emailAddress: { address: EMAIL_FROM, name: "TowingNo.1 Dispatch" } },
+      toRecipients: [{ emailAddress: { address: customerEmail } }],
+      replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
+    },
+    saveToSentItems: true,
+  });
 }
 
 /* ─── Business notification email ──────────────────────────────── */
@@ -328,9 +369,11 @@ export async function POST(req: NextRequest) {
 
     const accessToken = await getAccessToken();
 
-    // Email 1 — Business/admin notification (to all admin recipients).
-    // From the business address; reply-to goes straight to the customer.
-    await sendMail(accessToken, {
+    // Email 1 — Business/admin notification (to all admin recipients). This is
+    // the critical lead delivery, so it is sent first and must succeed. From the
+    // business mailbox (sends as itself — no send-as issue); reply-to is the
+    // customer so a reply goes straight back to them.
+    await sendMail(accessToken, SENDER_MAILBOX, {
       message: {
         subject: `New Contact Form Submission — ${name}`,
         body: { contentType: "HTML", content: buildBusinessEmail(safeName, safeEmail, safePhone, safeMessage) },
@@ -341,18 +384,18 @@ export async function POST(req: NextRequest) {
       saveToSentItems: true,
     });
 
-    // Email 2 — Customer confirmation. From the dispatch alias; reply-to is
-    // the public business address so customer replies reach the team.
-    await sendMail(accessToken, {
-      message: {
-        subject: "We have received your request — TowingNo.1",
-        body: { contentType: "HTML", content: buildConfirmationEmail(safeName, safeEmail, safePhone, safeMessage) },
-        from: { emailAddress: { address: EMAIL_DISPATCH, name: "TowingNo.1 Dispatch" } },
-        toRecipients: [{ emailAddress: { address: email } }],
-        replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
-      },
-      saveToSentItems: true,
-    });
+    // Email 2 — Customer confirmation. Best-effort: prefers the dispatch alias
+    // and falls back to the main mailbox. A confirmation failure must NOT fail
+    // the request, because the lead has already been captured above.
+    try {
+      await sendConfirmation(
+        accessToken,
+        buildConfirmationEmail(safeName, safeEmail, safePhone, safeMessage),
+        email
+      );
+    } catch (confErr) {
+      console.error("[send-email] confirmation email failed (lead still captured):", confErr);
+    }
 
     return NextResponse.json({ success: true });
   } catch (err) {
