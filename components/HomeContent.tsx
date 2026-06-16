@@ -504,6 +504,35 @@ export default function HomeContent() {
         </div>
       </section>
 
+      {/* ── Local Knowledge / Prose ────────────────────────────────── */}
+      <section className="py-20 bg-white border-y border-slate-100" aria-label="Why local towing matters">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="max-w-3xl"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Local knowledge, faster help</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-5">
+              Why a Local Tow Truck Reaches You Sooner
+            </h2>
+            <div className="space-y-4 text-slate-600 text-base leading-relaxed">
+              <p>
+                The fastest tow is the one that already knows where it is going. Across the Lower Mainland, the difference between a fifteen-minute wait and an hour on the shoulder usually comes down to local knowledge — knowing that the Highway 1 climb toward the SFU exit punishes tired cooling systems, that Surrey&apos;s King George corridor backs up at rush hour, and which Richmond underpasses flood after a hard rain. Our drivers work these roads every day, so when you give our dispatcher a cross street or a kilometre marker, the closest truck heads straight to you instead of circling for an address.
+              </p>
+              <p>
+                That local focus also shapes how we handle each call. A breakdown in a downtown Vancouver tower parkade needs a wheel-lift sized for low clearances and tight pillars; a vehicle stuck on a snowy Coquitlam switchback needs a winch and a driver who can set up a recovery safely on a slope; an all-wheel-drive crossover or an EV needs a flatbed so its drivetrain is never dragged. We carry the right equipment for the situation rather than forcing one truck to do every job.
+              </p>
+              <p>
+                Most of all, we try to solve your problem without a tow whenever it is safe to do so. A great many of our calls — dead batteries, flats, lockouts, and empty tanks — end with your own vehicle back on the road within minutes, not loaded onto a truck. When a tow genuinely is the right call, you will always know the flat-rate price before we start, so the only surprise is how quickly you are moving again.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Testimonials carousel ──────────────────────────────────── */}
       <TestimonialsCarousel />
       {/* ── FAQ ───────────────────────────────────────────────── */}

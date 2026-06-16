@@ -1,0 +1,632 @@
+{
+  "version": 1,
+  "routes": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/about",
+      "status": 200
+    },
+    {
+      "route": "/blog",
+      "status": 200
+    },
+    {
+      "route": "/blog/emergency-kit-essentials",
+      "status": 200
+    },
+    {
+      "route": "/blog/prepare-vehicle-winter-bc",
+      "status": 200
+    },
+    {
+      "route": "/blog/signs-car-battery-dying",
+      "status": 200
+    },
+    {
+      "route": "/blog/understanding-towing-services",
+      "status": 200
+    },
+    {
+      "route": "/blog/what-to-do-car-breaks-down-highway",
+      "status": 200
+    },
+    {
+      "route": "/blog/when-call-tow-vs-fix-yourself",
+      "status": 200
+    },
+    {
+      "route": "/contact",
+      "status": 200
+    },
+    {
+      "route": "/locations",
+      "status": 200
+    },
+    {
+      "route": "/locations/burnaby",
+      "status": 200
+    },
+    {
+      "route": "/locations/coquitlam",
+      "status": 200
+    },
+    {
+      "route": "/locations/delta",
+      "status": 200
+    },
+    {
+      "route": "/locations/langley",
+      "status": 200
+    },
+    {
+      "route": "/locations/maple-ridge",
+      "status": 200
+    },
+    {
+      "route": "/locations/richmond",
+      "status": 200
+    },
+    {
+      "route": "/locations/surrey",
+      "status": 200
+    },
+    {
+      "route": "/locations/vancouver",
+      "status": 200
+    },
+    {
+      "route": "/locations/white-rock",
+      "status": 200
+    },
+    {
+      "route": "/privacy",
+      "status": 200
+    },
+    {
+      "route": "/services",
+      "status": 200
+    },
+    {
+      "route": "/services/accident-recovery",
+      "status": 200
+    },
+    {
+      "route": "/services/battery-boost",
+      "status": 200
+    },
+    {
+      "route": "/services/emergency-towing",
+      "status": 200
+    },
+    {
+      "route": "/services/flat-tire-help",
+      "status": 200
+    },
+    {
+      "route": "/services/fuel-delivery",
+      "status": 200
+    },
+    {
+      "route": "/services/lockout-service",
+      "status": 200
+    },
+    {
+      "route": "/services/vehicle-transport",
+      "status": 200
+    },
+    {
+      "route": "/services/winching-extraction",
+      "status": 200
+    },
+    {
+      "route": "/terms",
+      "status": 200
+    }
+  ],
+  "metadata": {
+    "/": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1\", description: \"Stranded in Surrey or the Lower Mainland? TowingNo.1 dispatches in under 15 minutes, 24/7. Emergency towing, battery boost, lockout, flat tire & more. Free quote before dispatch — call (778) 838-0014.\", keywords: [ \"tow truck surrey\", \"towing near me\", \"tow truck near me\", \"emergency towing surrey\", \"24/7 tow truck\", \"car towing near me\", \"roadside assistance surrey\", \"surrey towing services\", \"towing company surrey bc\", \"battery boost surrey\", \"lockout service surrey\", \"flat tire help surrey\", ], alternates: { canonical: \"https://www.towingno1.com\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com\", title: \"Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1\", description: \"24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured. Call (778) 838-0014.\", }, twitter: { card: \"summary_large_image\", title: \"Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1\", description: \"Call TowingNo.1 for fast 24/7 towing in Surrey and the Lower Mainland. Free quote before dispatch — (778) 838-0014.\", }, }"
+    },
+    "/services": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Towing & Roadside Services Surrey BC | Emergency, Lockout, Battery & More\", description: \"Full-service towing and roadside assistance in Surrey and the Lower Mainland. Emergency towing, battery boost, flat tire, lockout, fuel delivery, and winching — available 24/7 with upfront pricing.\", alternates: { canonical: \"https://www.towingno1.com/services\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services\", title: \"Towing & Roadside Services Surrey BC | Emergency, Lockout, Battery & More\", description: \"24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.\", }, twitter: { card: \"summary_large_image\", title: \"Towing & Roadside Services Surrey BC | Emergency, Lockout, Battery & More\", description: \"24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.\", }, }"
+    },
+    "/services/accident-recovery": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Accident Recovery Towing Surrey | 24/7 Collision Towing BC\", description: \"Need accident recovery towing in Surrey or the Lower Mainland? TowingNo.1 handles collision scenes carefully and transports damaged vehicles safely. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/accident-recovery\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/accident-recovery\", title: \"Accident Recovery Towing Surrey | 24/7 Collision Towing BC\", description: \"24/7 accident recovery towing in Surrey and the Lower Mainland. Professional collision scene handling and safe vehicle transport.\", }, }"
+    },
+    "/services/battery-boost": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Battery Boost Surrey | 24/7 Jump-Start Service Near Me\", description: \"Dead battery in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 battery boost and jump-start service. Fast dispatch, upfront pricing. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/battery-boost\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/battery-boost\", title: \"Battery Boost Surrey | 24/7 Jump-Start Service Near Me\", description: \"24/7 battery boost and jump-start service in Surrey and the Lower Mainland. Fast dispatch, upfront pricing.\", }, }"
+    },
+    "/services/emergency-towing": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Emergency Towing Surrey | 24/7 Tow Truck Near Me\", description: \"Need emergency towing in Surrey or the Lower Mainland? TowingNo.1 dispatches in under 15 minutes, 24/7. Flatbed and wheel-lift towing for all vehicles. Free quote — call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/emergency-towing\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/emergency-towing\", title: \"Emergency Towing Surrey | 24/7 Tow Truck Near Me\", description: \"24/7 emergency towing in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.\", }, }"
+    },
+    "/services/flat-tire-help": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Flat Tire Help Surrey | 24/7 Roadside Tire Change Near Me\", description: \"Flat tire in Surrey or the Lower Mainland? TowingNo.1 changes your tire on-site or tows you to the nearest shop. 24/7 dispatch, upfront pricing. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/flat-tire-help\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/flat-tire-help\", title: \"Flat Tire Help Surrey | 24/7 Roadside Tire Change Near Me\", description: \"24/7 flat tire help in Surrey and the Lower Mainland. On-site tire change or tow to the nearest shop.\", }, }"
+    },
+    "/services/fuel-delivery": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Fuel Delivery Surrey | Emergency Gas Delivery Near Me 24/7\", description: \"Run out of fuel in Surrey or the Lower Mainland? TowingNo.1 delivers gasoline or diesel to your location 24/7. Fast dispatch, upfront pricing. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/fuel-delivery\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/fuel-delivery\", title: \"Fuel Delivery Surrey | Emergency Gas Delivery Near Me 24/7\", description: \"24/7 emergency fuel delivery in Surrey and the Lower Mainland. Gasoline and diesel delivered to your location.\", }, }"
+    },
+    "/services/lockout-service": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Car Lockout Service Surrey | Keys Locked Inside — We Help 24/7\", description: \"Locked your keys in your car in Surrey or the Lower Mainland? TowingNo.1 opens your vehicle safely without damage. 24/7 dispatch, upfront pricing. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/lockout-service\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/lockout-service\", title: \"Car Lockout Service Surrey | Keys Locked Inside — We Help 24/7\", description: \"24/7 car lockout service in Surrey and the Lower Mainland. We open your vehicle safely without damage.\", }, }"
+    },
+    "/services/vehicle-transport": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Vehicle Transport Surrey | Car Transport Lower Mainland BC\", description: \"Need vehicle transport in Surrey or across the Lower Mainland? TowingNo.1 provides secure, on-time vehicle transport for all makes and models. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/vehicle-transport\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/vehicle-transport\", title: \"Vehicle Transport Surrey | Car Transport Lower Mainland BC\", description: \"Secure vehicle transport across Surrey and the Lower Mainland. On-time pickup and delivery for all vehicle types.\", }, }"
+    },
+    "/services/winching-extraction": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Winching & Extraction Surrey | Stuck in Ditch or Snow — 24/7\", description: \"Vehicle stuck in a ditch, mud, or snow in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 winching and extraction. Fast dispatch, upfront pricing. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/winching-extraction\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/winching-extraction\", title: \"Winching & Extraction Surrey | Stuck in Ditch or Snow — 24/7\", description: \"24/7 winching and extraction in Surrey and the Lower Mainland. We pull your vehicle out of ditches, mud, and snow safely.\", }, }"
+    },
+    "/locations": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Tow Truck Service Areas | Surrey, Langley, Burnaby & Lower Mainland\", description: \"TowingNo.1 covers Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, Maple Ridge, Vancouver, and surrounding Lower Mainland communities. 24/7 dispatch with upfront pricing.\", alternates: { canonical: \"https://www.towingno1.com/locations\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/locations\", title: \"Tow Truck Service Areas | Surrey, Langley, Burnaby & Lower Mainland\", description: \"City-based towing and roadside support pages for Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, Maple Ridge, and Vancouver.\", }, twitter: { card: \"summary_large_image\", title: \"Tow Truck Service Areas | Surrey, Langley, Burnaby & Lower Mainland\", description: \"Find local 24/7 towing coverage across Surrey and the Lower Mainland with fast dispatch and upfront quotes.\", }, }"
+    },
+    "/locations/[city]": {
+      "present": true,
+      "dynamic": true,
+      "normalized": "{ params }"
+    },
+    "/blog": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Blog - Towing Tips & Road Safety | TowingNo.1 BC\", description: \"Read helpful articles about vehicle maintenance, road safety, and towing tips from the experts at TowingNo.1 in BC.\", alternates: { canonical: \"https://www.towingno1.com/blog\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/blog\", title: \"Blog - Towing Tips & Road Safety | TowingNo.1 BC\", description: \"Expert advice on vehicle maintenance, road safety, and emergency preparedness from BC's trusted towing company.\", }, twitter: { card: \"summary_large_image\", title: \"Blog - Towing Tips & Road Safety | TowingNo.1 BC\", description: \"Expert advice on vehicle maintenance, road safety, and emergency preparedness from BC's trusted towing company.\", }, }"
+    },
+    "/blog/[slug]": {
+      "present": true,
+      "dynamic": true,
+      "normalized": "{ params }"
+    },
+    "/about": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"About TowingNo.1 | Licensed & Insured Towing in BC Since 2010\", description: \"TowingNo.1 has served the Lower Mainland since 2010. Licensed & insured, honest flat-rate pricing, fast response times, and professional drivers across Surrey and BC.\", alternates: { canonical: \"https://www.towingno1.com/about\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/about\", title: \"About TowingNo.1 | BC's Trusted Towing Company Since 2010\", description: \"Learn about TowingNo.1, British Columbia's most trusted towing company since 2010. Fast response, honest pricing, and professional service across the Lower Mainland.\", images: [ { url: \"https://www.towingno1.com/preview.jpg\", width: 1200, height: 630, alt: \"TowingNo.1 - Trusted Towing Company in BC\", }, ], }, twitter: { card: \"summary_large_image\", title: \"About TowingNo.1 | BC's Trusted Towing Company Since 2010\", description: \"Learn about TowingNo.1, British Columbia's most trusted towing company since 2010.\", images: [\"https://www.towingno1.com/preview.jpg\"], }, }"
+    },
+    "/contact": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Contact TowingNo.1 | 24/7 Emergency Towing BC\", description: \"Contact TowingNo.1 for fast, reliable roadside assistance in BC. Call (778) 838-0014 anytime — available 24/7 for emergency towing across the Lower Mainland.\", alternates: { canonical: \"https://www.towingno1.com/contact\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/contact\", title: \"Contact TowingNo.1 | 24/7 Emergency Towing BC\", description: \"Get in touch with BC's trusted towing company. Available 24/7 for emergency roadside assistance across the Lower Mainland.\", images: [ { url: \"https://www.towingno1.com/preview.jpg\", width: 1200, height: 630, alt: \"Contact TowingNo.1 - 24/7 Emergency Towing BC\", }, ], }, twitter: { card: \"summary_large_image\", title: \"Contact TowingNo.1 | 24/7 Emergency Towing BC\", description: \"Get in touch with BC's trusted towing company. Available 24/7 for emergency roadside assistance across the Lower Mainland.\", images: [\"https://www.towingno1.com/preview.jpg\"], }, }"
+    },
+    "/privacy": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Privacy Policy | TowingNo.1\", description: \"Read how TowingNo.1 collects, uses, and protects personal information for towing and roadside assistance requests across Surrey and the Lower Mainland.\", alternates: { canonical: \"https://www.towingno1.com/privacy\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/privacy\", title: \"Privacy Policy | TowingNo.1\", description: \"How TowingNo.1 collects and protects customer information for 24/7 towing and roadside service dispatch.\", }, twitter: { card: \"summary\", title: \"Privacy Policy | TowingNo.1\", description: \"How TowingNo.1 collects and protects customer information for dispatch and roadside service.\", }, }"
+    },
+    "/terms": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: \"Terms of Service | TowingNo.1\", description: \"Read the service terms for TowingNo.1 emergency towing and roadside assistance across Surrey and the Lower Mainland.\", alternates: { canonical: \"https://www.towingno1.com/terms\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/terms\", title: \"Terms of Service | TowingNo.1\", description: \"Service terms, dispatch conditions, and customer responsibilities for TowingNo.1 roadside services.\", }, twitter: { card: \"summary\", title: \"Terms of Service | TowingNo.1\", description: \"Service terms and dispatch conditions for TowingNo.1 towing and roadside assistance.\", }, }"
+    },
+    "__layout__": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ metadataBase: new URL(\"https://www.towingno1.com\"), title: { default: \"Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1\", template: \"%s | TowingNo.1\", }, description: \"Need a tow truck near you in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 emergency towing, roadside help, and a free quote before dispatch. Call (778) 838-0014.\", keywords: SEO_KEYWORDS, authors: [{ name: \"TowingNo.1\" }], alternates: { canonical: \"https://www.towingno1.com\", }, , icons: { icon: [{ url: \"/logo.png\", type: \"image/png\" }], shortcut: \"/logo.png\", apple: \"/logo.png\", }, openGraph: { type: \"website\", locale: \"en_CA\", url: \"https://www.towingno1.com\", siteName: \"TowingNo.1\", title: \"Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1\", description: \"24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured. Call (778) 838-0014.\", images: [ { url: \"https://www.towingno1.com/preview.jpg\", width: 1200, height: 630, alt: \"24/7 Emergency Towing BC | TowingNo.1 — We Are Coming To You\", }, ], }, twitter: { card: \"summary_large_image\", title: \"Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1\", description: \"24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland. Free quote before dispatch — call (778) 838-0014.\", images: [\"https://www.towingno1.com/preview.jpg\"], }, robots: { index: true, follow: true, googleBot: { index: true, follow: true, \"max-image-preview\": \"large\", \"max-snippet\": -1, }, }, }"
+    }
+  },
+  "schema": {
+    "globalGraph": {
+      "types": [
+        "AdministrativeArea",
+        "AdministrativeArea",
+        "AdministrativeArea",
+        "AdministrativeArea",
+        "AdministrativeArea",
+        "AdministrativeArea",
+        "AdministrativeArea",
+        "AdministrativeArea",
+        "AdministrativeArea",
+        "AdministrativeArea",
+        "AggregateRating",
+        "AutomotiveBusiness",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "ContactPoint",
+        "ImageObject",
+        "LocalBusiness",
+        "Offer",
+        "Offer",
+        "Offer",
+        "Offer",
+        "Offer",
+        "Offer",
+        "Offer",
+        "Offer",
+        "OfferCatalog",
+        "OpeningHoursSpecification",
+        "Organization",
+        "PostalAddress",
+        "Service",
+        "Service",
+        "Service",
+        "Service",
+        "Service",
+        "Service",
+        "Service",
+        "Service"
+      ],
+      "normalized": "{ \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"Organization\", \"@id\": \"https://www.towingno1.com/#organization\", name: \"TowingNo.1\", url: \"https://www.towingno1.com\", foundingDate: \"2010\", logo: { \"@type\": \"ImageObject\", url: \"https://www.towingno1.com/logo.png\", width: 684, height: 365, }, sameAs: [\"https://www.instagram.com/towing.no.1\"], contactPoint: { \"@type\": \"ContactPoint\", telephone: \"+1-778-838-0014\", contactType: \"customer service\", availableLanguage: \"English\", hoursAvailable: { \"@type\": \"OpeningHoursSpecification\", dayOfWeek: [ \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\", ], opens: \"00:00\", closes: \"23:59\", }, }, }, { \"@type\": [\"LocalBusiness\", \"AutomotiveBusiness\"], \"@id\": \"https://www.towingno1.com/#localbusiness\", name: \"TowingNo.1\", description: \"24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Emergency towing, battery boost, flat tire help, lockout service, fuel delivery, and vehicle recovery. Licensed and insured.\", url: \"https://www.towingno1.com\", telephone: \"+1-778-838-0014\", email: \"info@towingno1.com\", image: \"https://www.towingno1.com/preview.jpg\", logo: \"https://www.towingno1.com/logo.png\", priceRange: \"$$\", openingHours: \"Mo-Su 00:00-23:59\", currenciesAccepted: \"CAD\", paymentAccepted: \"Cash, Credit Card, Debit Card\", foundingDate: \"2010\", address: { \"@type\": \"PostalAddress\", addressLocality: \"Surrey\", addressRegion: \"BC\", addressCountry: \"CA\", }, aggregateRating: { \"@type\": \"AggregateRating\", ratingValue: \"4.9\", reviewCount: \"127\", bestRating: \"5\", worstRating: \"1\", }, knowsAbout: [ \"Emergency towing\", \"Tow truck service\", \"Roadside assistance\", \"Battery boost\", \"Flat tire change\", \"Vehicle lockout\", \"Fuel delivery\", \"Winching and extraction\", ], areaServed: [ { \"@type\": \"City\", name: \"Surrey\", containedInPlace: { \"@type\": \"AdministrativeArea\", name: \"British Columbia\", }, }, { \"@type\": \"City\", name: \"Delta\", containedInPlace: { \"@type\": \"AdministrativeArea\", name: \"British Columbia\", }, }, { \"@type\": \"City\", name: \"White Rock\", containedInPlace: { \"@type\": \"AdministrativeArea\", name: \"British Columbia\", }, }, { \"@type\": \"City\", name: \"Langley\", containedInPlace: { \"@type\": \"AdministrativeArea\", name: \"British Columbia\", }, }, { \"@type\": \"City\", name: \"Burnaby\", containedInPlace: { \"@type\": \"AdministrativeArea\", name: \"British Columbia\", }, }, { \"@type\": \"City\", name: \"Richmond\", containedInPlace: { \"@type\": \"AdministrativeArea\", name: \"British Columbia\", }, }, { \"@type\": \"City\", name: \"Coquitlam\", containedInPlace: { \"@type\": \"AdministrativeArea\", name: \"British Columbia\", }, }, { \"@type\": \"City\", name: \"Port Coquitlam\", containedInPlace: { \"@type\": \"AdministrativeArea\", name: \"British Columbia\", }, }, { \"@type\": \"City\", name: \"Vancouver\", containedInPlace: { \"@type\": \"AdministrativeArea\", name: \"British Columbia\", }, }, { \"@type\": \"City\", name: \"Maple Ridge\", containedInPlace: { \"@type\": \"AdministrativeArea\", name: \"British Columbia\", }, }, ], hasOfferCatalog: { \"@type\": \"OfferCatalog\", name: \"Towing & Roadside Assistance Services\", itemListElement: [ { \"@type\": \"Offer\", itemOffered: { \"@type\": \"Service\", name: \"Emergency Towing\" }, }, { \"@type\": \"Offer\", itemOffered: { \"@type\": \"Service\", name: \"Roadside Assistance\" }, }, { \"@type\": \"Offer\", itemOffered: { \"@type\": \"Service\", name: \"Battery Boost\" }, }, { \"@type\": \"Offer\", itemOffered: { \"@type\": \"Service\", name: \"Flat Tire Change\" }, }, { \"@type\": \"Offer\", itemOffered: { \"@type\": \"Service\", name: \"Vehicle Recovery\" }, }, { \"@type\": \"Offer\", itemOffered: { \"@type\": \"Service\", name: \"Lockout Service\" }, }, { \"@type\": \"Offer\", itemOffered: { \"@type\": \"Service\", name: \"Fuel Delivery\" }, }, { \"@type\": \"Offer\", itemOffered: { \"@type\": \"Service\", name: \"Winching & Extraction\", }, }, ], }, }, ], }"
+    },
+    "perPage": {
+      "/": [
+        "Answer",
+        "Answer",
+        "Answer",
+        "Answer",
+        "Answer",
+        "Answer",
+        "Answer",
+        "Answer",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "ContactPoint",
+        "FAQPage",
+        "ItemList",
+        "ListItem",
+        "LocalBusiness",
+        "Person",
+        "Person",
+        "Person",
+        "Person",
+        "Question",
+        "Question",
+        "Question",
+        "Question",
+        "Question",
+        "Question",
+        "Question",
+        "Question",
+        "Rating",
+        "Rating",
+        "Rating",
+        "Rating",
+        "Review",
+        "Review",
+        "Review",
+        "Review",
+        "Service",
+        "ServiceChannel",
+        "SpeakableSpecification",
+        "WebPage"
+      ],
+      "/services": [
+        "BreadcrumbList",
+        "ItemList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "LocalBusiness",
+        "LocalBusiness",
+        "LocalBusiness",
+        "LocalBusiness",
+        "LocalBusiness",
+        "LocalBusiness",
+        "LocalBusiness",
+        "Service",
+        "Service",
+        "Service",
+        "Service",
+        "Service",
+        "Service",
+        "Service",
+        "Service"
+      ],
+      "/services/accident-recovery": [
+        "BreadcrumbList",
+        "City",
+        "City",
+        "City",
+        "City",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Service"
+      ],
+      "/services/battery-boost": [
+        "Answer",
+        "Answer",
+        "Answer",
+        "BreadcrumbList",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "FAQPage",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Question",
+        "Question",
+        "Question",
+        "Service"
+      ],
+      "/services/emergency-towing": [
+        "Answer",
+        "Answer",
+        "Answer",
+        "Answer",
+        "BreadcrumbList",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "FAQPage",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Offer",
+        "PriceSpecification",
+        "Question",
+        "Question",
+        "Question",
+        "Question",
+        "Service"
+      ],
+      "/services/flat-tire-help": [
+        "Answer",
+        "Answer",
+        "Answer",
+        "BreadcrumbList",
+        "City",
+        "City",
+        "City",
+        "City",
+        "FAQPage",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Question",
+        "Question",
+        "Question",
+        "Service"
+      ],
+      "/services/fuel-delivery": [
+        "BreadcrumbList",
+        "City",
+        "City",
+        "City",
+        "City",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Service"
+      ],
+      "/services/lockout-service": [
+        "Answer",
+        "Answer",
+        "Answer",
+        "BreadcrumbList",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "FAQPage",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Question",
+        "Question",
+        "Question",
+        "Service"
+      ],
+      "/services/vehicle-transport": [
+        "BreadcrumbList",
+        "City",
+        "City",
+        "City",
+        "City",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Service"
+      ],
+      "/services/winching-extraction": [
+        "BreadcrumbList",
+        "City",
+        "City",
+        "City",
+        "City",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Service"
+      ],
+      "/locations": [
+        "BreadcrumbList",
+        "ItemList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ],
+      "/locations/[city]": [
+        "AdministrativeArea",
+        "Answer",
+        "BreadcrumbList",
+        "City",
+        "FAQPage",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Question",
+        "Service"
+      ],
+      "/blog": [],
+      "/blog/[slug]": [
+        "Article",
+        "BreadcrumbList",
+        "ImageObject",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Organization",
+        "Organization",
+        "SpeakableSpecification",
+        "WebPage"
+      ],
+      "/about": [],
+      "/contact": [],
+      "/privacy": [],
+      "/terms": []
+    }
+  },
+  "tel": {
+    "total": 31,
+    "byFile": {
+      "app/api/send-email/route.ts": 2,
+      "app/blog/page.tsx": 1,
+      "app/blog/[slug]/page.tsx": 1,
+      "app/locations/page.tsx": 1,
+      "app/locations/[city]/page.tsx": 2,
+      "app/not-found.tsx": 1,
+      "app/privacy/page.tsx": 1,
+      "app/services/accident-recovery/page.tsx": 1,
+      "app/services/battery-boost/page.tsx": 1,
+      "app/services/emergency-towing/page.tsx": 1,
+      "app/services/flat-tire-help/page.tsx": 1,
+      "app/services/fuel-delivery/page.tsx": 1,
+      "app/services/lockout-service/page.tsx": 1,
+      "app/services/page.tsx": 2,
+      "app/services/vehicle-transport/page.tsx": 1,
+      "app/services/winching-extraction/page.tsx": 1,
+      "app/terms/page.tsx": 1,
+      "components/AboutContent.tsx": 1,
+      "components/CallDialog.tsx": 1,
+      "components/ContactContent.tsx": 1,
+      "components/Footer.tsx": 1,
+      "components/HomeContent.tsx": 4,
+      "components/Navbar.tsx": 2,
+      "components/ServicesContent.tsx": 1
+    }
+  },
+  "gaTracking": {
+    "eventName": "call_dialog_open",
+    "trackFn": true,
+    "callSites": [
+      "bottom-cta",
+      "hero"
+    ]
+  },
+  "sitemap": {
+    "urls": [
+      "https://www.towingno1.com",
+      "https://www.towingno1.com/about",
+      "https://www.towingno1.com/blog",
+      "https://www.towingno1.com/blog/emergency-kit-essentials",
+      "https://www.towingno1.com/blog/prepare-vehicle-winter-bc",
+      "https://www.towingno1.com/blog/signs-car-battery-dying",
+      "https://www.towingno1.com/blog/understanding-towing-services",
+      "https://www.towingno1.com/blog/what-to-do-car-breaks-down-highway",
+      "https://www.towingno1.com/blog/when-call-tow-vs-fix-yourself",
+      "https://www.towingno1.com/contact",
+      "https://www.towingno1.com/locations",
+      "https://www.towingno1.com/locations/burnaby",
+      "https://www.towingno1.com/locations/coquitlam",
+      "https://www.towingno1.com/locations/delta",
+      "https://www.towingno1.com/locations/langley",
+      "https://www.towingno1.com/locations/maple-ridge",
+      "https://www.towingno1.com/locations/richmond",
+      "https://www.towingno1.com/locations/surrey",
+      "https://www.towingno1.com/locations/vancouver",
+      "https://www.towingno1.com/locations/white-rock",
+      "https://www.towingno1.com/privacy",
+      "https://www.towingno1.com/services",
+      "https://www.towingno1.com/services/accident-recovery",
+      "https://www.towingno1.com/services/battery-boost",
+      "https://www.towingno1.com/services/emergency-towing",
+      "https://www.towingno1.com/services/flat-tire-help",
+      "https://www.towingno1.com/services/fuel-delivery",
+      "https://www.towingno1.com/services/lockout-service",
+      "https://www.towingno1.com/services/vehicle-transport",
+      "https://www.towingno1.com/services/winching-extraction",
+      "https://www.towingno1.com/terms"
+    ],
+    "staticPaths": [
+      "/about",
+      "/blog",
+      "/blog",
+      "/contact",
+      "/locations",
+      "/locations",
+      "/privacy",
+      "/services",
+      "/services",
+      "/terms"
+    ]
+  },
+  "robots": {
+    "userAgents": [
+      "[\"Googlebot\", \"Googlebot-Image\", \"Bingbot\", \"Slurp\", \"DuckDuckBot\"]",
+      "[\"GPTBot\", \"ChatGPT-User\", \"CCBot\", \"anthropic-ai\", \"Claude-Web\", \"PerplexityBot\"]",
+      "\"*\""
+    ],
+    "disallow": [
+      "/api/"
+    ],
+    "sitemap": "https://www.towingno1.com/sitemap.xml",
+    "host": "https://www.towingno1.com"
+  },
+  "integrations": {
+    "gtm": true,
+    "ga": true,
+    "adsense": true,
+    "reamaze": true
+  },
+  "contactFlow": {
+    "endpoint": "/api/send-email",
+    "method": "POST",
+    "contentTypeJson": true,
+    "fields": [
+      "name",
+      "email",
+      "phone",
+      "message"
+    ]
+  },
+  "apiSendEmailExists": true
+}

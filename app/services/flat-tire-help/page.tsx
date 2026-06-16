@@ -106,7 +106,7 @@ export default function FlatTireHelpPage() {
                   If you have a spare tire, we change it on-site. If you don&apos;t have a spare or the tire is damaged beyond a roadside fix, we tow your vehicle to the nearest tire shop. Either way, you get an upfront flat-rate quote before we dispatch.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  We cover all of Surrey and the Lower Mainland including Langley, Burnaby, Richmond, Coquitlam, White Rock, Delta, and Vancouver.
+                  From the Port Mann approaches to suburban cul-de-sacs and grocery-store parking lots, our tire crews reach jobs right across the region, so you are rarely more than a short wait from help.
                 </p>
               </div>
 
@@ -122,6 +122,23 @@ export default function FlatTireHelpPage() {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Spare, Run-Flat, or No Spare At All</h2>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  Many newer vehicles ship without a conventional spare, swapping it for a sealant kit, run-flat tires, or nothing at all to save weight. If you have a full-size or compact spare, we mount it on the spot, torque the lugs to spec, and check that your damaged wheel is stowed properly. If your kit relies on sealant, be aware it only patches small tread punctures and will not fix a blowout or a sidewall tear.
+                </p>
+                <p className="text-slate-600 leading-relaxed">
+                  Run-flats can carry you a limited distance at reduced speed, but once the sidewall is compromised they must be replaced rather than repaired. When there is no usable spare, the safest move is a short tow to a tire shop, and we will take you to one that is open rather than leaving you stranded in a lot overnight.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Why Roadside Is Safer Than a DIY Change</h2>
+                <p className="text-slate-600 leading-relaxed">
+                  Changing a tire sounds simple until you are kneeling beside a live lane with traffic passing at highway speed. A jack can slip on a slope or soft shoulder, and a wheel torqued by hand rarely matches factory specification. Our technicians work from the protected side of the vehicle, use proper jack points, and confirm tightness with a torque wrench, so you drive away knowing the wheel will not loosen a few kilometres down the road.
+                </p>
               </div>
 
               <div>
@@ -145,7 +162,7 @@ export default function FlatTireHelpPage() {
               <div className="bg-navy-950 rounded-2xl p-6 text-white sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Flat Tire?</h3>
-                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before we send a technician.</p>
+                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before dispatch.</p>
                 <a href="tel:+17788380014" className="btn-call-highlight flex items-center justify-center gap-2 w-full rounded-xl py-3.5 px-5 text-sm font-bold">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   (778) 838-0014

@@ -63,6 +63,38 @@ export default function Blog() {
         </div>
       </section>
 
+      {/* Blog Intro / Overview */}
+      <section className="py-16 bg-white border-b border-slate-100">
+        <div className="container-custom">
+          <div className="max-w-3xl">
+            <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-3 block">What you&apos;ll find here</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 leading-tight mb-5">
+              Practical Road Safety &amp; Towing Advice for BC Drivers
+            </h2>
+            <div className="space-y-4 text-slate-600 text-base leading-relaxed">
+              <p>
+                The TowingNo.1 blog is where we share what we have learned from thousands of roadside calls across the Lower Mainland. Every article is written for real situations BC drivers actually face — a breakdown on a busy stretch of Highway 1, a battery that will not turn over on a frosty Surrey morning, or a tire that lets go far from the nearest shop. The goal is simple: help you stay safe, make good decisions under pressure, and avoid the small mistakes that turn a minor problem into an expensive one.
+              </p>
+              <p>
+                You will find step-by-step safety guides for highway breakdowns, seasonal maintenance checklists tailored to British Columbia&apos;s wet winters and mountain routes, and clear explanations of how to recognise warning signs before they leave you stranded. We cover the everyday essentials too — what belongs in a vehicle emergency kit, how to tell when a battery is on its way out, and when a roadside fix is safe to attempt yourself versus when it is smarter to call a professional.
+              </p>
+              <p>
+                We also demystify the towing itself. Knowing the difference between flatbed, wheel-lift, and heavy-duty towing — and why electric and all-wheel-drive vehicles need special handling — helps you ask the right questions and protect your vehicle when you do need help. Browse the articles below, and keep our number, (778) 838-0014, saved for the moment you need fast, local assistance.
+              </p>
+              <p>
+                Much of what we write is shaped by the geography we work in. Driving in the Lower Mainland means dealing with the Trans-Canada climbing toward the SFU exit, the long rural section lines past Aldergrove, the flood-prone underpasses around Richmond, and the steep, switchback hills of Coquitlam and the North Shore that turn treacherous the moment temperatures drop. Each of these settings creates its own kind of breakdown, and our guides reflect the conditions you are most likely to meet rather than generic advice written for nowhere in particular.
+              </p>
+              <p>
+                Seasonality matters here too. A wet October brings hydroplaning and dead wipers; the first cold snap of winter floods our lines with no-start batteries and snow-bank recoveries; spring road trips to the Interior expose cooling systems that limped through the off-season. Reading ahead of the season — fitting winter tires before the law requires them, testing a three-year-old battery before November, packing an emergency kit before the long weekend — is the cheapest insurance a driver can buy, and most of it takes only a few minutes in the driveway.
+              </p>
+              <p>
+                If you are new here, a good place to start is our guide to what to do when your car breaks down on the highway, followed by the seasonal maintenance and emergency-kit articles. Together they cover the situations that account for the overwhelming majority of the roadside calls we answer every week. We update these posts as conditions, vehicles, and BC regulations change, so the advice stays accurate and genuinely useful for the way people actually drive across the region.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Blog Grid */}
       <section className="section-padding bg-slate-50">
         <div className="container-custom">

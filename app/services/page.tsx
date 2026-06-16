@@ -263,6 +263,32 @@ export default function Services() {
         </div>
       </div>
 
+      {/* Overview / Intro */}
+      <section className="pt-16 pb-4 bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">One call, every roadside problem</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-5">
+              Complete Towing &amp; Roadside Assistance for the Lower Mainland
+            </h2>
+            <div className="space-y-4 text-slate-600 text-base leading-relaxed">
+              <p>
+                TowingNo.1 brings every roadside service under one phone number for drivers across Surrey, Langley, Coquitlam, Burnaby, Richmond, White Rock, Delta, Maple Ridge, Vancouver, and the surrounding communities. Whether your car has died in a parkade, you have a flat on a highway shoulder, or your vehicle has slid into a ditch on a back road, the same local team handles the call from the first ring to the moment you are moving again.
+              </p>
+              <p>
+                Each service listed below runs 24 hours a day, 7 days a week, including statutory holidays and overnight hours when most shops are closed. We dispatch the nearest available driver immediately, give you a firm flat-rate quote before any truck leaves, and stay on the line to confirm your exact location so help is already on the way while we talk. Most calls reach you in well under fifteen minutes across the core of our coverage area.
+              </p>
+              <p>
+                Our fleet runs both wheel-lift and flatbed trucks, which lets us match the right method to your vehicle instead of forcing one approach onto every job. Flatbeds carry all-wheel-drive cars, electric vehicles, and low-clearance models that must never be dragged on their wheels, while wheel-lift trucks handle quick, economical moves. Every operator is licensed and insured in British Columbia and trained to work safely on live highway shoulders, inside tight underground parkades, and on the steep, icy grades that catch drivers out each winter.
+              </p>
+              <p>
+                Wherever possible we aim to fix the problem on the spot — a boost, a tire change, a lockout, or a splash of fuel — so you avoid a tow altogether. When your vehicle genuinely cannot be driven, we transport it carefully to the shop, dealership, or address you choose. Explore the full range of services below, or call <a href="tel:+17788380014" className="font-semibold text-amber-600 hover:text-amber-700">(778) 838-0014</a> and tell us what has gone wrong.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services List */}
       <section className="py-20 bg-slate-50">
         <div className="container-custom">

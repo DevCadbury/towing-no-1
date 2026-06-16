@@ -1,15 +1,35 @@
 import { NextRequest, NextResponse } from "next/server";
 
+/* ─── Email configuration (all from env, never hardcoded) ──────── */
+const SENDER_MAILBOX = process.env.GRAPH_SENDER_MAILBOX || process.env.EMAIL_FROM || "";
+const EMAIL_FROM = process.env.EMAIL_FROM || SENDER_MAILBOX;
+const EMAIL_DISPATCH = process.env.EMAIL_DISPATCH || EMAIL_FROM;
+const EMAIL_REPLY_TO = process.env.EMAIL_REPLY_TO || EMAIL_FROM;
+const ADMIN_RECIPIENTS = (process.env.EMAIL_ADMIN || EMAIL_FROM)
+  .split(",")
+  .map((a) => a.trim())
+  .filter(Boolean);
+
 /* ─── Input sanitisation ───────────────────────────────────────── */
 function sanitize(value: unknown): string {
   if (typeof value !== "string") return "";
   return value.replace(/[\r\n\t]/g, " ").trim().slice(0, 2000);
 }
 
+/* Escape HTML so user input can't inject markup into the email body. */
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 /* ─── OAuth2 token via client credentials ──────────────────────── */
 async function getAccessToken(): Promise<string> {
-  const tenantId  = process.env.AZURE_TENANT_ID!;
-  const clientId  = process.env.AZURE_CLIENT_ID!;
+  const tenantId = process.env.AZURE_TENANT_ID!;
+  const clientId = process.env.AZURE_CLIENT_ID!;
   const clientSecret = process.env.AZURE_CLIENT_SECRET!;
 
   const res = await fetch(
@@ -18,10 +38,10 @@ async function getAccessToken(): Promise<string> {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
-        grant_type:    "client_credentials",
-        client_id:     clientId,
+        grant_type: "client_credentials",
+        client_id: clientId,
         client_secret: clientSecret,
-        scope:         "https://graph.microsoft.com/.default",
+        scope: "https://graph.microsoft.com/.default",
       }),
     }
   );
@@ -36,11 +56,12 @@ async function getAccessToken(): Promise<string> {
 }
 
 /* ─── Send via Microsoft Graph API ─────────────────────────────── */
+// The mail is always submitted through SENDER_MAILBOX (the mailbox the Azure
+// app is granted Mail.Send on); the visible "From" is set per-message so the
+// customer confirmation can appear from the dispatch alias.
 async function sendMail(accessToken: string, payload: object): Promise<void> {
-  const sender = process.env.EMAIL_FROM!;   // info@towingno1.com
-
   const res = await fetch(
-    `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(sender)}/sendMail`,
+    `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(SENDER_MAILBOX)}/sendMail`,
     {
       method: "POST",
       headers: {
@@ -163,7 +184,7 @@ function buildConfirmationEmail(name: string, email: string, phone: string, mess
             <td style="padding:32px 32px 0;">
               <p style="margin:0;color:#111827;font-size:15px;line-height:1.7;">Dear ${name},</p>
               <p style="margin:16px 0 0;color:#374151;font-size:14px;line-height:1.8;">
-                Thank you for reaching out to TowingNo.1. We have received your inquiry and a member of our team will be in contact with you shortly.
+                Thank you for reaching out to TowingNo.1. We have received your inquiry and a member of our dispatch team will be in contact with you shortly.
               </p>
               <p style="margin:12px 0 0;color:#374151;font-size:14px;line-height:1.8;">
                 If your situation requires immediate assistance, please call us directly at
@@ -230,7 +251,7 @@ function buildConfirmationEmail(name: string, email: string, phone: string, mess
                 <tr>
                   <td style="padding:4px 0;font-size:13px;color:#374151;">Email:</td>
                   <td style="padding:4px 0 4px 10px;font-size:13px;">
-                    <a href="mailto:info@towingno1.com" style="color:#2563eb;text-decoration:none;">info@towingno1.com</a>
+                    <a href="mailto:${EMAIL_REPLY_TO}" style="color:#2563eb;text-decoration:none;">${EMAIL_REPLY_TO}</a>
                   </td>
                 </tr>
                 <tr>
@@ -248,7 +269,7 @@ function buildConfirmationEmail(name: string, email: string, phone: string, mess
                 We appreciate you choosing TowingNo.1. If you need to follow up, simply reply to this email and your message will reach our team directly.
               </p>
               <p style="margin:16px 0 0;color:#374151;font-size:14px;">Regards,</p>
-              <p style="margin:4px 0 0;color:#111827;font-size:14px;font-weight:600;">The TowingNo.1 Team</p>
+              <p style="margin:4px 0 0;color:#111827;font-size:14px;font-weight:600;">The TowingNo.1 Dispatch Team</p>
             </td>
           </tr>
 
@@ -276,9 +297,9 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    const name    = sanitize(body.name);
-    const email   = sanitize(body.email);
-    const phone   = sanitize(body.phone);
+    const name = sanitize(body.name);
+    const email = sanitize(body.email);
+    const phone = sanitize(body.phone);
     const message = sanitize(body.message);
 
     // Basic validation
@@ -295,28 +316,40 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (!SENDER_MAILBOX) {
+      throw new Error("Email sender mailbox is not configured (GRAPH_SENDER_MAILBOX/EMAIL_FROM).");
+    }
+
+    // Escape the user-supplied values before embedding them in HTML.
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safePhone = escapeHtml(phone);
+    const safeMessage = escapeHtml(message);
+
     const accessToken = await getAccessToken();
 
-    // Email 1 — Business notification
+    // Email 1 — Business/admin notification (to all admin recipients).
+    // From the business address; reply-to goes straight to the customer.
     await sendMail(accessToken, {
       message: {
         subject: `New Contact Form Submission — ${name}`,
-        body: { contentType: "HTML", content: buildBusinessEmail(name, email, phone, message) },
-        from: { emailAddress: { address: process.env.EMAIL_FROM! } },
-        toRecipients: [{ emailAddress: { address: "info@towingno1.com" } }],
-        replyTo:      [{ emailAddress: { address: email } }],
+        body: { contentType: "HTML", content: buildBusinessEmail(safeName, safeEmail, safePhone, safeMessage) },
+        from: { emailAddress: { address: EMAIL_FROM, name: "TowingNo.1 Website" } },
+        toRecipients: ADMIN_RECIPIENTS.map((address) => ({ emailAddress: { address } })),
+        replyTo: [{ emailAddress: { address: email } }],
       },
       saveToSentItems: true,
     });
 
-    // Email 2 — User confirmation
+    // Email 2 — Customer confirmation. From the dispatch alias; reply-to is
+    // the public business address so customer replies reach the team.
     await sendMail(accessToken, {
       message: {
         subject: "We have received your request — TowingNo.1",
-        body: { contentType: "HTML", content: buildConfirmationEmail(name, email, phone, message) },
-        from: { emailAddress: { address: process.env.EMAIL_FROM! } },
+        body: { contentType: "HTML", content: buildConfirmationEmail(safeName, safeEmail, safePhone, safeMessage) },
+        from: { emailAddress: { address: EMAIL_DISPATCH, name: "TowingNo.1 Dispatch" } },
         toRecipients: [{ emailAddress: { address: email } }],
-        replyTo:      [{ emailAddress: { address: "info@towingno1.com" } }],
+        replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
       },
       saveToSentItems: true,
     });

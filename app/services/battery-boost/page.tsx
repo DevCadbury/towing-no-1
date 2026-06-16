@@ -39,12 +39,12 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "How fast can you boost my battery in Surrey?",
-      acceptedAnswer: { "@type": "Answer", text: "Our average response time for battery boost service in Surrey is under 15 minutes. Call (778) 838-0014 and we dispatch immediately." },
+      acceptedAnswer: { "@type": "Answer", text: "Most Surrey battery-boost calls are reached within roughly 15 minutes, because we send whichever jump-capable van sits nearest the moment you phone (778) 838-0014." },
     },
     {
       "@type": "Question",
       name: "How much does a battery boost cost in Surrey?",
-      acceptedAnswer: { "@type": "Answer", text: "We use flat-rate pricing with no hidden fees. Call (778) 838-0014 for an instant quote before we dispatch." },
+      acceptedAnswer: { "@type": "Answer", text: "A boost is billed as one upfront flat amount with nothing tacked on afterward; phone (778) 838-0014 and we will confirm that figure before a technician rolls." },
     },
     {
       "@type": "Question",
@@ -107,7 +107,24 @@ export default function BatteryBoostPage() {
                   We safely jump-start your vehicle using professional equipment and then test your battery and charging system to let you know if a replacement is needed. This prevents you from getting stranded again.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  Our battery boost service covers all of Surrey including Guildford, Newton, Fleetwood, Cloverdale, and South Surrey, as well as Langley, Burnaby, Richmond, Coquitlam, White Rock, Delta, and Vancouver.
+                  Whether the no-start happens in a driveway, a parkade, or a packed grocery lot, a boost gets you mobile in minutes — but it is the follow-up test that keeps you from a repeat the next morning.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Why Batteries Die in Our Climate</h2>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  Coastal British Columbia is rarely brutally cold, but the damp, mild winters here are deceptively hard on batteries. A lead-acid battery loses a chunk of its cranking power as the temperature drops toward freezing, and the constant short hops typical of city driving never give the alternator enough running time to fully recharge it. Add a few accessories left on overnight and a battery that was merely weak in October simply will not turn the engine over by January.
+                </p>
+                <p className="text-slate-600 leading-relaxed">
+                  Heat is the other quiet killer. Through a warm summer the fluid inside the battery evaporates and the internal plates degrade, so the failure that finally strands you in winter often started months earlier. Vehicles that sit for a week at the airport or a ferry lot are especially prone to draining down past the point where they will start, which is why a quick boost and an honest test usually tell you whether you are good for another season or living on borrowed time.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">What We Check After the Boost</h2>
+                <p className="text-slate-600 leading-relaxed">
+                  Getting the engine running again is only half the job. Once you are started, our technician reads the resting battery voltage and then checks the charging output with the engine running, which tells us whether the alternator is actually replenishing the battery or whether you will be stranded again the moment you switch off. If the numbers point to a battery near the end of its life or a charging fault, we tell you plainly so you can plan a replacement on your own terms rather than from the side of a dark road. We never pressure a sale — the test result speaks for itself.
                 </p>
               </div>
 
@@ -143,8 +160,8 @@ export default function BatteryBoostPage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
                   {[
-                    { q: "How fast can you boost my battery in Surrey?", a: "Our average response time for battery boost service in Surrey is under 15 minutes. Call (778) 838-0014 and we dispatch immediately." },
-                    { q: "How much does a battery boost cost in Surrey?", a: "We use flat-rate pricing with no hidden fees. Call (778) 838-0014 for an instant quote before we dispatch." },
+                    { q: "How fast can you boost my battery in Surrey?", a: "Most Surrey battery-boost calls are reached within roughly 15 minutes, because we send whichever jump-capable van sits nearest the moment you phone (778) 838-0014." },
+                    { q: "How much does a battery boost cost in Surrey?", a: "A boost is billed as one upfront flat amount with nothing tacked on afterward; phone (778) 838-0014 and we will confirm that figure before a technician rolls." },
                     { q: "Do you test the battery after boosting?", a: "Yes. Our technicians test your battery and charging system after the boost to let you know if the battery needs replacement." },
                   ].map((faq) => (
                     <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
@@ -160,7 +177,7 @@ export default function BatteryBoostPage() {
               <div className="bg-navy-950 rounded-2xl p-6 text-white sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Dead Battery?</h3>
-                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before we send a technician.</p>
+                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before dispatch.</p>
                 <a href="tel:+17788380014" className="btn-call-highlight flex items-center justify-center gap-2 w-full rounded-xl py-3.5 px-5 text-sm font-bold">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   (778) 838-0014

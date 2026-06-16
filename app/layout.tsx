@@ -48,6 +48,11 @@ const SEO_KEYWORDS = [
   "24/7 tow truck",
 ];
 
+// Google Search Console verification token, supplied via the environment.
+// When unset/empty the verification meta tag is omitted entirely so no
+// placeholder is ever emitted into the document <head>.
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.towingno1.com"),
   title: {
@@ -61,9 +66,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.towingno1.com",
   },
-  verification: {
-    google: "REPLACE_WITH_YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
-  },
+  ...(googleSiteVerification
+    ? { verification: { google: googleSiteVerification } }
+    : {}),
   icons: {
     icon: [{ url: "/logo.png", type: "image/png" }],
     shortcut: "/logo.png",

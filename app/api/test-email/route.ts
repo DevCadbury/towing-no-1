@@ -1,9 +1,20 @@
 import { NextResponse } from "next/server";
 
+/* ─── Email configuration (from env, never hardcoded) ──────────── */
+const SENDER_MAILBOX = process.env.GRAPH_SENDER_MAILBOX || process.env.EMAIL_FROM || "";
+const EMAIL_FROM = process.env.EMAIL_FROM || SENDER_MAILBOX;
+const EMAIL_DISPATCH = process.env.EMAIL_DISPATCH || EMAIL_FROM;
+const EMAIL_REPLY_TO = process.env.EMAIL_REPLY_TO || EMAIL_FROM;
+const EMAIL_TEST = process.env.EMAIL_TEST || EMAIL_FROM;
+const ADMIN_RECIPIENTS = (process.env.EMAIL_ADMIN || EMAIL_FROM)
+  .split(",")
+  .map((a) => a.trim())
+  .filter(Boolean);
+
 /* ─── OAuth2 token ─────────────────────────────────────────────── */
 async function getAccessToken(): Promise<string> {
-  const tenantId     = process.env.AZURE_TENANT_ID!;
-  const clientId     = process.env.AZURE_CLIENT_ID!;
+  const tenantId = process.env.AZURE_TENANT_ID!;
+  const clientId = process.env.AZURE_CLIENT_ID!;
   const clientSecret = process.env.AZURE_CLIENT_SECRET!;
 
   const res = await fetch(
@@ -12,10 +23,10 @@ async function getAccessToken(): Promise<string> {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
-        grant_type:    "client_credentials",
-        client_id:     clientId,
+        grant_type: "client_credentials",
+        client_id: clientId,
         client_secret: clientSecret,
-        scope:         "https://graph.microsoft.com/.default",
+        scope: "https://graph.microsoft.com/.default",
       }),
     }
   );
@@ -31,10 +42,8 @@ async function getAccessToken(): Promise<string> {
 
 /* ─── Send via Graph API ───────────────────────────────────────── */
 async function sendMail(accessToken: string, payload: object): Promise<number> {
-  const sender = process.env.EMAIL_FROM!;
-
   const res = await fetch(
-    `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(sender)}/sendMail`,
+    `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(SENDER_MAILBOX)}/sendMail`,
     {
       method: "POST",
       headers: {
@@ -54,7 +63,7 @@ async function sendMail(accessToken: string, payload: object): Promise<number> {
 }
 
 /* ─── Test email HTML ──────────────────────────────────────────── */
-function buildTestEmail(): string {
+function buildTestEmail(label: string, recipient: string, fromAddress: string): string {
   const timestamp = new Date().toLocaleString("en-CA", {
     timeZone: "America/Vancouver",
     year: "numeric",
@@ -79,7 +88,7 @@ function buildTestEmail(): string {
           <tr>
             <td style="background-color:#0f172a;padding:24px 32px;">
               <p style="margin:0;color:#f59e0b;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;">TowingNo.1</p>
-              <p style="margin:4px 0 0;color:#ffffff;font-size:20px;font-weight:700;">Email System Test</p>
+              <p style="margin:4px 0 0;color:#ffffff;font-size:20px;font-weight:700;">Email System Test &mdash; ${label}</p>
             </td>
           </tr>
 
@@ -100,11 +109,11 @@ function buildTestEmail(): string {
                 </tr>
                 <tr>
                   <td style="padding:11px 16px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid #e5e7eb;">Recipient</td>
-                  <td style="padding:11px 16px;font-size:13px;color:#111827;border-bottom:1px solid #e5e7eb;">prince844121@gmail.com</td>
+                  <td style="padding:11px 16px;font-size:13px;color:#111827;border-bottom:1px solid #e5e7eb;">${recipient}</td>
                 </tr>
                 <tr style="background-color:#f9fafb;">
                   <td style="padding:11px 16px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid #e5e7eb;">Sender</td>
-                  <td style="padding:11px 16px;font-size:13px;color:#111827;border-bottom:1px solid #e5e7eb;">info@towingno1.com</td>
+                  <td style="padding:11px 16px;font-size:13px;color:#111827;border-bottom:1px solid #e5e7eb;">${fromAddress}</td>
                 </tr>
                 <tr>
                   <td style="padding:11px 16px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;">Method</td>
@@ -137,30 +146,33 @@ function buildTestEmail(): string {
 /* ─── Route handler (GET to trigger easily from browser) ───────── */
 export async function GET() {
   try {
-    const accessToken = await getAccessToken();
-    const sender = process.env.EMAIL_FROM!;
-    const html = buildTestEmail();
+    if (!SENDER_MAILBOX) {
+      throw new Error("Email sender mailbox is not configured (GRAPH_SENDER_MAILBOX/EMAIL_FROM).");
+    }
 
-    // Send to test recipient
+    const accessToken = await getAccessToken();
+
+    // 1) External deliverability test — customer-style email FROM the dispatch
+    //    alias, sent to the configured test inbox.
     const statusExternal = await sendMail(accessToken, {
       message: {
-        subject: "TowingNo.1 — Email System Test",
-        body: { contentType: "HTML", content: html },
-        from:         { emailAddress: { address: sender } },
-        toRecipients: [{ emailAddress: { address: "prince844121@gmail.com" } }],
-        replyTo:      [{ emailAddress: { address: "info@towingno1.com" } }],
+        subject: "TowingNo.1 — Email System Test (Customer Confirmation)",
+        body: { contentType: "HTML", content: buildTestEmail("Customer Confirmation", EMAIL_TEST, EMAIL_DISPATCH) },
+        from: { emailAddress: { address: EMAIL_DISPATCH, name: "TowingNo.1 Dispatch" } },
+        toRecipients: [{ emailAddress: { address: EMAIL_TEST } }],
+        replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
       },
       saveToSentItems: true,
     });
 
-    // Also send a copy to the business inbox to confirm delivery is working
-    const statusInternal = await sendMail(accessToken, {
+    // 2) Admin notification test — FROM the business address, to all admins.
+    const statusAdmin = await sendMail(accessToken, {
       message: {
-        subject: "[Delivery Verify] TowingNo.1 Email System Test",
-        body: { contentType: "HTML", content: html },
-        from:         { emailAddress: { address: sender } },
-        toRecipients: [{ emailAddress: { address: "info@towingno1.com" } }],
-        replyTo:      [{ emailAddress: { address: "info@towingno1.com" } }],
+        subject: "[Test] New Contact Form Submission — TowingNo.1",
+        body: { contentType: "HTML", content: buildTestEmail("Admin Notification", ADMIN_RECIPIENTS.join(", "), EMAIL_FROM) },
+        from: { emailAddress: { address: EMAIL_FROM, name: "TowingNo.1 Website" } },
+        toRecipients: ADMIN_RECIPIENTS.map((address) => ({ emailAddress: { address } })),
+        replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
       },
       saveToSentItems: true,
     });
@@ -168,10 +180,20 @@ export async function GET() {
     return NextResponse.json({
       success: true,
       sentAt: new Date().toISOString(),
-      sender,
+      senderMailbox: SENDER_MAILBOX,
       results: {
-        external: { to: "prince844121@gmail.com", httpStatus: statusExternal, note: "202 = accepted by Microsoft. Check spam/junk if not in inbox." },
-        internal: { to: "info@towingno1.com",   httpStatus: statusInternal, note: "Should appear in Sent Items of the mailbox." },
+        customerConfirmation: {
+          from: EMAIL_DISPATCH,
+          to: EMAIL_TEST,
+          httpStatus: statusExternal,
+          note: "202 = accepted by Microsoft. Check spam/junk if not in inbox.",
+        },
+        adminNotification: {
+          from: EMAIL_FROM,
+          to: ADMIN_RECIPIENTS,
+          httpStatus: statusAdmin,
+          note: "Sent to all configured admin recipients.",
+        },
       },
     });
   } catch (err) {

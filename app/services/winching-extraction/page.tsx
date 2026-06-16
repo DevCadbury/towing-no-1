@@ -65,7 +65,7 @@ export default function WinchingExtractionPage() {
             Winching &amp; Extraction — Surrey &amp; Lower Mainland
           </h1>
           <p className="text-white/80 text-lg max-w-xl">
-            Stuck in a ditch, mud, or snow? We pull your vehicle out safely using professional winching equipment. Available 24/7 across Surrey and the Lower Mainland.
+            Stuck in a ditch, mud, or snow? We pull your vehicle out safely using professional winching equipment. Help is available around the clock right across the region.
           </p>
         </div>
       </section>
@@ -83,8 +83,41 @@ export default function WinchingExtractionPage() {
                   We use professional-grade winching equipment and proper techniques to extract your vehicle without causing further damage. Once your vehicle is on solid ground, we assess whether it can be driven or needs to be towed.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  We cover all of Surrey and the Lower Mainland including Langley, Burnaby, Richmond, Coquitlam, White Rock, Delta, Maple Ridge, and Vancouver.
+                  Once your vehicle is back on solid ground, we assess whether it can be safely driven or whether it needs a tow to a shop — and we make that call honestly rather than waving you back onto the road with hidden damage.
                 </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Ditch, Mud, and Snow — Different Problems</h2>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  A car nosed into a roadside ditch is mostly a question of angle and weight: pull from the wrong direction and you risk rolling it or tearing off a bumper, so we set the winch line to lift and draw the vehicle along the path it went in rather than dragging it sideways. Mud and soft farmland shoulders are about traction and suction — spinning the wheels only digs deeper, so we stop the digging, rig to firm anchor points, and let the winch do steady work the tires cannot.
+                </p>
+                <p className="text-slate-600 leading-relaxed">
+                  Snow and ice add a slippery surface that makes everything less predictable. A vehicle that slid off a Westwood Plateau switchback or a Coquitlam side street often sits at an awkward tilt, and the recovery has to account for the truck itself keeping grip on the same ice. We use the angle of the slope, recovery boards under the tires where it helps, and a controlled pull so the car comes out the way it should instead of sliding further.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Technique and Safety Come First</h2>
+                <p className="text-slate-600 leading-relaxed">
+                  A winch line under load stores an enormous amount of energy, and a snapped cable or a failed anchor point can be genuinely dangerous to everyone nearby. That is why we keep bystanders clear, choose rated attachment points on the frame rather than fragile body panels, and use a steady, controlled pull instead of a sudden jerk that can shock-load the rigging. Trying to free a stuck vehicle with a tow strap and another truck is exactly how people bend frames and hurt themselves; the right equipment, used patiently, recovers the vehicle without turning one problem into two.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
+                <div className="space-y-4">
+                  {[
+                    { q: "Can you get my car out without damaging it?", a: "In most cases, yes. We pull from rated points and control the line carefully so the vehicle comes out the way it went in. We will always flag any risk before we start rather than gamble with your car." },
+                    { q: "My car is stuck in snow — can I just be towed out?", a: "Not always safely. A buried or angled vehicle usually needs a proper winch pull rather than a tow strap, which can snap or bend the frame. Our winch trucks are built for exactly this." },
+                    { q: "Will I be able to drive after you pull it out?", a: "Often yes, but we check first. If the extraction reveals bent suspension, a punctured tire, or fluid loss, we recommend a tow to a shop so you are not driving something unsafe." },
+                  ].map((faq) => (
+                    <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{faq.q}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div>
@@ -106,7 +139,7 @@ export default function WinchingExtractionPage() {
               <div className="bg-navy-950 rounded-2xl p-6 text-white sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Stuck?</h3>
-                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before we send a crew.</p>
+                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before dispatch.</p>
                 <a href="tel:+17788380014" className="btn-call-highlight flex items-center justify-center gap-2 w-full rounded-xl py-3.5 px-5 text-sm font-bold">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   (778) 838-0014

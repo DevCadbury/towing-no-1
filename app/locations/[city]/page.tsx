@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getServiceAreaBySlug, serviceAreas } from "@/lib/service-areas";
+import { getServiceAreaBySlug, serviceAreas, slugifyCity, isServiceAreaSlug } from "@/lib/service-areas";
 
 interface Props {
   params: Promise<{ city: string }>;
@@ -60,6 +60,13 @@ export default async function ServiceAreaPage({ params }: Props) {
 
   const canonical = `https://www.towingno1.com/locations/${area.slug}`;
 
+  // Only link to nearby cities that resolve to a real /locations/[slug] route.
+  // This guarantees we can never emit a dead nearby-area link, even if the
+  // nearbyCities data later references a city without its own location page.
+  const nearbyAreaLinks = area.nearbyCities
+    .map((nearby) => ({ name: nearby, slug: slugifyCity(nearby) }))
+    .filter((entry) => isServiceAreaSlug(entry.slug));
+
   const localServiceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -115,10 +122,10 @@ export default async function ServiceAreaPage({ params }: Props) {
           </nav>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400 mb-3">Local Coverage</p>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5">
-            Tow Truck {area.city} — 24/7 Emergency Towing &amp; Roadside Assistance
+            {area.headline}
           </h1>
           <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl mb-8">
-            {area.summary} Our dispatch team serves {area.city} day and night with an average response time under 15 minutes and upfront flat-rate quotes.
+            {area.summary}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="tel:+17788380014" className="btn-call-highlight inline-flex items-center justify-center gap-2 rounded-xl py-3.5 px-7 text-sm font-bold w-full sm:w-auto">
@@ -138,11 +145,40 @@ export default async function ServiceAreaPage({ params }: Props) {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-10">
 
+              {/* Overview */}
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Towing &amp; Roadside Help in {area.city}</h2>
+                {area.intro.map((para) => (
+                  <p key={para} className="text-slate-600 leading-relaxed mb-4 last:mb-0">{para}</p>
+                ))}
+              </div>
+
+              {/* Why locals call us */}
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Why Locals Call Us</h2>
+                {area.whyChooseUs.map((para) => (
+                  <p key={para} className="text-slate-600 leading-relaxed mb-4 last:mb-0">{para}</p>
+                ))}
+              </div>
+
+              {/* Common scenarios */}
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Calls We Handle in {area.city}</h2>
+                <div className="space-y-4">
+                  {area.commonScenarios.map((scenario) => (
+                    <div key={scenario.title} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{scenario.title}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{scenario.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Neighbourhoods */}
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Areas We Cover in {area.city}</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  We dispatch tow trucks and roadside assistance crews across all of {area.city}, including the following neighbourhoods and zones:
+                  Neighbourhoods and zones we cover:
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {area.neighborhoods.map((zone) => (
@@ -163,12 +199,12 @@ export default async function ServiceAreaPage({ params }: Props) {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Roadside Services in {area.city}</h2>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
-                    { href: "/services/emergency-towing", label: "24/7 Emergency Towing", desc: "Fast dispatch for breakdowns and collisions" },
-                    { href: "/services/battery-boost", label: "Battery Boost", desc: "Jump-start with free battery test" },
-                    { href: "/services/flat-tire-help", label: "Flat Tire Help", desc: "On-site change or tow to tire shop" },
+                    { href: "/services/emergency-towing", label: "24/7 Emergency Towing", desc: "Breakdown & collision towing" },
+                    { href: "/services/battery-boost", label: "Battery Boost", desc: "Jump-start with battery test" },
+                    { href: "/services/flat-tire-help", label: "Flat Tire Help", desc: "On-site change or shop tow" },
                     { href: "/services/lockout-service", label: "Lockout Service", desc: "Open your vehicle without damage" },
-                    { href: "/services/fuel-delivery", label: "Fuel Delivery", desc: "Gas or diesel delivered to you" },
-                    { href: "/services/winching-extraction", label: "Winching & Extraction", desc: "Stuck in ditch, mud, or snow" },
+                    { href: "/services/fuel-delivery", label: "Fuel Delivery", desc: "Gas or diesel delivered" },
+                    { href: "/services/winching-extraction", label: "Winching & Extraction", desc: "Ditch, mud & snow recovery" },
                   ].map((svc) => (
                     <Link key={svc.href} href={svc.href} className="group flex items-start gap-3 bg-slate-50 border border-slate-200 rounded-xl p-4 hover:border-amber-400/60 hover:bg-amber-50/30 transition-all duration-200">
                       <span className="w-5 h-5 rounded-full bg-amber-400/20 border border-amber-400 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
@@ -184,23 +220,25 @@ export default async function ServiceAreaPage({ params }: Props) {
               </div>
 
               {/* Nearby cities */}
-              <div>
-                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Nearby Areas We Also Cover</h2>
-                <p className="text-sm text-slate-600 mb-4">
-                  If you are near {area.city}, we also dispatch to surrounding communities with the same 24/7 support and upfront pricing.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {area.nearbyCities.map((nearby) => (
-                    <Link
-                      key={nearby}
-                      href={`/locations/${nearby.toLowerCase().replace(/\s+/g, "-")}`}
-                      className="text-xs font-semibold uppercase tracking-wide text-amber-700 bg-amber-50 border border-amber-200 rounded-full px-3 py-1.5 hover:bg-amber-100 transition-colors"
-                    >
-                      {nearby}
-                    </Link>
-                  ))}
+              {nearbyAreaLinks.length > 0 && (
+                <div>
+                  <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Nearby Areas We Also Cover</h2>
+                  <p className="text-sm text-slate-600 mb-4">
+                    We also dispatch nearby:
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {nearbyAreaLinks.map((nearby) => (
+                      <Link
+                        key={nearby.slug}
+                        href={`/locations/${nearby.slug}`}
+                        className="text-xs font-semibold uppercase tracking-wide text-amber-700 bg-amber-50 border border-amber-200 rounded-full px-3 py-1.5 hover:bg-amber-100 transition-colors"
+                      >
+                        {nearby.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* FAQ */}
               <div>
@@ -236,8 +274,8 @@ export default async function ServiceAreaPage({ params }: Props) {
             <div className="space-y-6">
               <div className="bg-navy-950 rounded-2xl p-6 text-white sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
-                <h3 className="text-xl font-extrabold mb-1">Need a Tow Truck in {area.city}?</h3>
-                <p className="text-slate-300 text-sm mb-5">We&apos;re 15 minutes away. Free quote before we send a driver.</p>
+                <h3 className="text-xl font-extrabold mb-1">Need a Tow Truck?</h3>
+                <p className="text-slate-300 text-sm mb-5">We&apos;re 15 minutes away. Free quote before dispatch.</p>
                 <a href="tel:+17788380014" className="btn-call-highlight flex items-center justify-center gap-2 w-full rounded-xl py-3.5 px-5 text-sm font-bold">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   (778) 838-0014

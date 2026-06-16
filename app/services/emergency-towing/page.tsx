@@ -62,7 +62,7 @@ const faqSchema = {
       name: "How much does emergency towing cost in Surrey?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We use flat-rate pricing with no hidden fees. The cost depends on vehicle type and distance. Call (778) 838-0014 for an instant quote before we dispatch.",
+        text: "Every tow is quoted as a single flat figure based on your vehicle and the distance involved, with no metered surprises; ring (778) 838-0014 and you will hear the price before a truck is sent.",
       },
     },
     {
@@ -182,11 +182,29 @@ export default function EmergencyTowingPage() {
 
               {/* FAQ */}
               <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Flatbed or Wheel-Lift: What Your Vehicle Needs</h2>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  Not every breakdown calls for the same truck. A flatbed lifts the whole vehicle clear of the road, which is the right choice for all-wheel-drive cars, lowered or low-clearance vehicles, electric vehicles that must never roll on their drive wheels, and anything with crash or drivetrain damage. A wheel-lift is quicker to set up and ideal for short repositioning jobs and standard front- or rear-wheel-drive sedans where a full deck is not required.
+                </p>
+                <p className="text-slate-600 leading-relaxed">
+                  When you call, mention the make, the drive type, and whether the vehicle still rolls and steers. That one detail lets dispatch send the correct truck the first time, which keeps your wait short and protects your transmission and bumpers from avoidable harm during loading.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Staying Safe Until the Truck Arrives</h2>
+                <p className="text-slate-600 leading-relaxed">
+                  If you have rolled to a stop on a shoulder, keep your seatbelt on, leave the hazard lights flashing, and stay inside when traffic is heavy and fast. If the shoulder is wide and clear, step out on the side away from the lane and wait behind the guardrail. Share your exact direction of travel and the nearest exit or kilometre marker so our driver reaches you without circling back, and we will text you when the truck is close.
+                </p>
+              </div>
+
+              {/* FAQ */}
+              <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
                   {[
                     { q: "How fast can you tow my car in Surrey?", a: "Our average response time in Surrey is under 15 minutes. We dispatch the nearest available driver immediately when you call (778) 838-0014." },
-                    { q: "How much does emergency towing cost in Surrey?", a: "We use flat-rate pricing with no hidden fees. The cost depends on vehicle type and distance. Call (778) 838-0014 for an instant quote before we dispatch." },
+                    { q: "How much does emergency towing cost in Surrey?", a: "Every tow is quoted as a single flat figure based on your vehicle and the distance involved, with no metered surprises; ring (778) 838-0014 and you will hear the price before a truck is sent." },
                     { q: "Do you tow electric vehicles?", a: "Yes. Electric vehicles must be transported on a flatbed — never towed with wheels down. We have flatbed trucks available 24/7 for all EVs." },
                     { q: "Do you tow on Highway 99 and King George Boulevard?", a: "Yes. We respond to breakdowns on Highway 99, King George Boulevard, 152nd Street, Fraser Highway, and all major Surrey corridors 24/7." },
                   ].map((faq) => (
@@ -204,7 +222,7 @@ export default function EmergencyTowingPage() {
               <div className="bg-navy-950 rounded-2xl p-6 text-white sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Need a Tow Right Now?</h3>
-                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before we send a driver.</p>
+                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before dispatch.</p>
                 <a href="tel:+17788380014" className="btn-call-highlight flex items-center justify-center gap-2 w-full rounded-xl py-3.5 px-5 text-sm font-bold">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   (778) 838-0014

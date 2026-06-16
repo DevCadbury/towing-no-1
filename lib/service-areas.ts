@@ -3,6 +3,9 @@ export interface ServiceArea {
   city: string;
   headline: string;
   summary: string;
+  intro: string[];
+  whyChooseUs: string[];
+  commonScenarios: { title: string; body: string }[];
   nearbyCities: string[];
   neighborhoods: string[];
   highways: string[];
@@ -17,6 +20,28 @@ export const serviceAreas: ServiceArea[] = [
     headline: "Tow Truck Surrey — 24/7 Emergency Towing & Roadside Assistance",
     summary:
       "Fast tow truck dispatch across Surrey for breakdowns, collisions, lockouts, battery issues, and flat tires. We cover all Surrey neighbourhoods including Guildford, Newton, Fleetwood, Cloverdale, and South Surrey with an average response time under 15 minutes.",
+    intro: [
+      "Surrey is the busiest territory we cover, and the sprawl from the Guildford big-box corridor down through Newton and out to the Cloverdale fairgrounds means breakdowns happen in every kind of setting — packed mall parkades, quiet cul-de-sacs off 152nd Street, and fast-moving traffic on Highway 99. Because we keep drivers staged near Surrey City Centre and the King George Boulevard corridor rather than dispatching from a single yard across town, our trucks reach most Surrey calls in well under fifteen minutes.",
+      "Whalley and the City Centre area generate a steady stream of parkade and curbside calls, while South Surrey and Morgan Crossing tend toward longer highway runs along 99 and 16th Avenue. Whichever pocket of the city you are stranded in, give our dispatcher the nearest major intersection — King George and 104th, Fraser Highway and 152nd, or the Highway 10 and 64th interchange — and we will route the closest available driver straight to you.",
+    ],
+    whyChooseUs: [
+      "Local Surrey drivers know the difference between the Guildford slip lanes and the Newton Exchange bus loops, so they do not waste time circling for an address the way an out-of-town operator might. That familiarity matters most during rush hour on King George Boulevard or when a collision closes a lane on the Highway 99 approach to the Massey corridor.",
+      "Every Surrey job starts with a flat-rate quote before a truck rolls, so there is never a meter running while you wait. We are licensed and insured in BC, equipped with both wheel-lift and flatbed trucks, and we work statutory holidays and 3 a.m. calls exactly the same way we handle a Tuesday afternoon.",
+    ],
+    commonScenarios: [
+      {
+        title: "Parkade and mall lockouts in Guildford",
+        body: "Guildford Town Centre and the surrounding retail lots are our most common lockout calls in Surrey. Low parkade ceilings and tight stalls are no obstacle — we open the vehicle on the spot without touching the paint or weatherstripping and get you back to your shopping run.",
+      },
+      {
+        title: "Highway 99 and King George breakdowns",
+        body: "Stalls and flats on Highway 99, King George Boulevard, and the Highway 10 corridor need a driver who can reach a live shoulder safely. We position the truck to shield you from traffic, then load quickly so you are not standing beside moving lanes any longer than necessary.",
+      },
+      {
+        title: "Winter starts in Newton and Fleetwood",
+        body: "Cold snaps drain weak batteries across Newton and Fleetwood every January. We test the battery and charging system after every boost so you know whether you are good to go or due for a replacement before the next freeze leaves you stranded again.",
+      },
+    ],
     nearbyCities: ["Delta", "White Rock", "Langley", "Burnaby"],
     neighborhoods: ["Guildford", "Newton", "Fleetwood", "Cloverdale", "South Surrey", "Whalley", "City Centre"],
     highways: ["Highway 99", "King George Boulevard", "152nd Street", "Highway 10", "Fraser Highway"],
@@ -50,7 +75,29 @@ export const serviceAreas: ServiceArea[] = [
     headline: "Tow Truck Langley — 24/7 Towing & Roadside Assistance",
     summary:
       "24/7 towing service in Langley with quick ETAs, upfront quotes, and trained operators for all vehicle types. We cover Willoughby, Walnut Grove, Murrayville, Brookswood, and Aldergrove with fast dispatch.",
-    nearbyCities: ["Surrey", "Aldergrove", "Cloverdale", "Abbotsford"],
+    intro: [
+      "Langley stretches from the dense new townhome blocks of Willoughby out to the farm roads past Aldergrove, so a single shift here can mean a parkade boost in Walnut Grove followed by a ditch recovery on a rural section line near Otter. The Trans-Canada cuts straight through the community, and the 200th Street interchange is one of our most frequent call locations whenever traffic backs up and an overheating engine finally gives out.",
+      "Drivers heading to Fort Langley along the river road or commuting down the Fraser Highway through Murrayville are often surprised how quickly the surroundings turn rural. That mix is exactly why local knowledge counts — we know which Brookswood side streets flood after heavy rain and where the Aldergrove shoulders are wide enough to load safely.",
+    ],
+    whyChooseUs: [
+      "Township roads are long and lightly lit, so a vague address can cost a stranded driver twenty extra minutes with the wrong company. Our dispatchers ask for the nearest cross street or a landmark like the Langley Events Centre or Willowbrook so the closest truck heads straight to you instead of hunting down a rural-route number in the dark.",
+      "We run wheel-lift and flatbed trucks suited to everything from a lowered import in Willoughby to a work van on Highway 1, and every Langley call comes with an upfront flat-rate quote. Licensed, insured, and available every hour of the year, we treat a midnight breakdown near Aldergrove the same as a midday call in town.",
+    ],
+    commonScenarios: [
+      {
+        title: "Trans-Canada breakdowns near 200th Street",
+        body: "The Highway 1 corridor through Langley sees heavy commuter volume, and the 200th Street and 232nd Street interchanges are common stall points. We reach the shoulder, shield the vehicle from passing traffic, and load onto a flatbed so you clear the live lane fast.",
+      },
+      {
+        title: "Rural recoveries around Aldergrove and Otter",
+        body: "Soft shoulders and roadside ditches on Langley's farm roads catch drivers off guard, especially in wet weather. Our winch-equipped trucks pull vehicles back onto firm ground without tearing up bumpers or undercarriage on the way out.",
+      },
+      {
+        title: "Walnut Grove and Willoughby roadside help",
+        body: "Dead batteries, flats, and lockouts in the newer Walnut Grove and Willoughby neighbourhoods are usually quick on-site fixes. We change the spare, boost the battery, or open the door right in your driveway or strata lot so a tow is rarely needed.",
+      },
+    ],
+    nearbyCities: ["Surrey", "Maple Ridge", "Coquitlam"],
     neighborhoods: ["Willoughby", "Walnut Grove", "Murrayville", "Brookswood", "Aldergrove", "Fort Langley"],
     highways: ["Highway 1 (Trans-Canada)", "Fraser Highway", "200th Street", "Highway 10"],
     localLandmarks: ["Willowbrook Shopping Centre", "Langley Events Centre", "Fort Langley National Historic Site"],
@@ -79,7 +126,29 @@ export const serviceAreas: ServiceArea[] = [
     headline: "Tow Truck Burnaby — 24/7 Emergency Towing & Roadside Help",
     summary:
       "Reliable towing and roadside help in Burnaby including battery boosts, lockouts, and accident recovery. We serve Metrotown, Brentwood, Edmonds, and Lougheed with fast 24/7 dispatch.",
-    nearbyCities: ["Vancouver", "New Westminster", "Coquitlam", "Surrey"],
+    intro: [
+      "Burnaby packs three town centres, two mountains, and several of the region's busiest highways into one city, so our drivers handle everything from tight tower parkades at Metrotown and Brentwood to high-speed stalls on the Trans-Canada as it climbs toward the SFU exit. The density means a lot of our work is vertical — getting a wheel-lift into a residential parkade on Kingsway or a Brentwood condo without scraping a low ceiling.",
+      "Lougheed Highway and Canada Way carry steady traffic between New Westminster and the Tri-Cities, and we field regular calls on both whenever a radiator lets go in summer heat. Knowing the quickest legal turnaround near Burnaby Lake or the Edmonds interchange lets our closest truck reach you without adding a frustrating loop through one-way arterials.",
+    ],
+    whyChooseUs: [
+      "Burnaby's parkades and tower lots demand a driver who can manoeuvre a wheel-lift in tight quarters without clipping a pillar, and that is everyday work for our crews around Metrotown and Brentwood. We also carry flatbeds for the all-wheel-drive crossovers and EVs that fill these neighbourhoods, since those must never be dragged on their drive wheels.",
+      "You get the same upfront flat-rate quote whether you are stuck on Highway 1 below Capitol Hill or in a Lougheed Town Centre stall, with no surcharge for the awkward access. We are licensed and insured in BC and dispatch around the clock, every day of the year.",
+    ],
+    commonScenarios: [
+      {
+        title: "Tower parkade boosts at Metrotown and Brentwood",
+        body: "High-rise residents around Metrotown and Brentwood often find a flat battery after a car sits unused in the parkade for a week. We bring the boost pack down to your stall, test the charging system, and tell you honestly whether the battery will last the winter.",
+      },
+      {
+        title: "Trans-Canada stalls near the SFU climb",
+        body: "The Highway 1 grade up toward the Burnaby Mountain and SFU exits is hard on cooling systems. We respond quickly to overheated and stalled vehicles on that stretch, load onto a flatbed, and deliver to your shop of choice across the city.",
+      },
+      {
+        title: "Lougheed and Kingsway lockouts",
+        body: "Busy commercial strips along Lougheed Highway and Kingsway generate frequent lockout calls. Our technicians open the vehicle without damaging the door or glass, so a quick errand that went sideways does not turn into a body-shop bill.",
+      },
+    ],
+    nearbyCities: ["Vancouver", "Coquitlam", "Richmond", "Surrey"],
     neighborhoods: ["Metrotown", "Brentwood", "Edmonds", "Lougheed", "Burnaby Heights", "Capitol Hill"],
     highways: ["Highway 1 (Trans-Canada)", "Lougheed Highway", "Kingsway", "Canada Way"],
     localLandmarks: ["Metrotown Shopping Centre", "Brentwood Town Centre", "SFU Burnaby Campus", "Burnaby Lake"],
@@ -108,7 +177,29 @@ export const serviceAreas: ServiceArea[] = [
     headline: "Tow Truck Coquitlam — 24/7 Emergency Towing Near You",
     summary:
       "Need towing near you in Coquitlam? We dispatch quickly for emergency towing and roadside support across Burke Mountain, Westwood Plateau, Maillardville, and Austin Heights.",
-    nearbyCities: ["Port Coquitlam", "Port Moody", "Burnaby", "Maple Ridge"],
+    intro: [
+      "Coquitlam climbs from the flats of Maillardville and the United Boulevard industrial strip up the steep grades of Westwood Plateau and Burke Mountain, and that elevation shapes most of our calls here. Winter brings the toughest work: cars that handle the valley fine suddenly lose traction on the plateau switchbacks, and we spend snowy nights winching vehicles back onto the road above Town Centre Park.",
+      "Down on the level, the Lougheed and Barnet Highway corridors funnel commuter traffic past Coquitlam Centre and the Lincoln SkyTrain station, where summer heat and stop-and-go driving expose tired cooling systems. Telling our dispatcher whether you are up the hill or down near Lafarge Lake lets us send a truck geared for the conditions you are actually in.",
+    ],
+    whyChooseUs: [
+      "The Burke Mountain and Westwood Plateau grades are unforgiving when there is ice or a stalled vehicle on a blind curve, so we send drivers who know how to set up a recovery safely on a slope rather than improvising. That experience protects both your vehicle and the traffic coming up behind it.",
+      "Every Coquitlam call is quoted up front at a flat rate, hill or no hill, and we never pad the bill for a tricky plateau driveway. Licensed and insured in BC, with winch-equipped trucks and 24/7 dispatch, we are built for exactly the terrain this city throws at drivers.",
+    ],
+    commonScenarios: [
+      {
+        title: "Winter traction loss on Westwood Plateau",
+        body: "Snow and ice on the Plateau and Burke Mountain switchbacks send cars sliding into curbs and shallow ditches every winter. Our winch trucks recover them from the bank and back onto cleared pavement without grinding the bumper along the way.",
+      },
+      {
+        title: "Lougheed and Barnet Highway stalls",
+        body: "Commuter traffic on Lougheed and Barnet Highway near Coquitlam Centre is hard on aging radiators. We reach stalled vehicles quickly on these arterials, load onto a flatbed, and run you to a nearby shop or your driveway.",
+      },
+      {
+        title: "Maillardville and Austin Heights roadside help",
+        body: "Flat tires, dead batteries, and lockouts around Maillardville and Austin Heights are usually fixed on the spot. We change the spare, jump the battery, or pop the lock so most of these calls never need a tow at all.",
+      },
+    ],
+    nearbyCities: ["Burnaby", "Maple Ridge", "Surrey"],
     neighborhoods: ["Burke Mountain", "Westwood Plateau", "Maillardville", "Austin Heights", "Ranch Park", "Chineside"],
     highways: ["Lougheed Highway", "Barnet Highway", "Highway 7", "United Boulevard"],
     localLandmarks: ["Coquitlam Centre", "Town Centre Park", "Lafarge Lake", "Lincoln SkyTrain Station"],
@@ -137,6 +228,28 @@ export const serviceAreas: ServiceArea[] = [
     headline: "Tow Truck Richmond — 24/7 Towing & Roadside Assistance",
     summary:
       "Professional tow truck service in Richmond for stalled vehicles, flat tires, lockouts, and fuel delivery. We serve Steveston, Brighouse, Bridgeport, and Sea Island with fast 24/7 dispatch.",
+    intro: [
+      "Richmond sits on the flat delta islands of the Fraser, laced with long straight arterials like No. 3 Road and Steveston Highway and bordered by the Highway 99 tunnel approach. The geography is kind to our response times — the grid is easy to navigate — but the bridges and the YVR airport lands add their own quirks, with frequent calls near Bridgeport and the Sea Island terminals where rental returns and rideshare cars give out.",
+      "From the historic cannery streets of Steveston to the dense Brighouse core around Richmond Centre, parking is tight and ground clearance is low, so we lean on flatbeds for the imports and EVs that are common here. Give our dispatcher a nearby cross street such as No. 3 Road and Westminster Highway and the closest truck is on its way.",
+    ],
+    whyChooseUs: [
+      "Richmond's low-clearance ramps and flood-prone underpasses near the dykes call for a driver who knows which routes stay open after a heavy rain. We plan the approach so a stalled car under the Knight Street Bridge does not turn into a longer wait while a truck reroutes around standing water.",
+      "We quote every Richmond job up front at a flat rate, carry flatbeds for the airport-area rentals and EVs that must stay off their wheels, and stay licensed and insured in BC. Our dispatch runs every hour of every day, including the holidays when the highways to the ferries and the border are busiest.",
+    ],
+    commonScenarios: [
+      {
+        title: "Airport-area breakdowns near Sea Island",
+        body: "Rental returns, rideshare cars, and travellers' vehicles give out near YVR and Bridgeport more than anywhere else in Richmond. We respond fast to the Sea Island connector and terminal roads and can deliver the vehicle wherever your trip plans require.",
+      },
+      {
+        title: "Out of fuel on Highway 99 and No. 5 Road",
+        body: "Drivers misjudging the run to the Massey tunnel or the ferry sometimes coast to empty on Highway 99 and the eastern Richmond roads. We bring gasoline or diesel directly to your location so you can reach the nearest station without a full tow.",
+      },
+      {
+        title: "Steveston and Brighouse flat tires",
+        body: "Tight parking and curbside scuffs around Steveston Village and the Brighouse core lead to plenty of flat-tire calls. We fit your spare on-site or, if there is none, run you to an open tire shop rather than leaving you parked overnight.",
+      },
+    ],
     nearbyCities: ["Vancouver", "Delta", "Burnaby", "Surrey"],
     neighborhoods: ["Steveston", "Brighouse", "Bridgeport", "Sea Island", "Shellmont", "East Richmond"],
     highways: ["Highway 99", "Knight Street Bridge", "No. 3 Road", "Steveston Highway"],
@@ -166,7 +279,29 @@ export const serviceAreas: ServiceArea[] = [
     headline: "Tow Truck White Rock — 24/7 Towing & Roadside Assistance",
     summary:
       "24/7 towing in White Rock with rapid response, fair pricing, and careful vehicle handling. We serve Uptown, East Beach, West Beach, and Five Corners with fast dispatch.",
-    nearbyCities: ["Surrey", "South Surrey", "Langley", "Delta"],
+    intro: [
+      "White Rock is small but steep, and the hill that drops from Uptown and Five Corners down to the Marine Drive promenade defines most of what we do here. Cars parked nose-down along the beachfront on a frosty morning, manual transmissions that roll on the grade, and tourists unfamiliar with the tight switchback streets all keep our local drivers busy along East Beach and West Beach.",
+      "The Highway 99 corridor and the nearby Peace Arch border crossing add a steady flow of out-of-town traffic, and a stall in the border queue needs a careful, quick recovery so the lanes keep moving. Whether you are at the pier, on Marine Drive, or up near the Semiahmoo shops, the nearest cross street is all our dispatcher needs to send help.",
+    ],
+    whyChooseUs: [
+      "The beachfront grade is genuinely tricky — a careless load can let a car roll toward the promenade — so our drivers chock, secure, and winch on the slope the right way every time. That care is the difference between a clean recovery and a second incident on one of the busiest pedestrian streets in the region.",
+      "We give every White Rock caller a flat-rate quote before dispatch, handle the narrow one-way beach streets without drama, and stay licensed and insured in BC. Day or night, holiday or not, the same crew that knows this hill is the one coming to help.",
+    ],
+    commonScenarios: [
+      {
+        title: "Beachfront recoveries on Marine Drive",
+        body: "Cars parked on the steep approach to the White Rock pier can slip a curb or lose grip on a frosty morning. We secure the vehicle against the grade and recover it without letting it drift toward the busy promenade below.",
+      },
+      {
+        title: "Peace Arch and Highway 99 stalls",
+        body: "A vehicle that dies in the border queue or on the Highway 99 approach needs to clear quickly so the lanes keep flowing. We reach the crossing area fast and load efficiently to keep both you and the traffic moving.",
+      },
+      {
+        title: "Uptown and Five Corners battery calls",
+        body: "Short trips and cold nights around Uptown and Five Corners leave a lot of weak batteries that will not turn over in the morning. We boost on the spot and test the charging system so a one-off no-start does not become a daily ritual.",
+      },
+    ],
+    nearbyCities: ["Surrey", "Langley", "Delta"],
     neighborhoods: ["Uptown", "East Beach", "West Beach", "Five Corners", "Ocean Park"],
     highways: ["Highway 99", "King George Boulevard", "16th Avenue", "Marine Drive"],
     localLandmarks: ["White Rock Pier", "White Rock Beach", "Peace Arch Border Crossing", "Semiahmoo Shopping Centre"],
@@ -195,7 +330,29 @@ export const serviceAreas: ServiceArea[] = [
     headline: "Tow Truck Vancouver — 24/7 Emergency Towing Near You",
     summary:
       "Emergency towing and roadside service in Vancouver with immediate dispatch and transparent rates. We serve Downtown, Kitsilano, Mount Pleasant, East Vancouver, and surrounding areas.",
-    nearbyCities: ["Burnaby", "Richmond", "North Vancouver", "New Westminster"],
+    intro: [
+      "Vancouver is the most access-challenged city we serve, and that is exactly where local experience pays off. Downtown towers wrap their parking into deep underground parkades, the West End is a maze of one-way streets, and Kitsilano and Mount Pleasant mix permit-only blocks with bike lanes that narrow the working space around a stranded car. Our drivers thread a wheel-lift through all of it without holding up a whole block of traffic.",
+      "Across the bridges into East Vancouver and along Broadway and Knight Street, the calls shift toward older vehicles and longer commercial runs. Whether you are circling for the Granville Island entrance or stuck near Strathcona, the closest cross street and which floor of the parkade you are on are all our dispatcher needs to get a truck to you quickly.",
+    ],
+    whyChooseUs: [
+      "Tight downtown parkades and one-way West End streets defeat operators who do not work them daily; ours do. We know the clearance heights at the major tower lots and the legal spots to set up a load on Broadway so a recovery does not become a traffic jam or a scraped roof.",
+      "Every Vancouver job is quoted up front at a flat rate with no premium for awkward access, and we carry flatbeds for the EVs and all-wheel-drive cars that fill these neighbourhoods. Licensed and insured in BC, we dispatch around the clock through downtown gridlock and quiet 4 a.m. side streets alike.",
+    ],
+    commonScenarios: [
+      {
+        title: "Downtown parkade recoveries",
+        body: "Underground tower parkades downtown and in the West End have strict clearance heights that rule out the wrong truck entirely. We arrive with equipment sized for the space, manoeuvre out of the stall cleanly, and avoid the pillars and low beams.",
+      },
+      {
+        title: "Bridge and Broadway corridor stalls",
+        body: "Vehicles that die on the bridge approaches or along the Broadway and Knight Street corridors need a quick clear to keep traffic flowing. We reach these arterials fast and load onto a flatbed so the lane reopens and you get to your shop.",
+      },
+      {
+        title: "Kitsilano and East Van lockouts",
+        body: "Permit blocks and busy commercial strips in Kitsilano, Mount Pleasant, and East Vancouver generate constant lockout calls. We open the vehicle without damaging the door or glass, right where it sits at the curb.",
+      },
+    ],
+    nearbyCities: ["Burnaby", "Richmond", "Delta"],
     neighborhoods: ["Downtown", "Kitsilano", "Mount Pleasant", "East Vancouver", "West End", "Strathcona"],
     highways: ["Highway 1 (Trans-Canada)", "Granville Street", "Broadway", "Knight Street"],
     localLandmarks: ["Vancouver City Hall", "Granville Island", "BC Place", "Rogers Arena"],
@@ -224,6 +381,28 @@ export const serviceAreas: ServiceArea[] = [
     headline: "Tow Truck Delta — 24/7 Emergency Towing & Roadside Help",
     summary:
       "Fast tow truck dispatch across Delta including Ladner, Tsawwassen, and North Delta. We provide 24/7 emergency towing, battery boosts, lockouts, and flat tire help with upfront pricing.",
+    intro: [
+      "Delta is really three communities in one — the village feel of Ladner, the seaside grid of Tsawwassen out by the ferry terminal, and the busier North Delta blocks that blend into Surrey along Scott Road. Long highway distances tie them together, so a call in Tsawwassen can sit a fair drive from one in Annieville, and our staging across the municipality keeps those gaps from turning into long waits.",
+      "Highway 17 and Deltaport Way carry heavy traffic to the BC Ferries terminal and the port, and a breakdown in the ferry queue needs to clear before it strands a whole sailing's worth of cars behind it. Whether you are near Tsawwassen Mills, the Ladner waterfront, or out toward Burns Bog, the nearest cross street gets the closest truck moving your way.",
+    ],
+    whyChooseUs: [
+      "Missing a ferry because a stalled car blocked the lane is a real risk in Tsawwassen, so we treat terminal-area calls with the urgency they deserve and load quickly to keep the queue moving. That same sense of timing helps when a vehicle dies on the long, exposed stretches of Highway 17.",
+      "We quote every Delta job up front at a flat rate despite the distances involved, never adding mileage surprises after the fact. Licensed and insured in BC with both wheel-lift and flatbed trucks, we cover Ladner, Tsawwassen, and North Delta every hour of the day, holidays included.",
+    ],
+    commonScenarios: [
+      {
+        title: "Ferry terminal queue breakdowns in Tsawwassen",
+        body: "A car that dies waiting for a sailing can hold up dozens behind it. We reach the Tsawwassen terminal and Highway 17 approach quickly, clear the lane, and get you and the queue moving with minimal disruption.",
+      },
+      {
+        title: "Scott Road and North Delta roadside help",
+        body: "The busy Scott Road corridor along the Surrey boundary generates frequent flat-tire, battery, and lockout calls. Most are quick on-site fixes — we change the spare or boost the battery right there so you avoid a tow entirely.",
+      },
+      {
+        title: "Ladner and rural Delta recoveries",
+        body: "Soft farmland shoulders and ditch edges around Ladner and the Burns Bog roads catch drivers in wet weather. Our winch-equipped trucks pull the vehicle back onto solid ground without adding damage on the way out.",
+      },
+    ],
     nearbyCities: ["Surrey", "Richmond", "White Rock", "Burnaby"],
     neighborhoods: ["Ladner", "Tsawwassen", "North Delta", "Annieville", "Nordel"],
     highways: ["Highway 99", "Deltaport Way", "Highway 17", "Scott Road (120th Street)"],
@@ -253,7 +432,29 @@ export const serviceAreas: ServiceArea[] = [
     headline: "Tow Truck Maple Ridge — 24/7 Towing & Roadside Assistance",
     summary:
       "24/7 tow truck service in Maple Ridge for breakdowns, lockouts, battery issues, and flat tires. We serve all Maple Ridge neighbourhoods including Albion, Haney, and Pitt Meadows with fast dispatch.",
-    nearbyCities: ["Pitt Meadows", "Coquitlam", "Mission", "Langley"],
+    intro: [
+      "Maple Ridge marks the rural edge of our coverage, where the suburban blocks of Haney give way to the forest roads of Silver Valley and the trailheads at Golden Ears Provincial Park. That mix means our drivers swing from a routine boost outside Haney Place Mall to a genuine backcountry recovery on a logging spur in the same shift, and they carry the winch gear to handle both.",
+      "Lougheed Highway and Dewdney Trunk Road are the spine of the community, and the Golden Ears Way connection over to Langley adds a fast bridge corridor where breakdowns need a prompt clear. From Albion's newer subdivisions to the Pitt Meadows flats, telling our dispatcher the nearest landmark gets the closest truck rolling toward you without guesswork.",
+    ],
+    whyChooseUs: [
+      "Recoveries near Golden Ears and the Silver Valley forest roads are not ordinary roadside calls — soft ground, steep banks, and poor cell coverage all complicate them, and our winch-equipped drivers come prepared for exactly that. We would rather arrive over-equipped than have to send a second truck.",
+      "Despite the rural distances, every Maple Ridge and Pitt Meadows call is quoted up front at a flat rate with no mileage surprises. Licensed and insured in BC and dispatching 24/7, we treat a remote midnight call past Albion with the same urgency as a downtown Haney breakdown.",
+    ],
+    commonScenarios: [
+      {
+        title: "Backcountry recoveries near Golden Ears",
+        body: "Drivers exploring the forest roads and trailheads around Golden Ears Provincial Park sometimes slide off soft shoulders or get stuck on rough spurs. Our winch trucks reach these spots and recover the vehicle without tearing up its underside.",
+      },
+      {
+        title: "Lougheed Highway and Golden Ears Way stalls",
+        body: "Breakdowns on Lougheed Highway, Dewdney Trunk Road, and the Golden Ears Way bridge approach need a quick clear to keep traffic moving. We respond fast, load onto a flatbed, and run you to a shop or home.",
+      },
+      {
+        title: "Haney and Albion roadside fixes",
+        body: "Flat tires, dead batteries, and lockouts around Haney and the newer Albion subdivisions are usually solved on-site. We change the spare, jump the battery, or open the door right in your driveway so a tow is rarely needed.",
+      },
+    ],
+    nearbyCities: ["Coquitlam", "Langley", "Burnaby"],
     neighborhoods: ["Haney", "Albion", "Thornhill", "Silver Valley", "Pitt Meadows"],
     highways: ["Lougheed Highway (Highway 7)", "Dewdney Trunk Road", "Golden Ears Way"],
     localLandmarks: ["Golden Ears Provincial Park", "Maple Ridge Town Centre", "Haney Place Mall"],
@@ -280,4 +481,21 @@ export const serviceAreas: ServiceArea[] = [
 
 export function getServiceAreaBySlug(slug: string): ServiceArea | undefined {
   return serviceAreas.find((area) => area.slug === slug);
+}
+
+/**
+ * Convert a city name into a location-route slug.
+ * Mirrors the slug format used for the `/locations/[city]` routes
+ * (lowercase, trimmed, spaces collapsed to hyphens).
+ */
+export function slugifyCity(name: string): string {
+  return name.toLowerCase().trim().replace(/\s+/g, "-");
+}
+
+/** Set of every real `/locations/[city]` slug. */
+export const serviceAreaSlugs: Set<string> = new Set(serviceAreas.map((area) => area.slug));
+
+/** True only when `slug` resolves to a real `/locations/[slug]` route. */
+export function isServiceAreaSlug(slug: string): boolean {
+  return serviceAreaSlugs.has(slug);
 }

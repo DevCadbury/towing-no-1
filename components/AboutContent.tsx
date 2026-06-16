@@ -60,7 +60,19 @@ export default function AboutContent() {
                   Over the years, we&apos;ve grown into a full fleet operation, but our core values haven&apos;t changed. We treat every customer like family, understanding that when you call us, you&apos;re likely in a stressful situation.
                 </p>
                 <p>
+                  What started as one operator answering the phone at all hours has become a coordinated team of professional drivers, dispatchers, and roadside technicians who cover Surrey, Delta, White Rock, Langley, Burnaby, Richmond, Coquitlam, Vancouver, and Maple Ridge. We invested early in proper flatbeds, wheel-lift trucks, and recovery gear so we could handle everything from a simple battery boost to a complicated winch-out without sending someone else to finish the job.
+                </p>
+                <p>
+                  Being licensed and fully insured is not a marketing line for us, it is the foundation of how we work. Every driver is trained to secure your vehicle correctly, to operate safely around live traffic, and to treat your car as carefully as their own. We carry the coverage that protects you and your vehicle from the moment we hook up to the moment we set down at the destination.
+                </p>
+                <p>
                   Today, we are proud to be the top-rated towing service in BC, known for our fast response times, professional drivers, and transparent pricing.
+                </p>
+                <p>
+                  Our process is built to take the stress out of a bad day. When you call, a real dispatcher gathers your location, your vehicle details, and the problem, then gives you a flat-rate quote and an honest arrival estimate before a truck rolls. You get a callback or text as the driver approaches, the driver confirms the price on site before any work begins, and payment is simple with card, debit, or cash. No upselling, no surprise add-ons, no inflated storage games, just the help you called for at the price we quoted.
+                </p>
+                <p>
+                  More than a decade of experience across the Lower Mainland has taught us that reputation is earned one call at a time. The thousands of drivers who have trusted us came back, and recommended us to friends and family, because we showed up when we said we would and charged what we promised. That is the standard we hold every member of our team to, and it is the difference we want you to feel the moment we answer the phone.
                 </p>
               </div>
             </motion.div>

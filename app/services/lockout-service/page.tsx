@@ -38,8 +38,8 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "How fast can you unlock my car in Surrey?",
-      acceptedAnswer: { "@type": "Answer", text: "Our average response time for lockout service in Surrey is under 15 minutes. Call (778) 838-0014 and we dispatch immediately." },
+      name: "How quickly can you get me back into my locked car?",
+      acceptedAnswer: { "@type": "Answer", text: "Once you ring (778) 838-0014 a nearby lock technician usually reaches Surrey addresses in about 15 minutes, and we set off the instant the call ends." },
     },
     {
       "@type": "Question",
@@ -49,7 +49,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "How much does lockout service cost in Surrey?",
-      acceptedAnswer: { "@type": "Answer", text: "We use flat-rate pricing with no hidden fees. Call (778) 838-0014 for an instant quote before we dispatch." },
+      acceptedAnswer: { "@type": "Answer", text: "There is a single clear lockout price agreed up front — call (778) 838-0014 and we confirm it before the technician is sent your way." },
     },
   ],
 };
@@ -89,7 +89,7 @@ export default function LockoutServicePage() {
             Car Lockout Service — Surrey &amp; Lower Mainland
           </h1>
           <p className="text-white/80 text-lg max-w-xl">
-            Locked your keys inside? We open your vehicle safely without damage in under 15 minutes. Available 24/7 across Surrey and the Lower Mainland.
+            Locked your keys inside? We open your vehicle safely without damage in under 15 minutes. We cover Surrey and the wider Lower Mainland around the clock.
           </p>
         </div>
       </section>
@@ -101,13 +101,13 @@ export default function LockoutServicePage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">24/7 Car Lockout Service in Surrey, BC</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Locking your keys inside your car is stressful — especially in a parking lot, at the side of the road, or late at night. TowingNo.1 dispatches a trained technician to your location in <strong>under 15 minutes</strong> to open your vehicle safely without causing any damage.
+                  Locking your keys inside your car is stressful — especially in a parking lot, at the side of the road, or late at night. A TowingNo.1 lock technician is usually with you in <strong>under 15 minutes</strong>, ready to open your vehicle safely without causing any damage.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Our technicians use professional-grade tools and proven techniques to unlock all makes and models — from standard sedans to modern keyless-entry vehicles. We handle your car with care and get you back on the road quickly.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  We cover all of Surrey including Guildford, Newton, Fleetwood, Cloverdale, and South Surrey, as well as Langley, Burnaby, Richmond, Coquitlam, White Rock, Delta, and Vancouver.
+                  From a worn mechanical key that no longer turns to a dead key fob that leaves a push-button car unresponsive, we handle the full range of modern entry problems and get you back behind the wheel without a scratch.
                 </p>
               </div>
 
@@ -126,12 +126,29 @@ export default function LockoutServicePage() {
               </div>
 
               <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Key Fobs, Transponders, and Standard Locks</h2>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  Not every lockout is the same, and the right approach depends entirely on how your car secures its doors. Older vehicles with a turn-key cylinder are usually the quickest — we reach the latch with proper lockout tools and the door is open in moments. Cars with a transponder or chipped key still lock and unlock mechanically, so even if the chip is failing we can get you inside; programming a replacement chip is a separate job for a locksmith or dealer, but getting you into the cabin is not.
+                </p>
+                <p className="text-slate-600 leading-relaxed">
+                  Push-button and keyless-entry vehicles are a different story. When the fob battery dies, the car often will not sense the fob at all, leaving you locked out even though the key is in your pocket. Most of these vehicles hide a mechanical override — a slim emergency blade tucked inside the fob and a concealed keyhole behind a trim cap on the door handle. We know where manufacturers hide these on common makes, so we can usually let you in and show you the trick for next time.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">How We Open a Car Without Damage</h2>
+                <p className="text-slate-600 leading-relaxed">
+                  The horror stories people remember — a coat hanger gouging the window seal, a screwdriver bending the door frame — come from improvised attempts, not professional tools. We use a cushioned wedge to create a few millimetres of gap at the top of the door and a long-reach tool to operate the interior handle, lock button, or unlock switch directly, exactly as the door is designed to be opened from inside. Nothing is forced, the weatherstripping stays intact, and the glass is never under pressure. If your vehicle is one of the rare designs where this is not safe, we will tell you up front rather than risk a repair bill, and we always confirm ownership before opening any vehicle.
+                </p>
+              </div>
+
+              <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
                   {[
-                    { q: "How fast can you unlock my car in Surrey?", a: "Our average response time for lockout service in Surrey is under 15 minutes. Call (778) 838-0014 and we dispatch immediately." },
+                    { q: "How quickly can you get me back into my locked car?", a: "Once you ring (778) 838-0014 a nearby lock technician usually reaches Surrey addresses in about 15 minutes, and we set off the instant the call ends." },
                     { q: "Will you damage my car opening it?", a: "No. Our technicians use professional tools and techniques to open your vehicle without causing any damage to the lock, door, or window." },
-                    { q: "How much does lockout service cost in Surrey?", a: "We use flat-rate pricing with no hidden fees. Call (778) 838-0014 for an instant quote before we dispatch." },
+                    { q: "How much does lockout service cost in Surrey?", a: "There is a single clear lockout price agreed up front — call (778) 838-0014 and we confirm it before the technician is sent your way." },
                   ].map((faq) => (
                     <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
                       <h3 className="font-bold text-navy-900 mb-2 text-sm">{faq.q}</h3>
@@ -146,7 +163,7 @@ export default function LockoutServicePage() {
               <div className="bg-navy-950 rounded-2xl p-6 text-white sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Locked Out?</h3>
-                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before we send a technician.</p>
+                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before dispatch.</p>
                 <a href="tel:+17788380014" className="btn-call-highlight flex items-center justify-center gap-2 w-full rounded-xl py-3.5 px-5 text-sm font-bold">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   (778) 838-0014

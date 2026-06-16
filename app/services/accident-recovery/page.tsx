@@ -100,13 +100,52 @@ export default function AccidentRecoveryPage() {
                   ))}
                 </ul>
               </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">What to Do at the Scene of a Crash</h2>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  The minutes right after a collision shape how safely everyone gets home. Switch on your hazard lights, check yourself and your passengers for injuries, and only move the vehicle if it is rolling freely and blocking live traffic. On a fast corridor like Highway 99 or the Trans-Canada, leave the car where it is, climb out on the side away from traffic, and wait behind a barrier rather than standing beside crumpled metal.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  Once people are safe, photograph the resting position of each vehicle, the damage, the licence plates, and the surrounding lane markings before anything is moved. Exchange insurance and contact details with the other driver, and in British Columbia call the police whenever someone is hurt or the combined damage looks to exceed the ICBC reporting limit. Those photos and notes make your claim far smoother later.
+                </p>
+                <p className="text-slate-600 leading-relaxed">
+                  When you call us, tell the dispatcher whether the car is leaking fluid, sitting on a median, or tangled with a guardrail. That lets us send a flatbed and the right rigging on the first trip instead of a second callout.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">How We Recover a Damaged Vehicle</h2>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  Crash damage changes how a car must be lifted. Bent control arms, seized wheels, a dragging bumper, or a deployed airbag mean the vehicle often cannot roll or steer normally, so we favour a flatbed and a controlled winch pull rather than a quick hook-and-go. Skids and recovery boards protect the underbody, and we secure the shell at the frame instead of damaged body panels to avoid widening the damage on the way to the shop.
+                </p>
+                <p className="text-slate-600 leading-relaxed">
+                  We deliver to the body shop, dealership, ICBC facility, or storage yard of your choosing. If you have not decided yet, we can hold the vehicle securely until you and your adjuster agree on the next step, so a stressful day does not force a rushed decision.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
+                <div className="space-y-4">
+                  {[
+                    { q: "Should I drive my car after a minor accident?", a: "Only if it is clearly safe. Fluid leaks, pulling steering, grinding wheels, or warning lights point to hidden structural or mechanical damage. When in doubt, let us transport it and have a shop inspect it first." },
+                    { q: "Can you tow my car to an ICBC-approved shop?", a: "Yes. We deliver to any body shop, dealership, ICBC facility, or storage yard you choose across the Lower Mainland, and we can hold the vehicle if you have not picked one yet." },
+                    { q: "Do you work with my insurance claim?", a: "We provide clear documentation of the recovery and drop-off so it lines up with your ICBC or private insurer claim. Keep your photos from the scene to support it." },
+                  ].map((faq) => (
+                    <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{faq.q}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="space-y-6">
               <div className="bg-navy-950 rounded-2xl p-6 text-white sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Been in an Accident?</h3>
-                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before we send a driver.</p>
+                <p className="text-slate-300 text-sm mb-5">We dispatch in under 15 minutes. Free quote before dispatch.</p>
                 <a href="tel:+17788380014" className="btn-call-highlight flex items-center justify-center gap-2 w-full rounded-xl py-3.5 px-5 text-sm font-bold">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   (778) 838-0014
