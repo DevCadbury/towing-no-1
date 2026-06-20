@@ -1,60 +1,64 @@
 import { NextResponse } from "next/server";
+import { blogPosts } from "@/lib/blog-posts";
+import { serviceAreas } from "@/lib/service-areas";
 
 // IndexNow allows instant URL submission to Bing, Yandex, and other engines.
-// Generate a key at https://www.bing.com/indexnow and add it to .env.local as INDEXNOW_KEY
-// Also create a file at /public/<key>.txt containing just the key value.
+// Key: 8a4557d424984be2a7c5c7d0a031a499
+// Key file hosted at: https://www.towingno1.com/8a4557d424984be2a7c5c7d0a031a499.txt
+// Set INDEXNOW_KEY in Vercel environment variables.
 
 const BASE_URL = "https://www.towingno1.com";
 
-const ALL_URLS = [
-  `${BASE_URL}/`,
-  `${BASE_URL}/services`,
-  `${BASE_URL}/services/emergency-towing`,
-  `${BASE_URL}/services/battery-boost`,
-  `${BASE_URL}/services/lockout-service`,
-  `${BASE_URL}/services/flat-tire-help`,
-  `${BASE_URL}/services/fuel-delivery`,
-  `${BASE_URL}/services/winching-extraction`,
-  `${BASE_URL}/services/vehicle-transport`,
-  `${BASE_URL}/services/accident-recovery`,
-  `${BASE_URL}/locations`,
-  `${BASE_URL}/locations/surrey`,
-  `${BASE_URL}/locations/langley`,
-  `${BASE_URL}/locations/burnaby`,
-  `${BASE_URL}/locations/coquitlam`,
-  `${BASE_URL}/locations/richmond`,
-  `${BASE_URL}/locations/white-rock`,
-  `${BASE_URL}/locations/vancouver`,
-  `${BASE_URL}/locations/delta`,
-  `${BASE_URL}/locations/maple-ridge`,
-  `${BASE_URL}/blog`,
-  `${BASE_URL}/blog/what-to-do-car-breaks-down-highway`,
-  `${BASE_URL}/blog/prepare-vehicle-winter-bc`,
-  `${BASE_URL}/blog/signs-car-battery-dying`,
-  `${BASE_URL}/blog/emergency-kit-essentials`,
-  `${BASE_URL}/blog/when-call-tow-vs-fix-yourself`,
-  `${BASE_URL}/blog/understanding-towing-services`,
-  `${BASE_URL}/about`,
-  `${BASE_URL}/contact`,
-];
+function buildUrlList(): string[] {
+  const staticUrls = [
+    `${BASE_URL}/`,
+    `${BASE_URL}/about`,
+    `${BASE_URL}/contact`,
+    `${BASE_URL}/services`,
+    `${BASE_URL}/services/emergency-towing`,
+    `${BASE_URL}/services/battery-boost`,
+    `${BASE_URL}/services/lockout-service`,
+    `${BASE_URL}/services/flat-tire-help`,
+    `${BASE_URL}/services/fuel-delivery`,
+    `${BASE_URL}/services/winching-extraction`,
+    `${BASE_URL}/services/vehicle-transport`,
+    `${BASE_URL}/services/accident-recovery`,
+    `${BASE_URL}/locations`,
+    `${BASE_URL}/blog`,
+    `${BASE_URL}/privacy`,
+    `${BASE_URL}/terms`,
+  ];
+
+  const locationUrls = serviceAreas.map((area) => `${BASE_URL}/locations/${area.slug}`);
+  const blogUrls = blogPosts.map((post) => `${BASE_URL}/blog/${post.slug}`);
+
+  return [...staticUrls, ...locationUrls, ...blogUrls];
+}
 
 export async function POST(request: Request) {
   const key = process.env.INDEXNOW_KEY;
   if (!key) {
-    return NextResponse.json({ error: "INDEXNOW_KEY not configured" }, { status: 500 });
+    return NextResponse.json(
+      { error: "INDEXNOW_KEY not configured. Set it in Vercel environment variables." },
+      { status: 500 }
+    );
   }
 
-  // Verify the request has a valid internal secret to prevent abuse
-  const { secret } = await request.json().catch(() => ({ secret: null }));
-  if (secret !== process.env.INDEXNOW_SECRET) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  // Optional shared secret to protect this endpoint from arbitrary POSTs.
+  const secret = process.env.INDEXNOW_SECRET;
+  if (secret) {
+    const body = await request.json().catch(() => ({}));
+    if (body.secret !== secret) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
   }
 
+  const urlList = buildUrlList();
   const payload = {
     host: "www.towingno1.com",
     key,
     keyLocation: `${BASE_URL}/${key}.txt`,
-    urlList: ALL_URLS,
+    urlList,
   };
 
   try {
@@ -64,17 +68,32 @@ export async function POST(request: Request) {
       body: JSON.stringify(payload),
     });
 
+    const responseText = await res.text().catch(() => "");
+
     return NextResponse.json({
-      status: res.status,
-      message: res.status === 200 ? "URLs submitted successfully" : "Submission failed",
-      urlCount: ALL_URLS.length,
+      success: res.status === 200 || res.status === 202,
+      httpStatus: res.status,
+      message:
+        res.status === 200
+          ? "URLs submitted successfully"
+          : res.status === 202
+          ? "Accepted — URLs queued for processing"
+          : `Submission returned ${res.status}: ${responseText}`,
+      urlCount: urlList.length,
+      urls: urlList,
     });
   } catch (err) {
     return NextResponse.json({ error: String(err) }, { status: 500 });
   }
 }
 
-// GET — returns the list of URLs that will be submitted (for verification)
+// GET — returns the list of URLs that would be submitted (for verification)
 export async function GET() {
-  return NextResponse.json({ urls: ALL_URLS, count: ALL_URLS.length });
+  const urlList = buildUrlList();
+  return NextResponse.json({
+    key: process.env.INDEXNOW_KEY ? "configured" : "NOT SET — add INDEXNOW_KEY to Vercel env",
+    keyFileUrl: `${BASE_URL}/8a4557d424984be2a7c5c7d0a031a499.txt`,
+    urlCount: urlList.length,
+    urls: urlList,
+  });
 }

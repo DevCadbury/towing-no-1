@@ -34,6 +34,7 @@ try {
 
 const BASE_URL = "https://www.towingno1.com";
 const SITEMAP_URL = `${BASE_URL}/sitemap.xml`;
+const INDEXNOW_KEY = envVars["INDEXNOW_KEY"] || "8a4557d424984be2a7c5c7d0a031a499";
 
 const ALL_URLS = [
   `${BASE_URL}/`,
@@ -85,16 +86,9 @@ async function pingBingSitemap() {
 }
 
 async function submitIndexNow() {
-  const key = envVars["INDEXNOW_KEY"];
-  if (!key) {
-    console.log("\n⚠  INDEXNOW_KEY not set — skipping IndexNow submission");
-    console.log("   Get a free key at https://www.bing.com/indexnow");
-    console.log("   Add INDEXNOW_KEY=your-key to .env.local");
-    console.log(`   Create /public/${key || "your-key"}.txt containing just the key`);
-    return;
-  }
+  const key = INDEXNOW_KEY;
 
-  console.log(`\n📡 Submitting ${ALL_URLS.length} URLs to IndexNow...`);
+  console.log(`\n📡 Submitting ${ALL_URLS.length} URLs to IndexNow (key: ${key.slice(0, 8)}...)...`);
   const payload = {
     host: "www.towingno1.com",
     key,
