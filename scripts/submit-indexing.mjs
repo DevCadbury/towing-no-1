@@ -68,33 +68,20 @@ const ALL_URLS = [
 ];
 
 async function pingGoogleSitemap() {
-  console.log("\n📡 Pinging Google to re-fetch sitemap...");
-  const pingUrl = `https://www.google.com/ping?sitemap=${encodeURIComponent(SITEMAP_URL)}`;
-  try {
-    const res = await fetch(pingUrl);
-    if (res.ok) {
-      console.log(`✅ Google sitemap ping successful (${res.status})`);
-    } else {
-      console.log(`⚠  Google ping returned ${res.status}`);
-    }
-  } catch (err) {
-    console.log(`❌ Google ping failed: ${err.message}`);
-  }
+  // NOTE: Google retired the anonymous sitemap ping endpoint
+  // (google.com/ping?sitemap=...) in 2023 — it now 404s and does nothing.
+  // The supported ways to get Google to (re)crawl are:
+  //   1. Submit/keep the sitemap in Search Console (Sitemaps report)
+  //   2. Use URL Inspection → "Request indexing" for priority pages
+  // So we no longer call the dead endpoint; we just remind the operator.
+  console.log("\nℹ  Google sitemap ping is deprecated (removed by Google in 2023).");
+  console.log("   Submit the sitemap in Search Console and use 'Request indexing' instead (see steps below).");
 }
 
 async function pingBingSitemap() {
-  console.log("\n📡 Pinging Bing to re-fetch sitemap...");
-  const pingUrl = `https://www.bing.com/ping?sitemap=${encodeURIComponent(SITEMAP_URL)}`;
-  try {
-    const res = await fetch(pingUrl);
-    if (res.ok) {
-      console.log(`✅ Bing sitemap ping successful (${res.status})`);
-    } else {
-      console.log(`⚠  Bing ping returned ${res.status}`);
-    }
-  } catch (err) {
-    console.log(`❌ Bing ping failed: ${err.message}`);
-  }
+  // Bing also deprecated the anonymous GET sitemap ping; IndexNow (below) is
+  // the supported real-time submission path for Bing/Yandex.
+  console.log("\nℹ  Bing sitemap ping is deprecated — using IndexNow instead (below).");
 }
 
 async function submitIndexNow() {
