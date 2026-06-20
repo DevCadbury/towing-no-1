@@ -362,6 +362,25 @@ export default function RootLayout({
           }}
         />
         {/* End Google Analytics */}
+
+        {/* ── Google Ads conversion tracking ─────────────────────────── */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17934610144"
+        />
+        <Script
+          id="google-ads"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17934610144');
+            `,
+          }}
+        />
+        {/* End Google Ads */}
         
         {/* Google Tag Manager (noscript) */}
         <noscript>

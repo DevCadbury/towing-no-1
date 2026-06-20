@@ -26,8 +26,32 @@ export default function Blog() {
   const featured = blogPosts.find((p) => p.featured);
   const rest = blogPosts.filter((p) => !p.featured);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.towingno1.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.towingno1.com/blog" },
+    ],
+  };
+
+  const blogListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "TowingNo.1 Blog — Towing Tips & Road Safety",
+    url: "https://www.towingno1.com/blog",
+    itemListElement: blogPosts.map((post, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `https://www.towingno1.com/blog/${post.slug}`,
+      name: post.title,
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListSchema) }} />
       {/* Hero with Featured Post */}
       <section className="relative min-h-[500px] flex items-end bg-navy-950 overflow-hidden">
         <div className="absolute inset-0">

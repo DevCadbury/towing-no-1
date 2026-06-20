@@ -22,9 +22,20 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.towingno1.com" },
+    { "@type": "ListItem", position: 2, name: "Terms of Service", item: "https://www.towingno1.com/terms" },
+  ],
+};
+
 export default function TermsPage() {
   return (
-    <section className="section-padding bg-white">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <section className="section-padding bg-white">
       <div className="container-custom max-w-4xl">
         <h1 className="text-3xl md:text-4xl font-extrabold text-navy-900 mb-4">Terms of Service</h1>
         <p className="text-sm text-slate-500 mb-8">Last updated: April 12, 2026</p>
@@ -136,5 +147,6 @@ export default function TermsPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }
