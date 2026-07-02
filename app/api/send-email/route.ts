@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 /* ─── Email configuration (all from env, never hardcoded) ──────── */
-const SENDER_MAILBOX = process.env.GRAPH_SENDER_MAILBOX || process.env.EMAIL_FROM || "";
-const EMAIL_FROM = process.env.EMAIL_FROM || SENDER_MAILBOX;
+const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
+const EMAIL_FROM = process.env.EMAIL_FROM || "info@towingno1.com";
 const EMAIL_DISPATCH = process.env.EMAIL_DISPATCH || EMAIL_FROM;
 const EMAIL_REPLY_TO = process.env.EMAIL_REPLY_TO || EMAIL_FROM;
 const ADMIN_RECIPIENTS = (process.env.EMAIL_ADMIN || EMAIL_FROM)
@@ -26,97 +26,41 @@ function escapeHtml(value: string): string {
     .replace(/'/g, "&#39;");
 }
 
-/* ─── OAuth2 token via client credentials ──────────────────────── */
-async function getAccessToken(): Promise<string> {
-  const tenantId = process.env.AZURE_TENANT_ID!;
-  const clientId = process.env.AZURE_CLIENT_ID!;
-  const clientSecret = process.env.AZURE_CLIENT_SECRET!;
-
-  const res = await fetch(
-    `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        grant_type: "client_credentials",
-        client_id: clientId,
-        client_secret: clientSecret,
-        scope: "https://graph.microsoft.com/.default",
-      }),
-    }
-  );
-
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Token request failed: ${err}`);
-  }
-
-  const data = await res.json();
-  return data.access_token as string;
+/* ─── Send via Resend REST API (no SDK dependency) ─────────────── */
+// Requires the sending domain (towingno1.com) to be verified in Resend so any
+// address on it — including the dispatch alias — can be used as the "from".
+interface ResendMessage {
+  from: string; // "Display Name <address@domain>"
+  to: string[];
+  subject: string;
+  html: string;
+  replyTo?: string;
 }
 
-/* ─── Send via Microsoft Graph API ─────────────────────────────── */
-// The message is submitted through `mailbox` (the /users/{mailbox}/sendMail
-// endpoint). The Azure app must have application Mail.Send rights for it.
-async function sendMail(accessToken: string, mailbox: string, payload: object): Promise<void> {
-  const res = await fetch(
-    `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(mailbox)}/sendMail`,
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    }
-  );
-
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Graph sendMail failed (${res.status}): ${err}`);
-  }
-}
-
-/* ─── Customer confirmation with dispatch-alias fallback ───────── */
-// Preferred: send truly as the dispatch mailbox/alias so the customer sees a
-// "dispatch" sender. If the tenant denies that (ErrorSendAsDenied, or the app
-// lacks access to that mailbox), fall back to sending through the main mailbox
-// as the business address with a "TowingNo.1 Dispatch" display name. This keeps
-// the contact form working without requiring Microsoft 365 admin changes.
-async function sendConfirmation(accessToken: string, content: string, customerEmail: string): Promise<void> {
-  const subject = "We have received your request — TowingNo.1";
-
-  // Attempt 1 — send through the dispatch mailbox, from the dispatch address.
-  if (EMAIL_DISPATCH && EMAIL_DISPATCH !== SENDER_MAILBOX) {
-    try {
-      await sendMail(accessToken, EMAIL_DISPATCH, {
-        message: {
-          subject,
-          body: { contentType: "HTML", content },
-          from: { emailAddress: { address: EMAIL_DISPATCH, name: "TowingNo.1 Dispatch" } },
-          toRecipients: [{ emailAddress: { address: customerEmail } }],
-          replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
-        },
-        saveToSentItems: true,
-      });
-      return;
-    } catch (err) {
-      console.warn("[send-email] dispatch-alias send failed, falling back to main mailbox:", err);
-    }
+async function sendEmail({ from, to, subject, html, replyTo }: ResendMessage): Promise<void> {
+  if (!RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY is not configured.");
   }
 
-  // Attempt 2 (fallback) — send through the main mailbox as the business
-  // address, keeping a recognizable "Dispatch" display name.
-  await sendMail(accessToken, SENDER_MAILBOX, {
-    message: {
-      subject,
-      body: { contentType: "HTML", content },
-      from: { emailAddress: { address: EMAIL_FROM, name: "TowingNo.1 Dispatch" } },
-      toRecipients: [{ emailAddress: { address: customerEmail } }],
-      replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${RESEND_API_KEY}`,
+      "Content-Type": "application/json",
     },
-    saveToSentItems: true,
+    body: JSON.stringify({
+      from,
+      to,
+      subject,
+      html,
+      ...(replyTo ? { reply_to: replyTo } : {}),
+    }),
   });
+
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`Resend send failed (${res.status}): ${err}`);
+  }
 }
 
 /* ─── Business notification email ──────────────────────────────── */
@@ -357,8 +301,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (!SENDER_MAILBOX) {
-      throw new Error("Email sender mailbox is not configured (GRAPH_SENDER_MAILBOX/EMAIL_FROM).");
+    if (!RESEND_API_KEY) {
+      throw new Error("RESEND_API_KEY is not configured.");
     }
 
     // Escape the user-supplied values before embedding them in HTML.
@@ -367,32 +311,29 @@ export async function POST(req: NextRequest) {
     const safePhone = escapeHtml(phone);
     const safeMessage = escapeHtml(message);
 
-    const accessToken = await getAccessToken();
-
     // Email 1 — Business/admin notification (to all admin recipients). This is
-    // the critical lead delivery, so it is sent first and must succeed. From the
-    // business mailbox (sends as itself — no send-as issue); reply-to is the
-    // customer so a reply goes straight back to them.
-    await sendMail(accessToken, SENDER_MAILBOX, {
-      message: {
-        subject: `New Contact Form Submission — ${name}`,
-        body: { contentType: "HTML", content: buildBusinessEmail(safeName, safeEmail, safePhone, safeMessage) },
-        from: { emailAddress: { address: EMAIL_FROM, name: "TowingNo.1 Website" } },
-        toRecipients: ADMIN_RECIPIENTS.map((address) => ({ emailAddress: { address } })),
-        replyTo: [{ emailAddress: { address: email } }],
-      },
-      saveToSentItems: true,
+    // the critical lead delivery, so it is sent first and must succeed. Sent
+    // from the business address; reply-to is the customer so a reply goes
+    // straight back to them.
+    await sendEmail({
+      from: `TowingNo.1 Website <${EMAIL_FROM}>`,
+      to: ADMIN_RECIPIENTS,
+      subject: `New Contact Form Submission — ${name}`,
+      html: buildBusinessEmail(safeName, safeEmail, safePhone, safeMessage),
+      replyTo: email,
     });
 
-    // Email 2 — Customer confirmation. Best-effort: prefers the dispatch alias
-    // and falls back to the main mailbox. A confirmation failure must NOT fail
-    // the request, because the lead has already been captured above.
+    // Email 2 — Customer confirmation, sent from the dispatch alias. Best-effort:
+    // a confirmation failure must NOT fail the request, because the lead has
+    // already been captured above.
     try {
-      await sendConfirmation(
-        accessToken,
-        buildConfirmationEmail(safeName, safeEmail, safePhone, safeMessage),
-        email
-      );
+      await sendEmail({
+        from: `TowingNo.1 Dispatch <${EMAIL_DISPATCH}>`,
+        to: [email],
+        subject: "We have received your request — TowingNo.1",
+        html: buildConfirmationEmail(safeName, safeEmail, safePhone, safeMessage),
+        replyTo: EMAIL_REPLY_TO,
+      });
     } catch (confErr) {
       console.error("[send-email] confirmation email failed (lead still captured):", confErr);
     }

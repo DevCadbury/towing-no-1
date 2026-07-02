@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
 /* ─── Email configuration (from env, never hardcoded) ──────────── */
-const SENDER_MAILBOX = process.env.GRAPH_SENDER_MAILBOX || process.env.EMAIL_FROM || "";
-const EMAIL_FROM = process.env.EMAIL_FROM || SENDER_MAILBOX;
+const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
+const EMAIL_FROM = process.env.EMAIL_FROM || "info@towingno1.com";
 const EMAIL_DISPATCH = process.env.EMAIL_DISPATCH || EMAIL_FROM;
 const EMAIL_REPLY_TO = process.env.EMAIL_REPLY_TO || EMAIL_FROM;
 const EMAIL_TEST = process.env.EMAIL_TEST || EMAIL_FROM;
@@ -11,55 +11,42 @@ const ADMIN_RECIPIENTS = (process.env.EMAIL_ADMIN || EMAIL_FROM)
   .map((a) => a.trim())
   .filter(Boolean);
 
-/* ─── OAuth2 token ─────────────────────────────────────────────── */
-async function getAccessToken(): Promise<string> {
-  const tenantId = process.env.AZURE_TENANT_ID!;
-  const clientId = process.env.AZURE_CLIENT_ID!;
-  const clientSecret = process.env.AZURE_CLIENT_SECRET!;
-
-  const res = await fetch(
-    `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        grant_type: "client_credentials",
-        client_id: clientId,
-        client_secret: clientSecret,
-        scope: "https://graph.microsoft.com/.default",
-      }),
-    }
-  );
-
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Token request failed: ${err}`);
+/* ─── Send via Resend REST API ─────────────────────────────────── */
+async function sendEmail(opts: {
+  from: string;
+  to: string[];
+  subject: string;
+  html: string;
+  replyTo?: string;
+}): Promise<{ id?: string }> {
+  if (!RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY is not configured.");
   }
 
-  const data = await res.json();
-  return data.access_token as string;
-}
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${RESEND_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: opts.from,
+      to: opts.to,
+      subject: opts.subject,
+      html: opts.html,
+      ...(opts.replyTo ? { reply_to: opts.replyTo } : {}),
+    }),
+  });
 
-/* ─── Send via Graph API ───────────────────────────────────────── */
-async function sendMail(accessToken: string, mailbox: string, payload: object): Promise<number> {
-  const res = await fetch(
-    `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(mailbox)}/sendMail`,
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    }
-  );
-
+  const text = await res.text();
   if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Graph sendMail failed (${res.status}): ${err}`);
+    throw new Error(`Resend send failed (${res.status}): ${text}`);
   }
-
-  return res.status; // 202 = accepted by Microsoft
+  try {
+    return JSON.parse(text);
+  } catch {
+    return {};
+  }
 }
 
 /* ─── Test email HTML ──────────────────────────────────────────── */
@@ -146,71 +133,43 @@ function buildTestEmail(label: string, recipient: string, fromAddress: string): 
 /* ─── Route handler (GET to trigger easily from browser) ───────── */
 export async function GET() {
   try {
-    if (!SENDER_MAILBOX) {
-      throw new Error("Email sender mailbox is not configured (GRAPH_SENDER_MAILBOX/EMAIL_FROM).");
+    if (!RESEND_API_KEY) {
+      throw new Error("RESEND_API_KEY is not configured.");
     }
 
-    const accessToken = await getAccessToken();
+    // 1) Customer confirmation test — sent FROM the dispatch alias to the test inbox.
+    const customerResult = await sendEmail({
+      from: `TowingNo.1 Dispatch <${EMAIL_DISPATCH}>`,
+      to: [EMAIL_TEST],
+      subject: "TowingNo.1 — Email System Test (Customer Confirmation)",
+      html: buildTestEmail("Customer Confirmation", EMAIL_TEST, EMAIL_DISPATCH),
+      replyTo: EMAIL_REPLY_TO,
+    });
 
-    // 1) External deliverability test — customer-style email FROM the dispatch
-    //    alias, sent to the configured test inbox. Falls back to the main
-    //    mailbox if the tenant denies sending as the dispatch alias.
-    let customerFrom = EMAIL_DISPATCH;
-    let statusExternal: number;
-    try {
-      if (!EMAIL_DISPATCH || EMAIL_DISPATCH === SENDER_MAILBOX) throw new Error("no separate dispatch mailbox");
-      statusExternal = await sendMail(accessToken, EMAIL_DISPATCH, {
-        message: {
-          subject: "TowingNo.1 — Email System Test (Customer Confirmation)",
-          body: { contentType: "HTML", content: buildTestEmail("Customer Confirmation", EMAIL_TEST, EMAIL_DISPATCH) },
-          from: { emailAddress: { address: EMAIL_DISPATCH, name: "TowingNo.1 Dispatch" } },
-          toRecipients: [{ emailAddress: { address: EMAIL_TEST } }],
-          replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
-        },
-        saveToSentItems: true,
-      });
-    } catch {
-      // Fallback: send through the main mailbox as the business address.
-      customerFrom = `${EMAIL_FROM} (dispatch alias denied — sent via main mailbox)`;
-      statusExternal = await sendMail(accessToken, SENDER_MAILBOX, {
-        message: {
-          subject: "TowingNo.1 — Email System Test (Customer Confirmation)",
-          body: { contentType: "HTML", content: buildTestEmail("Customer Confirmation", EMAIL_TEST, EMAIL_FROM) },
-          from: { emailAddress: { address: EMAIL_FROM, name: "TowingNo.1 Dispatch" } },
-          toRecipients: [{ emailAddress: { address: EMAIL_TEST } }],
-          replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
-        },
-        saveToSentItems: true,
-      });
-    }
-
-    // 2) Admin notification test — FROM the business address, to all admins.
-    const statusAdmin = await sendMail(accessToken, SENDER_MAILBOX, {
-      message: {
-        subject: "[Test] New Contact Form Submission — TowingNo.1",
-        body: { contentType: "HTML", content: buildTestEmail("Admin Notification", ADMIN_RECIPIENTS.join(", "), EMAIL_FROM) },
-        from: { emailAddress: { address: EMAIL_FROM, name: "TowingNo.1 Website" } },
-        toRecipients: ADMIN_RECIPIENTS.map((address) => ({ emailAddress: { address } })),
-        replyTo: [{ emailAddress: { address: EMAIL_REPLY_TO } }],
-      },
-      saveToSentItems: true,
+    // 2) Admin notification test — sent FROM the business address to all admins.
+    const adminResult = await sendEmail({
+      from: `TowingNo.1 Website <${EMAIL_FROM}>`,
+      to: ADMIN_RECIPIENTS,
+      subject: "[Test] New Contact Form Submission — TowingNo.1",
+      html: buildTestEmail("Admin Notification", ADMIN_RECIPIENTS.join(", "), EMAIL_FROM),
+      replyTo: EMAIL_REPLY_TO,
     });
 
     return NextResponse.json({
       success: true,
       sentAt: new Date().toISOString(),
-      senderMailbox: SENDER_MAILBOX,
+      provider: "resend",
       results: {
         customerConfirmation: {
-          from: customerFrom,
+          from: EMAIL_DISPATCH,
           to: EMAIL_TEST,
-          httpStatus: statusExternal,
-          note: "202 = accepted by Microsoft. Check spam/junk if not in inbox.",
+          id: customerResult.id,
+          note: "Sent via Resend. Check spam/junk if not in inbox.",
         },
         adminNotification: {
           from: EMAIL_FROM,
           to: ADMIN_RECIPIENTS,
-          httpStatus: statusAdmin,
+          id: adminResult.id,
           note: "Sent to all configured admin recipients.",
         },
       },
