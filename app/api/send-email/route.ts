@@ -20,6 +20,32 @@ const ADMIN_RECIPIENTS = (process.env.EMAIL_ADMIN || `info@${RESEND_DOMAIN}`)
   .map((a) => a.trim())
   .filter(Boolean);
 
+const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY || "";
+
+/* ─── Google reCAPTCHA verification ────────────────────────────── */
+// Verifies the token from the contact form against Google's siteverify API.
+// If no secret is configured, verification is skipped (so local/dev without
+// keys still works). Returns true when the challenge is valid.
+async function verifyRecaptcha(token: string): Promise<boolean> {
+  if (!RECAPTCHA_SECRET_KEY) return true; // captcha not configured — skip
+  if (!token) return false;
+
+  try {
+    const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret: RECAPTCHA_SECRET_KEY, response: token }),
+    });
+    const data = (await res.json()) as { success?: boolean; score?: number };
+    // v2 checkbox returns { success }. v3 also returns a score; accept >= 0.5.
+    if (data.success !== true) return false;
+    if (typeof data.score === "number") return data.score >= 0.5;
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 /* ─── Input sanitisation ───────────────────────────────────────── */
 function sanitize(value: unknown): string {
   if (typeof value !== "string") return "";
@@ -307,6 +333,16 @@ export async function POST(req: NextRequest) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
         { success: false, error: "Please provide a valid email address." },
+        { status: 400 }
+      );
+    }
+
+    // Verify the reCAPTCHA challenge before doing anything else.
+    const recaptchaToken = typeof body.recaptchaToken === "string" ? body.recaptchaToken : "";
+    const humanVerified = await verifyRecaptcha(recaptchaToken);
+    if (!humanVerified) {
+      return NextResponse.json(
+        { success: false, error: "reCAPTCHA verification failed. Please try again." },
         { status: 400 }
       );
     }

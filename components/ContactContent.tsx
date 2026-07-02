@@ -1,8 +1,22 @@
 "use client";
 
 import Image from "next/image";
+import Script from "next/script";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+
+// reCAPTCHA v2 checkbox — the widget renders into any element with the
+// `g-recaptcha` class once the API script has loaded.
+declare global {
+  interface Window {
+    grecaptcha?: {
+      getResponse: (widgetId?: number) => string;
+      reset: (widgetId?: number) => void;
+    };
+  }
+}
+
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
 
 export default function ContactContent() {
   const [formState, setFormState] = useState({
@@ -17,21 +31,35 @@ export default function ContactContent() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("submitting");
     setErrorMsg("");
+
+    // Require the reCAPTCHA challenge to be solved before submitting.
+    let recaptchaToken = "";
+    if (RECAPTCHA_SITE_KEY) {
+      recaptchaToken = window.grecaptcha?.getResponse() ?? "";
+      if (!recaptchaToken) {
+        setStatus("error");
+        setErrorMsg("Please confirm you are not a robot before sending.");
+        return;
+      }
+    }
+
+    setStatus("submitting");
     try {
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState),
+        body: JSON.stringify({ ...formState, recaptchaToken }),
       });
       const data = await res.json();
       if (!res.ok || !data.success) throw new Error(data.error || "Submission failed.");
       setStatus("success");
       setFormState({ name: "", email: "", phone: "", message: "" });
+      window.grecaptcha?.reset();
     } catch (err: unknown) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      window.grecaptcha?.reset();
     }
   };
 
@@ -94,6 +122,9 @@ export default function ContactContent() {
 
   return (
     <div className="min-h-screen">
+      {RECAPTCHA_SITE_KEY && (
+        <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
+      )}
       {/* Hero */}
       <section className="relative h-[40vh] min-h-[320px] flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 bg-navy-950">
@@ -203,6 +234,9 @@ export default function ContactContent() {
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                   />
                 </div>
+                {RECAPTCHA_SITE_KEY && (
+                  <div className="g-recaptcha" data-sitekey={RECAPTCHA_SITE_KEY} />
+                )}
                 {status === "error" && (
                   <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{errorMsg}</p>
                 )}
