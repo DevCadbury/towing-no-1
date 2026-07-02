@@ -477,6 +477,159 @@ export const serviceAreas: ServiceArea[] = [
       },
     ],
   },
+  {
+    slug: "cloverdale",
+    city: "Cloverdale",
+    headline: "Tow Truck Cloverdale — 24/7 Towing & Roadside Assistance",
+    summary:
+      "Fast tow truck dispatch across Cloverdale for breakdowns, lockouts, battery boosts, and flat tires. We cover the historic town centre, the fairgrounds, Clayton Heights, and the Highway 10 corridor with quick local response and upfront pricing.",
+    intro: [
+      "Cloverdale sits at the eastern edge of Surrey where the suburban grid opens toward Langley farmland, and that mix shapes our calls here. Around the historic town centre and the Cloverdale Fairgrounds we handle everyday parkade boosts and curbside lockouts, while the newer Clayton Heights subdivisions and the industrial blocks off the Highway 15 truck route bring heavier work. Because we stage drivers along the Highway 10 and 176th Street corridors, most Cloverdale calls are reached quickly rather than dispatched from across the city.",
+      "The Cloverdale Rodeo and the fairgrounds events pack the area on peak weekends, and a dead battery or flat in an overflow lot is one of our most common calls when the crowds arrive. Whether you are near the Museum of Surrey, the athletic park, or out toward the 64th Avenue industrial strip, give our dispatcher the nearest cross street and the closest available driver heads straight to you.",
+    ],
+    whyChooseUs: [
+      "Cloverdale drivers know the difference between the tight heritage streets around 176th and the fast-moving Highway 10 and 15 corridors, so we set up safely whether you are curbside downtown or stranded beside a truck route. That local knowledge matters most during Rodeo weekend or rush hour when the usual routes are jammed.",
+      "Every Cloverdale job is quoted at a flat rate before a truck rolls, with no meter running while you wait. We are licensed and insured in BC, carry both wheel-lift and flatbed trucks for everything from a lowered import to a work van, and we answer 3 a.m. calls the same way we handle a Saturday afternoon.",
+    ],
+    commonScenarios: [
+      {
+        title: "Fairgrounds and Rodeo-weekend battery calls",
+        body: "Overflow parking around the Cloverdale Fairgrounds fills fast on event weekends, and cars left with lights or accessories on come back to a dead battery. We bring the boost pack right to your stall, test the charging system, and get you out ahead of the traffic.",
+      },
+      {
+        title: "Highway 10 and Highway 15 breakdowns",
+        body: "The Highway 10 and Highway 15 (176th Street) corridors carry heavy commuter and truck traffic through Cloverdale. We reach the shoulder safely, shield your vehicle from passing lanes, and load onto a flatbed so you clear the live route quickly.",
+      },
+      {
+        title: "Clayton Heights lockouts and flats",
+        body: "The newer Clayton Heights townhome blocks generate frequent lockout and flat-tire calls. Most are quick on-site fixes — we open the vehicle without damage or swap the spare right in your strata lot so a tow is rarely needed.",
+      },
+    ],
+    nearbyCities: ["Surrey", "Langley", "White Rock", "Delta"],
+    neighborhoods: ["Cloverdale Town Centre", "Clayton Heights", "Cloverdale East", "Hillcrest", "West Cloverdale"],
+    highways: ["Highway 10", "Highway 15 (176th Street)", "Fraser Highway", "64th Avenue"],
+    localLandmarks: ["Cloverdale Fairgrounds", "Museum of Surrey", "Cloverdale Athletic Park", "Cloverdale Rodeo"],
+    faq: [
+      {
+        q: "How fast can a tow truck reach me in Cloverdale?",
+        a: "Our average response time in Cloverdale is under 20 minutes. We dispatch the nearest available driver immediately when you call (778) 838-0014.",
+      },
+      {
+        q: "Do you cover the Cloverdale Fairgrounds and Clayton Heights?",
+        a: "Yes. We serve all of Cloverdale including the town centre, the fairgrounds, Clayton Heights, and the surrounding industrial areas.",
+      },
+      {
+        q: "Can you tow on Highway 10 and Highway 15 near Cloverdale?",
+        a: "Yes. We respond to breakdowns on Highway 10, Highway 15 (176th Street), and Fraser Highway through Cloverdale. Call with your nearest cross-street.",
+      },
+      {
+        q: "Do you offer battery boost and lockout service in Cloverdale?",
+        a: "Yes. Battery boost, jump-start, lockout, flat tire, and fuel delivery are all available 24/7 across Cloverdale, usually as a quick on-site fix.",
+      },
+    ],
+  },
+  {
+    slug: "south-surrey",
+    city: "South Surrey",
+    headline: "Tow Truck South Surrey — 24/7 Towing & Roadside Assistance",
+    summary:
+      "24/7 tow truck service across South Surrey including Grandview Heights, Morgan Crossing, Ocean Park, and the Highway 99 corridor. Fast local dispatch for breakdowns, battery boosts, lockouts, and flat tires with upfront pricing.",
+    intro: [
+      "South Surrey stretches from the Grandview Corners shopping district down to the Ocean Park bluffs and the White Rock border, laced by the fast Highway 99 corridor and the long east–west run of 16th Avenue. The area's newer estate neighbourhoods and busy retail centres at Morgan Crossing generate a steady mix of parkade boosts, lockouts, and highway breakdowns, and we keep drivers positioned nearby so response times stay short across this spread-out community.",
+      "Commuters heading to the Peace Arch border crossing or south on Highway 99 make up a large share of our calls, and a stall on that corridor needs a prompt, safe clearance. Whether you are at Grandview Corners, near the South Surrey Athletic Park, or on a quiet Ocean Park side street, the nearest intersection is all our dispatcher needs to send the closest truck.",
+    ],
+    whyChooseUs: [
+      "South Surrey's mix of high-speed Highway 99 traffic and quiet residential bluffs calls for a driver who can work both safely — shielding a stalled car on a live shoulder one minute and easing a wheel-lift down a tight Ocean Park lane the next. We come equipped for either.",
+      "Every South Surrey call is quoted up front at a flat rate with no surprises, and we carry flatbeds for the EVs and all-wheel-drive vehicles common in the area's newer neighbourhoods. Licensed and insured in BC, we dispatch around the clock, holidays included.",
+    ],
+    commonScenarios: [
+      {
+        title: "Highway 99 and Peace Arch corridor stalls",
+        body: "A vehicle that dies on Highway 99 or in the border approach needs to clear before it backs up traffic. We reach the corridor fast, position the truck to protect you from moving lanes, and load efficiently so both you and the queue keep moving.",
+      },
+      {
+        title: "Grandview Corners and Morgan Crossing lockouts",
+        body: "The busy retail lots at Grandview Corners and Morgan Crossing are frequent lockout and dead-battery calls. We open the vehicle without damaging the door or glass, or boost the battery on the spot, so a quick shopping trip does not turn into a long wait.",
+      },
+      {
+        title: "Ocean Park and bluff-street recoveries",
+        body: "The sloped, tree-lined streets around Ocean Park can catch a car on a frosty morning or a wet leaf-covered grade. We secure and recover the vehicle carefully so it never drifts on the slope during loading.",
+      },
+    ],
+    nearbyCities: ["White Rock", "Surrey", "Delta", "Langley"],
+    neighborhoods: ["Grandview Heights", "Morgan Crossing", "Ocean Park", "Crescent Beach", "Sunnyside", "Elgin"],
+    highways: ["Highway 99", "16th Avenue", "King George Boulevard", "32nd Avenue"],
+    localLandmarks: ["Grandview Corners", "Morgan Crossing", "South Surrey Athletic Park", "Peace Arch Border Crossing"],
+    faq: [
+      {
+        q: "How fast can a tow truck reach me in South Surrey?",
+        a: "Our average response time in South Surrey is under 20 minutes. We dispatch the nearest available driver immediately when you call.",
+      },
+      {
+        q: "Do you cover Grandview Heights, Morgan Crossing, and Ocean Park?",
+        a: "Yes. We serve all of South Surrey including Grandview Heights, Morgan Crossing, Ocean Park, Crescent Beach, and the Highway 99 corridor.",
+      },
+      {
+        q: "Can you tow near the Peace Arch Border Crossing?",
+        a: "Yes. We respond to breakdowns near the Peace Arch crossing and along Highway 99 through South Surrey and White Rock.",
+      },
+      {
+        q: "Do you offer roadside assistance in South Surrey without towing?",
+        a: "Yes. Battery boost, jump-start, flat tire change, fuel delivery, and lockout service are all available on-site across South Surrey.",
+      },
+    ],
+  },
+  {
+    slug: "aldergrove",
+    city: "Aldergrove",
+    headline: "Tow Truck Aldergrove — 24/7 Towing & Roadside Assistance",
+    summary:
+      "24/7 towing and roadside help across Aldergrove and east Langley Township, from the Fraser Highway town centre to the rural section roads near the Abbotsford border. Fast dispatch for breakdowns, winching, battery boosts, and lockouts with upfront pricing.",
+    intro: [
+      "Aldergrove marks the rural eastern edge of Langley Township, where the Fraser Highway town centre gives way to farm roads, acreages, and the long straight stretches near the Aldergrove–Abbotsford boundary. That setting means our work here swings from a routine boost outside the Aldergrove shopping plaza to a genuine ditch recovery on a soft rural shoulder in the same shift, and our drivers carry the winch gear to handle both.",
+      "The Highway 13 (264th Street) connector down to the Aldergrove border crossing and the busy Fraser Highway corridor are frequent call locations, especially in wet weather when farm-road shoulders turn soft. From the Aldergrove Regional Park trailheads to the industrial blocks along 56th Avenue, telling our dispatcher the nearest landmark gets the closest truck rolling toward you without guesswork.",
+    ],
+    whyChooseUs: [
+      "Rural Aldergrove roads are long, lightly lit, and easy to describe vaguely, which is exactly how a stranded driver ends up waiting far too long. Our dispatchers ask for the nearest cross street or a landmark like the Aldergrove Regional Park or the town-centre plaza so the closest truck heads straight to you instead of hunting a rural-route number in the dark.",
+      "We come prepared for the ditch and soft-shoulder recoveries these farm roads produce, with winch-equipped trucks and proper rigging, and every Aldergrove job is quoted at a flat rate despite the rural distances — no mileage surprises after the fact. Licensed, insured, and dispatching 24/7.",
+    ],
+    commonScenarios: [
+      {
+        title: "Rural ditch and soft-shoulder recoveries",
+        body: "Aldergrove's farm-road shoulders turn soft after rain, and a wheel off the edge can leave a vehicle stuck fast. Our winch trucks pull it back onto firm ground using proper anchor points, without tearing up the bumper or undercarriage on the way out.",
+      },
+      {
+        title: "Fraser Highway and 264th Street breakdowns",
+        body: "Commuter and truck traffic on Fraser Highway and the Highway 13 (264th Street) connector to the border makes for common stall points. We reach the shoulder, protect you from passing lanes, and load onto a flatbed so you clear the route quickly.",
+      },
+      {
+        title: "Town-centre boosts and lockouts",
+        body: "Around the Aldergrove plaza and the 56th Avenue shops, dead batteries and lockouts are usually solved on the spot. We boost the battery or open the vehicle without damage so most of these calls never need a tow.",
+      },
+    ],
+    nearbyCities: ["Langley", "Surrey", "Maple Ridge", "Cloverdale"],
+    neighborhoods: ["Aldergrove Town Centre", "Shortreed", "Parkside", "Bertrand Creek", "Otter District"],
+    highways: ["Fraser Highway", "Highway 13 (264th Street)", "56th Avenue", "Highway 1 (Trans-Canada)"],
+    localLandmarks: ["Aldergrove Regional Park", "Aldergrove Town Centre", "Greater Vancouver Zoo"],
+    faq: [
+      {
+        q: "How fast can a tow truck reach me in Aldergrove?",
+        a: "Our average response time in Aldergrove is under 25 minutes. We dispatch the nearest available driver immediately when you call.",
+      },
+      {
+        q: "Do you handle rural and off-road recoveries near Aldergrove?",
+        a: "Yes. Our winch-equipped trucks handle ditch, mud, and soft-shoulder recoveries on Aldergrove's farm and rural roads, then check whether the vehicle is safe to drive or needs a tow.",
+      },
+      {
+        q: "Can you tow on Fraser Highway and near the Aldergrove border?",
+        a: "Yes. We respond to breakdowns on Fraser Highway, Highway 13 (264th Street), and the routes toward the Aldergrove border crossing.",
+      },
+      {
+        q: "Do you offer battery boost and lockout service in Aldergrove?",
+        a: "Yes. Battery boost, jump-start, lockout, flat tire, and fuel delivery are all available 24/7 across Aldergrove and east Langley Township.",
+      },
+    ],
+  },
 ];
 
 export function getServiceAreaBySlug(slug: string): ServiceArea | undefined {
