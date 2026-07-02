@@ -2,10 +2,20 @@ import { NextRequest, NextResponse } from "next/server";
 
 /* ─── Email configuration (all from env, never hardcoded) ──────── */
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
-const EMAIL_FROM = process.env.EMAIL_FROM || "info@towingno1.com";
-const EMAIL_DISPATCH = process.env.EMAIL_DISPATCH || EMAIL_FROM;
-const EMAIL_REPLY_TO = process.env.EMAIL_REPLY_TO || EMAIL_FROM;
-const ADMIN_RECIPIENTS = (process.env.EMAIL_ADMIN || EMAIL_FROM)
+// The domain verified in Resend. Sender addresses are forced onto this domain
+// so a stale env value (e.g. the non-canonical towing-no-1.com alias) can't
+// trigger a Resend "domain is not verified" (403) failure.
+const RESEND_DOMAIN = process.env.RESEND_DOMAIN || "towingno1.com";
+
+function onVerifiedDomain(address: string, fallbackLocalPart: string): string {
+  const local = (address.split("@")[0] || fallbackLocalPart).trim() || fallbackLocalPart;
+  return `${local}@${RESEND_DOMAIN}`;
+}
+
+const EMAIL_FROM = onVerifiedDomain(process.env.EMAIL_FROM || "info", "info");
+const EMAIL_DISPATCH = onVerifiedDomain(process.env.EMAIL_DISPATCH || "dispatch", "dispatch");
+const EMAIL_REPLY_TO = onVerifiedDomain(process.env.EMAIL_REPLY_TO || "info", "info");
+const ADMIN_RECIPIENTS = (process.env.EMAIL_ADMIN || `info@${RESEND_DOMAIN}`)
   .split(",")
   .map((a) => a.trim())
   .filter(Boolean);
