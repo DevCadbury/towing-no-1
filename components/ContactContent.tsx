@@ -5,13 +5,13 @@ import Script from "next/script";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-// reCAPTCHA v2 checkbox — the widget renders into any element with the
-// `g-recaptcha` class once the API script has loaded.
+// reCAPTCHA v3 (invisible, score-based). A token is generated on submit via
+// grecaptcha.execute() and verified server-side.
 declare global {
   interface Window {
     grecaptcha?: {
-      getResponse: (widgetId?: number) => string;
-      reset: (widgetId?: number) => void;
+      ready: (cb: () => void) => void;
+      execute: (siteKey: string, opts: { action: string }) => Promise<string>;
     };
   }
 }
@@ -33,13 +33,25 @@ export default function ContactContent() {
     e.preventDefault();
     setErrorMsg("");
 
-    // Require the reCAPTCHA challenge to be solved before submitting.
+    // Generate a reCAPTCHA v3 token (invisible) before submitting.
     let recaptchaToken = "";
     if (RECAPTCHA_SITE_KEY) {
-      recaptchaToken = window.grecaptcha?.getResponse() ?? "";
-      if (!recaptchaToken) {
+      try {
+        recaptchaToken = await new Promise<string>((resolve, reject) => {
+          if (!window.grecaptcha) {
+            reject(new Error("reCAPTCHA is still loading. Please try again in a moment."));
+            return;
+          }
+          window.grecaptcha.ready(() => {
+            window.grecaptcha!
+              .execute(RECAPTCHA_SITE_KEY, { action: "contact" })
+              .then(resolve)
+              .catch(reject);
+          });
+        });
+      } catch (err: unknown) {
         setStatus("error");
-        setErrorMsg("Please confirm you are not a robot before sending.");
+        setErrorMsg(err instanceof Error ? err.message : "Could not verify reCAPTCHA. Please refresh and try again.");
         return;
       }
     }
@@ -55,11 +67,9 @@ export default function ContactContent() {
       if (!res.ok || !data.success) throw new Error(data.error || "Submission failed.");
       setStatus("success");
       setFormState({ name: "", email: "", phone: "", message: "" });
-      window.grecaptcha?.reset();
     } catch (err: unknown) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-      window.grecaptcha?.reset();
     }
   };
 
@@ -123,7 +133,10 @@ export default function ContactContent() {
   return (
     <div className="min-h-screen">
       {RECAPTCHA_SITE_KEY && (
-        <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
+          strategy="afterInteractive"
+        />
       )}
       {/* Hero */}
       <section className="relative h-[40vh] min-h-[320px] flex items-center justify-center text-white overflow-hidden">
@@ -235,7 +248,13 @@ export default function ContactContent() {
                   />
                 </div>
                 {RECAPTCHA_SITE_KEY && (
-                  <div className="g-recaptcha" data-sitekey={RECAPTCHA_SITE_KEY} />
+                  <p className="text-xs text-slate-400 leading-relaxed">
+                    This site is protected by reCAPTCHA and the Google{" "}
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:underline">Privacy Policy</a>{" "}
+                    and{" "}
+                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:underline">Terms of Service</a>{" "}
+                    apply.
+                  </p>
                 )}
                 {status === "error" && (
                   <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{errorMsg}</p>
