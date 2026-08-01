@@ -442,29 +442,29 @@ export default function RootLayout({
           _support['ui']['enableKb'] = 'true';
           _support['ui']['mailbox'] = '76149070';
           _support['ui']['styles'] = {
-            widgetColor: '#a6170e',
+            widgetColor: '#b61209',
             gradient: true,
           };
           _support['ui']['shoutboxFacesMode'] = '';
           _support['ui']['widget'] = {
-            allowBotProcessing: 'false',
-            slug: 'towing-no-1',
+            allowBotProcessing: 'true',
+            slug: 'www-dot-towingno1-dot-com',
             label: {
-              text: '\\u{1F44B} Hi there! Need roadside help?\\nWe\u2019re available 24/7 across the Lower Mainland.\\nHow can we assist you today?',
-              mode: 'notification',
+              text: '\u{1F44B} Hi there! Need roadside help?\\n\\nWe\\'re available 24/7. To get started, please send your:\\n\u2022 Name\\n\u2022 Phone Number\\n\u2022 Email (optional)\\n\\nWe\\'ll assist you as quickly as possible!\\n',
+              mode: "notification",
               delay: 3,
               duration: 30,
-              primary: '\\u{1F44B} Hi there! Need roadside help?\\nWe\u2019re available 24/7 across the Lower Mainland with an average response time under 15 minutes.\\n\\nHow can we help you today?',
+              primary: 'I need help!',
               secondary: '',
               sound: true,
             },
-            position: 'bottom-right',
+            position: 'bottom-right'
           };
           _support['ui']['overrides'] = _support['ui']['overrides'] || {};
-          _support['ui']['overrides']['confirmationMessage'] = 'Thank you! We\u2019ve received your request.\\nA dispatcher is reviewing your details now.\\nWe\u2019ll respond shortly with your ETA and pricing.\\n\\nIf this is urgent, please tap Call Now for immediate assistance.';
+          _support['ui']['overrides']['confirmationMessage'] = '\u2705 Thanks for contacting **Towing No. 1**! We\\'ve received your message and will get back to you as soon as possible. If this is an emergency, please call us directly for the fastest assistance.\\n';
           _support['apps'] = {
             recentConversations: {},
-            faq: { enabled: true },
+            faq: {"enabled":true}
           };
         `,
           }}
