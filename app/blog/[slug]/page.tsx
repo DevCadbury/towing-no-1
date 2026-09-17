@@ -2,10 +2,144 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { blogPosts, getPostBySlug } from "@/lib/blog-posts";
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+/**
+ * Convert a human date string ("February 10, 2026") to an ISO timestamp for
+ * schema/OG. Invalid dates fall back to now; FUTURE dates are clamped to now so
+ * a placeholder/typo can never ship a future publish/modified timestamp.
+ */
+function toISODate(dateStr: string): string {
+  const d = new Date(dateStr);
+  const now = new Date();
+  if (Number.isNaN(d.getTime())) return now.toISOString();
+  return (d.getTime() > now.getTime() ? now : d).toISOString();
+}
+
+// Topic → service link map, so each post's "Related Services" block is
+// contextual (derived from its title/excerpt/keywords) rather than identical.
+const RELATED_SERVICES: { href: string; label: string; match: RegExp }[] = [
+  { href: "/services/emergency-towing", label: "Emergency Towing Surrey", match: /tow|breakdown|highway|stall|engine/i },
+  { href: "/services/accident-recovery", label: "Accident Recovery", match: /accident|collision|crash|recovery/i },
+  { href: "/services/battery-boost", label: "Battery Boost", match: /battery|jump|dead|charg/i },
+  { href: "/services/flat-tire-help", label: "Flat Tire Help", match: /tire|flat|blowout|tread/i },
+  { href: "/services/winching-extraction", label: "Winching & Extraction", match: /winch|stuck|ditch|snow|mud|ice|extraction/i },
+  { href: "/services/fuel-delivery", label: "Fuel Delivery", match: /fuel|gas|empty|diesel/i },
+  { href: "/services/lockout-service", label: "Lockout Service", match: /lock|keys?|fob/i },
+];
+
+function relatedServiceLinks(post: { title: string; excerpt: string; keywords: string[] }): { href: string; label: string }[] {
+  const hay = `${post.title} ${post.excerpt} ${post.keywords.join(" ")}`.toLowerCase();
+  const matched = RELATED_SERVICES.filter((s) => s.match.test(hay)).map(({ href, label }) => ({ href, label }));
+  const withPrimary = matched.some((m) => m.href === "/services/emergency-towing")
+    ? matched
+    : [{ href: "/services/emergency-towing", label: "Emergency Towing Surrey" }, ...matched];
+  return withPrimary.slice(0, 4);
+}
+
+/**
+ * Render inline **bold** segments within a line of body text. Everything else
+ * is plain, React-escaped text (no dangerouslySetInnerHTML — XSS-safe).
+ */
+function renderInline(text: string): ReactNode[] {
+  return text.split(/(\*\*.+?\*\*)/g).map((part, j) => {
+    const m = /^\*\*(.+?)\*\*$/.exec(part);
+    return m ? (
+      <strong key={j} className="font-semibold text-navy-900">{m[1]}</strong>
+    ) : (
+      <span key={j}>{part}</span>
+    );
+  });
+}
+
+/**
+ * Parse the markdown-ish blog body into React blocks:
+ *  - "## " / "### "   → headings (with inline bold)
+ *  - consecutive "- "  → a real <ul> of <li> (with inline bold)
+ *  - "---" + a **bold** line → amber CTA callout containing that line
+ *  - "---" otherwise   → plain separator (skipped)
+ *  - a whole-line **bold** → emphasized paragraph
+ *  - everything else   → paragraph (with inline bold)
+ * XSS-safe: all text flows through React children, never dangerouslySetInnerHTML.
+ */
+function renderBody(content: string): ReactNode[] {
+  const lines = content.trim().split("\n");
+  const blocks: ReactNode[] = [];
+  let i = 0;
+  let key = 0;
+
+  while (i < lines.length) {
+    const line = lines[i].trim();
+
+    if (line === "") {
+      i++;
+      continue;
+    }
+
+    // "---" introduces the closing CTA callout: its content is the next
+    // non-empty **bold** line (fixes the previously EMPTY amber box).
+    if (line === "---") {
+      let j = i + 1;
+      while (j < lines.length && lines[j].trim() === "") j++;
+      const next = j < lines.length ? lines[j].trim() : "";
+      if (/^\*\*.+\*\*$/.test(next)) {
+        blocks.push(
+          <div key={key++} className="mt-10 p-6 bg-amber-50 border border-amber-200 rounded-2xl">
+            <p className="text-slate-700 font-medium text-sm">{renderInline(next.replace(/^\*\*|\*\*$/g, ""))}</p>
+          </div>
+        );
+        i = j + 1;
+      } else {
+        i++; // plain separator — nothing to render
+      }
+      continue;
+    }
+
+    if (line.startsWith("### ")) {
+      blocks.push(<h3 key={key++} className="text-xl font-bold text-navy-900 mt-8 mb-3">{renderInline(line.slice(4))}</h3>);
+      i++;
+      continue;
+    }
+    if (line.startsWith("## ")) {
+      blocks.push(<h2 key={key++} className="text-2xl font-bold text-navy-900 mt-10 mb-4">{renderInline(line.slice(3))}</h2>);
+      i++;
+      continue;
+    }
+
+    // Group consecutive "- " lines into a single real <ul>.
+    if (line.startsWith("- ")) {
+      const items: string[] = [];
+      while (i < lines.length && lines[i].trim().startsWith("- ")) {
+        items.push(lines[i].trim().slice(2));
+        i++;
+      }
+      blocks.push(
+        <ul key={key++} className="list-disc pl-6 space-y-2 mb-5 text-slate-600">
+          {items.map((it, k) => (
+            <li key={k} className="leading-relaxed">{renderInline(it)}</li>
+          ))}
+        </ul>
+      );
+      continue;
+    }
+
+    // Whole-line bold → emphasized paragraph.
+    if (/^\*\*.+\*\*$/.test(line)) {
+      blocks.push(<p key={key++} className="font-bold text-navy-900 mt-6 mb-2">{renderInline(line)}</p>);
+      i++;
+      continue;
+    }
+
+    blocks.push(<p key={key++} className="text-slate-600 leading-relaxed mb-5">{renderInline(line)}</p>);
+    i++;
+  }
+
+  return blocks;
 }
 
 export async function generateStaticParams() {
@@ -29,7 +163,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://www.towingno1.com/blog/${post.slug}`,
       title: post.title,
       description: post.excerpt,
-      publishedTime: new Date(post.date).toISOString(),
+      publishedTime: toISODate(post.date),
+      modifiedTime: post.updatedDate ? toISODate(post.updatedDate) : toISODate(post.date),
       images: [
         {
           url: `https://www.towingno1.com${post.image}`,
@@ -53,19 +188,34 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  const otherPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
+  // Related posts ranked by shared-keyword overlap (topical), then recency.
+  const otherPosts = blogPosts
+    .filter((p) => p.slug !== slug)
+    .map((p) => ({ post: p, score: p.keywords.filter((k) => post.keywords.includes(k)).length }))
+    .sort((a, b) => b.score - a.score || new Date(b.post.date).getTime() - new Date(a.post.date).getTime())
+    .slice(0, 3)
+    .map((x) => x.post);
 
-  // Parse markdown-ish content into paragraphs/headings
-  const lines = post.content.trim().split("\n");
+  // Contextual internal links: services derived from this post + key locations.
+  const relatedLinks = [
+    ...relatedServiceLinks(post),
+    { href: "/locations/surrey", label: "Tow Truck Surrey" },
+    { href: "/locations/langley", label: "Towing Langley" },
+  ];
+
+  // Publish/modified dates, never in the future. dateModified === datePublished
+  // unless the post declares a real updatedDate.
+  const published = toISODate(post.date);
+  const modified = post.updatedDate ? toISODate(post.updatedDate) : published;
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
     image: `https://www.towingno1.com${post.image}`,
-    datePublished: new Date(post.date).toISOString(),
-    dateModified: new Date(post.date).toISOString(),
+    datePublished: published,
+    dateModified: modified,
     author: {
       "@type": "Organization",
       name: "TowingNo.1",
@@ -111,7 +261,7 @@ export default async function BlogPostPage({ params }: Props) {
       />
 
       {/* Hero */}
-      <section className="relative h-[50vh] min-h-[360px] flex items-end bg-navy-950 overflow-hidden">
+      <section className="relative min-h-[340px] md:min-h-[420px] flex items-end bg-navy-950 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={post.image}
@@ -123,17 +273,27 @@ export default async function BlogPostPage({ params }: Props) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent" />
         </div>
-        <div className="relative z-10 container-custom pb-12">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-amber-400 text-sm font-medium mb-4 hover:text-amber-300 transition-colors"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Blog
-          </Link>
-          <p className="text-amber-400 text-sm font-medium mb-3">{post.date}</p>
+        <div className="relative z-10 container-custom pb-10 md:pb-14">
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-amber-400 text-sm font-medium hover:text-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 rounded transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+              Back to Blog
+            </Link>
+            {post.category ? (
+              <span className="inline-block bg-amber-500/15 text-amber-300 text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full">
+                {post.category}
+              </span>
+            ) : null}
+          </div>
+          <p className="text-amber-400 text-sm font-medium mb-3">
+            {post.date} · By the TowingNo.1 Team
+            {post.updatedDate ? ` · Updated ${post.updatedDate}` : ""}
+          </p>
           <h1 className="text-3xl md:text-5xl font-bold text-white max-w-3xl leading-tight">{post.title}</h1>
         </div>
       </section>
@@ -147,46 +307,7 @@ export default async function BlogPostPage({ params }: Props) {
             </p>
 
             <div className="prose prose-lg prose-slate max-w-none">
-              {lines.map((line, i) => {
-                if (line.startsWith("## ")) {
-                  return (
-                    <h2 key={i} className="text-2xl font-bold text-navy-900 mt-10 mb-4">
-                      {line.replace("## ", "")}
-                    </h2>
-                  );
-                }
-                if (line.startsWith("**") && line.endsWith("**")) {
-                  return (
-                    <p key={i} className="font-bold text-navy-900 mt-6 mb-2">
-                      {line.replace(/\*\*/g, "")}
-                    </p>
-                  );
-                }
-                if (line.startsWith("- ")) {
-                  return (
-                    <li key={i} className="text-slate-600 ml-6 list-disc mb-1">
-                      {line.replace("- ", "")}
-                    </li>
-                  );
-                }
-                if (line.startsWith("---")) {
-                  return (
-                    <div key={i} className="mt-10 p-6 bg-amber-50 border border-amber-200 rounded-2xl">
-                      <p className="text-slate-700 font-medium text-sm">
-                        {lines[i + 1] || ""}
-                      </p>
-                    </div>
-                  );
-                }
-                if (line.trim() === "" || (i > 0 && lines[i - 1]?.startsWith("---"))) {
-                  return null;
-                }
-                return (
-                  <p key={i} className="text-slate-600 leading-relaxed mb-5">
-                    {line}
-                  </p>
-                );
-              })}
+              {renderBody(post.content)}
             </div>
 
             {/* CTA */}
@@ -208,14 +329,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="mt-8 p-6 bg-slate-50 rounded-2xl border border-slate-200">
               <h3 className="font-bold text-navy-900 mb-4 text-sm uppercase tracking-wide">Related Services & Areas</h3>
               <div className="grid sm:grid-cols-2 gap-2">
-                {[
-                  { href: "/services/emergency-towing", label: "Emergency Towing Surrey" },
-                  { href: "/services/battery-boost", label: "Battery Boost Service" },
-                  { href: "/services/lockout-service", label: "Lockout Service" },
-                  { href: "/services/flat-tire-help", label: "Flat Tire Help" },
-                  { href: "/locations/surrey", label: "Tow Truck Surrey" },
-                  { href: "/locations/langley", label: "Towing Langley" },
-                ].map((link) => (
+                {relatedLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="text-sm text-amber-600 hover:text-amber-700 font-medium flex items-center gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5 shrink-0" aria-hidden="true"><path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd"/></svg> {link.label}
                   </Link>

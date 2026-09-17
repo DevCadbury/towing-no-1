@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { serviceAreas } from "@/lib/service-areas";
+import { social, mapsSearchUrl } from "@/lib/business-facts";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,18 +31,19 @@ export default function Footer() {
             {/* Social icons */}
             <div className="flex space-x-3">
               {[
-                { label: "Instagram", href: "https://www.instagram.com/towing.no.1", path: "M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01M6.5 2h11A4.5 4.5 0 0122 6.5v11a4.5 4.5 0 01-4.5 4.5h-11A4.5 4.5 0 012 17.5v-11A4.5 4.5 0 016.5 2z" },
-              ].map((social, i) => (
+                { label: "Facebook", href: social.facebook.value, path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" },
+                { label: "Instagram", href: social.instagram.value, path: "M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01M6.5 2h11A4.5 4.5 0 0122 6.5v11a4.5 4.5 0 01-4.5 4.5h-11A4.5 4.5 0 012 17.5v-11A4.5 4.5 0 016.5 2z" },
+              ].map((item, i) => (
                 <a
                   key={i}
-                  href={social.href}
+                  href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-amber-500 hover:text-navy-900 hover:border-amber-500 transition-all duration-300"
+                  aria-label={`${item.label} (opens in a new tab)`}
+                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-amber-500 hover:text-navy-900 hover:border-amber-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 transition-all duration-300"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d={social.path} />
+                    <path strokeLinecap="round" strokeLinejoin="round" d={item.path} />
                   </svg>
                 </a>
               ))}
@@ -65,11 +68,13 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-5 text-white">Services</h4>
             <ul className="space-y-3">
               <FooterLink href="/services/emergency-towing">Emergency Towing</FooterLink>
+              <FooterLink href="/services/accident-recovery">Accident Recovery</FooterLink>
               <FooterLink href="/services/flat-tire-help">Flat Tire Help</FooterLink>
               <FooterLink href="/services/battery-boost">Battery Boost</FooterLink>
               <FooterLink href="/services/lockout-service">Lockout Service</FooterLink>
               <FooterLink href="/services/fuel-delivery">Fuel Delivery</FooterLink>
-              <FooterLink href="/services/winching-extraction">Winching & Extraction</FooterLink>
+              <FooterLink href="/services/winching-extraction">Winching &amp; Extraction</FooterLink>
+              <FooterLink href="/services/vehicle-transport">Vehicle Transport</FooterLink>
             </ul>
           </div>
 
@@ -82,7 +87,15 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
-                <span className="text-sm">British Columbia, Canada<br />Serving the Lower Mainland</span>
+                <a
+                  href={mapsSearchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View our Lower Mainland service area on Google Maps (opens in a new tab)"
+                  className="text-sm hover:text-amber-400 focus-visible:text-amber-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 rounded transition-colors"
+                >
+                  British Columbia, Canada<br />Serving the Lower Mainland
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -102,6 +115,25 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Service areas — links every location page from every page footer */}
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <h4 className="text-sm font-bold mb-4 text-white">Service Areas</h4>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {serviceAreas.map((area) => (
+              <Link
+                key={area.slug}
+                href={`/locations/${area.slug}`}
+                className="text-sm text-slate-400 hover:text-amber-400 transition-colors"
+              >
+                Tow Truck {area.city}
+              </Link>
+            ))}
+            <Link href="/locations" className="text-sm font-semibold text-amber-500 hover:text-amber-400 transition-colors">
+              View all service areas →
+            </Link>
           </div>
         </div>
 

@@ -1,11 +1,13 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { faqPageSchema, type FaqItem } from "@/lib/faq";
+import { areaServedSchema } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
   title: "Emergency Towing Surrey | 24/7 Tow Truck Near Me",
   description:
-    "Need emergency towing in Surrey or the Lower Mainland? TowingNo.1 dispatches in under 15 minutes, 24/7. Flatbed and wheel-lift towing for all vehicles. Free quote — call (778) 838-0014.",
+    "Need emergency towing in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 flatbed and wheel-lift towing for all vehicles. Free quote — call (778) 838-0014.",
   alternates: {
     canonical: "https://www.towingno1.com/services/emergency-towing",
   },
@@ -15,6 +17,13 @@ export const metadata: Metadata = {
     title: "Emergency Towing Surrey | 24/7 Tow Truck Near Me",
     description:
       "24/7 emergency towing in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.",
+    images: [{ url: "/image/Emergency_Towin.png", alt: "Emergency towing service in Surrey BC — TowingNo.1 tow truck" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Emergency Towing Surrey | 24/7 Tow Truck Near Me",
+    description: "24/7 emergency towing in Surrey and the Lower Mainland. Fast dispatch, upfront pricing.",
+    images: ["/image/Emergency_Towin.png"],
   },
 };
 
@@ -25,16 +34,9 @@ const schema = {
   name: "Emergency Towing Surrey",
   serviceType: "Emergency Towing",
   description:
-    "24/7 emergency towing for cars, SUVs, trucks, and electric vehicles across Surrey and the Lower Mainland. Flatbed and wheel-lift trucks available. Licensed and insured.",
+    "24/7 emergency towing for cars, SUVs, trucks, and electric vehicles across Surrey and the Lower Mainland. Flatbed and wheel-lift trucks available.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: [
-    { "@type": "City", name: "Surrey" },
-    { "@type": "City", name: "Langley" },
-    { "@type": "City", name: "Burnaby" },
-    { "@type": "City", name: "Richmond" },
-    { "@type": "City", name: "Coquitlam" },
-    { "@type": "City", name: "Delta" },
-  ],
+  areaServed: areaServedSchema,
   offers: {
     "@type": "Offer",
     priceCurrency: "CAD",
@@ -45,44 +47,25 @@ const schema = {
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How fast can you tow my car in Surrey?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Our average response time in Surrey is under 15 minutes. We dispatch the nearest available driver immediately when you call (778) 838-0014.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much does emergency towing cost in Surrey?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Every tow is quoted as a single flat figure based on your vehicle and the distance involved, with no metered surprises; ring (778) 838-0014 and you will hear the price before a truck is sent.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you tow electric vehicles?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Electric vehicles must be transported on a flatbed — never towed with wheels down. We have flatbed trucks available 24/7 for all EVs including Tesla, Rivian, and other makes.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you tow on Highway 99 and King George Boulevard in Surrey?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. We respond to breakdowns on Highway 99, King George Boulevard, 152nd Street, Fraser Highway, and all major Surrey corridors 24/7.",
-      },
-    },
-  ],
-};
+const faq: FaqItem[] = [
+  {
+    q: "How fast can you tow my car in Surrey?",
+    a: "We dispatch the nearest available driver immediately when you call (778) 838-0014, and give you a live ETA up front so you know the wait before you commit.",
+  },
+  {
+    q: "How much does emergency towing cost in Surrey?",
+    a: "Every tow is quoted as a single flat figure based on your vehicle and the distance involved, with no metered surprises; ring (778) 838-0014 and you will hear the price before a truck is sent.",
+  },
+  {
+    q: "Do you tow electric vehicles?",
+    a: "Yes. Electric vehicles must be transported on a flatbed — never towed with wheels down. We have flatbed trucks available 24/7 for all EVs including Tesla, Rivian, and other makes.",
+  },
+  {
+    q: "Do you tow on Highway 99 and King George Boulevard in Surrey?",
+    a: "Yes. We respond to breakdowns on Highway 99, King George Boulevard, 152nd Street, Fraser Highway, and all major Surrey corridors 24/7.",
+  },
+];
+const faqSchema = faqPageSchema(faq);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -102,10 +85,10 @@ export default function EmergencyTowingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero */}
-      <section className="relative h-[380px] flex items-center overflow-hidden bg-navy-950">
+      <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image src="/image/Emergency_Towin.png" alt="Emergency towing service Surrey — TowingNo.1 tow truck" fill className="object-cover opacity-30" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />
-        <div className="relative z-10 container-custom">
+        <div className="relative z-10 container-custom py-12 md:py-16">
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-xs text-slate-400">
               <li><Link href="/" className="hover:text-amber-400 transition-colors">Home</Link></li>
@@ -202,15 +185,10 @@ export default function EmergencyTowingPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
-                  {[
-                    { q: "How fast can you tow my car in Surrey?", a: "Our average response time in Surrey is under 15 minutes. We dispatch the nearest available driver immediately when you call (778) 838-0014." },
-                    { q: "How much does emergency towing cost in Surrey?", a: "Every tow is quoted as a single flat figure based on your vehicle and the distance involved, with no metered surprises; ring (778) 838-0014 and you will hear the price before a truck is sent." },
-                    { q: "Do you tow electric vehicles?", a: "Yes. Electric vehicles must be transported on a flatbed — never towed with wheels down. We have flatbed trucks available 24/7 for all EVs." },
-                    { q: "Do you tow on Highway 99 and King George Boulevard?", a: "Yes. We respond to breakdowns on Highway 99, King George Boulevard, 152nd Street, Fraser Highway, and all major Surrey corridors 24/7." },
-                  ].map((faq) => (
-                    <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
-                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{faq.q}</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                  {faq.map((item) => (
+                    <div key={item.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{item.q}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
                     </div>
                   ))}
                 </div>

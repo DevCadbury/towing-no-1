@@ -82,7 +82,11 @@ function parseSlugs(src) {
 }
 
 function collapse(s) {
-  return s.replace(/\s+/g, " ").trim();
+  // Defensive: a structural diff (e.g. route count changed between the stored
+  // baseline and current code) can hand us undefined. Coerce to "" so the
+  // diff reporter degrades gracefully instead of throwing.
+  if (s == null) return "";
+  return String(s).replace(/\s+/g, " ").trim();
 }
 
 // Return the balanced { ... } block (including braces) that follows the first
@@ -237,14 +241,18 @@ function buildSnapshot() {
       telTotal += count;
     }
   }
-  const homeSrc = read(path.join(COMPONENTS, "HomeContent.tsx"));
+  // Conversion tracking now lives in lib/analytics.ts (call_click + generate_lead)
+  // and a global listener in components/CallTracking.tsx mounted from the layout.
+  const analyticsSrc = read(path.join(LIB, "analytics.ts"));
+  const callTrackingSrc = read(path.join(COMPONENTS, "CallTracking.tsx"));
+  const layoutSrcForTracking = read(path.join(APP, "layout.tsx"));
   const gaTracking = {
-    eventName: /call_dialog_open/.test(homeSrc) ? "call_dialog_open" : null,
-    trackFn: /function\s+trackCallClick/.test(homeSrc),
-    // the onClick={() => trackCallClick("...")} call sites, sorted
-    callSites: [...homeSrc.matchAll(/trackCallClick\(\s*["']([^"']+)["']\s*\)/g)]
-      .map((m) => m[1])
-      .sort(),
+    callEvent: /["']call_click["']/.test(analyticsSrc) ? "call_click" : null,
+    leadEvent: /["']generate_lead["']/.test(analyticsSrc) ? "generate_lead" : null,
+    adsGuarded: /googleAdsConversionLabel/.test(analyticsSrc),
+    globalListenerMounted:
+      /CallTracking/.test(layoutSrcForTracking) &&
+      /addEventListener\(\s*["']click["']/.test(callTrackingSrc),
   };
 
   /* app/sitemap.ts output (URL set, derived the same way the route does) */
@@ -359,9 +367,9 @@ function sanity(snap) {
   for (const f of ["components/Navbar.tsx", "components/Footer.tsx", "components/HomeContent.tsx"]) {
     if (!snap.tel.byFile[f]) fail.push(`tel href missing from ${f}`);
   }
-  if (snap.gaTracking.eventName !== "call_dialog_open") fail.push("GA call_dialog_open tracking missing");
-  if (!snap.gaTracking.trackFn) fail.push("trackCallClick function missing");
-  if (snap.gaTracking.callSites.length < 1) fail.push("no trackCallClick call sites");
+  if (snap.gaTracking.callEvent !== "call_click") fail.push("GA call_click tracking missing");
+  if (snap.gaTracking.leadEvent !== "generate_lead") fail.push("GA generate_lead tracking missing");
+  if (!snap.gaTracking.globalListenerMounted) fail.push("global CallTracking listener not mounted");
   for (const [name, ok] of Object.entries(snap.integrations)) {
     if (!ok) fail.push(`integration tag missing: ${name}`);
   }
@@ -381,7 +389,7 @@ const snap = buildSnapshot();
 console.log("--- PRESERVATION BASELINE (towingno1.com) ---\n");
 console.log(`Routes enumerated            : ${snap.routes.length} (all expected status 200)`);
 console.log(`tel:+17788380014 hrefs       : ${snap.tel.total} across ${Object.keys(snap.tel.byFile).length} files`);
-console.log(`GA call tracking             : event="${snap.gaTracking.eventName}", sites=[${snap.gaTracking.callSites.join(", ")}]`);
+console.log(`GA conversion tracking       : call="${snap.gaTracking.callEvent}", lead="${snap.gaTracking.leadEvent}", globalListener=${snap.gaTracking.globalListenerMounted}, adsGuarded=${snap.gaTracking.adsGuarded}`);
 console.log(`Pages with captured metadata : ${Object.keys(snap.metadata).length}`);
 console.log(`Global JSON-LD @graph types  : ${snap.schema.globalGraph.types.join(", ")}`);
 console.log(`Sitemap URLs                 : ${snap.sitemap.urls.length}`);
