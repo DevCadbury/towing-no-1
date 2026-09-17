@@ -140,7 +140,12 @@ export default function Blog() {
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <div className="p-6">
-                  <span className="inline-block text-xs font-bold text-amber-600 bg-amber-50 px-3 py-1 rounded-full mb-3">{post.date}</span>
+                  <div className="flex flex-wrap items-center gap-2 mb-3">
+                    {post.category && (
+                      <span className="inline-block text-xs font-bold text-navy-900 bg-slate-100 px-3 py-1 rounded-full">{post.category}</span>
+                    )}
+                    <span className="inline-block text-xs font-bold text-amber-600 bg-amber-50 px-3 py-1 rounded-full">{post.date}</span>
+                  </div>
                   <h2 className="text-lg font-bold mb-3 leading-snug text-navy-900 group-hover:text-amber-600 transition-colors">
                     {post.title}
                   </h2>
@@ -158,27 +163,6 @@ export default function Blog() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Newsletter */}
-      <section className="section-padding bg-navy-950 text-white">
-        <div className="container-custom max-w-2xl text-center">
-          <span className="text-amber-400 font-semibold text-sm uppercase tracking-widest mb-4 block">Newsletter</span>
-          <h2 className="text-3xl font-bold mb-4">Stay Informed</h2>
-          <p className="text-slate-400 mb-8">
-            Subscribe for road safety tips, maintenance advice, and company updates.
-          </p>
-          <form className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-5 py-3.5 rounded-xl border border-white/10 bg-white/5 text-white placeholder:text-slate-500 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all"
-            />
-            <button type="submit" className="btn-amber whitespace-nowrap">
-              Subscribe
-            </button>
-          </form>
         </div>
       </section>
 

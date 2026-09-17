@@ -1,17 +1,27 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { faqPageSchema, type FaqItem } from "@/lib/faq";
+import { areaServedSchema } from "@/lib/service-areas";
+import OfficialResources from "@/components/OfficialResources";
 
 export const metadata: Metadata = {
   title: "Winching & Extraction Surrey | Stuck in Ditch or Snow — 24/7",
   description:
-    "Vehicle stuck in a ditch, mud, or snow in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 winching and extraction. Fast dispatch, upfront pricing. Call (778) 838-0014.",
+    "Stuck in a ditch, mud, or snow in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 winching and extraction with upfront pricing. Call (778) 838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/winching-extraction" },
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/winching-extraction",
     title: "Winching & Extraction Surrey | Stuck in Ditch or Snow — 24/7",
     description: "24/7 winching and extraction in Surrey and the Lower Mainland. We pull your vehicle out of ditches, mud, and snow safely.",
+    images: [{ url: "/image/Winching_Extractio.png", alt: "Winching and extraction service in BC — vehicle pulled out of a ditch" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Winching & Extraction Surrey | Stuck in Ditch or Snow — 24/7",
+    description: "24/7 winching and extraction in Surrey and the Lower Mainland. We pull your vehicle out of ditches, mud, and snow safely.",
+    images: ["/image/Winching_Extractio.png"],
   },
 };
 
@@ -23,13 +33,24 @@ const schema = {
   serviceType: "Vehicle Winching and Extraction",
   description: "24/7 winching and extraction for vehicles stuck in ditches, mud, snow, or off-road across Surrey and the Lower Mainland.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: [
-    { "@type": "City", name: "Surrey" },
-    { "@type": "City", name: "Langley" },
-    { "@type": "City", name: "Burnaby" },
-    { "@type": "City", name: "Maple Ridge" },
-  ],
+  areaServed: areaServedSchema,
 };
+
+const faq: FaqItem[] = [
+  {
+    q: "Can you get my car out without damaging it?",
+    a: "In most cases, yes. We pull from rated points and control the line carefully so the vehicle comes out the way it went in. We will always flag any risk before we start rather than gamble with your car.",
+  },
+  {
+    q: "My car is stuck in snow — can I just be towed out?",
+    a: "Not always safely. A buried or angled vehicle usually needs a proper winch pull rather than a tow strap, which can snap or bend the frame. Our winch trucks are built for exactly this.",
+  },
+  {
+    q: "Will I be able to drive after you pull it out?",
+    a: "Often yes, but we check first. If the extraction reveals bent suspension, a punctured tire, or fluid loss, we recommend a tow to a shop so you are not driving something unsafe.",
+  },
+];
+const faqSchema = faqPageSchema(faq);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -45,12 +66,13 @@ export default function WinchingExtractionPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <section className="relative h-[380px] flex items-center overflow-hidden bg-navy-950">
+      <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image src="/image/Winching_Extractio.png" alt="Winching and extraction service BC — vehicle stuck in ditch being pulled out" fill className="object-cover opacity-30" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />
-        <div className="relative z-10 container-custom">
+        <div className="relative z-10 container-custom py-12 md:py-16">
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-xs text-slate-400">
               <li><Link href="/" className="hover:text-amber-400 transition-colors">Home</Link></li>
@@ -104,17 +126,22 @@ export default function WinchingExtractionPage() {
                 </p>
               </div>
 
+              <OfficialResources
+                heading="Winter driving & road conditions"
+                intro="Getting stuck is often a winter-conditions problem. These official B.C. resources help you plan and stay legal:"
+                items={[
+                  { href: "https://www.drivebc.ca", label: "DriveBC — live road conditions", note: "Check closures, snow, and hazards before you travel." },
+                  { href: "https://www.gov.bc.ca/winterdriving", label: "B.C. winter tires & chains", note: "Winter tire/chain rules apply on most routes Oct 1 – Apr 30." },
+                ]}
+              />
+
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
-                  {[
-                    { q: "Can you get my car out without damaging it?", a: "In most cases, yes. We pull from rated points and control the line carefully so the vehicle comes out the way it went in. We will always flag any risk before we start rather than gamble with your car." },
-                    { q: "My car is stuck in snow — can I just be towed out?", a: "Not always safely. A buried or angled vehicle usually needs a proper winch pull rather than a tow strap, which can snap or bend the frame. Our winch trucks are built for exactly this." },
-                    { q: "Will I be able to drive after you pull it out?", a: "Often yes, but we check first. If the extraction reveals bent suspension, a punctured tire, or fluid loss, we recommend a tow to a shop so you are not driving something unsafe." },
-                  ].map((faq) => (
-                    <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
-                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{faq.q}</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                  {faq.map((item) => (
+                    <div key={item.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{item.q}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
                     </div>
                   ))}
                 </div>

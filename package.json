@@ -8,10 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "seo:check": "node scripts/seo-check.mjs",
+    "seo:guard": "node scripts/claims-check.mjs",
     "audit:content": "node scripts/content-audit.mjs",
     "audit:links": "node scripts/link-check.mjs",
     "audit:nav": "node scripts/nav-reachability.mjs",
     "preservation:baseline": "node scripts/preservation-baseline.mjs",
+    "seo:all": "next build && node scripts/claims-check.mjs && node scripts/seo-check.mjs && node scripts/content-audit.mjs && node scripts/link-check.mjs && node scripts/nav-reachability.mjs && node scripts/preservation-baseline.mjs",
     "index:submit": "node scripts/submit-indexing.mjs",
     "verify:deployment": "node scripts/verify-deployment.mjs"
   },

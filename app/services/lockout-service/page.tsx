@@ -1,17 +1,26 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { faqPageSchema, type FaqItem } from "@/lib/faq";
+import { areaServedSchema } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
   title: "Car Lockout Service Surrey | Keys Locked Inside — We Help 24/7",
   description:
-    "Locked your keys in your car in Surrey or the Lower Mainland? TowingNo.1 opens your vehicle safely without damage. 24/7 dispatch, upfront pricing. Call (778) 838-0014.",
+    "Locked your keys in the car in Surrey or the Lower Mainland? TowingNo.1 opens your vehicle safely without damage, 24/7. Call (778) 838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/lockout-service" },
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/lockout-service",
     title: "Car Lockout Service Surrey | Keys Locked Inside — We Help 24/7",
     description: "24/7 car lockout service in Surrey and the Lower Mainland. We open your vehicle safely without damage.",
+    images: [{ url: "/image/Lockout_Servic.png", alt: "Car lockout service in Surrey BC — keys locked inside a vehicle" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Car Lockout Service Surrey | Keys Locked Inside — We Help 24/7",
+    description: "24/7 car lockout service in Surrey and the Lower Mainland. We open your vehicle safely without damage.",
+    images: ["/image/Lockout_Servic.png"],
   },
 };
 
@@ -23,36 +32,24 @@ const schema = {
   serviceType: "Vehicle Lockout",
   description: "24/7 car lockout service for all vehicles across Surrey and the Lower Mainland. We open your vehicle safely without damage using professional tools.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: [
-    { "@type": "City", name: "Surrey" },
-    { "@type": "City", name: "Langley" },
-    { "@type": "City", name: "Burnaby" },
-    { "@type": "City", name: "Richmond" },
-    { "@type": "City", name: "Delta" },
-  ],
+  areaServed: areaServedSchema,
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How quickly can you get me back into my locked car?",
-      acceptedAnswer: { "@type": "Answer", text: "Once you ring (778) 838-0014 a nearby lock technician usually reaches Surrey addresses in about 15 minutes, and we set off the instant the call ends." },
-    },
-    {
-      "@type": "Question",
-      name: "Will you damage my car opening it?",
-      acceptedAnswer: { "@type": "Answer", text: "No. Our technicians use professional tools and techniques to open your vehicle without causing any damage to the lock, door, or window." },
-    },
-    {
-      "@type": "Question",
-      name: "How much does lockout service cost in Surrey?",
-      acceptedAnswer: { "@type": "Answer", text: "There is a single clear lockout price agreed up front — call (778) 838-0014 and we confirm it before the technician is sent your way." },
-    },
-  ],
-};
+const faq: FaqItem[] = [
+  {
+    q: "How quickly can you get me back into my locked car?",
+    a: "Ring (778) 838-0014 and we set off the instant the call ends, sending the nearest available lock technician. We confirm an arrival estimate while you are on the line.",
+  },
+  {
+    q: "Will you damage my car opening it?",
+    a: "No. Our technicians use professional tools and techniques to open your vehicle without causing any damage to the lock, door, or window.",
+  },
+  {
+    q: "How much does lockout service cost in Surrey?",
+    a: "There is a single clear lockout price agreed up front — call (778) 838-0014 and we confirm it before the technician is sent your way.",
+  },
+];
+const faqSchema = faqPageSchema(faq);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -71,10 +68,10 @@ export default function LockoutServicePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <section className="relative h-[380px] flex items-center overflow-hidden bg-navy-950">
+      <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image src="/image/Lockout_Servic.png" alt="Car lockout service Surrey — keys locked inside vehicle" fill className="object-cover opacity-30" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />
-        <div className="relative z-10 container-custom">
+        <div className="relative z-10 container-custom py-12 md:py-16">
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-xs text-slate-400">
               <li><Link href="/" className="hover:text-amber-400 transition-colors">Home</Link></li>
@@ -145,14 +142,10 @@ export default function LockoutServicePage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
-                  {[
-                    { q: "How quickly can you get me back into my locked car?", a: "Once you ring (778) 838-0014 a nearby lock technician usually reaches Surrey addresses in about 15 minutes, and we set off the instant the call ends." },
-                    { q: "Will you damage my car opening it?", a: "No. Our technicians use professional tools and techniques to open your vehicle without causing any damage to the lock, door, or window." },
-                    { q: "How much does lockout service cost in Surrey?", a: "There is a single clear lockout price agreed up front — call (778) 838-0014 and we confirm it before the technician is sent your way." },
-                  ].map((faq) => (
-                    <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
-                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{faq.q}</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                  {faq.map((item) => (
+                    <div key={item.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{item.q}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
                     </div>
                   ))}
                 </div>
