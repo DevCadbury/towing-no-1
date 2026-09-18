@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getServiceAreaBySlug, serviceAreas, slugifyCity, isServiceAreaSlug } from "@/lib/service-areas";
 import SurreyPage from "@/components/SurreyPage";
+import LangleyPage from "@/components/LangleyPage";
 
 interface Props {
   params: Promise<{ city: string }>;
@@ -47,6 +48,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: "Towing Surrey BC | 24/7 Tow Truck & Roadside Assistance",
         description:
           "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+      },
+    };
+  }
+
+  // Langley gets its own optimised title + description targeting the
+  // "towing langley" / "tow truck langley" keyword cluster.
+  if (area.slug === "langley") {
+    return {
+      title: {
+        absolute: "Towing Langley BC | 24/7 Tow Truck & Roadside Assistance | TowingNo.1",
+      },
+      description:
+        "24/7 towing in Langley, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+      alternates: { canonical },
+      keywords: [],
+      openGraph: {
+        type: "website",
+        url: canonical,
+        title: "Towing Langley BC | 24/7 Tow Truck & Roadside Assistance",
+        description:
+          "24/7 towing in Langley, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "Towing Langley BC | 24/7 Tow Truck & Roadside Assistance",
+        description:
+          "24/7 towing in Langley, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
       },
     };
   }
@@ -130,6 +158,54 @@ export default async function ServiceAreaPage({ params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(surreyFaqSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(surreyBreadcrumb) }} />
         <SurreyPage />
+      </>
+    );
+  }
+
+  // Langley uses a dedicated SEO landing page targeting the
+  // "towing langley bc" keyword cluster.
+  if (area.slug === "langley") {
+    const langleyBreadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home",          item: "https://www.towingno1.com" },
+        { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.towingno1.com/locations" },
+        { "@type": "ListItem", position: 3, name: "Towing Langley BC", item: "https://www.towingno1.com/locations/langley" },
+      ],
+    };
+
+    const langleyServiceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.towingno1.com/locations/langley#service",
+      name: "24/7 Towing Service Langley BC",
+      serviceType: "Emergency towing and roadside assistance",
+      provider: { "@id": "https://www.towingno1.com/#localbusiness" },
+      areaServed: {
+        "@type": "City",
+        name: "Langley",
+        containedInPlace: { "@type": "AdministrativeArea", name: "British Columbia" },
+      },
+      url: "https://www.towingno1.com/locations/langley",
+    };
+
+    const langleyFaqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: area.faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    };
+
+    return (
+      <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(langleyServiceSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(langleyFaqSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(langleyBreadcrumb) }} />
+        <LangleyPage />
       </>
     );
   }
@@ -351,7 +427,7 @@ export default async function ServiceAreaPage({ params }: Props) {
               <div className="bg-navy-950 rounded-2xl p-6 text-white sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-1">Need a Tow Truck?</h3>
-                <p className="text-slate-300 text-sm mb-5">We&apos;re 15 minutes away. Free quote before dispatch.</p>
+                <p className="text-slate-300 text-sm mb-5">Free upfront quote before dispatch.</p>
                 <a href="tel:+17788380014" className="btn-call-highlight flex items-center justify-center gap-2 w-full rounded-xl py-3.5 px-5 text-sm font-bold">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   (778) 838-0014
@@ -360,7 +436,7 @@ export default async function ServiceAreaPage({ params }: Props) {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Under 15 min response</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Fast local dispatch</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>

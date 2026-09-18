@@ -76,25 +76,25 @@ const serviceAreaData: ServiceArea[] = [
   {
     slug: "langley",
     city: "Langley",
-    headline: "Tow Truck Langley — 24/7 Towing & Roadside Assistance",
+    headline: "24/7 Towing Service in Langley, BC",
     summary:
-      "24/7 towing service in Langley with quick ETAs, upfront quotes, and trained operators for all vehicle types. We cover Willoughby, Walnut Grove, Murrayville, Brookswood, and Aldergrove with fast dispatch.",
+      "TowingNo.1 provides 24/7 emergency towing and roadside assistance across Langley, BC — Langley City, Langley Township, Willoughby, Walnut Grove, Murrayville, Brookswood, Aldergrove, and Fort Langley. Call (778) 838-0014 for an upfront quote before we dispatch.",
     intro: [
-      "Langley stretches from the dense new townhome blocks of Willoughby out to the farm roads past Aldergrove, so a single shift here can mean a parkade boost in Walnut Grove followed by a ditch recovery on a rural section line near Otter. The Trans-Canada cuts straight through the community, and the 200th Street interchange is one of our most frequent call locations whenever traffic backs up and an overheating engine finally gives out.",
-      "Drivers heading to Fort Langley along the river road or commuting down the Fraser Highway through Murrayville are often surprised how quickly the surroundings turn rural. That mix is exactly why local knowledge counts — we know which Brookswood side streets flood after heavy rain and where the Aldergrove shoulders are wide enough to load safely.",
+      "Langley stretches from the dense townhome blocks of Willoughby out to the farm roads past Aldergrove, so a single shift here can mean a parkade boost in Walnut Grove followed by a ditch recovery on a rural section line near Otter. The Trans-Canada cuts straight through the community, and the 200th Street interchange is one of our most frequent call locations whenever traffic backs up and an overheating engine finally gives out.",
+      "Drivers heading to Fort Langley along the river road or commuting down the Fraser Highway through Murrayville are often surprised how quickly the surroundings turn rural. That mix is exactly why local knowledge matters — we know which Brookswood side streets flood after heavy rain and where the Aldergrove shoulders are wide enough to load safely.",
     ],
     whyChooseUs: [
-      "Township roads are long and lightly lit, so a vague address can cost a stranded driver twenty extra minutes with the wrong company. Our dispatchers ask for the nearest cross street or a landmark like the Langley Events Centre or Willowbrook so the closest truck heads straight to you instead of hunting down a rural-route number in the dark.",
+      "Township roads are long and lightly lit, so a vague address can cost a stranded driver significant extra time with the wrong company. Our dispatchers ask for the nearest cross street or a landmark like the Langley Events Centre or Willowbrook so the closest truck heads straight to you instead of hunting down a rural-route number in the dark.",
       "We run wheel-lift and flatbed trucks suited to everything from a lowered import in Willoughby to a work van on Highway 1, and every Langley call comes with an upfront flat-rate quote. Licensed, insured, and available every hour of the year, we treat a midnight breakdown near Aldergrove the same as a midday call in town.",
     ],
     commonScenarios: [
       {
         title: "Trans-Canada breakdowns near 200th Street",
-        body: "The Highway 1 corridor through Langley sees heavy commuter volume, and the 200th Street and 232nd Street interchanges are common stall points. We reach the shoulder, shield the vehicle from passing traffic, and load onto a flatbed so you clear the live lane fast.",
+        body: "The Highway 1 corridor through Langley sees heavy commuter volume, and the 200th Street and 232nd Street interchanges are common stall points. We reach the shoulder, shield the vehicle from passing traffic, and load onto a flatbed so you clear the live lane safely.",
       },
       {
         title: "Rural recoveries around Aldergrove and Otter",
-        body: "Soft shoulders and roadside ditches on Langley's farm roads catch drivers off guard, especially in wet weather. Our winch-equipped trucks pull vehicles back onto firm ground without tearing up bumpers or undercarriage on the way out.",
+        body: "Soft shoulders and roadside ditches on Langley's farm roads catch drivers off guard, especially in wet weather. Our winch-equipped trucks pull vehicles back onto firm ground without damaging bumpers or undercarriage on the way out.",
       },
       {
         title: "Walnut Grove and Willoughby roadside help",
@@ -102,25 +102,33 @@ const serviceAreaData: ServiceArea[] = [
       },
     ],
     nearbyCities: ["Surrey", "Maple Ridge", "Coquitlam"],
-    neighborhoods: ["Willoughby", "Walnut Grove", "Murrayville", "Brookswood", "Aldergrove", "Fort Langley"],
+    neighborhoods: ["Willoughby", "Walnut Grove", "Murrayville", "Brookswood", "Aldergrove", "Fort Langley", "Langley City"],
     highways: ["Highway 1 (Trans-Canada)", "Fraser Highway", "200th Street", "Highway 10"],
     localLandmarks: ["Willowbrook Shopping Centre", "Langley Events Centre", "Fort Langley National Historic Site"],
     faq: [
       {
-        q: "How fast can a tow truck reach me in Langley?",
-        a: "We dispatch the nearest available driver immediately when you call.",
+        q: "How quickly can a tow truck reach me in Langley?",
+        a: "We dispatch the nearest available driver the moment you call (778) 838-0014 and give you a live ETA up front. Because Langley covers a wide area from Willoughby to Aldergrove, we ask for your nearest cross street or landmark so the right truck heads directly to you.",
       },
       {
-        q: "Do you cover Aldergrove and Fort Langley?",
-        a: "Yes. We serve all of Langley City and Langley Township including Aldergrove, Fort Langley, Willoughby, and Walnut Grove.",
+        q: "Do you provide 24/7 towing in Langley?",
+        a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week across Langley — including evenings, weekends, and all statutory holidays. Whether you're stranded on Highway 1 at midnight or in a Willoughby parkade on a Sunday morning, we answer.",
       },
       {
-        q: "Can you tow on Highway 1 near Langley?",
-        a: "Yes. We respond to breakdowns on Highway 1 (Trans-Canada) through Langley. Call us with your location and we'll dispatch immediately.",
+        q: "Do you cover all of Langley including Aldergrove and Fort Langley?",
+        a: "Yes. We serve Langley City and all of Langley Township — Willoughby, Walnut Grove, Murrayville, Brookswood, Aldergrove, Fort Langley, and the rural roads in between. Give us your nearest cross street and we'll dispatch accordingly.",
       },
       {
         q: "Do you offer roadside assistance in Langley without towing?",
-        a: "Yes. If your issue can be solved on the spot — flat tire, dead battery, out of fuel, locked out — we fix it right there. Towing is only arranged when the vehicle truly can't be driven.",
+        a: "Yes. We provide battery boosts, flat tire changes, car lockout service, and fuel delivery across Langley. If the problem can be solved on the spot we fix it there — a tow is only arranged when the vehicle genuinely cannot be driven.",
+      },
+      {
+        q: "Can you tow on Highway 1 near Langley?",
+        a: "Yes. We respond to breakdowns on Highway 1 (Trans-Canada) through Langley, including the 200th Street, 232nd Street, and Glover Road interchanges. Call us with your location and we dispatch immediately.",
+      },
+      {
+        q: "How much does towing cost in Langley?",
+        a: "We use flat-rate pricing based on vehicle type and the distance involved. There is no meter running and no hidden fees. Call (778) 838-0014 for an upfront quote before we dispatch — you know the exact price before any truck rolls.",
       },
     ],
   },
