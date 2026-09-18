@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { faqPageSchema, type FaqItem } from "@/lib/faq";
+import { serviceAreaCompact } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
   title: "Vehicle Transport Surrey | Car Transport Lower Mainland BC",
   description:
-    "Need vehicle transport in Surrey or across the Lower Mainland? TowingNo.1 provides secure, on-time vehicle transport for all makes and models. Call (778) 838-0014.",
+    "Need vehicle transport or flatbed towing in Surrey or the Lower Mainland? TowingNo.1 provides secure, on-time transport for all makes — running or non-running. Call (778) 838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/vehicle-transport" },
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/vehicle-transport",
     title: "Vehicle Transport Surrey | Car Transport Lower Mainland BC",
     description: "Secure vehicle transport across Surrey and the Lower Mainland. On-time pickup and delivery for all vehicle types.",
+    images: [{ url: "/image/Vehicle_Transpor.png", alt: "Vehicle transport across the Lower Mainland — car on a flatbed truck" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vehicle Transport Surrey | Car Transport Lower Mainland BC",
+    description: "Secure vehicle transport across Surrey and the Lower Mainland. On-time pickup and delivery for all vehicle types.",
+    images: ["/image/Vehicle_Transpor.png"],
   },
 };
 
@@ -23,13 +32,24 @@ const schema = {
   serviceType: "Vehicle Transport",
   description: "Secure vehicle transport across Surrey and the Lower Mainland. On-time pickup and delivery for all vehicle types including non-running vehicles.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: [
-    { "@type": "City", name: "Surrey" },
-    { "@type": "City", name: "Langley" },
-    { "@type": "City", name: "Burnaby" },
-    { "@type": "City", name: "Vancouver" },
-  ],
+  areaServed: serviceAreaCompact,
 };
+
+const faq: FaqItem[] = [
+  {
+    q: "Can you transport a car that doesn't run?",
+    a: "Yes. Non-running vehicles are loaded onto a flatbed with a winch, so the car does not need to start, steer, or brake. Just let us know the condition when you book so we bring the right rigging.",
+  },
+  {
+    q: "Do you transport classic and collector cars?",
+    a: "Yes. We load low-clearance and collector vehicles carefully on a flatbed with soft wheel straps and a gentle approach angle to protect the paint, suspension, and undercarriage.",
+  },
+  {
+    q: "How is the price for transport calculated?",
+    a: "We quote a firm flat rate based on the vehicle and the distance between pickup and delivery, confirmed before we dispatch. There is no meter and no surprise charge on arrival.",
+  },
+];
+const faqSchema = faqPageSchema(faq);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -45,12 +65,13 @@ export default function VehicleTransportPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <section className="relative h-[380px] flex items-center overflow-hidden bg-navy-950">
+      <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image src="/image/Vehicle_Transpor.png" alt="Vehicle transport service Lower Mainland — car on truck" fill className="object-cover opacity-30" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />
-        <div className="relative z-10 container-custom">
+        <div className="relative z-10 container-custom py-12 md:py-16">
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-xs text-slate-400">
               <li><Link href="/" className="hover:text-amber-400 transition-colors">Home</Link></li>
@@ -118,14 +139,10 @@ export default function VehicleTransportPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
-                  {[
-                    { q: "Can you transport a car that doesn't run?", a: "Yes. Non-running vehicles are loaded onto a flatbed with a winch, so the car does not need to start, steer, or brake. Just let us know the condition when you book so we bring the right rigging." },
-                    { q: "Do you transport classic and collector cars?", a: "Yes. We load low-clearance and collector vehicles carefully on a flatbed with soft wheel straps and a gentle approach angle to protect the paint, suspension, and undercarriage." },
-                    { q: "How is the price for transport calculated?", a: "We quote a firm flat rate based on the vehicle and the distance between pickup and delivery, confirmed before we dispatch. There is no meter and no surprise charge on arrival." },
-                  ].map((faq) => (
-                    <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
-                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{faq.q}</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                  {faq.map((item) => (
+                    <div key={item.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{item.q}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
                     </div>
                   ))}
                 </div>
@@ -146,6 +163,20 @@ export default function VehicleTransportPage() {
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Upfront flat-rate pricing</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 availability</li>
+                </ul>
+              </div>
+              <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                <h3 className="font-bold text-navy-900 mb-3 text-sm">Other Services</h3>
+                <ul className="space-y-2">
+                  {[
+                    { href: "/services/emergency-towing", label: "Emergency Towing" },
+                    { href: "/services/accident-recovery", label: "Accident Recovery" },
+                    { href: "/services/winching-extraction", label: "Winching & Extraction" },
+                    { href: "/services/battery-boost", label: "Battery Boost" },
+                    { href: "/services/flat-tire-help", label: "Flat Tire Help" },
+                  ].map((s) => (
+                    <li key={s.href}><Link href={s.href} className="text-sm text-amber-600 hover:text-amber-700 font-medium flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5 shrink-0" aria-hidden="true"><path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd"/></svg> {s.label}</Link></li>
+                  ))}
                 </ul>
               </div>
             </div>

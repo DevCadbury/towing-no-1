@@ -5,9 +5,13 @@ export default function FloatingCallButton() {
   const phone = "+17788380014";
 
   return (
-    <div className="fixed left-3 bottom-6 sm:left-4 sm:bottom-8 md:left-auto md:right-5 md:bottom-24 md:top-auto md:translate-y-0 z-[70]">
+    // Pinned to the bottom-LEFT across all breakpoints. The Reamaze live-chat
+    // widget is locked to the bottom-right (see layout.tsx config), so keeping
+    // this button on the left guarantees the two never overlap on desktop.
+    <div className="fixed left-3 bottom-6 sm:left-4 sm:bottom-8 md:left-6 md:bottom-10 z-[70]">
       <a
         href={`tel:${phone}`}
+        data-call-location="floating_button"
         aria-label="Call now for a free quote"
         className="btn-call-highlight inline-flex items-center gap-2 rounded-full py-3 pl-3 pr-4 shadow-2xl"
       >

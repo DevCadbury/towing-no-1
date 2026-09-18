@@ -13,15 +13,15 @@ export interface ServiceArea {
   faq: { q: string; a: string }[];
 }
 
-export const serviceAreas: ServiceArea[] = [
+const serviceAreaData: ServiceArea[] = [
   {
     slug: "surrey",
     city: "Surrey",
-    headline: "Tow Truck Surrey — 24/7 Emergency Towing & Roadside Assistance",
+    headline: "24/7 Towing Service in Surrey, BC",
     summary:
-      "Fast tow truck dispatch across Surrey for breakdowns, collisions, lockouts, battery issues, and flat tires. We cover all Surrey neighbourhoods including Guildford, Newton, Fleetwood, Cloverdale, and South Surrey with an average response time under 15 minutes.",
+      "TowingNo.1 provides 24/7 emergency towing and roadside assistance across Surrey, BC. We dispatch immediately for emergency towing, battery boosts, car lockouts, flat tires, fuel delivery, and accident recovery throughout Surrey and surrounding communities. Call (778) 838-0014.",
     intro: [
-      "Surrey is the busiest territory we cover, and the sprawl from the Guildford big-box corridor down through Newton and out to the Cloverdale fairgrounds means breakdowns happen in every kind of setting — packed mall parkades, quiet cul-de-sacs off 152nd Street, and fast-moving traffic on Highway 99. Because we keep drivers staged near Surrey City Centre and the King George Boulevard corridor rather than dispatching from a single yard across town, our trucks reach most Surrey calls in well under fifteen minutes.",
+      "Surrey is the busiest territory we cover, and the sprawl from the Guildford big-box corridor down through Newton and out to the Cloverdale fairgrounds means breakdowns happen in every kind of setting — packed mall parkades, quiet cul-de-sacs off 152nd Street, and fast-moving traffic on Highway 99. Because we keep drivers staged near Surrey City Centre and the King George Boulevard corridor rather than dispatching from a single yard across town, our trucks reach most Surrey calls quickly.",
       "Whalley and the City Centre area generate a steady stream of parkade and curbside calls, while South Surrey and Morgan Crossing tend toward longer highway runs along 99 and 16th Avenue. Whichever pocket of the city you are stranded in, give our dispatcher the nearest major intersection — King George and 104th, Fraser Highway and 152nd, or the Highway 10 and 64th interchange — and we will route the closest available driver straight to you.",
     ],
     whyChooseUs: [
@@ -48,24 +48,28 @@ export const serviceAreas: ServiceArea[] = [
     localLandmarks: ["Surrey Central SkyTrain", "Guildford Town Centre", "Newton Exchange", "Cloverdale Fairgrounds"],
     faq: [
       {
-        q: "How fast can a tow truck reach me in Surrey?",
-        a: "Our average response time in Surrey is under 15 minutes. We dispatch the nearest available driver immediately when you call (778) 838-0014.",
+        q: "How quickly can a tow truck reach me in Surrey?",
+        a: "We dispatch the nearest available driver the moment you call (778) 838-0014 and give you a live ETA before you commit. Because we stage drivers across Surrey rather than running from a single yard, help is usually close by.",
+      },
+      {
+        q: "Do you provide 24/7 towing in Surrey?",
+        a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week in Surrey — including evenings, weekends, and all statutory holidays. Emergencies don't follow business hours, and neither do we.",
+      },
+      {
+        q: "Do you provide roadside assistance in Surrey?",
+        a: "Yes. Beyond towing, we offer battery boosts and jump-starts, flat tire changes, car lockout service, and fuel delivery across all Surrey neighbourhoods. Many calls are resolved on the spot without needing a tow.",
+      },
+      {
+        q: "Do you tow cars after accidents in Surrey?",
+        a: "Yes. Our accident recovery service handles collision scenes throughout Surrey — we transport damaged vehicles safely to any repair shop, dealership, or storage facility you choose, and provide documentation that aligns with ICBC claims.",
+      },
+      {
+        q: "What areas of Surrey do you serve?",
+        a: "We cover all of Surrey including Cloverdale, Fleetwood, Guildford, Newton, South Surrey, and Whalley. We also dispatch to neighbouring communities including Langley, Delta, White Rock, and Burnaby.",
       },
       {
         q: "How much does towing cost in Surrey?",
-        a: "We use flat-rate pricing with no hidden fees. The cost depends on vehicle type and distance. Call (778) 838-0014 for an instant quote before we dispatch.",
-      },
-      {
-        q: "Do you cover South Surrey and White Rock?",
-        a: "Yes. We serve all of Surrey including South Surrey, and we also cover White Rock, Delta, and Langley with the same 24/7 response.",
-      },
-      {
-        q: "Are you available on holidays in Surrey?",
-        a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week, including all statutory holidays.",
-      },
-      {
-        q: "Do you tow on Highway 99 and King George Boulevard in Surrey?",
-        a: "Yes. We respond to breakdowns on Highway 99, King George Boulevard, 152nd Street, and all major Surrey corridors. Call us and give your nearest cross-street or kilometre marker.",
+        a: "We use flat-rate pricing based on your vehicle type and the distance involved. There is no meter running and no hidden fees. Call (778) 838-0014 for an upfront quote before we dispatch — you know the exact price before a truck rolls.",
       },
     ],
   },
@@ -104,7 +108,7 @@ export const serviceAreas: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Langley?",
-        a: "Our average response time in Langley is under 20 minutes. We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver immediately when you call.",
       },
       {
         q: "Do you cover Aldergrove and Fort Langley?",
@@ -155,7 +159,7 @@ export const serviceAreas: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Burnaby?",
-        a: "Our average response time in Burnaby is under 15 minutes. We dispatch the nearest available driver immediately.",
+        a: "We dispatch the nearest available driver immediately.",
       },
       {
         q: "Do you tow on the Trans-Canada Highway through Burnaby?",
@@ -167,7 +171,7 @@ export const serviceAreas: ServiceArea[] = [
       },
       {
         q: "Do you offer battery boost service in Burnaby?",
-        a: "Yes. We provide 24/7 battery boost and jump-start service across all Burnaby neighbourhoods. Average arrival time is under 15 minutes.",
+        a: "Yes. We provide 24/7 battery boost and jump-start service across all Burnaby neighbourhoods.",
       },
     ],
   },
@@ -206,7 +210,7 @@ export const serviceAreas: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Coquitlam?",
-        a: "Our average response time in Coquitlam is under 20 minutes. We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver immediately when you call.",
       },
       {
         q: "Do you cover Port Coquitlam and Port Moody?",
@@ -257,7 +261,7 @@ export const serviceAreas: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Richmond?",
-        a: "Our average response time in Richmond is under 20 minutes. We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver immediately when you call.",
       },
       {
         q: "Do you tow near YVR Airport in Richmond?",
@@ -308,7 +312,7 @@ export const serviceAreas: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in White Rock?",
-        a: "Our average response time in White Rock is under 20 minutes. We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver immediately when you call.",
       },
       {
         q: "Do you cover the White Rock Beach area?",
@@ -320,7 +324,7 @@ export const serviceAreas: ServiceArea[] = [
       },
       {
         q: "Do you offer battery boost service in White Rock?",
-        a: "Yes. We provide 24/7 battery boost and jump-start service across White Rock. Average arrival time is under 20 minutes.",
+        a: "Yes. We provide 24/7 battery boost and jump-start service across White Rock.",
       },
     ],
   },
@@ -359,7 +363,7 @@ export const serviceAreas: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Vancouver?",
-        a: "Our average response time in Vancouver is under 20 minutes. We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver immediately when you call.",
       },
       {
         q: "Do you tow in Downtown Vancouver?",
@@ -410,7 +414,7 @@ export const serviceAreas: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Delta?",
-        a: "Our average response time in Delta is under 20 minutes. We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver immediately when you call.",
       },
       {
         q: "Do you cover Tsawwassen and Ladner?",
@@ -461,7 +465,7 @@ export const serviceAreas: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Maple Ridge?",
-        a: "Our average response time in Maple Ridge is under 25 minutes. We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver immediately when you call.",
       },
       {
         q: "Do you cover Pitt Meadows?",
@@ -512,7 +516,7 @@ export const serviceAreas: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Cloverdale?",
-        a: "Our average response time in Cloverdale is under 20 minutes. We dispatch the nearest available driver immediately when you call (778) 838-0014.",
+        a: "We dispatch the nearest available driver immediately when you call (778) 838-0014.",
       },
       {
         q: "Do you cover the Cloverdale Fairgrounds and Clayton Heights?",
@@ -563,7 +567,7 @@ export const serviceAreas: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in South Surrey?",
-        a: "Our average response time in South Surrey is under 20 minutes. We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver immediately when you call.",
       },
       {
         q: "Do you cover Grandview Heights, Morgan Crossing, and Ocean Park?",
@@ -614,7 +618,7 @@ export const serviceAreas: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Aldergrove?",
-        a: "Our average response time in Aldergrove is under 25 minutes. We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver immediately when you call.",
       },
       {
         q: "Do you handle rural and off-road recoveries near Aldergrove?",
@@ -631,6 +635,41 @@ export const serviceAreas: ServiceArea[] = [
     ],
   },
 ];
+
+/**
+ * Service-area priority (highest first). This is the SINGLE place that controls
+ * the order cities appear in: the /locations grid, the footer "Service Areas"
+ * strip, the ItemList schema positions (home + /locations), and the sitemap
+ * ordering/priority. Re-rank cities by editing THIS list only — the data
+ * objects above can stay in any order. Any slug not listed here sorts last.
+ */
+const AREA_PRIORITY: string[] = [
+  "cloverdale",
+  "langley",
+  "surrey",
+  "south-surrey",
+  "white-rock",
+  "maple-ridge",
+  "burnaby",
+  "coquitlam",
+  "aldergrove",
+  "delta",
+  "richmond",
+  "vancouver",
+];
+
+const areaRank = (slug: string): number => {
+  const i = AREA_PRIORITY.indexOf(slug);
+  return i === -1 ? Number.MAX_SAFE_INTEGER : i;
+};
+
+/**
+ * Public, priority-ordered list of every service area (ordered by AREA_PRIORITY).
+ * Consumed by the locations grid, footer, ItemList schema, and sitemap.
+ */
+export const serviceAreas: ServiceArea[] = [...serviceAreaData].sort(
+  (a, b) => areaRank(a.slug) - areaRank(b.slug),
+);
 
 export function getServiceAreaBySlug(slug: string): ServiceArea | undefined {
   return serviceAreas.find((area) => area.slug === slug);
@@ -652,3 +691,26 @@ export const serviceAreaSlugs: Set<string> = new Set(serviceAreas.map((area) => 
 export function isServiceAreaSlug(slug: string): boolean {
   return serviceAreaSlugs.has(slug);
 }
+
+/**
+ * Compact single-node areaServed for Service schema.
+ * Use this on individual service pages instead of the full 13-city expansion —
+ * the detailed per-city list lives on the global LocalBusiness (layout.tsx).
+ * This cuts ~1.5 KB of JSON-LD payload per service page (SEMrush Issue #2).
+ */
+export const serviceAreaCompact = {
+  "@type": "AdministrativeArea" as const,
+  name: "Lower Mainland",
+  containedInPlace: { "@type": "AdministrativeArea" as const, name: "British Columbia" },
+};
+
+
+// Structured areaServed list (all served cities) for Service JSON-LD, matching
+// the global LocalBusiness areaServed shape. Service pages use this so every
+// service advertises the same, complete coverage area instead of an arbitrary
+// 4–6 city subset.
+export const areaServedSchema = serviceAreas.map((a) => ({
+  "@type": "City" as const,
+  name: a.city,
+  containedInPlace: { "@type": "AdministrativeArea" as const, name: "British Columbia" },
+}));

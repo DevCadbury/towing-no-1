@@ -79,6 +79,7 @@ export default function Navbar() {
             {/* CTA */}
             <motion.a
               href="tel:+17788380014"
+              data-call-location="navbar_desktop"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               className="btn-call-highlight ml-3 inline-flex items-center gap-2 text-[13.5px] py-2.5 px-5 rounded-xl"
@@ -166,6 +167,7 @@ export default function Navbar() {
                 <div className="mt-5 pt-5 border-t border-white/10 space-y-2">
                   <a
                     href="tel:+17788380014"
+                    data-call-location="navbar_mobile"
                     onClick={() => setIsOpen(false)}
                     className="btn-call-highlight flex justify-center items-center gap-2 w-full py-3 px-5 rounded-xl text-[15px]"
                   >

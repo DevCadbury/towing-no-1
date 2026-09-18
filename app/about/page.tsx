@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import AboutContent from "@/components/AboutContent";
 
 export const metadata: Metadata = {
-  title: "About TowingNo.1 | Licensed & Insured Towing in BC Since 2010",
-  description: "TowingNo.1 has served the Lower Mainland since 2010. Licensed & insured, honest flat-rate pricing, fast response times, and professional drivers across Surrey and BC.",
+  title: "About Us | Licensed & Insured Towing in BC",
+  description: "TowingNo.1 has served Surrey and the Lower Mainland since 2010 — licensed and insured, with honest flat-rate pricing and professional drivers.",
   alternates: {
     canonical: "https://www.towingno1.com/about",
   },

@@ -1,4 +1,33 @@
 import { NextResponse } from "next/server";
+import { createHash, timingSafeEqual } from "crypto";
+
+/* ─── Authorization ────────────────────────────────────────────────
+ * This endpoint sends REAL email via Resend, so it must never be callable
+ * anonymously. It is DISABLED unless TEST_EMAIL_SECRET is configured, and when
+ * configured it requires that secret via either an
+ *   Authorization: Bearer <secret>
+ * header or a ?key=<secret> / ?secret=<secret> query param. No mail is sent
+ * unless authorization passes.
+ */
+const TEST_EMAIL_SECRET = process.env.TEST_EMAIL_SECRET || "";
+
+function safeEqual(a: string, b: string): boolean {
+  // Constant-time compare over fixed-length digests (handles any input length).
+  const ha = createHash("sha256").update(a).digest();
+  const hb = createHash("sha256").update(b).digest();
+  return timingSafeEqual(ha, hb);
+}
+
+function isAuthorized(req: Request): boolean {
+  if (!TEST_EMAIL_SECRET) return false; // disabled unless explicitly configured
+  const url = new URL(req.url);
+  const provided =
+    req.headers.get("authorization")?.replace(/^Bearer\s+/i, "").trim() ||
+    url.searchParams.get("key") ||
+    url.searchParams.get("secret") ||
+    "";
+  return provided.length > 0 && safeEqual(provided, TEST_EMAIL_SECRET);
+}
 
 /* ─── Email configuration (from env, never hardcoded) ──────────── */
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
@@ -95,7 +124,7 @@ function buildTestEmail(label: string, recipient: string, fromAddress: string): 
               <p style="margin:0 0 16px;color:#111827;font-size:15px;font-weight:600;">This is a test email from TowingNo.1</p>
               <p style="margin:0 0 24px;color:#374151;font-size:14px;line-height:1.7;">
                 If you are reading this message, the email system is configured correctly and working as expected.
-                Both the Microsoft Graph API connection and the email delivery pipeline are functioning properly.
+                Both the Resend API connection and the email delivery pipeline are functioning properly.
               </p>
 
               <!-- Details -->
@@ -114,7 +143,7 @@ function buildTestEmail(label: string, recipient: string, fromAddress: string): 
                 </tr>
                 <tr>
                   <td style="padding:11px 16px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;">Method</td>
-                  <td style="padding:11px 16px;font-size:13px;color:#111827;">Microsoft Graph API (OAuth2 client credentials)</td>
+                  <td style="padding:11px 16px;font-size:13px;color:#111827;">Resend REST API</td>
                 </tr>
               </table>
 
@@ -140,8 +169,19 @@ function buildTestEmail(label: string, recipient: string, fromAddress: string): 
 </html>`;
 }
 
-/* ─── Route handler (GET to trigger easily from browser) ───────── */
-export async function GET() {
+/* ─── Route handler (authorized GET only) ──────────────────────── */
+export async function GET(req: Request) {
+  // Authorize BEFORE doing anything that could send mail.
+  if (!isAuthorized(req)) {
+    // 404 when the endpoint is disabled (no secret configured); 401 when a
+    // secret is configured but the caller did not present the correct one.
+    const status = TEST_EMAIL_SECRET ? 401 : 404;
+    return NextResponse.json(
+      { success: false, error: status === 404 ? "Not found" : "Unauthorized" },
+      { status }
+    );
+  }
+
   try {
     if (!RESEND_API_KEY) {
       throw new Error("RESEND_API_KEY is not configured.");

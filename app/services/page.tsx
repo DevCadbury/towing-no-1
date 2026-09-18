@@ -3,26 +3,32 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Towing & Roadside Services Surrey BC | Emergency, Lockout, Battery & More",
+  title: "Towing & Roadside Services Surrey BC | 24/7 Emergency Help",
   description:
-    "Full-service towing and roadside assistance in Surrey and the Lower Mainland. Emergency towing, battery boost, flat tire, lockout, fuel delivery, and winching — available 24/7 with upfront pricing.",
+    "Towing and roadside help in Surrey and the Lower Mainland: emergency towing, battery boost, flat tire, lockout, fuel delivery, and winching. 24/7 dispatch.",
   alternates: {
     canonical: "https://www.towingno1.com/services",
   },
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services",
-    title: "Towing & Roadside Services Surrey BC | Emergency, Lockout, Battery & More",
+    title: "Towing & Roadside Services Surrey BC | 24/7 Emergency Help",
     description:
       "24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Towing & Roadside Services Surrey BC | Emergency, Lockout, Battery & More",
+    title: "Towing & Roadside Services Surrey BC | 24/7 Emergency Help",
     description:
       "24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.",
   },
 };
+
+// ─── SEMrush Fix #1: provider is a pure @id reference to the global
+// LocalBusiness entity defined in app/layout.tsx — no inline @type/name stubs
+// that would appear as new address-less LocalBusiness declarations to validators.
+const PROVIDER_REF = { "@id": "https://www.towingno1.com/#localbusiness" } as const;
+const AREA_LOWER_MAINLAND = { "@type": "AdministrativeArea", name: "Lower Mainland, BC" } as const;
 
 const servicesSchema = {
   "@context": "https://schema.org",
@@ -39,8 +45,8 @@ const servicesSchema = {
         name: "Emergency Towing",
         url: "https://www.towingno1.com/services/emergency-towing",
         description: "24/7 emergency towing for cars, SUVs, and light trucks across the Lower Mainland BC.",
-        provider: { "@type": "LocalBusiness", name: "TowingNo.1", "@id": "https://www.towingno1.com/#localbusiness" },
-        areaServed: "Lower Mainland, BC",
+        provider: PROVIDER_REF,
+        areaServed: AREA_LOWER_MAINLAND,
       },
     },
     {
@@ -51,8 +57,8 @@ const servicesSchema = {
         name: "Battery Boost",
         url: "https://www.towingno1.com/services/battery-boost",
         description: "24/7 battery boost and jump-start service across Surrey and the Lower Mainland.",
-        provider: { "@type": "LocalBusiness", name: "TowingNo.1", "@id": "https://www.towingno1.com/#localbusiness" },
-        areaServed: "Lower Mainland, BC",
+        provider: PROVIDER_REF,
+        areaServed: AREA_LOWER_MAINLAND,
       },
     },
     {
@@ -63,8 +69,8 @@ const servicesSchema = {
         name: "Lockout Service",
         url: "https://www.towingno1.com/services/lockout-service",
         description: "24/7 car lockout service. We open your vehicle safely without damage.",
-        provider: { "@type": "LocalBusiness", name: "TowingNo.1", "@id": "https://www.towingno1.com/#localbusiness" },
-        areaServed: "Lower Mainland, BC",
+        provider: PROVIDER_REF,
+        areaServed: AREA_LOWER_MAINLAND,
       },
     },
     {
@@ -75,8 +81,8 @@ const servicesSchema = {
         name: "Flat Tire Help",
         url: "https://www.towingno1.com/services/flat-tire-help",
         description: "On-site tire change or tow to the nearest shop across the Lower Mainland.",
-        provider: { "@type": "LocalBusiness", name: "TowingNo.1", "@id": "https://www.towingno1.com/#localbusiness" },
-        areaServed: "Lower Mainland, BC",
+        provider: PROVIDER_REF,
+        areaServed: AREA_LOWER_MAINLAND,
       },
     },
     {
@@ -87,8 +93,8 @@ const servicesSchema = {
         name: "Fuel Delivery",
         url: "https://www.towingno1.com/services/fuel-delivery",
         description: "Emergency fuel delivery — gasoline and diesel delivered to your location.",
-        provider: { "@type": "LocalBusiness", name: "TowingNo.1", "@id": "https://www.towingno1.com/#localbusiness" },
-        areaServed: "Lower Mainland, BC",
+        provider: PROVIDER_REF,
+        areaServed: AREA_LOWER_MAINLAND,
       },
     },
     {
@@ -99,8 +105,8 @@ const servicesSchema = {
         name: "Winching & Extraction",
         url: "https://www.towingno1.com/services/winching-extraction",
         description: "Professional winching and extraction for vehicles stuck in mud, snow or ditches in BC.",
-        provider: { "@type": "LocalBusiness", name: "TowingNo.1", "@id": "https://www.towingno1.com/#localbusiness" },
-        areaServed: "Lower Mainland, BC",
+        provider: PROVIDER_REF,
+        areaServed: AREA_LOWER_MAINLAND,
       },
     },
     {
@@ -111,8 +117,8 @@ const servicesSchema = {
         name: "Vehicle Transport",
         url: "https://www.towingno1.com/services/vehicle-transport",
         description: "Secure vehicle transport across Surrey and the Lower Mainland.",
-        provider: { "@type": "LocalBusiness", name: "TowingNo.1", "@id": "https://www.towingno1.com/#localbusiness" },
-        areaServed: "Lower Mainland, BC",
+        provider: PROVIDER_REF,
+        areaServed: AREA_LOWER_MAINLAND,
       },
     },
     {
@@ -123,8 +129,8 @@ const servicesSchema = {
         name: "Accident Recovery",
         url: "https://www.towingno1.com/services/accident-recovery",
         description: "Professional accident recovery and collision towing across the Lower Mainland.",
-        provider: { "@type": "LocalBusiness", name: "TowingNo.1", "@id": "https://www.towingno1.com/#localbusiness" },
-        areaServed: "Lower Mainland, BC",
+        provider: PROVIDER_REF,
+        areaServed: AREA_LOWER_MAINLAND,
       },
     },
   ],
@@ -229,11 +235,11 @@ export default function Services() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero */}
-      <section className="relative h-[420px] flex items-center justify-center text-white overflow-hidden">
+      <section className="relative overflow-hidden text-white pt-[76px]">
         <Image src="/service.jpg" alt="TowingNo.1 towing and roadside assistance services in Surrey BC" fill className="object-cover object-center" priority sizes="100vw" />
         <div className="absolute inset-0 bg-black/62" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
-        <div className="relative z-10 container-custom">
+        <div className="relative z-10 container-custom py-12 md:py-16">
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-xs text-slate-400">
               <li><Link href="/" className="hover:text-amber-400 transition-colors">Home</Link></li>

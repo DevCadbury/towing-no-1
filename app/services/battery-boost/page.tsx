@@ -2,16 +2,26 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { faqPageSchema, type FaqItem } from "@/lib/faq";
+import { serviceAreaCompact } from "@/lib/service-areas";
+
 export const metadata: Metadata = {
   title: "Battery Boost Surrey | 24/7 Jump-Start Service Near Me",
   description:
-    "Dead battery in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 battery boost and jump-start service. Fast dispatch, upfront pricing. Call (778) 838-0014.",
+    "Dead battery in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 battery boost and jump-start service with upfront pricing. Call (778) 838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/battery-boost" },
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/battery-boost",
     title: "Battery Boost Surrey | 24/7 Jump-Start Service Near Me",
     description: "24/7 battery boost and jump-start service in Surrey and the Lower Mainland. Fast dispatch, upfront pricing.",
+    images: [{ url: "/image/Battery_Boost.png", alt: "Battery boost and jump-start service in Surrey BC" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Battery Boost Surrey | 24/7 Jump-Start Service Near Me",
+    description: "24/7 battery boost and jump-start service in Surrey and the Lower Mainland. Fast dispatch, upfront pricing.",
+    images: ["/image/Battery_Boost.png"],
   },
 };
 
@@ -21,38 +31,26 @@ const schema = {
   "@id": "https://www.towingno1.com/services/battery-boost#service",
   name: "Battery Boost & Jump-Start Service Surrey",
   serviceType: "Battery Boost",
-  description: "24/7 battery boost and jump-start service for all vehicles across Surrey and the Lower Mainland. Free battery test included. Licensed and insured.",
+  description: "24/7 battery boost and jump-start service for all vehicles across Surrey and the Lower Mainland. Free battery test included.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: [
-    { "@type": "City", name: "Surrey" },
-    { "@type": "City", name: "Langley" },
-    { "@type": "City", name: "Burnaby" },
-    { "@type": "City", name: "Richmond" },
-    { "@type": "City", name: "Delta" },
-  ],
+  areaServed: serviceAreaCompact,
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How fast can you boost my battery in Surrey?",
-      acceptedAnswer: { "@type": "Answer", text: "Most Surrey battery-boost calls are reached within roughly 15 minutes, because we send whichever jump-capable van sits nearest the moment you phone (778) 838-0014." },
-    },
-    {
-      "@type": "Question",
-      name: "How much does a battery boost cost in Surrey?",
-      acceptedAnswer: { "@type": "Answer", text: "A boost is billed as one upfront flat amount with nothing tacked on afterward; phone (778) 838-0014 and we will confirm that figure before a technician rolls." },
-    },
-    {
-      "@type": "Question",
-      name: "Do you test the battery after boosting?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. Our technicians test your battery and charging system after the boost to let you know if the battery needs replacement." },
-    },
-  ],
-};
+const faq: FaqItem[] = [
+  {
+    q: "How fast can you boost my battery in Surrey?",
+    a: "We send whichever jump-capable van sits nearest the moment you phone (778) 838-0014, and we give you an honest arrival estimate before a technician rolls.",
+  },
+  {
+    q: "How much does a battery boost cost in Surrey?",
+    a: "A boost is billed as one upfront flat amount with nothing tacked on afterward; phone (778) 838-0014 and we will confirm that figure before a technician rolls.",
+  },
+  {
+    q: "Do you test the battery after boosting?",
+    a: "Yes. Our technicians test your battery and charging system after the boost to let you know if the battery needs replacement.",
+  },
+];
+const faqSchema = faqPageSchema(faq);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -71,10 +69,10 @@ export default function BatteryBoostPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <section className="relative h-[380px] flex items-center overflow-hidden bg-navy-950">
+      <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image src="/image/Battery_Boost.png" alt="Battery boost jump-start service Surrey — dead car battery" fill className="object-cover opacity-30" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />
-        <div className="relative z-10 container-custom">
+        <div className="relative z-10 container-custom py-12 md:py-16">
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-xs text-slate-400">
               <li><Link href="/" className="hover:text-amber-400 transition-colors">Home</Link></li>
@@ -153,20 +151,18 @@ export default function BatteryBoostPage() {
                 </ul>
                 <p className="mt-4 text-sm text-slate-500">
                   Read more: <Link href="/blog/signs-car-battery-dying" className="text-amber-600 hover:underline">5 Signs Your Car Battery is Dying</Link>
+                  {" · "}
+                  <Link href="/blog/when-call-tow-vs-fix-yourself" className="text-amber-600 hover:underline">Roadside DIY or professional help — how to decide</Link>
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
-                  {[
-                    { q: "How fast can you boost my battery in Surrey?", a: "Most Surrey battery-boost calls are reached within roughly 15 minutes, because we send whichever jump-capable van sits nearest the moment you phone (778) 838-0014." },
-                    { q: "How much does a battery boost cost in Surrey?", a: "A boost is billed as one upfront flat amount with nothing tacked on afterward; phone (778) 838-0014 and we will confirm that figure before a technician rolls." },
-                    { q: "Do you test the battery after boosting?", a: "Yes. Our technicians test your battery and charging system after the boost to let you know if the battery needs replacement." },
-                  ].map((faq) => (
-                    <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
-                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{faq.q}</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                  {faq.map((item) => (
+                    <div key={item.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{item.q}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
                     </div>
                   ))}
                 </div>

@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Counter from "@/components/Counter";
 
 export default function AboutContent() {
   return (
@@ -95,37 +94,6 @@ export default function AboutContent() {
                 <span className="bg-amber-500 text-navy-900 px-4 py-2 rounded-full text-sm font-bold">Serving BC</span>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-20 bg-navy-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/5 blur-[120px] rounded-full" />
-        </div>
-        <div className="container-custom relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { val: 15, label: "Years in Business", suffix: "+" },
-              { val: 5000, label: "Happy Customers", suffix: "+" },
-              { val: 20, label: "Trucks in Fleet", suffix: "+" },
-              { val: 24, label: "Hours Available", suffix: "/7" },
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="card-glass text-center !p-8 hover:border-amber-500/30 transition-all duration-500"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-gradient-gold mb-2">
-                  <Counter value={stat.val} duration={2} suffix={stat.suffix} />
-                </div>
-                <div className="text-slate-400 text-sm uppercase tracking-wider font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

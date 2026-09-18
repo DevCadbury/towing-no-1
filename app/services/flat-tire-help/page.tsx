@@ -1,17 +1,26 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { faqPageSchema, type FaqItem } from "@/lib/faq";
+import { serviceAreaCompact } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
   title: "Flat Tire Help Surrey | 24/7 Roadside Tire Change Near Me",
   description:
-    "Flat tire in Surrey or the Lower Mainland? TowingNo.1 changes your tire on-site or tows you to the nearest shop. 24/7 dispatch, upfront pricing. Call (778) 838-0014.",
+    "Flat tire in Surrey or the Lower Mainland? TowingNo.1 changes your tire on-site or tows you to the nearest shop. 24/7, upfront pricing. Call (778) 838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/flat-tire-help" },
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/flat-tire-help",
     title: "Flat Tire Help Surrey | 24/7 Roadside Tire Change Near Me",
     description: "24/7 flat tire help in Surrey and the Lower Mainland. On-site tire change or tow to the nearest shop.",
+    images: [{ url: "/image/Flat_Tire_Hel.png", alt: "Flat tire roadside assistance in Surrey BC — technician changing a tire" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Flat Tire Help Surrey | 24/7 Roadside Tire Change Near Me",
+    description: "24/7 flat tire help in Surrey and the Lower Mainland. On-site tire change or tow to the nearest shop.",
+    images: ["/image/Flat_Tire_Hel.png"],
   },
 };
 
@@ -23,35 +32,24 @@ const schema = {
   serviceType: "Flat Tire Roadside Assistance",
   description: "24/7 flat tire help across Surrey and the Lower Mainland. On-site tire change or tow to the nearest tire shop. Fast dispatch, upfront pricing.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: [
-    { "@type": "City", name: "Surrey" },
-    { "@type": "City", name: "Langley" },
-    { "@type": "City", name: "Burnaby" },
-    { "@type": "City", name: "Richmond" },
-  ],
+  areaServed: serviceAreaCompact,
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How fast can you help with a flat tire in Surrey?",
-      acceptedAnswer: { "@type": "Answer", text: "Our average response time for flat tire help in Surrey is under 15 minutes. Call (778) 838-0014 and we dispatch immediately." },
-    },
-    {
-      "@type": "Question",
-      name: "What if I don't have a spare tire?",
-      acceptedAnswer: { "@type": "Answer", text: "If you don't have a spare tire, we tow your vehicle to the nearest tire shop. We'll give you an upfront quote before dispatch." },
-    },
-    {
-      "@type": "Question",
-      name: "Can you help with a flat tire on the highway?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. We respond to flat tires on Highway 99, King George Boulevard, Fraser Highway, and all major Surrey corridors. If it's unsafe to change on the shoulder, we tow you to safety." },
-    },
-  ],
-};
+const faq: FaqItem[] = [
+  {
+    q: "How fast can you help with a flat tire in Surrey?",
+    a: "Call (778) 838-0014 and we dispatch the nearest available technician right away. Because our crews are staged across the region rather than run from one yard, help is usually a short wait — ask for a live ETA when you call.",
+  },
+  {
+    q: "What if I don't have a spare tire?",
+    a: "If you don't have a spare tire, we tow your vehicle to the nearest tire shop. We'll give you an upfront quote before dispatch.",
+  },
+  {
+    q: "Can you help with a flat tire on the highway?",
+    a: "Yes. We respond to flat tires on Highway 99, King George Boulevard, Fraser Highway, and all major Surrey corridors. If it's unsafe to change on the shoulder, we tow you to safety.",
+  },
+];
+const faqSchema = faqPageSchema(faq);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -70,10 +68,10 @@ export default function FlatTireHelpPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <section className="relative h-[380px] flex items-center overflow-hidden bg-navy-950">
+      <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image src="/image/Flat_Tire_Hel.png" alt="Flat tire roadside assistance Surrey — technician changing a tire" fill className="object-cover opacity-30" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />
-        <div className="relative z-10 container-custom">
+        <div className="relative z-10 container-custom py-12 md:py-16">
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-xs text-slate-400">
               <li><Link href="/" className="hover:text-amber-400 transition-colors">Home</Link></li>
@@ -139,19 +137,19 @@ export default function FlatTireHelpPage() {
                 <p className="text-slate-600 leading-relaxed">
                   Changing a tire sounds simple until you are kneeling beside a live lane with traffic passing at highway speed. A jack can slip on a slope or soft shoulder, and a wheel torqued by hand rarely matches factory specification. Our technicians work from the protected side of the vehicle, use proper jack points, and confirm tightness with a torque wrench, so you drive away knowing the wheel will not loosen a few kilometres down the road.
                 </p>
+                <p className="mt-4 text-sm text-slate-500">
+                  Not sure whether a roadside fix is right for your situation? Read our guide on{" "}
+                  <Link href="/blog/when-call-tow-vs-fix-yourself" className="text-amber-600 hover:underline">when to call a tow truck vs. fix it yourself at the roadside</Link>.
+                </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
-                  {[
-                    { q: "How fast can you help with a flat tire in Surrey?", a: "Our average response time for flat tire help in Surrey is under 15 minutes. Call (778) 838-0014 and we dispatch immediately." },
-                    { q: "What if I don't have a spare tire?", a: "If you don't have a spare tire, we tow your vehicle to the nearest tire shop. We'll give you an upfront quote before dispatch." },
-                    { q: "Can you help with a flat tire on the highway?", a: "Yes. We respond to flat tires on Highway 99, King George Boulevard, Fraser Highway, and all major Surrey corridors. If it's unsafe to change on the shoulder, we tow you to safety." },
-                  ].map((faq) => (
-                    <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
-                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{faq.q}</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                  {faq.map((item) => (
+                    <div key={item.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{item.q}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
                     </div>
                   ))}
                 </div>

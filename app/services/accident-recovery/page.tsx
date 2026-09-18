@@ -1,17 +1,27 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { faqPageSchema, type FaqItem } from "@/lib/faq";
+import { serviceAreaCompact } from "@/lib/service-areas";
+import OfficialResources from "@/components/OfficialResources";
 
 export const metadata: Metadata = {
   title: "Accident Recovery Towing Surrey | 24/7 Collision Towing BC",
   description:
-    "Need accident recovery towing in Surrey or the Lower Mainland? TowingNo.1 handles collision scenes carefully and transports damaged vehicles safely. Call (778) 838-0014.",
+    "Accident recovery towing in Surrey and the Lower Mainland. TowingNo.1 handles collision scenes and transports damaged vehicles safely. Call (778) 838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/accident-recovery" },
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/accident-recovery",
     title: "Accident Recovery Towing Surrey | 24/7 Collision Towing BC",
     description: "24/7 accident recovery towing in Surrey and the Lower Mainland. Professional collision scene handling and safe vehicle transport.",
+    images: [{ url: "/image/Accident_Recover.png", alt: "Accident recovery towing in Surrey BC — damaged vehicle on a flatbed" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Accident Recovery Towing Surrey | 24/7 Collision Towing BC",
+    description: "24/7 accident recovery towing in Surrey and the Lower Mainland. Professional collision scene handling and safe vehicle transport.",
+    images: ["/image/Accident_Recover.png"],
   },
 };
 
@@ -23,13 +33,24 @@ const schema = {
   serviceType: "Accident Recovery",
   description: "24/7 accident recovery towing across Surrey and the Lower Mainland. Professional collision scene handling and safe transport of damaged vehicles.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: [
-    { "@type": "City", name: "Surrey" },
-    { "@type": "City", name: "Langley" },
-    { "@type": "City", name: "Burnaby" },
-    { "@type": "City", name: "Richmond" },
-  ],
+  areaServed: serviceAreaCompact,
 };
+
+const faq: FaqItem[] = [
+  {
+    q: "Should I drive my car after a minor accident?",
+    a: "Only if it is clearly safe. Fluid leaks, pulling steering, grinding wheels, or warning lights point to hidden structural or mechanical damage. When in doubt, let us transport it and have a shop inspect it first.",
+  },
+  {
+    q: "Can you tow my car to an ICBC-approved shop?",
+    a: "Yes. We deliver to any body shop, dealership, ICBC facility, or storage yard you choose across the Lower Mainland, and we can hold the vehicle if you have not picked one yet.",
+  },
+  {
+    q: "Do you work with my insurance claim?",
+    a: "We provide clear documentation of the recovery and drop-off so it lines up with your ICBC or private insurer claim. Keep your photos from the scene to support it.",
+  },
+];
+const faqSchema = faqPageSchema(faq);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -45,12 +66,13 @@ export default function AccidentRecoveryPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <section className="relative h-[380px] flex items-center overflow-hidden bg-navy-950">
+      <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image src="/image/Accident_Recover.png" alt="Accident recovery towing Surrey — damaged vehicle being loaded on flatbed" fill className="object-cover opacity-30" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />
-        <div className="relative z-10 container-custom">
+        <div className="relative z-10 container-custom py-12 md:py-16">
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-xs text-slate-400">
               <li><Link href="/" className="hover:text-amber-400 transition-colors">Home</Link></li>
@@ -122,19 +144,27 @@ export default function AccidentRecoveryPage() {
                 <p className="text-slate-600 leading-relaxed">
                   We deliver to the body shop, dealership, ICBC facility, or storage yard of your choosing. If you have not decided yet, we can hold the vehicle securely until you and your adjuster agree on the next step, so a stressful day does not force a rushed decision.
                 </p>
+                <p className="mt-4 text-sm text-slate-500">
+                  Related guide: <Link href="/blog/understanding-towing-services" className="text-amber-600 hover:underline">Flatbed vs wheel-lift: which towing method does your vehicle need?</Link>
+                </p>
               </div>
+
+              <OfficialResources
+                heading="After a collision: official resources"
+                intro="Once everyone is safe and the vehicle is off the road, these official B.C. resources help with reporting and next steps:"
+                items={[
+                  { href: "https://www.icbc.com/claims/report-view", label: "ICBC — report a claim", note: "Report your crash online 24/7 or by phone." },
+                  { href: "https://www.drivebc.ca", label: "DriveBC — road conditions & incidents", note: "Check for closures or hazards on your route." },
+                ]}
+              />
 
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
-                  {[
-                    { q: "Should I drive my car after a minor accident?", a: "Only if it is clearly safe. Fluid leaks, pulling steering, grinding wheels, or warning lights point to hidden structural or mechanical damage. When in doubt, let us transport it and have a shop inspect it first." },
-                    { q: "Can you tow my car to an ICBC-approved shop?", a: "Yes. We deliver to any body shop, dealership, ICBC facility, or storage yard you choose across the Lower Mainland, and we can hold the vehicle if you have not picked one yet." },
-                    { q: "Do you work with my insurance claim?", a: "We provide clear documentation of the recovery and drop-off so it lines up with your ICBC or private insurer claim. Keep your photos from the scene to support it." },
-                  ].map((faq) => (
-                    <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
-                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{faq.q}</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                  {faq.map((item) => (
+                    <div key={item.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{item.q}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
                     </div>
                   ))}
                 </div>

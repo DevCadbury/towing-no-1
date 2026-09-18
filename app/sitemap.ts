@@ -84,11 +84,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  const locationRoutes: MetadataRoute.Sitemap = serviceAreas.map((area) => ({
+  // serviceAreas is ordered by AREA_PRIORITY (lib/service-areas.ts). Reflect that
+  // ranking in the sitemap priority with a gentle 0.90 → 0.70 gradient so the
+  // highest-priority cities carry the strongest signal.
+  const locationRoutes: MetadataRoute.Sitemap = serviceAreas.map((area, index) => ({
     url: `${baseUrl}/locations/${area.slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: 0.85,
+    priority: Math.max(0.7, Math.round((0.9 - index * 0.02) * 100) / 100),
   }));
 
   return [...staticRoutes, ...servicePageRoutes, ...locationRoutes, ...blogRoutes];

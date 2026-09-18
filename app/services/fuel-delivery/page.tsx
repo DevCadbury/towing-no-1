@@ -1,17 +1,26 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { faqPageSchema, type FaqItem } from "@/lib/faq";
+import { serviceAreaCompact } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
   title: "Fuel Delivery Surrey | Emergency Gas Delivery Near Me 24/7",
   description:
-    "Run out of fuel in Surrey or the Lower Mainland? TowingNo.1 delivers gasoline or diesel to your location 24/7. Fast dispatch, upfront pricing. Call (778) 838-0014.",
+    "Out of fuel in Surrey or the Lower Mainland? TowingNo.1 delivers gasoline or diesel to your location 24/7 with upfront pricing. Call (778) 838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/fuel-delivery" },
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/fuel-delivery",
     title: "Fuel Delivery Surrey | Emergency Gas Delivery Near Me 24/7",
     description: "24/7 emergency fuel delivery in Surrey and the Lower Mainland. Gasoline and diesel delivered to your location.",
+    images: [{ url: "/image/Fuel_Deliver.png", alt: "Emergency fuel delivery in Surrey BC — gas delivered to a stranded vehicle" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fuel Delivery Surrey | Emergency Gas Delivery Near Me 24/7",
+    description: "24/7 emergency fuel delivery in Surrey and the Lower Mainland. Gasoline and diesel delivered to your location.",
+    images: ["/image/Fuel_Deliver.png"],
   },
 };
 
@@ -23,13 +32,24 @@ const schema = {
   serviceType: "Fuel Delivery",
   description: "24/7 emergency fuel delivery across Surrey and the Lower Mainland. Gasoline and diesel delivered directly to your location.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: [
-    { "@type": "City", name: "Surrey" },
-    { "@type": "City", name: "Langley" },
-    { "@type": "City", name: "Burnaby" },
-    { "@type": "City", name: "Richmond" },
-  ],
+  areaServed: serviceAreaCompact,
 };
+
+const faq: FaqItem[] = [
+  {
+    q: "How much fuel do you bring?",
+    a: "Enough to reach the nearest open station and fill up properly — typically a few litres. We focus on getting you mobile again quickly rather than topping the tank at roadside.",
+  },
+  {
+    q: "Can you bring diesel as well as gasoline?",
+    a: "Yes. Tell the dispatcher whether your vehicle runs on gasoline or diesel and we bring the correct fuel. Using the wrong type can damage the engine, so we always confirm first.",
+  },
+  {
+    q: "My car stalled completely — will it restart after fuel?",
+    a: "Usually yes. Gas engines often start right up; a diesel that ran fully dry may need a moment to prime the line, and our driver can help with that on site.",
+  },
+];
+const faqSchema = faqPageSchema(faq);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -45,12 +65,13 @@ export default function FuelDeliveryPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <section className="relative h-[380px] flex items-center overflow-hidden bg-navy-950">
+      <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image src="/image/Fuel_Deliver.png" alt="Emergency fuel delivery service Surrey — gas delivered to stranded vehicle" fill className="object-cover opacity-30" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />
-        <div className="relative z-10 container-custom">
+        <div className="relative z-10 container-custom py-12 md:py-16">
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-xs text-slate-400">
               <li><Link href="/" className="hover:text-amber-400 transition-colors">Home</Link></li>
@@ -124,14 +145,10 @@ export default function FuelDeliveryPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
-                  {[
-                    { q: "How much fuel do you bring?", a: "Enough to reach the nearest open station and fill up properly — typically a few litres. We focus on getting you mobile again quickly rather than topping the tank at roadside." },
-                    { q: "Can you bring diesel as well as gasoline?", a: "Yes. Tell the dispatcher whether your vehicle runs on gasoline or diesel and we bring the correct fuel. Using the wrong type can damage the engine, so we always confirm first." },
-                    { q: "My car stalled completely — will it restart after fuel?", a: "Usually yes. Gas engines often start right up; a diesel that ran fully dry may need a moment to prime the line, and our driver can help with that on site." },
-                  ].map((faq) => (
-                    <div key={faq.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
-                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{faq.q}</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                  {faq.map((item) => (
+                    <div key={item.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                      <h3 className="font-bold text-navy-900 mb-2 text-sm">{item.q}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
                     </div>
                   ))}
                 </div>

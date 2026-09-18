@@ -3,16 +3,27 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   content: string;
+  /** Original publish date (human string, e.g. "February 10, 2026"). */
   date: string;
+  /**
+   * Optional last-updated date. Set this ONLY when the post's content was
+   * meaningfully revised — it drives `dateModified` in schema and the visible
+   * "Updated" label. Leaving it unset keeps dateModified === datePublished
+   * (an honest "not updated since publication"). Never set a future date.
+   */
+  updatedDate?: string;
   image: string;
   slug: string;
   featured?: boolean;
   keywords: string[];
+  /** Content-cluster label shown as a badge (Road Safety, Seasonal, Maintenance, Towing Advice). */
+  category?: string;
 }
 
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
+    category: "Road Safety",
     title: "What to Do When Your Car Breaks Down on the Highway",
     excerpt: "A step-by-step guide to staying safe when your vehicle breaks down on busy roads. Learn the essential safety measures every driver should know.",
     date: "February 10, 2026",
@@ -62,6 +73,7 @@ If you must remain near the vehicle, position yourself well away from the traffi
   },
   {
     id: 2,
+    category: "Seasonal",
     title: "How to Prepare Your Vehicle for Winter in BC",
     excerpt: "Winter driving in British Columbia requires preparation. Discover essential maintenance tips to keep your vehicle running smoothly during cold weather.",
     date: "February 5, 2026",
@@ -110,6 +122,7 @@ A frozen door lock, a sticky parking brake, or a washer system spraying plain wa
   },
   {
     id: 3,
+    category: "Maintenance",
     title: "5 Signs Your Car Battery is Dying",
     excerpt: "Don't get caught with a dead battery. Learn to recognize the warning signs that your car battery needs replacement before it fails.",
     date: "January 28, 2026",
@@ -158,6 +171,7 @@ A jump-start will usually get you moving again, but it treats the symptom rather
   },
   {
     id: 4,
+    category: "Road Safety",
     title: "Emergency Kit Essentials Every Driver Needs",
     excerpt: "Be prepared for any roadside emergency with these must-have items. A well-stocked emergency kit can make all the difference.",
     date: "January 20, 2026",
@@ -219,12 +233,13 @@ Phones die, and a low battery drains even faster in freezing weather, so a power
   },
   {
     id: 5,
+    category: "Towing Advice",
     title: "When to Call for a Tow vs. Fix it Yourself",
     excerpt: "Some roadside issues can be handled yourself, while others require professional help. Learn when it's safe to DIY and when to call for assistance.",
     date: "January 12, 2026",
     image: "/blog/when-to-call-tow.jpg",
     slug: "when-call-tow-vs-fix-yourself",
-    keywords: ["when to call tow truck", "roadside DIY vs tow", "tow truck BC"],
+    keywords: ["when to call tow truck", "roadside DIY vs tow", "tow truck BC", "towing services BC"],
     content: `
 Not every breakdown needs a tow truck — but knowing the difference can save you money and keep you safe. Here's a practical guide for BC drivers.
 
@@ -267,12 +282,13 @@ If the fix is quick, you have the right tools, and you are somewhere safe, a car
   },
   {
     id: 6,
+    category: "Towing Advice",
     title: "Understanding Different Types of Towing Services",
     excerpt: "Not all towing is the same. Explore the different types of towing services available and when each one is appropriate for your situation.",
     date: "January 5, 2026",
     image: "/blog/types-of-towing.jpg",
     slug: "understanding-towing-services",
-    keywords: ["types of towing services", "flatbed tow truck", "emergency towing BC", "towing services explained"],
+    keywords: ["types of towing services", "flatbed tow truck", "emergency towing BC", "towing services explained", "towing services BC"],
     content: `
 When you call for a tow, the right type of service makes a difference for your vehicle's safety. Here's an overview of the main towing methods and when each is used.
 

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import HomeContent from "@/components/HomeContent";
 import { serviceAreas } from "@/lib/service-areas";
+import { faqPageSchema, type FaqItem } from "@/lib/faq";
 
 export const metadata: Metadata = {
   title:
-    "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
+    "Tow Truck Surrey | 24/7 Emergency Towing | TowingNo.1",
   description:
-    "Stranded in Surrey or the Lower Mainland? TowingNo.1 dispatches in under 15 minutes, 24/7. Emergency towing, battery boost, lockout, flat tire & more. Free quote before dispatch — call (778) 838-0014.",
+    "Stranded in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 emergency towing, battery boost, lockout & flat tire help. Free quote — call (778) 838-0014.",
   keywords: [
     "tow truck surrey",
     "towing near me",
@@ -28,14 +29,14 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.towingno1.com",
     title:
-      "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
+      "Tow Truck Surrey | 24/7 Emergency Towing | TowingNo.1",
     description:
       "24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured. Call (778) 838-0014.",
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
+      "Tow Truck Surrey | 24/7 Emergency Towing | TowingNo.1",
     description:
       "Call TowingNo.1 for fast 24/7 towing in Surrey and the Lower Mainland. Free quote before dispatch — (778) 838-0014.",
   },
@@ -72,116 +73,56 @@ const homeServiceSchema = {
   },
 };
 
-const homeFaqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How fast can your tow truck reach me in Surrey?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Our average response time in Surrey is under 15 minutes depending on traffic and exact location. We dispatch the nearest available driver as soon as you call (778) 838-0014.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much does towing cost in Surrey?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We use flat-rate pricing with no hidden fees. The cost depends on vehicle type and distance. Call (778) 838-0014 for an instant quote — we give you a firm price before we dispatch.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you provide a quote before dispatch?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. We provide an upfront quote before dispatch so you know the exact price before service starts. No surprises.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What roadside services do you offer besides towing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We provide battery boosts, flat tire changes, lockout service, fuel delivery, and winching and extraction across the Lower Mainland.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the fastest way to get a tow truck near me?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Call (778) 838-0014 directly. We dispatch the nearest available driver immediately. Average arrival time is under 15 minutes across Surrey and the Lower Mainland.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you tow electric vehicles?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Electric vehicles must be transported on a flatbed — never towed with wheels down. We have flatbed trucks available 24/7 for EVs including Tesla, Rivian, and all other makes.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are you available on holidays and weekends?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We operate 24 hours a day, 7 days a week, including all statutory holidays. Emergencies don't follow business hours, and neither do we.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can you help if I'm stuck in a ditch or snow?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Our winching and extraction service pulls vehicles out of ditches, mud, and snow banks safely using professional equipment across the Lower Mainland.",
-      },
-    },
-  ],
-};
+// Single source of truth for the homepage FAQ — used for BOTH the visible
+// accordion (HomeContent <FaqSection>) and the FAQPage schema, so they never
+// drift. Answers are self-contained (AEO) and carry no unverified figures.
+const homeFaq: FaqItem[] = [
+  {
+    q: "How fast can your tow truck reach me in Surrey?",
+    a: "We dispatch the nearest available driver the moment you call (778) 838-0014, and give you a live ETA up front so you know the wait before you commit. We stage drivers across Surrey and the Lower Mainland, so help is usually close by.",
+  },
+  {
+    q: "How much does towing cost in Surrey?",
+    a: "We use flat-rate pricing with no hidden fees. The cost depends on vehicle type and distance. Call (778) 838-0014 for an instant quote — we give you a firm price before we dispatch.",
+  },
+  {
+    q: "Do you provide a quote before dispatch?",
+    a: "Yes. We provide an upfront quote before dispatch so you know the exact price before service starts. No surprises.",
+  },
+  {
+    q: "What roadside services do you offer besides towing?",
+    a: "We provide battery boosts, flat tire changes, lockout service, fuel delivery, and winching and extraction across the Lower Mainland — often solving the problem on the spot without a tow.",
+  },
+  {
+    q: "What areas of the Lower Mainland do you serve?",
+    a: "We serve Surrey and the wider Lower Mainland, including Langley, Burnaby, Richmond, Coquitlam, Delta, White Rock, Vancouver, Maple Ridge, and surrounding communities.",
+  },
+  {
+    q: "Do you tow electric vehicles?",
+    a: "Yes. Electric vehicles must be transported on a flatbed — never towed with wheels down. We have flatbed trucks available 24/7 for EVs including Tesla, Rivian, and all other makes.",
+  },
+  {
+    q: "Do you provide roadside assistance without towing?",
+    a: "Yes. If your issue can be solved on the spot — a flat tire, dead battery, empty tank, or lockout — we fix it right there. A tow is only arranged when the vehicle genuinely can't be driven.",
+  },
+  {
+    q: "Are you available on holidays and weekends?",
+    a: "We operate 24 hours a day, 7 days a week, including all statutory holidays. Emergencies don't follow business hours, and neither do we.",
+  },
+  {
+    q: "Can you help if I'm stuck in a ditch or snow?",
+    a: "Yes. Our winching and extraction service pulls vehicles out of ditches, mud, and snow banks safely using professional equipment across the Lower Mainland.",
+  },
+];
+const homeFaqSchema = faqPageSchema(homeFaq);
 
-const homeReviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://www.towingno1.com/#localbusiness",
-  review: [
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Sarah M." },
-      datePublished: "2026-01-15",
-      reviewBody:
-        "Called TowingNo.1 at 2 AM when my car broke down on the highway. They arrived in 20 minutes and had me home safely. Excellent service!",
-    },
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "David K." },
-      datePublished: "2026-02-03",
-      reviewBody:
-        "Got a flat tire on the highway at rush hour. They were there in under 25 minutes and had me on my way. Unbelievable response time!",
-    },
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Lisa R." },
-      datePublished: "2026-02-18",
-      reviewBody:
-        "Locked my keys in the car at the mall. They opened it in minutes without any damage. Friendly and professional — saved my day!",
-    },
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Tom W." },
-      datePublished: "2026-03-05",
-      reviewBody:
-        "Needed a battery boost early in the morning before work. Quick, easy, and priced fairly. Definitely calling them again.",
-    },
-  ],
-};
+// NOTE: The homepage Review markup (four named 5-star reviews) was removed.
+// The reviews were unverified/fabricated (future 2026 dates, no source) and
+// self-serving. Do NOT reintroduce Review or AggregateRating structured data
+// until (a) real Google Business Profile reviews exist and (b) the current
+// Google eligibility rules are checked (self-serving review restrictions apply;
+// aggregating third-party reviews is disallowed). Real reviews may be shown to
+// users on-page without necessarily being eligible for review rich results.
 
 const homeServiceAreaListSchema = {
   "@context": "https://schema.org",
@@ -220,10 +161,6 @@ export default function Home() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeReviewSchema) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(homeServiceAreaListSchema),
         }}
@@ -232,7 +169,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
-      <HomeContent />
+      <HomeContent faq={homeFaq} />
     </>
   );
 }

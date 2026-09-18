@@ -4,14 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { motion, AnimatePresence } from "framer-motion";
-import Counter from "@/components/Counter";
+import StatNumber from "@/components/StatNumber";
+import { stats, statText, type StatFact } from "@/lib/business-facts";
+import { type FaqItem } from "@/lib/faq";
 import { useState } from "react";
-
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
 
 const services = [
   {
@@ -72,15 +68,20 @@ const services = [
   },
 ];
 
+// Featured service areas, ordered by the owner's city priority (highest first).
+// Mirrors AREA_PRIORITY in lib/service-areas.ts.
 const featuredAreas = [
-  { href: "/locations/surrey", title: "Tow Truck Surrey", subtitle: "Fast 24/7 dispatch across all Surrey neighbourhoods" },
+  { href: "/locations/cloverdale", title: "Cloverdale Towing", subtitle: "Town Centre, Clayton Heights & Hwy 10" },
   { href: "/locations/langley", title: "Towing Langley", subtitle: "Emergency and scheduled towing support" },
-  { href: "/locations/coquitlam", title: "Coquitlam Tow Truck", subtitle: "Roadside help and local recovery" },
-  { href: "/locations/burnaby", title: "Burnaby Towing", subtitle: "Battery, lockout, and tow assistance" },
-  { href: "/locations/richmond", title: "Richmond Tow Service", subtitle: "Rapid response for breakdowns" },
+  { href: "/locations/surrey", title: "Towing Surrey BC", subtitle: "24/7 emergency towing & roadside assistance across all Surrey neighbourhoods" },
+  { href: "/locations/south-surrey", title: "South Surrey Towing", subtitle: "Grandview, Morgan Crossing & Ocean Park" },
   { href: "/locations/white-rock", title: "White Rock Towing", subtitle: "24/7 roadside and towing support" },
-  { href: "/locations/delta", title: "Delta Tow Truck", subtitle: "Ladner, Tsawwassen & North Delta" },
   { href: "/locations/maple-ridge", title: "Maple Ridge Towing", subtitle: "Fast dispatch across Maple Ridge & Pitt Meadows" },
+  { href: "/locations/burnaby", title: "Burnaby Towing", subtitle: "Battery, lockout, and tow assistance" },
+  { href: "/locations/coquitlam", title: "Coquitlam Tow Truck", subtitle: "Roadside help and local recovery" },
+  { href: "/locations/aldergrove", title: "Aldergrove Towing", subtitle: "Town Centre, Fraser Hwy & 264th corridor" },
+  { href: "/locations/delta", title: "Delta Tow Truck", subtitle: "Ladner, Tsawwassen & North Delta" },
+  { href: "/locations/richmond", title: "Richmond Tow Service", subtitle: "Rapid response for breakdowns" },
   { href: "/locations/vancouver", title: "Vancouver Towing", subtitle: "Downtown, Kitsilano & East Van" },
 ];
 
@@ -111,16 +112,7 @@ const fadeUp = {
   }),
 };
 
-function trackCallClick(location: string) {
-  if (typeof window !== "undefined" && window.gtag) {
-    window.gtag("event", "call_dialog_open", {
-      event_category: "engagement",
-      event_label: location,
-    });
-  }
-}
-
-export default function HomeContent() {
+export default function HomeContent({ faq }: { faq: FaqItem[] }) {
   return (
     <>
       {/* ── Hero ───────────────────────────────────────────────────── */}
@@ -180,7 +172,7 @@ export default function HomeContent() {
               >
                 <a
                   href="tel:+17788380014"
-                  onClick={() => trackCallClick("hero")}
+                  data-call-location="hero"
                   className="btn-call-highlight inline-flex items-center justify-center gap-2 py-4 px-8 rounded-xl text-base"
                   aria-label="Call TowingNo.1 for a free quote"
                 >
@@ -390,11 +382,11 @@ export default function HomeContent() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
             {(
               [
-              { stat: "24/7", label: "Always Available", sub: "Round-the-clock, every day of the year including holidays", delay: 0.1 },
-              { stat: null, label: "Fast Response", sub: "Average response time under 15 minutes across Surrey", delay: 0.2, counter: true, value: 15, suffix: " min" },
-              { stat: null, label: "Years Experience", sub: "Serving BC communities", delay: 0.3, counter: true, value: 15, suffix: "+" },
-              { stat: "4.9", label: "Customer Rating", sub: "Flat-rate pricing, licensed & insured, no hidden fees", delay: 0.4, isStar: true },
-              ] as Array<{ stat: string | null; label: string; sub: string; delay: number; counter?: boolean; value?: number; suffix?: string; isStar?: boolean }>
+              { display: statText(stats.alwaysAvailable), label: "Always Available", sub: "Round-the-clock, every day of the year including holidays", delay: 0.1 },
+              { fact: stats.responseTime, label: "Rapid Response", sub: "We dispatch the nearest available driver the moment you call", delay: 0.2 },
+              { fact: stats.yearsInBusiness, label: "Local Experience", sub: "Drivers who know Surrey and the Lower Mainland", delay: 0.3 },
+              { display: "Upfront", label: "Flat-Rate Pricing", sub: "Free quote before dispatch — no hidden fees, no meter running", delay: 0.4 },
+              ] as Array<{ display?: string; fact?: StatFact; label: string; sub: string; delay: number }>
             ).map((item) => (
               <motion.div
                 key={item.label}
@@ -405,16 +397,7 @@ export default function HomeContent() {
                 className="text-center px-4"
               >
                 <div className="text-4xl md:text-5xl font-extrabold text-amber-500 mb-3 tabular-nums">
-                  {item.counter ? (
-                    <>&lt;<Counter value={item.value!} duration={2} suffix={item.suffix} /></>
-                  ) : item.isStar ? (
-                    <span className="flex items-center justify-center gap-1">
-                      {item.stat}
-                      <svg className="w-8 h-8 text-amber-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clipRule="evenodd"/></svg>
-                    </span>
-                  ) : (
-                    item.stat
-                  )}
+                  {item.fact ? <StatNumber fact={item.fact} /> : item.display}
                 </div>
                 <h3 className="text-base font-bold text-gray-900 mb-1">{item.label}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{item.sub}</p>
@@ -463,7 +446,7 @@ export default function HomeContent() {
               Tow Truck Service Areas Across the Lower Mainland
             </h2>
             <p className="text-slate-600 max-w-3xl leading-relaxed">
-              Looking for towing near you? We cover Surrey, Langley, Coquitlam, Burnaby, Richmond, White Rock, Delta, Maple Ridge, Vancouver, and surrounding communities — all with 24/7 dispatch.
+              Looking for towing near you? We cover Cloverdale, Langley, Surrey, South Surrey, White Rock, Maple Ridge, Burnaby, Coquitlam, Aldergrove, Delta, Richmond, and Vancouver — all with 24/7 dispatch across the Lower Mainland.
             </p>
           </motion.div>
 
@@ -536,7 +519,7 @@ export default function HomeContent() {
       {/* ── Testimonials carousel ──────────────────────────────────── */}
       <TestimonialsCarousel />
       {/* ── FAQ ───────────────────────────────────────────────── */}
-      <FaqSection />
+      <FaqSection faq={faq} />
       {/* ── CTA Banner ─────────────────────────────────────────────── */}
       <section className="py-20 bg-gray-900" aria-label="Call to action">
         <div className="container-custom">
@@ -555,7 +538,7 @@ export default function HomeContent() {
             </p>
             <a
               href="tel:+17788380014"
-              onClick={() => trackCallClick("bottom-cta")}
+              data-call-location="bottom_cta"
               className="btn-call-highlight inline-flex items-center justify-center gap-2 py-4 px-10 rounded-xl text-base"
               aria-label="Call TowingNo.1 for emergency towing"
             >
@@ -571,17 +554,7 @@ export default function HomeContent() {
   );
 }
 
-/* ─── Testimonials carousel ──────────────────────────────────── */
-const testimonials = [
-  { body: "Called TowingNo.1 at 2 AM when my car broke down on the highway. They arrived in 20 minutes and had me home safely. Excellent service!", name: "Sarah M.", title: "Verified Customer — Surrey" },
-  { body: "Professional, friendly, and fast. The driver took great care of my vehicle. Will definitely use them again if needed.", name: "Michael T.", title: "Verified Customer — Langley" },
-  { body: "Best towing company around! Fair prices and they really care about helping people. Highly recommend.", name: "Jennifer L.", title: "Verified Customer — Burnaby" },
-  { body: "Got a flat tire on the highway at rush hour. They were there in under 25 minutes and had me on my way. Unbelievable response time!", name: "David K.", title: "Verified Customer — Surrey" },
-  { body: "Locked my keys in the car at the mall. They opened it in minutes without any damage. Friendly and professional — saved my day!", name: "Lisa R.", title: "Verified Customer — Richmond" },
-  { body: "Needed a battery boost early in the morning before work. Quick, easy, and priced fairly. Definitely calling them again.", name: "Tom W.", title: "Verified Customer — Coquitlam" },
-  { body: "Had my car stuck in a ditch after a snowstorm. The team pulled it out carefully and got me moving again. Truly lifesavers!", name: "Amanda P.", title: "Verified Customer — White Rock" },
-];
-
+/* ─── Testimonials carousel (real Google reviews via EmbedSocial) ──── */
 function TestimonialsCarousel() {
   return (
     <section className="py-16 bg-slate-50 overflow-hidden" aria-label="Customer reviews">
@@ -615,43 +588,8 @@ function TestimonialsCarousel() {
   );
 }
 
-/* ─── FAQ accordion ───────────────────────────────────────── */
-const faqs = [
-  {
-    q: "How quickly can you reach me?",
-    a: "Our average response time is under 15 minutes across Surrey and the Lower Mainland. We dispatch the closest available driver the moment you call — day or night, weekends and holidays included.",
-  },
-  {
-    q: "How much does towing cost in Surrey?",
-    a: "We use flat-rate pricing with no hidden fees. The cost depends on vehicle type and distance. Call (778) 838-0014 for an instant quote — we give you a firm price before we dispatch.",
-  },
-  {
-    q: "Do you tow all types of vehicles?",
-    a: "Yes. We tow cars, SUVs, pickup trucks, electric vehicles, and light commercial vehicles. EVs must be transported on a wheel-lift truck — we have trucks available 24/7.",
-  },
-  {
-    q: "What areas do you cover?",
-    a: "We serve all of the Lower Mainland including Surrey, Langley, Burnaby, Richmond, Coquitlam, White Rock, Delta, Maple Ridge, Vancouver, and surrounding communities.",
-  },
-  {
-    q: "Can you help if I'm locked out of my car?",
-    a: "Absolutely. Our lockout service gets you back in your vehicle safely without causing damage to the lock or door. We arrive fast and handle all makes and models.",
-  },
-  {
-    q: "Do you offer roadside assistance without towing?",
-    a: "Yes — if your issue can be solved on the spot (flat tire, dead battery, out of fuel, locked out) we fix it right there. Towing is only arranged when the vehicle truly can't be driven.",
-  },
-  {
-    q: "Are you available on holidays and weekends?",
-    a: "We operate 24 hours a day, 7 days a week, including all statutory holidays. Emergencies don't follow business hours, and neither do we.",
-  },
-  {
-    q: "Is my vehicle insured while being towed?",
-    a: "We are fully licensed and insured in BC. Your vehicle is handled with professional care using proper equipment throughout every tow.",
-  },
-];
-
-function FaqSection() {
+/* ─── FAQ accordion (single source shared with the FAQ schema) ──── */
+function FaqSection({ faq }: { faq: FaqItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -675,7 +613,7 @@ function FaqSection() {
           </motion.div>
 
           <div className="flex flex-col divide-y divide-slate-100">
-            {faqs.map((faq, i) => {
+            {faq.map((item, i) => {
               const isOpen = openIndex === i;
               return (
                 <motion.div
@@ -693,7 +631,7 @@ function FaqSection() {
                     <span className={`text-[15px] font-semibold leading-snug transition-colors duration-200 ${
                       isOpen ? "text-amber-500" : "text-gray-900 group-hover:text-amber-500"
                     }`}>
-                      {faq.q}
+                      {item.q}
                     </span>
                     <span className={`shrink-0 w-7 h-7 rounded-full border flex items-center justify-center transition-all duration-200 ${
                       isOpen
@@ -721,7 +659,7 @@ function FaqSection() {
                         className="overflow-hidden"
                       >
                         <p className="pb-5 text-[14.5px] text-gray-500 leading-relaxed pr-12">
-                          {faq.a}
+                          {item.a}
                         </p>
                       </motion.div>
                     )}

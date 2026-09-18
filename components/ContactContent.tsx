@@ -4,6 +4,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { trackLead } from "@/lib/analytics";
 
 // reCAPTCHA v3 (invisible, score-based). A token is generated on submit via
 // grecaptcha.execute() and verified server-side.
@@ -67,6 +68,7 @@ export default function ContactContent() {
       if (!res.ok || !data.success) throw new Error(data.error || "Submission failed.");
       setStatus("success");
       setFormState({ name: "", email: "", phone: "", message: "" });
+      trackLead();
     } catch (err: unknown) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
@@ -126,7 +128,7 @@ export default function ContactContent() {
       ),
       title: "Service Area",
       sub: "",
-      content: <p className="text-slate-500 text-sm">Proudly serving Delta, White Rock, Langley, Burnaby, and surrounding areas in British Columbia.</p>,
+      content: <p className="text-slate-500 text-sm">Proudly serving Surrey and the Lower Mainland — including Langley, Burnaby, Richmond, Coquitlam, Delta, White Rock, Vancouver, and Maple Ridge.</p>,
     },
   ];
 

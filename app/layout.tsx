@@ -5,6 +5,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
+import CallTracking from "@/components/CallTracking";
+import { social, address } from "@/lib/business-facts";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -102,11 +104,10 @@ export const metadata: Metadata = {
   ...(googleSiteVerification
     ? { verification: { google: googleSiteVerification } }
     : {}),
-  icons: {
-    icon: [{ url: "/logo.png", type: "image/png" }],
-    shortcut: "/logo.png",
-    apple: "/logo.png",
-  },
+  // Favicons are provided via the Next.js file convention: app/icon.png
+  // (browser tab) and app/apple-icon.png (iOS home screen). Do not add a
+  // metadata.icons block pointing at /logo.png — that shipped a 307KB,
+  // non-square image as the favicon and duplicated the auto-generated tags.
   openGraph: {
     type: "website",
     locale: "en_CA",
@@ -151,14 +152,13 @@ const globalSchema = {
       "@id": "https://www.towingno1.com/#organization",
       name: "TowingNo.1",
       url: "https://www.towingno1.com",
-      foundingDate: "2010",
       logo: {
         "@type": "ImageObject",
         url: "https://www.towingno1.com/logo.png",
         width: 684,
         height: 365,
       },
-      sameAs: ["https://www.instagram.com/towing.no.1"],
+      sameAs: [social.instagram.value, social.facebook.value],
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+1-778-838-0014",
@@ -185,7 +185,7 @@ const globalSchema = {
       "@id": "https://www.towingno1.com/#localbusiness",
       name: "TowingNo.1",
       description:
-        "24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Emergency towing, battery boost, flat tire help, lockout service, fuel delivery, and vehicle recovery. Licensed and insured.",
+        "24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Emergency towing, battery boost, flat tire help, lockout service, fuel delivery, and vehicle recovery.",
       url: "https://www.towingno1.com",
       telephone: "+1-778-838-0014",
       email: "info@towingno1.com",
@@ -195,20 +195,30 @@ const globalSchema = {
       openingHours: "Mo-Su 00:00-23:59",
       currenciesAccepted: "CAD",
       paymentAccepted: "Cash, Credit Card, Debit Card",
-      foundingDate: "2010",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Surrey",
-        addressRegion: "BC",
-        addressCountry: "CA",
+        // streetAddress and postalCode are populated from lib/business-facts.ts
+        // once the owner provides and verifies the registered address. Do NOT
+        // hardcode a fabricated address. When verified, this block will include
+        // streetAddress and postalCode automatically.
+        ...(address.streetAddress.status === "verified" && address.streetAddress.value
+          ? { streetAddress: address.streetAddress.value }
+          : {}),
+        ...(address.postalCode.status === "verified" && address.postalCode.value
+          ? { postalCode: address.postalCode.value }
+          : {}),
+        addressLocality: address.city.value,
+        addressRegion: address.region.value,
+        addressCountry: address.country.value,
       },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "127",
-        bestRating: "5",
-        worstRating: "1",
-      },
+      // NOTE: aggregateRating / Review markup intentionally removed. It was
+      // unverified (4.9 / 127 with no source) and self-serving. Do NOT
+      // reintroduce review or rating structured data until (a) real reviews
+      // exist and (b) the current Google eligibility rules have been checked —
+      // local-business review markup is subject to self-serving restrictions
+      // (incl. reviews the business controls) and Google disallows aggregating
+      // reviews/ratings from other sites. Genuine reviews may be shown to users
+      // on-page without necessarily being eligible for review rich results.
       knowsAbout: [
         "Emergency towing",
         "Tow truck service",
@@ -300,6 +310,30 @@ const globalSchema = {
             name: "British Columbia",
           },
         },
+        {
+          "@type": "City",
+          name: "Cloverdale",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+        {
+          "@type": "City",
+          name: "South Surrey",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
+        {
+          "@type": "City",
+          name: "Aldergrove",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: "British Columbia",
+          },
+        },
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
@@ -368,9 +402,8 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         {/* End Google AdSense */}
-        <link rel="icon" href="/logo.png" type="image/png" sizes="any" />
-        <link rel="shortcut icon" href="/logo.png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        {/* Favicon <link> tags are auto-generated by Next.js from
+            app/icon.png and app/apple-icon.png — no manual tags needed. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
@@ -429,6 +462,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingCallButton />
+        <CallTracking />
 
         {/* ── Reamaze live-chat widget ──────────────────────────────── */}
         <Script
