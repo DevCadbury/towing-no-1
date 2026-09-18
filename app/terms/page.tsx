@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | TowingNo.1",
+  title: "Terms of Service",
   description:
     "Read the service terms for TowingNo.1 emergency towing and roadside assistance across Surrey and the Lower Mainland.",
   alternates: {

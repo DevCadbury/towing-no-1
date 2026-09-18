@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
-import { areaServedSchema } from "@/lib/service-areas";
+import { serviceAreaCompact } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
   title: "Flat Tire Help Surrey | 24/7 Roadside Tire Change Near Me",
@@ -32,7 +32,7 @@ const schema = {
   serviceType: "Flat Tire Roadside Assistance",
   description: "24/7 flat tire help across Surrey and the Lower Mainland. On-site tire change or tow to the nearest tire shop. Fast dispatch, upfront pricing.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: areaServedSchema,
+  areaServed: serviceAreaCompact,
 };
 
 const faq: FaqItem[] = [
@@ -136,6 +136,10 @@ export default function FlatTireHelpPage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Why Roadside Is Safer Than a DIY Change</h2>
                 <p className="text-slate-600 leading-relaxed">
                   Changing a tire sounds simple until you are kneeling beside a live lane with traffic passing at highway speed. A jack can slip on a slope or soft shoulder, and a wheel torqued by hand rarely matches factory specification. Our technicians work from the protected side of the vehicle, use proper jack points, and confirm tightness with a torque wrench, so you drive away knowing the wheel will not loosen a few kilometres down the road.
+                </p>
+                <p className="mt-4 text-sm text-slate-500">
+                  Not sure whether a roadside fix is right for your situation? Read our guide on{" "}
+                  <Link href="/blog/when-call-tow-vs-fix-yourself" className="text-amber-600 hover:underline">when to call a tow truck vs. fix it yourself at the roadside</Link>.
                 </p>
               </div>
 

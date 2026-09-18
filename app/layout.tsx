@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import CallTracking from "@/components/CallTracking";
-import { social } from "@/lib/business-facts";
+import { social, address } from "@/lib/business-facts";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -197,9 +197,19 @@ const globalSchema = {
       paymentAccepted: "Cash, Credit Card, Debit Card",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Surrey",
-        addressRegion: "BC",
-        addressCountry: "CA",
+        // streetAddress and postalCode are populated from lib/business-facts.ts
+        // once the owner provides and verifies the registered address. Do NOT
+        // hardcode a fabricated address. When verified, this block will include
+        // streetAddress and postalCode automatically.
+        ...(address.streetAddress.status === "verified" && address.streetAddress.value
+          ? { streetAddress: address.streetAddress.value }
+          : {}),
+        ...(address.postalCode.status === "verified" && address.postalCode.value
+          ? { postalCode: address.postalCode.value }
+          : {}),
+        addressLocality: address.city.value,
+        addressRegion: address.region.value,
+        addressCountry: address.country.value,
       },
       // NOTE: aggregateRating / Review markup intentionally removed. It was
       // unverified (4.9 / 127 with no source) and self-serving. Do NOT

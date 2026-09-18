@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
-import { areaServedSchema } from "@/lib/service-areas";
+import { serviceAreaCompact } from "@/lib/service-areas";
 import OfficialResources from "@/components/OfficialResources";
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ const schema = {
   serviceType: "Accident Recovery",
   description: "24/7 accident recovery towing across Surrey and the Lower Mainland. Professional collision scene handling and safe transport of damaged vehicles.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: areaServedSchema,
+  areaServed: serviceAreaCompact,
 };
 
 const faq: FaqItem[] = [
@@ -143,6 +143,9 @@ export default function AccidentRecoveryPage() {
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   We deliver to the body shop, dealership, ICBC facility, or storage yard of your choosing. If you have not decided yet, we can hold the vehicle securely until you and your adjuster agree on the next step, so a stressful day does not force a rushed decision.
+                </p>
+                <p className="mt-4 text-sm text-slate-500">
+                  Related guide: <Link href="/blog/understanding-towing-services" className="text-amber-600 hover:underline">Flatbed vs wheel-lift: which towing method does your vehicle need?</Link>
                 </p>
               </div>
 

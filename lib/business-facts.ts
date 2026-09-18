@@ -58,6 +58,29 @@ export const contact = {
   email: fact("info@towingno1.com", "verified", "Operational business email"),
 };
 
+/**
+ * Physical address — pending owner confirmation.
+ *
+ * TowingNo.1 is a mobile service-area business. Once a verified primary address
+ * is confirmed (e.g. a registered business address, not a fabricated one), add
+ * it here and flip the status to "verified". The global LocalBusiness schema in
+ * app/layout.tsx reads from this object so only ONE edit is needed.
+ *
+ * streetAddress and postalCode are "pending" because they have not been
+ * confirmed by the owner. Do NOT invent values.
+ *
+ * Currently the global schema emits addressLocality + addressRegion + country
+ * (sufficient for a service-area business), and will automatically gain the
+ * full street address once it is provided and verified here.
+ */
+export const address = {
+  streetAddress: fact("", "pending", "Awaiting owner confirmation of registered business address"),
+  postalCode:    fact("", "pending", "Awaiting owner confirmation of registered business postal code"),
+  city:          fact("Surrey", "verified", "Primary operating city"),
+  region:        fact("BC", "verified", "Province"),
+  country:       fact("CA", "verified", "Country code"),
+};
+
 /* ─── Geography (operational — verified) ───────────────────────────── */
 // The concrete served-city list lives in lib/service-areas.ts (each has a
 // location page). This is the human-facing region phrasing only.

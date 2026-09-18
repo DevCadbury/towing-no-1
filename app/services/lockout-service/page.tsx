@@ -2,10 +2,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
-import { areaServedSchema } from "@/lib/service-areas";
+import { serviceAreaCompact } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
-  title: "Car Lockout Service Surrey | Keys Locked Inside — We Help 24/7",
+  title: "Car Lockout Service Surrey | Keys Locked Inside | We Help 24/7",
   description:
     "Locked your keys in the car in Surrey or the Lower Mainland? TowingNo.1 opens your vehicle safely without damage, 24/7. Call (778) 838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/lockout-service" },
@@ -32,7 +32,7 @@ const schema = {
   serviceType: "Vehicle Lockout",
   description: "24/7 car lockout service for all vehicles across Surrey and the Lower Mainland. We open your vehicle safely without damage using professional tools.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: areaServedSchema,
+  areaServed: serviceAreaCompact,
 };
 
 const faq: FaqItem[] = [

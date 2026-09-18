@@ -2,13 +2,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
-import { areaServedSchema } from "@/lib/service-areas";
+import { serviceAreaCompact } from "@/lib/service-areas";
 import OfficialResources from "@/components/OfficialResources";
 
 export const metadata: Metadata = {
-  title: "Winching & Extraction Surrey | Stuck in Ditch or Snow — 24/7",
+  title: "Winching & Extraction Surrey | Vehicle Recovery | 24/7",
   description:
-    "Stuck in a ditch, mud, or snow in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 winching and extraction with upfront pricing. Call (778) 838-0014.",
+    "Vehicle stuck in a ditch, mud, or snow in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 winching and vehicle extraction. Call (778) 838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/winching-extraction" },
   openGraph: {
     type: "website",
@@ -33,7 +33,7 @@ const schema = {
   serviceType: "Vehicle Winching and Extraction",
   description: "24/7 winching and extraction for vehicles stuck in ditches, mud, snow, or off-road across Surrey and the Lower Mainland.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: areaServedSchema,
+  areaServed: serviceAreaCompact,
 };
 
 const faq: FaqItem[] = [

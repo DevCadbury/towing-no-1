@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Blog - Towing Tips & Road Safety | TowingNo.1 BC",
+  title: "Blog — Towing Tips & Road Safety in BC",
   description: "Read helpful articles about vehicle maintenance, road safety, and towing tips from the experts at TowingNo.1 in BC.",
   alternates: {
     canonical: "https://www.towingno1.com/blog",

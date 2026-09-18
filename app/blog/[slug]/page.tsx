@@ -33,13 +33,32 @@ const RELATED_SERVICES: { href: string; label: string; match: RegExp }[] = [
   { href: "/services/lockout-service", label: "Lockout Service", match: /lock|keys?|fob/i },
 ];
 
-function relatedServiceLinks(post: { title: string; excerpt: string; keywords: string[] }): { href: string; label: string }[] {
+// Blog posts that are topically related to specific service pages, used to
+// inject contextual cross-links within each blog article's sidebar.
+const RELATED_BLOG_POSTS: { href: string; label: string; match: RegExp }[] = [
+  { href: "/blog/understanding-towing-services", label: "Types of towing services explained", match: /tow(ing)?\s*(service|truck|type)|flatbed|wheel.?lift/i },
+  { href: "/blog/when-call-tow-vs-fix-yourself", label: "When to call a tow vs. fix it yourself", match: /diy|yourself|fix.?it|when.?to.?call|roadside.*decision/i },
+  { href: "/blog/signs-car-battery-dying", label: "Signs your car battery is dying", match: /battery|jump|dead|charg/i },
+  { href: "/blog/prepare-vehicle-winter-bc", label: "Preparing your vehicle for BC winter", match: /winter|snow|ice|season|cold/i },
+  { href: "/blog/what-to-do-car-breaks-down-highway", label: "What to do when your car breaks down", match: /breakdown|break.?down|highway|stall/i },
+  { href: "/blog/emergency-kit-essentials", label: "Emergency kit essentials for drivers", match: /kit|emergency|prepare|supplies/i },
+];
+
+function relatedServiceLinks(post: { title: string; excerpt: string; keywords: string[]; slug: string }): { href: string; label: string }[] {
   const hay = `${post.title} ${post.excerpt} ${post.keywords.join(" ")}`.toLowerCase();
   const matched = RELATED_SERVICES.filter((s) => s.match.test(hay)).map(({ href, label }) => ({ href, label }));
   const withPrimary = matched.some((m) => m.href === "/services/emergency-towing")
     ? matched
     : [{ href: "/services/emergency-towing", label: "Emergency Towing Surrey" }, ...matched];
   return withPrimary.slice(0, 4);
+}
+
+function relatedBlogLinks(post: { title: string; excerpt: string; keywords: string[]; slug: string }): { href: string; label: string }[] {
+  const hay = `${post.title} ${post.excerpt} ${post.keywords.join(" ")}`.toLowerCase();
+  return RELATED_BLOG_POSTS
+    .filter((b) => b.href !== `/blog/${post.slug}` && b.match.test(hay))
+    .map(({ href, label }) => ({ href, label }))
+    .slice(0, 3);
 }
 
 /**
@@ -202,6 +221,7 @@ export default async function BlogPostPage({ params }: Props) {
     { href: "/locations/surrey", label: "Tow Truck Surrey" },
     { href: "/locations/langley", label: "Towing Langley" },
   ];
+  const relatedBlog = relatedBlogLinks(post);
 
   // Publish/modified dates, never in the future. dateModified === datePublished
   // unless the post declares a real updatedDate.
@@ -313,7 +333,7 @@ export default async function BlogPostPage({ params }: Props) {
             {/* CTA */}
             <div className="mt-12 p-8 bg-navy-950 rounded-2xl text-white text-center">
               <h3 className="text-2xl font-bold mb-3">Need Roadside Help Right Now?</h3>
-              <p className="text-slate-300 mb-6">Available 24/7 across the Lower Mainland — average response time under 15 minutes.</p>
+              <p className="text-slate-300 mb-6">Available 24/7 across the Lower Mainland. Free quote before dispatch.</p>
               <a
                 href="tel:+17788380014"
                 className="inline-flex items-center gap-2 btn-amber text-lg py-4 px-10 !rounded-full"
@@ -327,7 +347,7 @@ export default async function BlogPostPage({ params }: Props) {
 
             {/* Internal links */}
             <div className="mt-8 p-6 bg-slate-50 rounded-2xl border border-slate-200">
-              <h3 className="font-bold text-navy-900 mb-4 text-sm uppercase tracking-wide">Related Services & Areas</h3>
+              <h2 className="font-bold text-navy-900 mb-4 text-sm uppercase tracking-wide">Related Services &amp; Areas</h2>
               <div className="grid sm:grid-cols-2 gap-2">
                 {relatedLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="text-sm text-amber-600 hover:text-amber-700 font-medium flex items-center gap-1">
@@ -335,6 +355,18 @@ export default async function BlogPostPage({ params }: Props) {
                   </Link>
                 ))}
               </div>
+              {relatedBlog.length > 0 && (
+                <div className="mt-4 pt-4 border-t border-slate-200">
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-wide mb-2">Related Articles</p>
+                  <div className="space-y-1">
+                    {relatedBlog.map((link) => (
+                      <Link key={link.href} href={link.href} className="text-sm text-navy-900 hover:text-amber-600 font-medium flex items-center gap-1 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5 shrink-0 text-slate-400" aria-hidden="true"><path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd"/></svg> {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
-import { areaServedSchema } from "@/lib/service-areas";
+import { serviceAreaCompact } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
   title: "Vehicle Transport Surrey | Car Transport Lower Mainland BC",
   description:
-    "Need vehicle transport in Surrey or the Lower Mainland? TowingNo.1 provides secure, on-time transport for all makes and models. Call (778) 838-0014.",
+    "Need vehicle transport or flatbed towing in Surrey or the Lower Mainland? TowingNo.1 provides secure, on-time transport for all makes — running or non-running. Call (778) 838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/vehicle-transport" },
   openGraph: {
     type: "website",
@@ -32,7 +32,7 @@ const schema = {
   serviceType: "Vehicle Transport",
   description: "Secure vehicle transport across Surrey and the Lower Mainland. On-time pickup and delivery for all vehicle types including non-running vehicles.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: areaServedSchema,
+  areaServed: serviceAreaCompact,
 };
 
 const faq: FaqItem[] = [

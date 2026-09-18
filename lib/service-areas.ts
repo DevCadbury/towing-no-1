@@ -688,6 +688,18 @@ export function isServiceAreaSlug(slug: string): boolean {
   return serviceAreaSlugs.has(slug);
 }
 
+/**
+ * Compact single-node areaServed for Service schema.
+ * Use this on individual service pages instead of the full 13-city expansion —
+ * the detailed per-city list lives on the global LocalBusiness (layout.tsx).
+ * This cuts ~1.5 KB of JSON-LD payload per service page (SEMrush Issue #2).
+ */
+export const serviceAreaCompact = {
+  "@type": "AdministrativeArea" as const,
+  name: "Lower Mainland",
+  containedInPlace: { "@type": "AdministrativeArea" as const, name: "British Columbia" },
+};
+
 
 // Structured areaServed list (all served cities) for Service JSON-LD, matching
 // the global LocalBusiness areaServed shape. Service pages use this so every
