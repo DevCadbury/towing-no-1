@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
-import { areaServedSchema } from "@/lib/service-areas";
+import { serviceAreaCompact } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
   title: "Emergency Towing Surrey | 24/7 Tow Truck Near Me",
@@ -36,7 +36,7 @@ const schema = {
   description:
     "24/7 emergency towing for cars, SUVs, trucks, and electric vehicles across Surrey and the Lower Mainland. Flatbed and wheel-lift trucks available.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: areaServedSchema,
+  areaServed: serviceAreaCompact,
   offers: {
     "@type": "Offer",
     priceCurrency: "CAD",
@@ -171,6 +171,9 @@ export default function EmergencyTowingPage() {
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   When you call, mention the make, the drive type, and whether the vehicle still rolls and steers. That one detail lets dispatch send the correct truck the first time, which keeps your wait short and protects your transmission and bumpers from avoidable harm during loading.
+                </p>
+                <p className="mt-4 text-sm text-slate-500">
+                  Learn more: <Link href="/blog/understanding-towing-services" className="text-amber-600 hover:underline">Understanding the different types of towing services</Link>
                 </p>
               </div>
 

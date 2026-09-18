@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonical = `https://www.towingno1.com/locations/${area.slug}`;
 
   return {
-    title: `Tow Truck ${area.city} | 24/7 Emergency Towing & Roadside Assistance`,
-    description: `Need a tow truck in ${area.city}? TowingNo.1 dispatches in under 15 minutes, 24/7. Emergency towing, battery boost, lockout, flat tire & more. Free quote — call (778) 838-0014.`,
+    title: `Tow Truck ${area.city} | 24/7 Towing`,
+    description: `Need a tow truck in ${area.city}? TowingNo.1 provides 24/7 emergency towing, battery boost, lockout service, and flat tire help across the Lower Mainland. Free quote — call (778) 838-0014.`,
     keywords: [
       `tow truck ${area.city.toLowerCase()}`,
       `towing ${area.city.toLowerCase()}`,

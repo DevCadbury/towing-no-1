@@ -457,3 +457,18 @@ All five items done. `npm run seo:all` exit 0 — guard 0 violations, `seo-check
 **Expected impact:** LLM/answer-engine crawlers get an accurate, link-rich overview (services, priority-ordered areas, guides, contact) without any unverified claim.
 **Validation:** `npm run seo:all` exit 0 — build emits `/llms.txt` (static), guard 0, `seo-check` 0 errors/0 warnings, 34/34 quality pages, 0 dead links, 34/34 reachable, preservation byte-identical (the new route + prose edit touch no tracked surface — no baseline update needed). Verified the served `/llms.txt` body: valid H1 + blockquote structure, all 8 services, 12 areas (Cloverdale first), 6 guides, contact block, and **no** "under 15 min".
 **Status:** Completed
+
+
+---
+
+## POLISH — Fix doubled brand suffix + over-long titles (from OpenSEO audit)
+
+**URL:** `/about`, `/contact`, `/blog`, `/privacy`, `/terms`, all 12 `/locations/*`
+**File:** `app/about/page.tsx`, `app/contact/page.tsx`, `app/blog/page.tsx`, `app/privacy/page.tsx`, `app/terms/page.tsx`, `app/locations/[city]/page.tsx`
+**Problem:** An OpenSEO site crawl (34/34 pages) flagged 26 "title too long" issues. Root cause: the root layout defines `metadata.title.template = "%s | TowingNo.1"`, but several pages' `metadata.title` ALSO ended in "TowingNo.1", so the rendered `<title>` doubled the brand (e.g. `Privacy Policy | TowingNo.1 | TowingNo.1`, and About/Blog/Contact repeated it). The dynamic `/locations/[city]` title was also long (`Tow Truck {city} | 24/7 Emergency Towing & Roadside Assistance` + template ≈ 70+ chars).
+**Change:** Removed the manual brand from each page's top-level `metadata.title` so the template appends it exactly once, and shortened where needed: Contact → "Contact Us | 24/7 Emergency Towing in BC"; About → "About Us | Licensed & Insured Towing in BC"; Blog → "Blog — Towing Tips & Road Safety in BC"; Privacy → "Privacy Policy"; Terms → "Terms of Service"; `/locations/[city]` → "Tow Truck {city} — 24/7 Towing & Roadside Help". Left the `openGraph`/`twitter` titles as-is (they don't use the template). Also dropped the unverified "dispatches in under 15 minutes" claim from the `[city]` meta description while editing it.
+**Reason:** Clean, single-brand titles within ~50–65 chars render properly in SERPs and avoid the truncated/duplicated look.
+**Expected impact:** Correct, non-truncated title tags across the location + utility pages; better SERP presentation.
+**Validation:** `npm run build` PASS. Rendered `<title>` verified on privacy (27), terms (29), contact (53), blog (57), about (59), locations/surrey (65) — all brand-once, no doubling. `npm run seo:all` exit 0 (guard 0, seo 0 errors/0 warnings, 34/34 quality, 0 dead links, 34/34 reachable, preservation re-captured for the intended metadata diffs).
+**Note (not yet done):** The crawl also flagged 6 "heading-order skip" (h1→h3) info-level a11y items; deferred pending the exact page+selector list from OpenSEO's `get_audit_issues` (tools were mid-reload). These are accessibility niceties, not ranking factors.
+**Status:** Completed (titles); heading-order skips pending exact locations.

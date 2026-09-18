@@ -239,7 +239,7 @@ Phones die, and a low battery drains even faster in freezing weather, so a power
     date: "January 12, 2026",
     image: "/blog/when-to-call-tow.jpg",
     slug: "when-call-tow-vs-fix-yourself",
-    keywords: ["when to call tow truck", "roadside DIY vs tow", "tow truck BC"],
+    keywords: ["when to call tow truck", "roadside DIY vs tow", "tow truck BC", "towing services BC"],
     content: `
 Not every breakdown needs a tow truck — but knowing the difference can save you money and keep you safe. Here's a practical guide for BC drivers.
 
@@ -288,7 +288,7 @@ If the fix is quick, you have the right tools, and you are somewhere safe, a car
     date: "January 5, 2026",
     image: "/blog/types-of-towing.jpg",
     slug: "understanding-towing-services",
-    keywords: ["types of towing services", "flatbed tow truck", "emergency towing BC", "towing services explained"],
+    keywords: ["types of towing services", "flatbed tow truck", "emergency towing BC", "towing services explained", "towing services BC"],
     content: `
 When you call for a tow, the right type of service makes a difference for your vehicle's safety. Here's an overview of the main towing methods and when each is used.
 

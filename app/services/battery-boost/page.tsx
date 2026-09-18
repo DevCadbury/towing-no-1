@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
-import { areaServedSchema } from "@/lib/service-areas";
+import { serviceAreaCompact } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
   title: "Battery Boost Surrey | 24/7 Jump-Start Service Near Me",
@@ -33,7 +33,7 @@ const schema = {
   serviceType: "Battery Boost",
   description: "24/7 battery boost and jump-start service for all vehicles across Surrey and the Lower Mainland. Free battery test included.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: areaServedSchema,
+  areaServed: serviceAreaCompact,
 };
 
 const faq: FaqItem[] = [
@@ -151,6 +151,8 @@ export default function BatteryBoostPage() {
                 </ul>
                 <p className="mt-4 text-sm text-slate-500">
                   Read more: <Link href="/blog/signs-car-battery-dying" className="text-amber-600 hover:underline">5 Signs Your Car Battery is Dying</Link>
+                  {" · "}
+                  <Link href="/blog/when-call-tow-vs-fix-yourself" className="text-amber-600 hover:underline">Roadside DIY or professional help — how to decide</Link>
                 </p>
               </div>
 

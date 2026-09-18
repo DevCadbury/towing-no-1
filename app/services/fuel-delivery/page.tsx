@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
-import { areaServedSchema } from "@/lib/service-areas";
+import { serviceAreaCompact } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
   title: "Fuel Delivery Surrey | Emergency Gas Delivery Near Me 24/7",
@@ -32,7 +32,7 @@ const schema = {
   serviceType: "Fuel Delivery",
   description: "24/7 emergency fuel delivery across Surrey and the Lower Mainland. Gasoline and diesel delivered directly to your location.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: areaServedSchema,
+  areaServed: serviceAreaCompact,
 };
 
 const faq: FaqItem[] = [
