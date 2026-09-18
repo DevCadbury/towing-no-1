@@ -29,24 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (area.slug === "surrey") {
     return {
       title: {
-        absolute: "Towing Surrey BC | 24/7 Tow Truck & Roadside Assistance",
+        absolute: "Towing Surrey BC | 24/7 Tow Truck | TowingNo.1",
       },
       description:
         "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
-      keywords: [
-        "towing surrey",
-        "tow truck surrey",
-        "towing service surrey",
-        "towing company surrey",
-        "surrey towing",
-        "towing in surrey",
-        "surrey towing services",
-        "towing surrey bc",
-        "emergency towing surrey",
-        "roadside assistance surrey",
-        "24/7 towing surrey",
-      ],
       alternates: { canonical },
+      keywords: [],
       openGraph: {
         type: "website",
         url: canonical,

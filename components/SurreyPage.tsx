@@ -125,7 +125,7 @@ export default function SurreyPage() {
               {/* Intro */}
               <div>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Surrey is the busiest territory we cover — from the Guildford big-box corridor down through Newton, out to the Cloverdale fairgrounds, and along the fast-moving traffic of Highway 99. Breakdowns happen in every kind of setting: packed mall parkades, quiet cul-de-sacs off 152nd Street, and live highway shoulders. Because we stage drivers near Surrey City Centre and the King George Boulevard corridor rather than dispatching from a single remote yard, our trucks reach most Surrey calls quickly.
+                  Surrey is the busiest territory we cover — from the Guildford big-box corridor down through Newton, out to the Cloverdale fairgrounds, and along the fast-moving traffic of Highway 99. Breakdowns happen in every kind of setting: packed mall parkades, quiet cul-de-sacs off 152nd Street, and live highway shoulders. We keep drivers distributed across Surrey so our trucks reach most calls quickly, wherever you are in the city.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   Call <a href="tel:+17788380014" className="font-semibold text-amber-600 hover:text-amber-700">(778) 838-0014</a> and give us your nearest major intersection — we will route the closest available driver straight to you, give you a firm flat-rate price, and confirm your ETA before you hang up.
