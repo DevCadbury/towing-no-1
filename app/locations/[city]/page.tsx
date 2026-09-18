@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getServiceAreaBySlug, serviceAreas, slugifyCity, isServiceAreaSlug } from "@/lib/service-areas";
+import SurreyPage from "@/components/SurreyPage";
 
 interface Props {
   params: Promise<{ city: string }>;
@@ -22,6 +23,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const canonical = `https://www.towingno1.com/locations/${area.slug}`;
+
+  // Surrey gets its own optimised title + description targeting the full
+  // "towing surrey" keyword cluster identified in the SERP brief.
+  if (area.slug === "surrey") {
+    return {
+      title: "Towing Surrey BC | 24/7 Tow Truck & Roadside Assistance",
+      description:
+        "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+      keywords: [
+        "towing surrey",
+        "tow truck surrey",
+        "towing service surrey",
+        "towing company surrey",
+        "surrey towing",
+        "towing in surrey",
+        "surrey towing services",
+        "towing surrey bc",
+        "emergency towing surrey",
+        "roadside assistance surrey",
+        "24/7 towing surrey",
+      ],
+      alternates: { canonical },
+      openGraph: {
+        type: "website",
+        url: canonical,
+        title: "Towing Surrey BC | 24/7 Tow Truck & Roadside Assistance",
+        description:
+          "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "Towing Surrey BC | 24/7 Tow Truck & Roadside Assistance",
+        description:
+          "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+      },
+    };
+  }
 
   return {
     title: `Tow Truck ${area.city} | 24/7 Towing`,
@@ -56,6 +94,54 @@ export default async function ServiceAreaPage({ params }: Props) {
 
   if (!area) {
     notFound();
+  }
+
+  // Surrey uses a dedicated SEO landing page with the exact H1/H2 structure,
+  // keyword cluster, and full-length content targeting "towing surrey bc".
+  if (area.slug === "surrey") {
+    const surreyBreadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.towingno1.com" },
+        { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.towingno1.com/locations" },
+        { "@type": "ListItem", position: 3, name: "Towing Surrey BC", item: "https://www.towingno1.com/locations/surrey" },
+      ],
+    };
+
+    const surreyServiceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.towingno1.com/locations/surrey#service",
+      name: "24/7 Towing Service Surrey BC",
+      serviceType: "Emergency towing and roadside assistance",
+      provider: { "@id": "https://www.towingno1.com/#localbusiness" },
+      areaServed: {
+        "@type": "City",
+        name: "Surrey",
+        containedInPlace: { "@type": "AdministrativeArea", name: "British Columbia" },
+      },
+      url: "https://www.towingno1.com/locations/surrey",
+    };
+
+    const surreyFaqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: area.faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    };
+
+    return (
+      <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(surreyServiceSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(surreyFaqSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(surreyBreadcrumb) }} />
+        <SurreyPage />
+      </>
+    );
   }
 
   const canonical = `https://www.towingno1.com/locations/${area.slug}`;

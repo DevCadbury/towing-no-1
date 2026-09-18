@@ -17,11 +17,11 @@ const serviceAreaData: ServiceArea[] = [
   {
     slug: "surrey",
     city: "Surrey",
-    headline: "Tow Truck Surrey — 24/7 Emergency Towing & Roadside Assistance",
+    headline: "24/7 Towing Service in Surrey, BC",
     summary:
-      "Fast tow truck dispatch across Surrey for breakdowns, collisions, lockouts, battery issues, and flat tires. We cover all Surrey neighbourhoods including Guildford, Newton, Fleetwood, Cloverdale, and South Surrey with fast, local dispatch.",
+      "TowingNo.1 provides 24/7 emergency towing and roadside assistance across Surrey, BC. We dispatch immediately for emergency towing, battery boosts, car lockouts, flat tires, fuel delivery, and accident recovery throughout Surrey and surrounding communities. Call (778) 838-0014.",
     intro: [
-      "Surrey is the busiest territory we cover, and the sprawl from the Guildford big-box corridor down through Newton and out to the Cloverdale fairgrounds means breakdowns happen in every kind of setting — packed mall parkades, quiet cul-de-sacs off 152nd Street, and fast-moving traffic on Highway 99. Because we keep drivers staged near Surrey City Centre and the King George Boulevard corridor rather than dispatching from a single yard across town, our trucks reach most Surrey calls in well under fifteen minutes.",
+      "Surrey is the busiest territory we cover, and the sprawl from the Guildford big-box corridor down through Newton and out to the Cloverdale fairgrounds means breakdowns happen in every kind of setting — packed mall parkades, quiet cul-de-sacs off 152nd Street, and fast-moving traffic on Highway 99. Because we keep drivers staged near Surrey City Centre and the King George Boulevard corridor rather than dispatching from a single yard across town, our trucks reach most Surrey calls quickly.",
       "Whalley and the City Centre area generate a steady stream of parkade and curbside calls, while South Surrey and Morgan Crossing tend toward longer highway runs along 99 and 16th Avenue. Whichever pocket of the city you are stranded in, give our dispatcher the nearest major intersection — King George and 104th, Fraser Highway and 152nd, or the Highway 10 and 64th interchange — and we will route the closest available driver straight to you.",
     ],
     whyChooseUs: [
@@ -48,24 +48,28 @@ const serviceAreaData: ServiceArea[] = [
     localLandmarks: ["Surrey Central SkyTrain", "Guildford Town Centre", "Newton Exchange", "Cloverdale Fairgrounds"],
     faq: [
       {
-        q: "How fast can a tow truck reach me in Surrey?",
-        a: "We dispatch the nearest available driver immediately when you call (778) 838-0014.",
+        q: "How quickly can a tow truck reach me in Surrey?",
+        a: "We dispatch the nearest available driver the moment you call (778) 838-0014 and give you a live ETA before you commit. Because we stage drivers across Surrey rather than running from a single yard, help is usually close by.",
+      },
+      {
+        q: "Do you provide 24/7 towing in Surrey?",
+        a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week in Surrey — including evenings, weekends, and all statutory holidays. Emergencies don't follow business hours, and neither do we.",
+      },
+      {
+        q: "Do you provide roadside assistance in Surrey?",
+        a: "Yes. Beyond towing, we offer battery boosts and jump-starts, flat tire changes, car lockout service, and fuel delivery across all Surrey neighbourhoods. Many calls are resolved on the spot without needing a tow.",
+      },
+      {
+        q: "Do you tow cars after accidents in Surrey?",
+        a: "Yes. Our accident recovery service handles collision scenes throughout Surrey — we transport damaged vehicles safely to any repair shop, dealership, or storage facility you choose, and provide documentation that aligns with ICBC claims.",
+      },
+      {
+        q: "What areas of Surrey do you serve?",
+        a: "We cover all of Surrey including Cloverdale, Fleetwood, Guildford, Newton, South Surrey, and Whalley. We also dispatch to neighbouring communities including Langley, Delta, White Rock, and Burnaby.",
       },
       {
         q: "How much does towing cost in Surrey?",
-        a: "We use flat-rate pricing with no hidden fees. The cost depends on vehicle type and distance. Call (778) 838-0014 for an instant quote before we dispatch.",
-      },
-      {
-        q: "Do you cover South Surrey and White Rock?",
-        a: "Yes. We serve all of Surrey including South Surrey, and we also cover White Rock, Delta, and Langley with the same 24/7 response.",
-      },
-      {
-        q: "Are you available on holidays in Surrey?",
-        a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week, including all statutory holidays.",
-      },
-      {
-        q: "Do you tow on Highway 99 and King George Boulevard in Surrey?",
-        a: "Yes. We respond to breakdowns on Highway 99, King George Boulevard, 152nd Street, and all major Surrey corridors. Call us and give your nearest cross-street or kilometre marker.",
+        a: "We use flat-rate pricing based on your vehicle type and the distance involved. There is no meter running and no hidden fees. Call (778) 838-0014 for an upfront quote before we dispatch — you know the exact price before a truck rolls.",
       },
     ],
   },

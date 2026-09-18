@@ -73,7 +73,7 @@ const services = [
 const featuredAreas = [
   { href: "/locations/cloverdale", title: "Cloverdale Towing", subtitle: "Town Centre, Clayton Heights & Hwy 10" },
   { href: "/locations/langley", title: "Towing Langley", subtitle: "Emergency and scheduled towing support" },
-  { href: "/locations/surrey", title: "Tow Truck Surrey", subtitle: "Fast 24/7 dispatch across all Surrey neighbourhoods" },
+  { href: "/locations/surrey", title: "Towing Surrey BC", subtitle: "24/7 emergency towing & roadside assistance across all Surrey neighbourhoods" },
   { href: "/locations/south-surrey", title: "South Surrey Towing", subtitle: "Grandview, Morgan Crossing & Ocean Park" },
   { href: "/locations/white-rock", title: "White Rock Towing", subtitle: "24/7 roadside and towing support" },
   { href: "/locations/maple-ridge", title: "Maple Ridge Towing", subtitle: "Fast dispatch across Maple Ridge & Pitt Meadows" },
