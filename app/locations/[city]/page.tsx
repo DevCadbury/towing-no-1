@@ -57,10 +57,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (area.slug === "langley") {
     return {
       title: {
-        absolute: "Towing Langley BC | 24/7 Tow Truck & Roadside Assistance | TowingNo.1",
+        absolute: "Tow Truck Langley | 24/7 Towing | TowingNo.1",
       },
       description:
-        "24/7 towing in Langley, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+        "24/7 towing in Langley, BC. Emergency towing, roadside assistance, battery boost, flat tire, lockout and vehicle recovery. Call 778-838-0014.",
       alternates: { canonical },
       keywords: [],
       openGraph: {
@@ -82,15 +82,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Tow Truck ${area.city} | 24/7 Towing`,
     description: `Need a tow truck in ${area.city}? TowingNo.1 provides 24/7 emergency towing, battery boost, lockout service, and flat tire help across the Lower Mainland. Free quote — call (778) 838-0014.`,
-    keywords: [
-      `tow truck ${area.city.toLowerCase()}`,
-      `towing ${area.city.toLowerCase()}`,
-      `towing near me ${area.city.toLowerCase()}`,
-      `roadside assistance ${area.city.toLowerCase()}`,
-      `emergency towing ${area.city.toLowerCase()}`,
-      "tow truck near me",
-      "24/7 towing",
-    ],
     alternates: { canonical },
     openGraph: {
       type: "website",
