@@ -21,7 +21,7 @@ const serviceAreaData: ServiceArea[] = [
     summary:
       "TowingNo.1 provides 24/7 emergency towing and roadside assistance across Surrey, BC. We dispatch immediately for emergency towing, battery boosts, car lockouts, flat tires, fuel delivery, and accident recovery throughout Surrey and surrounding communities. Call (778) 838-0014.",
     intro: [
-      "Surrey is the busiest territory we cover, and the sprawl from the Guildford big-box corridor down through Newton and out to the Cloverdale fairgrounds means breakdowns happen in every kind of setting — packed mall parkades, quiet cul-de-sacs off 152nd Street, and fast-moving traffic on Highway 99. Because we keep drivers staged near Surrey City Centre and the King George Boulevard corridor rather than dispatching from a single yard across town, our trucks reach most Surrey calls quickly.",
+      "Surrey is the busiest territory we cover, and the sprawl from the Guildford big-box corridor down through Newton and out to the Cloverdale fairgrounds means breakdowns happen in every kind of setting — packed mall parkades, quiet cul-de-sacs off 152nd Street, and fast-moving traffic on Highway 99. We keep drivers distributed across Surrey so our trucks reach most calls quickly, wherever you are in the city.",
       "Whalley and the City Centre area generate a steady stream of parkade and curbside calls, while South Surrey and Morgan Crossing tend toward longer highway runs along 99 and 16th Avenue. Whichever pocket of the city you are stranded in, give our dispatcher the nearest major intersection — King George and 104th, Fraser Highway and 152nd, or the Highway 10 and 64th interchange — and we will route the closest available driver straight to you.",
     ],
     whyChooseUs: [

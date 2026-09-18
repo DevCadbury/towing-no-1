@@ -28,7 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // "towing surrey" keyword cluster identified in the SERP brief.
   if (area.slug === "surrey") {
     return {
-      title: "Towing Surrey BC | 24/7 Tow Truck & Roadside Assistance",
+      title: {
+        absolute: "Towing Surrey BC | 24/7 Tow Truck & Roadside Assistance",
+      },
       description:
         "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
       keywords: [
