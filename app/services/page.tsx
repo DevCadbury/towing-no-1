@@ -133,6 +133,18 @@ const servicesSchema = {
         areaServed: AREA_LOWER_MAINLAND,
       },
     },
+    {
+      "@type": "ListItem",
+      position: 9,
+      item: {
+        "@type": "Service",
+        name: "Roadside Assistance",
+        url: "https://www.towingno1.com/services/roadside-assistance",
+        description: "24/7 on-site roadside assistance: battery boost, flat tire, lockout service, and fuel delivery across the Lower Mainland.",
+        provider: PROVIDER_REF,
+        areaServed: AREA_LOWER_MAINLAND,
+      },
+    },
   ],
 };
 
@@ -154,7 +166,7 @@ const allServices = [
     title: "Emergency Towing",
     badge: "24/7",
     desc: "Fast dispatch for breakdowns, collisions, and stalled vehicles. Wheel-lift trucks available for all vehicle types including EVs.",
-    bullets: ["Under 15 min response", "Wheel-lift trucks", "All vehicle types including EVs", "Tow to any destination"],
+    bullets: ["Immediate dispatch", "Wheel-lift trucks", "All vehicle types including EVs", "Tow to any destination"],
   },
   {
     id: "flat-tire",
@@ -173,8 +185,18 @@ const allServices = [
     alt: "Battery boost jump-start service Surrey — dead car battery",
     title: "Battery Boost",
     badge: "Quick",
-    desc: "Professional jump-start service with free battery and charging system test. We dispatch in under 15 minutes across Surrey and the Lower Mainland.",
+    desc: "Professional jump-start service with free battery and charging system test across Surrey and the Lower Mainland.",
     bullets: ["Professional jump-start", "Free battery test included", "Safe boosting procedures", "Available 24/7"],
+  },
+  {
+    id: "roadside-assistance",
+    href: "/services/roadside-assistance",
+    img: "/image/Battery_Boost.png",
+    alt: "Roadside assistance service — technician helping a stranded driver",
+    title: "Roadside Assistance",
+    badge: "On-site",
+    desc: "Battery boost, flat tire help, lockout service, fuel delivery, and breakdown support. We fix the problem on the spot when possible.",
+    bullets: ["Battery boost & jump-start", "Flat tire & lockout service", "Fuel delivery", "Towing when needed"],
   },
   {
     id: "accident-recovery",
@@ -214,7 +236,7 @@ const allServices = [
     title: "Fuel Delivery",
     badge: "Emergency",
     desc: "Run out of gas? We deliver gasoline or diesel directly to your location so you can reach the nearest station.",
-    bullets: ["Gasoline & diesel available", "Fast dispatch under 15 min", "Highway & roadside delivery", "Available 24/7"],
+    bullets: ["Gasoline & diesel available", "Highway & roadside delivery", "Available 24/7"],
   },
   {
     id: "winching",
