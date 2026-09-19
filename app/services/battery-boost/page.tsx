@@ -40,14 +40,6 @@ const schema = {
     "24/7 battery boost and jump start service for all vehicles across Surrey and the Lower Mainland. Battery and charging system test included.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
   areaServed: serviceAreaCompact,
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "CAD",
-    priceSpecification: {
-      "@type": "PriceSpecification",
-      description: "Flat-rate pricing. Call (778) 838-0014 for an upfront quote before dispatch.",
-    },
-  },
 };
 
 const faq: FaqItem[] = [

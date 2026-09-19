@@ -39,14 +39,6 @@ const schema = {
     "24/7 emergency fuel delivery across Surrey and the Lower Mainland. Fuel delivered directly to your location so you can reach the nearest station.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
   areaServed: serviceAreaCompact,
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "CAD",
-    priceSpecification: {
-      "@type": "PriceSpecification",
-      description: "Flat-rate pricing. Call (778) 838-0014 for an upfront quote before dispatch.",
-    },
-  },
 };
 
 const faq: FaqItem[] = [

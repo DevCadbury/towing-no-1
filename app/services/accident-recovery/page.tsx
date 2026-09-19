@@ -40,14 +40,6 @@ const schema = {
     "24/7 accident recovery and towing across Surrey and the Lower Mainland. Safe transport of collision-damaged vehicles to any repair shop, dealership, or storage facility.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
   areaServed: serviceAreaCompact,
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "CAD",
-    priceSpecification: {
-      "@type": "PriceSpecification",
-      description: "Flat-rate pricing. Call (778) 838-0014 for an upfront quote before dispatch.",
-    },
-  },
 };
 
 const faq: FaqItem[] = [

@@ -39,14 +39,6 @@ const schema = {
     "Vehicle transport and car transport service across Surrey and the Lower Mainland. Running and non-running vehicles moved safely to any destination.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
   areaServed: serviceAreaCompact,
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "CAD",
-    priceSpecification: {
-      "@type": "PriceSpecification",
-      description: "Flat-rate pricing based on vehicle and distance. Call (778) 838-0014 for an upfront quote before dispatch.",
-    },
-  },
 };
 
 const faq: FaqItem[] = [

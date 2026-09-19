@@ -41,14 +41,6 @@ const schema = {
     "24/7 on-site roadside assistance across Surrey and the Lower Mainland. Battery boost, flat tire help, lockout service, fuel delivery, and breakdown support.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
   areaServed: serviceAreaCompact,
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "CAD",
-    priceSpecification: {
-      "@type": "PriceSpecification",
-      description: "Flat-rate pricing. Call (778) 838-0014 for an upfront quote before dispatch.",
-    },
-  },
 };
 
 const faq: FaqItem[] = [

@@ -40,14 +40,6 @@ const schema = {
     "24/7 winching and vehicle extraction across Surrey and the Lower Mainland. Recovery of vehicles stuck in ditches, mud, snow, or difficult terrain.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
   areaServed: serviceAreaCompact,
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "CAD",
-    priceSpecification: {
-      "@type": "PriceSpecification",
-      description: "Flat-rate pricing. Call (778) 838-0014 for an upfront quote before dispatch.",
-    },
-  },
 };
 
 const faq: FaqItem[] = [
