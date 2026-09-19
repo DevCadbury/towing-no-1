@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `Tow Truck ${area.city} | 24/7 Towing`,
-    description: `Need a tow truck in ${area.city}? TowingNo.1 provides 24/7 emergency towing, battery boost, lockout service, and flat tire help across the Lower Mainland. Free quote — call (778) 838-0014.`,
+    description: `24/7 towing in ${area.city} and the Lower Mainland. Emergency towing, battery boost, lockout service, and flat tire help. Call (778) 838-0014.`,
     alternates: { canonical },
     openGraph: {
       type: "website",

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Towing & Roadside Services Surrey BC | 24/7 Emergency Help",
+  title: "Towing & Roadside Services Surrey BC | 24/7",
   description:
     "Towing and roadside help in Surrey and the Lower Mainland: emergency towing, battery boost, flat tire, lockout, fuel delivery, and winching. 24/7 dispatch.",
   alternates: {
@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services",
-    title: "Towing & Roadside Services Surrey BC | 24/7 Emergency Help",
+    title: "Towing & Roadside Services Surrey BC | 24/7",
     description:
       "24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Towing & Roadside Services Surrey BC | 24/7 Emergency Help",
+    title: "Towing & Roadside Services Surrey BC | 24/7",
     description:
       "24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.",
   },
@@ -304,7 +304,7 @@ export default function Services() {
                 TowingNo.1 brings every roadside service under one phone number for drivers across Surrey, Langley, Coquitlam, Burnaby, Richmond, White Rock, Delta, Maple Ridge, Vancouver, and the surrounding communities. Whether your car has died in a parkade, you have a flat on a highway shoulder, or your vehicle has slid into a ditch on a back road, the same local team handles the call from the first ring to the moment you are moving again.
               </p>
               <p>
-                Each service listed below runs 24 hours a day, 7 days a week, including statutory holidays and overnight hours when most shops are closed. We dispatch the nearest available driver immediately, give you a firm flat-rate quote before any truck leaves, and stay on the line to confirm your exact location so help is already on the way while we talk. Most calls reach you in well under fifteen minutes across the core of our coverage area.
+                Each service listed below runs 24 hours a day, 7 days a week, including statutory holidays and overnight hours when most shops are closed. We dispatch the nearest available driver immediately, give you a firm flat-rate quote before any truck leaves, and stay on the line to confirm your exact location so help is already on the way while we talk.
               </p>
               <p>
                 Our fleet runs both wheel-lift and flatbed trucks, which lets us match the right method to your vehicle instead of forcing one approach onto every job. Flatbeds carry all-wheel-drive cars, electric vehicles, and low-clearance models that must never be dragged on their wheels, while wheel-lift trucks handle quick, economical moves. Every operator is licensed and insured in British Columbia and trained to work safely on live highway shoulders, inside tight underground parkades, and on the steep, icy grades that catch drivers out each winter.

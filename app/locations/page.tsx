@@ -3,7 +3,7 @@ import Link from "next/link";
 import { serviceAreas } from "@/lib/service-areas";
 
 export const metadata: Metadata = {
-  title: "Tow Truck Service Areas | Surrey, Langley & Lower Mainland",
+  title: "Tow Truck Service Areas | Lower Mainland BC",
   description:
     "TowingNo.1 covers Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, and the wider Lower Mainland. 24/7 dispatch with upfront pricing.",
   alternates: {
@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/locations",
-    title: "Tow Truck Service Areas | Surrey, Langley & Lower Mainland",
+    title: "Tow Truck Service Areas | Lower Mainland BC",
     description:
       "City-based towing and roadside support pages for Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, Maple Ridge, and Vancouver.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tow Truck Service Areas | Surrey, Langley & Lower Mainland",
+    title: "Tow Truck Service Areas | Lower Mainland BC",
     description:
       "Find local 24/7 towing coverage across Surrey and the Lower Mainland with fast dispatch and upfront quotes.",
   },

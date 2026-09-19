@@ -98,8 +98,8 @@ const howItWorks = [
   },
   {
     step: "3",
-    title: "We Arrive in Under 15 Min",
-    desc: "The nearest available driver is dispatched immediately. Average arrival time across Surrey is under 15 minutes.",
+    title: "We Arrive and Get You Moving",
+    desc: "The nearest available driver is dispatched to your location. We keep you updated on their arrival and get straight to work when they reach you.",
   },
 ];
 
@@ -151,7 +151,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
               >
                 24/7 Tow Truck{" "}
                 <span className="text-amber-400 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">Surrey &amp; Lower Mainland</span>
-                <br />Emergency Help in Under 15 Min
+                <br />24/7 Emergency Roadside Assistance
               </motion.h1>
 
               <motion.p
@@ -201,7 +201,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
               >
                 <span className="flex items-center gap-1.5">
                   <svg className="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
-                  &lt;15 min response
+                  24/7 Local Dispatch
                 </span>
                 <span className="flex items-center gap-1.5">
                   <svg className="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>

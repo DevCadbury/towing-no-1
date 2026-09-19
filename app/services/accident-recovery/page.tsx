@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "Accident Recovery & Towing | 24/7 Service | TowingNo.1",
   },
   description:
-    "Accident recovery and towing in Surrey and the Lower Mainland. TowingNo.1 transports collision-damaged vehicles 24/7 to the shop or facility of your choice. Call 778-838-0014.",
+    "24/7 accident recovery and towing in Surrey and the Lower Mainland. TowingNo.1 transports collision-damaged vehicles safely. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/accident-recovery" },
   keywords: [],
   openGraph: {

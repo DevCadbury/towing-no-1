@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: "Roadside Assistance | 24/7 Help | TowingNo.1",
   },
   description:
-    "24/7 roadside assistance in Surrey and the Lower Mainland. Battery boost, flat tire help, lockout service, fuel delivery and breakdown assistance. Call 778-838-0014.",
+    "24/7 roadside assistance in Surrey and the Lower Mainland. Battery boost, flat tire help, lockout service, and fuel delivery. Call 778-838-0014.",
   alternates: {
     canonical: "https://www.towingno1.com/services/roadside-assistance",
   },

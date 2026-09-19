@@ -24,7 +24,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 1,
     category: "Road Safety",
-    title: "What to Do When Your Car Breaks Down on the Highway",
+    title: "Car Breakdown on the Highway: What to Do",
     excerpt: "A step-by-step guide to staying safe when your vehicle breaks down on busy roads. Learn the essential safety measures every driver should know.",
     date: "February 10, 2026",
     image: "/blog/car-breaks-down-highway.jpg",
@@ -68,7 +68,7 @@ If you must remain near the vehicle, position yourself well away from the traffi
 
 ---
 
-**TowingNo.1 responds to highway breakdowns across the Lower Mainland, Delta, Langley, Surrey, Burnaby, and White Rock. Average response time: under 15 minutes.**
+**TowingNo.1 responds to highway breakdowns across the Lower Mainland, Delta, Langley, Surrey, Burnaby, and White Rock. Call (778) 838-0014 for 24/7 towing and roadside assistance.**
     `,
   },
   {
@@ -283,7 +283,7 @@ If the fix is quick, you have the right tools, and you are somewhere safe, a car
   {
     id: 6,
     category: "Towing Advice",
-    title: "Understanding Different Types of Towing Services",
+    title: "Types of Towing Services Explained",
     excerpt: "Not all towing is the same. Explore the different types of towing services available and when each one is appropriate for your situation.",
     date: "January 5, 2026",
     image: "/blog/types-of-towing.jpg",

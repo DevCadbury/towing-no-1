@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: "Car Lockout Service | 24/7 Roadside Help | TowingNo.1",
   },
   description:
-    "Locked out of your car in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 vehicle lockout assistance — we open your vehicle safely without damage. Call 778-838-0014.",
+    "Locked out of your car in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 vehicle lockout assistance — we open your vehicle safely. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/lockout-service" },
   keywords: [],
   openGraph: {
