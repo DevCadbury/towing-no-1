@@ -126,6 +126,10 @@
       "status": 200
     },
     {
+      "route": "/services/roadside-assistance",
+      "status": 200
+    },
+    {
       "route": "/services/vehicle-transport",
       "status": 200
     },
@@ -147,52 +151,57 @@
     "/services": {
       "present": true,
       "dynamic": false,
-      "normalized": "{ title: \"Towing & Roadside Services Surrey BC | 24/7 Emergency Help\", description: \"Towing and roadside help in Surrey and the Lower Mainland: emergency towing, battery boost, flat tire, lockout, fuel delivery, and winching. 24/7 dispatch.\", alternates: { canonical: \"https://www.towingno1.com/services\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services\", title: \"Towing & Roadside Services Surrey BC | 24/7 Emergency Help\", description: \"24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.\", }, twitter: { card: \"summary_large_image\", title: \"Towing & Roadside Services Surrey BC | 24/7 Emergency Help\", description: \"24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.\", }, }"
+      "normalized": "{ title: \"Towing & Roadside Services Surrey BC | 24/7\", description: \"Towing and roadside help in Surrey and the Lower Mainland: emergency towing, battery boost, flat tire, lockout, fuel delivery, and winching. 24/7 dispatch.\", alternates: { canonical: \"https://www.towingno1.com/services\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services\", title: \"Towing & Roadside Services Surrey BC | 24/7\", description: \"24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.\", }, twitter: { card: \"summary_large_image\", title: \"Towing & Roadside Services Surrey BC | 24/7\", description: \"24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.\", }, }"
     },
     "/services/accident-recovery": {
       "present": true,
       "dynamic": false,
-      "normalized": "{ title: \"Accident Recovery Towing Surrey | 24/7 Collision Towing BC\", description: \"Accident recovery towing in Surrey and the Lower Mainland. TowingNo.1 handles collision scenes and transports damaged vehicles safely. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/accident-recovery\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/accident-recovery\", title: \"Accident Recovery Towing Surrey | 24/7 Collision Towing BC\", description: \"24/7 accident recovery towing in Surrey and the Lower Mainland. Professional collision scene handling and safe vehicle transport.\", images: [{ url: \"/image/Accident_Recover.png\", alt: \"Accident recovery towing in Surrey BC — damaged vehicle on a flatbed\" }], }, twitter: { card: \"summary_large_image\", title: \"Accident Recovery Towing Surrey | 24/7 Collision Towing BC\", description: \"24/7 accident recovery towing in Surrey and the Lower Mainland. Professional collision scene handling and safe vehicle transport.\", images: [\"/image/Accident_Recover.png\"], }, }"
+      "normalized": "{ title: { absolute: \"Accident Recovery & Towing | 24/7 Service | TowingNo.1\", }, description: \"24/7 accident recovery and towing in Surrey and the Lower Mainland. TowingNo.1 transports collision-damaged vehicles safely. Call 778-838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/accident-recovery\" }, keywords: [], openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/accident-recovery\", title: \"Accident Recovery & Towing | 24/7 Service | TowingNo.1\", description: \"24/7 accident recovery and towing in Surrey and the Lower Mainland. Safe transport of damaged vehicles to any shop or facility. Call 778-838-0014.\", images: [{ url: \"/image/Accident_Recover.png\", alt: \"Accident recovery towing — damaged vehicle being loaded onto a flatbed\" }], }, twitter: { card: \"summary_large_image\", title: \"Accident Recovery & Towing | 24/7 Service | TowingNo.1\", description: \"24/7 accident recovery and towing across Surrey and the Lower Mainland. Safe vehicle transport to your chosen destination. Call 778-838-0014.\", images: [\"/image/Accident_Recover.png\"], }, }"
     },
     "/services/battery-boost": {
       "present": true,
       "dynamic": false,
-      "normalized": "{ title: \"Battery Boost Surrey | 24/7 Jump-Start Service Near Me\", description: \"Dead battery in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 battery boost and jump-start service with upfront pricing. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/battery-boost\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/battery-boost\", title: \"Battery Boost Surrey | 24/7 Jump-Start Service Near Me\", description: \"24/7 battery boost and jump-start service in Surrey and the Lower Mainland. Fast dispatch, upfront pricing.\", images: [{ url: \"/image/Battery_Boost.png\", alt: \"Battery boost and jump-start service in Surrey BC\" }], }, twitter: { card: \"summary_large_image\", title: \"Battery Boost Surrey | 24/7 Jump-Start Service Near Me\", description: \"24/7 battery boost and jump-start service in Surrey and the Lower Mainland. Fast dispatch, upfront pricing.\", images: [\"/image/Battery_Boost.png\"], }, }"
+      "normalized": "{ title: { absolute: \"Battery Boost & Jump Start | 24/7 Help | TowingNo.1\", }, description: \"24/7 battery boost and jump start service in Surrey and the Lower Mainland. Dead battery? TowingNo.1 dispatches a technician immediately — call 778-838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/battery-boost\" }, keywords: [], openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/battery-boost\", title: \"Battery Boost & Jump Start | 24/7 Help | TowingNo.1\", description: \"24/7 battery boost and jump start service in Surrey and the Lower Mainland. Immediate dispatch, upfront pricing. Call 778-838-0014.\", images: [{ url: \"/image/Battery_Boost.png\", alt: \"Battery boost and jump start service — TowingNo.1 technician\" }], }, twitter: { card: \"summary_large_image\", title: \"Battery Boost & Jump Start | 24/7 Help | TowingNo.1\", description: \"24/7 battery boost and jump start in Surrey and the Lower Mainland. Upfront pricing, immediate dispatch. Call 778-838-0014.\", images: [\"/image/Battery_Boost.png\"], }, }"
     },
     "/services/emergency-towing": {
       "present": true,
       "dynamic": false,
-      "normalized": "{ title: \"Emergency Towing Surrey | 24/7 Tow Truck Near Me\", description: \"Need emergency towing in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 flatbed and wheel-lift towing for all vehicles. Free quote — call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/emergency-towing\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/emergency-towing\", title: \"Emergency Towing Surrey | 24/7 Tow Truck Near Me\", description: \"24/7 emergency towing in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.\", images: [{ url: \"/image/Emergency_Towin.png\", alt: \"Emergency towing service in Surrey BC — TowingNo.1 tow truck\" }], }, twitter: { card: \"summary_large_image\", title: \"Emergency Towing Surrey | 24/7 Tow Truck Near Me\", description: \"24/7 emergency towing in Surrey and the Lower Mainland. Fast dispatch, upfront pricing.\", images: [\"/image/Emergency_Towin.png\"], }, }"
+      "normalized": "{ title: { absolute: \"Emergency Towing | 24/7 Tow Truck | TowingNo.1\", }, description: \"24/7 emergency towing in Surrey and the Lower Mainland. TowingNo.1 dispatches tow trucks for breakdowns, accidents, and disabled vehicles. Call 778-838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/emergency-towing\", }, keywords: [], openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/emergency-towing\", title: \"Emergency Towing | 24/7 Tow Truck | TowingNo.1\", description: \"24/7 emergency towing in Surrey and the Lower Mainland. Flatbed and wheel-lift tow trucks for all vehicles. Call 778-838-0014.\", images: [{ url: \"/image/Emergency_Towin.png\", alt: \"Emergency towing service — TowingNo.1 tow truck\" }], }, twitter: { card: \"summary_large_image\", title: \"Emergency Towing | 24/7 Tow Truck | TowingNo.1\", description: \"24/7 emergency towing across Surrey and the Lower Mainland. Upfront pricing, immediate dispatch. Call 778-838-0014.\", images: [\"/image/Emergency_Towin.png\"], }, }"
     },
     "/services/flat-tire-help": {
       "present": true,
       "dynamic": false,
-      "normalized": "{ title: \"Flat Tire Help Surrey | 24/7 Roadside Tire Change Near Me\", description: \"Flat tire in Surrey or the Lower Mainland? TowingNo.1 changes your tire on-site or tows you to the nearest shop. 24/7, upfront pricing. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/flat-tire-help\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/flat-tire-help\", title: \"Flat Tire Help Surrey | 24/7 Roadside Tire Change Near Me\", description: \"24/7 flat tire help in Surrey and the Lower Mainland. On-site tire change or tow to the nearest shop.\", images: [{ url: \"/image/Flat_Tire_Hel.png\", alt: \"Flat tire roadside assistance in Surrey BC — technician changing a tire\" }], }, twitter: { card: \"summary_large_image\", title: \"Flat Tire Help Surrey | 24/7 Roadside Tire Change Near Me\", description: \"24/7 flat tire help in Surrey and the Lower Mainland. On-site tire change or tow to the nearest shop.\", images: [\"/image/Flat_Tire_Hel.png\"], }, }"
+      "normalized": "{ title: { absolute: \"Flat Tire Help | 24/7 Roadside Assistance | TowingNo.1\", }, description: \"Flat tire in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 flat tire assistance — on-site spare change or tow to the nearest shop. Call 778-838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/flat-tire-help\" }, keywords: [], openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/flat-tire-help\", title: \"Flat Tire Help | 24/7 Roadside Assistance | TowingNo.1\", description: \"24/7 flat tire assistance in Surrey and the Lower Mainland. On-site spare change or tow to the nearest shop. Call 778-838-0014.\", images: [{ url: \"/image/Flat_Tire_Hel.png\", alt: \"Flat tire roadside assistance — technician helping a stranded driver\" }], }, twitter: { card: \"summary_large_image\", title: \"Flat Tire Help | 24/7 Roadside Assistance | TowingNo.1\", description: \"24/7 flat tire assistance across Surrey and the Lower Mainland. On-site or tow to shop. Call 778-838-0014.\", images: [\"/image/Flat_Tire_Hel.png\"], }, }"
     },
     "/services/fuel-delivery": {
       "present": true,
       "dynamic": false,
-      "normalized": "{ title: \"Fuel Delivery Surrey | Emergency Gas Delivery Near Me 24/7\", description: \"Out of fuel in Surrey or the Lower Mainland? TowingNo.1 delivers gasoline or diesel to your location 24/7 with upfront pricing. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/fuel-delivery\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/fuel-delivery\", title: \"Fuel Delivery Surrey | Emergency Gas Delivery Near Me 24/7\", description: \"24/7 emergency fuel delivery in Surrey and the Lower Mainland. Gasoline and diesel delivered to your location.\", images: [{ url: \"/image/Fuel_Deliver.png\", alt: \"Emergency fuel delivery in Surrey BC — gas delivered to a stranded vehicle\" }], }, twitter: { card: \"summary_large_image\", title: \"Fuel Delivery Surrey | Emergency Gas Delivery Near Me 24/7\", description: \"24/7 emergency fuel delivery in Surrey and the Lower Mainland. Gasoline and diesel delivered to your location.\", images: [\"/image/Fuel_Deliver.png\"], }, }"
+      "normalized": "{ title: { absolute: \"Fuel Delivery | 24/7 Roadside Assistance | TowingNo.1\", }, description: \"Stranded with an empty tank in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 emergency fuel delivery to your location. Call 778-838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/fuel-delivery\" }, keywords: [], openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/fuel-delivery\", title: \"Fuel Delivery | 24/7 Roadside Assistance | TowingNo.1\", description: \"24/7 emergency fuel delivery in Surrey and the Lower Mainland. Stranded with an empty tank? We bring fuel to your location. Call 778-838-0014.\", images: [{ url: \"/image/Fuel_Deliver.png\", alt: \"Emergency fuel delivery — fuel delivered to a stranded driver\" }], }, twitter: { card: \"summary_large_image\", title: \"Fuel Delivery | 24/7 Roadside Assistance | TowingNo.1\", description: \"24/7 emergency fuel delivery across Surrey and the Lower Mainland. We bring fuel to you. Call 778-838-0014.\", images: [\"/image/Fuel_Deliver.png\"], }, }"
     },
     "/services/lockout-service": {
       "present": true,
       "dynamic": false,
-      "normalized": "{ title: \"Car Lockout Service Surrey | Keys Locked Inside | We Help 24/7\", description: \"Locked your keys in the car in Surrey or the Lower Mainland? TowingNo.1 opens your vehicle safely without damage, 24/7. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/lockout-service\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/lockout-service\", title: \"Car Lockout Service Surrey | Keys Locked Inside — We Help 24/7\", description: \"24/7 car lockout service in Surrey and the Lower Mainland. We open your vehicle safely without damage.\", images: [{ url: \"/image/Lockout_Servic.png\", alt: \"Car lockout service in Surrey BC — keys locked inside a vehicle\" }], }, twitter: { card: \"summary_large_image\", title: \"Car Lockout Service Surrey | Keys Locked Inside — We Help 24/7\", description: \"24/7 car lockout service in Surrey and the Lower Mainland. We open your vehicle safely without damage.\", images: [\"/image/Lockout_Servic.png\"], }, }"
+      "normalized": "{ title: { absolute: \"Car Lockout Service | 24/7 Roadside Help | TowingNo.1\", }, description: \"Locked out of your car in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 vehicle lockout assistance — we open your vehicle safely. Call 778-838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/lockout-service\" }, keywords: [], openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/lockout-service\", title: \"Car Lockout Service | 24/7 Roadside Help | TowingNo.1\", description: \"24/7 car lockout assistance in Surrey and the Lower Mainland. Professional tools, no damage to your vehicle. Call 778-838-0014.\", images: [{ url: \"/image/Lockout_Servic.png\", alt: \"Car lockout service — technician helping a driver locked out of their vehicle\" }], }, twitter: { card: \"summary_large_image\", title: \"Car Lockout Service | 24/7 Roadside Help | TowingNo.1\", description: \"24/7 car lockout assistance across Surrey and the Lower Mainland. Professional tools, no damage. Call 778-838-0014.\", images: [\"/image/Lockout_Servic.png\"], }, }"
+    },
+    "/services/roadside-assistance": {
+      "present": true,
+      "dynamic": false,
+      "normalized": "{ title: { absolute: \"Roadside Assistance | 24/7 Help | TowingNo.1\", }, description: \"24/7 roadside assistance in Surrey and the Lower Mainland. Battery boost, flat tire help, lockout service, and fuel delivery. Call 778-838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/roadside-assistance\", }, keywords: [], openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/roadside-assistance\", title: \"Roadside Assistance | 24/7 Help | TowingNo.1\", description: \"24/7 roadside assistance in Surrey and the Lower Mainland. Battery boost, flat tire, lockout service, fuel delivery and breakdown help. Call 778-838-0014.\", images: [{ url: \"/image/Battery_Boost.png\", alt: \"Roadside assistance service — TowingNo.1 technician helping a stranded driver\" }], }, twitter: { card: \"summary_large_image\", title: \"Roadside Assistance | 24/7 Help | TowingNo.1\", description: \"24/7 roadside assistance across Surrey and the Lower Mainland. Battery boost, flat tire, lockout, fuel delivery. Call 778-838-0014.\", images: [\"/image/Battery_Boost.png\"], }, }"
     },
     "/services/vehicle-transport": {
       "present": true,
       "dynamic": false,
-      "normalized": "{ title: \"Vehicle Transport Surrey | Car Transport Lower Mainland BC\", description: \"Need vehicle transport or flatbed towing in Surrey or the Lower Mainland? TowingNo.1 provides secure, on-time transport for all makes — running or non-running. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/vehicle-transport\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/vehicle-transport\", title: \"Vehicle Transport Surrey | Car Transport Lower Mainland BC\", description: \"Secure vehicle transport across Surrey and the Lower Mainland. On-time pickup and delivery for all vehicle types.\", images: [{ url: \"/image/Vehicle_Transpor.png\", alt: \"Vehicle transport across the Lower Mainland — car on a flatbed truck\" }], }, twitter: { card: \"summary_large_image\", title: \"Vehicle Transport Surrey | Car Transport Lower Mainland BC\", description: \"Secure vehicle transport across Surrey and the Lower Mainland. On-time pickup and delivery for all vehicle types.\", images: [\"/image/Vehicle_Transpor.png\"], }, }"
+      "normalized": "{ title: { absolute: \"Vehicle Transport | Car Transport Service | TowingNo.1\", }, description: \"Vehicle transport and car transport service in Surrey and the Lower Mainland. TowingNo.1 moves running and non-running vehicles safely. Call 778-838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/vehicle-transport\" }, keywords: [], openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/vehicle-transport\", title: \"Vehicle Transport | Car Transport Service | TowingNo.1\", description: \"Vehicle transport and car transport across Surrey and the Lower Mainland. Running and non-running vehicles. Call 778-838-0014.\", images: [{ url: \"/image/Vehicle_Transpor.png\", alt: \"Vehicle transport service — car being loaded for transport\" }], }, twitter: { card: \"summary_large_image\", title: \"Vehicle Transport | Car Transport Service | TowingNo.1\", description: \"Vehicle transport and car transport across Surrey and the Lower Mainland. Running and non-running vehicles. Call 778-838-0014.\", images: [\"/image/Vehicle_Transpor.png\"], }, }"
     },
     "/services/winching-extraction": {
       "present": true,
       "dynamic": false,
-      "normalized": "{ title: \"Winching & Extraction Surrey | Vehicle Recovery | 24/7\", description: \"Vehicle stuck in a ditch, mud, or snow in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 winching and vehicle extraction. Call (778) 838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/winching-extraction\" }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/winching-extraction\", title: \"Winching & Extraction Surrey | Stuck in Ditch or Snow — 24/7\", description: \"24/7 winching and extraction in Surrey and the Lower Mainland. We pull your vehicle out of ditches, mud, and snow safely.\", images: [{ url: \"/image/Winching_Extractio.png\", alt: \"Winching and extraction service in BC — vehicle pulled out of a ditch\" }], }, twitter: { card: \"summary_large_image\", title: \"Winching & Extraction Surrey | Stuck in Ditch or Snow — 24/7\", description: \"24/7 winching and extraction in Surrey and the Lower Mainland. We pull your vehicle out of ditches, mud, and snow safely.\", images: [\"/image/Winching_Extractio.png\"], }, }"
+      "normalized": "{ title: { absolute: \"Winching & Vehicle Extraction | 24/7 | TowingNo.1\", }, description: \"Vehicle stuck in a ditch, mud, or snow in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 winching and vehicle extraction. Call 778-838-0014.\", alternates: { canonical: \"https://www.towingno1.com/services/winching-extraction\" }, keywords: [], openGraph: { type: \"website\", url: \"https://www.towingno1.com/services/winching-extraction\", title: \"Winching & Vehicle Extraction | 24/7 | TowingNo.1\", description: \"24/7 winching and vehicle extraction across Surrey and the Lower Mainland. Vehicle stuck in a ditch, mud, or snow? We can help. Call 778-838-0014.\", images: [{ url: \"/image/Winching_Extractio.png\", alt: \"Winching and vehicle extraction service — vehicle being recovered from a ditch\" }], }, twitter: { card: \"summary_large_image\", title: \"Winching & Vehicle Extraction | 24/7 | TowingNo.1\", description: \"24/7 winching and vehicle extraction in Surrey and the Lower Mainland. Stuck in mud, a ditch, or snow? Call 778-838-0014.\", images: [\"/image/Winching_Extractio.png\"], }, }"
     },
     "/locations": {
       "present": true,
       "dynamic": false,
-      "normalized": "{ title: \"Tow Truck Service Areas | Surrey, Langley & Lower Mainland\", description: \"TowingNo.1 covers Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, and the wider Lower Mainland. 24/7 dispatch with upfront pricing.\", alternates: { canonical: \"https://www.towingno1.com/locations\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/locations\", title: \"Tow Truck Service Areas | Surrey, Langley & Lower Mainland\", description: \"City-based towing and roadside support pages for Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, Maple Ridge, and Vancouver.\", }, twitter: { card: \"summary_large_image\", title: \"Tow Truck Service Areas | Surrey, Langley & Lower Mainland\", description: \"Find local 24/7 towing coverage across Surrey and the Lower Mainland with fast dispatch and upfront quotes.\", }, }"
+      "normalized": "{ title: \"Tow Truck Service Areas | Lower Mainland BC\", description: \"TowingNo.1 covers Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, and the wider Lower Mainland. 24/7 dispatch with upfront pricing.\", alternates: { canonical: \"https://www.towingno1.com/locations\", }, openGraph: { type: \"website\", url: \"https://www.towingno1.com/locations\", title: \"Tow Truck Service Areas | Lower Mainland BC\", description: \"City-based towing and roadside support pages for Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, Maple Ridge, and Vancouver.\", }, twitter: { card: \"summary_large_image\", title: \"Tow Truck Service Areas | Lower Mainland BC\", description: \"Find local 24/7 towing coverage across Surrey and the Lower Mainland with fast dispatch and upfront quotes.\", }, }"
     },
     "/locations/[city]": {
       "present": true,
@@ -324,6 +333,8 @@
         "ListItem",
         "ListItem",
         "ListItem",
+        "ListItem",
+        "Service",
         "Service",
         "Service",
         "Service",
@@ -352,8 +363,6 @@
         "ListItem",
         "ListItem",
         "ListItem",
-        "Offer",
-        "PriceSpecification",
         "Service"
       ],
       "/services/flat-tire-help": [
@@ -371,6 +380,13 @@
         "Service"
       ],
       "/services/lockout-service": [
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Service"
+      ],
+      "/services/roadside-assistance": [
         "BreadcrumbList",
         "ListItem",
         "ListItem",
@@ -400,14 +416,34 @@
       ],
       "/locations/[city]": [
         "AdministrativeArea",
+        "AdministrativeArea",
+        "AdministrativeArea",
+        "Answer",
+        "Answer",
         "Answer",
         "BreadcrumbList",
+        "BreadcrumbList",
+        "BreadcrumbList",
         "City",
+        "City",
+        "City",
+        "FAQPage",
+        "FAQPage",
         "FAQPage",
         "ListItem",
         "ListItem",
         "ListItem",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ListItem",
         "Question",
+        "Question",
+        "Question",
+        "Service",
+        "Service",
         "Service"
       ],
       "/blog": [
@@ -452,7 +488,7 @@
     }
   },
   "tel": {
-    "total": 33,
+    "total": 58,
     "byFile": {
       "app/api/send-email/route.ts": 2,
       "app/blog/page.tsx": 1,
@@ -461,23 +497,26 @@
       "app/locations/[city]/page.tsx": 2,
       "app/not-found.tsx": 1,
       "app/privacy/page.tsx": 1,
-      "app/services/accident-recovery/page.tsx": 1,
-      "app/services/battery-boost/page.tsx": 1,
-      "app/services/emergency-towing/page.tsx": 1,
-      "app/services/flat-tire-help/page.tsx": 1,
-      "app/services/fuel-delivery/page.tsx": 1,
-      "app/services/lockout-service/page.tsx": 1,
+      "app/services/accident-recovery/page.tsx": 3,
+      "app/services/battery-boost/page.tsx": 3,
+      "app/services/emergency-towing/page.tsx": 2,
+      "app/services/flat-tire-help/page.tsx": 3,
+      "app/services/fuel-delivery/page.tsx": 3,
+      "app/services/lockout-service/page.tsx": 3,
       "app/services/page.tsx": 3,
-      "app/services/vehicle-transport/page.tsx": 1,
-      "app/services/winching-extraction/page.tsx": 1,
+      "app/services/roadside-assistance/page.tsx": 3,
+      "app/services/vehicle-transport/page.tsx": 2,
+      "app/services/winching-extraction/page.tsx": 3,
       "app/terms/page.tsx": 1,
       "components/AboutContent.tsx": 1,
       "components/CallDialog.tsx": 1,
       "components/ContactContent.tsx": 2,
       "components/Footer.tsx": 1,
       "components/HomeContent.tsx": 4,
+      "components/LangleyPage.tsx": 4,
       "components/Navbar.tsx": 2,
-      "components/ServicesContent.tsx": 1
+      "components/ServicesContent.tsx": 1,
+      "components/SurreyPage.tsx": 4
     }
   },
   "gaTracking": {
@@ -519,6 +558,7 @@
       "https://www.towingno1.com/services/flat-tire-help",
       "https://www.towingno1.com/services/fuel-delivery",
       "https://www.towingno1.com/services/lockout-service",
+      "https://www.towingno1.com/services/roadside-assistance",
       "https://www.towingno1.com/services/vehicle-transport",
       "https://www.towingno1.com/services/winching-extraction",
       "https://www.towingno1.com/terms"

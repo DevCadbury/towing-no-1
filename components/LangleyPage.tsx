@@ -441,6 +441,9 @@ export default function LangleyPage() {
                   music. We give you an upfront quote and a live ETA, then dispatch the nearest available
                   driver immediately.
                 </p>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  We are a towing company serving Langley City and all of Langley Township — including Willoughby, Walnut Grove, Aldergrove, and Fort Langley. When you call, you speak to a dispatcher who knows the area, not a call centre.
+                </p>
                 <CallCTA label="Get a Tow Truck in Langley Now" />
               </div>
 

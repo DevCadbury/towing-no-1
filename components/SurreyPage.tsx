@@ -363,6 +363,9 @@ export default function SurreyPage() {
                 <p className="text-slate-600 leading-relaxed mb-6">
                   Stranded somewhere in Surrey? Call us now and talk to dispatch directly — no bots, no hold music, no runaround. We give you an upfront quote and a live ETA in under 60 seconds, then dispatch the nearest available driver immediately.
                 </p>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  TowingNo.1 is a local towing company serving Surrey, South Surrey, Cloverdale, and the wider Lower Mainland. Whether you need a tow truck at 2&nbsp;a.m. or a quick battery boost in a parking lot, you reach a real dispatcher who gets the right help to you without delay.
+                </p>
                 <CallCTA label="Get a Tow Truck in Surrey Now" />
               </div>
 

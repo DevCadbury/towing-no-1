@@ -153,9 +153,11 @@ export default function EmergencyTowingPage() {
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   TowingNo.1 handles emergency towing calls across Surrey and the Lower Mainland 24 hours a
-                  day. When you call (778) 838-0014, a dispatcher confirms your location, assesses your
-                  vehicle's condition, and sends the right truck — flatbed or wheel-lift — for your specific
-                  situation. You receive an upfront flat-rate quote before any truck is dispatched.
+                  day. Our fleet includes flatbed tow trucks, wheel-lift wreckers, and winch-equipped rigs — so
+                  we can match the right equipment to your vehicle and situation on the first trip.
+                  When you call (778) 838-0014, a dispatcher confirms your location, assesses your
+                  vehicle's condition, and sends the correct truck immediately. You receive an upfront flat-rate
+                  quote before any truck is dispatched.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   If you are on a busy road or highway, stay in your vehicle with hazard lights on until help

@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         absolute: "Towing Surrey BC | 24/7 Tow Truck | TowingNo.1",
       },
       description:
-        "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+        "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery — serving all Surrey neighbourhoods. Call 778-838-0014.",
       alternates: { canonical },
       keywords: [],
       openGraph: {

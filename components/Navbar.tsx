@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const serviceItems = [
   { href: "/services/emergency-towing",   label: "Emergency Towing",     desc: "24/7 fast response, any time" },
+  { href: "/services/roadside-assistance", label: "Roadside Assistance",  desc: "Battery, flat tire, lockout, fuel" },
   { href: "/services/flat-tire-help",     label: "Flat Tire Help",        desc: "On-site change or tow-in" },
   { href: "/services/battery-boost",      label: "Battery Boost",         desc: "Jump-start in minutes" },
   { href: "/services/accident-recovery",  label: "Accident Recovery",     desc: "Careful collision towing" },
