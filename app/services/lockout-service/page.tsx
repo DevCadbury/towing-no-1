@@ -11,7 +11,15 @@ export const metadata: Metadata = {
   description:
     "Locked out of your car in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 vehicle lockout assistance — we open your vehicle safely. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/lockout-service" },
-  keywords: [],
+  keywords: [
+    "car lockout service Surrey",
+    "locked keys in car Surrey BC",
+    "car lockout Surrey",
+    "unlock car service Surrey",
+    "locked out of car Surrey",
+    "car lockout near me Surrey",
+    "vehicle lockout service Lower Mainland",
+  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/lockout-service",

@@ -11,7 +11,14 @@ export const metadata: Metadata = {
   description:
     "Vehicle transport and car transport service in Surrey and the Lower Mainland. TowingNo.1 moves running and non-running vehicles safely. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/vehicle-transport" },
-  keywords: [],
+  keywords: [
+    "vehicle transport Surrey",
+    "car transport Lower Mainland BC",
+    "flatbed vehicle transport Surrey",
+    "non-running car transport Surrey",
+    "vehicle transport service BC",
+    "car shipping Surrey Lower Mainland",
+  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/vehicle-transport",

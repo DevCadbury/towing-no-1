@@ -82,6 +82,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Tow Truck ${area.city} | 24/7 Towing`,
     description: `24/7 towing in ${area.city} and the Lower Mainland. Emergency towing, battery boost, lockout service, and flat tire help. Call (778) 838-0014.`,
+    keywords: [
+      `tow truck ${area.city.toLowerCase()}`,
+      `towing ${area.city.toLowerCase()}`,
+      `towing ${area.city.toLowerCase()} bc`,
+      `tow truck ${area.city.toLowerCase()} bc`,
+      `${area.city.toLowerCase()} towing`,
+      `${area.city.toLowerCase()} tow truck`,
+      `emergency towing ${area.city.toLowerCase()}`,
+      `roadside assistance ${area.city.toLowerCase()}`,
+      `battery boost ${area.city.toLowerCase()}`,
+      `24/7 towing ${area.city.toLowerCase()}`,
+      "tow truck near me",
+      "towing near me",
+    ],
     alternates: { canonical },
     openGraph: {
       type: "website",

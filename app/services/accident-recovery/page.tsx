@@ -12,7 +12,15 @@ export const metadata: Metadata = {
   description:
     "24/7 accident recovery and towing in Surrey and the Lower Mainland. TowingNo.1 transports collision-damaged vehicles safely. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/accident-recovery" },
-  keywords: [],
+  keywords: [
+    "accident recovery towing Surrey",
+    "collision towing Surrey BC",
+    "accident towing Lower Mainland",
+    "post-accident towing Surrey",
+    "damaged vehicle towing Surrey",
+    "collision recovery BC",
+    "ICBC towing Surrey",
+  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/accident-recovery",

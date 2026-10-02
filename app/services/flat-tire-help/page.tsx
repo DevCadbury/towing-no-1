@@ -11,7 +11,15 @@ export const metadata: Metadata = {
   description:
     "Flat tire in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 flat tire assistance — on-site spare change or tow to the nearest shop. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/flat-tire-help" },
-  keywords: [],
+  keywords: [
+    "flat tire help Surrey",
+    "flat tire roadside assistance Surrey BC",
+    "tire change roadside Surrey",
+    "flat tire service near me Surrey",
+    "spare tire change Surrey",
+    "flat tire help Lower Mainland",
+    "roadside tire change BC",
+  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/flat-tire-help",

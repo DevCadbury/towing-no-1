@@ -99,7 +99,7 @@ const allServices = [
       "Soft shoulders on rural roads, flooded underpasses, and icy switchbacks on the North Shore and Tri-Cities hills are exactly where these calls happen, often in poor weather and fading light. We assess the situation first, set up the recovery safely so the vehicle does not roll or shift, and keep you clear of the work zone while we winch it out.",
       "From a car nosed into a ditch on a Langley farm road to a truck stuck in a snow bank above Coquitlam, our extraction crews carry the equipment and experience to handle it. Once the vehicle is back on solid ground we check that it is driveable, or tow it onward if recovery revealed further damage.",
     ],
-    bullets: ["Safe winching techniques", "Mud, snow, and ditch recovery", "Professional equipment", "Minimal vehicle damage"],
+    bullets: ["Safe winching techniques", "Mud, snow, and ditch recovery", "Professional equipment", "Controlled, careful recovery"],
   },
 ];
 

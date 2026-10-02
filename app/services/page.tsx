@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.towingno1.com/services",
   },
+  keywords: [
+    "towing services Surrey BC",
+    "roadside assistance Surrey",
+    "tow truck services Lower Mainland",
+    "emergency towing services BC",
+    "24/7 towing and roadside Surrey",
+    "battery boost flat tire lockout Surrey",
+  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services",
@@ -216,7 +224,7 @@ const allServices = [
     title: "Lockout Service",
     badge: "No damage",
     desc: "We open your vehicle safely without causing damage to the lock, door, or window. All makes and models, available 24/7.",
-    bullets: ["Fast lockout response", "No damage guaranteed", "All makes and models", "Available day or night"],
+    bullets: ["Fast lockout response", "Non-destructive entry tools", "All makes and models", "Available day or night"],
   },
   {
     id: "vehicle-transport",
@@ -246,7 +254,7 @@ const allServices = [
     title: "Winching & Extraction",
     badge: "Heavy-duty",
     desc: "Professional winching and extraction for vehicles stuck in ditches, mud, snow, or off-road. We pull your vehicle out safely without causing additional damage.",
-    bullets: ["Safe winching techniques", "Ditch, mud & snow recovery", "Professional equipment", "Minimal vehicle damage"],
+    bullets: ["Safe winching techniques", "Ditch, mud & snow recovery", "Professional equipment", "Controlled, careful recovery"],
   },
 ];
 

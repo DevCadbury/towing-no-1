@@ -11,7 +11,15 @@ export const metadata: Metadata = {
   description:
     "Stranded with an empty tank in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 emergency fuel delivery to your location. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/fuel-delivery" },
-  keywords: [],
+  keywords: [
+    "fuel delivery Surrey",
+    "emergency fuel delivery Surrey BC",
+    "out of gas service Surrey",
+    "gasoline delivery Surrey",
+    "diesel delivery roadside Surrey",
+    "run out of fuel Surrey",
+    "emergency gas delivery Lower Mainland",
+  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/fuel-delivery",

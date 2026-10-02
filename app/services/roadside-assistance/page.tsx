@@ -13,7 +13,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.towingno1.com/services/roadside-assistance",
   },
-  keywords: [],
+  keywords: [
+    "roadside assistance Surrey",
+    "24/7 roadside assistance Surrey BC",
+    "roadside assistance Lower Mainland",
+    "roadside help near me Surrey",
+    "emergency roadside service Surrey",
+    "on-site roadside assistance BC",
+    "roadside breakdown help Surrey",
+  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/roadside-assistance",

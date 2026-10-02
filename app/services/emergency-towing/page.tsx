@@ -13,7 +13,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.towingno1.com/services/emergency-towing",
   },
-  keywords: [],
+  keywords: [
+    "emergency towing Surrey",
+    "emergency towing Surrey BC",
+    "24 hour towing Surrey",
+    "24/7 tow truck Surrey",
+    "tow truck near me Surrey",
+    "emergency tow truck Lower Mainland",
+    "accident towing Surrey",
+    "breakdown towing Surrey BC",
+    "flatbed towing Surrey",
+    "tow truck Surrey BC",
+  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/emergency-towing",

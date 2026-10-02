@@ -9,18 +9,46 @@ export const metadata: Metadata = {
   description:
     "Stranded in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 emergency towing, battery boost, lockout & flat tire help. Free quote — call (778) 838-0014.",
   keywords: [
+    // Core Surrey / local intent
     "tow truck surrey",
+    "towing surrey",
+    "towing surrey bc",
+    "tow truck surrey bc",
+    "surrey towing",
+    "surrey tow truck",
+    "towing company surrey",
+    "towing company surrey bc",
+    // Near-me / generic high-volume
     "towing near me",
     "tow truck near me",
-    "emergency towing surrey",
-    "24/7 tow truck",
+    "tow truck near me open now",
     "car towing near me",
+    "tow service near me",
+    "towing company near me",
+    // Emergency & 24/7
+    "emergency towing surrey",
+    "24 hour towing surrey",
+    "24/7 tow truck",
+    "24/7 emergency towing",
+    // Roadside
     "roadside assistance surrey",
-    "surrey towing services",
-    "towing company surrey bc",
+    "roadside assistance near me",
+    "24 hour roadside assistance",
+    // Service specifics
     "battery boost surrey",
     "lockout service surrey",
     "flat tire help surrey",
+    "fuel delivery surrey",
+    "accident towing surrey",
+    "vehicle transport surrey",
+    "winching surrey",
+    // Langley
+    "tow truck langley",
+    "towing langley",
+    "towing langley bc",
+    // Lower Mainland
+    "lower mainland towing",
+    "towing lower mainland bc",
   ],
   alternates: {
     canonical: "https://www.towingno1.com",
@@ -136,6 +164,17 @@ const homeServiceAreaListSchema = {
   })),
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.towingno1.com/#website",
+  name: "TowingNo.1",
+  url: "https://www.towingno1.com",
+  publisher: {
+    "@id": "https://www.towingno1.com/#organization",
+  },
+};
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -165,6 +204,11 @@ export default function Home() {
           __html: JSON.stringify(homeServiceAreaListSchema),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}

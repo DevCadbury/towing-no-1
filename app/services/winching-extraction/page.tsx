@@ -12,7 +12,15 @@ export const metadata: Metadata = {
   description:
     "Vehicle stuck in a ditch, mud, or snow in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 winching and vehicle extraction. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/winching-extraction" },
-  keywords: [],
+  keywords: [
+    "winching service Surrey",
+    "vehicle extraction Surrey BC",
+    "car stuck in ditch Surrey",
+    "winch out service Lower Mainland",
+    "vehicle recovery Surrey",
+    "stuck in snow towing Surrey",
+    "off-road recovery BC",
+  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/winching-extraction",

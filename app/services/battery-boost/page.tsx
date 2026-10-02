@@ -12,7 +12,15 @@ export const metadata: Metadata = {
   description:
     "24/7 battery boost and jump start service in Surrey and the Lower Mainland. Dead battery? TowingNo.1 dispatches a technician immediately — call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/battery-boost" },
-  keywords: [],
+  keywords: [
+    "battery boost Surrey",
+    "jump start service Surrey BC",
+    "dead battery roadside help Surrey",
+    "car battery boost Surrey",
+    "battery boost near me Surrey",
+    "jump start car Surrey",
+    "24/7 battery boost Lower Mainland",
+  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/battery-boost",

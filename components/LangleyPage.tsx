@@ -500,6 +500,7 @@ export default function LangleyPage() {
                 <ul className="space-y-2">
                   {[
                     { href: "/services/emergency-towing",   label: "Emergency Towing" },
+                    { href: "/services/roadside-assistance",label: "Roadside Assistance" },
                     { href: "/services/battery-boost",      label: "Battery Boost" },
                     { href: "/services/lockout-service",    label: "Car Lockout Service" },
                     { href: "/services/flat-tire-help",     label: "Flat Tire Help" },
