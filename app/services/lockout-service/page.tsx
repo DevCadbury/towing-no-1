@@ -409,7 +409,9 @@ export default function LockoutServicePage() {
                 <Link href="/services/fuel-delivery" className="font-semibold text-amber-600 hover:text-amber-700">Fuel delivery</Link>
                 <Link href="/services/vehicle-transport" className="font-semibold text-amber-600 hover:text-amber-700">Vehicle transport</Link>
                 <Link href="/services/accident-recovery" className="font-semibold text-amber-600 hover:text-amber-700">Accident recovery</Link>
-                <Link href="/services/winching-extraction" className="font-semibold text-amber-600 hover:text-amber-700">Winching & extraction</Link>
+                <Link href="/services/winching-extraction" className="font-semibold text-amber-600 hover:text-amber-700">Winching &amp; extraction</Link>
+                <Link href="/blog/when-call-tow-vs-fix-yourself" className="font-semibold text-amber-600 hover:text-amber-700">DIY vs. calling a tow</Link>
+                <Link href="/blog/towing-consumer-rights-bc" className="font-semibold text-amber-600 hover:text-amber-700">Your towing rights in BC</Link>
                 <Link href="/locations/surrey" className="font-semibold text-amber-600 hover:text-amber-700">Towing Surrey</Link>
                 <Link href="/locations/langley" className="font-semibold text-amber-600 hover:text-amber-700">Towing Langley</Link>
                 <Link href="/contact" className="font-semibold text-amber-600 hover:text-amber-700">Request online</Link>

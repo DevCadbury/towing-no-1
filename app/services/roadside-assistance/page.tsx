@@ -352,6 +352,8 @@ export default function RoadsideAssistancePage() {
                 <Link href="/services/accident-recovery" className="font-semibold text-amber-600 hover:text-amber-700">Accident recovery</Link>
                 <Link href="/services/vehicle-transport" className="font-semibold text-amber-600 hover:text-amber-700">Vehicle transport</Link>
                 <Link href="/locations/surrey" className="font-semibold text-amber-600 hover:text-amber-700">Towing Surrey</Link>
+                <Link href="/blog/surrey-emergency-towing-roadside-guide" className="font-semibold text-amber-600 hover:text-amber-700">Surrey emergency resource guide</Link>
+                <Link href="/blog/bc-winter-roadside-safety-checklist" className="font-semibold text-amber-600 hover:text-amber-700">BC winter roadside checklist</Link>
                 <Link href="/locations/langley" className="font-semibold text-amber-600 hover:text-amber-700">Towing Langley</Link>
                 <Link href="/contact" className="font-semibold text-amber-600 hover:text-amber-700">Request online</Link>
               </div>

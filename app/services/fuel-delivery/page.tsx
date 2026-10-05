@@ -400,7 +400,8 @@ export default function FuelDeliveryPage() {
                 <Link href="/services/lockout-service" className="font-semibold text-amber-600 hover:text-amber-700">Lockout service</Link>
                 <Link href="/services/accident-recovery" className="font-semibold text-amber-600 hover:text-amber-700">Accident recovery</Link>
                 <Link href="/services/vehicle-transport" className="font-semibold text-amber-600 hover:text-amber-700">Vehicle transport</Link>
-                <Link href="/services/winching-extraction" className="font-semibold text-amber-600 hover:text-amber-700">Winching & extraction</Link>
+                <Link href="/services/winching-extraction" className="font-semibold text-amber-600 hover:text-amber-700">Winching &amp; extraction</Link>
+                <Link href="/blog/bc-winter-roadside-safety-checklist" className="font-semibold text-amber-600 hover:text-amber-700">BC winter roadside checklist</Link>
                 <Link href="/locations/surrey" className="font-semibold text-amber-600 hover:text-amber-700">Towing Surrey</Link>
                 <Link href="/locations/langley" className="font-semibold text-amber-600 hover:text-amber-700">Towing Langley</Link>
                 <Link href="/contact" className="font-semibold text-amber-600 hover:text-amber-700">Request online</Link>

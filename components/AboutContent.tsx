@@ -155,6 +155,143 @@ export default function AboutContent() {
         </div>
       </section>
 
+      {/* Credentials & Trust Signals */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">Why Drivers Trust Us</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy-900">Licensed, Insured &amp; Accountable</h2>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+              Every tow truck and operator is fully licensed under British Columbia&apos;s commercial vehicle regulations.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                title: "BC Licensed Since 2010",
+                body: "Operating in British Columbia for over 15 years. Every truck carries a valid CVSE commercial vehicle licence and is maintained to provincial standards.",
+              },
+              {
+                title: "Fully Insured",
+                body: "All vehicles carry comprehensive commercial insurance and cargo coverage. Your vehicle is protected from the moment we attach to the moment we set it down.",
+              },
+              {
+                title: "Flat-Rate Pricing",
+                body: "You receive an upfront flat-rate quote before any truck rolls. No metered charges, no hidden fees, no surprise invoices at the destination.",
+              },
+              {
+                title: "24/7 Live Dispatch",
+                body: "A real dispatcher answers every call — not a voicemail or a callback queue. Night shifts, weekends, and statutory holidays are staffed the same as any weekday.",
+              },
+              {
+                title: "Professional Trained Drivers",
+                body: "Our operators are trained in safe load securement, live-traffic highway protocols, and proper handling of EVs, AWD vehicles, and accident-damaged cars.",
+              },
+              {
+                title: "ICBC-Compatible Documentation",
+                body: "We provide recovery and delivery documentation that aligns with ICBC claims. For accident tows, ask for your paperwork at drop-off.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                <h3 className="font-bold text-navy-900 mb-2">{item.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">Where We Work</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy-900">Lower Mainland Service Areas</h2>
+            <p className="text-lg text-slate-500 max-w-xl mx-auto">
+              We dispatch tow trucks and roadside help across Surrey, Langley, and the wider Lower Mainland.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-8">
+            {[
+              { href: "/locations/surrey",       label: "Surrey" },
+              { href: "/locations/langley",      label: "Langley" },
+              { href: "/locations/burnaby",      label: "Burnaby" },
+              { href: "/locations/richmond",     label: "Richmond" },
+              { href: "/locations/delta",        label: "Delta" },
+              { href: "/locations/white-rock",   label: "White Rock" },
+              { href: "/locations/coquitlam",    label: "Coquitlam" },
+              { href: "/locations/maple-ridge",  label: "Maple Ridge" },
+              { href: "/locations/vancouver",    label: "Vancouver" },
+              { href: "/locations/cloverdale",   label: "Cloverdale" },
+            ].map((area) => (
+              <a
+                key={area.href}
+                href={area.href}
+                className="text-sm font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-full px-4 py-2 hover:bg-amber-100 transition-colors"
+              >
+                {area.label}
+              </a>
+            ))}
+          </div>
+          <p className="text-center text-sm text-slate-500">
+            Not sure if we cover your area?{" "}
+            <a href="tel:+17788380014" className="text-amber-600 font-semibold hover:underline">(778) 838-0014</a>
+            {" "}— we&apos;ll confirm before you commit.
+          </p>
+        </div>
+      </section>
+
+      {/* From Our Blog */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">From Our Blog</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy-900">Road Safety &amp; Towing Advice</h2>
+            <p className="text-lg text-slate-500 max-w-xl mx-auto">
+              Practical guides from over 15 years of Lower Mainland roadside experience.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                href: "/blog/bc-winter-roadside-safety-checklist",
+                category: "Seasonal",
+                title: "BC Winter Roadside Safety Checklist",
+                excerpt: "Pre-season vehicle prep, emergency kit essentials, and what to do if you get stranded in BC winter conditions.",
+              },
+              {
+                href: "/blog/what-to-do-after-car-accident-bc",
+                category: "Road Safety",
+                title: "What to Do After a Car Accident in BC",
+                excerpt: "Scene safety, ICBC reporting, exchanging information, and when to call for an accident tow.",
+              },
+              {
+                href: "/blog/electric-vehicle-towing-bc",
+                category: "Towing Advice",
+                title: "EV and Hybrid Towing in BC",
+                excerpt: "Why EVs require flatbed transport, how Transport Mode works, and what to do when an EV runs out of charge.",
+              },
+            ].map((post) => (
+              <a
+                key={post.href}
+                href={post.href}
+                className="group block bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-amber-300 hover:bg-amber-50/30 transition-all duration-200"
+              >
+                <span className="inline-block text-xs font-bold text-navy-900 bg-white border border-slate-200 px-3 py-1 rounded-full mb-3">{post.category}</span>
+                <h3 className="font-bold text-navy-900 mb-2 group-hover:text-amber-600 transition-colors leading-snug">{post.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{post.excerpt}</p>
+              </a>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <a href="/blog" className="inline-flex items-center gap-2 text-amber-600 font-bold hover:text-amber-700 transition-colors">
+              View all articles
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4" aria-hidden="true"><path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-navy-950">

@@ -449,6 +449,8 @@ export default function WinchingExtractionPage() {
                 <Link href="/services/flat-tire-help" className="font-semibold text-amber-600 hover:text-amber-700">Flat tire help</Link>
                 <Link href="/services/lockout-service" className="font-semibold text-amber-600 hover:text-amber-700">Lockout service</Link>
                 <Link href="/services/fuel-delivery" className="font-semibold text-amber-600 hover:text-amber-700">Fuel delivery</Link>
+                <Link href="/blog/highway-breakdown-guide-bc" className="font-semibold text-amber-600 hover:text-amber-700">Highway breakdown guide</Link>
+                <Link href="/blog/towing-vehicle-recovery-terminology" className="font-semibold text-amber-600 hover:text-amber-700">Recovery terminology explained</Link>
                 <Link href="/locations/surrey" className="font-semibold text-amber-600 hover:text-amber-700">Towing Surrey</Link>
                 <Link href="/locations/langley" className="font-semibold text-amber-600 hover:text-amber-700">Towing Langley</Link>
                 <Link href="/contact" className="font-semibold text-amber-600 hover:text-amber-700">Request online</Link>

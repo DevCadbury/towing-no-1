@@ -29,7 +29,6 @@ export const blogPosts: BlogPost[] = [
     date: "February 10, 2026",
     image: "/blog/car-breaks-down-highway.jpg",
     slug: "what-to-do-car-breaks-down-highway",
-    featured: true,
     keywords: ["car breakdown highway", "vehicle breakdown safety", "highway emergency BC"],
     content: `
 Breaking down on a busy highway is stressful, but knowing what to do can keep you safe until a tow truck arrives. Here's a step-by-step guide for BC drivers.
@@ -344,7 +343,6 @@ Before you agree to a tow, it is fair to ask whether the company is licensed and
     date: "October 1, 2026",
     image: "/blog/car-accident-bc.jpg",
     slug: "what-to-do-after-car-accident-bc",
-    featured: true,
     keywords: ["car accident bc", "what to do after accident bc", "icbc claims", "accident towing surrey", "car accident lower mainland"],
     content: `
 A collision is disorienting even when nobody is seriously hurt. Knowing the sequence of actions in advance means you can work through it calmly rather than improvising at the roadside.
@@ -430,6 +428,7 @@ Follow up with your body shop or ICBC repair facility within a day or two. Keep 
     date: "September 24, 2026",
     image: "/blog/winter-safety-checklist.jpg",
     slug: "bc-winter-roadside-safety-checklist",
+    featured: true,
     keywords: ["bc winter driving checklist", "winter roadside safety bc", "winter car kit bc", "winter tires bc", "lower mainland winter driving"],
     content: `
 BC winters vary from icy highway corridors on the Coquihalla to wet but mild commutes through Surrey and Burnaby — but the Lower Mainland gets its share of freezing rain, overnight ice, and the occasional heavy snowfall that catches drivers off guard. This checklist covers what to do before the cold arrives and what to carry if things go wrong on the road.
