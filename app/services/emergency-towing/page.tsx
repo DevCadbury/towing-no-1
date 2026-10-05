@@ -243,6 +243,9 @@ export default function EmergencyTowingPage() {
                 <p className="mt-4 text-sm text-slate-500">
                   See: <Link href="/blog/understanding-towing-services" className="text-amber-600 hover:underline">Understanding the different types of towing services</Link>
                 </p>
+                <p className="mt-2 text-sm text-slate-500">
+                  See also: <Link href="/blog/highway-breakdown-guide-bc" className="text-amber-600 hover:underline">Highway 1 and Highway 99 breakdown guide for Lower Mainland drivers</Link>
+                </p>
               </div>
 
               {/* H2: Service areas */}

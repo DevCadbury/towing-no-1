@@ -36,12 +36,20 @@ const RELATED_SERVICES: { href: string; label: string; match: RegExp }[] = [
 // Blog posts that are topically related to specific service pages, used to
 // inject contextual cross-links within each blog article's sidebar.
 const RELATED_BLOG_POSTS: { href: string; label: string; match: RegExp }[] = [
-  { href: "/blog/understanding-towing-services", label: "Types of towing services explained", match: /tow(ing)?\s*(service|truck|type)|flatbed|wheel.?lift/i },
-  { href: "/blog/when-call-tow-vs-fix-yourself", label: "When to call a tow vs. fix it yourself", match: /diy|yourself|fix.?it|when.?to.?call|roadside.*decision/i },
-  { href: "/blog/signs-car-battery-dying", label: "Signs your car battery is dying", match: /battery|jump|dead|charg/i },
-  { href: "/blog/prepare-vehicle-winter-bc", label: "Preparing your vehicle for BC winter", match: /winter|snow|ice|season|cold/i },
-  { href: "/blog/what-to-do-car-breaks-down-highway", label: "What to do when your car breaks down", match: /breakdown|break.?down|highway|stall/i },
-  { href: "/blog/emergency-kit-essentials", label: "Emergency kit essentials for drivers", match: /kit|emergency|prepare|supplies/i },
+  { href: "/blog/understanding-towing-services",        label: "Types of towing services explained",              match: /tow(ing)?\s*(service|truck|type)|flatbed|wheel.?lift/i },
+  { href: "/blog/when-call-tow-vs-fix-yourself",        label: "When to call a tow vs. fix it yourself",          match: /diy|yourself|fix.?it|when.?to.?call|roadside.*decision/i },
+  { href: "/blog/signs-car-battery-dying",              label: "Signs your car battery is dying",                  match: /battery|jump|dead|charg/i },
+  { href: "/blog/prepare-vehicle-winter-bc",            label: "Preparing your vehicle for BC winter",             match: /winter|snow|ice|season|cold/i },
+  { href: "/blog/what-to-do-car-breaks-down-highway",   label: "What to do when your car breaks down",             match: /breakdown|break.?down|highway|stall/i },
+  { href: "/blog/emergency-kit-essentials",             label: "Emergency kit essentials for drivers",             match: /kit|emergency|prepare|supplies/i },
+  // New 2026 linkable assets
+  { href: "/blog/what-to-do-after-car-accident-bc",     label: "What to do after a car accident in BC",            match: /accident|collision|crash|icbc|post.?accident/i },
+  { href: "/blog/bc-winter-roadside-safety-checklist",  label: "BC winter roadside safety checklist",              match: /checklist|winter.*(safe|road|tip)|seasonal.*safe/i },
+  { href: "/blog/electric-vehicle-towing-bc",           label: "EV and hybrid vehicle towing in BC",               match: /electric|hybrid|ev\b|tesla|rivian|ioniq|bolt|flatbed.*ev/i },
+  { href: "/blog/highway-breakdown-guide-bc",           label: "Highway 1 and Highway 99 breakdown guide",          match: /highway\s*[19]|trans.?canada|hwy\s*[19]|km.?marker|#77/i },
+  { href: "/blog/surrey-emergency-towing-roadside-guide", label: "Surrey emergency towing resource guide",          match: /surrey.*(emergency|resource|guide)|king george|newton|guildford/i },
+  { href: "/blog/towing-consumer-rights-bc",            label: "Towing consumer rights in BC",                     match: /consumer|rights?|overcharg|predatory|dispute|cvse/i },
+  { href: "/blog/towing-vehicle-recovery-terminology",  label: "Towing and vehicle recovery terminology",           match: /terminolog|glossar|definition|vocab|flatbed.*mean|winch.*mean/i },
 ];
 
 function relatedServiceLinks(post: { title: string; excerpt: string; keywords: string[]; slug: string }): { href: string; label: string }[] {

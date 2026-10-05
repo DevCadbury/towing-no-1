@@ -650,3 +650,89 @@ Document declined or rejected prospects so they are not re-pitched.
 ---
 
 *Last updated: October 2026. Review and update this document at the start of each month alongside the monthly authority report.*
+
+---
+
+## Research Cycle 2 — New Prospects (October 2026)
+
+These prospects were found in the second research cycle and were not in the original plan.
+
+### New Tier B Prospects
+
+**19. gettowing.ca**
+- URL: https://gettowing.ca/
+- Relevance: Canadian towing comparison directory — "Find Towing & Roadside Assistance Across Canada" by vehicle type (flatbed, wheel-lift, heavy wreckers). Directly industry-relevant, Canadian, consumer-facing
+- Acquisition method: Submit a business listing directly on gettowing.ca
+- Target page: https://www.towingno1.com/ or /locations/surrey
+- Status: Not submitted
+
+**20. towing.com (Canada section)**
+- URL: https://towing.com / http://yourname.towing.com/
+- Relevance: Industry-specific towing directory covering the US and Canada; includes Canadian towing companies
+- Acquisition method: Register via towing.com's "Find & Register Towing Companies" form
+- Target page: https://www.towingno1.com/
+- Status: Not registered
+
+**21. Fraser Valley Local**
+- URL: https://www.fraservalleylocal.ca/
+- Relevance: 21,000+ listing directory specifically for the Fraser Valley, covering Surrey, Langley, Abbotsford and surrounding communities; thousands of monthly users
+- Acquisition method: Submit a business listing
+- Target page: https://www.towingno1.com/ or /locations/langley
+- Status: Not submitted
+
+**22. surreydirect.ca**
+- URL: https://surreydirect.ca/
+- Relevance: Surrey-specific business directory; other Surrey towing companies (e.g. Hilltop Towing) already have listings
+- Acquisition method: Submit a listing via surreydirect.ca
+- Target page: https://www.towingno1.com/
+- Status: Not submitted
+
+**23. Valley Vibe News**
+- URL: https://valleyvibenews.com/
+- Relevance: Fraser Valley news and community publication with a "Submit Your Business Listing" feature
+- Acquisition method: Submit business listing via valleyvibenews.com/submit-your-business-listing/
+- Target page: https://www.towingno1.com/
+- Status: Not submitted
+
+### New Partnership Prospects (Surrey Auto Repair Shops)
+
+These are Surrey-based auto repair and body shops that could become genuine referral partners. The acquisition method for all is establishing a real referral relationship first — do not request a link directly.
+
+**24. RG Diagnostics — Auto Repair & Tire Shop Surrey**
+- URL: https://rgdiagnostics.ca/
+- Relevance: Surrey auto repair shop; their customers often need towing after a breakdown or before a repair
+- Acquisition method: Build a genuine referral relationship — refer stranded customers to RG Diagnostics; ask if they refer customers who need towing
+
+**25. Prime Lube — Auto Repair & Oil Change Surrey**
+- URL: https://primelube.ca/
+- Relevance: Independent Surrey auto repair shop with a "quote before we start" model similar to TowingNo.1's approach
+- Acquisition method: Referral relationship — customers who break down near their shop may need a tow; customers who need service after an incident can be referred to them
+
+**26. Best Autobody — ICBC Accredited Body Shop Surrey**
+- URL: https://bestautobody.ca/
+- Relevance: ICBC-accredited body shop in Surrey; accident recovery customers often need a body shop recommendation, and body shop customers sometimes need a tow
+- Acquisition method: ICBC accreditation means their customers are exactly the same post-accident audience — genuine referral relationship is highly natural here
+
+### Key Finding: surrey.ca Business Directory
+
+From research: "Business owners are **automatically added** to the directory unless they opt out."
+
+This means: if TowingNo.1 holds a valid City of Surrey business licence, it **may already appear** at surrey.ca/business-economy/business-services/business-directory. Action required:
+- [ ] Verify TowingNo.1 has a current Surrey business licence
+- [ ] Search surrey.ca business directory for "TowingNo.1" to confirm presence
+- [ ] If absent: contact 604-591-4128 to investigate
+- [ ] If present: confirm the listing shows the correct website URL
+
+### Citation Gap Summary (Confirmed October 2026)
+
+Directories where TowingNo.1 was **not found** in any search results:
+- Yelp Canada (yelp.ca) — not listed
+- Yellow Pages Canada (yellowpages.ca) — not listed
+- BBB Canada (bbb.org/ca) — not listed
+- Canada411 — not confirmed
+- gettowing.ca — not listed
+- fraservalleylocal.ca — not listed
+- surreydirect.ca — not listed
+- towing.com Canada section — not listed
+
+Priority action: Submit to all eight directories above before pursuing editorial outreach. Citations are quick wins that build NAP consistency and local authority signals before the longer editorial campaign begins.

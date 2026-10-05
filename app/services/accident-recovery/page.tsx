@@ -300,6 +300,9 @@ export default function AccidentRecoveryPage() {
                     { href: "https://www.drivebc.ca", label: "DriveBC — road conditions & incidents", note: "Check for closures or hazards on your route." },
                   ]}
                 />
+                <p className="mt-4 text-sm text-slate-500">
+                  See: <Link href="/blog/what-to-do-after-car-accident-bc" className="text-amber-600 hover:underline">What to do after a car accident in BC — ICBC reporting, scene safety, and arranging a tow</Link>
+                </p>
               </div>
 
               {/* H2: When You Need an Accident Tow */}

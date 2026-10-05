@@ -294,6 +294,9 @@ export default function VehicleTransportPage() {
                   are loaded using the onboard winch, attaching to rated frame points rather than
                   bumpers or tow eyes that may not be designed for recovery loads.
                 </p>
+                <p className="mt-4 text-sm text-slate-500">
+                  See: <Link href="/blog/electric-vehicle-towing-bc" className="text-amber-600 hover:underline">EV and hybrid vehicle towing — why flatbed transport is required and how Transport Mode works</Link>
+                </p>
               </div>
 
               {/* H2: How Vehicle Transport Works */}
