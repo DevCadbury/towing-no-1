@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Tow Truck Surrey | 24/7 Emergency Towing | TowingNo.1",
   description:
-    "Stranded in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 emergency towing, battery boost, lockout & flat tire help. Free quote — call (778) 838-0014.",
+    "Need a tow truck near you in Surrey or the Lower Mainland? TowingNo.1 — 24/7 emergency towing & roadside assistance. Free quote. Call (778) 838-0014.",
   // keywords meta intentionally omitted — Google ignores it for ranking and
   // a large list is dead weight / stuffing signal in the raw HTML source.
   alternates: {

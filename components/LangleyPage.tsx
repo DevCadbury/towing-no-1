@@ -90,7 +90,7 @@ export default function LangleyPage() {
             Langley, BC · Available Now
           </p>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5">
-            24/7 Towing Service in Langley, BC
+            Tow Truck Langley, BC — 24/7 Towing Service
           </h1>
           <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl mb-8">
             TowingNo.1 provides 24/7 emergency towing and roadside assistance across Langley, BC. We serve

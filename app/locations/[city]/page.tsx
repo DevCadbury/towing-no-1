@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getServiceAreaBySlug, serviceAreas, slugifyCity, isServiceAreaSlug } from "@/lib/service-areas";
@@ -362,6 +362,9 @@ export default async function ServiceAreaPage({ params }: Props) {
                     { href: "/services/lockout-service", label: "Lockout Service", desc: "Open your vehicle without damage" },
                     { href: "/services/fuel-delivery", label: "Fuel Delivery", desc: "Gas or diesel delivered" },
                     { href: "/services/winching-extraction", label: "Winching & Extraction", desc: "Ditch, mud & snow recovery" },
+                    { href: "/services/accident-recovery", label: "Accident Recovery", desc: "Collision-scene towing" },
+                    { href: "/services/vehicle-transport", label: "Vehicle Transport", desc: "Secure inter-city moves" },
+                    { href: "/services/roadside-assistance", label: "Roadside Assistance", desc: "All roadside help in one call" },
                   ].map((svc) => (
                     <Link key={svc.href} href={svc.href} className="group flex items-start gap-3 bg-slate-50 border border-slate-200 rounded-xl p-4 hover:border-amber-400/60 hover:bg-amber-50/30 transition-all duration-200">
                       <span className="w-5 h-5 rounded-full bg-amber-400/20 border border-amber-400 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">

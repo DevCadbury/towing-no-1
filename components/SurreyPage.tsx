@@ -78,7 +78,7 @@ export default function SurreyPage() {
 
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400 mb-3">Surrey, BC · Available Now</p>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5">
-            24/7 Towing Service in Surrey, BC
+            Tow Truck Surrey, BC — 24/7 Towing Service
           </h1>
           <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl mb-8">
             TowingNo.1 provides 24/7 emergency towing and roadside assistance in Surrey, BC. We help drivers with emergency towing, vehicle recovery, battery boosts, flat tires, car lockouts, fuel delivery, and accident recovery throughout Surrey and surrounding communities.
