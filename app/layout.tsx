@@ -191,7 +191,7 @@ const globalSchema = {
       email: "info@towingno1.com",
       image: "https://www.towingno1.com/preview.jpg",
       logo: "https://www.towingno1.com/logo.png",
-      priceRange: "$$",
+      // priceRange removed — no fixed pricing is published on the site.
       openingHours: "Mo-Su 00:00-23:59",
       currenciesAccepted: "CAD",
       paymentAccepted: "Cash, Credit Card, Debit Card",
@@ -410,13 +410,13 @@ export default function RootLayout({
         />
       </head>
       <body className={outfit.className}>
-        {/* Google Analytics (gtag.js) */}
+        {/* Google Analytics + Google Ads — single gtag.js load (deduped) */}
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-30WWS5SMCS"
         />
         <Script
-          id="google-analytics"
+          id="google-gtag-init"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -424,29 +424,11 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-30WWS5SMCS');
-            `,
-          }}
-        />
-        {/* End Google Analytics */}
-
-        {/* ── Google Ads conversion tracking ─────────────────────────── */}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17934610144"
-        />
-        <Script
-          id="google-ads"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
               gtag('config', 'AW-17934610144');
             `,
           }}
         />
-        {/* End Google Ads */}
+        {/* End Google Analytics + Ads */}
         
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -495,7 +477,7 @@ export default function RootLayout({
             position: 'bottom-right'
           };
           _support['ui']['overrides'] = _support['ui']['overrides'] || {};
-          _support['ui']['overrides']['confirmationMessage'] = '\u2705 Thanks for contacting **Towing No. 1**! We\\'ve received your message and will get back to you as soon as possible. If this is an emergency, please call us directly for the fastest assistance.\\n';
+          _support['ui']['overrides']['confirmationMessage'] = '\u2705 Thanks for contacting **TowingNo.1**! We\\'ve received your message and will get back to you as soon as possible. If this is an emergency, please call us directly for the fastest assistance.\\n';
           _support['apps'] = {
             recentConversations: {},
             faq: {"enabled":true}

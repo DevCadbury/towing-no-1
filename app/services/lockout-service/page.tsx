@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
@@ -68,7 +68,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What areas do you serve for lockout assistance?",
-    a: "We provide car lockout assistance across Surrey, Langley, Burnaby, Delta, White Rock, Richmond, Coquitlam, Maple Ridge, Vancouver, and the wider Lower Mainland. Call (778) 838-0014 and we will confirm coverage for your specific location.",
+    a: "Our lockout service is available across the Lower Mainland, including the parkades and curbside spots where lockouts happen most. Call (778) 838-0014 and a dispatcher will confirm coverage for your exact location before a technician is sent.",
   },
   {
     q: "When would I need towing instead of lockout assistance?",

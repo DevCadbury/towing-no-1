@@ -309,7 +309,7 @@ export default function SurreyPage() {
 
               {/* H2: Why Choose Us */}
               <div>
-                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Why Choose Towing No.1</h2>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Why Choose TowingNo.1</h2>
                 <ul className="space-y-4">
                   {[
                     {
@@ -318,7 +318,7 @@ export default function SurreyPage() {
                     },
                     {
                       title: "Upfront flat-rate pricing — no surprises",
-                      body: "Every Surrey job starts with a firm flat-rate quote before a truck rolls. No meter running while you wait, no hidden fees, no surprise charges on arrival. You hear the exact price in under 60 seconds.",
+                      body: "Every Surrey job starts with a firm flat-rate quote before a truck rolls. No meter running while you wait, no hidden fees, no surprise charges on arrival. You hear the exact price before any truck rolls.",
                     },
                     {
                       title: "The right truck for your vehicle",
@@ -359,9 +359,9 @@ export default function SurreyPage() {
 
               {/* H2: Call Today */}
               <div>
-                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Call Towing No.1 Today</h2>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Call TowingNo.1 Today</h2>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Stranded somewhere in Surrey? Call us now and talk to dispatch directly — no bots, no hold music, no runaround. We give you an upfront quote and a live ETA in under 60 seconds, then dispatch the nearest available driver immediately.
+                  Stranded somewhere in Surrey? Call us now and talk to dispatch directly — no bots, no hold music, no runaround. We give you an upfront quote and confirm the nearest available driver immediately.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-6">
                   TowingNo.1 is a local towing company serving Surrey, South Surrey, Cloverdale, and the wider Lower Mainland. Whether you need a tow truck at 2&nbsp;a.m. or a quick battery boost in a parking lot, you reach a real dispatcher who gets the right help to you without delay.

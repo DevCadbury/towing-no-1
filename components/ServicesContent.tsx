@@ -12,7 +12,7 @@ const allServices = [
     badge: "24/7",
     paras: [
       "When a breakdown or collision leaves you stranded, our emergency tow trucks are dispatched the moment you call. We move cars, SUVs, crossovers, and light trucks on both wheel-lift and flatbed equipment, choosing the right setup for your vehicle so nothing is dragged on its drive wheels or scraped on a low front bumper.",
-      "Every emergency call starts with a flat-rate quote before a truck rolls, and our dispatcher stays on the line to confirm your exact location — a highway kilometre marker, the nearest off-ramp, or a mall parkade level. That detail lets the closest driver reach you in well under fifteen minutes across most of the Lower Mainland.",
+      "Every emergency call starts with a flat-rate quote before a truck rolls, and our dispatcher stays on the line to confirm your exact location — a highway kilometre marker, the nearest off-ramp, or a mall parkade level. That detail lets the closest driver head straight to you across the Lower Mainland.",
       "Once we arrive, the driver positions the truck to shield you from passing traffic, secures the vehicle with soft straps or wheel nets, and transports it to the repair shop, dealership, or address of your choice. All-wheel-drive vehicles and EVs ride on the flatbed to protect their drivetrains during transport.",
     ],
     bullets: ["24/7 emergency response", "Safe vehicle transport", "Towing to repair shop or home", "All vehicle types accepted"],

@@ -74,7 +74,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What areas do you serve for roadside assistance?",
-    a: "We provide roadside assistance across Surrey, Langley, Burnaby, Richmond, Delta, White Rock, Coquitlam, Maple Ridge, Vancouver, and the wider Lower Mainland. Call (778) 838-0014 and we'll confirm coverage for your location.",
+    a: "Roadside assistance is available across our full Lower Mainland coverage area, from the city centres to the rural roads. Call (778) 838-0014 and a dispatcher will confirm coverage for your exact location right away.",
   },
   {
     q: "When will I need a tow instead of roadside assistance?",

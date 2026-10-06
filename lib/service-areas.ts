@@ -167,7 +167,7 @@ const serviceAreaData: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Burnaby?",
-        a: "We dispatch the nearest available driver immediately.",
+        a: "We dispatch the nearest available driver the moment you call and ask for your nearest cross street — whether you are at Metrotown, Brentwood, or along Kingsway — so the closest truck reaches you without circling the one-way arterials.",
       },
       {
         q: "Do you tow on the Trans-Canada Highway through Burnaby?",
@@ -218,7 +218,7 @@ const serviceAreaData: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Coquitlam?",
-        a: "We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver the moment you call and ask whether you are up on Westwood Plateau or down near Coquitlam Centre, so we send a truck geared for the conditions you are actually in.",
       },
       {
         q: "Do you cover Port Coquitlam and Port Moody?",
@@ -269,7 +269,7 @@ const serviceAreaData: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Richmond?",
-        a: "We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver the moment you call and ask for your nearest cross street — such as No. 3 Road and Westminster Highway — so the closest truck reaches you quickly on Richmond's flat, easy-to-navigate grid.",
       },
       {
         q: "Do you tow near YVR Airport in Richmond?",
@@ -320,7 +320,7 @@ const serviceAreaData: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in White Rock?",
-        a: "We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver the moment you call and ask for your nearest cross street — the beachfront hill and Marine Drive are tight, so local knowledge matters for a quick, careful recovery.",
       },
       {
         q: "Do you cover the White Rock Beach area?",
@@ -371,7 +371,7 @@ const serviceAreaData: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Vancouver?",
-        a: "We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver the moment you call and ask for your nearest cross street and parkade level — downtown one-way streets and tower lots need a driver who knows the clearances.",
       },
       {
         q: "Do you tow in Downtown Vancouver?",
@@ -422,7 +422,7 @@ const serviceAreaData: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Delta?",
-        a: "We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver the moment you call and ask which community you are in — Ladner, Tsawwassen, or North Delta — so the closest staged truck heads straight to you across the municipality.",
       },
       {
         q: "Do you cover Tsawwassen and Ladner?",
@@ -473,7 +473,7 @@ const serviceAreaData: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Maple Ridge?",
-        a: "We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver the moment you call and ask for your nearest landmark — from Haney Place Mall to the Golden Ears Way approach — so the closest truck reaches you without guesswork on the rural roads.",
       },
       {
         q: "Do you cover Pitt Meadows?",
@@ -524,7 +524,7 @@ const serviceAreaData: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Cloverdale?",
-        a: "We dispatch the nearest available driver immediately when you call (778) 838-0014.",
+        a: "We dispatch the nearest available driver the moment you call (778) 838-0014 and ask for your nearest cross street — from the fairgrounds to Clayton Heights to the Highway 10 corridor — so the closest truck heads straight to you.",
       },
       {
         q: "Do you cover the Cloverdale Fairgrounds and Clayton Heights?",
@@ -575,7 +575,7 @@ const serviceAreaData: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in South Surrey?",
-        a: "We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver the moment you call and ask for your nearest intersection — from Grandview Corners and Morgan Crossing to Ocean Park and the Highway 99 corridor — so the closest truck reaches you quickly across this spread-out community.",
       },
       {
         q: "Do you cover Grandview Heights, Morgan Crossing, and Ocean Park?",
@@ -626,7 +626,7 @@ const serviceAreaData: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Aldergrove?",
-        a: "We dispatch the nearest available driver immediately when you call.",
+        a: "We dispatch the nearest available driver the moment you call and ask for your nearest cross street or landmark — the rural roads are long and lightly lit, so a precise location gets the closest truck to you without hunting in the dark.",
       },
       {
         q: "Do you handle rural and off-road recoveries near Aldergrove?",

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
@@ -72,7 +72,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What areas do you serve for flat tire help?",
-    a: "We provide flat tire assistance across Surrey, Langley, Burnaby, Delta, White Rock, Richmond, Coquitlam, Maple Ridge, Vancouver, and the wider Lower Mainland. Call (778) 838-0014 and we will confirm coverage for your location.",
+    a: "Flat tire help covers the whole Lower Mainland, from live highway shoulders to quiet parkades. If you are stranded on a road we cover, we change the spare on the spot or tow you to the nearest open tire shop. Call (778) 838-0014 to confirm coverage for your location.",
   },
   {
     q: "When would I need a tow instead of a roadside tire change?",

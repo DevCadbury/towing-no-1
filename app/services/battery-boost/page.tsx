@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -69,7 +69,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What areas do you serve for battery boost?",
-    a: "We provide battery boost service across Surrey, Langley, Burnaby, Delta, White Rock, Richmond, Coquitlam, Maple Ridge, Vancouver, and the wider Lower Mainland. Call (778) 838-0014 and we will confirm coverage for your specific location.",
+    a: "Battery boost and jump-start service is available wherever our trucks are staged across the Lower Mainland, from Surrey and Langley out to the rural roads near Aldergrove and Maple Ridge. Call (778) 838-0014 and a dispatcher will confirm coverage for your exact location before we send anyone.",
   },
 ];
 const faqSchema = faqPageSchema(faq);

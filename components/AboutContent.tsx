@@ -53,7 +53,7 @@ export default function AboutContent() {
               <div className="w-16 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mb-8 rounded-full" />
               <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  Founded in 2010, TowingNo.1 began with a single truck and a clear mission: to provide the most reliable and honest towing service in the Lower Mainland. We saw too many people stranded and stressed, dealing with hidden fees and long wait times.
+                  TowingNo.1 began with a single truck and a clear mission: to provide the most reliable and honest towing service in the Lower Mainland. We saw too many people stranded and stressed, dealing with hidden fees and long wait times.
                 </p>
                 <p>
                   Over the years, we&apos;ve grown into a full fleet operation, but our core values haven&apos;t changed. We treat every customer like family, understanding that when you call us, you&apos;re likely in a stressful situation.
@@ -65,13 +65,13 @@ export default function AboutContent() {
                   Being licensed and fully insured is not a marketing line for us, it is the foundation of how we work. Every driver is trained to secure your vehicle correctly, to operate safely around live traffic, and to treat your car as carefully as their own. We carry the coverage that protects you and your vehicle from the moment we hook up to the moment we set down at the destination.
                 </p>
                 <p>
-                  Today, we are proud to be the top-rated towing service in BC, known for our fast response times, professional drivers, and transparent pricing.
+                  Today, we are proud to be a trusted towing service across the Lower Mainland, known for professional drivers and transparent pricing.
                 </p>
                 <p>
                   Our process is built to take the stress out of a bad day. When you call, a real dispatcher gathers your location, your vehicle details, and the problem, then gives you a flat-rate quote and an honest arrival estimate before a truck rolls. You get a callback or text as the driver approaches, the driver confirms the price on site before any work begins, and payment is simple with card, debit, or cash. No upselling, no surprise add-ons, no inflated storage games, just the help you called for at the price we quoted.
                 </p>
                 <p>
-                  More than a decade of experience across the Lower Mainland has taught us that reputation is earned one call at a time. The thousands of drivers who have trusted us came back, and recommended us to friends and family, because we showed up when we said we would and charged what we promised. That is the standard we hold every member of our team to, and it is the difference we want you to feel the moment we answer the phone.
+                  Experience across the Lower Mainland has taught us that reputation is earned one call at a time. The drivers who have trusted us came back, and recommended us to friends and family, because we showed up when we said we would and charged what we promised. That is the standard we hold every member of our team to, and it is the difference we want you to feel the moment we answer the phone.
                 </p>
               </div>
             </motion.div>
@@ -168,8 +168,8 @@ export default function AboutContent() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                title: "BC Licensed Since 2010",
-                body: "Operating in British Columbia for over 15 years. Every truck carries a valid CVSE commercial vehicle licence and is maintained to provincial standards.",
+                title: "BC Licensed & Insured",
+                body: "Operating across British Columbia with commercially licensed vehicles maintained to provincial standards.",
               },
               {
                 title: "Fully Insured",
@@ -248,7 +248,7 @@ export default function AboutContent() {
             <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">From Our Blog</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy-900">Road Safety &amp; Towing Advice</h2>
             <p className="text-lg text-slate-500 max-w-xl mx-auto">
-              Practical guides from over 15 years of Lower Mainland roadside experience.
+              Practical guides from our Lower Mainland roadside experience.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">

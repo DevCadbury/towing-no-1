@@ -8,48 +8,8 @@ export const metadata: Metadata = {
     "Tow Truck Surrey | 24/7 Emergency Towing | TowingNo.1",
   description:
     "Stranded in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 emergency towing, battery boost, lockout & flat tire help. Free quote — call (778) 838-0014.",
-  keywords: [
-    // Core Surrey / local intent
-    "tow truck surrey",
-    "towing surrey",
-    "towing surrey bc",
-    "tow truck surrey bc",
-    "surrey towing",
-    "surrey tow truck",
-    "towing company surrey",
-    "towing company surrey bc",
-    // Near-me / generic high-volume
-    "towing near me",
-    "tow truck near me",
-    "tow truck near me open now",
-    "car towing near me",
-    "tow service near me",
-    "towing company near me",
-    // Emergency & 24/7
-    "emergency towing surrey",
-    "24 hour towing surrey",
-    "24/7 tow truck",
-    "24/7 emergency towing",
-    // Roadside
-    "roadside assistance surrey",
-    "roadside assistance near me",
-    "24 hour roadside assistance",
-    // Service specifics
-    "battery boost surrey",
-    "lockout service surrey",
-    "flat tire help surrey",
-    "fuel delivery surrey",
-    "accident towing surrey",
-    "vehicle transport surrey",
-    "winching surrey",
-    // Langley
-    "tow truck langley",
-    "towing langley",
-    "towing langley bc",
-    // Lower Mainland
-    "lower mainland towing",
-    "towing lower mainland bc",
-  ],
+  // keywords meta intentionally omitted — Google ignores it for ranking and
+  // a large list is dead weight / stuffing signal in the raw HTML source.
   alternates: {
     canonical: "https://www.towingno1.com",
   },
@@ -175,17 +135,8 @@ const websiteSchema = {
   },
 };
 
-const speakableSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://www.towingno1.com/#webpage",
-  url: "https://www.towingno1.com",
-  name: "Tow Truck Surrey | 24/7 Emergency Towing | TowingNo.1",
-  speakable: {
-    "@type": "SpeakableSpecification",
-    cssSelector: ["#hero-summary", "#faq-section"],
-  },
-};
+// speakableSchema removed — Google dropped SpeakableSpecification support
+// (~2023); the empty block added noise to JSON-LD with no ranking benefit.
 
 export default function Home() {
   return (
@@ -207,11 +158,6 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
       <HomeContent faq={homeFaq} />
     </>

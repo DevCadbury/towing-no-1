@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
@@ -64,7 +64,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What areas do you serve for fuel delivery?",
-    a: "We provide fuel delivery across Surrey, Langley, Burnaby, Delta, White Rock, Richmond, Coquitlam, Maple Ridge, Vancouver, and the wider Lower Mainland. Call (778) 838-0014 and we will confirm coverage for your specific location.",
+    a: "Fuel delivery runs across our Lower Mainland coverage area — from highway corridors to residential side streets. Tell the dispatcher where you are and we will confirm coverage for your exact location before sending fuel out.",
   },
   {
     q: "What if the vehicle still will not start after receiving fuel?",

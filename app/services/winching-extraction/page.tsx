@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
@@ -73,7 +73,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What areas do you serve for winching and extraction?",
-    a: "We provide winching and vehicle extraction across Surrey, Langley, Burnaby, Delta, White Rock, Richmond, Coquitlam, Maple Ridge, Vancouver, and the wider Lower Mainland. Call (778) 838-0014 to confirm coverage for your location.",
+    a: "Winching and extraction is available across the Lower Mainland, including the rural, hillside, and back-road locations where vehicles most often slide into a ditch, mud, or snow. Call (778) 838-0014 to confirm coverage for your location and the terrain involved.",
   },
   {
     q: "When would another recovery method be needed?",

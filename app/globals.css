@@ -294,12 +294,6 @@
   color: #64748b !important;
 }
 
-/* Hide EmbedSocial Branding */
-.embedsocial-hashtag .feed-powered-by-es,
-.embedsocial-hashtag .es-widget-branding,
-.embedsocial-hashtag [class*="powered-by"],
-.embedsocial-hashtag a[href*="embedsocial.com"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-}
+/* EmbedSocial branding hide rule removed — hiding a third-party attribution
+   link may violate the free-tier widget ToS and constitutes a hidden link.
+   Move to a paid EmbedSocial plan if branding removal is required. */

@@ -1,4 +1,4 @@
-﻿import { notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -246,11 +246,13 @@ export default async function BlogPostPage({ params }: Props) {
     dateModified: modified,
     author: {
       "@type": "Organization",
+      "@id": "https://www.towingno1.com/#organization",
       name: "TowingNo.1",
       url: "https://www.towingno1.com",
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://www.towingno1.com/#organization",
       name: "TowingNo.1",
       logo: {
         "@type": "ImageObject",
@@ -261,10 +263,8 @@ export default async function BlogPostPage({ params }: Props) {
       "@type": "WebPage",
       "@id": `https://www.towingno1.com/blog/${post.slug}`,
     },
-    speakable: {
-      "@type": "SpeakableSpecification",
-      cssSelector: [".article-excerpt"],
-    },
+    // speakable removed — Google dropped support for SpeakableSpecification
+    // (~2023); keeping it adds noise to the JSON-LD with no benefit.
   };
 
   const breadcrumbSchema = {

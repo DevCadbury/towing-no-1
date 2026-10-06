@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
@@ -73,7 +73,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What areas do you serve for accident recovery?",
-    a: "We provide accident recovery and towing across Surrey, Langley, Burnaby, Delta, White Rock, Richmond, Coquitlam, Maple Ridge, Vancouver, and the wider Lower Mainland. Call (778) 838-0014 to confirm coverage for your location.",
+    a: "Accident recovery and collision towing is available across the Lower Mainland, including the highway corridors and major arterials where most collisions happen. Call (778) 838-0014 to confirm coverage for your exact location before a truck is dispatched.",
   },
   {
     q: "Can you transport a damaged vehicle to a specific destination?",

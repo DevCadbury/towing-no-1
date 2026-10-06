@@ -17,10 +17,11 @@ import { contact, geo, social } from "@/lib/business-facts";
 
 const baseUrl = "https://www.towingno1.com";
 
-// Canonical service list (name, path, short description) mirroring the 8
+// Canonical service list (name, path, short description) mirroring all 9
 // service pages. Kept here so /llms.txt is a single, editable summary.
 const services = [
   { name: "Emergency Towing", path: "/services/emergency-towing", desc: "24/7 fast-response tow truck for breakdowns and collisions." },
+  { name: "Roadside Assistance", path: "/services/roadside-assistance", desc: "Battery boost, flat tire, lockout, and fuel delivery — all in one call." },
   { name: "Battery Boost", path: "/services/battery-boost", desc: "Jump-start and battery boost when your battery dies." },
   { name: "Flat Tire Help", path: "/services/flat-tire-help", desc: "On-site tire change or a tow to the nearest shop." },
   { name: "Lockout Service", path: "/services/lockout-service", desc: "Safe vehicle unlocking when keys are locked inside." },

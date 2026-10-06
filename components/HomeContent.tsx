@@ -151,7 +151,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
               >
                 24/7 Tow Truck{" "}
                 <span className="text-amber-400 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">Surrey &amp; Lower Mainland</span>
-                <br />24/7 Emergency Roadside Assistance
+                <br />Emergency Roadside Assistance
               </motion.h1>
 
               <motion.p
@@ -161,7 +161,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
                 transition={{ duration: 0.6, delay: 0.32 }}
                 className="text-base md:text-xl text-white/90 mb-10 max-w-xl leading-relaxed [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]"
               >
-                Need a tow truck near you in Surrey or anywhere in the Lower Mainland? Call now for immediate dispatch, upfront flat-rate pricing, and a free quote in under 60 seconds. Licensed &amp; insured.
+                Need a tow truck near you in Surrey or anywhere in the Lower Mainland? Call now for immediate dispatch, upfront flat-rate pricing, and a free quote before we roll. Licensed &amp; insured.
               </motion.p>
 
               <motion.div
@@ -179,7 +179,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0" aria-hidden="true">
                     <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
                   </svg>
-                  Call Now — Free Quote in 60 Sec
+                  Call Now — Free Quote
                 </a>
                 <Link
                   href="/contact"
@@ -190,7 +190,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
               </motion.div>
 
               <p className="mt-4 text-xs md:text-sm text-amber-100/95 font-semibold tracking-wide">
-                Talk to dispatch now. Upfront price. ETA in under 60 seconds.
+                Talk to dispatch now. Upfront price before dispatch. Under 15 minutes in many situations, depending on location, traffic, weather, and road conditions.
               </p>
 
               <motion.div
@@ -531,7 +531,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
             className="max-w-2xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
-              Stranded? We Dispatch in Under 15 Minutes.
+              Stranded? We Dispatch Now — 24/7.
             </h2>
             <p className="text-white/60 mb-10 text-base">
               Available 24 hours a day, 7 days a week — including all holidays.
@@ -545,7 +545,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
                 <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
               </svg>
-              Call Now — Free Quote in 60 Sec
+              Call Now — Free Quote
             </a>
           </motion.div>
         </div>

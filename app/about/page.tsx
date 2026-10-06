@@ -2,29 +2,32 @@ import type { Metadata } from "next";
 import AboutContent from "@/components/AboutContent";
 
 export const metadata: Metadata = {
-  title: "About Us | Licensed & Insured Towing in BC",
-  description: "TowingNo.1 has served Surrey and the Lower Mainland since 2010 — licensed and insured, with honest flat-rate pricing and professional drivers.",
+  title: "About TowingNo.1 | 24/7 Towing & Roadside Assistance in BC",
+  description:
+    "TowingNo.1 is a 24/7 towing and roadside assistance company serving Surrey and the Lower Mainland with flat-rate pricing and professional drivers.",
   alternates: {
     canonical: "https://www.towingno1.com/about",
   },
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/about",
-    title: "About TowingNo.1 | BC's Trusted Towing Company Since 2010",
-    description: "Learn about TowingNo.1, British Columbia's most trusted towing company since 2010. Fast response, honest pricing, and professional service across the Lower Mainland.",
+    title: "About TowingNo.1 | 24/7 Towing & Roadside Assistance in BC",
+    description:
+      "24/7 towing and roadside assistance across Surrey and the Lower Mainland. Flat-rate pricing, professional drivers, and local dispatch.",
     images: [
       {
         url: "https://www.towingno1.com/preview.jpg",
         width: 1200,
         height: 630,
-        alt: "TowingNo.1 - Trusted Towing Company in BC",
+        alt: "TowingNo.1 - Towing & Roadside Assistance in BC",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About TowingNo.1 | BC's Trusted Towing Company Since 2010",
-    description: "Learn about TowingNo.1, British Columbia's most trusted towing company since 2010.",
+    title: "About TowingNo.1 | 24/7 Towing & Roadside Assistance in BC",
+    description:
+      "24/7 towing and roadside assistance across Surrey and the Lower Mainland. Flat-rate pricing, professional drivers, and local dispatch.",
     images: ["https://www.towingno1.com/preview.jpg"],
   },
 };
@@ -38,47 +41,15 @@ const breadcrumbSchema = {
   ],
 };
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.towingno1.com/#organization",
-  name: "TowingNo.1",
-  url: "https://www.towingno1.com",
-  foundingDate: "2010",
-  description: "Licensed and insured emergency towing and roadside assistance company serving Surrey and the Lower Mainland of British Columbia since 2010.",
-  areaServed: {
-    "@type": "AdministrativeArea",
-    name: "British Columbia",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+1-778-838-0014",
-    contactType: "customer support",
-    availableLanguage: "English",
-    hoursAvailable: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      opens: "00:00",
-      closes: "23:59",
-    },
-  },
-  knowsAbout: [
-    "Emergency towing",
-    "Vehicle recovery",
-    "Roadside assistance",
-    "Battery boost",
-    "Flat tire service",
-    "Vehicle lockout service",
-    "EV towing",
-    "Winching and extraction",
-  ],
-};
-
+// NOTE: The About page previously emitted a second `Organization` node (with the
+// same @id as the global one in app/layout.tsx) that re-introduced unverified
+// `foundingDate: "2010"` and "licensed and insured" into JSON-LD. That duplicate,
+// contradictory entity was removed. Organization identity is emitted once, in the
+// root layout's global @graph; the About page keeps only its BreadcrumbList.
 export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <AboutContent />
     </>
   );

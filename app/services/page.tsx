@@ -282,7 +282,7 @@ export default function Services() {
             Towing &amp; Roadside Assistance Services in Surrey, BC
           </h1>
           <p className="text-white/85 text-lg md:text-xl max-w-xl [text-shadow:0_1px_10px_rgba(0,0,0,0.5)]">
-            Comprehensive towing and roadside solutions — available 24/7 across Surrey and the Lower Mainland. Licensed &amp; insured since 2010.
+            Comprehensive towing and roadside solutions — available 24/7 across Surrey and the Lower Mainland. Licensed &amp; insured.
           </p>
         </div>
       </section>
