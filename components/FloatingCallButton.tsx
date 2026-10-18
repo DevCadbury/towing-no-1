@@ -5,8 +5,8 @@ export default function FloatingCallButton() {
   const phone = "+17788380014";
 
   return (
-    // Pinned to the bottom-LEFT across all breakpoints. The Reamaze live-chat
-    // widget is locked to the bottom-right (see layout.tsx config), so keeping
+    // Pinned to the bottom-LEFT across all breakpoints. The tawk.to live-chat
+    // widget docks to the bottom-right (see TawkWidget in layout.tsx), so keeping
     // this button on the left guarantees the two never overlap on desktop.
     <div className="fixed left-3 bottom-6 sm:left-4 sm:bottom-8 md:left-6 md:bottom-10 z-[70]">
       <a

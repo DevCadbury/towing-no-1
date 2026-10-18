@@ -3,8 +3,13 @@
 import Image from "next/image";
 import Script from "next/script";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import PhoneField from "@/components/PhoneField";
 import { trackLead } from "@/lib/analytics";
+
+// Fallback country for the phone flag/dial-code when IP geolocation is
+// unavailable. The visitor's real country (from /api/geo) overrides this.
+const FALLBACK_COUNTRY = "ca";
 
 // reCAPTCHA v3 (invisible, score-based). A token is generated on submit via
 // grecaptcha.execute() and verified server-side.
@@ -24,15 +29,36 @@ export default function ContactContent() {
     name: "",
     email: "",
     phone: "",
+    from: "",
+    to: "",
     message: "",
   });
+  const [acceptTerms, setAcceptTerms] = useState(false);
+  const [phoneCountry, setPhoneCountry] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  // Detect the visitor's country from their IP (via our same-origin /api/geo)
+  // so the phone field opens on the right flag + dial code.
+  useEffect(() => {
+    let active = true;
+    fetch("/api/geo")
+      .then((r) => r.json())
+      .then((d) => { if (active) setPhoneCountry((d?.country || FALLBACK_COUNTRY).toLowerCase()); })
+      .catch(() => { if (active) setPhoneCountry(FALLBACK_COUNTRY); });
+    return () => { active = false; };
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg("");
+
+    if (!acceptTerms) {
+      setStatus("error");
+      setErrorMsg("Please accept the Terms & Conditions to continue.");
+      return;
+    }
 
     // Generate a reCAPTCHA v3 token (invisible) before submitting.
     let recaptchaToken = "";
@@ -62,12 +88,13 @@ export default function ContactContent() {
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formState, recaptchaToken }),
+        body: JSON.stringify({ ...formState, acceptTerms, recaptchaToken }),
       });
       const data = await res.json();
       if (!res.ok || !data.success) throw new Error(data.error || "Submission failed.");
       setStatus("success");
-      setFormState({ name: "", email: "", phone: "", message: "" });
+      setFormState({ name: "", email: "", phone: "", from: "", to: "", message: "" });
+      setAcceptTerms(false);
       trackLead();
     } catch (err: unknown) {
       setStatus("error");
@@ -227,15 +254,43 @@ export default function ContactContent() {
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-navy-900 font-medium mb-2 text-sm">Phone Number</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all bg-slate-50/50"
-                    placeholder="(778) 555-0100"
+                  <PhoneField
+                    key={phoneCountry ?? "loading"}
+                    defaultCountry={phoneCountry ?? FALLBACK_COUNTRY}
                     value={formState.phone}
-                    onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                    onChange={(phone) => setFormState({ ...formState, phone })}
+                    inputId="phone"
+                    required
                   />
+                  <p className="mt-1 text-xs text-slate-400">Search and pick your country for the correct dialing code.</p>
+                </div>
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="from" className="block text-navy-900 font-medium mb-2 text-sm">
+                      From <span className="text-slate-400 font-normal">(pickup location)</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="from"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all bg-slate-50/50"
+                      placeholder="e.g. Hwy 1 near 176 St, Surrey"
+                      value={formState.from}
+                      onChange={(e) => setFormState({ ...formState, from: e.target.value })}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="to" className="block text-navy-900 font-medium mb-2 text-sm">
+                      To <span className="text-slate-400 font-normal">(destination)</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="to"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all bg-slate-50/50"
+                      placeholder="e.g. Langley auto shop or home"
+                      value={formState.to}
+                      onChange={(e) => setFormState({ ...formState, to: e.target.value })}
+                    />
+                  </div>
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-navy-900 font-medium mb-2 text-sm">How can we help?</label>
@@ -258,12 +313,28 @@ export default function ContactContent() {
                     apply.
                   </p>
                 )}
+                <div className="flex items-start gap-3">
+                  <input
+                    id="acceptTerms"
+                    type="checkbox"
+                    required
+                    checked={acceptTerms}
+                    onChange={(e) => setAcceptTerms(e.target.checked)}
+                    className="mt-1 h-4 w-4 flex-shrink-0 accent-amber-500"
+                  />
+                  <label htmlFor="acceptTerms" className="text-sm text-slate-500 leading-relaxed">
+                    I agree to the{" "}
+                    <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:underline">Terms &amp; Conditions</a>{" "}
+                    and{" "}
+                    <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:underline">Privacy Policy</a>.
+                  </label>
+                </div>
                 {status === "error" && (
                   <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{errorMsg}</p>
                 )}
                 <button
                   type="submit"
-                  disabled={status === "submitting"}
+                  disabled={status === "submitting" || !acceptTerms}
                   className="w-full btn-primary py-4 text-lg disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {status === "submitting" ? "Sending..." : "Send Message"}

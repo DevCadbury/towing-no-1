@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sendContactWhatsAppNotification } from "@/lib/contact-notify";
 
 /* ─── Email configuration (all from env, never hardcoded) ──────── */
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
@@ -100,7 +101,14 @@ async function sendEmail({ from, to, subject, html, replyTo }: ResendMessage): P
 }
 
 /* ─── Business notification email ──────────────────────────────── */
-function buildBusinessEmail(name: string, email: string, phone: string, message: string): string {
+function buildBusinessEmail(
+  name: string,
+  email: string,
+  phone: string,
+  message: string,
+  from = "",
+  to = ""
+): string {
   const timestamp = new Date().toLocaleString("en-CA", {
     timeZone: "America/Vancouver",
     year: "numeric",
@@ -110,6 +118,20 @@ function buildBusinessEmail(name: string, email: string, phone: string, message:
     minute: "2-digit",
     hour12: true,
   });
+
+  // Optional pickup/destination rows (shown only when provided).
+  const routeRows =
+    from || to
+      ? `
+                <tr>
+                  <td style="padding:12px 16px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid #e5e7eb;">From</td>
+                  <td style="padding:12px 16px;font-size:14px;color:#111827;border-bottom:1px solid #e5e7eb;">${from || "&mdash;"}</td>
+                </tr>
+                <tr style="background-color:#f9fafb;">
+                  <td style="padding:12px 16px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid #e5e7eb;">To</td>
+                  <td style="padding:12px 16px;font-size:14px;color:#111827;border-bottom:1px solid #e5e7eb;">${to || "&mdash;"}</td>
+                </tr>`
+      : "";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -148,7 +170,7 @@ function buildBusinessEmail(name: string, email: string, phone: string, message:
                 <tr style="background-color:#f9fafb;">
                   <td style="padding:12px 16px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid #e5e7eb;">Phone</td>
                   <td style="padding:12px 16px;font-size:14px;color:#111827;border-bottom:1px solid #e5e7eb;"><a href="tel:${phone}" style="color:#2563eb;text-decoration:none;">${phone}</a></td>
-                </tr>
+                </tr>${routeRows}
                 <tr>
                   <td style="padding:12px 16px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid #e5e7eb;">Submitted</td>
                   <td style="padding:12px 16px;font-size:14px;color:#111827;border-bottom:1px solid #e5e7eb;">${timestamp} (Pacific)</td>
@@ -322,6 +344,9 @@ export async function POST(req: NextRequest) {
     const email = sanitize(body.email);
     const phone = sanitize(body.phone);
     const message = sanitize(body.message);
+    const from = sanitize(body.from);
+    const to = sanitize(body.to);
+    const acceptTerms = body.acceptTerms === true;
 
     // Basic validation
     if (!name || !email || !phone || !message) {
@@ -333,6 +358,12 @@ export async function POST(req: NextRequest) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
         { success: false, error: "Please provide a valid email address." },
+        { status: 400 }
+      );
+    }
+    if (!acceptTerms) {
+      return NextResponse.json(
+        { success: false, error: "You must accept the Terms & Conditions." },
         { status: 400 }
       );
     }
@@ -356,6 +387,8 @@ export async function POST(req: NextRequest) {
     const safeEmail = escapeHtml(email);
     const safePhone = escapeHtml(phone);
     const safeMessage = escapeHtml(message);
+    const safeFrom = escapeHtml(from);
+    const safeTo = escapeHtml(to);
 
     // Email 1 — Business/admin notification (to all admin recipients). This is
     // the critical lead delivery, so it is sent first and must succeed. Sent
@@ -365,7 +398,7 @@ export async function POST(req: NextRequest) {
       from: `TowingNo.1 Website <${EMAIL_FROM}>`,
       to: ADMIN_RECIPIENTS,
       subject: `New Contact Form Submission — ${name}`,
-      html: buildBusinessEmail(safeName, safeEmail, safePhone, safeMessage),
+      html: buildBusinessEmail(safeName, safeEmail, safePhone, safeMessage, safeFrom, safeTo),
       replyTo: email,
     });
 
@@ -383,6 +416,11 @@ export async function POST(req: NextRequest) {
     } catch (confErr) {
       console.error("[send-email] confirmation email failed (lead still captured):", confErr);
     }
+
+    // Additional best-effort WhatsApp notification. Uses the sanitized (non-HTML)
+    // field values. A failure here never affects the email above or the response
+    // below, and is already de-duplicated server-side on the VPS.
+    await sendContactWhatsAppNotification({ name, email, phone, message, from, to });
 
     return NextResponse.json({ success: true });
   } catch (err) {
