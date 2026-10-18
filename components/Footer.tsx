@@ -144,6 +144,15 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-amber-400 transition-colors">Terms of Service</Link>
           </div>
         </div>
+
+        {/* reCAPTCHA disclosure (required because the floating badge is hidden). */}
+        <p className="mt-6 text-center text-[11px] leading-relaxed text-slate-600">
+          This site is protected by reCAPTCHA and the Google{" "}
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">Privacy Policy</a>{" "}
+          and{" "}
+          <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">Terms of Service</a>{" "}
+          apply.
+        </p>
       </div>
     </footer>
   );

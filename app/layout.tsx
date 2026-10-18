@@ -389,6 +389,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        {/* Warm up the tawk.to chat origins so the widget appears faster */}
+        <link rel="preconnect" href="https://embed.tawk.to" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://va.tawk.to" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cdn.tawk.to" />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
