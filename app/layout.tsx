@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import CallTracking from "@/components/CallTracking";
+import TawkWidget from "@/components/TawkWidget";
 import { social, address } from "@/lib/business-facts";
 
 const outfit = Outfit({
@@ -446,51 +447,8 @@ export default function RootLayout({
         <FloatingCallButton />
         <CallTracking />
 
-        {/* ── Reamaze live-chat widget ──────────────────────────────── */}
-        <Script
-          id="reamaze-config"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-          var _support = _support || { 'ui': {}, 'user': {} };
-          _support['account'] = '14d9241b-cb1a-4379-a0d3-f9cb700e9592';
-          _support['ui']['contactMode'] = 'mixed';
-          _support['ui']['enableKb'] = 'true';
-          _support['ui']['mailbox'] = '76149070';
-          _support['ui']['styles'] = {
-            widgetColor: '#b61209',
-            gradient: true,
-          };
-          _support['ui']['shoutboxFacesMode'] = '';
-          _support['ui']['widget'] = {
-            allowBotProcessing: 'true',
-            slug: 'www-dot-towingno1-dot-com',
-            label: {
-              text: '\u{1F44B} Hi there! Need roadside help?\\n\\nWe\\'re available 24/7. To get started, please send your:\\n\u2022 Name\\n\u2022 Phone Number\\n\u2022 Email (optional)\\n\\nWe\\'ll assist you as quickly as possible!\\n',
-              mode: "notification",
-              delay: 3,
-              duration: 30,
-              primary: 'I need help!',
-              secondary: '',
-              sound: true,
-            },
-            position: 'bottom-right'
-          };
-          _support['ui']['overrides'] = _support['ui']['overrides'] || {};
-          _support['ui']['overrides']['confirmationMessage'] = '\u2705 Thanks for contacting **TowingNo.1**! We\\'ve received your message and will get back to you as soon as possible. If this is an emergency, please call us directly for the fastest assistance.\\n';
-          _support['apps'] = {
-            recentConversations: {},
-            faq: {"enabled":true}
-          };
-        `,
-          }}
-        />
-        <Script
-          src="https://cdn.reamaze.com/assets/reamaze-loader.js"
-          strategy="afterInteractive"
-        />
-
-
+        {/* ── tawk.to live-chat widget (pre-chat form -> WhatsApp lead) ── */}
+        <TawkWidget />
       </body>
     </html>
   );
