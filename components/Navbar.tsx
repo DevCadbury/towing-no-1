@@ -9,13 +9,14 @@ import { motion, AnimatePresence } from "framer-motion";
 const serviceItems = [
   { href: "/services/emergency-towing",   label: "Emergency Towing",     desc: "24/7 fast response, any time" },
   { href: "/services/roadside-assistance", label: "Roadside Assistance",  desc: "Battery, flat tire, lockout, fuel" },
-  { href: "/services/flat-tire-help",     label: "Flat Tire Help",        desc: "On-site change or tow-in" },
-  { href: "/services/battery-boost",      label: "Battery Boost",         desc: "Jump-start in minutes" },
+  { href: "/services/flat-tire-help",     label: "Flat Tire Help",        desc: "Tire change on site or a tow" },
+  { href: "/services/battery-boost",      label: "Battery Boost",         desc: "Jump start in minutes" },
   { href: "/services/accident-recovery",  label: "Accident Recovery",     desc: "Careful collision towing" },
   { href: "/services/lockout-service",    label: "Lockout Service",       desc: "Keys locked inside? We help" },
-  { href: "/services/vehicle-transport",  label: "Vehicle Transport",     desc: "Secure inter-city moves" },
-  { href: "/services/fuel-delivery",      label: "Fuel Delivery",         desc: "Emergency fuel drop-off" },
+  { href: "/services/vehicle-transport",  label: "Vehicle Transport",     desc: "Secure moves between cities" },
+  { href: "/services/fuel-delivery",      label: "Fuel Delivery",         desc: "Emergency fuel brought to you" },
   { href: "/services/winching-extraction", label: "Winching & Extraction", desc: "Stuck in mud, snow, or ditch" },
+  { href: "/services/cross-border-towing", label: "Cross Border Towing",  desc: "Canada and U.S. vehicle moves" },
 ];
 
 const navLinks = [

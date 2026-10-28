@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Winching & Vehicle Extraction | 24/7 | TowingNo.1",
     description:
       "24/7 winching and vehicle extraction across Surrey and the Lower Mainland. Vehicle stuck in a ditch, mud, or snow? We can help. Call 778-838-0014.",
-    images: [{ url: "/image/Winching_Extractio.png", alt: "Winching and vehicle extraction service — vehicle being recovered from a ditch" }],
+    images: [{ url: "/image/Winching_Extractio.png", alt: "Winching and vehicle extraction service: vehicle being recovered from a ditch" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -61,19 +61,19 @@ const faq: FaqItem[] = [
   },
   {
     q: "What should I do if my vehicle is stuck?",
-    a: "Stop attempting to drive out if the wheels are spinning without traction — continued wheelspin in mud or on ice usually makes the situation worse. Switch on your hazard lights, move passengers away from the vehicle and the area where recovery equipment will be rigged, and call (778) 838-0014 with your exact location. Do not stand near tensioned recovery cables or straps during extraction.",
+    a: "Stop attempting to drive out if the wheels are spinning without traction, because continued wheelspin in mud or on ice usually makes the situation worse. Switch on your hazard lights, move passengers away from the vehicle and the area where recovery equipment will be rigged, and call (778) 838-0014 with your exact location. Do not stand near tensioned recovery cables or straps during extraction.",
   },
   {
     q: "Is winching different from towing?",
-    a: "Yes. Towing moves a vehicle that can be safely hitched and transported. Winching is used to extract a vehicle from a position where it cannot be moved by normal towing — stuck in a ditch, embedded in mud, or in a location where a tow truck cannot get close enough to hitch up. Winching may be followed by a tow if the vehicle cannot be driven after extraction.",
+    a: "Yes. Towing moves a vehicle that can be safely hitched and transported. Winching is used to extract a vehicle from a position where it cannot be moved by normal towing: stuck in a ditch, embedded in mud, or in a location where a tow truck cannot get close enough to hitch up. Winching may be followed by a tow if the vehicle cannot be driven after extraction.",
   },
   {
     q: "Can a vehicle be towed after extraction?",
-    a: "Often, but not always. After extraction we assess the vehicle — if it can be started and driven safely, you are free to continue. If extraction reveals suspension damage, a flat tyre, fluid loss, or another issue that makes driving unsafe, we can arrange a tow to a repair shop.",
+    a: "Often, but not always. After extraction we assess the vehicle. If it can be started and driven safely, you are free to continue. If extraction reveals suspension damage, a flat tyre, fluid loss, or another issue that makes driving unsafe, we can arrange a tow to a repair shop.",
   },
   {
     q: "What areas do you serve for winching and extraction?",
-    a: "Winching and extraction is available across the Lower Mainland, including the rural, hillside, and back-road locations where vehicles most often slide into a ditch, mud, or snow. Call (778) 838-0014 to confirm coverage for your location and the terrain involved.",
+    a: "Winching and extraction is available across the Lower Mainland, including the rural, hillside, and back road locations where vehicles most often slide into a ditch, mud, or snow. Call (778) 838-0014 to confirm coverage for your location and the terrain involved.",
   },
   {
     q: "When would another recovery method be needed?",
@@ -121,7 +121,7 @@ export default function WinchingExtractionPage() {
       <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image
           src="/image/Winching_Extractio.png"
-          alt="Winching and vehicle extraction service — vehicle being recovered from a roadside ditch"
+          alt="Winching and vehicle extraction service: vehicle being recovered from a roadside ditch"
           fill
           className="object-cover opacity-30"
           priority
@@ -145,7 +145,7 @@ export default function WinchingExtractionPage() {
           <p className="text-white/80 text-lg max-w-xl mb-8">
             Vehicle stuck in a ditch, mud, snow, or an awkward position? TowingNo.1 provides
             professional winching and vehicle extraction across Surrey and the Lower Mainland around
-            the clock — recovering the vehicle safely and assessing it before you drive away.
+            the clock, recovering the vehicle safely and assessing it before you drive away.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -178,7 +178,7 @@ export default function WinchingExtractionPage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Vehicle Recovery When Your Vehicle Is Stuck</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   A vehicle that has left the road, sunk into soft ground, or become stuck in an
-                  awkward position cannot always be freed by driving forward or backward — and
+                  awkward position cannot always be freed by driving forward or backward, and
                   attempting to do so can make the situation worse. Wheelspin in mud drives the vehicle
                   deeper; rocking on a slope risks tipping; forcing a buried vehicle with a tow strap
                   from another car can snap the strap or bend the frame.
@@ -188,10 +188,10 @@ export default function WinchingExtractionPage() {
                 </p>
                 <ul className="space-y-3 mb-4">
                   {[
-                    { title: "Vehicle stuck in a roadside ditch",   body: "A vehicle that has slid off the shoulder or clipped a curb and dropped into a ditch — particularly on a slope or at an angle — needs to be winched out from the correct direction to avoid further damage." },
+                    { title: "Vehicle stuck in a roadside ditch",   body: "A vehicle that has slid off the shoulder or clipped a curb and dropped into a ditch, particularly on a slope or at an angle, needs to be winched out from the correct direction to avoid further damage." },
                     { title: "Vehicle stuck in mud or soft ground", body: "Soft or waterlogged ground on farm roads, unpaved shoulders, or flooded areas can trap vehicles that lose traction and sink. Driving or towing out without the right technique digs deeper." },
                     { title: "Vehicle stuck in snow or ice",        body: "Heavy snow or icy conditions can trap a vehicle that has slid off the road or become unable to move. The recovery must account for the truck's own footing on the same surface." },
-                    { title: "Vehicle unable to move after an incident", body: "A vehicle that has come to rest in an awkward position after a collision, off-road excursion, or other incident that left it unable to be towed normally." },
+                    { title: "Vehicle unable to move after an incident", body: "A vehicle that has come to rest in an awkward position after a collision, a trip off the road, or another incident that left it unable to be towed normally." },
                     { title: "Vehicle requiring recovery before towing", body: "Sometimes a vehicle must be winched to a stable, accessible position before a tow truck can hook up safely. Extraction and towing are separate operations in these cases." },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
@@ -206,7 +206,7 @@ export default function WinchingExtractionPage() {
                 <p className="text-slate-600 leading-relaxed">
                   Call <a href="tel:+17788380014" className="font-semibold text-amber-600 hover:text-amber-700">(778) 838-0014</a> and
                   describe the situation. Tell the dispatcher where you are, how the vehicle became
-                  stuck, and the approximate angle or position — that information helps us send the
+                  stuck, and the approximate angle or position. That information helps us send the
                   right equipment.
                 </p>
               </div>
@@ -233,23 +233,23 @@ export default function WinchingExtractionPage() {
                   <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
                     <p className="font-bold text-navy-900 text-sm mb-2">Ordinary towing</p>
                     <p className="text-slate-600 text-sm leading-relaxed">
-                      Used to transport a vehicle that can be safely hitched — whether running or
-                      non-running — from one location to another. Towing is the step that often
+                      Used to transport a vehicle that can be safely hitched, whether or not it
+                      runs, from one location to another. Towing is the step that often
                       follows a successful extraction.
                     </p>
                   </div>
                 </div>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   After extraction, we assess whether the vehicle can be safely driven. If it can,
-                  you are free to continue. If the extraction reveals damage — a flat tyre, fluid
-                  loss, bent suspension — we will tell you honestly and can arrange a tow.
+                  you are free to continue. If the extraction reveals damage (a flat tyre, fluid
+                  loss, bent suspension), we will tell you honestly and can arrange a tow.
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {[
                     "Vehicle stuck in a ditch",
                     "Stuck in mud or soft ground",
                     "Stuck in snow or ice",
-                    "Post-incident recovery",
+                    "Recovery after an incident",
                     "Recovery before towing",
                     "Available 24/7 including holidays",
                   ].map((item) => (
@@ -282,7 +282,7 @@ export default function WinchingExtractionPage() {
                       body: "Snow and ice add an unpredictable surface. A vehicle that has slid off a road on a slope often sits at an awkward tilt, and the recovery must account for the recovery truck keeping grip on the same surface. Controlled tension and correct rigging are essential.",
                     },
                     {
-                      title: "Off-road and difficult terrain",
+                      title: "Off road and difficult terrain",
                       body: "A vehicle over an embankment or on uneven terrain needs the approach angle and anchor points assessed carefully before any pull begins. The wrong rigging on unstable ground can cause the vehicle to shift in an uncontrolled way.",
                     },
                   ].map((item) => (
@@ -303,11 +303,11 @@ export default function WinchingExtractionPage() {
                 </p>
                 <ol className="space-y-4 mb-5">
                   {[
-                    { step: "1", title: "Stop trying to drive out",              body: "If the wheels are spinning without traction, continued acceleration in mud or on ice usually makes the situation worse — the vehicle sinks deeper or slides further. Try once gently in each direction, then stop." },
+                    { step: "1", title: "Stop trying to drive out",              body: "If the wheels are spinning without traction, continued acceleration in mud or on ice usually makes the situation worse, as the vehicle sinks deeper or slides further. Try once gently in each direction, then stop." },
                     { step: "2", title: "Switch on hazard lights",               body: "If your position is near a road or other traffic, hazard lights warn approaching drivers that your vehicle is stationary in an unusual position." },
                     { step: "3", title: "Move passengers to a safe area",        body: "Get passengers away from the vehicle and the area where recovery equipment will be rigged. Keep them well back from the recovery direction." },
                     { step: "4", title: "Do not stand near tensioned equipment", body: "During recovery, stay well clear of winch cables, straps, and anchor points. A snapped cable or failed attachment stores significant energy and can be dangerous." },
-                    { step: "5", title: "Call with your exact location",          body: "Give the dispatcher your location — nearest road, intersection, or landmark — and describe how the vehicle is positioned and how it became stuck. This helps us send the right equipment on the first trip." },
+                    { step: "5", title: "Call with your exact location",          body: "Give the dispatcher your location (nearest road, intersection, or landmark) and describe how the vehicle is positioned and how it became stuck. This helps us send the right equipment on the first trip." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
                       <span className="w-8 h-8 rounded-full bg-amber-400 text-gray-900 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">
@@ -324,10 +324,10 @@ export default function WinchingExtractionPage() {
                 {/* Official resources — retained from original, placed within safety section */}
                 <OfficialResources
                   heading="Winter driving & road conditions"
-                  intro="Getting stuck is often a winter-conditions problem. These official B.C. resources help you plan and stay legal:"
+                  intro="Getting stuck is often a problem caused by winter conditions. These official B.C. resources help you plan and stay legal:"
                   items={[
-                    { href: "https://www.drivebc.ca", label: "DriveBC — live road conditions", note: "Check closures, snow, and hazards before you travel." },
-                    { href: "https://www.gov.bc.ca/winterdriving", label: "B.C. winter tires & chains", note: "Winter tire/chain rules apply on most routes Oct 1 – Apr 30." },
+                    { href: "https://www.drivebc.ca", label: "DriveBC live road conditions", note: "Check closures, snow, and hazards before you travel." },
+                    { href: "https://www.gov.bc.ca/winterdriving", label: "B.C. winter tires & chains", note: "Winter tire and chain rules apply on most routes from Oct 1 to Apr 30." },
                   ]}
                 />
               </div>
@@ -340,7 +340,7 @@ export default function WinchingExtractionPage() {
                   failed anchor point can be genuinely dangerous to everyone nearby. That is why we
                   keep bystanders clear, choose rated attachment points on the frame rather than
                   body panels or bumpers not designed for recovery loads, and use a steady controlled
-                  pull rather than a sudden jerk that shock-loads the rigging.
+                  pull rather than a sudden jerk that puts a shock load on the rigging.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   Attempting to free a stuck vehicle using a tow strap between two private vehicles
@@ -406,8 +406,8 @@ export default function WinchingExtractionPage() {
                 <ol className="space-y-4">
                   {[
                     { step: "1", title: "Call (778) 838-0014",                       body: "A dispatcher answers 24/7. Tell them your vehicle is stuck and give your location." },
-                    { step: "2", title: "Location and vehicle condition confirmed",   body: "We ask for your exact location — nearest road, intersection, or landmark — and a brief description of how the vehicle is stuck." },
-                    { step: "3", title: "Upfront quote provided",                    body: "We give you a flat-rate price for the extraction before a truck is dispatched. You know the cost before anyone is sent." },
+                    { step: "2", title: "Location and vehicle condition confirmed",   body: "We ask for your exact location (nearest road, intersection, or landmark) and a brief description of how the vehicle is stuck." },
+                    { step: "3", title: "Upfront quote provided",                    body: "We give you a flat rate price for the extraction before a truck is dispatched. You know the cost before anyone is sent." },
                     { step: "4", title: "Recovery vehicle dispatched",               body: "We send the nearest available driver with appropriate winching and recovery equipment for your situation." },
                     { step: "5", title: "Vehicle extracted",                         body: "The driver assesses the position, rigs to appropriate anchor points, and uses controlled winch tension to bring the vehicle back onto solid ground." },
                     { step: "6", title: "Assessment and onward assistance if needed", body: "We assess the vehicle after extraction. If it can be driven safely, you are free to go. If a tow or further assistance is needed, we arrange it." },
@@ -480,7 +480,7 @@ export default function WinchingExtractionPage() {
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Professional equipment</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Post-extraction assessment</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Assessment after extraction</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
                 </ul>
               </div>

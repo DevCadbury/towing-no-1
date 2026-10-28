@@ -17,18 +17,19 @@ import { contact, geo, social } from "@/lib/business-facts";
 
 const baseUrl = "https://www.towingno1.com";
 
-// Canonical service list (name, path, short description) mirroring all 9
+// Canonical service list (name, path, short description) mirroring all 10
 // service pages. Kept here so /llms.txt is a single, editable summary.
 const services = [
-  { name: "Emergency Towing", path: "/services/emergency-towing", desc: "24/7 fast-response tow truck for breakdowns and collisions." },
-  { name: "Roadside Assistance", path: "/services/roadside-assistance", desc: "Battery boost, flat tire, lockout, and fuel delivery — all in one call." },
-  { name: "Battery Boost", path: "/services/battery-boost", desc: "Jump-start and battery boost when your battery dies." },
-  { name: "Flat Tire Help", path: "/services/flat-tire-help", desc: "On-site tire change or a tow to the nearest shop." },
+  { name: "Emergency Towing", path: "/services/emergency-towing", desc: "24/7 fast response tow truck for breakdowns and collisions." },
+  { name: "Roadside Assistance", path: "/services/roadside-assistance", desc: "Battery boost, flat tire, lockout, and fuel delivery, all in one call." },
+  { name: "Battery Boost", path: "/services/battery-boost", desc: "Jump start and battery boost when your battery dies." },
+  { name: "Flat Tire Help", path: "/services/flat-tire-help", desc: "Tire change on site or a tow to the nearest shop." },
   { name: "Lockout Service", path: "/services/lockout-service", desc: "Safe vehicle unlocking when keys are locked inside." },
   { name: "Fuel Delivery", path: "/services/fuel-delivery", desc: "Emergency gasoline or diesel delivered to your location." },
   { name: "Winching & Extraction", path: "/services/winching-extraction", desc: "Recovery for vehicles stuck in mud, snow, or a ditch." },
-  { name: "Accident Recovery", path: "/services/accident-recovery", desc: "Careful collision-scene towing and damaged-vehicle transport." },
+  { name: "Accident Recovery", path: "/services/accident-recovery", desc: "Careful towing from collision scenes and transport for damaged vehicles." },
   { name: "Vehicle Transport", path: "/services/vehicle-transport", desc: "Secure vehicle transport across the Lower Mainland." },
+  { name: "Cross Border Towing", path: "/services/cross-border-towing", desc: "Towing and vehicle transportation between Canada and the United States, confirmed case by case." },
 ];
 
 export const dynamic = "force-static";
@@ -36,17 +37,17 @@ export const dynamic = "force-static";
 export function GET() {
   const lines: string[] = [];
 
-  lines.push("# TowingNo.1 - 24/7 Tow Truck & Roadside Assistance (Surrey & the Lower Mainland, BC)");
+  lines.push("# TowingNo.1: 24/7 Tow Truck & Roadside Assistance (Surrey & the Lower Mainland, BC)");
   lines.push("");
   lines.push(
     `> TowingNo.1 provides 24/7 emergency towing and roadside assistance across ${geo.region.value}, ${geo.province.value}. ` +
-      `Upfront flat-rate pricing with a free quote before dispatch. Call ${contact.phoneDisplay.value}.`,
+      `Upfront flat rate pricing with a free quote before dispatch. Call ${contact.phoneDisplay.value}.`,
   );
   lines.push("");
   lines.push(
     `TowingNo.1 is a local towing and roadside assistance company serving ${geo.region.value} in ${geo.province.value}, Canada. ` +
       `Dispatch is available 24 hours a day, 7 days a week, including weekends and holidays. The fastest way to reach us is by ` +
-      `phone at ${contact.phoneDisplay.value}; for non-urgent enquiries, email ${contact.email.value}.`,
+      `phone at ${contact.phoneDisplay.value}; for enquiries that are not urgent, email ${contact.email.value}.`,
   );
   lines.push("");
 
@@ -73,10 +74,10 @@ export function GET() {
 
   lines.push("## Company");
   lines.push(`- [About TowingNo.1](${baseUrl}/about): Who we are and the region we serve.`);
-  lines.push(`- [Contact](${baseUrl}/contact): Phone, email, and service-area details.`);
+  lines.push(`- [Contact](${baseUrl}/contact): Phone, email, and service area details.`);
   lines.push(`- [All services](${baseUrl}/services): Full list of towing and roadside services.`);
   lines.push(`- [All service areas](${baseUrl}/locations): Every city and community we cover.`);
-  lines.push(`- [Blog](${baseUrl}/blog): Road-safety and towing guides for BC drivers.`);
+  lines.push(`- [Blog](${baseUrl}/blog): Road safety and towing guides for BC drivers.`);
   lines.push("");
 
   lines.push("## Contact");

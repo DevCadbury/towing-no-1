@@ -472,3 +472,16 @@ All five items done. `npm run seo:all` exit 0 — guard 0 violations, `seo-check
 **Validation:** `npm run build` PASS. Rendered `<title>` verified on privacy (27), terms (29), contact (53), blog (57), about (59), locations/surrey (65) — all brand-once, no doubling. `npm run seo:all` exit 0 (guard 0, seo 0 errors/0 warnings, 34/34 quality, 0 dead links, 34/34 reachable, preservation re-captured for the intended metadata diffs).
 **Note (not yet done):** The crawl also flagged 6 "heading-order skip" (h1→h3) info-level a11y items; deferred pending the exact page+selector list from OpenSEO's `get_audit_issues` (tools were mid-reload). These are accessibility niceties, not ranking factors.
 **Status:** Completed (titles); heading-order skips pending exact locations.
+---
+## POLISH: Cross Border Towing service page + dash free customer copy
+**URL:** `/services/cross-border-towing` (new); copy edits across all 46 rendered routes, `/llms.txt`, and the web manifest
+**File:** `app/services/cross-border-towing/page.tsx` (new), `public/image/cross_border_towing.jpeg` (new), `app/sitemap.ts`, `tests/sitemap.test.ts` (new), `scripts/copy-dash-check.mjs` (new), `package.json` (`audit:copy`), the service lists (home, navbar, footer, `/services`, `/locations/[city]`, Surrey, Langley, Vehicle Transport, `llms.txt`, layout schema, IndexNow), and copy edits in `app/`, `components/`, `lib/`
+**Request:** Add a Cross Border Towing page and remove dash punctuation from customer facing copy.
+**Change:**
+- New page with H1 "Cross Border Towing Services", About, How It Works (3 steps), When You May Need It, Information Needed for a Quote, 6 FAQs (FAQPage schema), and a final CTA. "Request a Tow" links to `/contact#request-a-tow` (new anchor on the contact form card). General copy only: no prices, availability, response times, licensing, insurance, or border clearance claims.
+- Added the service to the existing sitemap, the `/services` ItemList (position 10), a homepage card (badge "Canada & U.S."), the navbar, footer, location templates, `llms.txt`, the global `knowsAbout` and `hasOfferCatalog`, and the IndexNow list.
+- Removed em and en dashes, spaced hyphens, hyphenated ranges, and hyphenated compounds from visible copy, metadata, alt text, JSON-LD text fields, `llms.txt`, and the manifest. Routes, slugs, classNames, URLs, phone numbers, `keywords` arrays, and allowlisted proper nouns (Sea-to-Sky, Trans-Canada, Tri-Cities, Mercedes-Benz, Wi-Fi, e-Transfer, F-150, Mach-E) are unchanged.
+- The blog renderer now skips markdown table delimiter rows (`|---|---|`), which were showing as visible text.
+- New `npm run audit:copy` guard (rendered output, or source with `--source`).
+**Validation:** build PASS; `audit:copy` 0 violations on 46 routes and `--source` 0 on 59 files; seo-check 0 errors/0 warnings; claims-check PASS; link-check PASS; nav 43/43; vitest 49/49; tsc PASS; content-audit fails only on the existing duplicate category (128 → 126 pairs, no route pair grew, all 43 routes at 500+ words); preservation baseline re-captured after reviewing 50 intended diffs.
+**Status:** Completed locally. Vercel preview and production not verified here.

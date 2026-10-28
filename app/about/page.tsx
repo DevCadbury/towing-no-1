@@ -4,7 +4,7 @@ import AboutContent from "@/components/AboutContent";
 export const metadata: Metadata = {
   title: "About TowingNo.1 | 24/7 Towing & Roadside Assistance in BC",
   description:
-    "TowingNo.1 is a 24/7 towing and roadside assistance company serving Surrey and the Lower Mainland with flat-rate pricing and professional drivers.",
+    "TowingNo.1 is a 24/7 towing and roadside assistance company serving Surrey and the Lower Mainland with flat rate pricing and professional drivers.",
   alternates: {
     canonical: "https://www.towingno1.com/about",
   },
@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     url: "https://www.towingno1.com/about",
     title: "About TowingNo.1 | 24/7 Towing & Roadside Assistance in BC",
     description:
-      "24/7 towing and roadside assistance across Surrey and the Lower Mainland. Flat-rate pricing, professional drivers, and local dispatch.",
+      "24/7 towing and roadside assistance across Surrey and the Lower Mainland. Flat rate pricing, professional drivers, and local dispatch.",
     images: [
       {
         url: "https://www.towingno1.com/preview.jpg",
         width: 1200,
         height: 630,
-        alt: "TowingNo.1 - Towing & Roadside Assistance in BC",
+        alt: "TowingNo.1 | Towing & Roadside Assistance in BC",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About TowingNo.1 | 24/7 Towing & Roadside Assistance in BC",
     description:
-      "24/7 towing and roadside assistance across Surrey and the Lower Mainland. Flat-rate pricing, professional drivers, and local dispatch.",
+      "24/7 towing and roadside assistance across Surrey and the Lower Mainland. Flat rate pricing, professional drivers, and local dispatch.",
     images: ["https://www.towingno1.com/preview.jpg"],
   },
 };

@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         absolute: "Towing Surrey BC | 24/7 Tow Truck | TowingNo.1",
       },
       description:
-        "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery — serving all Surrey neighbourhoods. Call 778-838-0014.",
+        "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery across all Surrey neighbourhoods. Call 778-838-0014.",
       alternates: { canonical },
       keywords: [],
       openGraph: {
@@ -287,7 +287,7 @@ export default async function ServiceAreaPage({ params }: Props) {
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="tel:+17788380014" className="btn-call-highlight inline-flex items-center justify-center gap-2 rounded-xl py-3.5 px-7 text-sm font-bold w-full sm:w-auto">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-              Call Now — Free Quote
+              Call for a Free Quote
             </a>
             <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-3.5 px-7 rounded-xl text-sm border border-white/25 transition-all duration-200 w-full sm:w-auto">
               Request Online
@@ -357,14 +357,15 @@ export default async function ServiceAreaPage({ params }: Props) {
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
                     { href: "/services/emergency-towing", label: "24/7 Emergency Towing", desc: "Breakdown & collision towing" },
-                    { href: "/services/battery-boost", label: "Battery Boost", desc: "Jump-start with battery test" },
-                    { href: "/services/flat-tire-help", label: "Flat Tire Help", desc: "On-site change or shop tow" },
+                    { href: "/services/battery-boost", label: "Battery Boost", desc: "Jump start with battery test" },
+                    { href: "/services/flat-tire-help", label: "Flat Tire Help", desc: "Tire change or shop tow" },
                     { href: "/services/lockout-service", label: "Lockout Service", desc: "Open your vehicle without damage" },
                     { href: "/services/fuel-delivery", label: "Fuel Delivery", desc: "Gas or diesel delivered" },
                     { href: "/services/winching-extraction", label: "Winching & Extraction", desc: "Ditch, mud & snow recovery" },
-                    { href: "/services/accident-recovery", label: "Accident Recovery", desc: "Collision-scene towing" },
-                    { href: "/services/vehicle-transport", label: "Vehicle Transport", desc: "Secure inter-city moves" },
+                    { href: "/services/accident-recovery", label: "Accident Recovery", desc: "Towing after a collision" },
+                    { href: "/services/vehicle-transport", label: "Vehicle Transport", desc: "Secure intercity moves" },
                     { href: "/services/roadside-assistance", label: "Roadside Assistance", desc: "All roadside help in one call" },
+                    { href: "/services/cross-border-towing", label: "Cross Border Towing", desc: "Canada and U.S. moves" },
                   ].map((svc) => (
                     <Link key={svc.href} href={svc.href} className="group flex items-start gap-3 bg-slate-50 border border-slate-200 rounded-xl p-4 hover:border-amber-400/60 hover:bg-amber-50/30 transition-all duration-200">
                       <span className="w-5 h-5 rounded-full bg-amber-400/20 border border-amber-400 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
@@ -402,7 +403,7 @@ export default async function ServiceAreaPage({ params }: Props) {
 
               {/* FAQ */}
               <div>
-                <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions — {area.city}</h2>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Frequently Asked Questions in {area.city}</h2>
                 <div className="space-y-4">
                   {area.faq.map((item) => (
                     <div key={item.q} className="bg-slate-50 rounded-xl p-5 border border-slate-200">

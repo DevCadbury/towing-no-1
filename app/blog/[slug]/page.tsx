@@ -127,6 +127,13 @@ function renderBody(content: string): ReactNode[] {
       continue;
     }
 
+    // A markdown table delimiter row ("|---|---|") is syntax, not copy. Tables
+    // render as plain rows here, so skip it instead of showing a row of dashes.
+    if (/^\|[\s|:-]*-[\s|:-]*\|$/.test(line)) {
+      i++;
+      continue;
+    }
+
     if (line.startsWith("### ")) {
       blocks.push(<h3 key={key++} className="text-xl font-bold text-navy-900 mt-8 mb-3">{renderInline(line.slice(4))}</h3>);
       i++;

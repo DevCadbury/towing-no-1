@@ -59,7 +59,7 @@ export default function AboutContent() {
                   Over the years, we&apos;ve grown into a full fleet operation, but our core values haven&apos;t changed. We treat every customer like family, understanding that when you call us, you&apos;re likely in a stressful situation.
                 </p>
                 <p>
-                  What started as one operator answering the phone at all hours has become a coordinated team of professional drivers, dispatchers, and roadside technicians who cover Surrey, Delta, White Rock, Langley, Burnaby, Richmond, Coquitlam, Vancouver, and Maple Ridge. We invested early in proper flatbeds, wheel-lift trucks, and recovery gear so we could handle everything from a simple battery boost to a complicated winch-out without sending someone else to finish the job.
+                  What started as one operator answering the phone at all hours has become a coordinated team of professional drivers, dispatchers, and roadside technicians who cover Surrey, Delta, White Rock, Langley, Burnaby, Richmond, Coquitlam, Vancouver, and Maple Ridge. We invested early in proper flatbeds, wheel lift trucks, and recovery gear so we could handle everything from a simple battery boost to a complicated winch out without sending someone else to finish the job.
                 </p>
                 <p>
                   Being licensed and fully insured is not a marketing line for us, it is the foundation of how we work. Every driver is trained to secure your vehicle correctly, to operate safely around live traffic, and to treat your car as carefully as their own. We carry the coverage that protects you and your vehicle from the moment we hook up to the moment we set down at the destination.
@@ -68,7 +68,7 @@ export default function AboutContent() {
                   Today, we are proud to be a trusted towing service across the Lower Mainland, known for professional drivers and transparent pricing.
                 </p>
                 <p>
-                  Our process is built to take the stress out of a bad day. When you call, a real dispatcher gathers your location, your vehicle details, and the problem, then gives you a flat-rate quote and an honest arrival estimate before a truck rolls. You get a callback or text as the driver approaches, the driver confirms the price on site before any work begins, and payment is simple with card, debit, or cash. No upselling, no surprise add-ons, no inflated storage games, just the help you called for at the price we quoted.
+                  Our process is built to take the stress out of a bad day. When you call, a real dispatcher gathers your location, your vehicle details, and the problem, then gives you a flat rate quote and an honest arrival estimate before a truck rolls. You get a callback or text as the driver approaches, the driver confirms the price on site before any work begins, and payment is simple with card, debit, or cash. No upselling, no surprise extras, no inflated storage games, just the help you called for at the price we quoted.
                 </p>
                 <p>
                   Experience across the Lower Mainland has taught us that reputation is earned one call at a time. The drivers who have trusted us came back, and recommended us to friends and family, because we showed up when we said we would and charged what we promised. That is the standard we hold every member of our team to, and it is the difference we want you to feel the moment we answer the phone.
@@ -176,20 +176,20 @@ export default function AboutContent() {
                 body: "All vehicles carry comprehensive commercial insurance and cargo coverage. Your vehicle is protected from the moment we attach to the moment we set it down.",
               },
               {
-                title: "Flat-Rate Pricing",
-                body: "You receive an upfront flat-rate quote before any truck rolls. No metered charges, no hidden fees, no surprise invoices at the destination.",
+                title: "Flat Rate Pricing",
+                body: "You receive an upfront flat rate quote before any truck rolls. No metered charges, no hidden fees, no surprise invoices at the destination.",
               },
               {
                 title: "24/7 Live Dispatch",
-                body: "A real dispatcher answers every call — not a voicemail or a callback queue. Night shifts, weekends, and statutory holidays are staffed the same as any weekday.",
+                body: "A real dispatcher answers every call, not a voicemail or a callback queue. Night shifts, weekends, and statutory holidays are staffed the same as any weekday.",
               },
               {
                 title: "Professional Trained Drivers",
-                body: "Our operators are trained in safe load securement, live-traffic highway protocols, and proper handling of EVs, AWD vehicles, and accident-damaged cars.",
+                body: "Our operators are trained in safe load securement, live traffic highway protocols, and proper handling of EVs, AWD vehicles, and cars damaged in accidents.",
               },
               {
-                title: "ICBC-Compatible Documentation",
-                body: "We provide recovery and delivery documentation that aligns with ICBC claims. For accident tows, ask for your paperwork at drop-off.",
+                title: "ICBC Compatible Documentation",
+                body: "We provide recovery and delivery documentation that aligns with ICBC claims. For accident tows, ask for your paperwork when the vehicle is dropped off.",
               },
             ].map((item) => (
               <div key={item.title} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
@@ -234,9 +234,9 @@ export default function AboutContent() {
             ))}
           </div>
           <p className="text-center text-sm text-slate-500">
-            Not sure if we cover your area?{" "}
+            Not sure if we cover your area? Call{" "}
             <a href="tel:+17788380014" className="text-amber-600 font-semibold hover:underline">(778) 838-0014</a>
-            {" "}— we&apos;ll confirm before you commit.
+            {" "}and we&apos;ll confirm before you commit.
           </p>
         </div>
       </section>
@@ -257,7 +257,7 @@ export default function AboutContent() {
                 href: "/blog/bc-winter-roadside-safety-checklist",
                 category: "Seasonal",
                 title: "BC Winter Roadside Safety Checklist",
-                excerpt: "Pre-season vehicle prep, emergency kit essentials, and what to do if you get stranded in BC winter conditions.",
+                excerpt: "Preseason vehicle prep, emergency kit essentials, and what to do if you get stranded in BC winter conditions.",
               },
               {
                 href: "/blog/what-to-do-after-car-accident-bc",

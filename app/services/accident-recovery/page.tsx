@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "Accident Recovery & Towing | 24/7 Service | TowingNo.1",
   },
   description:
-    "24/7 accident recovery and towing in Surrey and the Lower Mainland. TowingNo.1 transports collision-damaged vehicles safely. Call 778-838-0014.",
+    "24/7 accident recovery and towing in Surrey and the Lower Mainland. TowingNo.1 transports collision damaged vehicles safely. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/accident-recovery" },
   keywords: [
     "accident recovery towing Surrey",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Accident Recovery & Towing | 24/7 Service | TowingNo.1",
     description:
       "24/7 accident recovery and towing in Surrey and the Lower Mainland. Safe transport of damaged vehicles to any shop or facility. Call 778-838-0014.",
-    images: [{ url: "/image/Accident_Recover.png", alt: "Accident recovery towing — damaged vehicle being loaded onto a flatbed" }],
+    images: [{ url: "/image/Accident_Recover.png", alt: "Accident recovery towing: damaged vehicle being loaded onto a flatbed" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -45,7 +45,7 @@ const schema = {
   name: "Accident Recovery & Towing",
   serviceType: "Accident Recovery",
   description:
-    "24/7 accident recovery and towing across Surrey and the Lower Mainland. Safe transport of collision-damaged vehicles to any repair shop, dealership, or storage facility.",
+    "24/7 accident recovery and towing across Surrey and the Lower Mainland. Safe transport of collision damaged vehicles to any repair shop, dealership, or storage facility.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
   areaServed: serviceAreaCompact,
 };
@@ -57,7 +57,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "Can you tow a vehicle that cannot be driven after a collision?",
-    a: "Yes. A vehicle that will not roll, steer, or start after a collision is loaded onto a flatbed using our onboard winch — it does not need to move under its own power. We assess the vehicle on-site to determine the safest loading method based on the damage.",
+    a: "Yes. A vehicle that will not roll, steer, or start after a collision is loaded onto a flatbed using our onboard winch, so it does not need to move under its own power. We assess the vehicle on site to determine the safest loading method based on the damage.",
   },
   {
     q: "Can you recover a vehicle from a roadside accident location?",
@@ -77,7 +77,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "Can you transport a damaged vehicle to a specific destination?",
-    a: "Yes. We deliver to the repair shop, body shop, dealership, ICBC facility, or storage yard you choose. If you have not yet decided on a destination, we can hold the vehicle securely until you and your insurer agree on next steps. We provide documentation of the recovery and drop-off.",
+    a: "Yes. We deliver to the repair shop, body shop, dealership, ICBC facility, or storage yard you choose. If you have not yet decided on a destination, we can hold the vehicle securely until you and your insurer agree on next steps. We provide documentation of the recovery and delivery.",
   },
 ];
 const faqSchema = faqPageSchema(faq);
@@ -121,7 +121,7 @@ export default function AccidentRecoveryPage() {
       <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image
           src="/image/Accident_Recover.png"
-          alt="Accident recovery towing — damaged vehicle being loaded safely onto a flatbed"
+          alt="Accident recovery towing: damaged vehicle being loaded safely onto a flatbed"
           fill
           className="object-cover opacity-30"
           priority
@@ -144,7 +144,7 @@ export default function AccidentRecoveryPage() {
           </h1>
           <p className="text-white/80 text-lg max-w-xl mb-8">
             Involved in a collision? TowingNo.1 provides accident recovery and towing across Surrey
-            and the Lower Mainland around the clock — transporting damaged vehicles safely to the
+            and the Lower Mainland around the clock, transporting damaged vehicles safely to the
             repair shop, dealership, or facility you choose.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -179,7 +179,7 @@ export default function AccidentRecoveryPage() {
                 <p className="text-slate-600 leading-relaxed mb-4">
                   After a collision, the most important question is whether the vehicle can be safely
                   driven. Even a collision that appears minor can cause damage that is not immediately
-                  visible — bent suspension components, a cracked subframe, fluid leaks, or airbag
+                  visible, such as bent suspension components, a cracked subframe, fluid leaks, or airbag
                   deployment that affects the vehicle&apos;s ability to protect occupants in a
                   subsequent impact.
                 </p>
@@ -191,8 +191,8 @@ export default function AccidentRecoveryPage() {
                     { title: "Severe collision damage",          body: "Visible structural damage, deployed airbags, a buckled chassis, or significant body damage that affects the doors, wheels, or steering." },
                     { title: "Vehicle unable to be driven",      body: "The engine will not start, the wheels are damaged, the steering is compromised, or the vehicle is stuck in its resting position after the collision." },
                     { title: "Vehicle blocking traffic",         body: "A vehicle that cannot be safely moved by driving needs to be recovered promptly to clear the road and reduce the risk of secondary incidents." },
-                    { title: "Unsafe roadside location",         body: "A vehicle that has come to rest in a hazardous position — a live lane, against a guardrail, on an embankment — needs professional recovery equipment to move safely." },
-                    { title: "Damage that is not immediately obvious", body: "Suspension damage, brake damage, and drivetrain faults are not always apparent from a walk-around. If there is any doubt, recovering the vehicle and having a shop inspect it is the safer choice." },
+                    { title: "Unsafe roadside location",         body: "A vehicle that has come to rest in a hazardous position, such as a live lane, against a guardrail, or on an embankment, needs professional recovery equipment to move safely." },
+                    { title: "Damage that is not immediately obvious", body: "Suspension damage, brake damage, and drivetrain faults are not always apparent from a quick walk around the vehicle. If there is any doubt, recovering the vehicle and having a shop inspect it is the safer choice." },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
                       <Check />
@@ -214,21 +214,21 @@ export default function AccidentRecoveryPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Accident Towing and Vehicle Recovery</h2>
                 <p className="text-slate-600 leading-relaxed mb-5">
-                  We provide the following services for collision-damaged and post-accident vehicles:
+                  We provide the following services for vehicles involved in a collision:
                 </p>
                 <div className="space-y-4 mb-5">
                   {[
                     {
                       title: "Collision towing",
-                      body: "Towing of accident-damaged vehicles from the scene to the repair shop, body shop, dealership, ICBC facility, or storage yard of your choice. We provide documentation of the recovery and drop-off.",
+                      body: "Towing of damaged vehicles from the accident scene to the repair shop, body shop, dealership, ICBC facility, or storage yard of your choice. We provide documentation of the recovery and delivery.",
                     },
                     {
-                      title: "Non-driveable vehicle recovery",
-                      body: "Vehicles that will not roll, steer, or start after a collision are loaded onto a flatbed using our onboard winch from rated attachment points on the frame — not damaged body panels — to avoid causing further damage during loading.",
+                      title: "Recovery for vehicles that can't be driven",
+                      body: "Vehicles that will not roll, steer, or start after a collision are loaded onto a flatbed using our onboard winch from rated attachment points on the frame, never from damaged body panels, to avoid causing further damage during loading.",
                     },
                     {
                       title: "Safe loading of damaged vehicles",
-                      body: "A damaged vehicle often cannot be loaded the same way as a running car. Bent control arms, a seized wheel, a deployed airbag, or a dragging bumper each change the approach. We assess the vehicle on-site and use the method appropriate to its condition.",
+                      body: "A damaged vehicle often cannot be loaded the same way as a running car. Bent control arms, a seized wheel, a deployed airbag, or a dragging bumper each change the approach. We assess the vehicle on site and use the method appropriate to its condition.",
                     },
                     {
                       title: "Transport to your chosen destination",
@@ -243,9 +243,9 @@ export default function AccidentRecoveryPage() {
                 </div>
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {[
-                    "Collision-damaged vehicle towing",
-                    "Non-running and non-steering vehicles",
-                    "Frame-point loading — not body panels",
+                    "Towing for collision damaged vehicles",
+                    "Vehicles that won't run or steer",
+                    "Loading from frame points, not body panels",
                     "Delivery to any shop or facility",
                     "Recovery documentation provided",
                     "Available 24/7 including holidays",
@@ -266,7 +266,7 @@ export default function AccidentRecoveryPage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">What To Do After a Vehicle Accident</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   The steps you take in the minutes after a collision can affect your safety and the
-                  safety of others on the road. The following is practical safety guidance — it is not
+                  safety of others on the road. The following is practical safety guidance and is not
                   legal advice.
                 </p>
                 <ol className="space-y-4 mb-5">
@@ -296,12 +296,12 @@ export default function AccidentRecoveryPage() {
                   heading="Official BC resources after a collision"
                   intro="These official B.C. resources help with reporting and next steps after an accident:"
                   items={[
-                    { href: "https://www.icbc.com/claims/report-view", label: "ICBC — report a claim", note: "Report your crash online 24/7 or by phone." },
-                    { href: "https://www.drivebc.ca", label: "DriveBC — road conditions & incidents", note: "Check for closures or hazards on your route." },
+                    { href: "https://www.icbc.com/claims/report-view", label: "Report a claim with ICBC", note: "Report your crash online 24/7 or by phone." },
+                    { href: "https://www.drivebc.ca", label: "DriveBC road conditions & incidents", note: "Check for closures or hazards on your route." },
                   ]}
                 />
                 <p className="mt-4 text-sm text-slate-500">
-                  See: <Link href="/blog/what-to-do-after-car-accident-bc" className="text-amber-600 hover:underline">What to do after a car accident in BC — ICBC reporting, scene safety, and arranging a tow</Link>
+                  See: <Link href="/blog/what-to-do-after-car-accident-bc" className="text-amber-600 hover:underline">What to do after a car accident in BC: ICBC reporting, scene safety, and arranging a tow</Link>
                 </p>
               </div>
 
@@ -309,7 +309,7 @@ export default function AccidentRecoveryPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">When You Need an Accident Tow</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Not every collision results in a tow — some vehicles can be driven away after a minor
+                  Not every collision results in a tow, because some vehicles can be driven away after a minor
                   impact. But there are clear situations where towing is the right call:
                 </p>
                 <ul className="space-y-3 mb-5">
@@ -365,10 +365,10 @@ export default function AccidentRecoveryPage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014",                   body: "A dispatcher answers 24/7. Tell them you need accident recovery and give your location." },
                     { step: "2", title: "Location and situation confirmed",       body: "We ask for your exact location, a brief description of the collision and vehicle damage, and whether the vehicle is blocking traffic." },
-                    { step: "3", title: "Upfront quote provided",                 body: "We give you a flat-rate price for the recovery before any truck is dispatched. You know the cost before we send anyone." },
+                    { step: "3", title: "Upfront quote provided",                 body: "We give you a flat rate price for the recovery before any truck is dispatched. You know the cost before we send anyone." },
                     { step: "4", title: "Appropriate recovery vehicle dispatched", body: "We send the nearest available driver with equipment suited to your vehicle and the collision damage described." },
-                    { step: "5", title: "Vehicle assessed and loaded",            body: "The technician assesses the damage on-site to determine the safest loading method, then loads the vehicle onto the flatbed using frame attachment points." },
-                    { step: "6", title: "Vehicle transported to your destination", body: "We deliver to the body shop, dealership, ICBC facility, or address you specify. We provide documentation of the recovery and drop-off." },
+                    { step: "5", title: "Vehicle assessed and loaded",            body: "The technician assesses the damage on site to determine the safest loading method, then loads the vehicle onto the flatbed using frame attachment points." },
+                    { step: "6", title: "Vehicle transported to your destination", body: "We deliver to the body shop, dealership, ICBC facility, or address you specify. We provide documentation of the recovery and delivery." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
                       <span className="w-8 h-8 rounded-full bg-amber-400 text-gray-900 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">

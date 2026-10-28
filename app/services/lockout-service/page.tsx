@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: "Car Lockout Service | 24/7 Roadside Help | TowingNo.1",
   },
   description:
-    "Locked out of your car in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 vehicle lockout assistance — we open your vehicle safely. Call 778-838-0014.",
+    "Locked out of your car in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 vehicle lockout assistance and opens your vehicle safely. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/lockout-service" },
   keywords: [
     "car lockout service Surrey",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Car Lockout Service | 24/7 Roadside Help | TowingNo.1",
     description:
       "24/7 car lockout assistance in Surrey and the Lower Mainland. Professional tools, no damage to your vehicle. Call 778-838-0014.",
-    images: [{ url: "/image/Lockout_Servic.png", alt: "Car lockout service — technician helping a driver locked out of their vehicle" }],
+    images: [{ url: "/image/Lockout_Servic.png", alt: "Car lockout service: technician helping a driver locked out of their vehicle" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -56,15 +56,15 @@ const faq: FaqItem[] = [
   },
   {
     q: "Do you provide 24/7 lockout assistance?",
-    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week — including evenings, weekends, and all statutory holidays. Whether you are locked out at midday in a Guildford parking lot or late at night on a Surrey residential street, call (778) 838-0014 and we will answer.",
+    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Whether you are locked out at midday in a Guildford parking lot or late at night on a Surrey residential street, call (778) 838-0014 and we will answer.",
   },
   {
     q: "What should I do if I lost my car keys?",
-    a: "If your keys are lost rather than locked inside the vehicle, we can still help you gain access to the car using professional lockout tools. However, if the keys are genuinely lost and cannot be found, you will likely need a locksmith or your vehicle dealer to cut or programme a replacement key — that is beyond what roadside lockout assistance covers. We will be honest about what we can and cannot do when you call.",
+    a: "If your keys are lost rather than locked inside the vehicle, we can still help you gain access to the car using professional lockout tools. However, if the keys are genuinely lost and cannot be found, you will likely need a locksmith or your vehicle dealer to cut or programme a replacement key, which is beyond what roadside lockout assistance covers. We will be honest about what we can and cannot do when you call.",
   },
   {
     q: "Can you help with a vehicle that will not unlock?",
-    a: "Yes, in many cases. If the door will not unlock due to a dead key fob battery, a malfunctioning central locking system, or a mechanical fault, we use professional tools to access the vehicle through the mechanical override. If the problem is an electrical fault that prevents any mechanical access, we will tell you honestly and discuss whether a tow to a dealer or auto-electrician is the right next step.",
+    a: "Yes, in many cases. If the door will not unlock due to a dead key fob battery, a malfunctioning central locking system, or a mechanical fault, we use professional tools to access the vehicle through the mechanical override. If the problem is an electrical fault that prevents any mechanical access, we will tell you honestly and discuss whether a tow to a dealer or an auto electrician is the right next step.",
   },
   {
     q: "What areas do you serve for lockout assistance?",
@@ -72,7 +72,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "When would I need towing instead of lockout assistance?",
-    a: "Lockout assistance gets you back into your vehicle. If the vehicle then has a separate problem — it will not start, has a flat tyre, has run out of fuel, or has been damaged — we can arrange the appropriate roadside assistance or a tow at that point. A lockout call does not automatically include a tow, but we can arrange one if it is needed.",
+    a: "Lockout assistance gets you back into your vehicle. If the vehicle then has a separate problem (it will not start, has a flat tyre, has run out of fuel, or has been damaged), we can arrange the appropriate roadside assistance or a tow at that point. A lockout call does not automatically include a tow, but we can arrange one if it is needed.",
   },
 ];
 const faqSchema = faqPageSchema(faq);
@@ -116,7 +116,7 @@ export default function LockoutServicePage() {
       <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image
           src="/image/Lockout_Servic.png"
-          alt="Car lockout service — technician helping a driver access their locked vehicle"
+          alt="Car lockout service: technician helping a driver access their locked vehicle"
           fill
           className="object-cover opacity-30"
           priority
@@ -172,7 +172,7 @@ export default function LockoutServicePage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Locked Out of Your Vehicle?</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  A vehicle lockout is one of the most stressful roadside situations — especially late at
+                  A vehicle lockout is one of the most stressful roadside situations, especially late at
                   night, in an unfamiliar location, or when a child or pet is inside the car. The good
                   news is that most lockouts can be resolved on the spot with the right tools and
                   without any damage to the vehicle.
@@ -182,9 +182,9 @@ export default function LockoutServicePage() {
                 </p>
                 <ul className="space-y-3 mb-4">
                   {[
-                    { title: "Keys locked inside the vehicle",       body: "The most common lockout — keys left in the ignition, on the seat, or in the boot while the doors locked behind you." },
+                    { title: "Keys locked inside the vehicle",       body: "The most common lockout: keys left in the ignition, on the seat, or in the boot while the doors locked behind you." },
                     { title: "Keys locked in the boot/trunk",        body: "Loading or unloading with the doors open, then closing the boot with the keys inside and hearing the central locking engage." },
-                    { title: "Dead key fob battery",                 body: "Push-button and keyless-entry vehicles will not respond to a fob with a dead battery. The mechanical override is often hidden behind a trim cap on the door handle." },
+                    { title: "Dead key fob battery",                 body: "Vehicles with push button start and keyless entry will not respond to a fob with a dead battery. The mechanical override is often hidden behind a trim cap on the door handle." },
                     { title: "Keys lost or misplaced",               body: "If you cannot find your keys at all, we can still open the vehicle using professional tools. Replacing the keys is a separate step requiring a locksmith or dealer." },
                     { title: "Key damaged or will not turn",         body: "A worn or damaged mechanical key that no longer operates the lock may require professional tools to work around. Key cutting or replacement is beyond roadside scope." },
                     { title: "Central locking malfunction",          body: "An electrical or mechanical fault that prevents the doors from unlocking through normal methods. We attempt access using the mechanical override where available." },
@@ -209,25 +209,25 @@ export default function LockoutServicePage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Our Vehicle Lockout Assistance</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  We provide professional on-site vehicle access using lockout tools — not improvised
+                  We provide professional vehicle access on site using lockout tools, not improvised
                   methods that risk damaging the door, window, or weatherstripping. Our technicians
                   are familiar with the entry points and mechanical overrides on common makes and
-                  models, including modern push-button and keyless-entry vehicles.
+                  models, including modern vehicles with push button start and keyless entry.
                 </p>
 
                 <div className="space-y-4 mb-5">
                   {[
                     {
-                      title: "On-site door opening",
-                      body: "We use a cushioned door wedge and long-reach tools to create a safe gap and operate the interior handle or unlock button, exactly as the door is designed to be opened from inside. The weatherstripping remains undamaged, no glass is under pressure, and nothing is forced.",
+                      title: "Door opening on site",
+                      body: "We use a cushioned door wedge and long reach tools to create a safe gap and operate the interior handle or unlock button, exactly as the door is designed to be opened from inside. The weatherstripping remains undamaged, no glass is under pressure, and nothing is forced.",
                     },
                     {
-                      title: "Keyless and push-button vehicles",
-                      body: "Most keyless-entry vehicles have a mechanical backup — a key blade inside the fob and a concealed keyhole on the door handle. We know where these are located on common makes. If the fob is dead, we use the mechanical override to open the door.",
+                      title: "Keyless and push button vehicles",
+                      body: "Most vehicles with keyless entry have a mechanical backup: a key blade inside the fob and a concealed keyhole on the door handle. We know where these are located on common makes. If the fob is dead, we use the mechanical override to open the door.",
                     },
                     {
                       title: "All makes and models",
-                      body: "We handle standard key-cylinder vehicles, transponder-key cars, push-button starters, and keyless-entry systems. For rare or unusual vehicles where our standard approach is not viable, we will tell you before attempting anything.",
+                      body: "We handle standard key cylinder vehicles, transponder key cars, push button starters, and keyless entry systems. For rare or unusual vehicles where our standard approach is not viable, we will tell you before attempting anything.",
                     },
                     {
                       title: "What we do not cover",
@@ -247,7 +247,7 @@ export default function LockoutServicePage() {
                     "Keys locked in the trunk",
                     "Dead key fob battery",
                     "All makes and models",
-                    "Keyless-entry vehicles",
+                    "Keyless entry vehicles",
                     "Available 24/7 including holidays",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm text-slate-700">
@@ -261,7 +261,7 @@ export default function LockoutServicePage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">What To Do If You Are Locked Out</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Most lockouts are not emergencies in the traffic-safety sense, but a few practical
+                  Most lockouts are not emergencies in the traffic safety sense, but a few practical
                   steps will keep you comfortable and safe until help arrives:
                 </p>
                 <ol className="space-y-4 mb-4">
@@ -269,8 +269,8 @@ export default function LockoutServicePage() {
                     { step: "1", title: "Move to a safe location if possible",    body: "If you are on a roadside or in a position where you feel unsafe, move away from traffic before calling. A parking lot, petrol station, or side street is better than a busy road shoulder." },
                     { step: "2", title: "Keep your personal belongings secure",   body: "If you have valuables visible through the windows, note their position so you can retrieve them once the vehicle is open. There is no need to attempt anything that could damage the car." },
                     { step: "3", title: "Do not attempt to force the door",       body: "Coat hangers, screwdrivers, and improvised tools almost always cause more damage than they prevent. A bent door frame or gouged window seal is expensive to repair. Wait for a professional with proper equipment." },
-                    { step: "4", title: "Call (778) 838-0014",                    body: "Give the dispatcher your location — nearest intersection or address — and your vehicle make and model. This helps the technician come prepared with the right tools for your specific vehicle." },
-                    { step: "5", title: "Wait in a safe, visible spot",           body: "Stay near the vehicle where the technician can easily find you. If the weather is poor, a nearby covered area is fine — just let the dispatcher know when you call." },
+                    { step: "4", title: "Call (778) 838-0014",                    body: "Give the dispatcher your location (nearest intersection or address) and your vehicle make and model. This helps the technician come prepared with the right tools for your specific vehicle." },
+                    { step: "5", title: "Wait in a safe, visible spot",           body: "Stay near the vehicle where the technician can easily find you. If the weather is poor, a nearby covered area is fine. Just let the dispatcher know when you call." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
                       <span className="w-8 h-8 rounded-full bg-amber-400 text-gray-900 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">
@@ -289,14 +289,14 @@ export default function LockoutServicePage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">How We Open a Car Without Damage</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  The improvised methods people remember — a coat hanger gouging the window seal, a
-                  screwdriver levering the door frame — cause expensive damage because they use
+                  The improvised methods people remember, such as a coat hanger gouging the window seal, a
+                  screwdriver levering the door frame, cause expensive damage because they use
                   uncontrolled force against surfaces that are not designed for it. Professional
                   lockout tools work with the door&apos;s own mechanism rather than against it.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   We use a cushioned door wedge to create a small controlled gap at the top of the door
-                  frame — a few millimetres, applied gradually — and a long-reach tool to operate the
+                  frame (a few millimetres, applied gradually) and a long reach tool to operate the
                   interior handle, lock button, or unlock switch directly. The door opens the same way
                   it would from inside. The weatherstripping stays intact, no glass is placed under
                   pressure, and nothing is forced. If a particular vehicle design makes this approach
@@ -312,7 +312,7 @@ export default function LockoutServicePage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">When a Lockout Becomes a Towing Situation</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Most lockouts are resolved on the spot — you get back into the vehicle and drive away.
+                  Most lockouts are resolved on the spot: you get back into the vehicle and drive away.
                   But sometimes getting back in reveals a second problem that prevents the vehicle from
                   being driven:
                 </p>
@@ -343,8 +343,8 @@ export default function LockoutServicePage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Lockout Service in Surrey and Nearby Areas</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   We provide car lockout assistance across{" "}
-                  <Link href="/locations/surrey" className="font-semibold text-amber-600 hover:text-amber-700">Surrey</Link> —
-                  including Guildford, Newton, Cloverdale, Fleetwood, Whalley, and South Surrey — and
+                  <Link href="/locations/surrey" className="font-semibold text-amber-600 hover:text-amber-700">Surrey</Link>,
+                  including Guildford, Newton, Cloverdale, Fleetwood, Whalley, and South Surrey, and
                   the wider Lower Mainland including{" "}
                   <Link href="/locations/langley" className="font-semibold text-amber-600 hover:text-amber-700">Langley</Link>,{" "}
                   <Link href="/locations/burnaby" className="font-semibold text-amber-600 hover:text-amber-700">Burnaby</Link>,{" "}
@@ -356,7 +356,7 @@ export default function LockoutServicePage() {
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   Whether you are locked out in a Guildford Town Centre parking lot, outside a
-                  Willoughby strata complex, or on a residential street in Langley City — call us
+                  Willoughby strata complex, or on a residential street in Langley City, call us
                   with your location and we will dispatch accordingly.
                 </p>
               </div>
@@ -368,10 +368,10 @@ export default function LockoutServicePage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014",                   body: "A dispatcher answers 24/7. Tell them you are locked out and give your location." },
                     { step: "2", title: "Location and vehicle confirmed",         body: "We ask for your exact location and your vehicle make and model so the technician can come prepared for your specific entry system." },
-                    { step: "3", title: "Upfront quote provided",                 body: "We give you a flat-rate price for the lockout service before anyone is dispatched. No surprises on arrival." },
+                    { step: "3", title: "Upfront quote provided",                 body: "We give you a flat rate price for the lockout service before anyone is dispatched. No surprises on arrival." },
                     { step: "4", title: "Technician dispatched",                  body: "We send the nearest available technician with the appropriate lockout tools for your vehicle." },
                     { step: "5", title: "Vehicle access restored",                body: "The technician opens your vehicle using professional tools without damaging the door, lock, or window, and confirms you are safely back inside." },
-                    { step: "6", title: "Further assistance arranged if needed",  body: "If a secondary problem is discovered — flat tyre, dead battery, empty tank — we can arrange the appropriate roadside service or a tow." },
+                    { step: "6", title: "Further assistance arranged if needed",  body: "If a secondary problem is discovered (a flat tyre, dead battery, or empty tank), we can arrange the appropriate roadside service or a tow." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
                       <span className="w-8 h-8 rounded-full bg-amber-400 text-gray-900 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">

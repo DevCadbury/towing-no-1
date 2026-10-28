@@ -10,10 +10,12 @@ export default function OfficialResources({
   heading = "Official B.C. resources",
   intro,
   items,
+  disclaimer = "External links to official B.C. government, DriveBC, and ICBC resources. TowingNo.1 is an independent towing company and is not affiliated with these organizations.",
 }: {
   heading?: string;
   intro?: string;
   items: Resource[];
+  disclaimer?: string;
 }) {
   return (
     <div>
@@ -30,13 +32,11 @@ export default function OfficialResources({
             >
               {r.label}
             </a>
-            {r.note ? <> — {r.note}</> : null}
+            {r.note ? <>: {r.note}</> : null}
           </li>
         ))}
       </ul>
-      <p className="mt-3 text-xs text-slate-400">
-        External links to official B.C. government, DriveBC, and ICBC resources. TowingNo.1 is an independent towing company and is not affiliated with these organizations.
-      </p>
+      <p className="mt-3 text-xs text-slate-400">{disclaimer}</p>
     </div>
   );
 }

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Roadside Assistance | 24/7 Help | TowingNo.1",
     description:
       "24/7 roadside assistance in Surrey and the Lower Mainland. Battery boost, flat tire, lockout service, fuel delivery and breakdown help. Call 778-838-0014.",
-    images: [{ url: "/image/Battery_Boost.png", alt: "Roadside assistance service — TowingNo.1 technician helping a stranded driver" }],
+    images: [{ url: "/image/Battery_Boost.png", alt: "Roadside assistance service: TowingNo.1 technician helping a stranded driver" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -46,7 +46,7 @@ const schema = {
   name: "Roadside Assistance",
   serviceType: "Roadside Assistance",
   description:
-    "24/7 on-site roadside assistance across Surrey and the Lower Mainland. Battery boost, flat tire help, lockout service, fuel delivery, and breakdown support.",
+    "24/7 roadside assistance at your location across Surrey and the Lower Mainland. Battery boost, flat tire help, lockout service, fuel delivery, and breakdown support.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
   areaServed: serviceAreaCompact,
 };
@@ -54,19 +54,19 @@ const schema = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide 24/7 roadside assistance?",
-    a: "Yes. TowingNo.1 provides roadside assistance 24 hours a day, 7 days a week — including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your situation, and send the appropriate help.",
+    a: "Yes. TowingNo.1 provides roadside assistance 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your situation, and send the appropriate help.",
   },
   {
     q: "Can you help with a dead battery?",
-    a: "Yes. A battery boost and jump-start is one of our most common roadside calls. We dispatch a technician to your location, safely jump-start the vehicle, and then test the battery and charging system to let you know whether a replacement is needed. If the vehicle still cannot be driven after a boost, we can arrange a tow.",
+    a: "Yes. A battery boost and jump start is one of our most common roadside calls. We dispatch a technician to your location, safely jump start the vehicle, and then test the battery and charging system to let you know whether a replacement is needed. If the vehicle still cannot be driven after a boost, we can arrange a tow.",
   },
   {
     q: "Can you help if I lock my keys in my car?",
-    a: "Yes. Our lockout technicians open your vehicle using professional tools without damaging the door, lock, or window. We cover all makes and models, including modern keyless-entry vehicles, across Surrey and the Lower Mainland.",
+    a: "Yes. Our lockout technicians open your vehicle using professional tools without damaging the door, lock, or window. We cover all makes and models, including modern vehicles with keyless entry, across Surrey and the Lower Mainland.",
   },
   {
     q: "Do you provide flat tire assistance?",
-    a: "Yes. If you have a usable spare, we fit it on-site. If you have no spare, or the tire damage is beyond a roadside fix, we tow you to the nearest open tire shop. We cover highway shoulders and parking lots across the Lower Mainland.",
+    a: "Yes. If you have a usable spare, we fit it on site. If you have no spare, or the tire damage is beyond a roadside fix, we tow you to the nearest open tire shop. We cover highway shoulders and parking lots across the Lower Mainland.",
   },
   {
     q: "Can you bring fuel if my vehicle runs out?",
@@ -78,7 +78,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "When will I need a tow instead of roadside assistance?",
-    a: "If the problem cannot be resolved on the spot — for example, the vehicle has serious mechanical damage, won't start after a boost, has a non-repairable tire, or is unsafe to drive — we arrange a tow to a repair shop or other destination. Towing is only suggested when genuinely necessary; we always try to resolve the issue on-site first.",
+    a: "If the problem cannot be resolved on the spot (for example, the vehicle has serious mechanical damage, won't start after a boost, has a tire that can't be repaired, or is unsafe to drive), we arrange a tow to a repair shop or other destination. Towing is only suggested when genuinely necessary; we always try to resolve the issue on site first.",
   },
 ];
 const faqSchema = faqPageSchema(faq);
@@ -104,7 +104,7 @@ export default function RoadsideAssistancePage() {
       <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image
           src="/image/Battery_Boost.png"
-          alt="Roadside assistance service — technician helping a stranded driver in the Lower Mainland"
+          alt="Roadside assistance service: technician helping a stranded driver in the Lower Mainland"
           fill
           className="object-cover opacity-30"
           priority
@@ -121,13 +121,13 @@ export default function RoadsideAssistancePage() {
               <li className="text-amber-400">Roadside Assistance</li>
             </ol>
           </nav>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400 mb-3">24/7 On-Site Help</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400 mb-3">24/7 Help Where You Are</p>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
             24/7 Roadside Assistance Service
           </h1>
           <p className="text-white/80 text-lg max-w-xl mb-8">
             Battery boost, flat tire help, car lockout, fuel delivery, and breakdown support across Surrey
-            and the Lower Mainland. We fix the problem on the spot whenever possible — a tow is arranged
+            and the Lower Mainland. We fix the problem on the spot whenever possible, and a tow is arranged
             only when genuinely needed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -160,7 +160,7 @@ export default function RoadsideAssistancePage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Roadside Assistance When Your Vehicle Is Disabled</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Roadside assistance is on-site help for a vehicle that cannot be driven right now but
+                  Roadside assistance is help on the spot for a vehicle that cannot be driven right now but
                   may not need to be towed. A dead battery, a flat tire with a usable spare, a lockout,
                   or an empty fuel tank are all situations where the right technician and the right
                   equipment can get you moving again without a tow truck.
@@ -168,8 +168,8 @@ export default function RoadsideAssistancePage() {
                 <p className="text-slate-600 leading-relaxed mb-4">
                   The distinction from emergency towing matters practically. When you call TowingNo.1,
                   the dispatcher asks a few quick questions about what has happened, confirms your location,
-                  and sends the most appropriate help — a technician with a boost pack, a tire technician,
-                  or a lockout specialist. A tow is arranged when on-site repair genuinely cannot resolve
+                  and sends the most appropriate help: a technician with a boost pack, a tire technician,
+                  or a lockout specialist. A tow is arranged when a repair on site genuinely cannot resolve
                   the issue.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
@@ -184,31 +184,31 @@ export default function RoadsideAssistancePage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Roadside Assistance Services</h2>
                 <p className="text-slate-600 leading-relaxed mb-5">
-                  Every service below is available on-site — our aim is always to resolve the problem
-                  where you are. Towing is only arranged when on-site assistance cannot get you safely
+                  Every service below is available on site, because our aim is always to resolve the problem
+                  where you are. Towing is only arranged when assistance on site cannot get you safely
                   back on the road.
                 </p>
                 <div className="space-y-4">
                   {[
                     {
                       href: "/services/battery-boost",
-                      title: "Battery Boost & Jump-Start",
-                      body: "A dead battery is one of the most common roadside calls we handle. We jump-start your vehicle using professional equipment and then test the battery and charging system. If the battery is failing, we tell you plainly so you can plan a replacement on your own schedule. If the vehicle still won't start after a boost, we arrange a tow.",
+                      title: "Battery Boost & Jump Start",
+                      body: "A dead battery is one of the most common roadside calls we handle. We jump start your vehicle using professional equipment and then test the battery and charging system. If the battery is failing, we tell you plainly so you can plan a replacement on your own schedule. If the vehicle still won't start after a boost, we arrange a tow.",
                     },
                     {
                       href: "/services/flat-tire-help",
                       title: "Flat Tire Assistance",
-                      body: "If you have a usable spare, we fit it on-site — correctly torqued, safely positioned, and ready to drive. If there is no spare or the tire damage goes beyond what a roadside change can fix, we tow you to the nearest open tire shop rather than leaving you stranded.",
+                      body: "If you have a usable spare, we fit it on site, correctly torqued, safely positioned, and ready to drive. If there is no spare or the tire damage goes beyond what a roadside change can fix, we tow you to the nearest open tire shop rather than leaving you stranded.",
                     },
                     {
                       href: "/services/lockout-service",
                       title: "Vehicle Lockout Service",
-                      body: "We open locked vehicles without causing damage to the door, lock, glass, or weatherstripping using professional lockout tools. This covers all makes and models, including modern push-button and keyless-entry vehicles where the fob battery has died.",
+                      body: "We open locked vehicles without causing damage to the door, lock, glass, or weatherstripping using professional lockout tools. This covers all makes and models, including modern vehicles with push button start and keyless entry where the fob battery has died.",
                     },
                     {
                       href: "/services/fuel-delivery",
                       title: "Fuel Delivery",
-                      body: "If you have run out of fuel, we deliver enough gasoline or diesel to get you to the nearest station to fill up properly. Tell us your fuel type and exact location and we will come to you — no need to walk to a station or leave the vehicle unattended.",
+                      body: "If you have run out of fuel, we deliver enough gasoline or diesel to get you to the nearest station to fill up properly. Tell us your fuel type and exact location and we will come to you, so there is no need to walk to a station or leave the vehicle unattended.",
                     },
                     {
                       href: "/services/winching-extraction",
@@ -217,8 +217,8 @@ export default function RoadsideAssistancePage() {
                     },
                     {
                       href: "/services/emergency-towing",
-                      title: "Towing When On-Site Help Is Not Enough",
-                      body: "Sometimes a roadside visit reveals that the vehicle cannot safely be driven — mechanical damage, a fault that cannot be fixed on a shoulder, or a situation that needs a repair shop. In those cases we arrange a tow to the destination of your choice, with the same upfront flat-rate pricing.",
+                      title: "Towing When Help on Site Is Not Enough",
+                      body: "Sometimes a roadside visit reveals that the vehicle cannot safely be driven because of mechanical damage, a fault that cannot be fixed on a shoulder, or a situation that needs a repair shop. In those cases we arrange a tow to the destination of your choice, with the same upfront flat rate pricing.",
                     },
                   ].map((item) => (
                     <div key={item.href} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
@@ -252,7 +252,7 @@ export default function RoadsideAssistancePage() {
                 <p className="text-slate-600 leading-relaxed">
                   Whether you are in a strata parkade in Willoughby, on a Highway 1 shoulder near the
                   200th Street interchange, on King George Boulevard through Surrey City Centre, or parked
-                  outside a shop in Fort Langley — call us with your location and we will confirm coverage
+                  outside a shop in Fort Langley, call us with your location and we will confirm coverage
                   and dispatch accordingly.
                 </p>
               </div>
@@ -264,19 +264,19 @@ export default function RoadsideAssistancePage() {
                   {[
                     {
                       title: "Dead or weak battery",
-                      body: "The most frequent single-service call we handle. Symptoms include a slow or clicking engine, dim lights, or a vehicle that simply will not respond. A professional boost and system test can usually resolve this on the spot.",
+                      body: "The most frequent single service call we handle. Symptoms include a slow or clicking engine, dim lights, or a vehicle that simply will not respond. A professional boost and system test can usually resolve this on the spot.",
                     },
                     {
                       title: "Flat tire",
-                      body: "Whether from a nail, a curb impact, or sudden air loss, a flat tire that leaves the vehicle sitting on the rim needs immediate attention. We fit your spare on-site or, if there is no spare, tow you to a shop rather than leaving you exposed on a shoulder.",
+                      body: "Whether from a nail, a curb impact, or sudden air loss, a flat tire that leaves the vehicle sitting on the rim needs immediate attention. We fit your spare on site or, if there is no spare, tow you to a shop rather than leaving you exposed on a shoulder.",
                     },
                     {
                       title: "Locked keys inside the vehicle",
-                      body: "A lockout can happen in any parking lot, at any hour. We open the vehicle without damaging it — no coat hangers, no broken weatherstripping, no scratched paint.",
+                      body: "A lockout can happen in any parking lot, at any hour. We open the vehicle without damaging it: no coat hangers, no broken weatherstripping, no scratched paint.",
                     },
                     {
                       title: "Empty fuel tank",
-                      body: "Running out of fuel happens. We bring enough to get you to the nearest station — no need to abandon the vehicle or walk along a busy road.",
+                      body: "Running out of fuel happens. We bring enough to get you to the nearest station, so there is no need to abandon the vehicle or walk along a busy road.",
                     },
                     {
                       title: "Vehicle breakdown",
@@ -284,7 +284,7 @@ export default function RoadsideAssistancePage() {
                     },
                     {
                       title: "Vehicle that cannot safely continue",
-                      body: "Strange noises, steering problems, overheating, or a mechanical issue that makes driving the vehicle risky — these call for a proper assessment before continuing. We attend, assess honestly, and advise whether a tow is the right next step.",
+                      body: "Strange noises, steering problems, overheating, or a mechanical issue that makes driving the vehicle risky all call for a proper assessment before continuing. We attend, assess honestly, and advise whether a tow is the right next step.",
                     },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
@@ -308,12 +308,12 @@ export default function RoadsideAssistancePage() {
                 </p>
                 <ol className="space-y-4">
                   {[
-                    { step: "1", title: "Call (778) 838-0014", body: "A dispatcher answers 24/7. No automated menus — a person takes your call and listens to what has happened." },
-                    { step: "2", title: "Location and situation confirmed", body: "We ask where you are — the nearest intersection, parking lot, or highway exit — and what has happened with the vehicle. This determines what we send." },
-                    { step: "3", title: "Upfront quote provided", body: "We give you a flat-rate price for the service before anyone is dispatched. You know exactly what the visit will cost before we send a truck." },
-                    { step: "4", title: "Appropriate help is dispatched", body: "We send the right technician and equipment for your specific situation — a battery technician, tire specialist, lockout operative, fuel delivery driver, or tow truck depending on what you need." },
-                    { step: "5", title: "On-site assistance is provided", body: "The technician arrives, handles the service, and keeps you informed throughout. If the on-site fix is successful, you are back on the road. If additional help is required, we discuss the options with you directly." },
-                    { step: "6", title: "Towing arranged if needed", body: "If the vehicle cannot be made safe to drive at the roadside — after an honest assessment, not a guess — we arrange a tow to the repair shop, dealership, or location of your choice." },
+                    { step: "1", title: "Call (778) 838-0014", body: "A dispatcher answers 24/7. No automated menus. A person takes your call and listens to what has happened." },
+                    { step: "2", title: "Location and situation confirmed", body: "We ask where you are (the nearest intersection, parking lot, or highway exit) and what has happened with the vehicle. This determines what we send." },
+                    { step: "3", title: "Upfront quote provided", body: "We quote a flat rate for the service before anyone is dispatched. You know exactly what the visit will cost before we send a truck." },
+                    { step: "4", title: "Appropriate help is dispatched", body: "We send the right technician and equipment for your specific situation: a battery technician, tire specialist, lockout operative, fuel delivery driver, or tow truck, depending on what you need." },
+                    { step: "5", title: "Assistance is provided on site", body: "The technician arrives, handles the service, and keeps you informed throughout. If the fix on site is successful, you are back on the road. If additional help is required, we discuss the options with you directly." },
+                    { step: "6", title: "Towing arranged if needed", body: "If the vehicle cannot be made safe to drive at the roadside (after an honest assessment, not a guess), we arrange a tow to the repair shop, dealership, or location of your choice." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
                       <span className="w-8 h-8 rounded-full bg-amber-400 text-gray-900 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">
@@ -381,10 +381,10 @@ export default function RoadsideAssistancePage() {
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flat-rate — no hidden fees</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flat rate, no hidden fees</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured in BC</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> On-site fix whenever possible</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Fixed on the spot whenever possible</li>
                 </ul>
               </div>
 

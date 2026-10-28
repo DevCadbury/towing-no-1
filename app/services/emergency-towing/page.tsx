@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     url: "https://www.towingno1.com/services/emergency-towing",
     title: "Emergency Towing | 24/7 Tow Truck | TowingNo.1",
     description:
-      "24/7 emergency towing in Surrey and the Lower Mainland. Flatbed and wheel-lift tow trucks for all vehicles. Call 778-838-0014.",
-    images: [{ url: "/image/Emergency_Towin.png", alt: "Emergency towing service — TowingNo.1 tow truck" }],
+      "24/7 emergency towing in Surrey and the Lower Mainland. Flatbed and wheel lift tow trucks for all vehicles. Call 778-838-0014.",
+    images: [{ url: "/image/Emergency_Towin.png", alt: "Emergency towing service: TowingNo.1 tow truck" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -48,7 +48,7 @@ const schema = {
   name: "Emergency Towing Service",
   serviceType: "Emergency Towing",
   description:
-    "24/7 emergency towing for cars, SUVs, trucks, and electric vehicles across Surrey and the Lower Mainland. Flatbed and wheel-lift trucks available.",
+    "24/7 emergency towing for cars, SUVs, trucks, and electric vehicles across Surrey and the Lower Mainland. Flatbed and wheel lift trucks available.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
   areaServed: serviceAreaCompact,
 };
@@ -56,7 +56,7 @@ const schema = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide emergency towing 24/7?",
-    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week — including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and send the nearest available driver.",
+    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and send the nearest available driver.",
   },
   {
     q: "Can you tow a vehicle after an accident?",
@@ -64,11 +64,11 @@ const faq: FaqItem[] = [
   },
   {
     q: "Can you tow a vehicle that will not start?",
-    a: "Yes. A non-running or non-steering vehicle is loaded onto a flatbed using our onboard winch — the car does not need to move under its own power. Let the dispatcher know the vehicle cannot start or steer so they send the correct truck.",
+    a: "Yes. A vehicle that won't run or steer is loaded onto a flatbed using our onboard winch, so the car does not need to move under its own power. Let the dispatcher know the vehicle cannot start or steer so they send the correct truck.",
   },
   {
     q: "Do you provide towing on highways?",
-    a: "Yes. We respond to breakdowns on Highway 1 (Trans-Canada), Highway 99, the Fraser Highway, and all major Lower Mainland corridors. When you call, share your direction of travel and the nearest exit number or kilometre marker — that information helps us route the closest available driver directly to you.",
+    a: "Yes. We respond to breakdowns on Highway 1 (Trans-Canada), Highway 99, the Fraser Highway, and all major Lower Mainland corridors. When you call, share your direction of travel and the nearest exit number or kilometre marker. That information helps us route the closest available driver directly to you.",
   },
   {
     q: "What areas do you serve?",
@@ -76,7 +76,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "How do I request an emergency tow?",
-    a: "Call (778) 838-0014. A dispatcher will confirm your location and vehicle situation, give you a flat-rate quote, and dispatch the appropriate truck. You can also submit a request through our online contact form if the situation is not time-critical.",
+    a: "Call (778) 838-0014. A dispatcher will confirm your location and vehicle situation, give you a flat rate quote, and dispatch the appropriate truck. You can also submit a request through our online contact form if the situation is not urgent.",
   },
 ];
 const faqSchema = faqPageSchema(faq);
@@ -102,7 +102,7 @@ export default function EmergencyTowingPage() {
       <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image
           src="/image/Emergency_Towin.png"
-          alt="Emergency towing service — TowingNo.1 tow truck on a Lower Mainland road"
+          alt="Emergency towing service: TowingNo.1 tow truck on a Lower Mainland road"
           fill
           className="object-cover opacity-30"
           priority
@@ -125,7 +125,7 @@ export default function EmergencyTowingPage() {
           </h1>
           <p className="text-white/80 text-lg max-w-xl mb-8">
             TowingNo.1 dispatches tow trucks across Surrey and the Lower Mainland around the clock.
-            Flatbed and wheel-lift towing for all vehicles — cars, SUVs, trucks, and EVs. Upfront pricing, immediate dispatch.
+            Flatbed and wheel lift towing for all vehicles, including cars, SUVs, trucks, and EVs. Upfront pricing, immediate dispatch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -157,17 +157,17 @@ export default function EmergencyTowingPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Emergency Towing When You Need Help</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  An emergency tow is needed when your vehicle cannot be safely driven — whether because of a
+                  An emergency tow is needed when your vehicle cannot be safely driven, whether because of a
                   breakdown, a collision, a flat tire on a live highway, a dead battery in a remote location,
                   or mechanical damage that makes continuing dangerous. The goal is always to get you and your
                   vehicle safely off the road and to a location where the problem can be properly addressed.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   TowingNo.1 handles emergency towing calls across Surrey and the Lower Mainland 24 hours a
-                  day. Our fleet includes flatbed tow trucks, wheel-lift wreckers, and winch-equipped rigs — so
+                  day. Our fleet includes flatbed tow trucks, wheel lift wreckers, and rigs equipped with winches, so
                   we can match the right equipment to your vehicle and situation on the first trip.
                   When you call (778) 838-0014, a dispatcher confirms your location, assesses your
-                  vehicle's condition, and sends the correct truck immediately. You receive an upfront flat-rate
+                  vehicle's condition, and sends the correct truck immediately. You receive an upfront flat rate
                   quote before any truck is dispatched.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
@@ -192,11 +192,11 @@ export default function EmergencyTowingPage() {
                     },
                     {
                       title: "Accident & Collision Towing",
-                      body: "Recovery and transport of accident-damaged vehicles from collision scenes. We secure the vehicle correctly to prevent further damage and coordinate with your insurance documentation needs.",
+                      body: "Recovery and transport of damaged vehicles from collision scenes. We secure the vehicle correctly to prevent further damage and coordinate with your insurance documentation needs.",
                     },
                     {
                       title: "Disabled Vehicle Towing",
-                      body: "Non-running or non-steering vehicles loaded via onboard winch onto a flatbed — no need for the car to move under its own power.",
+                      body: "Vehicles that won't run or steer are loaded onto a flatbed with the onboard winch, so the car never needs to move under its own power.",
                     },
                     {
                       title: "Highway & Roadside Recovery",
@@ -204,11 +204,11 @@ export default function EmergencyTowingPage() {
                     },
                     {
                       title: "Electric Vehicle Towing",
-                      body: "EVs must always be transported on a flatbed — never towed with wheels rolling. We carry flatbed trucks 24/7 for Tesla, Rivian, and all EV makes.",
+                      body: "EVs must always be transported on a flatbed and never towed with wheels rolling. We carry flatbed trucks 24/7 for Tesla, Rivian, and all EV makes.",
                     },
                     {
                       title: "Vehicle Transport",
-                      body: "Scheduled or same-day transport of running and non-running vehicles to any repair shop, dealership, or address across the Lower Mainland.",
+                      body: "Scheduled or same day transport of vehicles, whether or not they run, to any repair shop, dealership, or address across the Lower Mainland.",
                     },
                   ].map((item) => (
                     <div key={item.title} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
@@ -226,14 +226,14 @@ export default function EmergencyTowingPage() {
 
               {/* H2: Flatbed or Wheel-Lift */}
               <div>
-                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Flatbed or Wheel-Lift: What Your Vehicle Needs</h2>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Flatbed or Wheel Lift: What Your Vehicle Needs</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Choosing the right towing method protects your vehicle and avoids damage during transport.
-                  A <strong>flatbed</strong> lifts the entire vehicle completely off the road — the correct choice
-                  for all-wheel-drive cars, electric vehicles, low-clearance or lowered vehicles, and anything
-                  with crash or drivetrain damage. A <strong>wheel-lift</strong> cradles the drive wheels and lifts
-                  the front or rear of the vehicle, which is efficient for short-distance moves on standard
-                  front- or rear-wheel-drive sedans.
+                  A <strong>flatbed</strong> lifts the entire vehicle completely off the road, which is the correct choice
+                  for all wheel drive cars, electric vehicles, low clearance or lowered vehicles, and anything
+                  with crash or drivetrain damage. A <strong>wheel lift</strong> cradles the drive wheels and lifts
+                  the front or rear of the vehicle, which is efficient for short distance moves on standard
+                  front wheel drive or rear wheel drive sedans.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   When you call, tell the dispatcher your vehicle's make, drive type, and whether it still
@@ -275,16 +275,16 @@ export default function EmergencyTowingPage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">When Should You Call an Emergency Tow Truck?</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   As a general rule: if driving the vehicle risks further damage, creates a safety hazard for
-                  you or other road users, or is simply not possible — call for a tow. Common situations include:
+                  you or other road users, or is simply not possible, call for a tow. Common situations include:
                 </p>
                 <ul className="space-y-3">
                   {[
-                    { title: "Vehicle will not start", body: "A dead battery, failed starter, or fuel issue that leaves you unable to drive. We can attempt a roadside fix first — battery boost or fuel delivery — and tow only if the problem cannot be resolved on the spot." },
+                    { title: "Vehicle will not start", body: "A dead battery, failed starter, or fuel issue that leaves you unable to drive. We can attempt a roadside fix first, such as a battery boost or fuel delivery, and tow only if the problem cannot be resolved on the spot." },
                     { title: "Collision or accident", body: "After any collision, even if the vehicle appears driveable, have it inspected before driving. Structural or mechanical damage is not always visible, and driving a compromised vehicle can be unsafe." },
-                    { title: "Unsafe roadside breakdown", body: "If you have broken down in a location where staying with the vehicle is dangerous — a highway shoulder with heavy traffic, a dark rural road, or inside a tunnel — getting the vehicle moved quickly is the priority." },
-                    { title: "Flat tire you cannot change safely", body: "A flat on a live highway shoulder, a vehicle without a spare, or a run-flat that has exceeded its safe limit all warrant a tow rather than an improvised roadside change." },
-                    { title: "Vehicle stuck or off-road", body: "A vehicle in a ditch, on a soft shoulder, or embedded in mud or snow needs proper winching equipment rather than a tow strap and another vehicle. Attempting extraction without the right tools often causes more damage." },
-                    { title: "Mechanical issue preventing safe driving", body: "Grinding brakes, steering problems, overheating, a seized transmission, or a check-engine light that points to a serious fault — if you are uncertain whether the vehicle is safe to drive, it is better to tow than to risk a breakdown in a worse location." },
+                    { title: "Unsafe roadside breakdown", body: "If you have broken down in a location where staying with the vehicle is dangerous (a highway shoulder with heavy traffic, a dark rural road, or inside a tunnel), getting the vehicle moved quickly is the priority." },
+                    { title: "Flat tire you cannot change safely", body: "A flat on a live highway shoulder, a vehicle without a spare, or a run flat tire that has exceeded its safe limit all warrant a tow rather than an improvised roadside change." },
+                    { title: "Vehicle stuck or off road", body: "A vehicle in a ditch, on a soft shoulder, or embedded in mud or snow needs proper winching equipment rather than a tow strap and another vehicle. Attempting extraction without the right tools often causes more damage." },
+                    { title: "Mechanical issue preventing safe driving", body: "Grinding brakes, steering problems, overheating, a seized transmission, or a check engine light can all point to a serious fault. If you are uncertain whether the vehicle is safe to drive, it is better to tow than to risk a breakdown in a worse location." },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
                       <span className="w-5 h-5 rounded-full bg-amber-400/20 border border-amber-400 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
@@ -307,11 +307,11 @@ export default function EmergencyTowingPage() {
                 </p>
                 <ol className="space-y-4">
                   {[
-                    { step: "1", title: "You call (778) 838-0014", body: "A dispatcher answers 24/7. No automated menus — a person takes your call immediately." },
+                    { step: "1", title: "You call (778) 838-0014", body: "A dispatcher answers 24/7. No automated menus. A person takes your call immediately." },
                     { step: "2", title: "Location and situation are confirmed", body: "We ask for your exact location (nearest intersection, exit number, or kilometre marker), vehicle make and model, drive type, and a brief description of what has happened." },
-                    { step: "3", title: "You receive an upfront quote", body: "We give you a flat-rate price based on your vehicle type and the distance involved before any truck is dispatched. No surprises on arrival." },
-                    { step: "4", title: "The right truck is dispatched", body: "We send the nearest available driver with the appropriate equipment — flatbed for EVs, AWD, and damaged vehicles; wheel-lift for straightforward moves." },
-                    { step: "5", title: "Driver arrives and assists", body: "The driver confirms your identity, loads the vehicle safely using the correct method and tie-down points, and keeps you informed throughout." },
+                    { step: "3", title: "You receive an upfront quote", body: "We give you a flat rate price based on your vehicle type and the distance involved before any truck is dispatched. No surprises on arrival." },
+                    { step: "4", title: "The right truck is dispatched", body: "We send the nearest available driver with the appropriate equipment: a flatbed for EVs, AWD, and damaged vehicles, or a wheel lift for straightforward moves." },
+                    { step: "5", title: "Driver arrives and assists", body: "The driver confirms your identity, loads the vehicle safely using the correct method and tie down points, and keeps you informed throughout." },
                     { step: "6", title: "Vehicle is delivered", body: "Your vehicle is transported to the repair shop, dealership, or address you specified. If your plans change en route, let the driver know." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
@@ -331,15 +331,15 @@ export default function EmergencyTowingPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Not Every Call Needs a Tow</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  If your vehicle can be fixed where it is — a dead battery, a flat tire with a usable spare,
-                  a lockout, or an empty fuel tank — we handle those on the spot so you avoid the cost and delay
+                  If your vehicle can be fixed where it is (a dead battery, a flat tire with a usable spare,
+                  a lockout, or an empty fuel tank), we handle those on the spot so you avoid the cost and delay
                   of a full tow. We carry the equipment to assess and fix the most common roadside problems
                   before recommending a tow.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
-                    { href: "/services/battery-boost",      label: "Battery Boost & Jump-Start", desc: "Dead battery? We jump-start and test on the spot." },
-                    { href: "/services/flat-tire-help",      label: "Flat Tire Help",              desc: "Spare fitted on-site or tow to the nearest shop." },
+                    { href: "/services/battery-boost",      label: "Battery Boost & Jump Start", desc: "Dead battery? We jump start and test on the spot." },
+                    { href: "/services/flat-tire-help",      label: "Flat Tire Help",              desc: "Spare fitted on site or a tow to the nearest shop." },
                     { href: "/services/lockout-service",     label: "Car Lockout Service",         desc: "Keys locked in? We open without damage." },
                     { href: "/services/fuel-delivery",       label: "Fuel Delivery",               desc: "Gas or diesel delivered to your location." },
                     { href: "/services/winching-extraction", label: "Winching & Extraction",       desc: "Stuck in a ditch, mud, or snow? We pull you out." },
@@ -406,10 +406,10 @@ export default function EmergencyTowingPage() {
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flat-rate — no hidden fees</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flat rate, no hidden fees</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured in BC</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed &amp; wheel-lift trucks</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed &amp; wheel lift trucks</li>
                 </ul>
               </div>
 

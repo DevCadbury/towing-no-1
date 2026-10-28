@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: "Vehicle Transport | Car Transport Service | TowingNo.1",
   },
   description:
-    "Vehicle transport and car transport service in Surrey and the Lower Mainland. TowingNo.1 moves running and non-running vehicles safely. Call 778-838-0014.",
+    "Vehicle transport and car transport service in Surrey and the Lower Mainland. TowingNo.1 safely moves vehicles whether or not they run. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/vehicle-transport" },
   keywords: [
     "vehicle transport Surrey",
@@ -24,14 +24,14 @@ export const metadata: Metadata = {
     url: "https://www.towingno1.com/services/vehicle-transport",
     title: "Vehicle Transport | Car Transport Service | TowingNo.1",
     description:
-      "Vehicle transport and car transport across Surrey and the Lower Mainland. Running and non-running vehicles. Call 778-838-0014.",
-    images: [{ url: "/image/Vehicle_Transpor.png", alt: "Vehicle transport service — car being loaded for transport" }],
+      "Vehicle transport and car transport across Surrey and the Lower Mainland, whether or not the vehicle runs. Call 778-838-0014.",
+    images: [{ url: "/image/Vehicle_Transpor.png", alt: "Vehicle transport service: car being loaded for transport" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vehicle Transport | Car Transport Service | TowingNo.1",
     description:
-      "Vehicle transport and car transport across Surrey and the Lower Mainland. Running and non-running vehicles. Call 778-838-0014.",
+      "Vehicle transport and car transport across Surrey and the Lower Mainland, whether or not the vehicle runs. Call 778-838-0014.",
     images: ["/image/Vehicle_Transpor.png"],
   },
 };
@@ -43,7 +43,7 @@ const schema = {
   name: "Vehicle Transport Service",
   serviceType: "Vehicle Transport",
   description:
-    "Vehicle transport and car transport service across Surrey and the Lower Mainland. Running and non-running vehicles moved safely to any destination.",
+    "Vehicle transport and car transport service across Surrey and the Lower Mainland. Vehicles moved safely to any destination, whether or not they run.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
   areaServed: serviceAreaCompact,
 };
@@ -51,19 +51,19 @@ const schema = {
 const faq: FaqItem[] = [
   {
     q: "Can you transport a vehicle that does not run?",
-    a: "Yes. Non-running vehicles are loaded onto a flatbed using our onboard winch — the car does not need to start, steer, or brake. Let us know the vehicle's condition when you call so we can bring the right equipment.",
+    a: "Yes. Vehicles that don't run are loaded onto a flatbed using our onboard winch, so the car does not need to start, steer, or brake. Let us know the vehicle's condition when you call so we can bring the right equipment.",
   },
   {
     q: "Can you transport a damaged vehicle after an accident?",
-    a: "Yes. We transport collision-damaged and non-driveable vehicles to the repair shop, body shop, dealership, or storage facility of your choice across the Lower Mainland. See our accident recovery service for more detail.",
+    a: "Yes. We transport collision damaged vehicles and vehicles that can't be driven to the repair shop, body shop, dealership, or storage facility of your choice across the Lower Mainland. See our accident recovery service for more detail.",
   },
   {
     q: "Where can you transport my vehicle?",
-    a: "We transport vehicles to any destination across Surrey and the Lower Mainland — repair shops, dealerships, body shops, storage facilities, private addresses, and auction lots within our service area. Call (778) 838-0014 to confirm coverage for your specific pickup and delivery locations.",
+    a: "We transport vehicles to any destination across Surrey and the Lower Mainland, including repair shops, dealerships, body shops, storage facilities, private addresses, and auction lots within our service area. Call (778) 838-0014 to confirm coverage for your specific pickup and delivery locations.",
   },
   {
     q: "Do you provide local vehicle transport?",
-    a: "Yes. Many transport requests are short local moves — a vehicle from a driveway to a nearby shop, a non-runner from a parking lot to a mechanic, or a purchased vehicle from a seller's address to your home. We handle scheduled same-day and advance-booked transport within the Lower Mainland.",
+    a: "Yes. Many transport requests are short local moves: a vehicle from a driveway to a nearby shop, a car that doesn't run from a parking lot to a mechanic, or a purchased vehicle from a seller's address to your home. We handle transport scheduled for the same day or booked in advance within the Lower Mainland.",
   },
   {
     q: "What information do you need for a vehicle transport request?",
@@ -71,7 +71,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "When should I request vehicle transport instead of roadside assistance?",
-    a: "Roadside assistance is for situations where the vehicle can potentially be fixed on the spot — a flat tyre, dead battery, lockout, or empty fuel tank. Vehicle transport is the right service when the vehicle needs to be moved to a different location because it cannot be driven safely, needs workshop attention, or the situation is planned rather than an emergency breakdown.",
+    a: "Roadside assistance is for situations where the vehicle can potentially be fixed on the spot, such as a flat tyre, dead battery, lockout, or empty fuel tank. Vehicle transport is the right service when the vehicle needs to be moved to a different location because it cannot be driven safely, needs workshop attention, or the situation is planned rather than an emergency breakdown.",
   },
 ];
 const faqSchema = faqPageSchema(faq);
@@ -115,7 +115,7 @@ export default function VehicleTransportPage() {
       <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image
           src="/image/Vehicle_Transpor.png"
-          alt="Vehicle transport service — car being loaded safely for transport across the Lower Mainland"
+          alt="Vehicle transport service: car being loaded safely for transport across the Lower Mainland"
           fill
           className="object-cover opacity-30"
           priority
@@ -137,8 +137,8 @@ export default function VehicleTransportPage() {
             Vehicle Transport Service
           </h1>
           <p className="text-white/80 text-lg max-w-xl mb-8">
-            Need a vehicle moved across Surrey or the Lower Mainland? TowingNo.1 transports running
-            and non-running vehicles safely to the destination you choose — repair shops, dealerships,
+            Need a vehicle moved across Surrey or the Lower Mainland? TowingNo.1 safely transports vehicles that run
+            and vehicles that don't to the destination you choose, including repair shops, dealerships,
             private addresses, and more.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -171,21 +171,21 @@ export default function VehicleTransportPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Vehicle Transport for Cars and Other Vehicles</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Vehicle transport is the service of moving a vehicle from one location to another —
+                  Vehicle transport is the service of moving a vehicle from one location to another,
                   either because it cannot be driven, because it should not be driven, or simply because
                   driving it is impractical for the situation. Unlike emergency towing, which is a
                   response to a sudden breakdown or collision, vehicle transport is often a planned or
-                  semi-planned move with a confirmed pickup and a chosen destination.
+                  partly planned move with a confirmed pickup and a chosen destination.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   TowingNo.1 provides vehicle transport across Surrey and the Lower Mainland for a
                   range of vehicle types and situations. We use flatbed trucks as the primary transport
-                  method, which keeps the vehicle fully off the ground and is suitable for both running
-                  and non-running vehicles.
+                  method, which keeps the vehicle fully off the ground and is suitable for vehicles whether
+                  or not they run.
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {[
-                    "Running and non-running vehicles",
+                    "Vehicles that run or don't",
                     "Cars, SUVs, and trucks",
                     "Electric vehicles",
                     "Classic and collector cars",
@@ -208,28 +208,28 @@ export default function VehicleTransportPage() {
                 <div className="space-y-4">
                   {[
                     {
-                      title: "Non-running vehicle",
-                      body: "A vehicle that will not start, cannot steer, or cannot roll under its own power needs to be loaded using a winch and transported on a flatbed. We handle non-runners from driveways, parking lots, and other accessible locations.",
+                      title: "Vehicle that doesn't run",
+                      body: "A vehicle that will not start, cannot steer, or cannot roll under its own power needs to be loaded using a winch and transported on a flatbed. We move these vehicles from driveways, parking lots, and other accessible locations.",
                     },
                     {
                       title: "Vehicle recovered after an accident",
-                      body: "A collision-damaged vehicle that cannot be driven safely should be transported to a repair shop or storage facility rather than being driven further. See our accident recovery service for post-collision situations.",
+                      body: "A collision damaged vehicle that cannot be driven safely should be transported to a repair shop or storage facility rather than being driven further. See our accident recovery service for situations after a collision.",
                     },
                     {
                       title: "Moving a vehicle to a repair facility",
-                      body: "If your vehicle has a mechanical issue that makes driving it to a workshop risky — a fault that could worsen in transit, a warning light you are unsure about — transporting rather than driving it is the safer option.",
+                      body: "If your vehicle has a mechanical issue that makes driving it to a workshop risky (a fault that could worsen in transit, or a warning light you are unsure about), transporting rather than driving it is the safer option.",
                     },
                     {
                       title: "Vehicle that should not be driven",
-                      body: "A vehicle awaiting a specific repair, a vehicle with expired or no insurance, or a classic car that is not in daily use but needs to move between locations — these all suit transport rather than driving.",
+                      body: "A vehicle awaiting a specific repair, a vehicle with expired or no insurance, or a classic car that is not in daily use but needs to move between locations all suit transport rather than driving.",
                     },
                     {
                       title: "Local vehicle relocation",
-                      body: "Buying a non-runner from a private seller, moving a project car to a different storage location, or relocating a vehicle without adding mileage — these are planned transport jobs that can be booked in advance.",
+                      body: "Buying a car that doesn't run from a private seller, moving a project car to a different storage location, or relocating a vehicle without adding mileage are planned transport jobs that can be booked in advance.",
                     },
                     {
                       title: "Dealership and auction transfers",
-                      body: "Moving a purchased vehicle from a dealership or auction to the owner, or transferring a trade-in between lots across the Lower Mainland.",
+                      body: "Moving a purchased vehicle from a dealership or auction to the owner, or transferring a traded in vehicle between lots across the Lower Mainland.",
                     },
                   ].map((item) => (
                     <div key={item.title} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
@@ -251,7 +251,7 @@ export default function VehicleTransportPage() {
                   <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
                     <p className="font-bold text-navy-900 text-sm mb-2">Emergency towing</p>
                     <p className="text-slate-600 text-sm leading-relaxed">
-                      An unplanned, urgent response — a breakdown on a highway shoulder, a vehicle
+                      An unplanned, urgent response to a breakdown on a highway shoulder, a vehicle
                       after a collision, or a roadside situation that needs immediate attention. Speed
                       of response is the priority.
                     </p>
@@ -259,14 +259,14 @@ export default function VehicleTransportPage() {
                   <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
                     <p className="font-bold text-navy-900 text-sm mb-2">Vehicle transport</p>
                     <p className="text-slate-600 text-sm leading-relaxed">
-                      A planned or semi-planned move — transporting a non-runner from a driveway,
+                      A planned or partly planned move, such as transporting a car that doesn&apos;t run from a driveway,
                       moving a purchased vehicle, or relocating a car that needs workshop attention.
                       A confirmed pickup time and destination are agreed in advance.
                     </p>
                   </div>
                 </div>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Both services use similar equipment — flatbed trucks — and both are available by
+                  Both services use similar equipment (flatbed trucks), and both are available by
                   calling (778) 838-0014. If you are uncertain which applies to your situation, describe
                   what you need and the dispatcher will direct you to the appropriate service.
                 </p>
@@ -278,10 +278,10 @@ export default function VehicleTransportPage() {
 
               {/* H2: Secure Loading and Tie-Down */}
               <div>
-                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Secure Loading and Tie-Down</h2>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Secure Loading and Strapping</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   How a vehicle is secured for transport matters as much as the distance travelled.
-                  We load onto a flatbed so the vehicle rides level rather than nose-down, then anchor
+                  We load onto a flatbed so the vehicle rides level rather than nose down, then anchor
                   it with wheel straps that hold the tyres to the deck rather than putting tension
                   through the suspension or body panels. This approach protects lowered cars, electric
                   vehicles with sensitive battery trays, and classic vehicles with older paint and trim
@@ -289,13 +289,13 @@ export default function VehicleTransportPage() {
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   Before the truck moves, we walk the load, check every strap, and confirm nothing can
-                  shift. A secure tie-down is the most important factor in delivering a vehicle in the
-                  same condition it was picked up. Non-running vehicles that cannot roll onto the deck
+                  shift. Secure strapping is the most important factor in delivering a vehicle in the
+                  same condition it was picked up. Vehicles that don&apos;t run and cannot roll onto the deck
                   are loaded using the onboard winch, attaching to rated frame points rather than
                   bumpers or tow eyes that may not be designed for recovery loads.
                 </p>
                 <p className="mt-4 text-sm text-slate-500">
-                  See: <Link href="/blog/electric-vehicle-towing-bc" className="text-amber-600 hover:underline">EV and hybrid vehicle towing — why flatbed transport is required and how Transport Mode works</Link>
+                  See: <Link href="/blog/electric-vehicle-towing-bc" className="text-amber-600 hover:underline">EV and hybrid vehicle towing: why flatbed transport is required and how Transport Mode works</Link>
                 </p>
               </div>
 
@@ -307,7 +307,7 @@ export default function VehicleTransportPage() {
                     { step: "1", title: "Call (778) 838-0014",                   body: "A dispatcher answers 24/7. Tell them you need vehicle transport and give the basic details." },
                     { step: "2", title: "Provide vehicle location and destination", body: "We need the full address or location of the pickup and the delivery destination so we can confirm coverage and quote the transport." },
                     { step: "3", title: "Describe the vehicle and its condition", body: "Let us know the make, model, whether the vehicle runs and can steer and brake, and any access limitations at pickup or delivery. This determines the right truck and equipment." },
-                    { step: "4", title: "Upfront quote confirmed",               body: "We provide a flat-rate price based on the vehicle and the distance involved, confirmed before dispatch. No meter, no surprise charges on arrival." },
+                    { step: "4", title: "Upfront quote confirmed",               body: "We provide a flat rate price based on the vehicle and the distance involved, confirmed before dispatch. No meter, no surprise charges on arrival." },
                     { step: "5", title: "Transport arranged",                    body: "We dispatch the appropriate truck, load the vehicle safely using the correct method for its condition, and transport it to the agreed destination." },
                     { step: "6", title: "Vehicle delivered",                     body: "The vehicle is delivered to the destination, secured until unloading, and handed over. If plans change en route, let the driver know." },
                   ].map((item) => (
@@ -343,6 +343,11 @@ export default function VehicleTransportPage() {
                   Call (778) 838-0014 to confirm coverage for your specific pickup and delivery
                   locations before booking.
                 </p>
+                <p className="text-slate-600 leading-relaxed mt-4">
+                  Need a vehicle moved between Canada and the U.S.? See our{" "}
+                  <Link href="/services/cross-border-towing" className="font-semibold text-amber-600 hover:text-amber-700">cross border towing</Link>{" "}
+                  page.
+                </p>
               </div>
 
               {/* H2: What Information To Have Ready */}
@@ -355,9 +360,9 @@ export default function VehicleTransportPage() {
                 <ul className="space-y-3">
                   {[
                     { title: "Pickup location",                    body: "The full address or location where the vehicle currently is, including any access limitations (narrow driveway, underground parking, gated property)." },
-                    { title: "Delivery destination",               body: "The full address of where the vehicle needs to go — repair shop, dealership, private address, or storage facility." },
+                    { title: "Delivery destination",               body: "The full address of where the vehicle needs to go, such as a repair shop, dealership, private address, or storage facility." },
                     { title: "Vehicle make and model",             body: "This helps us determine the right truck and equipment and check for any specific handling requirements." },
-                    { title: "Whether the vehicle runs",           body: "Can the engine start? Can the vehicle steer and brake? A non-running vehicle requires winch-loading rather than driving onto the flatbed." },
+                    { title: "Whether the vehicle runs",           body: "Can the engine start? Can the vehicle steer and brake? A vehicle that doesn't run must be loaded with a winch rather than driven onto the flatbed." },
                     { title: "Any known damage or access issues",  body: "Collision damage, missing wheels, a seized steering column, or other conditions that affect how the vehicle can be loaded." },
                     { title: "Preferred pickup window",            body: "For planned transport, a preferred date and time window helps us schedule the appropriate truck." },
                   ].map((item) => (
@@ -396,6 +401,7 @@ export default function VehicleTransportPage() {
                 <Link href="/services/flat-tire-help" className="font-semibold text-amber-600 hover:text-amber-700">Flat tire help</Link>
                 <Link href="/services/lockout-service" className="font-semibold text-amber-600 hover:text-amber-700">Lockout service</Link>
                 <Link href="/services/fuel-delivery" className="font-semibold text-amber-600 hover:text-amber-700">Fuel delivery</Link>
+                <Link href="/services/cross-border-towing" className="font-semibold text-amber-600 hover:text-amber-700">Cross border towing</Link>
                 <Link href="/locations/surrey" className="font-semibold text-amber-600 hover:text-amber-700">Towing Surrey</Link>
                 <Link href="/locations/langley" className="font-semibold text-amber-600 hover:text-amber-700">Towing Langley</Link>
                 <Link href="/contact" className="font-semibold text-amber-600 hover:text-amber-700">Request online</Link>
@@ -408,7 +414,7 @@ export default function VehicleTransportPage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Get a Quote</p>
                 <h3 className="text-xl font-extrabold mb-3">Need Vehicle Transport?</h3>
                 <p className="text-slate-300 text-sm mb-5">
-                  Call for an upfront flat-rate quote. We transport vehicles 24/7 across the Lower Mainland.
+                  Call for an upfront flat rate quote. We transport vehicles 24/7 across the Lower Mainland.
                 </p>
                 <a
                   href="tel:+17788380014"
@@ -424,8 +430,8 @@ export default function VehicleTransportPage() {
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed trucks</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Running &amp; non-running</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Upfront flat-rate pricing</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Whether or not it runs</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Upfront flat rate pricing</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured in BC</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 availability</li>
                 </ul>
@@ -443,6 +449,7 @@ export default function VehicleTransportPage() {
                     { href: "/services/flat-tire-help",      label: "Flat Tire Help" },
                     { href: "/services/lockout-service",     label: "Lockout Service" },
                     { href: "/services/fuel-delivery",       label: "Fuel Delivery" },
+                    { href: "/services/cross-border-towing", label: "Cross Border Towing" },
                   ].map((s) => (
                     <li key={s.href}>
                       <Link href={s.href} className="text-sm text-amber-600 hover:text-amber-700 font-medium flex items-center gap-1">

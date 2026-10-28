@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Fuel Delivery | 24/7 Roadside Assistance | TowingNo.1",
     description:
       "24/7 emergency fuel delivery in Surrey and the Lower Mainland. Stranded with an empty tank? We bring fuel to your location. Call 778-838-0014.",
-    images: [{ url: "/image/Fuel_Deliver.png", alt: "Emergency fuel delivery — fuel delivered to a stranded driver" }],
+    images: [{ url: "/image/Fuel_Deliver.png", alt: "Emergency fuel delivery: fuel delivered to a stranded driver" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -52,23 +52,23 @@ const schema = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide emergency fuel delivery 24/7?",
-    a: "Yes. TowingNo.1 provides fuel delivery assistance 24 hours a day, 7 days a week — including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange fuel delivery.",
+    a: "Yes. TowingNo.1 provides fuel delivery assistance 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange fuel delivery.",
   },
   {
     q: "What should I do if I run out of fuel on the highway?",
-    a: "If you feel the engine surge or lose power on a highway, ease onto the shoulder while you still have momentum rather than waiting for a complete stall in a live lane. Switch on your hazard lights, stay in the vehicle if the shoulder is narrow or traffic is heavy, and call (778) 838-0014 with your exact location — nearest exit, kilometre marker, or direction of travel. Do not walk along a busy highway shoulder to reach a distant fuel station.",
+    a: "If you feel the engine surge or lose power on a highway, ease onto the shoulder while you still have momentum rather than waiting for a complete stall in a live lane. Switch on your hazard lights, stay in the vehicle if the shoulder is narrow or traffic is heavy, and call (778) 838-0014 with your exact location: nearest exit, kilometre marker, or direction of travel. Do not walk along a busy highway shoulder to reach a distant fuel station.",
   },
   {
     q: "Can you deliver fuel to a stranded vehicle?",
-    a: "Yes. We deliver fuel to your location — whether that is on a highway shoulder, in a parking lot, on a residential street, or in another accessible location across Surrey and the Lower Mainland. Tell the dispatcher where you are and confirm the fuel type your vehicle requires.",
+    a: "Yes. We deliver fuel to your location, whether that is on a highway shoulder, in a parking lot, on a residential street, or in another accessible location across Surrey and the Lower Mainland. Tell the dispatcher where you are and confirm the fuel type your vehicle requires.",
   },
   {
     q: "What areas do you serve for fuel delivery?",
-    a: "Fuel delivery runs across our Lower Mainland coverage area — from highway corridors to residential side streets. Tell the dispatcher where you are and we will confirm coverage for your exact location before sending fuel out.",
+    a: "Fuel delivery runs across our Lower Mainland coverage area, from highway corridors to residential side streets. Tell the dispatcher where you are and we will confirm coverage for your exact location before sending fuel out.",
   },
   {
     q: "What if the vehicle still will not start after receiving fuel?",
-    a: "If the vehicle does not start after receiving fuel, there may be a secondary issue — a dead battery, a diesel fuel system that needs priming after running completely dry, or another mechanical fault. Our driver can assess the situation and assist where possible. If a tow is required, we can arrange that as a separate service.",
+    a: "If the vehicle does not start after receiving fuel, there may be a secondary issue, such as a dead battery, a diesel fuel system that needs priming after running completely dry, or another mechanical fault. Our driver can assess the situation and assist where possible. If a tow is required, we can arrange that as a separate service.",
   },
   {
     q: "When would I need towing instead of fuel delivery?",
@@ -116,7 +116,7 @@ export default function FuelDeliveryPage() {
       <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image
           src="/image/Fuel_Deliver.png"
-          alt="Emergency fuel delivery — fuel delivered to a stranded driver at the roadside"
+          alt="Emergency fuel delivery: fuel delivered to a stranded driver at the roadside"
           fill
           className="object-cover opacity-30"
           priority
@@ -172,7 +172,7 @@ export default function FuelDeliveryPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Ran Out of Fuel?</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Running out of fuel is a more common roadside situation than most drivers expect —
+                  Running out of fuel is a more common roadside situation than most drivers expect,
                   and it can happen at the worst possible time and place. A misread fuel gauge, a faulty
                   sender unit, an unexpected detour, or simply misjudging the distance to the next
                   station can leave a vehicle stranded and unable to continue.
@@ -185,7 +185,7 @@ export default function FuelDeliveryPage() {
                     { title: "Vehicle ran out of fuel",              body: "The engine has stalled or is losing power because the tank is empty. The vehicle cannot be driven to a fuel station." },
                     { title: "Unable to safely reach a fuel station", body: "The nearest station is too far to walk safely, especially on a highway, in darkness, or in poor weather." },
                     { title: "Vehicle stranded at the roadside",     body: "The vehicle has coasted to a stop on a shoulder, in a parking lot, or on a residential street and cannot be moved without fuel." },
-                    { title: "Fuel-related breakdown",               body: "The engine surged or stalled and the fuel gauge is reading very low or empty, suggesting a fuel starvation issue rather than a mechanical fault." },
+                    { title: "Breakdown caused by fuel",               body: "The engine surged or stalled and the fuel gauge is reading very low or empty, suggesting a fuel starvation issue rather than a mechanical fault." },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
                       <Check />
@@ -212,10 +212,10 @@ export default function FuelDeliveryPage() {
                 <ol className="space-y-4 mb-5">
                   {[
                     { step: "1", title: "Call (778) 838-0014",                    body: "A dispatcher answers 24/7. Tell them you have run out of fuel and give your location." },
-                    { step: "2", title: "Location and fuel type confirmed",        body: "We ask for your exact location and confirm the type of fuel your vehicle requires — gasoline or diesel. Confirming the fuel type is essential: putting the wrong fuel into a vehicle can cause serious engine damage." },
-                    { step: "3", title: "Upfront quote provided",                 body: "We give you a flat-rate price before dispatch. You know the cost before any driver is sent." },
+                    { step: "2", title: "Location and fuel type confirmed",        body: "We ask for your exact location and confirm the type of fuel your vehicle requires, gasoline or diesel. Confirming the fuel type is essential: putting the wrong fuel into a vehicle can cause serious engine damage." },
+                    { step: "3", title: "Upfront quote provided",                 body: "We give you a flat rate price before dispatch. You know the cost before any driver is sent." },
                     { step: "4", title: "Fuel delivery arranged",                 body: "We send the nearest available driver to your location with the confirmed fuel type." },
-                    { step: "5", title: "Fuel delivered to your vehicle",         body: "The driver delivers fuel at the roadside and confirms the correct quantity has been added. For a diesel that has run completely dry, the fuel line may need priming before the engine will start — the driver can assist with this." },
+                    { step: "5", title: "Fuel delivered to your vehicle",         body: "The driver delivers fuel at the roadside and confirms the correct quantity has been added. For a diesel that has run completely dry, the fuel line may need priming before the engine will start, and the driver can assist with this." },
                     { step: "6", title: "Vehicle continues when safely possible", body: "Once fuel has been added and the engine starts, you are free to drive to the nearest station to fill the tank properly. If the vehicle does not start, we can assess whether additional assistance is needed." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
@@ -234,7 +234,7 @@ export default function FuelDeliveryPage() {
                     "Fuel delivered to your location",
                     "Gasoline and diesel available",
                     "Highway and roadside delivery",
-                    "Upfront flat-rate pricing",
+                    "Upfront flat rate pricing",
                     "Diesel line priming if needed",
                     "Available 24/7 including holidays",
                   ].map((item) => (
@@ -247,16 +247,16 @@ export default function FuelDeliveryPage() {
 
               {/* H2: Gasoline and Diesel */}
               <div>
-                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Gasoline and Diesel — Why the Fuel Type Matters</h2>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Gasoline and Diesel: Why the Fuel Type Matters</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Confirming the correct fuel type before delivery is not a formality — it is essential.
+                  Confirming the correct fuel type before delivery is not a formality. It is essential.
                   Even a small amount of gasoline added to a diesel fuel system can damage the injection
                   pump and require a costly flush and repair. We confirm whether your vehicle takes
                   gasoline or diesel when you call and before any fuel is delivered.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   Most passenger cars and SUVs in Canada run on gasoline. Diesel is common in pickup
-                  trucks, commercial vans, and some passenger vehicles — usually identified by a green
+                  trucks, commercial vans, and some passenger vehicles, usually identified by a green
                   fuel cap or a &quot;Diesel Only&quot; label near the filler neck. If you are
                   uncertain, check the owner&apos;s manual or the label inside the fuel door before
                   calling. Our dispatcher will also help you confirm if needed.
@@ -272,11 +272,11 @@ export default function FuelDeliveryPage() {
                 </p>
                 <ol className="space-y-4 mb-4">
                   {[
-                    { step: "1", title: "Move to a safe location when possible",       body: "If you feel the engine losing power, steer toward the shoulder, a lay-by, or a parking area while you still have momentum. Do not brake suddenly in a live lane." },
+                    { step: "1", title: "Move to a safe location when possible",       body: "If you feel the engine losing power, steer toward the shoulder, a pullout, or a parking area while you still have momentum. Do not brake suddenly in a live lane." },
                     { step: "2", title: "Switch on your hazard lights",                body: "Do this as soon as the vehicle stops moving. Hazard lights warn other drivers that your vehicle is stationary." },
-                    { step: "3", title: "Stay with the vehicle on busy roads",         body: "On a highway or any road with fast-moving traffic, it is generally safer to remain inside the vehicle with your seatbelt on than to walk along the shoulder to a distant fuel station." },
+                    { step: "3", title: "Stay with the vehicle on busy roads",         body: "On a highway or any road with fast moving traffic, it is generally safer to remain inside the vehicle with your seatbelt on than to walk along the shoulder to a distant fuel station." },
                     { step: "4", title: "Provide an accurate location when calling",   body: "The more precise your location, the faster help arrives. Note the nearest exit number, kilometre marker, street name, or business nearby. If you are unsure, your phone's location sharing can help." },
-                    { step: "5", title: "Wait in a safe place",                        body: "If you have exited the vehicle, wait on the passenger side away from traffic — behind a barrier or guardrail where one is available. Keep hazard lights running until the driver arrives." },
+                    { step: "5", title: "Wait in a safe place",                        body: "If you have exited the vehicle, wait on the passenger side away from traffic, behind a barrier or guardrail where one is available. Keep hazard lights running until the driver arrives." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
                       <span className="w-8 h-8 rounded-full bg-amber-400 text-gray-900 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">
@@ -307,10 +307,10 @@ export default function FuelDeliveryPage() {
                 </p>
                 <ul className="space-y-3 mb-5">
                   {[
-                    { title: "Vehicle still will not start",     body: "If the engine does not start after receiving fuel, a secondary issue is present — a dead battery, a mechanical fault, or a diesel fuel system that requires professional priming after running completely dry." },
+                    { title: "Vehicle still will not start",     body: "If the engine does not start after receiving fuel, a secondary issue is present, such as a dead battery, a mechanical fault, or a diesel fuel system that requires professional priming after running completely dry." },
                     { title: "Mechanical issue present",         body: "A warning light, unusual noise, or other symptom present before the fuel ran out suggests the vehicle has a mechanical problem that needs a workshop rather than just fuel." },
                     { title: "Unsafe roadside location",         body: "If the vehicle is in a position that cannot be safely occupied while waiting for fuel delivery, recovery and towing may be the more appropriate response." },
-                    { title: "Vehicle cannot safely continue",   body: "If the vehicle has other damage — a flat tyre, collision damage, or another fault — that was not caused by the empty tank, a tow is needed in addition to or instead of fuel delivery." },
+                    { title: "Vehicle cannot safely continue",   body: "If the vehicle has other damage (a flat tyre, collision damage, or another fault) that was not caused by the empty tank, a tow is needed in addition to or instead of fuel delivery." },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
                       <Check />
@@ -359,10 +359,10 @@ export default function FuelDeliveryPage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014",                   body: "A dispatcher answers 24/7. Tell them you have run out of fuel." },
                     { step: "2", title: "Location and fuel type confirmed",       body: "We confirm your exact location and the fuel type your vehicle needs before arranging anything." },
-                    { step: "3", title: "Upfront quote provided",                 body: "A flat-rate price is confirmed before any driver is dispatched. No surprises on arrival." },
+                    { step: "3", title: "Upfront quote provided",                 body: "A flat rate price is confirmed before any driver is dispatched. No surprises on arrival." },
                     { step: "4", title: "Driver dispatched",                      body: "The nearest available driver with the confirmed fuel type is sent to your location." },
                     { step: "5", title: "Fuel delivered",                         body: "The driver delivers fuel, confirms the correct amount has been added, and assists with priming if the engine requires it after running dry." },
-                    { step: "6", title: "Further assistance if needed",           body: "If the vehicle does not start after fuelling, or if another issue is discovered, we discuss the options — including towing if required." },
+                    { step: "6", title: "Further assistance if needed",           body: "If the vehicle does not start after fuelling, or if another issue is discovered, we discuss the options, including towing if required." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
                       <span className="w-8 h-8 rounded-full bg-amber-400 text-gray-900 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">

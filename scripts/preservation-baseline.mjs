@@ -12,7 +12,7 @@
  *      tel:+17788380014 href, the GA `call_dialog_open` tracking, per-page
  *      emitted metadata, the global JSON-LD @graph + per-page Service /
  *      FAQPage / BreadcrumbList schema, app/sitemap.ts + app/robots.ts
- *      output, the GTM / GA / AdSense / Reamaze integration tags, and the
+ *      output, the GTM / GA / AdSense / tawk.to integration tags, and the
  *      contact -> /api/send-email flow).
  *   2. On first run (no baseline on disk, or with --update) it WRITES the
  *      snapshot to scripts/preservation-baseline.json. This is the baseline
@@ -295,12 +295,16 @@ function buildSnapshot() {
     gtm: /GTM-5G2X36L7/.test(layoutSrc),
     ga: /G-30WWS5SMCS/.test(layoutSrc),
     adsense: /ca-pub-2962382436663193/.test(layoutSrc),
-    reamaze: /reamaze/.test(layoutSrc) && /14d9241b-cb1a-4379-a0d3-f9cb700e9592/.test(layoutSrc),
+    // Live chat moved from Re:amaze to tawk.to (components/TawkWidget.tsx).
+    tawk:
+      /<TawkWidget\s*\/>/.test(layoutSrc) &&
+      /embed\.tawk\.to/.test(read(path.join(COMPONENTS, "TawkWidget.tsx"))),
   };
 
   /* contact flow: ContactContent.tsx -> POST /api/send-email */
   const contactSrc = read(path.join(COMPONENTS, "ContactContent.tsx"));
-  const fetchArgs = (contactSrc.match(/fetch\(\s*"([^"]+)"[\s\S]*?method:\s*"([^"]+)"/) || []);
+  // Target the send-email call specifically: the form also fetches /api/geo first.
+  const fetchArgs = (contactSrc.match(/fetch\(\s*"(\/api\/send-email)"[\s\S]*?method:\s*"([^"]+)"/) || []);
   const contactFlow = {
     endpoint: fetchArgs[1] || null,
     method: fetchArgs[2] || null,
@@ -394,7 +398,7 @@ console.log(`Pages with captured metadata : ${Object.keys(snap.metadata).length}
 console.log(`Global JSON-LD @graph types  : ${snap.schema.globalGraph.types.join(", ")}`);
 console.log(`Sitemap URLs                 : ${snap.sitemap.urls.length}`);
 console.log(`robots sitemap / host        : ${snap.robots.sitemap} / ${snap.robots.host}`);
-console.log(`Integrations present         : GTM=${snap.integrations.gtm} GA=${snap.integrations.ga} AdSense=${snap.integrations.adsense} Reamaze=${snap.integrations.reamaze}`);
+console.log(`Integrations present         : GTM=${snap.integrations.gtm} GA=${snap.integrations.ga} AdSense=${snap.integrations.adsense} tawk.to=${snap.integrations.tawk}`);
 console.log(`Contact flow                 : ${snap.contactFlow.method} ${snap.contactFlow.endpoint} (json=${snap.contactFlow.contentTypeJson}, fields=[${snap.contactFlow.fields.join(", ")}])`);
 console.log("\nExcluded (known buggy surfaces, will be fixed):");
 console.log("  - placeholder Google verification code (app/layout.tsx) — stripped from metadata");

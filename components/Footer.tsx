@@ -75,6 +75,7 @@ export default function Footer() {
               <FooterLink href="/services/fuel-delivery">Fuel Delivery</FooterLink>
               <FooterLink href="/services/winching-extraction">Winching &amp; Extraction</FooterLink>
               <FooterLink href="/services/vehicle-transport">Vehicle Transport</FooterLink>
+              <FooterLink href="/services/cross-border-towing">Cross Border Towing</FooterLink>
             </ul>
           </div>
 

@@ -9,7 +9,7 @@ function CallCTA({ label = "Need a Tow Truck in Langley?" }: { label?: string })
       </p>
       <h3 className="text-2xl md:text-3xl font-extrabold mb-3">{label}</h3>
       <p className="text-slate-300 text-sm mb-6 max-w-sm mx-auto">
-        Get help from TowingNo.1. We dispatch immediately — upfront quote before any truck rolls.
+        Get help from TowingNo.1. We dispatch immediately, with an upfront quote before any truck rolls.
       </p>
       <a
         href="tel:+17788380014"
@@ -50,15 +50,15 @@ const faq = [
   },
   {
     q: "Do you provide 24/7 towing in Langley?",
-    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week across Langley — including evenings, weekends, and all statutory holidays. Whether you're stranded on Highway 1 at midnight or in a Willoughby parkade on a Sunday morning, we answer.",
+    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week across Langley, including evenings, weekends, and all statutory holidays. Whether you're stranded on Highway 1 at midnight or in a Willoughby parkade on a Sunday morning, we answer.",
   },
   {
     q: "Do you cover all of Langley including Aldergrove and Fort Langley?",
-    a: "Yes. We serve Langley City and all of Langley Township — Willoughby, Walnut Grove, Murrayville, Brookswood, Aldergrove, Fort Langley, and the rural roads in between. Give us your nearest cross street and we'll dispatch accordingly.",
+    a: "Yes. We serve Langley City and all of Langley Township, including Willoughby, Walnut Grove, Murrayville, Brookswood, Aldergrove, Fort Langley, and the rural roads in between. Give us your nearest cross street and we'll dispatch accordingly.",
   },
   {
     q: "Do you offer roadside assistance in Langley without towing?",
-    a: "Yes. We provide battery boosts, flat tire changes, car lockout service, and fuel delivery across Langley. If the problem can be solved on the spot we fix it there — a tow is only arranged when the vehicle genuinely cannot be driven.",
+    a: "Yes. We provide battery boosts, flat tire changes, car lockout service, and fuel delivery across Langley. If the problem can be solved on the spot, we fix it there. A tow is only arranged when the vehicle genuinely cannot be driven.",
   },
   {
     q: "Can you tow on Highway 1 near Langley?",
@@ -66,7 +66,7 @@ const faq = [
   },
   {
     q: "How much does towing cost in Langley?",
-    a: "We use flat-rate pricing based on vehicle type and the distance involved. There is no meter running and no hidden fees. Call (778) 838-0014 for an upfront quote before we dispatch — you know the exact price before any truck rolls.",
+    a: "We use flat rate pricing based on vehicle type and the distance involved. There is no meter running and no hidden fees. Call (778) 838-0014 for an upfront quote before we dispatch, so you know the exact price before any truck rolls.",
   },
 ];
 
@@ -90,12 +90,12 @@ export default function LangleyPage() {
             Langley, BC · Available Now
           </p>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5">
-            Tow Truck Langley, BC — 24/7 Towing Service
+            Tow Truck Langley, BC: 24/7 Towing Service
           </h1>
           <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl mb-8">
             TowingNo.1 provides 24/7 emergency towing and roadside assistance across Langley, BC. We serve
             Langley City, Langley Township, Willoughby, Walnut Grove, Murrayville, Brookswood, Aldergrove,
-            and Fort Langley — with upfront pricing and immediate dispatch.
+            and Fort Langley, with upfront pricing and immediate dispatch.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -106,7 +106,7 @@ export default function LangleyPage() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call 778-838-0014 — Free Quote
+              Call 778-838-0014 for a Free Quote
             </a>
             <Link
               href="/contact"
@@ -120,7 +120,7 @@ export default function LangleyPage() {
             {[
               "Available 24/7 including holidays",
               "Free upfront quote before dispatch",
-              "Flat-rate pricing — no hidden fees",
+              "Flat rate pricing with no hidden fees",
               "Licensed & insured in BC",
               "All vehicle types including EVs",
             ].map((item) => (
@@ -143,7 +143,7 @@ export default function LangleyPage() {
               {/* Intro */}
               <div>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Langley covers a wider mix of terrain than most of the Lower Mainland — dense townhome
+                  Langley covers a wider mix of terrain than most of the Lower Mainland: dense townhome
                   developments in Willoughby, established suburban neighbourhoods in Walnut Grove and Murrayville,
                   and long stretches of rural road out toward Aldergrove and Fort Langley. The Trans-Canada
                   cuts through the middle, and the 200th Street corridor is one of the busiest interchange zones
@@ -152,8 +152,8 @@ export default function LangleyPage() {
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   Call <a href="tel:+17788380014" className="font-semibold text-amber-600 hover:text-amber-700">(778) 838-0014</a>{" "}
-                  and give us your nearest cross street or landmark — we route the closest available driver
-                  directly to you, confirm a firm flat-rate price, and give you an ETA before you hang up.
+                  and give us your nearest cross street or landmark. We route the closest available driver
+                  directly to you, confirm a firm flat rate price, and give you an ETA before you hang up.
                 </p>
               </div>
 
@@ -162,9 +162,9 @@ export default function LangleyPage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Emergency Towing in Langley</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   When your vehicle breaks down on Highway 1, the Fraser Highway, or anywhere across Langley,
-                  we dispatch the nearest available driver immediately. We operate flatbed and wheel-lift trucks
-                  24 hours a day, 7 days a week — including all statutory holidays — and every tow comes with
-                  an upfront flat-rate quote before dispatch. No meter running, no surprise charges on arrival.
+                  we dispatch the nearest available driver immediately. We operate flatbed and wheel lift trucks
+                  24 hours a day, 7 days a week, including all statutory holidays, and every tow comes with
+                  an upfront flat rate quote before dispatch. No meter running, no surprise charges on arrival.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   The 200th Street and 232nd Street interchanges on Highway 1 are among our most frequent call
@@ -175,10 +175,10 @@ export default function LangleyPage() {
                   {[
                     "Cars, SUVs, trucks & light commercial",
                     "Electric vehicles (flatbed only)",
-                    "All-wheel-drive & 4×4",
-                    "Accident-damaged & non-running vehicles",
+                    "All wheel drive & 4×4",
+                    "Vehicles that are damaged or won't run",
                     "Tow to any shop, dealership, or home",
-                    "Flatbed and wheel-lift trucks available",
+                    "Flatbed and wheel lift trucks available",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700">
                       <Check />
@@ -197,16 +197,16 @@ export default function LangleyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Tow Truck Services in Langley</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  We run both wheel-lift and flatbed trucks across Langley, which lets us match the right
-                  method to your vehicle. Flatbeds are the safe choice for all-wheel-drive cars, electric
-                  vehicles, low-clearance models, and anything with crash or drivetrain damage — the vehicle
-                  rides fully off the ground rather than on its drive wheels. Wheel-lift trucks handle quick,
-                  economical moves for standard front- or rear-wheel-drive vehicles.
+                  We run both wheel lift and flatbed trucks across Langley, which lets us match the right
+                  method to your vehicle. Flatbeds are the safe choice for all wheel drive cars, electric
+                  vehicles, low clearance models, and anything with crash or drivetrain damage, because the vehicle
+                  rides fully off the ground rather than on its drive wheels. Wheel lift trucks handle quick,
+                  economical moves for standard front wheel drive or rear wheel drive vehicles.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   Langley's rural roads also present situations urban operators aren't built for: a vehicle
                   nosed into a ditch on a Brookswood section line, or a van stuck in soft ground on a farm
-                  road past Aldergrove. Our winch-equipped trucks are designed for exactly this, and our drivers
+                  road past Aldergrove. Our winch trucks are designed for exactly this, and our drivers
                   know how to recover a vehicle on a soft or sloped shoulder without causing additional damage.
                 </p>
               </div>
@@ -215,18 +215,18 @@ export default function LangleyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">24/7 Roadside Assistance in Langley</h2>
                 <p className="text-slate-600 leading-relaxed mb-5">
-                  Not every call needs a tow. We offer a full set of on-site roadside services across Langley —
+                  Not every call needs a tow. We offer a full set of roadside services across Langley,
                   each available 24 hours a day so you can get back on the road without the cost and delay of
                   a full tow when the problem can be fixed where you are.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
-                    { href: "/services/battery-boost",      label: "Battery Boost & Jump-Start", desc: "Dead battery? We jump-start and test on the spot." },
-                    { href: "/services/flat-tire-help",      label: "Flat Tire Help",              desc: "On-site spare change or tow to the nearest shop." },
+                    { href: "/services/battery-boost",      label: "Battery Boost & Jump Start", desc: "Dead battery? We jump start and test on the spot." },
+                    { href: "/services/flat-tire-help",      label: "Flat Tire Help",              desc: "We fit your spare or tow you to the nearest shop." },
                     { href: "/services/lockout-service",     label: "Car Lockout Service",         desc: "Keys locked in? We open without damage." },
                     { href: "/services/fuel-delivery",       label: "Fuel Delivery",               desc: "Gas or diesel delivered to your location." },
                     { href: "/services/winching-extraction", label: "Winching & Extraction",       desc: "Stuck in a ditch, mud, or snow? We pull you out." },
-                    { href: "/services/emergency-towing",    label: "Emergency Towing",            desc: "Flatbed and wheel-lift towing, 24/7." },
+                    { href: "/services/emergency-towing",    label: "Emergency Towing",            desc: "Flatbed and wheel lift towing, 24/7." },
                   ].map((svc) => (
                     <Link
                       key={svc.href}
@@ -245,16 +245,16 @@ export default function LangleyPage() {
 
               {/* H2: Battery Boost in Langley */}
               <div>
-                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Battery Boost &amp; Jump-Start</h2>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Battery Boost &amp; Jump Start</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Dead batteries are a frequent call in Langley — particularly through the damp autumn months
+                  Dead batteries are a frequent call in Langley, particularly through the damp autumn months
                   when short commuter trips around Willoughby and Walnut Grove never give the alternator
-                  enough running time to fully recharge. Vehicles left parked at Park-and-Ride lots near the
+                  enough running time to fully recharge. Vehicles left parked at Park and Ride lots near the
                   200th Street transit hub for several days are especially prone to draining down past the
                   point where they'll start.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  We dispatch a jump-start technician immediately, boost your vehicle on the spot, and then
+                  We dispatch a technician immediately, boost your vehicle on the spot, and then
                   test the battery and charging system to tell you honestly whether you're good for the season
                   or due for a replacement before the next cold spell.
                 </p>
@@ -269,9 +269,9 @@ export default function LangleyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Flat Tire Help</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  A flat can happen anywhere in Langley — on a Highway 1 on-ramp, in a Willowbrook Shopping
+                  A flat can happen anywhere in Langley: on a Highway 1 ramp, in a Willowbrook Shopping
                   Centre parking lot, or on a gravel road out near Fort Langley. We dispatch a technician to
-                  fit your spare on-site, or if you have no spare or the tire is beyond a roadside repair,
+                  fit your spare where you are, or if you have no spare or the tire is beyond a roadside repair,
                   we tow you to the nearest open shop with an upfront quote before we move.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
@@ -290,13 +290,13 @@ export default function LangleyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Car Lockout Service</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Locking your keys inside in a Langley parking lot — whether at Willowbrook, a Walnut Grove
-                  strata lot, or outside a Murrayville business — is stressful at any hour. Our lockout
+                  Locking your keys inside in a Langley parking lot, whether at Willowbrook, a Walnut Grove
+                  strata lot, or outside a Murrayville business, is stressful at any hour. Our lockout
                   technicians use professional tools to open your vehicle safely without damaging the door,
-                  lock, or window on all makes and models, including modern keyless-entry vehicles.
+                  lock, or window on all makes and models, including modern vehicles with keyless entry.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  We cover all of Langley for lockouts — urban and rural. If your key fob battery has died
+                  We cover all of Langley for lockouts, both urban and rural. If your key fob battery has died
                   or you have a broken key in the cylinder, we handle those situations too.
                 </p>
                 <p className="mt-4 text-sm">
@@ -316,8 +316,8 @@ export default function LangleyPage() {
                   than the initial slide.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  Our winch-equipped trucks pull from rated attachment points using controlled tension —
-                  not a sudden jerk — so the vehicle comes back onto solid ground the same way it went off.
+                  Our winch trucks pull from rated attachment points using controlled tension
+                  rather than a sudden jerk, so the vehicle comes back onto solid ground the same way it went off.
                   Once recovered, we check whether the vehicle is safe to drive or needs a tow to a shop.
                 </p>
                 <p className="mt-4 text-sm">
@@ -361,7 +361,7 @@ export default function LangleyPage() {
                     { name: "Willoughby",   desc: "New townhome developments, 200th St corridor, Hwy 1 interchanges" },
                     { name: "Walnut Grove", desc: "Established neighbourhoods, 200th Street, Golden Ears Way" },
                     { name: "Murrayville",  desc: "Langley City centre, Fraser Highway, 216th Street corridor" },
-                    { name: "Brookswood",   desc: "Suburban and semi-rural, 200th St south, township roads" },
+                    { name: "Brookswood",   desc: "Suburban and partly rural, 200th St south, township roads" },
                     { name: "Aldergrove",   desc: "Farm roads, rural sections, US border crossing area" },
                     { name: "Fort Langley", desc: "River road, historic village, Glover Road corridor" },
                   ].map((area) => (
@@ -375,7 +375,7 @@ export default function LangleyPage() {
                   <strong>Major routes we cover:</strong> Highway 1 (Trans-Canada), Fraser Highway, 200th Street, Highway 10
                 </p>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  We also dispatch to neighbouring communities — see{" "}
+                  We also dispatch to neighbouring communities, including{" "}
                   <Link href="/locations/surrey" className="text-amber-600 hover:text-amber-700 font-semibold">Surrey</Link>,{" "}
                   <Link href="/locations/aldergrove" className="text-amber-600 hover:text-amber-700 font-semibold">Aldergrove</Link>,{" "}
                   <Link href="/locations/cloverdale" className="text-amber-600 hover:text-amber-700 font-semibold">Cloverdale</Link>, and{" "}
@@ -393,20 +393,20 @@ export default function LangleyPage() {
                       body: "Township roads are long and lightly lit, so a vague address costs a stranded driver significant extra time with the wrong company. Our dispatchers ask for the nearest cross street or a landmark like the Langley Events Centre or Willowbrook so the closest truck heads straight to you.",
                     },
                     {
-                      title: "Upfront flat-rate pricing",
-                      body: "Every Langley call starts with a firm flat-rate quote before a truck rolls. No meter running while you wait, no hidden fees, no surprise charge on arrival. You hear the exact price before any truck is dispatched.",
+                      title: "Upfront flat rate pricing",
+                      body: "Every Langley call starts with a firm flat rate quote before a truck rolls. No meter running while you wait, no hidden fees, no surprise charge on arrival. You hear the exact price before any truck is dispatched.",
                     },
                     {
                       title: "The right truck for the job",
-                      body: "We carry both wheel-lift and flatbed trucks, plus winch-equipped rigs for rural recoveries. EVs, AWD cars, and accident-damaged vehicles go on a flatbed — we send the correct equipment on the first trip.",
+                      body: "We carry both wheel lift and flatbed trucks, plus winch rigs for rural recoveries. EVs, AWD cars, and vehicles damaged in accidents go on a flatbed. We send the correct equipment on the first trip.",
                     },
                     {
                       title: "Licensed & insured in BC",
-                      body: "TowingNo.1 is fully licensed and insured to operate in British Columbia. Every operator is trained to work safely on live highway shoulders, in tight strata parkades, and on Langley's rural and semi-rural road network.",
+                      body: "TowingNo.1 is fully licensed and insured to operate in British Columbia. Every operator is trained to work safely on live highway shoulders, in tight strata parkades, and on Langley's rural roads.",
                     },
                     {
                       title: "Available every hour of every day",
-                      body: "We operate 24 hours a day, 7 days a week in Langley — including all statutory holidays. Evenings, weekends, long weekends, and nights are all covered the same way.",
+                      body: "We operate 24 hours a day, 7 days a week in Langley, including all statutory holidays. Evenings, weekends, long weekends, and nights are all covered the same way.",
                     },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
@@ -437,12 +437,12 @@ export default function LangleyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Call TowingNo.1 in Langley</h2>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Stranded somewhere in Langley? Call us now and talk to dispatch directly — no bots, no hold
+                  Stranded somewhere in Langley? Call us now and talk to dispatch directly, with no bots and no hold
                   music. We give you an upfront quote and a live ETA, then dispatch the nearest available
                   driver immediately.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  We are a towing company serving Langley City and all of Langley Township — including Willoughby, Walnut Grove, Aldergrove, and Fort Langley. When you call, you speak to a dispatcher who knows the area, not a call centre.
+                  We are a towing company serving Langley City and all of Langley Township, including Willoughby, Walnut Grove, Aldergrove, and Fort Langley. When you call, you speak to a dispatcher who knows the area, not a call centre.
                 </p>
                 <CallCTA label="Get a Tow Truck in Langley Now" />
               </div>
@@ -456,6 +456,7 @@ export default function LangleyPage() {
                 <Link href="/services/lockout-service" className="font-semibold text-amber-600 hover:text-amber-700">Car lockout</Link>
                 <Link href="/services/flat-tire-help" className="font-semibold text-amber-600 hover:text-amber-700">Flat tire help</Link>
                 <Link href="/services/winching-extraction" className="font-semibold text-amber-600 hover:text-amber-700">Winching & extraction</Link>
+                <Link href="/services/cross-border-towing" className="font-semibold text-amber-600 hover:text-amber-700">Cross border towing</Link>
                 <Link href="/locations/surrey" className="font-semibold text-amber-600 hover:text-amber-700">Towing Surrey</Link>
                 <Link href="/contact" className="font-semibold text-amber-600 hover:text-amber-700">Request online</Link>
               </div>
@@ -487,7 +488,7 @@ export default function LangleyPage() {
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flat-rate — no hidden fees</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flat rate, no hidden fees</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured in BC</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> All vehicle types</li>
@@ -508,6 +509,7 @@ export default function LangleyPage() {
                     { href: "/services/winching-extraction",label: "Winching & Extraction" },
                     { href: "/services/accident-recovery",  label: "Accident Recovery" },
                     { href: "/services/vehicle-transport",  label: "Vehicle Transport" },
+                    { href: "/services/cross-border-towing", label: "Cross Border Towing" },
                   ].map((s) => (
                     <li key={s.href}>
                       <Link href={s.href} className="text-sm text-amber-600 hover:text-amber-700 font-medium flex items-center gap-1">

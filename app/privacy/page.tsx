@@ -80,7 +80,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-bold text-navy-900 mb-2">How We Use Your Information</h2>
             <p>
               The information you give us is used to dispatch a tow truck or roadside technician to your location,
-              to call or text you with an estimated arrival time, to prepare a flat-rate quote before we send a
+              to call or text you with an estimated arrival time, to prepare a flat rate quote before we send a
               driver, and to follow up after the job if there is an outstanding question, an invoice, or a request
               for feedback. We may also use your contact details to respond to general inquiries, to keep a basic
               service record for warranty or dispute purposes, and to meet our legal, tax, and insurance
@@ -120,7 +120,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-bold text-navy-900 mb-2">Data Retention and Security</h2>
             <p>
               We keep personal information only for as long as it is needed to deliver the service, to handle any
-              follow-up or dispute, and to satisfy accounting, tax, and legal requirements, after which it is
+              follow up or dispute, and to satisfy accounting, tax, and legal requirements, after which it is
               securely deleted or anonymized. We apply reasonable physical, technical, and organizational
               safeguards, such as restricted access and secure handling of records, to protect your information
               against loss, theft, and unauthorized access, use, or disclosure.
@@ -132,7 +132,7 @@ export default function PrivacyPage() {
             <p>
               You have the right to ask what personal information we hold about you, to request a correction if
               something is inaccurate, and to ask us to delete information we are no longer required to keep. You
-              may also withdraw consent to non-essential communications at any time. To make any of these requests,
+              may also withdraw consent to nonessential communications at any time. To make any of these requests,
               contact us using the details below and we will respond within a reasonable timeframe. We may need to
               confirm your identity before acting on a request to protect your privacy.
             </p>
