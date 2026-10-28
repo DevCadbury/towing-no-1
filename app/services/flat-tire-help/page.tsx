@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: "Flat Tire Help | 24/7 Roadside Assistance | TowingNo.1",
   },
   description:
-    "Flat tire in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 flat tire assistance — on-site spare change or tow to the nearest shop. Call 778-838-0014.",
+    "Flat tire in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 flat tire assistance: spare change on site or a tow to the nearest shop. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/flat-tire-help" },
   keywords: [
     "flat tire help Surrey",
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     url: "https://www.towingno1.com/services/flat-tire-help",
     title: "Flat Tire Help | 24/7 Roadside Assistance | TowingNo.1",
     description:
-      "24/7 flat tire assistance in Surrey and the Lower Mainland. On-site spare change or tow to the nearest shop. Call 778-838-0014.",
-    images: [{ url: "/image/Flat_Tire_Hel.png", alt: "Flat tire roadside assistance — technician helping a stranded driver" }],
+      "24/7 flat tire assistance in Surrey and the Lower Mainland. Spare change on site or a tow to the nearest shop. Call 778-838-0014.",
+    images: [{ url: "/image/Flat_Tire_Hel.png", alt: "Flat tire roadside assistance: technician helping a stranded driver" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Flat Tire Help | 24/7 Roadside Assistance | TowingNo.1",
     description:
-      "24/7 flat tire assistance across Surrey and the Lower Mainland. On-site or tow to shop. Call 778-838-0014.",
+      "24/7 flat tire assistance across Surrey and the Lower Mainland. Help on site or a tow to a shop. Call 778-838-0014.",
     images: ["/image/Flat_Tire_Hel.png"],
   },
 };
@@ -44,7 +44,7 @@ const schema = {
   name: "Flat Tire Assistance",
   serviceType: "Flat Tire Roadside Assistance",
   description:
-    "24/7 flat tire assistance across Surrey and the Lower Mainland. On-site spare tire change or tow to the nearest tire shop. Upfront pricing.",
+    "24/7 flat tire assistance across Surrey and the Lower Mainland. Spare tire change on site or a tow to the nearest tire shop. Upfront pricing.",
   provider: { "@id": "https://www.towingno1.com/#localbusiness" },
   areaServed: serviceAreaCompact,
 };
@@ -52,7 +52,7 @@ const schema = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide flat tire assistance 24/7?",
-    a: "Yes. TowingNo.1 provides flat tire assistance 24 hours a day, 7 days a week — including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange the appropriate help.",
+    a: "Yes. TowingNo.1 provides flat tire assistance 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange the appropriate help.",
   },
   {
     q: "Can you help if I have a flat tire on the highway?",
@@ -60,11 +60,11 @@ const faq: FaqItem[] = [
   },
   {
     q: "Can you change a flat tire?",
-    a: "Yes, if you have a usable spare tire. We fit the spare on-site, torque the lugs correctly, and confirm the wheel is secure before you drive away. If you have no spare, or the tire or wheel is damaged beyond a roadside fix, we tow you to the nearest open tire shop.",
+    a: "Yes, if you have a usable spare tire. We fit the spare on site, torque the lugs correctly, and confirm the wheel is secure before you drive away. If you have no spare, or the tire or wheel is damaged beyond a roadside fix, we tow you to the nearest open tire shop.",
   },
   {
     q: "What should I do while waiting for roadside assistance?",
-    a: "Move the vehicle to a safe position if you can do so without further damage — a parking lot, a wide shoulder, or a side road. Switch on your hazard lights and leave them on. If you are on a highway and cannot safely exit the vehicle, stay buckled inside rather than standing in a live lane. When you call, give the dispatcher your exact location — nearest intersection, exit number, or address — so help can reach you without delay.",
+    a: "Move the vehicle to a safe position if you can do so without further damage, such as a parking lot, a wide shoulder, or a side road. Switch on your hazard lights and leave them on. If you are on a highway and cannot safely exit the vehicle, stay buckled inside rather than standing in a live lane. When you call, give the dispatcher your exact location (nearest intersection, exit number, or address) so help can reach you without delay.",
   },
   {
     q: "What if the tire or wheel is damaged?",
@@ -120,7 +120,7 @@ export default function FlatTireHelpPage() {
       <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image
           src="/image/Flat_Tire_Hel.png"
-          alt="Flat tire roadside assistance — technician helping a driver with a flat tire"
+          alt="Flat tire roadside assistance: technician helping a driver with a flat tire"
           fill
           className="object-cover opacity-30"
           priority
@@ -143,8 +143,8 @@ export default function FlatTireHelpPage() {
           </h1>
           <p className="text-white/80 text-lg max-w-xl mb-8">
             Flat tire on a highway shoulder, in a parking lot, or at the roadside?
-            TowingNo.1 provides flat tire assistance across Surrey and the Lower Mainland around the clock —
-            spare change on-site where possible, tow to a shop when needed.
+            TowingNo.1 provides flat tire assistance across Surrey and the Lower Mainland around the clock, with a
+            spare change on site where possible and a tow to a shop when needed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -176,8 +176,8 @@ export default function FlatTireHelpPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Flat Tire Help When You Are Stranded</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  A flat tire can happen in any situation — a nail or screw picked up in a parking lot,
-                  a pothole strike on a highway on-ramp, a sudden blowout on a fast road, or a slow leak
+                  A flat tire can happen in any situation: a nail or screw picked up in a parking lot,
+                  a pothole strike on a highway on ramp, a sudden blowout on a fast road, or a slow leak
                   that leaves the vehicle sitting on the rim by morning. Whatever the cause, a flat that
                   cannot be safely driven on needs prompt attention.
                 </p>
@@ -187,10 +187,10 @@ export default function FlatTireHelpPage() {
                 <ul className="space-y-3 mb-4">
                   {[
                     { title: "Puncture from road debris",      body: "Nails, screws, and sharp debris cause slow or sudden punctures. A small tread puncture may allow the vehicle to limp to a safe spot; a sidewall puncture does not." },
-                    { title: "Flat tire with no usable spare",  body: "Many newer vehicles carry no full-size spare — only a sealant kit or a compact temporary spare — which limits the roadside fix options." },
+                    { title: "Flat tire with no usable spare",  body: "Many newer vehicles carry no full size spare, only a sealant kit or a compact temporary spare, which limits the roadside fix options." },
                     { title: "Blowout at speed",               body: "A tyre that fails suddenly at highway speed is a dangerous situation. The vehicle needs to be brought to a controlled stop and assessed before any attempt is made to continue." },
                     { title: "Damaged tyre from kerb or pothole", body: "A hard impact can cause sidewall damage or a bent wheel that makes the tyre unsafe to drive on even if it holds air initially." },
-                    { title: "Roadside breakdown caused by a tyre", body: "A vehicle that has been driven on a flat — even briefly — may have damaged the tyre beyond repair, bent the wheel, or sustained brake or suspension damage." },
+                    { title: "Roadside breakdown caused by a tyre", body: "A vehicle that has been driven on a flat, even briefly, may have damaged the tyre beyond repair, bent the wheel, or sustained brake or suspension damage." },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
                       <Check />
@@ -217,20 +217,20 @@ export default function FlatTireHelpPage() {
                 <div className="space-y-4">
                   {[
                     {
-                      title: "On-site spare tire change",
-                      body: "If your vehicle has a usable full-size or compact spare, we mount it on-site, torque the wheel lugs to the correct specification, and stow the flat properly. A compact spare is a temporary solution — it should be replaced with a full-size tyre as soon as possible.",
+                      title: "Spare tire change on site",
+                      body: "If your vehicle has a usable full size or compact spare, we mount it on site, torque the wheel lugs to the correct specification, and stow the flat properly. A compact spare is a temporary solution and should be replaced with a full size tyre as soon as possible.",
                     },
                     {
                       title: "Assessment for vehicles without a spare",
-                      body: "If your vehicle has no spare, uses run-flat tyres, or carries only a sealant kit, we assess whether any of those options can safely get you to a tyre shop. If not, a tow is the honest recommendation.",
+                      body: "If your vehicle has no spare, uses run flat tyres, or carries only a sealant kit, we assess whether any of those options can safely get you to a tyre shop. If not, a tow is the honest recommendation.",
                     },
                     {
                       title: "Towing to a tyre shop",
-                      body: "When a roadside change is not possible — no spare, damaged wheel, unsafe location, or severe tyre damage — we tow the vehicle to the nearest open tyre shop. You receive an upfront flat-rate quote before the tow is dispatched.",
+                      body: "When a roadside change is not possible because of no spare, a damaged wheel, an unsafe location, or severe tyre damage, we tow the vehicle to the nearest open tyre shop. You receive an upfront flat rate quote before the tow is dispatched.",
                     },
                     {
                       title: "Roadside safety positioning",
-                      body: "If the vehicle is in an unsafe position — a live lane, a narrow shoulder, or close to fast traffic — we prioritise getting it to a safer location before any roadside work begins.",
+                      body: "If the vehicle is in an unsafe position, such as a live lane, a narrow shoulder, or close to fast traffic, we prioritise getting it to a safer location before any roadside work begins.",
                     },
                   ].map((item) => (
                     <div key={item.title} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
@@ -241,11 +241,11 @@ export default function FlatTireHelpPage() {
                 </div>
                 <ul className="grid sm:grid-cols-2 gap-3 mt-5">
                   {[
-                    "On-site spare tyre installation",
+                    "Spare tyre installation on site",
                     "Tow to nearest tyre shop",
                     "Highway and parking lot response",
                     "All vehicle types",
-                    "Upfront flat-rate pricing",
+                    "Upfront flat rate pricing",
                     "Available 24/7 including holidays",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm text-slate-700">
@@ -259,7 +259,7 @@ export default function FlatTireHelpPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">What To Do After Getting a Flat Tire</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  The moments after a flat tire — particularly on a busy road — carry real safety risk.
+                  The moments after a flat tire, particularly on a busy road, carry real safety risk.
                   The following steps will help you stay safe until assistance arrives:
                 </p>
                 <ol className="space-y-4">
@@ -267,7 +267,7 @@ export default function FlatTireHelpPage() {
                     { step: "1", title: "Switch on your hazard lights",        body: "Do this as soon as you notice the flat, before you have fully stopped. Hazard lights alert other drivers that your vehicle is in trouble." },
                     { step: "2", title: "Move to a safe position if possible",  body: "Steer gently onto the shoulder, into a parking lot, or onto a side road if you can do so without swerving suddenly or damaging the wheel further. A slow, controlled movement to safety is better than stopping abruptly in a live lane." },
                     { step: "3", title: "Stay away from live traffic",          body: "On a highway, if the shoulder is narrow or fast traffic is passing close, stay inside the vehicle with your seatbelt on until help arrives. Exiting on the traffic side is more dangerous than staying buckled inside." },
-                    { step: "4", title: "Call for assistance",                  body: "Call (778) 838-0014 and give the dispatcher your exact location — the nearest intersection, exit number, or address. Describe the vehicle and the situation briefly so the right help can be arranged." },
+                    { step: "4", title: "Call for assistance",                  body: "Call (778) 838-0014 and give the dispatcher your exact location: the nearest intersection, exit number, or address. Describe the vehicle and the situation briefly so the right help can be arranged." },
                     { step: "5", title: "Wait in a safe spot",                  body: "If you exit the vehicle, move to the passenger side, away from the road. Wait behind a barrier or guardrail where one is available. Keep your hazard lights running." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
@@ -315,10 +315,10 @@ export default function FlatTireHelpPage() {
                 </p>
                 <ul className="space-y-3 mb-5">
                   {[
-                    { title: "No usable spare",               body: "Many vehicles carry no full-size spare — only a sealant kit or nothing at all. If sealant cannot seal the damage, a tow to a tyre shop is the only option." },
+                    { title: "No usable spare",               body: "Many vehicles carry no full size spare, only a sealant kit or nothing at all. If sealant cannot seal the damage, a tow to a tyre shop is the only option." },
                     { title: "Damaged wheel or rim",           body: "A cracked, bent, or broken wheel cannot safely hold a tyre at speed. The vehicle needs a tow and a wheel replacement at a shop." },
                     { title: "Severe tyre damage",             body: "Sidewall tears, large blowouts, and extensive tread damage go beyond what a spare can address. A new tyre at a shop is required." },
-                    { title: "Multiple flat tyres",            body: "A vehicle with more than one flat tyre — sometimes caused by road damage, debris, or a collision — cannot be fixed with a single spare and needs a tow." },
+                    { title: "Multiple flat tyres",            body: "A vehicle with more than one flat tyre (sometimes caused by road damage, debris, or a collision) cannot be fixed with a single spare and needs a tow." },
                     { title: "Unsafe roadside position",       body: "If the vehicle is positioned in a live lane, on a dangerous curve, or in a location where a roadside change would expose the driver to serious risk, we move the vehicle by tow before any tyre work is considered." },
                     { title: "Possible additional damage",     body: "Driving briefly on a flat can cause suspension, brake, or body damage beyond the tyre itself. If other damage is suspected, a shop inspection before driving further is the right call." },
                   ].map((item) => (
@@ -342,8 +342,8 @@ export default function FlatTireHelpPage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Flat Tire Assistance in Surrey and Nearby Areas</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   We provide flat tire assistance across{" "}
-                  <Link href="/locations/surrey" className="font-semibold text-amber-600 hover:text-amber-700">Surrey</Link> —
-                  including Guildford, Newton, Fleetwood, South Surrey, and Cloverdale — and the wider
+                  <Link href="/locations/surrey" className="font-semibold text-amber-600 hover:text-amber-700">Surrey</Link>,
+                  including Guildford, Newton, Fleetwood, South Surrey, and Cloverdale, and the wider
                   Lower Mainland including{" "}
                   <Link href="/locations/langley" className="font-semibold text-amber-600 hover:text-amber-700">Langley</Link>,{" "}
                   <Link href="/locations/burnaby" className="font-semibold text-amber-600 hover:text-amber-700">Burnaby</Link>,{" "}
@@ -354,8 +354,8 @@ export default function FlatTireHelpPage() {
                   <Link href="/locations/vancouver" className="font-semibold text-amber-600 hover:text-amber-700">Vancouver</Link>.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  We respond to flat tyres on highway shoulders and interchanges — Highway 1, Highway 99,
-                  Fraser Highway, and King George Boulevard — as well as in parking lots, driveways, and
+                  We respond to flat tyres on highway shoulders and interchanges (Highway 1, Highway 99,
+                  Fraser Highway, and King George Boulevard) as well as in parking lots, driveways, and
                   on residential streets. If the shoulder is unsafe for a roadside change, we tow the
                   vehicle to a safe location first.
                 </p>
@@ -367,10 +367,10 @@ export default function FlatTireHelpPage() {
                 <ol className="space-y-4">
                   {[
                     { step: "1", title: "Call (778) 838-0014",                body: "A dispatcher answers 24/7. Tell them you have a flat tyre and give your location." },
-                    { step: "2", title: "Location and situation confirmed",    body: "We ask for your exact location — nearest intersection, exit number, or address — and whether you have a usable spare. This determines what we send." },
-                    { step: "3", title: "Upfront quote provided",              body: "We give you a flat-rate price before anyone is dispatched. You know the cost before the truck leaves." },
+                    { step: "2", title: "Location and situation confirmed",    body: "We ask for your exact location (nearest intersection, exit number, or address) and whether you have a usable spare. This determines what we send." },
+                    { step: "3", title: "Upfront quote provided",              body: "We give you a flat rate price before anyone is dispatched. You know the cost before the truck leaves." },
                     { step: "4", title: "Appropriate help dispatched",         body: "We send the nearest available technician with the right equipment for your situation." },
-                    { step: "5", title: "Tyre situation assessed on-site",     body: "The technician assesses the tyre and wheel damage, determines whether an on-site spare change is feasible and safe, and carries it out if so." },
+                    { step: "5", title: "Tyre situation assessed on site",     body: "The technician assesses the tyre and wheel damage, determines whether a spare change on site is feasible and safe, and carries it out if so." },
                     { step: "6", title: "Tow arranged if needed",              body: "If a roadside change is not possible, we arrange a tow to the nearest open tyre shop, with your agreement and a confirmed quote." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
@@ -437,7 +437,7 @@ export default function FlatTireHelpPage() {
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> On-site or tow to shop</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Help on site or a tow to a shop</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> All vehicle types</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
                 </ul>

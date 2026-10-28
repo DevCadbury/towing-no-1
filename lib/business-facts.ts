@@ -108,6 +108,8 @@ export const mapsSearchUrl = `https://www.google.com/maps/search/?api=1&query=${
 /* ─── Marketing claims (UNVERIFIED until the business confirms) ─────── */
 // String values here are deliberately worded to match how they appear in
 // schema/prose so the guard can detect any leak into JSON-LD.
+// These internal notes are never rendered; excluded from the copy check.
+// copy-check-ignore-start
 export const claims = {
   /** Marketing response-time phrase. Allowed in plain marketing copy ONLY. */
   responseTimeClaim: fact("under 15 minutes", "unverified", "Awaiting dispatch-log / GBP timing data"),
@@ -119,6 +121,7 @@ export const claims = {
   rating: fact("4.9", "unverified", "No verified Google Business Profile rating provided"),
   reviewCount: fact("127", "unverified", "No verified review count provided"),
 };
+// copy-check-ignore-end
 
 /* ─── Animated stat facts (Home + About) ───────────────────────────────
  * The Counter renders `value` (with prefix/suffix) ONLY when status is

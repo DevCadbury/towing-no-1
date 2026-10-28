@@ -122,7 +122,7 @@ export const metadata: Metadata = {
         url: "https://www.towingno1.com/preview.jpg",
         width: 1200,
         height: 630,
-        alt: "24/7 Emergency Towing BC | TowingNo.1 — We Are Coming To You",
+        alt: "24/7 Emergency Towing BC | TowingNo.1: We Are Coming To You",
       },
     ],
   },
@@ -130,7 +130,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
     description:
-      "24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland. Free quote before dispatch — call (778) 838-0014.",
+      "24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland. Free quote before dispatch. Call (778) 838-0014.",
     images: ["https://www.towingno1.com/preview.jpg"],
   },
   robots: {
@@ -229,6 +229,7 @@ const globalSchema = {
         "Vehicle lockout",
         "Fuel delivery",
         "Winching and extraction",
+        "Cross border towing",
       ],
       areaServed: [
         {
@@ -375,6 +376,10 @@ const globalSchema = {
               name: "Winching & Extraction",
             },
           },
+          {
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: "Cross Border Towing" },
+          },
         ],
       },
     },
@@ -389,6 +394,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        {/* Warm up the tawk.to chat origins so the widget appears faster */}
+        <link rel="preconnect" href="https://embed.tawk.to" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://va.tawk.to" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cdn.tawk.to" />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{

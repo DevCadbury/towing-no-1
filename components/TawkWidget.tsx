@@ -45,8 +45,35 @@ export default function TawkWidget() {
     let lastKey = "";
     let lastAt = 0;
 
+    const ensureRecaptchaLoaded = () => {
+      if (!RECAPTCHA_SITE_KEY || document.getElementById("recaptcha-v3-script")) return;
+      const rc = document.createElement("script");
+      rc.id = "recaptcha-v3-script";
+      rc.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+      rc.async = true;
+      document.head.appendChild(rc);
+    };
+
+    const waitForGrecaptcha = (timeoutMs = 6000): Promise<boolean> =>
+      new Promise((resolve) => {
+        if (window.grecaptcha) return resolve(true);
+        const start = Date.now();
+        const iv = setInterval(() => {
+          if (window.grecaptcha) {
+            clearInterval(iv);
+            resolve(true);
+          } else if (Date.now() - start > timeoutMs) {
+            clearInterval(iv);
+            resolve(false);
+          }
+        }, 150);
+      });
+
     const getRecaptchaToken = async (): Promise<string> => {
-      if (!RECAPTCHA_SITE_KEY || !window.grecaptcha) return "";
+      if (!RECAPTCHA_SITE_KEY) return "";
+      ensureRecaptchaLoaded();
+      const ready = await waitForGrecaptcha();
+      if (!ready || !window.grecaptcha) return "";
       try {
         return await new Promise<string>((resolve) => {
           window.grecaptcha!.ready(() => {
@@ -88,14 +115,9 @@ export default function TawkWidget() {
       })();
     };
 
-    // Load reCAPTCHA v3 (when configured) so a "prechat" token is available.
-    if (RECAPTCHA_SITE_KEY && !document.getElementById("recaptcha-v3-script")) {
-      const rc = document.createElement("script");
-      rc.id = "recaptcha-v3-script";
-      rc.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
-      rc.async = true;
-      document.head.appendChild(rc);
-    }
+    // Preload reCAPTCHA only once the visitor opens the chat — keeps it (and its
+    // badge/network cost) off the initial page load so the site loads faster.
+    tawkApi.onChatMaximized = () => ensureRecaptchaLoaded();
 
     // Inject the tawk.to embed.
     const script = document.createElement("script");

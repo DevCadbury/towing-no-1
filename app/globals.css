@@ -297,3 +297,28 @@
 /* EmbedSocial branding hide rule removed — hiding a third-party attribution
    link may violate the free-tier widget ToS and constitutes a hidden link.
    Move to a paid EmbedSocial plan if branding removal is required. */
+
+/* ── reCAPTCHA v3 badge hidden. Google permits hiding the floating badge as
+   long as the required disclosure text is shown — it appears in the site
+   footer and on the contact form. ───────────────────────────────────────── */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
+/* ── tawk.to live chat: render as a floating dialog box on mobile instead of
+   taking over the full screen. Best-effort override of the widget iframe's
+   size/position on small screens (the chat content itself is in a cross-origin
+   iframe we can't style, but constraining the iframe box reflows it). ─────── */
+@media only screen and (max-width: 640px) {
+  iframe[title*="chat" i] {
+    max-width: calc(100vw - 20px) !important;
+    max-height: 72vh !important;
+    min-height: 0 !important;
+    right: 10px !important;
+    left: auto !important;
+    bottom: 10px !important;
+    top: auto !important;
+    border-radius: 16px !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28) !important;
+  }
+}

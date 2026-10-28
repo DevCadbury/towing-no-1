@@ -23,6 +23,7 @@ function buildUrlList(): string[] {
     `${BASE_URL}/services/winching-extraction`,
     `${BASE_URL}/services/vehicle-transport`,
     `${BASE_URL}/services/accident-recovery`,
+    `${BASE_URL}/services/cross-border-towing`,
     `${BASE_URL}/locations`,
     `${BASE_URL}/blog`,
     `${BASE_URL}/privacy`,

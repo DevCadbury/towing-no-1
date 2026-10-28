@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://www.towingno1.com/locations",
     title: "Tow Truck Service Areas | Lower Mainland BC",
     description:
-      "City-based towing and roadside support pages for Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, Maple Ridge, and Vancouver.",
+      "Local towing and roadside support pages for Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, Maple Ridge, and Vancouver.",
   },
   twitter: {
     card: "summary_large_image",
@@ -66,7 +66,7 @@ export default function LocationsPage() {
               24/7 Tow Truck Coverage Across Surrey and the Lower Mainland
             </h1>
             <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-              Looking for towing near you? Choose your city below to see local service coverage, common response zones, major highways covered, and direct dispatch support. We serve 12 communities across the Lower Mainland with the same 24/7 response and upfront flat-rate pricing.
+              Looking for towing near you? Choose your city below to see local service coverage, common response zones, major highways covered, and direct dispatch support. We serve 12 communities across the Lower Mainland with the same 24/7 response and upfront flat rate pricing.
             </p>
           </div>
 
@@ -99,7 +99,7 @@ export default function LocationsPage() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call Now — Free Quote
+              Call Now for a Free Quote
             </a>
           </div>
         </div>

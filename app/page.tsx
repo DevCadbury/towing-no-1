@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Tow Truck Surrey | 24/7 Emergency Towing | TowingNo.1",
   description:
-    "Need a tow truck near you in Surrey or the Lower Mainland? TowingNo.1 — 24/7 emergency towing & roadside assistance. Free quote. Call (778) 838-0014.",
+    "Need a tow truck near you in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 emergency towing & roadside assistance. Free quote. Call (778) 838-0014.",
   // keywords meta intentionally omitted — Google ignores it for ranking and
   // a large list is dead weight / stuffing signal in the raw HTML source.
   alternates: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title:
       "Tow Truck Surrey | 24/7 Emergency Towing | TowingNo.1",
     description:
-      "Call TowingNo.1 for fast 24/7 towing in Surrey and the Lower Mainland. Free quote before dispatch — (778) 838-0014.",
+      "Call TowingNo.1 for fast 24/7 towing in Surrey and the Lower Mainland. Free quote before dispatch at (778) 838-0014.",
   },
 };
 
@@ -34,7 +34,7 @@ const homeServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://www.towingno1.com/#emergency-towing-service",
-  name: "24/7 Tow Truck and Roadside Assistance — Surrey & Lower Mainland",
+  name: "24/7 Tow Truck and Roadside Assistance in Surrey & the Lower Mainland",
   serviceType: "Emergency towing and roadside assistance",
   provider: {
     "@id": "https://www.towingno1.com/#localbusiness",
@@ -71,7 +71,7 @@ const homeFaq: FaqItem[] = [
   },
   {
     q: "How much does towing cost in Surrey?",
-    a: "We use flat-rate pricing with no hidden fees. The cost depends on vehicle type and distance. Call (778) 838-0014 for an instant quote — we give you a firm price before we dispatch.",
+    a: "We use flat rate pricing with no hidden fees. The cost depends on vehicle type and distance. Call (778) 838-0014 for an instant quote, and we will give you a firm price before we dispatch.",
   },
   {
     q: "Do you provide a quote before dispatch?",
@@ -79,7 +79,7 @@ const homeFaq: FaqItem[] = [
   },
   {
     q: "What roadside services do you offer besides towing?",
-    a: "We provide battery boosts, flat tire changes, lockout service, fuel delivery, and winching and extraction across the Lower Mainland — often solving the problem on the spot without a tow.",
+    a: "We provide battery boosts, flat tire changes, lockout service, fuel delivery, and winching and extraction across the Lower Mainland, often solving the problem on the spot without a tow.",
   },
   {
     q: "What areas of the Lower Mainland do you serve?",
@@ -87,11 +87,11 @@ const homeFaq: FaqItem[] = [
   },
   {
     q: "Do you tow electric vehicles?",
-    a: "Yes. Electric vehicles must be transported on a flatbed — never towed with wheels down. We have flatbed trucks available 24/7 for EVs including Tesla, Rivian, and all other makes.",
+    a: "Yes. Electric vehicles must be transported on a flatbed and never towed with wheels down. We have flatbed trucks available 24/7 for EVs including Tesla, Rivian, and all other makes.",
   },
   {
     q: "Do you provide roadside assistance without towing?",
-    a: "Yes. If your issue can be solved on the spot — a flat tire, dead battery, empty tank, or lockout — we fix it right there. A tow is only arranged when the vehicle genuinely can't be driven.",
+    a: "Yes. If your issue can be solved on the spot (a flat tire, dead battery, empty tank, or lockout), we fix it right there. A tow is only arranged when the vehicle genuinely can't be driven.",
   },
   {
     q: "Are you available on holidays and weekends?",

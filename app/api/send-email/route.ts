@@ -101,6 +101,8 @@ async function sendEmail({ from, to, subject, html, replyTo }: ResendMessage): P
 }
 
 /* ─── Business notification email ──────────────────────────────── */
+// Internal email to the business, not customer facing; excluded from the copy check.
+// copy-check-ignore-start
 function buildBusinessEmail(
   name: string,
   email: string,
@@ -202,6 +204,7 @@ function buildBusinessEmail(
 </body>
 </html>`;
 }
+// copy-check-ignore-end
 
 /* ─── User confirmation email ───────────────────────────────────── */
 function buildConfirmationEmail(name: string, email: string, phone: string, message: string): string {
@@ -319,7 +322,7 @@ function buildConfirmationEmail(name: string, email: string, phone: string, mess
           <!-- Footer -->
           <tr>
             <td style="background-color:#f9fafb;padding:20px 32px;border-top:1px solid #e5e7eb;">
-              <p style="margin:0;color:#9ca3af;font-size:12px;">TowingNo.1 &mdash; 24/7 Emergency Towing &amp; Roadside Assistance</p>
+              <p style="margin:0;color:#9ca3af;font-size:12px;">TowingNo.1 | 24/7 Emergency Towing &amp; Roadside Assistance</p>
               <p style="margin:4px 0 0;color:#9ca3af;font-size:12px;">Serving Delta, White Rock, Langley, Burnaby and surrounding areas in British Columbia</p>
               <p style="margin:8px 0 0;color:#d1d5db;font-size:11px;">
                 You are receiving this email because you submitted a contact form at towingno1.com.
@@ -394,6 +397,7 @@ export async function POST(req: NextRequest) {
     // the critical lead delivery, so it is sent first and must succeed. Sent
     // from the business address; reply-to is the customer so a reply goes
     // straight back to them.
+    // copy-check-ignore-start (internal business email, not customer facing)
     await sendEmail({
       from: `TowingNo.1 Website <${EMAIL_FROM}>`,
       to: ADMIN_RECIPIENTS,
@@ -401,6 +405,7 @@ export async function POST(req: NextRequest) {
       html: buildBusinessEmail(safeName, safeEmail, safePhone, safeMessage, safeFrom, safeTo),
       replyTo: email,
     });
+    // copy-check-ignore-end
 
     // Email 2 — Customer confirmation, sent from the dispatch alias. Best-effort:
     // a confirmation failure must NOT fail the request, because the lead has
@@ -409,7 +414,7 @@ export async function POST(req: NextRequest) {
       await sendEmail({
         from: `TowingNo.1 Dispatch <${EMAIL_DISPATCH}>`,
         to: [email],
-        subject: "We have received your request — TowingNo.1",
+        subject: "TowingNo.1 has received your request",
         html: buildConfirmationEmail(safeName, safeEmail, safePhone, safeMessage),
         replyTo: EMAIL_REPLY_TO,
       });

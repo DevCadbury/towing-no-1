@@ -103,7 +103,7 @@ export default function ContactContent() {
   };
 
   const faqs = [
-    { q: "How fast can you get to me?", a: "We dispatch the nearest available driver as soon as you call. Arrival time is under 15 minutes in many situations, depending on location, traffic, weather, and road conditions — call (778) 838-0014 and the dispatcher will give you a live estimate before any truck rolls." },
+    { q: "How fast can you get to me?", a: "We dispatch the nearest available driver as soon as you call. Arrival time is under 15 minutes in many situations, depending on location, traffic, weather, and road conditions. Call (778) 838-0014 and the dispatcher will give you a live estimate before any truck rolls." },
     { q: "Do you accept credit cards?", a: "Yes, our drivers carry wireless terminals and accept all major credit cards, debit, and cash." },
     { q: "Are you insured?", a: "Yes, we are fully licensed and insured. Your vehicle is protected while in our care." },
   ];
@@ -135,7 +135,7 @@ export default function ContactContent() {
         </svg>
       ),
       title: "Email",
-      sub: "For non-urgent inquiries",
+      sub: "For inquiries that aren't urgent",
       content: <a href="mailto:info@towingno1.com" className="text-lg font-medium text-navy-900 hover:text-amber-600 transition-colors">info@towingno1.com</a>,
     },
     {
@@ -155,7 +155,7 @@ export default function ContactContent() {
       ),
       title: "Service Area",
       sub: "",
-      content: <p className="text-slate-500 text-sm">Proudly serving Surrey and the Lower Mainland — including Langley, Burnaby, Richmond, Coquitlam, Delta, White Rock, Vancouver, and Maple Ridge.</p>,
+      content: <p className="text-slate-500 text-sm">Proudly serving Surrey and the Lower Mainland, including Langley, Burnaby, Richmond, Coquitlam, Delta, White Rock, Vancouver, and Maple Ridge.</p>,
     },
   ];
 
@@ -205,11 +205,12 @@ export default function ContactContent() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Form */}
             <motion.div
+              id="request-a-tow"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white p-8 md:p-10 rounded-2xl shadow-card border border-slate-100"
+              className="scroll-mt-28 bg-white p-8 md:p-10 rounded-2xl shadow-card border border-slate-100"
             >
               <h2 className="text-2xl font-bold mb-2 text-navy-900">Send us a Message</h2>
               <p className="text-slate-400 mb-8 text-sm">We&apos;ll get back to you within minutes.</p>
@@ -372,7 +373,7 @@ export default function ContactContent() {
               {/* Google Map */}
               <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-card h-[260px] w-full">
                 <iframe
-                  title="TowingNo.1 Service Area – Lower Mainland BC"
+                  title="TowingNo.1 Service Area: Lower Mainland BC"
                   src="https://maps.google.com/maps?q=Metro+Vancouver,BC,Canada&t=m&z=10&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
@@ -398,8 +399,8 @@ export default function ContactContent() {
               lot at 2 a.m., you locked your keys inside on the school run, or you slid off an icy shoulder on the
               highway, a real person answers, gathers your details, and gets a driver moving. For anything urgent,
               calling <a href="tel:+17788380014" className="text-amber-600 font-semibold hover:text-amber-700">(778) 838-0014</a> is
-              always the fastest way to reach us. The contact form is best for quotes, questions, and non-emergency
-              requests, and we usually reply within minutes during the day.
+              always the fastest way to reach us. The contact form is best for quotes, questions, and requests that
+              are not emergencies, and we usually reply within minutes during the day.
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-navy-900 pt-2">Where We Serve</h2>
             <p>
@@ -415,7 +416,7 @@ export default function ContactContent() {
               When you call or send a message, it helps to have a few details ready: where you are located or a
               nearby landmark or cross street, the make and model of your vehicle, and a short description of what
               is wrong. With that information our dispatcher can match the right truck and equipment to your
-              situation and give you a flat-rate quote up front. You will get an honest arrival estimate, a heads-up
+              situation and give you a flat rate quote up front. You will get an honest arrival estimate, a heads up
               as the driver approaches, and a final confirmation of the price before any work starts. There are no
               hidden fees and no pressure, only clear communication so you always know what is happening and what it
               will cost.

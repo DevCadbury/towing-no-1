@@ -68,6 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "vehicle-transport",
     "accident-recovery",
     "roadside-assistance",
+    "cross-border-towing",
   ].map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
     lastModified: now,

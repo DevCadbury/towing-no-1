@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'TowingNo.1 - 24/7 Emergency Towing BC',
+    name: 'TowingNo.1 | 24/7 Emergency Towing BC',
     short_name: 'TowingNo.1',
     description: 'Fast, reliable 24/7 emergency towing and roadside assistance in British Columbia',
     start_url: '/',

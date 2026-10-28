@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "Battery Boost & Jump Start | 24/7 Help | TowingNo.1",
   },
   description:
-    "24/7 battery boost and jump start service in Surrey and the Lower Mainland. Dead battery? TowingNo.1 dispatches a technician immediately — call 778-838-0014.",
+    "24/7 battery boost and jump start service in Surrey and the Lower Mainland. Dead battery? TowingNo.1 dispatches a technician immediately. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/battery-boost" },
   keywords: [
     "battery boost Surrey",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Battery Boost & Jump Start | 24/7 Help | TowingNo.1",
     description:
       "24/7 battery boost and jump start service in Surrey and the Lower Mainland. Immediate dispatch, upfront pricing. Call 778-838-0014.",
-    images: [{ url: "/image/Battery_Boost.png", alt: "Battery boost and jump start service — TowingNo.1 technician" }],
+    images: [{ url: "/image/Battery_Boost.png", alt: "Battery boost and jump start service by a TowingNo.1 technician" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -53,15 +53,15 @@ const schema = {
 const faq: FaqItem[] = [
   {
     q: "Can you provide a battery boost 24/7?",
-    a: "Yes. TowingNo.1 provides battery boost and jump start service 24 hours a day, 7 days a week — including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer and send a technician.",
+    a: "Yes. TowingNo.1 provides battery boost and jump start service 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer and send a technician.",
   },
   {
-    q: "Can you jump-start a car with a completely dead battery?",
+    q: "Can you jump start a car with a completely dead battery?",
     a: "Yes, in most cases. If the battery still has enough residual charge to accept a boost, we can get the engine running. After starting the vehicle, we test the battery and charging system to tell you whether the battery is healthy enough to hold a charge or needs replacement. If the vehicle will not start after a boost, we can arrange a tow to a shop.",
   },
   {
     q: "What should I do while waiting for roadside assistance?",
-    a: "Stay with your vehicle in a safe location. If you are on a road or highway shoulder, switch on your hazard lights and — if it is safe to do so — exit on the passenger side away from traffic and wait behind a barrier or guardrail. Share your exact location (nearest intersection, exit number, or address) with the dispatcher so the technician can find you quickly.",
+    a: "Stay with your vehicle in a safe location. If you are on a road or highway shoulder, switch on your hazard lights and, if it is safe to do so, exit on the passenger side away from traffic and wait behind a barrier or guardrail. Share your exact location (nearest intersection, exit number, or address) with the dispatcher so the technician can find you quickly.",
   },
   {
     q: "What if the vehicle still will not start after the boost?",
@@ -69,7 +69,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What areas do you serve for battery boost?",
-    a: "Battery boost and jump-start service is available wherever our trucks are staged across the Lower Mainland, from Surrey and Langley out to the rural roads near Aldergrove and Maple Ridge. Call (778) 838-0014 and a dispatcher will confirm coverage for your exact location before we send anyone.",
+    a: "Battery boost and jump start service is available wherever our trucks are staged across the Lower Mainland, from Surrey and Langley out to the rural roads near Aldergrove and Maple Ridge. Call (778) 838-0014 and a dispatcher will confirm coverage for your exact location before we send anyone.",
   },
 ];
 const faqSchema = faqPageSchema(faq);
@@ -104,7 +104,7 @@ export default function BatteryBoostPage() {
       <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image
           src="/image/Battery_Boost.png"
-          alt="Battery boost and jump start service — TowingNo.1 technician helping with a dead battery"
+          alt="Battery boost and jump start service: TowingNo.1 technician helping with a dead battery"
           fill
           className="object-cover opacity-30"
           priority
@@ -159,16 +159,16 @@ export default function BatteryBoostPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Need a Battery Boost?</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  A dead or discharged battery is one of the most common roadside problems drivers face —
+                  A dead or discharged battery is one of the most common roadside problems drivers face,
                   and it usually strikes at the worst possible moment. Common situations that lead to a
                   battery boost call include:
                 </p>
                 <ul className="space-y-3 mb-4">
                   {[
-                    { title: "Vehicle will not start",       body: "You turn the key or press the start button and nothing happens — or the engine turns over slowly and fails to fire." },
+                    { title: "Vehicle will not start",       body: "You turn the key or press the start button and nothing happens, or the engine turns over slowly and fails to fire." },
                     { title: "Lights were left on",          body: "Interior lights, headlights, or accessories left running while the engine is off drain the battery, sometimes overnight." },
                     { title: "Vehicle has difficulty starting", body: "The engine cranks sluggishly or takes several attempts before starting, particularly in cold or wet weather." },
-                    { title: "Battery appears dead",         body: "No dash lights, no response from accessories, no click when turning the key — the battery is fully discharged." },
+                    { title: "Battery appears dead",         body: "No dash lights, no response from accessories, and no click when turning the key. The battery is fully discharged." },
                     { title: "Vehicle stranded and needs help", body: "You are stuck in a parking lot, driveway, or on the roadside and cannot get the vehicle moving without assistance." },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
@@ -192,9 +192,9 @@ export default function BatteryBoostPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Battery Boost Service</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Our battery boost service is an on-site jump start using professional equipment —
+                  Our battery boost service is a jump start on site using professional equipment,
                   not improvised jumper cables from a passing motorist. A technician connects a
-                  professional-grade booster to your battery and starts the vehicle safely, following
+                  professional grade booster to your battery and starts the vehicle safely, following
                   the correct sequence to protect the vehicle&apos;s electronics.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
@@ -202,7 +202,7 @@ export default function BatteryBoostPage() {
                   the battery voltage and checks the charging output with the engine running. This tells
                   you whether the battery is healthy enough to hold a charge on its own, or whether the
                   alternator is failing to replenish it. If the numbers indicate a problem, we will
-                  explain what we found honestly — so you can make an informed decision about next steps
+                  explain what we found honestly, so you can make an informed decision about next steps
                   rather than being left to guess.
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-3">
@@ -234,7 +234,7 @@ export default function BatteryBoostPage() {
                 <ul className="space-y-3 mb-4">
                   {[
                     { sign: "Rapid clicking when turning the key",   detail: "Multiple fast clicks usually mean the battery does not have enough power to engage the starter motor." },
-                    { sign: "Engine cranks slowly or will not start", detail: "A sluggish crank — the engine turns over laboriously before starting, if it starts at all — is a sign the battery is struggling." },
+                    { sign: "Engine cranks slowly or will not start", detail: "A sluggish crank, where the engine turns over laboriously before starting (if it starts at all), is a sign the battery is struggling." },
                     { sign: "Headlights or interior lights are dim",  detail: "A healthy battery maintains consistent voltage. Dim lights, especially when the engine is off, suggest low charge." },
                     { sign: "Battery warning light on the dashboard", detail: "This can indicate a failing battery or a fault with the charging system. Have both tested as soon as possible." },
                     { sign: "Electrical systems behaving abnormally", detail: "Infotainment resetting, windows moving slowly, or intermittent electrical faults can all point to voltage issues." },
@@ -264,16 +264,16 @@ export default function BatteryBoostPage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Why Batteries Fail in BC&apos;s Climate</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Coastal British Columbia is rarely severely cold, but its damp mild winters are
-                  harder on batteries than many drivers expect. A lead-acid battery loses a portion of
+                  harder on batteries than many drivers expect. A lead acid battery loses a portion of
                   its cranking power as the temperature approaches freezing, and short city trips around
                   Surrey, Langley, or Burnaby rarely give the alternator enough running time to fully
                   recharge it. If accessories are left on overnight, a battery that was only marginally
                   weak in October can refuse to start the engine by January.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  Summer heat also shortens battery life — fluid evaporates and internal plates degrade
+                  Summer heat also shortens battery life, as fluid evaporates and internal plates degrade
                   through warm months. The failure that strands you in winter often began the previous
-                  summer. Vehicles left at Park-and-Ride lots, airport parking, or ferry terminals for
+                  summer. Vehicles left at Park and Ride lots, airport parking, or ferry terminals for
                   several days are particularly prone to draining below the threshold where a cold
                   morning start is possible.
                 </p>
@@ -284,11 +284,11 @@ export default function BatteryBoostPage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">What Happens When You Call TowingNo.1</h2>
                 <ol className="space-y-4">
                   {[
-                    { step: "1", title: "Call (778) 838-0014",           body: "A dispatcher answers 24/7. Tell them the vehicle will not start and describe your location — street address, nearest intersection, or parking facility name." },
-                    { step: "2", title: "Location and situation confirmed", body: "We confirm your exact location and ask a few quick questions about the vehicle — make, model, and whether you can hear any response when you try to start it." },
-                    { step: "3", title: "Upfront quote provided",         body: "We give you a flat-rate price for the battery boost before a technician is dispatched. You know the cost before anyone is sent." },
+                    { step: "1", title: "Call (778) 838-0014",           body: "A dispatcher answers 24/7. Tell them the vehicle will not start and describe your location: street address, nearest intersection, or parking facility name." },
+                    { step: "2", title: "Location and situation confirmed", body: "We confirm your exact location and ask a few quick questions about the vehicle: make, model, and whether you can hear any response when you try to start it." },
+                    { step: "3", title: "Upfront quote provided",         body: "We give you a flat rate price for the battery boost before a technician is dispatched. You know the cost before anyone is sent." },
                     { step: "4", title: "Technician dispatched",          body: "We send the nearest available technician with appropriate equipment for the job." },
-                    { step: "5", title: "Jump start performed on-site",   body: "The technician safely boosts your battery and starts the engine using professional equipment." },
+                    { step: "5", title: "Jump start performed on site",   body: "The technician safely boosts your battery and starts the engine using professional equipment." },
                     { step: "6", title: "Battery and charging system tested", body: "After starting, the technician tests the battery voltage and charging output and tells you honestly whether the battery and alternator are in good condition or whether further action is needed." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
@@ -311,9 +311,9 @@ export default function BatteryBoostPage() {
                   A jump start resolves the immediate problem if the battery has enough residual capacity
                   to accept a charge and hold it. But a boost is not a permanent fix for a battery that
                   has reached the end of its service life, nor for a fault in the charging system. If
-                  the battery test after the boost reveals a serious fault — a cell that will not hold
+                  the battery test after the boost reveals a serious fault (a cell that will not hold
                   charge, an alternator that is not charging, or a parasitic drain that is killing the
-                  battery overnight — you will need a repair shop to address the underlying issue.
+                  battery overnight), you will need a repair shop to address the underlying issue.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   If the vehicle still cannot be started after a boost, or if the technician identifies
@@ -336,7 +336,7 @@ export default function BatteryBoostPage() {
                 <p className="text-slate-600 leading-relaxed mb-4">
                   We provide battery boost and jump start service across{" "}
                   <Link href="/locations/surrey" className="font-semibold text-amber-600 hover:text-amber-700">Surrey</Link>{" "}
-                  and the wider Lower Mainland — including{" "}
+                  and the wider Lower Mainland, including{" "}
                   <Link href="/locations/langley" className="font-semibold text-amber-600 hover:text-amber-700">Langley</Link>,{" "}
                   <Link href="/locations/burnaby" className="font-semibold text-amber-600 hover:text-amber-700">Burnaby</Link>,{" "}
                   <Link href="/locations/delta" className="font-semibold text-amber-600 hover:text-amber-700">Delta</Link>,{" "}
