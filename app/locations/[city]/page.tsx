@@ -132,20 +132,8 @@ export default async function ServiceAreaPage({ params }: Props) {
       ],
     };
 
-    const surreyServiceSchema = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://www.towingno1.com/locations/surrey#service",
-      name: "24/7 Towing Service Surrey BC",
-      serviceType: "Emergency towing and roadside assistance",
-      provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-      areaServed: {
-        "@type": "City",
-        name: "Surrey",
-        containedInPlace: { "@type": "AdministrativeArea", name: "British Columbia" },
-      },
-      url: "https://www.towingno1.com/locations/surrey",
-    };
+    // Service JSON-LD node removed: register F-07 UNVERIFIED, areaServed F-06
+    // UNVERIFIED (D-013, D-016; ACTION-PLAN A-004, A-005).
 
     const surreyFaqSchema = {
       "@context": "https://schema.org",
@@ -159,7 +147,6 @@ export default async function ServiceAreaPage({ params }: Props) {
 
     return (
       <>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(surreyServiceSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(surreyFaqSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(surreyBreadcrumb) }} />
         <SurreyPage />
@@ -180,20 +167,8 @@ export default async function ServiceAreaPage({ params }: Props) {
       ],
     };
 
-    const langleyServiceSchema = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://www.towingno1.com/locations/langley#service",
-      name: "24/7 Towing Service Langley BC",
-      serviceType: "Emergency towing and roadside assistance",
-      provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-      areaServed: {
-        "@type": "City",
-        name: "Langley",
-        containedInPlace: { "@type": "AdministrativeArea", name: "British Columbia" },
-      },
-      url: "https://www.towingno1.com/locations/langley",
-    };
+    // Service JSON-LD node removed: register F-07 UNVERIFIED, areaServed F-06
+    // UNVERIFIED (D-013, D-016; ACTION-PLAN A-004, A-005).
 
     const langleyFaqSchema = {
       "@context": "https://schema.org",
@@ -207,7 +182,6 @@ export default async function ServiceAreaPage({ params }: Props) {
 
     return (
       <>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(langleyServiceSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(langleyFaqSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(langleyBreadcrumb) }} />
         <LangleyPage />
@@ -224,20 +198,8 @@ export default async function ServiceAreaPage({ params }: Props) {
     .map((nearby) => ({ name: nearby, slug: slugifyCity(nearby) }))
     .filter((entry) => isServiceAreaSlug(entry.slug));
 
-  const localServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `${canonical}#service`,
-    name: `24/7 Tow Truck ${area.city}`,
-    serviceType: "Emergency towing and roadside assistance",
-    provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-    areaServed: {
-      "@type": "City",
-      name: area.city,
-      containedInPlace: { "@type": "AdministrativeArea", name: "British Columbia" },
-    },
-    url: canonical,
-  };
+  // Service JSON-LD node removed: register F-07 UNVERIFIED, areaServed F-06
+  // UNVERIFIED (D-013, D-016; ACTION-PLAN A-004, A-005).
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -261,7 +223,6 @@ export default async function ServiceAreaPage({ params }: Props) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localServiceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 

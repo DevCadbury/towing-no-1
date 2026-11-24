@@ -49,13 +49,19 @@ export function isVerified(f: BusinessFact<unknown>): boolean {
   return f.status === "verified";
 }
 
-/* ─── Contact / NAP (operational — verified) ───────────────────────── */
+/* ─── Contact / NAP ─────────────────────────────────────────────────── */
+// Statuses follow .kiro/seo-orchestration/SEO-FACT-REGISTER.md.
 export const contact = {
-  name: fact("TowingNo.1", "verified", "Operating business name"),
+  // Register F-01 is CONFLICT (GBP shows "Towing No. 1 - Tow Truck"). "TowingNo.1"
+  // stays "verified" here only as the recorded interim exception DECISION-LOG
+  // D-015 (`name` is required on LocalBusiness); it is not a resolution.
+  name: fact("TowingNo.1", "verified", "Operating business name; interim exception D-015 (register F-01 CONFLICT)"),
   phoneDisplay: fact("(778) 838-0014", "verified", "Operational dispatch line"),
   phoneTel: fact("+17788380014", "verified", "Operational dispatch line (tel: href)"),
   phoneE164: fact("+1-778-838-0014", "verified", "Operational dispatch line (schema)"),
-  email: fact("info@towingno1.com", "verified", "Operational business email"),
+  // Register F-03 UNVERIFIED (site only; GBP publishes no email). The visible
+  // mailto: link stays (D-071); the value must not appear in JSON-LD.
+  email: fact("info@towingno1.com", "unverified", "Register F-03 UNVERIFIED: single source (website); D-071"),
 };
 
 /**
@@ -85,17 +91,23 @@ export const address = {
 // The concrete served-city list lives in lib/service-areas.ts (each has a
 // location page). This is the human-facing region phrasing only.
 export const geo = {
-  region: fact("Surrey and the Lower Mainland", "verified", "Stated service region; matches /locations pages"),
-  province: fact("British Columbia", "verified", "Stated service region"),
+  // Register F-06 is UNVERIFIED. This status stays "verified" only as the
+  // recorded interim state of DECISION-LOG D-063 until the wave-3 content
+  // commit (A-034) removes the phrase from the last JSON-LD (FAQPage) text and
+  // flips it. Do not add this phrase to any JSON-LD.
+  region: fact("Surrey and the Lower Mainland", "verified", "Stated service region; interim state D-063 (register F-06 UNVERIFIED)"),
+  province: fact("British Columbia", "verified", "Register F-05 VERIFIED: province of the verified locality Surrey, BC"),
 };
 
-/* ─── Social profiles + map link (operational — verified) ──────────── */
+/* ─── Social profiles + map link ────────────────────────────────────── */
 // Single, editable source for social URLs and the Google Maps deep link.
-// Update a value HERE and every consumer (Footer icons, Organization `sameAs`,
-// the clickable address) picks it up — no URLs scattered across components.
+// Update a value HERE and every consumer (Footer icons, the clickable address)
+// picks it up — no URLs scattered across components.
+// Register F-12 UNVERIFIED: neither profile is established as the business's
+// own (D-076), so neither URL may appear in JSON-LD (`sameAs` removed).
 export const social = {
-  facebook: fact("https://www.facebook.com/people/Towing-No-1/61592728132909/", "verified", "Official Facebook page"),
-  instagram: fact("https://www.instagram.com/towing.no.1", "verified", "Official Instagram profile"),
+  facebook: fact("https://www.facebook.com/people/Towing-No-1/61592728132909/", "unverified", "Register F-12 UNVERIFIED: page not established as official; D-076"),
+  instagram: fact("https://www.instagram.com/towing.no.1", "unverified", "Register F-12 UNVERIFIED: profile not viewable logged out; D-076"),
 };
 
 // The location shown to users (kept verbatim in the UI) and the map target it

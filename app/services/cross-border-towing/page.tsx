@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
-import { serviceAreaCompact } from "@/lib/service-areas";
 import OfficialResources from "@/components/OfficialResources";
 
 const PAGE_URL = "https://www.towingno1.com/services/cross-border-towing";
@@ -41,17 +40,8 @@ export const metadata: Metadata = {
   },
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://www.towingno1.com/services/cross-border-towing#service",
-  name: "Cross Border Towing Services",
-  serviceType: "Cross Border Towing",
-  description:
-    "Cross border towing and vehicle transportation between Canada and the United States in either direction, arranged after the route, vehicle, and timing are confirmed.",
-  provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: serviceAreaCompact,
-};
+// Service JSON-LD node removed: register F-14 UNVERIFIED, areaServed F-06
+// UNVERIFIED (D-013, D-016; ACTION-PLAN A-004, A-005).
 
 const faq: FaqItem[] = [
   {
@@ -181,7 +171,6 @@ function Check() {
 export default function CrossBorderTowingPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 

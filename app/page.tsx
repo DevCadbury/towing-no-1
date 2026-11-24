@@ -30,36 +30,10 @@ export const metadata: Metadata = {
   },
 };
 
-const homeServiceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://www.towingno1.com/#emergency-towing-service",
-  name: "24/7 Tow Truck and Roadside Assistance in Surrey & the Lower Mainland",
-  serviceType: "Emergency towing and roadside assistance",
-  provider: {
-    "@id": "https://www.towingno1.com/#localbusiness",
-  },
-  areaServed: [
-    { "@type": "City", name: "Surrey" },
-    { "@type": "City", name: "Langley" },
-    { "@type": "City", name: "Burnaby" },
-    { "@type": "City", name: "Coquitlam" },
-    { "@type": "City", name: "Richmond" },
-    { "@type": "City", name: "White Rock" },
-    { "@type": "City", name: "Vancouver" },
-    { "@type": "City", name: "Delta" },
-    { "@type": "City", name: "Maple Ridge" },
-  ],
-  availableChannel: {
-    "@type": "ServiceChannel",
-    servicePhone: {
-      "@type": "ContactPoint",
-      telephone: "+1-778-838-0014",
-      contactType: "customer support",
-      availableLanguage: "English",
-    },
-  },
-};
+// The homepage Service node (homeServiceSchema) was removed: it asserted
+// services (register F-07 UNVERIFIED), a city list (F-06 UNVERIFIED) and the
+// "Lower Mainland" region wording. Only VERIFIED facts may appear in JSON-LD
+// (D-013, D-016, D-063; ACTION-PLAN A-004, A-005).
 
 // Single source of truth for the homepage FAQ — used for BOTH the visible
 // accordion (HomeContent <FaqSection>) and the FAQPage schema, so they never
@@ -141,10 +115,6 @@ const websiteSchema = {
 export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeServiceSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}

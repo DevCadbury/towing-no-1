@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
-import { serviceAreaCompact } from "@/lib/service-areas";
 import OfficialResources from "@/components/OfficialResources";
 
 export const metadata: Metadata = {
@@ -38,17 +37,8 @@ export const metadata: Metadata = {
   },
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://www.towingno1.com/services/accident-recovery#service",
-  name: "Accident Recovery & Towing",
-  serviceType: "Accident Recovery",
-  description:
-    "24/7 accident recovery and towing across Surrey and the Lower Mainland. Safe transport of collision damaged vehicles to any repair shop, dealership, or storage facility.",
-  provider: { "@id": "https://www.towingno1.com/#localbusiness" },
-  areaServed: serviceAreaCompact,
-};
+// Service JSON-LD node removed: register F-07 UNVERIFIED, areaServed F-06
+// UNVERIFIED (D-013, D-016; ACTION-PLAN A-004, A-005).
 
 const faq: FaqItem[] = [
   {
@@ -113,7 +103,6 @@ function Check() {
 export default function AccidentRecoveryPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 

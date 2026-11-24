@@ -32,141 +32,11 @@ export const metadata: Metadata = {
   },
 };
 
-// ─── SEMrush Fix #1: provider is a pure @id reference to the global
-// LocalBusiness entity defined in app/layout.tsx — no inline @type/name stubs
-// that would appear as new address-less LocalBusiness declarations to validators.
-const PROVIDER_REF = { "@id": "https://www.towingno1.com/#localbusiness" } as const;
-const AREA_LOWER_MAINLAND = { "@type": "AdministrativeArea", name: "Lower Mainland, BC" } as const;
-
-const servicesSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "TowingNo.1 Towing & Roadside Services",
-  description: "24/7 towing and roadside assistance services in Surrey and the Lower Mainland, BC",
-  url: "https://www.towingno1.com/services",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      item: {
-        "@type": "Service",
-        name: "Emergency Towing",
-        url: "https://www.towingno1.com/services/emergency-towing",
-        description: "24/7 emergency towing for cars, SUVs, and light trucks across the Lower Mainland BC.",
-        provider: PROVIDER_REF,
-        areaServed: AREA_LOWER_MAINLAND,
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      item: {
-        "@type": "Service",
-        name: "Battery Boost",
-        url: "https://www.towingno1.com/services/battery-boost",
-        description: "24/7 battery boost and jump start service across Surrey and the Lower Mainland.",
-        provider: PROVIDER_REF,
-        areaServed: AREA_LOWER_MAINLAND,
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      item: {
-        "@type": "Service",
-        name: "Lockout Service",
-        url: "https://www.towingno1.com/services/lockout-service",
-        description: "24/7 car lockout service. We open your vehicle safely without damage.",
-        provider: PROVIDER_REF,
-        areaServed: AREA_LOWER_MAINLAND,
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 4,
-      item: {
-        "@type": "Service",
-        name: "Flat Tire Help",
-        url: "https://www.towingno1.com/services/flat-tire-help",
-        description: "Tire change on site or a tow to the nearest shop across the Lower Mainland.",
-        provider: PROVIDER_REF,
-        areaServed: AREA_LOWER_MAINLAND,
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 5,
-      item: {
-        "@type": "Service",
-        name: "Fuel Delivery",
-        url: "https://www.towingno1.com/services/fuel-delivery",
-        description: "Emergency fuel delivery, with gasoline and diesel delivered to your location.",
-        provider: PROVIDER_REF,
-        areaServed: AREA_LOWER_MAINLAND,
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 6,
-      item: {
-        "@type": "Service",
-        name: "Winching & Extraction",
-        url: "https://www.towingno1.com/services/winching-extraction",
-        description: "Professional winching and extraction for vehicles stuck in mud, snow or ditches in BC.",
-        provider: PROVIDER_REF,
-        areaServed: AREA_LOWER_MAINLAND,
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 7,
-      item: {
-        "@type": "Service",
-        name: "Vehicle Transport",
-        url: "https://www.towingno1.com/services/vehicle-transport",
-        description: "Secure vehicle transport across Surrey and the Lower Mainland.",
-        provider: PROVIDER_REF,
-        areaServed: AREA_LOWER_MAINLAND,
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 8,
-      item: {
-        "@type": "Service",
-        name: "Accident Recovery",
-        url: "https://www.towingno1.com/services/accident-recovery",
-        description: "Professional accident recovery and collision towing across the Lower Mainland.",
-        provider: PROVIDER_REF,
-        areaServed: AREA_LOWER_MAINLAND,
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 9,
-      item: {
-        "@type": "Service",
-        name: "Roadside Assistance",
-        url: "https://www.towingno1.com/services/roadside-assistance",
-        description: "24/7 roadside assistance at your location: battery boost, flat tire, lockout service, and fuel delivery across the Lower Mainland.",
-        provider: PROVIDER_REF,
-        areaServed: AREA_LOWER_MAINLAND,
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 10,
-      item: {
-        "@type": "Service",
-        name: "Cross Border Towing",
-        url: "https://www.towingno1.com/services/cross-border-towing",
-        description: "Towing and vehicle transportation between Canada and the United States, arranged case by case.",
-        provider: PROVIDER_REF,
-        areaServed: AREA_LOWER_MAINLAND,
-      },
-    },
-  ],
-};
+// The ItemList of 10 Service nodes (servicesSchema) was removed: every item
+// asserted a service (register F-07, F-14 UNVERIFIED), an areaServed (F-06
+// UNVERIFIED) and "Lower Mainland" wording, and an ItemList of plain links
+// has no Google search feature. Only VERIFIED facts may appear in JSON-LD
+// (D-013, D-016, D-063; ACTION-PLAN A-004, A-005). The visible page is unchanged.
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -283,7 +153,6 @@ const allServices = [
 export default function Services() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero */}

@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import CallTracking from "@/components/CallTracking";
 import TawkWidget from "@/components/TawkWidget";
-import { social, address } from "@/lib/business-facts";
+import { address } from "@/lib/business-facts";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -159,12 +159,13 @@ const globalSchema = {
         width: 684,
         height: 365,
       },
-      sameAs: [social.instagram.value, social.facebook.value],
+      // `sameAs` removed: register F-12 UNVERIFIED (D-076, A-004). Re-add only
+      // profiles the register marks VERIFIED, read from lib/business-facts.ts.
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+1-778-838-0014",
         contactType: "customer service",
-        availableLanguage: "English",
+        // availableLanguage removed: no register row (D-014, A-004).
         hoursAvailable: {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: [
@@ -185,17 +186,20 @@ const globalSchema = {
       "@type": ["LocalBusiness", "AutomotiveBusiness"],
       "@id": "https://www.towingno1.com/#localbusiness",
       name: "TowingNo.1",
-      description:
-        "24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Emergency towing, battery boost, flat tire help, lockout service, fuel delivery, and vehicle recovery.",
+      // Built only from VERIFIED register facts: F-04 (24/7) and F-05 (Surrey,
+      // BC). Service list and region wording removed until F-06/F-07 are
+      // VERIFIED (D-016, D-063, A-004).
+      description: "TowingNo.1 in Surrey, BC is open 24 hours a day, 7 days a week.",
       url: "https://www.towingno1.com",
       telephone: "+1-778-838-0014",
-      email: "info@towingno1.com",
+      // email removed: register F-03 UNVERIFIED (D-071, A-004). The visible
+      // mailto: link on the site is unchanged.
       image: "https://www.towingno1.com/preview.jpg",
       logo: "https://www.towingno1.com/logo.png",
       // priceRange removed — no fixed pricing is published on the site.
       openingHours: "Mo-Su 00:00-23:59",
-      currenciesAccepted: "CAD",
-      paymentAccepted: "Cash, Credit Card, Debit Card",
+      // currenciesAccepted and paymentAccepted removed: F-13 is CONFLICT and
+      // currency has no register row (D-014, A-004). Do not add a new value.
       address: {
         "@type": "PostalAddress",
         // streetAddress and postalCode are populated from lib/business-facts.ts
@@ -220,168 +224,12 @@ const globalSchema = {
       // (incl. reviews the business controls) and Google disallows aggregating
       // reviews/ratings from other sites. Genuine reviews may be shown to users
       // on-page without necessarily being eligible for review rich results.
-      knowsAbout: [
-        "Emergency towing",
-        "Tow truck service",
-        "Roadside assistance",
-        "Battery boost",
-        "Flat tire change",
-        "Vehicle lockout",
-        "Fuel delivery",
-        "Winching and extraction",
-        "Cross border towing",
-      ],
-      areaServed: [
-        {
-          "@type": "City",
-          name: "Surrey",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "Delta",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "White Rock",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "Langley",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "Burnaby",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "Richmond",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "Coquitlam",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "Port Coquitlam",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "Vancouver",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "Maple Ridge",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "Cloverdale",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "South Surrey",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-        {
-          "@type": "City",
-          name: "Aldergrove",
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: "British Columbia",
-          },
-        },
-      ],
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Towing & Roadside Assistance Services",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Emergency Towing" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Roadside Assistance" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Battery Boost" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Flat Tire Change" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Vehicle Recovery" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Lockout Service" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Fuel Delivery" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Winching & Extraction",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Cross Border Towing" },
-          },
-        ],
-      },
+      //
+      // knowsAbout and hasOfferCatalog removed: no service is VERIFIED in the
+      // register (F-07, F-14 UNVERIFIED; D-016, A-006). areaServed removed:
+      // the city list F-06 is UNVERIFIED (D-013, A-005). When the owner
+      // confirms them, rebuild these from lib/service-areas.ts and the service
+      // pages (one derived list, VERIFIED entries only).
     },
   ],
 };
