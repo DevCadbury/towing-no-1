@@ -108,7 +108,8 @@ export default function FuelDeliveryPage() {
           alt="Emergency fuel delivery: fuel delivered to a stranded driver at the roadside"
           fill
           className="object-cover opacity-30"
-          priority
+          loading="eager"
+          fetchPriority="high"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />

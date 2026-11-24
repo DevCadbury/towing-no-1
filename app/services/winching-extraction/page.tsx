@@ -113,7 +113,8 @@ export default function WinchingExtractionPage() {
           alt="Winching and vehicle extraction service: vehicle being recovered from a roadside ditch"
           fill
           className="object-cover opacity-30"
-          priority
+          loading="eager"
+          fetchPriority="high"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />

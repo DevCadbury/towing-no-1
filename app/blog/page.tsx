@@ -60,7 +60,8 @@ export default function Blog() {
               alt={featured.title}
               fill
               className="object-cover opacity-30"
-              priority
+              loading="eager"
+              fetchPriority="high"
             />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/70 to-navy-950/40" />

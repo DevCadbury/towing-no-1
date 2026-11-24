@@ -15,7 +15,8 @@ export default function AboutContent() {
             fill
             className="object-cover object-top md:object-center opacity-30"
             sizes="100vw"
-            priority
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/50 to-navy-950" />
           <div className="absolute bottom-0 left-[30%] w-[400px] h-[400px] bg-amber-500/8 blur-[100px] rounded-full" />

@@ -302,7 +302,8 @@ export default async function BlogPostPage({ params }: Props) {
             alt={post.title}
             fill
             className="object-cover opacity-40"
-            priority
+            loading="eager"
+            fetchPriority="high"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent" />

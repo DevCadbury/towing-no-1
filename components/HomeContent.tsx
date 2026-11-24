@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import StatNumber from "@/components/StatNumber";
 import { stats, statText, type StatFact } from "@/lib/business-facts";
 import { type FaqItem } from "@/lib/faq";
@@ -131,8 +131,8 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
             alt="TowingNo.1 tow truck responding to an emergency call in Surrey BC"
             fill
             className="object-cover object-[center_60%]"
-            priority
-            quality={90}
+            loading="eager"
+            quality={75}
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-navy-950/55" />
@@ -151,16 +151,14 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
                 BC · Serving the Lower Mainland
               </motion.span>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 22 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              {/* A-010: the h1 is the LCP element; it renders visible in the server HTML (no entrance fade). */}
+              <h1
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.06] tracking-tight mb-6 [text-shadow:0_2px_24px_rgba(0,0,0,0.75)]"
               >
                 24/7 Tow Truck{" "}
                 <span className="text-amber-400 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">Surrey &amp; Lower Mainland</span>
                 <br />Emergency Roadside Assistance
-              </motion.h1>
+              </h1>
 
               <motion.p
                 id="hero-summary"
@@ -236,8 +234,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
                   alt="TowingNo.1 tow truck on the road in Surrey BC"
                   fill
                   className="object-cover object-center"
-                  priority
-                  quality={90}
+                  quality={75}
                   sizes="100vw"
                 />
               </motion.div>
@@ -635,6 +632,7 @@ function FaqSection({ faq }: { faq: FaqItem[] }) {
                     onClick={() => setOpenIndex(isOpen ? null : i)}
                     className="w-full flex items-center justify-between gap-6 py-5 text-left group"
                     aria-expanded={isOpen}
+                    aria-controls={`home-faq-answer-${i}`}
                   >
                     <span className={`text-[15px] font-semibold leading-snug transition-colors duration-200 ${
                       isOpen ? "text-amber-500" : "text-gray-900 group-hover:text-amber-500"
@@ -646,32 +644,28 @@ function FaqSection({ faq }: { faq: FaqItem[] }) {
                         ? "bg-amber-400 border-amber-400 text-gray-900"
                         : "border-slate-200 text-slate-400 group-hover:border-amber-400 group-hover:text-amber-500"
                     }`} aria-hidden="true">
-                      <motion.svg
-                        animate={{ rotate: isOpen ? 45 : 0 }}
-                        transition={{ duration: 0.22, ease: "easeInOut" }}
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5"
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        className={`w-3.5 h-3.5 transition-transform duration-[220ms] ease-in-out ${isOpen ? "rotate-45" : ""}`}
                       >
                         <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                      </motion.svg>
+                      </svg>
                     </span>
                   </button>
 
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        key="answer"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <p className="pb-5 text-[14.5px] text-gray-500 leading-relaxed pr-12">
-                          {item.a}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {/* A-008: the answer is always in the server HTML; closed panels collapse to
+                      0 height with CSS (grid-rows 0fr) and are hidden from assistive tech. */}
+                  <div
+                    id={`home-faq-answer-${i}`}
+                    aria-hidden={!isOpen}
+                    className={`grid transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                  >
+                    <div className="overflow-hidden min-h-0">
+                      <p className="pb-5 text-[14.5px] text-gray-500 leading-relaxed pr-12">
+                        {item.a}
+                      </p>
+                    </div>
+                  </div>
                 </motion.div>
               );
             })}

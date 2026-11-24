@@ -232,7 +232,8 @@ export default function CrossBorderTowingPage() {
                 height={837}
                 className="w-full h-auto rounded-2xl shadow-2xl border border-white/10"
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                priority
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </div>

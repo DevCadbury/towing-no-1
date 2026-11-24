@@ -1,19 +1,19 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+
+// Server component. The card's entrance (opacity 0 -> 1, y 20px -> 0, 0.6 s) is a CSS animation, so the
+// root not-found boundary no longer pulls framer-motion into every page's client chunks (A-009, D-091).
+const ENTER_KEYFRAMES = "@keyframes notfound-enter{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}";
 
 export default function NotFound() {
   return (
     <div className="min-h-[80vh] flex items-center justify-center section-padding relative overflow-hidden bg-slate-50">
+      <style>{ENTER_KEYFRAMES}</style>
       <div className="absolute -top-24 -left-20 w-[360px] h-[360px] bg-amber-500/10 blur-[100px] rounded-full" />
       <div className="absolute -bottom-24 -right-24 w-[420px] h-[420px] bg-sky-500/10 blur-[120px] rounded-full" />
 
       <div className="container-custom relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+        <div
+          style={{ animation: "notfound-enter 0.6s ease-out backwards" }}
           className="max-w-3xl mx-auto bg-white border border-slate-200/80 rounded-3xl shadow-xl p-8 md:p-12"
         >
           <p className="text-xs uppercase tracking-[0.18em] font-semibold text-amber-500 mb-3">Dispatch Error 404</p>
@@ -53,7 +53,7 @@ export default function NotFound() {
           </div>
 
           <p className="text-xs text-slate-500 mt-6">Fast dispatch across Vancouver, Surrey, Burnaby, Richmond, Coquitlam, Langley, and nearby BC cities.</p>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

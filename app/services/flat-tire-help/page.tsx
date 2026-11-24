@@ -112,7 +112,8 @@ export default function FlatTireHelpPage() {
           alt="Flat tire roadside assistance: technician helping a driver with a flat tire"
           fill
           className="object-cover opacity-30"
-          priority
+          loading="eager"
+          fetchPriority="high"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-navy-950/20" />

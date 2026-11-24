@@ -157,7 +157,7 @@ export default function Services() {
 
       {/* Hero */}
       <section className="relative overflow-hidden text-white pt-[76px]">
-        <Image src="/service.jpg" alt="TowingNo.1 towing and roadside assistance services in Surrey BC" fill className="object-cover object-center" priority sizes="100vw" />
+        <Image src="/service.jpg" alt="TowingNo.1 towing and roadside assistance services in Surrey BC" fill className="object-cover object-center" loading="eager" fetchPriority="high" sizes="100vw" />
         <div className="absolute inset-0 bg-black/62" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
         <div className="relative z-10 container-custom py-12 md:py-16">

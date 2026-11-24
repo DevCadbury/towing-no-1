@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Script from "next/script";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import PhoneField from "@/components/PhoneField";
 import { trackLead } from "@/lib/analytics";
@@ -176,7 +176,8 @@ export default function ContactContent() {
             fill
             className="object-cover object-top md:object-center opacity-25"
             sizes="100vw"
-            priority
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/50 to-navy-950" />
           <div className="absolute bottom-0 left-[30%] w-[400px] h-[400px] bg-amber-500/8 blur-[100px] rounded-full" />
@@ -345,9 +346,10 @@ export default function ContactContent() {
             </motion.div>
 
             {/* Contact Info */}
+            {/* A-013: vertical entrance offset; the former x: 30 pushed scrollWidth past 390 px. */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-8"
@@ -447,31 +449,29 @@ export default function ContactContent() {
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between p-5 text-left"
+                  aria-expanded={openFaq === i}
+                  aria-controls={`contact-faq-answer-${i}`}
                 >
                   <h3 className="font-bold text-navy-900 pr-4">{faq.q}</h3>
-                  <motion.span
-                    animate={{ rotate: openFaq === i ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex-shrink-0 text-amber-500"
+                  <span
+                    className={`flex-shrink-0 text-amber-500 transition-transform duration-300 ${openFaq === i ? "rotate-180" : ""}`}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
-                  </motion.span>
+                  </span>
                 </button>
-                <AnimatePresence>
-                  {openFaq === i && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <p className="px-5 pb-5 text-slate-500 leading-relaxed">{faq.a}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {/* A-008: the answer is always in the server HTML; closed panels collapse to
+                    0 height with CSS (grid-rows 0fr) and are hidden from assistive tech. */}
+                <div
+                  id={`contact-faq-answer-${i}`}
+                  aria-hidden={openFaq !== i}
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ${openFaq === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                >
+                  <div className="overflow-hidden min-h-0">
+                    <p className="px-5 pb-5 text-slate-500 leading-relaxed">{faq.a}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

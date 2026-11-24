@@ -9,18 +9,21 @@ export default function manifest(): MetadataRoute.Manifest {
     display: 'standalone',
     background_color: '#ffffff',
     theme_color: '#dc2626',
+    // A-012: the existing square app icons (app/icon.png 128x128,
+    // app/apple-icon.png 180x180) with their real sizes. /logo.png is 684x365
+    // and was fetched at High priority through these entries.
     icons: [
       {
-        src: '/logo.png',
-        sizes: '192x192',
+        src: '/icon.png',
+        sizes: '128x128',
         type: 'image/png',
         purpose: 'any',
       },
       {
-        src: '/logo.png',
-        sizes: '512x512',
+        src: '/apple-icon.png',
+        sizes: '180x180',
         type: 'image/png',
-        purpose: 'maskable',
+        purpose: 'any',
       },
     ],
   }
