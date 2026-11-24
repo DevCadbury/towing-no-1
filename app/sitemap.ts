@@ -1,57 +1,114 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog-posts";
 import { serviceAreas } from "@/lib/service-areas";
+import { postDateISO } from "@/lib/post-dates";
+
+/**
+ * Fixed <lastmod> per route: the date of the last commit that changed the
+ * route's own source files (`git log -1 --format=%cs -- <files>`), so the
+ * sitemap no longer reports the build time on every deploy. Update the date
+ * of a route when its content changes.
+ *
+ * Source files per route (read 2026-11-24 at 96c9dd9):
+ * - `/` app/page.tsx, components/HomeContent.tsx
+ * - `/about` app/about/page.tsx, components/AboutContent.tsx
+ * - `/contact` app/contact/page.tsx, components/ContactContent.tsx
+ * - `/services`, `/blog`, `/locations`, `/privacy`, `/terms`, `/services/<slug>`:
+ *   the route's page.tsx
+ * - `/locations/<city>` app/locations/[city]/page.tsx, lib/service-areas.ts
+ *   (plus components/SurreyPage.tsx for surrey, components/LangleyPage.tsx
+ *   for langley)
+ */
+const ROUTE_LASTMOD: Record<string, string> = {
+  "/": "2026-10-29",
+  "/services": "2026-10-29",
+  "/about": "2026-10-29",
+  "/contact": "2026-10-29",
+  "/blog": "2026-10-29",
+  "/locations": "2026-10-29",
+  "/privacy": "2026-10-29",
+  "/terms": "2026-10-29",
+  "/services/emergency-towing": "2026-10-29",
+  "/services/battery-boost": "2026-10-29",
+  "/services/lockout-service": "2026-10-29",
+  "/services/flat-tire-help": "2026-10-29",
+  "/services/fuel-delivery": "2026-10-29",
+  "/services/winching-extraction": "2026-10-29",
+  "/services/vehicle-transport": "2026-10-29",
+  "/services/accident-recovery": "2026-10-29",
+  "/services/roadside-assistance": "2026-10-29",
+  "/services/cross-border-towing": "2026-10-29",
+  "/locations/surrey": "2026-10-29",
+  "/locations/langley": "2026-10-29",
+  "/locations/burnaby": "2026-10-29",
+  "/locations/coquitlam": "2026-10-29",
+  "/locations/richmond": "2026-10-29",
+  "/locations/white-rock": "2026-10-29",
+  "/locations/vancouver": "2026-10-29",
+  "/locations/delta": "2026-10-29",
+  "/locations/maple-ridge": "2026-10-29",
+  "/locations/cloverdale": "2026-10-29",
+  "/locations/south-surrey": "2026-10-29",
+  "/locations/aldergrove": "2026-10-29",
+};
+
+// Used only for a route missing from ROUTE_LASTMOD: the latest date in the
+// map, never the build time.
+const FALLBACK_LASTMOD = Object.values(ROUTE_LASTMOD).sort().reverse()[0];
+
+function lastmodFor(path: string): string {
+  return ROUTE_LASTMOD[path] ?? FALLBACK_LASTMOD;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.towingno1.com";
-  const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: now,
+      lastModified: lastmodFor("/"),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified: now,
+      lastModified: lastmodFor("/services"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: now,
+      lastModified: lastmodFor("/about"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: now,
+      lastModified: lastmodFor("/contact"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: now,
+      lastModified: lastmodFor("/blog"),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/locations`,
-      lastModified: now,
+      lastModified: lastmodFor("/locations"),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: now,
+      lastModified: lastmodFor("/privacy"),
       changeFrequency: "yearly",
       priority: 0.4,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: now,
+      lastModified: lastmodFor("/terms"),
       changeFrequency: "yearly",
       priority: 0.4,
     },
@@ -71,27 +128,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "cross-border-towing",
   ].map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
-    lastModified: now,
+    lastModified: lastmodFor(`/services/${slug}`),
     changeFrequency: "monthly" as const,
     priority: 0.85,
   }));
 
-  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => {
-    const parsedDate = new Date(post.date);
-    return {
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: Number.isNaN(parsedDate.getTime()) ? now : parsedDate,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    };
-  });
+  // Same helper as the post's BlogPosting/Open Graph dates (lib/post-dates.ts):
+  // calendar date at 12:00 UTC, future dates clamped; updatedDate wins.
+  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: postDateISO(post.updatedDate ?? post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
 
   // serviceAreas is ordered by AREA_PRIORITY (lib/service-areas.ts). Reflect that
   // ranking in the sitemap priority with a gentle 0.90 → 0.70 gradient so the
   // highest-priority cities carry the strongest signal.
   const locationRoutes: MetadataRoute.Sitemap = serviceAreas.map((area, index) => ({
     url: `${baseUrl}/locations/${area.slug}`,
-    lastModified: now,
+    lastModified: lastmodFor(`/locations/${area.slug}`),
     changeFrequency: "weekly" as const,
     priority: Math.max(0.7, Math.round((0.9 - index * 0.02) * 100) / 100),
   }));

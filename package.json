@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "test": "vitest run",
     "seo:check": "node scripts/seo-check.mjs",
     "seo:guard": "node scripts/claims-check.mjs",

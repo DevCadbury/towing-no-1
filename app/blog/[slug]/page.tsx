@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { blogPosts, getPostBySlug } from "@/lib/blog-posts";
+import { postDateISO } from "@/lib/post-dates";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -11,14 +12,12 @@ interface Props {
 
 /**
  * Convert a human date string ("February 10, 2026") to an ISO timestamp for
- * schema/OG. Invalid dates fall back to now; FUTURE dates are clamped to now so
- * a placeholder/typo can never ship a future publish/modified timestamp.
+ * schema/OG. Parsed as a calendar date at 12:00 UTC so the result does not
+ * depend on the build machine's time zone (lib/post-dates.ts). Invalid dates
+ * fall back to now; FUTURE dates are clamped to now.
  */
 function toISODate(dateStr: string): string {
-  const d = new Date(dateStr);
-  const now = new Date();
-  if (Number.isNaN(d.getTime())) return now.toISOString();
-  return (d.getTime() > now.getTime() ? now : d).toISOString();
+  return postDateISO(dateStr);
 }
 
 // Topic → service link map, so each post's "Related Services" block is
