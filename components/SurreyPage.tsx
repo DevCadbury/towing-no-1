@@ -7,7 +7,7 @@ function CallCTA({ label = "Need a Tow Truck in Surrey?" }: { label?: string }) 
       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400 mb-2">24/7 Emergency Towing &amp; Roadside Assistance</p>
       <h3 className="text-2xl md:text-3xl font-extrabold mb-3">{label}</h3>
       <p className="text-slate-300 text-sm mb-6 max-w-sm mx-auto">
-        Get help from TowingNo.1. We dispatch immediately, with an upfront quote before any truck rolls.
+        Get help from TowingNo.1. We send the nearest available driver, with a free quote wherever possible before dispatch.
       </p>
       <a
         href="tel:+17788380014"
@@ -36,11 +36,11 @@ function Check() {
 const faq = [
   {
     q: "How quickly can a tow truck reach me in Surrey?",
-    a: "We dispatch the nearest available driver the moment you call (778) 838-0014 and give you a live ETA before you commit. Because we stage drivers across Surrey rather than running from a single yard, help is usually close by wherever you are in the city.",
+    a: "We dispatch the nearest available driver when you call (778) 838-0014. Give the dispatcher your nearest major intersection, such as King George and 104th or Fraser Highway and 152nd. Fast local dispatch; arrival times vary by location and road conditions.",
   },
   {
     q: "Do you provide 24/7 towing in Surrey?",
-    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week in Surrey, including evenings, weekends, and all statutory holidays. Emergencies don't follow business hours, and neither do we.",
+    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week in Surrey, including evenings and weekends. Emergencies don't follow business hours, and neither do we.",
   },
   {
     q: "Do you provide roadside assistance in Surrey?",
@@ -48,7 +48,7 @@ const faq = [
   },
   {
     q: "Do you tow cars after accidents in Surrey?",
-    a: "Yes. Our accident recovery service handles collision scenes throughout Surrey. We transport damaged vehicles safely to any repair shop, dealership, or storage facility you choose, and provide documentation that aligns with ICBC claims.",
+    a: "Yes. Our accident recovery service handles collision scenes throughout Surrey. We transport damaged vehicles to the repair shop, dealership, or address you choose.",
   },
   {
     q: "What areas of Surrey do you serve?",
@@ -56,7 +56,7 @@ const faq = [
   },
   {
     q: "How much does towing cost in Surrey?",
-    a: "We use flat rate pricing based on your vehicle type and the distance involved. There is no meter running and no hidden fees. Call (778) 838-0014 for an upfront quote before we dispatch, so you know the exact price before a truck rolls.",
+    a: "Prices are not listed on this site because every call is different. Call (778) 838-0014, tell the dispatcher where you are in Surrey, your vehicle, and the help you need, and ask about the cost before anyone is sent.",
   },
 ];
 
@@ -78,10 +78,10 @@ export default function SurreyPage() {
 
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400 mb-3">Surrey, BC · Available Now</p>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5">
-            Tow Truck Surrey, BC: 24/7 Towing Service
+            24/7 Towing in Guildford, Newton, Fleetwood and Across Surrey, BC
           </h1>
           <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl mb-8">
-            TowingNo.1 provides 24/7 emergency towing and roadside assistance in Surrey, BC. We help drivers with emergency towing, vehicle recovery, battery boosts, flat tires, car lockouts, fuel delivery, and accident recovery throughout Surrey and surrounding communities.
+            From the Guildford Town Centre parkades and Whalley&apos;s City Centre to Newton, Fleetwood, Cloverdale and the Highway 99 corridor, TowingNo.1 provides 24/7 emergency towing and roadside assistance: vehicle recovery, battery boosts, flat tires, car lockouts, fuel delivery, and accident recovery along King George Boulevard, 152nd Street and Fraser Highway.
           </p>
 
           {/* Top CTA */}
@@ -93,7 +93,7 @@ export default function SurreyPage() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call 778-838-0014 for a Free Quote
+              Call 778-838-0014 for a Quote
             </a>
             <Link
               href="/contact"
@@ -105,7 +105,7 @@ export default function SurreyPage() {
 
           {/* Quick trust signals */}
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-300">
-            {["Available 24/7 including holidays", "Free upfront quote before dispatch", "Flat rate pricing with no hidden fees", "Licensed & insured in BC", "All vehicle types including EVs"].map((item) => (
+            {["Available 24/7", "Free quote wherever possible", "Nearest available driver", "All vehicle types including EVs"].map((item) => (
               <li key={item} className="flex items-center gap-1.5">
                 <span className="text-amber-400" aria-hidden="true">✓</span> {item}
               </li>
@@ -125,10 +125,10 @@ export default function SurreyPage() {
               {/* Intro */}
               <div>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Surrey is the busiest territory we cover, from the big box stores of Guildford down through Newton, out to the Cloverdale fairgrounds, and along Highway 99, where traffic moves fast. Breakdowns happen in every kind of setting: packed mall parkades, quiet residential streets off 152nd Street, and live highway shoulders. We keep drivers distributed across Surrey so our trucks reach most calls quickly, wherever you are in the city.
+                  Surrey is the busiest territory we cover, from the big box stores of Guildford down through Newton, out to the Cloverdale fairgrounds, and along Highway 99, where traffic moves fast. Breakdowns happen in every kind of setting: packed mall parkades, quiet residential streets off 152nd Street, and live highway shoulders.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  Call <a href="tel:+17788380014" className="font-semibold text-amber-600 hover:text-amber-700">(778) 838-0014</a> and give us your nearest major intersection. We will route the closest available driver straight to you, give you a firm flat rate price, and confirm your ETA before you hang up.
+                  Call <a href="tel:+17788380014" className="font-semibold text-amber-600 hover:text-amber-700">(778) 838-0014</a> and give us your nearest major intersection. We will send the nearest available driver, give you a quote wherever possible before dispatch, and tell you the estimated arrival time before you hang up.
                 </p>
               </div>
 
@@ -136,7 +136,7 @@ export default function SurreyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Emergency Towing in Surrey</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  When your vehicle breaks down on Highway 99, King George Boulevard, Fraser Highway, or anywhere in Surrey, we dispatch the nearest driver immediately. We operate flatbed and wheel lift trucks 24/7, including all statutory holidays, and every tow comes with an upfront flat rate quote before dispatch.
+                  When your vehicle breaks down on Highway 99, King George Boulevard, Fraser Highway, or anywhere in Surrey, we dispatch the nearest available driver. Dispatch runs 24/7, we provide flatbed and wheel-lift towing, and wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the price may be adjusted, and the driver explains any change before proceeding.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Our drivers are trained to work safely on live highway shoulders, in underground parkades, and on the steep grades of South Surrey. Whether your car has died in a parkade at Guildford Town Centre, stalled on the Highway 99 shoulder, or needs a tow after a collision, we get there fast and handle your vehicle with professional care from pickup to delivery.
@@ -148,7 +148,7 @@ export default function SurreyPage() {
                     "All wheel drive & 4×4",
                     "Vehicles that are damaged or won't run",
                     "Tow to any shop, dealership, or home",
-                    "Wheel lift and flatbed trucks available",
+                    "Wheel-lift and flatbed towing",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700">
                       <Check />
@@ -167,7 +167,7 @@ export default function SurreyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Tow Truck Services in Surrey</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  We run both wheel lift and flatbed trucks across Surrey, which lets us match the right method to your vehicle rather than forcing a single approach onto every job. Flatbeds carry all wheel drive cars, electric vehicles, low clearance models, and anything with crash or drivetrain damage. Wheel lift trucks handle quick, economical moves for standard front wheel drive or rear wheel drive vehicles.
+                  We provide both wheel-lift and flatbed towing across Surrey, which lets us match the right method to your vehicle rather than forcing a single approach onto every job. Flatbeds carry all wheel drive cars, electric vehicles, low clearance models, and anything with crash or drivetrain damage. Wheel lift trucks handle quick, economical moves for standard front wheel drive or rear wheel drive vehicles.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   When you call, tell the dispatcher your vehicle's make, drive type, and whether it still rolls and steers. That one detail lets us send the correct truck on the first trip, which protects your transmission and bumpers and keeps your wait short.
@@ -184,10 +184,10 @@ export default function SurreyPage() {
                   {[
                     { href: "/services/battery-boost",       label: "Battery Boost & Jump Start",  desc: "Dead battery? We jump start and test on the spot." },
                     { href: "/services/flat-tire-help",       label: "Flat Tire Help",               desc: "We fit your spare or tow you to the nearest shop." },
-                    { href: "/services/lockout-service",      label: "Car Lockout Service",          desc: "Keys locked in? We open your car without damage." },
+                    { href: "/services/lockout-service",      label: "Car Lockout Service",          desc: "Keys locked in? We use careful entry techniques." },
                     { href: "/services/fuel-delivery",        label: "Fuel Delivery",                desc: "Gas or diesel delivered to your location." },
                     { href: "/services/winching-extraction",  label: "Winching & Extraction",        desc: "Stuck in a ditch, mud, or snow? We pull you out." },
-                    { href: "/services/emergency-towing",     label: "Emergency Towing",             desc: "Full flatbed and wheel lift towing, 24/7." },
+                    { href: "/services/emergency-towing",     label: "Emergency Towing",             desc: "Flatbed and wheel-lift towing." },
                   ].map((svc) => (
                     <Link
                       key={svc.href}
@@ -240,10 +240,10 @@ export default function SurreyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Car Lockout Service</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Locking your keys inside your car in a Surrey parking lot or on the roadside is stressful, especially at night or in bad weather. Our lockout technicians open your vehicle safely without causing any damage to the lock, door, or window, using professional grade tools on all makes and models including modern vehicles with keyless entry.
+                  Locking your keys inside your car in a Surrey parking lot or on the roadside is stressful, especially at night or in bad weather. Our lockout technicians use careful entry techniques and professional grade tools to open your vehicle, on all makes and models including modern vehicles with keyless entry.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  Guildford Town Centre, Central City, and the Newton Exchange area are our most frequent Surrey lockout locations. We respond the same way whether you are in a tight parkade or parked curbside: quickly, carefully, and without leaving a mark.
+                  Lockouts come up often around Guildford Town Centre, Central City, and the Newton Exchange area. We respond the same way whether you are in a tight parkade or parked curbside: quickly and carefully.
                 </p>
                 <p className="mt-4 text-sm">
                   <Link href="/services/lockout-service" className="font-semibold text-amber-600 hover:text-amber-700">
@@ -256,13 +256,13 @@ export default function SurreyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Accident Towing &amp; Vehicle Recovery</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  After a collision in Surrey, your priority is safety. Once everyone is clear, call us and we dispatch a trained recovery crew to handle the scene professionally and transport your damaged vehicle to any repair shop, ICBC facility, or storage yard you choose across the Lower Mainland.
+                  After a collision in Surrey, your priority is safety. Once everyone is clear, call us and we dispatch a trained recovery crew to handle the scene professionally and transport your damaged vehicle to the repair shop, ICBC facility, or storage facility you choose across the Lower Mainland.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   We use proper securing techniques and equipment to prevent additional damage during transport. Skids and recovery boards protect the undercarriage, and we secure at the frame rather than damaged body panels. Even if your car appears driveable after an accident, hidden structural damage can make it unsafe, and we will tell you plainly what we observe.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  We provide clear documentation of the recovery and delivery to support your ICBC or private insurance claim.
+                  We can coordinate with your insurer on where the vehicle goes.
                 </p>
                 <p className="mt-4 text-sm">
                   <Link href="/services/accident-recovery" className="font-semibold text-amber-600 hover:text-amber-700">
@@ -278,7 +278,7 @@ export default function SurreyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Our Surrey Service Areas</h2>
                 <p className="text-slate-600 leading-relaxed mb-5">
-                  We cover all of Surrey: every neighbourhood, highway, and back road. Our most frequent areas include:
+                  We cover all of Surrey: every neighbourhood, highway, and back road. Neighbourhoods we cover include:
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
                   {[
@@ -317,20 +317,16 @@ export default function SurreyPage() {
                       body: "Our drivers know the difference between the Guildford slip lanes and the Newton Exchange bus loops, so they don't waste time circling. That local knowledge matters most during rush hour on King George Boulevard or when a collision closes a lane on Highway 99.",
                     },
                     {
-                      title: "Upfront flat rate pricing with no surprises",
-                      body: "Every Surrey job starts with a firm flat rate quote before a truck rolls. No meter running while you wait, no hidden fees, no surprise charges on arrival. You hear the exact price before any truck rolls.",
+                      title: "A quote before dispatch, wherever possible",
+                      body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the price may be adjusted, and the driver explains any change before proceeding.",
                     },
                     {
                       title: "The right truck for your vehicle",
-                      body: "We run wheel lift and flatbed trucks. Flatbeds for EVs, all wheel drive cars, and vehicles damaged in accidents; wheel lift trucks for quick economical moves. We send the right equipment on the first trip.",
-                    },
-                    {
-                      title: "Licensed & insured in BC",
-                      body: "TowingNo.1 is fully licensed and insured to operate in British Columbia. Every operator is trained to work safely on live highway shoulders, in underground parkades, and on the difficult terrain of Surrey and the Lower Mainland.",
+                      body: "We provide wheel-lift and flatbed towing. Flatbeds for EVs, all wheel drive cars, and vehicles damaged in accidents; wheel-lift towing for quick economical moves. We aim to send the right equipment on the first trip.",
                     },
                     {
                       title: "Available every hour of every day",
-                      body: "We operate 24 hours a day, 7 days a week, including all statutory holidays. On evenings, weekends, and long weekends, the same team is available whenever you need us.",
+                      body: "We operate 24 hours a day, 7 days a week. Evenings and weekends are covered the same way as a weekday afternoon.",
                     },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
@@ -361,7 +357,7 @@ export default function SurreyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Call TowingNo.1 Today</h2>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Stranded somewhere in Surrey? Call us now and talk to dispatch directly, with no bots, no hold music, and no runaround. We give you an upfront quote and confirm the nearest available driver immediately.
+                  Stranded somewhere in Surrey? Call us now and talk to dispatch directly, with no bots, no hold music, and no runaround. Wherever possible we give you a quote before dispatch, and we send the nearest available driver.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-6">
                   TowingNo.1 is a local towing company serving Surrey, South Surrey, Cloverdale, and the wider Lower Mainland. Whether you need a tow truck at 2&nbsp;a.m. or a quick battery boost in a parking lot, you reach a real dispatcher who gets the right help to you without delay.
@@ -389,7 +385,7 @@ export default function SurreyPage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now · Surrey, BC</p>
                 <h3 className="text-xl font-extrabold mb-1">Need a Tow Truck?</h3>
                 <p className="text-slate-300 text-sm mb-5">
-                  24/7 emergency towing &amp; roadside help. Free upfront quote before dispatch.
+                  24/7 emergency towing &amp; roadside help. Free quote wherever possible, before dispatch.
                 </p>
                 <a
                   href="tel:+17788380014"
@@ -407,10 +403,9 @@ export default function SurreyPage() {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flat rate, no hidden fees</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured in BC</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Available 24/7</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> All vehicle types</li>
                 </ul>
               </div>

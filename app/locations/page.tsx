@@ -5,7 +5,7 @@ import { serviceAreas } from "@/lib/service-areas";
 export const metadata: Metadata = {
   title: "Tow Truck Service Areas | Lower Mainland BC",
   description:
-    "TowingNo.1 covers Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, and the wider Lower Mainland. 24/7 dispatch with upfront pricing.",
+    "TowingNo.1 covers Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, and the wider Lower Mainland. 24/7 dispatch.",
   alternates: {
     canonical: "https://www.towingno1.com/locations",
   },
@@ -15,12 +15,22 @@ export const metadata: Metadata = {
     title: "Tow Truck Service Areas | Lower Mainland BC",
     description:
       "Local towing and roadside support pages for Surrey, Langley, Burnaby, Coquitlam, Richmond, White Rock, Delta, Maple Ridge, and Vancouver.",
+    locale: "en_CA",
+    images: [
+      {
+        url: "https://www.towingno1.com/preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TowingNo.1 | Towing & Roadside Assistance in BC",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Tow Truck Service Areas | Lower Mainland BC",
     description:
-      "Find local 24/7 towing coverage across Surrey and the Lower Mainland with fast dispatch and upfront quotes.",
+      "Find local 24/7 towing coverage across Surrey and the Lower Mainland with fast dispatch.",
+    images: ["https://www.towingno1.com/preview.jpg"],
   },
 };
 
@@ -66,7 +76,7 @@ export default function LocationsPage() {
               24/7 Tow Truck Coverage Across Surrey and the Lower Mainland
             </h1>
             <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-              Looking for towing near you? Choose your city below to see local service coverage, common response zones, major highways covered, and direct dispatch support. We serve 12 communities across the Lower Mainland with the same 24/7 response and upfront flat rate pricing.
+              Looking for towing near you? Choose your city below to see local service coverage, common response zones, major highways covered, and direct dispatch support. We serve 12 communities across the Lower Mainland with the same 24/7 dispatch.
             </p>
           </div>
 
@@ -79,9 +89,9 @@ export default function LocationsPage() {
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.15em] text-amber-500 mb-2">{area.city}</p>
                 <h2 className="text-xl font-extrabold text-navy-900 leading-snug mb-3 group-hover:text-amber-600 transition-colors">
-                  {area.headline}
+                  {area.city} Towing &amp; Roadside Help
                 </h2>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">{area.summary}</p>
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">{area.cardText}</p>
                 <p className="text-xs text-slate-500 mb-2">Popular areas: {area.neighborhoods.slice(0, 3).join(", ")}</p>
                 {area.highways.length > 0 && (
                   <p className="text-xs text-slate-400">Routes: {area.highways.slice(0, 2).join(", ")}</p>
@@ -93,13 +103,13 @@ export default function LocationsPage() {
           <div className="mt-12 bg-navy-950 rounded-2xl p-7 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <h3 className="text-2xl font-extrabold mb-1">Need Help Right Now?</h3>
-              <p className="text-slate-300">Call dispatch for immediate response and a free quote before dispatch.</p>
+              <p className="text-slate-300">Call dispatch 24/7. Free quote wherever possible, before dispatch.</p>
             </div>
             <a href="tel:+17788380014" className="btn-call-highlight inline-flex items-center justify-center gap-2 rounded-xl py-3.5 px-7 w-full md:w-auto">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call Now for a Free Quote
+              Call Now for a Quote
             </a>
           </div>
         </div>

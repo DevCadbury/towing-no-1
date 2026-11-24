@@ -11,6 +11,22 @@ interface Props {
 
 export const dynamicParams = false;
 
+// Child openGraph/twitter objects replace the layout's (shallow merge), so the
+// image and locale are set here (ACTION-PLAN A-045, same pattern as A-022).
+// No siteName: CR-07c is not activated (F-01 CONFLICT, D-015).
+const ogShared = {
+  locale: "en_CA",
+  images: [
+    {
+      url: "https://www.towingno1.com/preview.jpg",
+      width: 1200,
+      height: 630,
+      alt: "TowingNo.1 | Towing & Roadside Assistance in BC",
+    },
+  ],
+};
+const twitterShared = { images: ["https://www.towingno1.com/preview.jpg"] };
+
 export function generateStaticParams() {
   return serviceAreas.map((area) => ({ city: area.slug }));
 }
@@ -25,29 +41,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const canonical = `https://www.towingno1.com/locations/${area.slug}`;
 
-  // Surrey gets its own optimised title + description targeting the full
-  // "towing surrey" keyword cluster identified in the SERP brief.
+  // Surrey: `/` targets the Surrey head terms (D-012), so this page uses
+  // neighbourhood and local-route wording instead (ACTION-PLAN A-044).
   if (area.slug === "surrey") {
     return {
       title: {
-        absolute: "Towing Surrey BC | 24/7 Tow Truck | TowingNo.1",
+        absolute: "Surrey Neighbourhood Towing: Guildford, Newton, Whalley",
       },
       description:
-        "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery across all Surrey neighbourhoods. Call 778-838-0014.",
+        "24/7 towing and roadside help in Guildford, Newton, Fleetwood and Whalley, along King George Boulevard and Highway 99 in Surrey, BC. Call 778-838-0014.",
       alternates: { canonical },
       keywords: [],
       openGraph: {
         type: "website",
         url: canonical,
-        title: "Towing Surrey BC | 24/7 Tow Truck & Roadside Assistance",
+        title: "Surrey Neighbourhood Towing: Guildford, Newton, Whalley",
         description:
-          "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+          "24/7 towing and roadside help in Guildford, Newton, Fleetwood and Whalley, along King George Boulevard and Highway 99 in Surrey, BC. Call 778-838-0014.",
+        ...ogShared,
       },
       twitter: {
         card: "summary_large_image",
-        title: "Towing Surrey BC | 24/7 Tow Truck & Roadside Assistance",
+        title: "Surrey Neighbourhood Towing: Guildford, Newton, Whalley",
         description:
-          "24/7 towing in Surrey, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+          "24/7 towing and roadside help in Guildford, Newton, Fleetwood and Whalley, along King George Boulevard and Highway 99 in Surrey, BC. Call 778-838-0014.",
+        ...twitterShared,
       },
     };
   }
@@ -69,12 +87,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: "Towing Langley BC | 24/7 Tow Truck & Roadside Assistance",
         description:
           "24/7 towing in Langley, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+        ...ogShared,
       },
       twitter: {
         card: "summary_large_image",
         title: "Towing Langley BC | 24/7 Tow Truck & Roadside Assistance",
         description:
           "24/7 towing in Langley, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+        ...twitterShared,
       },
     };
   }
@@ -101,12 +121,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       url: canonical,
       title: `Tow Truck ${area.city} | 24/7 Emergency Towing & Roadside Assistance`,
-      description: `24/7 tow truck and roadside service in ${area.city} with fast dispatch and transparent rates. Call (778) 838-0014.`,
+      description: `24/7 tow truck and roadside service in ${area.city} with fast dispatch. Call (778) 838-0014.`,
+      ...ogShared,
     },
     twitter: {
       card: "summary_large_image",
       title: `Tow Truck ${area.city} | 24/7 Emergency Towing & Roadside Assistance`,
       description: `Fast dispatch in ${area.city} for towing, lockouts, flat tires, and roadside emergencies. Call (778) 838-0014.`,
+      ...twitterShared,
     },
   };
 }
@@ -248,7 +270,7 @@ export default async function ServiceAreaPage({ params }: Props) {
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="tel:+17788380014" className="btn-call-highlight inline-flex items-center justify-center gap-2 rounded-xl py-3.5 px-7 text-sm font-bold w-full sm:w-auto">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-              Call for a Free Quote
+              Call for a Quote
             </a>
             <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-3.5 px-7 rounded-xl text-sm border border-white/25 transition-all duration-200 w-full sm:w-auto">
               Request Online
@@ -320,7 +342,7 @@ export default async function ServiceAreaPage({ params }: Props) {
                     { href: "/services/emergency-towing", label: "24/7 Emergency Towing", desc: "Breakdown & collision towing" },
                     { href: "/services/battery-boost", label: "Battery Boost", desc: "Jump start with battery test" },
                     { href: "/services/flat-tire-help", label: "Flat Tire Help", desc: "Tire change or shop tow" },
-                    { href: "/services/lockout-service", label: "Lockout Service", desc: "Open your vehicle without damage" },
+                    { href: "/services/lockout-service", label: "Lockout Service", desc: "Careful entry techniques" },
                     { href: "/services/fuel-delivery", label: "Fuel Delivery", desc: "Gas or diesel delivered" },
                     { href: "/services/winching-extraction", label: "Winching & Extraction", desc: "Ditch, mud & snow recovery" },
                     { href: "/services/accident-recovery", label: "Accident Recovery", desc: "Towing after a collision" },
@@ -397,7 +419,7 @@ export default async function ServiceAreaPage({ params }: Props) {
               <div className="bg-navy-950 rounded-2xl p-6 text-white sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-1">Need a Tow Truck?</h3>
-                <p className="text-slate-300 text-sm mb-5">Free upfront quote before dispatch.</p>
+                <p className="text-slate-300 text-sm mb-5">Free quote wherever possible, before dispatch.</p>
                 <a href="tel:+17788380014" className="btn-call-highlight flex items-center justify-center gap-2 w-full rounded-xl py-3.5 px-5 text-sm font-bold">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   (778) 838-0014
@@ -407,9 +429,9 @@ export default async function ServiceAreaPage({ params }: Props) {
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Fast local dispatch</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Available 24/7</li>
                 </ul>
               </div>
 
