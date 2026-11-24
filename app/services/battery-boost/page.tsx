@@ -9,30 +9,22 @@ export const metadata: Metadata = {
     absolute: "Battery Boost & Jump Start | 24/7 Help | TowingNo.1",
   },
   description:
-    "24/7 battery boost and jump start service in Surrey and the Lower Mainland. Dead battery? TowingNo.1 dispatches a technician immediately. Call 778-838-0014.",
+    "24/7 battery boost and jump start service in Surrey, BC. Dead battery? TowingNo.1 sends the nearest available technician, 24/7. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/battery-boost" },
-  keywords: [
-    "battery boost Surrey",
-    "jump start service Surrey BC",
-    "dead battery roadside help Surrey",
-    "car battery boost Surrey",
-    "battery boost near me Surrey",
-    "jump start car Surrey",
-    "24/7 battery boost Lower Mainland",
-  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/battery-boost",
     title: "Battery Boost & Jump Start | 24/7 Help | TowingNo.1",
     description:
-      "24/7 battery boost and jump start service in Surrey and the Lower Mainland. Immediate dispatch, upfront pricing. Call 778-838-0014.",
+      "24/7 battery boost and jump start service in Surrey, BC. Call 778-838-0014 any time, day or night.",
+    locale: "en_CA",
     images: [{ url: "/image/Battery_Boost.png", alt: "Battery boost and jump start service by a TowingNo.1 technician" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Battery Boost & Jump Start | 24/7 Help | TowingNo.1",
     description:
-      "24/7 battery boost and jump start in Surrey and the Lower Mainland. Upfront pricing, immediate dispatch. Call 778-838-0014.",
+      "24/7 battery boost and jump start in Surrey, BC. Call 778-838-0014 any time.",
     images: ["/image/Battery_Boost.png"],
   },
 };
@@ -43,11 +35,11 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Can you provide a battery boost 24/7?",
-    a: "Yes. TowingNo.1 provides battery boost and jump start service 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer and send a technician.",
+    a: "Yes. TowingNo.1 provides battery boost and jump start service 24 hours a day, 7 days a week, including evenings and weekends. Call (778) 838-0014 at any hour and a dispatcher will answer and send a technician.",
   },
   {
     q: "Can you jump start a car with a completely dead battery?",
-    a: "Yes, in most cases. If the battery still has enough residual charge to accept a boost, we can get the engine running. After starting the vehicle, we test the battery and charging system to tell you whether the battery is healthy enough to hold a charge or needs replacement. If the vehicle will not start after a boost, we can arrange a tow to a shop.",
+    a: "Yes, in most cases. If the battery still has enough residual charge to accept a boost, we can get the engine running. If the vehicle will not start after a boost, we can arrange a tow to a shop.",
   },
   {
     q: "What should I do while waiting for roadside assistance?",
@@ -55,11 +47,11 @@ const faq: FaqItem[] = [
   },
   {
     q: "What if the vehicle still will not start after the boost?",
-    a: "If a boost does not get the engine running, or if the vehicle starts but the battery test reveals a serious fault with the battery or charging system, we will tell you plainly what we found. We can arrange a tow to a shop or dealership so the underlying fault can be properly diagnosed and repaired. A boost that doesn't hold usually means the battery, alternator, or another component needs replacement.",
+    a: "If a boost does not get the engine running, we will tell you plainly what we found. We can arrange a tow to a shop or dealership so the underlying fault can be properly diagnosed and repaired. A boost that doesn't hold usually means the battery, alternator, or another component needs replacement.",
   },
   {
     q: "What areas do you serve for battery boost?",
-    a: "Battery boost and jump start service is available wherever our trucks are staged across the Lower Mainland, from Surrey and Langley out to the rural roads near Aldergrove and Maple Ridge. Call (778) 838-0014 and a dispatcher will confirm coverage for your exact location before we send anyone.",
+    a: "We are based in Surrey, BC and send the nearest available driver. Call (778) 838-0014 and a dispatcher will confirm coverage for your exact location before anyone is sent.",
   },
 ];
 const faqSchema = faqPageSchema(faq);
@@ -202,7 +194,7 @@ export default function BatteryBoostPage() {
                     "Charging system check",
                     "Safe boosting procedures",
                     "All vehicle makes and models",
-                    "Available 24/7 including holidays",
+                    "Available 24/7",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm text-slate-700">
                       <span className="w-5 h-5 rounded-full bg-amber-400/20 border border-amber-400 flex items-center justify-center shrink-0" aria-hidden="true">
@@ -276,7 +268,7 @@ export default function BatteryBoostPage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014",           body: "A dispatcher answers 24/7. Tell them the vehicle will not start and describe your location: street address, nearest intersection, or parking facility name." },
                     { step: "2", title: "Location and situation confirmed", body: "We confirm your exact location and ask a few quick questions about the vehicle: make, model, and whether you can hear any response when you try to start it." },
-                    { step: "3", title: "Upfront quote provided",         body: "We give you a flat rate price for the battery boost before a technician is dispatched. You know the cost before anyone is sent." },
+                    { step: "3", title: "Quote provided, wherever possible", body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
                     { step: "4", title: "Technician dispatched",          body: "We send the nearest available technician with appropriate equipment for the job." },
                     { step: "5", title: "Jump start performed on site",   body: "The technician safely boosts your battery and starts the engine using professional equipment." },
                     { step: "6", title: "Battery and charging system tested", body: "After starting, the technician tests the battery voltage and charging output and tells you honestly whether the battery and alternator are in good condition or whether further action is needed." },
@@ -377,7 +369,7 @@ export default function BatteryBoostPage() {
               <div className="bg-navy-950 rounded-2xl p-6 text-white sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Dead Battery?</h3>
-                <p className="text-slate-300 text-sm mb-5">Call for 24/7 battery boost service. Free upfront quote before dispatch.</p>
+                <p className="text-slate-300 text-sm mb-5">Call for 24/7 battery boost service. Free quote wherever possible, before dispatch.</p>
                 <a
                   href="tel:+17788380014"
                   className="btn-call-highlight flex items-center justify-center gap-2 w-full rounded-xl py-3.5 px-5 text-sm font-bold"
@@ -391,10 +383,10 @@ export default function BatteryBoostPage() {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Battery test included</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> All vehicle types</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Battery and charging check</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
                 </ul>
               </div>
 

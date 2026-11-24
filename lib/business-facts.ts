@@ -91,11 +91,10 @@ export const address = {
 // The concrete served-city list lives in lib/service-areas.ts (each has a
 // location page). This is the human-facing region phrasing only.
 export const geo = {
-  // Register F-06 is UNVERIFIED. This status stays "verified" only as the
-  // recorded interim state of DECISION-LOG D-063 until the wave-3 content
-  // commit (A-034) removes the phrase from the last JSON-LD (FAQPage) text and
-  // flips it. Do not add this phrase to any JSON-LD.
-  region: fact("Surrey and the Lower Mainland", "verified", "Stated service region; interim state D-063 (register F-06 UNVERIFIED)"),
+  // Register F-06 is UNVERIFIED. The wave-3 content change (A-034, D-063)
+  // removed the phrase from the last JSON-LD (FAQPage) text and set this status
+  // to match the register. Do not add this phrase to any JSON-LD.
+  region: fact("Surrey and the Lower Mainland", "unverified", "Register F-06 UNVERIFIED: stated service region, single source (website); A-034, D-063"),
   province: fact("British Columbia", "verified", "Register F-05 VERIFIED: province of the verified locality Surrey, BC"),
 };
 

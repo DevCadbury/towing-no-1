@@ -8,32 +8,24 @@ export const metadata: Metadata = {
     absolute: "Roadside Assistance | 24/7 Help | TowingNo.1",
   },
   description:
-    "24/7 roadside assistance in Surrey and the Lower Mainland. Battery boost, flat tire help, lockout service, and fuel delivery. Call 778-838-0014.",
+    "24/7 roadside assistance in Surrey, BC. Battery boost, flat tire help, lockout service, and fuel delivery. Call 778-838-0014.",
   alternates: {
     canonical: "https://www.towingno1.com/services/roadside-assistance",
   },
-  keywords: [
-    "roadside assistance Surrey",
-    "24/7 roadside assistance Surrey BC",
-    "roadside assistance Lower Mainland",
-    "roadside help near me Surrey",
-    "emergency roadside service Surrey",
-    "on-site roadside assistance BC",
-    "roadside breakdown help Surrey",
-  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/roadside-assistance",
     title: "Roadside Assistance | 24/7 Help | TowingNo.1",
     description:
-      "24/7 roadside assistance in Surrey and the Lower Mainland. Battery boost, flat tire, lockout service, fuel delivery and breakdown help. Call 778-838-0014.",
+      "24/7 roadside assistance in Surrey, BC. Battery boost, flat tire, lockout service, fuel delivery and breakdown help. Call 778-838-0014.",
+    locale: "en_CA",
     images: [{ url: "/image/Battery_Boost.png", alt: "Roadside assistance service: TowingNo.1 technician helping a stranded driver" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Roadside Assistance | 24/7 Help | TowingNo.1",
     description:
-      "24/7 roadside assistance across Surrey and the Lower Mainland. Battery boost, flat tire, lockout, fuel delivery. Call 778-838-0014.",
+      "24/7 roadside assistance in Surrey, BC. Battery boost, flat tire, lockout, fuel delivery. Call 778-838-0014.",
     images: ["/image/Battery_Boost.png"],
   },
 };
@@ -44,19 +36,19 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide 24/7 roadside assistance?",
-    a: "Yes. TowingNo.1 provides roadside assistance 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your situation, and send the appropriate help.",
+    a: "Yes. TowingNo.1 provides roadside assistance 24 hours a day, 7 days a week, including evenings and weekends. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your situation, and send the appropriate help.",
   },
   {
     q: "Can you help with a dead battery?",
-    a: "Yes. A battery boost and jump start is one of our most common roadside calls. We dispatch a technician to your location, safely jump start the vehicle, and then test the battery and charging system to let you know whether a replacement is needed. If the vehicle still cannot be driven after a boost, we can arrange a tow.",
+    a: "Yes. A battery boost and jump start is a common roadside call. We dispatch a technician to your location, and safely jump start the vehicle. If the vehicle still cannot be driven after a boost, we can arrange a tow.",
   },
   {
     q: "Can you help if I lock my keys in my car?",
-    a: "Yes. Our lockout technicians open your vehicle using professional tools without damaging the door, lock, or window. We cover all makes and models, including modern vehicles with keyless entry, across Surrey and the Lower Mainland.",
+    a: "Yes. Our lockout technicians use careful entry techniques designed to protect the door, lock, and window, including on modern vehicles with keyless entry.",
   },
   {
     q: "Do you provide flat tire assistance?",
-    a: "Yes. If you have a usable spare, we fit it on site. If you have no spare, or the tire damage is beyond a roadside fix, we tow you to the nearest open tire shop. We cover highway shoulders and parking lots across the Lower Mainland.",
+    a: "Yes. If you have a usable spare, we fit it on site. If you have no spare, or the tire damage is beyond a roadside fix, we tow you to the nearest open tire shop. We help on highway shoulders and in parking lots.",
   },
   {
     q: "Can you bring fuel if my vehicle runs out?",
@@ -64,11 +56,11 @@ const faq: FaqItem[] = [
   },
   {
     q: "What areas do you serve for roadside assistance?",
-    a: "Roadside assistance is available across our full Lower Mainland coverage area, from the city centres to the rural roads. Call (778) 838-0014 and a dispatcher will confirm coverage for your exact location right away.",
+    a: "We are based in Surrey, BC. Call (778) 838-0014 and a dispatcher will confirm coverage for your exact location.",
   },
   {
     q: "When will I need a tow instead of roadside assistance?",
-    a: "If the problem cannot be resolved on the spot (for example, the vehicle has serious mechanical damage, won't start after a boost, has a tire that can't be repaired, or is unsafe to drive), we arrange a tow to a repair shop or other destination. Towing is only suggested when genuinely necessary; we always try to resolve the issue on site first.",
+    a: "If the problem cannot be resolved on the spot (for example, the vehicle has serious mechanical damage, won't start after a boost, has tire damage a spare can't cover, or is unsafe to drive), we arrange a tow to a repair shop or other destination. Towing is only suggested when genuinely necessary; we always try to resolve the issue on site first.",
   },
 ];
 const faqSchema = faqPageSchema(faq);
@@ -164,7 +156,7 @@ export default function RoadsideAssistancePage() {
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   We provide roadside assistance 24 hours a day across Surrey and the Lower Mainland,
-                  including evenings, weekends, and all statutory holidays. Call{" "}
+                  including evenings and weekends. Call{" "}
                   <a href="tel:+17788380014" className="font-semibold text-amber-600 hover:text-amber-700">(778) 838-0014</a>{" "}
                   and we will tell you exactly what we can do for your situation before we send anyone.
                 </p>
@@ -193,7 +185,7 @@ export default function RoadsideAssistancePage() {
                     {
                       href: "/services/lockout-service",
                       title: "Vehicle Lockout Service",
-                      body: "We open locked vehicles without causing damage to the door, lock, glass, or weatherstripping using professional lockout tools. This covers all makes and models, including modern vehicles with push button start and keyless entry where the fob battery has died.",
+                      body: "We open locked vehicles with professional lockout tools and careful entry techniques designed to protect the door, lock, glass, and weatherstripping. This covers common makes and models, including modern vehicles with push button start and keyless entry where the fob battery has died.",
                     },
                     {
                       href: "/services/fuel-delivery",
@@ -203,12 +195,12 @@ export default function RoadsideAssistancePage() {
                     {
                       href: "/services/winching-extraction",
                       title: "Winching & Extraction",
-                      body: "A vehicle stuck in a ditch, soft shoulder, mud, or snow bank needs proper winching equipment. We use controlled tension from rated anchor points to bring the vehicle back onto firm ground without causing further damage. Once recovered, we check whether it can be driven or needs a tow.",
+                      body: "A vehicle stuck in a ditch, soft shoulder, mud, or snow bank needs proper winching equipment. We use controlled tension from rated anchor points to bring the vehicle back onto firm ground while limiting the risk of further damage. Once recovered, we check whether it can be driven or needs a tow.",
                     },
                     {
                       href: "/services/emergency-towing",
                       title: "Towing When Help on Site Is Not Enough",
-                      body: "Sometimes a roadside visit reveals that the vehicle cannot safely be driven because of mechanical damage, a fault that cannot be fixed on a shoulder, or a situation that needs a repair shop. In those cases we arrange a tow to the destination of your choice, with the same upfront flat rate pricing.",
+                      body: "Sometimes a roadside visit reveals that the vehicle cannot safely be driven because of mechanical damage, a fault that cannot be fixed on a shoulder, or a situation that needs a repair shop. In those cases we arrange a tow to the destination of your choice, with a flat rate quote wherever possible before we dispatch.",
                     },
                   ].map((item) => (
                     <div key={item.href} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
@@ -254,7 +246,7 @@ export default function RoadsideAssistancePage() {
                   {[
                     {
                       title: "Dead or weak battery",
-                      body: "The most frequent single service call we handle. Symptoms include a slow or clicking engine, dim lights, or a vehicle that simply will not respond. A professional boost and system test can usually resolve this on the spot.",
+                      body: "A common roadside call. Symptoms include a slow or clicking engine, dim lights, or a vehicle that simply will not respond. A professional boost and system test can usually resolve this on the spot.",
                     },
                     {
                       title: "Flat tire",
@@ -262,7 +254,7 @@ export default function RoadsideAssistancePage() {
                     },
                     {
                       title: "Locked keys inside the vehicle",
-                      body: "A lockout can happen in any parking lot, at any hour. We open the vehicle without damaging it: no coat hangers, no broken weatherstripping, no scratched paint.",
+                      body: "A lockout can happen in any parking lot, at any hour. We open the vehicle with careful entry techniques instead of coat hangers or other improvised tools that can break weatherstripping or scratch paint.",
                     },
                     {
                       title: "Empty fuel tank",
@@ -300,7 +292,7 @@ export default function RoadsideAssistancePage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014", body: "A dispatcher answers 24/7. No automated menus. A person takes your call and listens to what has happened." },
                     { step: "2", title: "Location and situation confirmed", body: "We ask where you are (the nearest intersection, parking lot, or highway exit) and what has happened with the vehicle. This determines what we send." },
-                    { step: "3", title: "Upfront quote provided", body: "We quote a flat rate for the service before anyone is dispatched. You know exactly what the visit will cost before we send a truck." },
+                    { step: "3", title: "Quote provided, wherever possible", body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
                     { step: "4", title: "Appropriate help is dispatched", body: "We send the right technician and equipment for your specific situation: a battery technician, tire specialist, lockout operative, fuel delivery driver, or tow truck, depending on what you need." },
                     { step: "5", title: "Assistance is provided on site", body: "The technician arrives, handles the service, and keeps you informed throughout. If the fix on site is successful, you are back on the road. If additional help is required, we discuss the options with you directly." },
                     { step: "6", title: "Towing arranged if needed", body: "If the vehicle cannot be made safe to drive at the roadside (after an honest assessment, not a guess), we arrange a tow to the repair shop, dealership, or location of your choice." },
@@ -355,7 +347,7 @@ export default function RoadsideAssistancePage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Need Roadside Help?</h3>
                 <p className="text-slate-300 text-sm mb-5">
-                  24/7 roadside assistance across Surrey and the Lower Mainland. Free upfront quote before dispatch.
+                  24/7 roadside assistance across Surrey and the Lower Mainland. Free quote wherever possible, before dispatch.
                 </p>
                 <a
                   href="tel:+17788380014"
@@ -370,10 +362,10 @@ export default function RoadsideAssistancePage() {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flat rate, no hidden fees</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured in BC</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Card, debit &amp; cash at the job</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Fixed on the spot whenever possible</li>
                 </ul>
               </div>

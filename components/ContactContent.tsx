@@ -103,9 +103,9 @@ export default function ContactContent() {
   };
 
   const faqs = [
-    { q: "How fast can you get to me?", a: "We dispatch the nearest available driver as soon as you call. Arrival time is under 15 minutes in many situations, depending on location, traffic, weather, and road conditions. Call (778) 838-0014 and the dispatcher will give you a live estimate before any truck rolls." },
-    { q: "Do you accept credit cards?", a: "Yes, our drivers carry wireless terminals and accept all major credit cards, debit, and cash." },
-    { q: "Are you insured?", a: "Yes, we are fully licensed and insured. Your vehicle is protected while in our care." },
+    { q: "How fast can you get to me?", a: "We dispatch the nearest available driver as soon as you call. Fast local dispatch; arrival times vary by location and road conditions. Call (778) 838-0014 and ask the dispatcher for a current estimate." },
+    { q: "Do you accept credit cards?", a: "Yes. Our drivers accept major credit cards, debit, and cash through terminals at the job." },
+    { q: "What details should I have ready when I call?", a: "Your location or a nearby cross street, the make and model of your vehicle, and a short description of the problem. If the vehicle is electric, all-wheel drive, or damaged, say so." },
   ];
 
   const contactItems = [
@@ -214,7 +214,7 @@ export default function ContactContent() {
               className="scroll-mt-28 bg-white p-8 md:p-10 rounded-2xl shadow-card border border-slate-100"
             >
               <h2 className="text-2xl font-bold mb-2 text-navy-900">Send us a Message</h2>
-              <p className="text-slate-400 mb-8 text-sm">We&apos;ll get back to you within minutes.</p>
+              <p className="text-slate-400 mb-8 text-sm">We&apos;ll get back to you as soon as we can. For urgent help, call.</p>
               {status === "success" ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center">
@@ -397,19 +397,19 @@ export default function ContactContent() {
             <h2 className="text-3xl md:text-4xl font-bold text-navy-900">Reach Us Any Time, Day or Night</h2>
             <p>
               Vehicle trouble rarely waits for a convenient moment, so neither do we. Our dispatch line is staffed
-              24 hours a day, 7 days a week, including weekends and holidays. Whether your battery died in a parking
+              24 hours a day, 7 days a week, including weekends. Whether your battery died in a parking
               lot at 2 a.m., you locked your keys inside on the school run, or you slid off an icy shoulder on the
               highway, a real person answers, gathers your details, and gets a driver moving. For anything urgent,
               calling <a href="tel:+17788380014" className="text-amber-600 font-semibold hover:text-amber-700">(778) 838-0014</a> is
               always the fastest way to reach us. The contact form is best for quotes, questions, and requests that
-              are not emergencies, and we usually reply within minutes during the day.
+              are not emergencies, and we reply as soon as we can.
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-navy-900 pt-2">Where We Serve</h2>
             <p>
               TowingNo.1 covers Surrey and the wider Lower Mainland, including Delta, White Rock, Langley, Burnaby,
               Richmond, Coquitlam, Vancouver, and Maple Ridge, along with the highways and connector routes that tie
-              them together. Because our trucks are positioned across the region rather than run from a single yard,
-              we can usually reach you quickly no matter which community you are calling from. If you are unsure
+              them together. We send the nearest available driver, and arrival times vary by location and road
+              conditions. If you are unsure
               whether your location is in our area, just call and ask, we will tell you honestly and, if a job falls
               outside our coverage, point you toward someone who can help.
             </p>
@@ -417,11 +417,10 @@ export default function ContactContent() {
             <p>
               When you call or send a message, it helps to have a few details ready: where you are located or a
               nearby landmark or cross street, the make and model of your vehicle, and a short description of what
-              is wrong. With that information our dispatcher can match the right truck and equipment to your
-              situation and give you a flat rate quote up front. You will get an honest arrival estimate, a heads up
-              as the driver approaches, and a final confirmation of the price before any work starts. There are no
-              hidden fees and no pressure, only clear communication so you always know what is happening and what it
-              will cost.
+              is wrong. With that information our dispatcher can arrange the right kind of tow and, wherever
+              possible, give you a flat rate quote before we dispatch, based on the location, vehicle, and service you
+              describe. If conditions on site differ materially, the driver explains any change before going ahead.
+              There is no pressure, only clear communication so you know what is happening and what to expect.
             </p>
             <p>
               If you are stranded in an unsafe spot, please prioritize your safety first. Move well clear of moving

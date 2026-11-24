@@ -348,7 +348,7 @@ export default async function BlogPostPage({ params }: Props) {
             {/* CTA */}
             <div className="mt-12 p-8 bg-navy-950 rounded-2xl text-white text-center">
               <h3 className="text-2xl font-bold mb-3">Need Roadside Help Right Now?</h3>
-              <p className="text-slate-300 mb-6">Available 24/7 across the Lower Mainland. Free quote before dispatch.</p>
+              <p className="text-slate-300 mb-6">Available 24/7 from Surrey, BC. Free quote wherever possible, before dispatch.</p>
               <a
                 href="tel:+17788380014"
                 className="inline-flex items-center gap-2 btn-amber text-lg py-4 px-10 !rounded-full"

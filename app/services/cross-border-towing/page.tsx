@@ -15,20 +15,13 @@ export const metadata: Metadata = {
   description:
     "Looking for cross border towing between Canada and the U.S.? Contact TowingNo.1 to discuss vehicle transportation, pickup, destination, and a quote.",
   alternates: { canonical: "https://www.towingno1.com/services/cross-border-towing" },
-  keywords: [
-    "cross border towing",
-    "cross border towing services",
-    "Canada to USA vehicle towing",
-    "USA to Canada vehicle towing",
-    "cross border vehicle transportation",
-    "long distance vehicle towing",
-  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/cross-border-towing",
     title: "Cross Border Towing Services | TowingNo.1",
     description:
       "Cross border towing and vehicle transportation between Canada and the U.S. Share your pickup and destination, and our team confirms the details.",
+    locale: "en_CA",
     images: [{ url: HERO_IMAGE, width: 1500, height: 837, alt: HERO_ALT }],
   },
   twitter: {
@@ -46,7 +39,7 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "What is cross border towing?",
-    a: "Cross border towing is moving a vehicle by tow truck between Canada and the United States, in either direction. TowingNo.1 handles the towing and transportation side of the trip. Border requirements such as customs declarations are a separate step that the vehicle owner should confirm with the border agencies.",
+    a: "Cross border towing is moving a vehicle by tow truck between Canada and the United States, in either direction. Where a trip can be arranged, TowingNo.1 handles the towing and transportation side, and our team confirms with you first whether your trip can be taken. Border requirements such as customs declarations are a separate step that the vehicle owner should confirm with the border agencies.",
   },
   {
     q: "Can I request towing between Canada and the United States?",
@@ -196,7 +189,8 @@ export default function CrossBorderTowingPage() {
               <p className="text-white/80 text-lg max-w-xl mb-8">
                 Need to transport your vehicle across the Canada and United States border? TowingNo.1 helps you
                 arrange vehicle transportation with a straightforward process tailored to your pickup location,
-                destination, and towing requirements.
+                destination, and towing requirements. Not every trip can be taken, so our team confirms whether
+                yours can be arranged before anything is booked.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -259,7 +253,8 @@ export default function CrossBorderTowingPage() {
                   These trips are usually much longer than a tow across town, so they are planned ahead rather
                   than rushed. Long distance vehicle towing needs a suitable truck, a clear route, and timing that
                   works for you as well as for the crossing. That is why we look at every request on its own
-                  details instead of treating every trip the same way.
+                  details instead of treating every trip the same way. Some requests cannot be taken, and we
+                  will tell you if yours is one of them.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-5">
                   There are two ways to start. Call{" "}
@@ -406,7 +401,7 @@ export default function CrossBorderTowingPage() {
                   (778) 838-0014
                 </a>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Canada to U.S. and U.S. to Canada</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Canada to U.S. and U.S. to Canada requests</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Route and vehicle confirmed first</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Quote to review before booking</li>
                 </ul>

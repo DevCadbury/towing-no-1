@@ -49,7 +49,7 @@ const services = [
     src: "/image/Vehicle_Transpor.png",
     alt: "Vehicle transport service in the Lower Mainland: car on a flatbed truck",
     title: "Vehicle Transport",
-    desc: "Secure vehicle moves between locations across the Lower Mainland, right on time.",
+    desc: "Secure vehicle moves between locations across the Lower Mainland.",
     href: "/services/vehicle-transport",
   },
   {
@@ -97,12 +97,12 @@ const howItWorks = [
   {
     step: "1",
     title: "Call or Request Online",
-    desc: "Call (778) 838-0014 or submit a request online. We answer 24/7, including nights, weekends, and holidays.",
+    desc: "Call (778) 838-0014 or submit a request online. We answer 24/7, including nights and weekends.",
   },
   {
     step: "2",
-    title: "Get an Upfront Quote",
-    desc: "We give you a firm flat rate price before dispatch. No hidden fees, no surprises when the driver arrives.",
+    title: "Get a Quote, Wherever Possible",
+    desc: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead.",
   },
   {
     step: "3",
@@ -167,7 +167,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
                 transition={{ duration: 0.6, delay: 0.32 }}
                 className="text-base md:text-xl text-white/90 mb-10 max-w-xl leading-relaxed [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]"
               >
-                Need a tow truck near you in Surrey or anywhere in the Lower Mainland? Call now for immediate dispatch, upfront flat rate pricing, and a free quote before we roll. Licensed &amp; insured.
+                Need a tow truck near you in Surrey or anywhere in the Lower Mainland? Call now to talk to dispatch, 24/7. We send the nearest available driver and give you a free quote wherever possible before we dispatch.
               </motion.p>
 
               <motion.div
@@ -180,12 +180,12 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
                   href="tel:+17788380014"
                   data-call-location="hero"
                   className="btn-call-highlight inline-flex items-center justify-center gap-2 py-4 px-8 rounded-xl text-base"
-                  aria-label="Call TowingNo.1 for a free quote"
+                  aria-label="Call TowingNo.1 dispatch now"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0" aria-hidden="true">
                     <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
                   </svg>
-                  Call Now for a Free Quote
+                  Call Now: (778) 838-0014
                 </a>
                 <Link
                   href="/contact"
@@ -196,7 +196,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
               </motion.div>
 
               <p className="mt-4 text-xs md:text-sm text-amber-100/95 font-semibold tracking-wide">
-                Talk to dispatch now. Upfront price before dispatch. Under 15 minutes in many situations, depending on location, traffic, weather, and road conditions.
+                Talk to dispatch now. Fast local dispatch; arrival times vary by location and road conditions.
               </p>
 
               <motion.div
@@ -211,15 +211,15 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
                 </span>
                 <span className="flex items-center gap-1.5">
                   <svg className="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
-                  Licensed &amp; insured
+                  Nearest available driver
                 </span>
                 <span className="flex items-center gap-1.5">
                   <svg className="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"/></svg>
-                  Flat rate pricing
+                  Card, debit or cash
                 </span>
                 <span className="flex items-center gap-1.5">
                   <svg className="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
-                  All vehicle types
+                  Cars, SUVs &amp; light trucks
                 </span>
               </motion.div>
 
@@ -287,9 +287,9 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
           >
             <p className="text-sm font-semibold text-amber-800 leading-relaxed">
               <svg className="w-4 h-4 text-amber-600 inline-block align-middle mr-1.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"/></svg>
-              <strong>Flat rate pricing</strong> with no hidden fees and no meter running. Call{" "}
+              <strong>A flat rate quote wherever possible</strong>, based on the location, vehicle, and service you describe. Call{" "}
               <a href="tel:+17788380014" className="underline hover:text-amber-900 whitespace-nowrap">(778) 838-0014</a>{" "}
-              for an instant quote before we dispatch.
+              and ask for a quote before we dispatch.
             </p>
           </motion.div>
         </div>
@@ -380,17 +380,17 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
           >
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-500 mb-3">Why us</p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-              Trusted Across the Lower Mainland
+              Why Call TowingNo.1
             </h2>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
             {(
               [
-              { display: statText(stats.alwaysAvailable), label: "Always Available", sub: "Around the clock, every day of the year including holidays", delay: 0.1 },
+              { display: statText(stats.alwaysAvailable), label: "Always Available", sub: "Around the clock, 7 days a week", delay: 0.1 },
               { fact: stats.responseTime, label: "Rapid Response", sub: "We dispatch the nearest available driver the moment you call", delay: 0.2 },
               { fact: stats.yearsInBusiness, label: "Local Experience", sub: "Drivers who know Surrey and the Lower Mainland", delay: 0.3 },
-              { display: "Upfront", label: "Flat Rate Pricing", sub: "Free quote before dispatch, with no hidden fees and no meter running", delay: 0.4 },
+              { display: "Quote", label: "Before Dispatch", sub: "A free quote wherever possible, based on your location, vehicle, and the service you need", delay: 0.4 },
               ] as Array<{ display?: string; fact?: StatFact; label: string; sub: string; delay: number }>
             ).map((item) => (
               <motion.div
@@ -419,11 +419,11 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
             className="mt-14 flex flex-wrap justify-center gap-4"
           >
             {[
-              { label: "Licensed & Insured in BC" },
-              { label: "Wheel Lift Trucks" },
+              { label: "24/7 Dispatch" },
+              { label: "Flatbed & Wheel-Lift Towing" },
               { label: "EV Friendly Towing" },
-              { label: "Free Quote Before Dispatch" },
-              { label: "No Hidden Fees" },
+              { label: "Free Quote Wherever Possible" },
+              { label: "Card, Debit & Cash" },
             ].map((badge) => (
               <span key={badge.label} className="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-4 py-2">
                 <svg className="w-3.5 h-3.5 text-amber-500 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -508,13 +508,13 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
             </h2>
             <div className="space-y-4 text-slate-600 text-base leading-relaxed">
               <p>
-                The fastest tow is the one that already knows where it is going. Across the Lower Mainland, the difference between a fifteen minute wait and an hour on the shoulder usually comes down to local knowledge: knowing that the Highway 1 climb toward the SFU exit punishes tired cooling systems, that Surrey&apos;s King George corridor backs up at rush hour, and which Richmond underpasses flood after a hard rain. Our drivers work these roads every day, so when you give our dispatcher a cross street or a kilometre marker, the closest truck heads straight to you instead of circling for an address.
+                The fastest tow is the one that already knows where it is going. Across the Lower Mainland, a lot of the wait on the shoulder comes down to local knowledge: knowing that the Highway 1 climb toward the SFU exit punishes tired cooling systems, that Surrey&apos;s King George corridor backs up at rush hour, and which Richmond underpasses flood after a hard rain. When you give our dispatcher a cross street or a kilometre marker, the nearest available driver heads straight to you instead of circling for an address. Arrival times still vary by location and road conditions.
               </p>
               <p>
-                That local focus also shapes how we handle each call. A breakdown in a downtown Vancouver tower parkade needs a wheel lift truck sized for low clearances and tight pillars; a vehicle stuck on a snowy Coquitlam switchback needs a winch and a driver who can set up a recovery safely on a slope; an all wheel drive crossover or an EV needs a flatbed so its drivetrain is never dragged. We carry the right equipment for the situation rather than forcing one truck to do every job.
+                That local focus also shapes how we handle each call. A breakdown in a downtown Vancouver tower parkade raises questions about low clearances and tight pillars; a vehicle stuck on a snowy Coquitlam switchback needs a winch and a recovery set up safely on a slope; an all wheel drive crossover or an EV should be moved on a flatbed so its drivetrain is never dragged. Tell the dispatcher where the vehicle is and what it is, so the right kind of tow, wheel-lift or flatbed, is arranged.
               </p>
               <p>
-                Most of all, we try to solve your problem without a tow whenever it is safe to do so. A great many of our calls, such as dead batteries, flats, lockouts, and empty tanks, end with your own vehicle back on the road within minutes, not loaded onto a truck. When a tow genuinely is the right call, you will always know the flat rate price before we start, so the only surprise is how quickly you are moving again.
+                Most of all, we try to solve your problem without a tow whenever it is safe to do so. Dead batteries, flats you can swap for the spare, lockouts, and empty tanks can often be handled at the roadside, with your own vehicle back on the road rather than loaded onto a truck. When a tow is the right call, wherever possible you get a flat rate quote before we dispatch, based on the location, vehicle, and service you describe.
               </p>
             </div>
           </motion.div>
@@ -539,7 +539,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
               Stranded? We Dispatch Now, 24/7.
             </h2>
             <p className="text-white/60 mb-10 text-base">
-              Available 24 hours a day, 7 days a week, including all holidays.
+              Available 24 hours a day, 7 days a week.
             </p>
             <a
               href="tel:+17788380014"
@@ -550,7 +550,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
                 <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
               </svg>
-              Call Now for a Free Quote
+              Call Now: (778) 838-0014
             </a>
           </motion.div>
         </div>
@@ -687,7 +687,7 @@ function FaqSection({ faq }: { faq: FaqItem[] }) {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4" aria-hidden="true">
                 <path fillRule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 16.352V17.5a1.5 1.5 0 0 1-1.5 1.5H15c-8.284 0-15-6.716-15-15V3.5Z" clipRule="evenodd" />
               </svg>
-              Call Now for a Free Quote
+              Call Now: (778) 838-0014
             </a>
           </motion.div>
         </div>

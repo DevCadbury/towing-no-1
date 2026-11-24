@@ -8,30 +8,22 @@ export const metadata: Metadata = {
     absolute: "Fuel Delivery | 24/7 Roadside Assistance | TowingNo.1",
   },
   description:
-    "Stranded with an empty tank in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 emergency fuel delivery to your location. Call 778-838-0014.",
+    "Stranded with an empty tank in Surrey, BC? TowingNo.1 provides 24/7 emergency fuel delivery to your location. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/fuel-delivery" },
-  keywords: [
-    "fuel delivery Surrey",
-    "emergency fuel delivery Surrey BC",
-    "out of gas service Surrey",
-    "gasoline delivery Surrey",
-    "diesel delivery roadside Surrey",
-    "run out of fuel Surrey",
-    "emergency gas delivery Lower Mainland",
-  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/fuel-delivery",
     title: "Fuel Delivery | 24/7 Roadside Assistance | TowingNo.1",
     description:
-      "24/7 emergency fuel delivery in Surrey and the Lower Mainland. Stranded with an empty tank? We bring fuel to your location. Call 778-838-0014.",
+      "24/7 emergency fuel delivery in Surrey, BC. Stranded with an empty tank? We bring fuel to your location. Call 778-838-0014.",
+    locale: "en_CA",
     images: [{ url: "/image/Fuel_Deliver.png", alt: "Emergency fuel delivery: fuel delivered to a stranded driver" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Fuel Delivery | 24/7 Roadside Assistance | TowingNo.1",
     description:
-      "24/7 emergency fuel delivery across Surrey and the Lower Mainland. We bring fuel to you. Call 778-838-0014.",
+      "24/7 emergency fuel delivery in Surrey, BC. We bring fuel to you. Call 778-838-0014.",
     images: ["/image/Fuel_Deliver.png"],
   },
 };
@@ -42,7 +34,7 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide emergency fuel delivery 24/7?",
-    a: "Yes. TowingNo.1 provides fuel delivery assistance 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange fuel delivery.",
+    a: "Yes. TowingNo.1 provides fuel delivery assistance 24 hours a day, 7 days a week, including evenings and weekends. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange fuel delivery.",
   },
   {
     q: "What should I do if I run out of fuel on the highway?",
@@ -50,11 +42,11 @@ const faq: FaqItem[] = [
   },
   {
     q: "Can you deliver fuel to a stranded vehicle?",
-    a: "Yes. We deliver fuel to your location, whether that is on a highway shoulder, in a parking lot, on a residential street, or in another accessible location across Surrey and the Lower Mainland. Tell the dispatcher where you are and confirm the fuel type your vehicle requires.",
+    a: "Yes. We deliver fuel to your location, whether that is on a highway shoulder, in a parking lot, on a residential street, or in another accessible location. Tell the dispatcher where you are and confirm the fuel type your vehicle requires.",
   },
   {
     q: "What areas do you serve for fuel delivery?",
-    a: "Fuel delivery runs across our Lower Mainland coverage area, from highway corridors to residential side streets. Tell the dispatcher where you are and we will confirm coverage for your exact location before sending fuel out.",
+    a: "We are based in Surrey, BC and deliver to highway shoulders, parking lots, and residential streets. Tell the dispatcher where you are and we will confirm coverage for your exact location before sending fuel out.",
   },
   {
     q: "What if the vehicle still will not start after receiving fuel?",
@@ -129,8 +121,8 @@ export default function FuelDeliveryPage() {
           </h1>
           <p className="text-white/80 text-lg max-w-xl mb-8">
             Stranded with an empty tank? TowingNo.1 delivers fuel to your location across Surrey and
-            the Lower Mainland around the clock so you can reach the nearest station. Upfront pricing,
-            immediate dispatch.
+            the Lower Mainland around the clock so you can reach the nearest station. We send the nearest
+            available driver.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -203,7 +195,7 @@ export default function FuelDeliveryPage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014",                    body: "A dispatcher answers 24/7. Tell them you have run out of fuel and give your location." },
                     { step: "2", title: "Location and fuel type confirmed",        body: "We ask for your exact location and confirm the type of fuel your vehicle requires, gasoline or diesel. Confirming the fuel type is essential: putting the wrong fuel into a vehicle can cause serious engine damage." },
-                    { step: "3", title: "Upfront quote provided",                 body: "We give you a flat rate price before dispatch. You know the cost before any driver is sent." },
+                    { step: "3", title: "Quote provided, wherever possible",      body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
                     { step: "4", title: "Fuel delivery arranged",                 body: "We send the nearest available driver to your location with the confirmed fuel type." },
                     { step: "5", title: "Fuel delivered to your vehicle",         body: "The driver delivers fuel at the roadside and confirms the correct quantity has been added. For a diesel that has run completely dry, the fuel line may need priming before the engine will start, and the driver can assist with this." },
                     { step: "6", title: "Vehicle continues when safely possible", body: "Once fuel has been added and the engine starts, you are free to drive to the nearest station to fill the tank properly. If the vehicle does not start, we can assess whether additional assistance is needed." },
@@ -224,9 +216,9 @@ export default function FuelDeliveryPage() {
                     "Fuel delivered to your location",
                     "Gasoline and diesel available",
                     "Highway and roadside delivery",
-                    "Upfront flat rate pricing",
+                    "Free quote wherever possible",
                     "Diesel line priming if needed",
-                    "Available 24/7 including holidays",
+                    "Available 24/7",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm text-slate-700">
                       <Check /> {item}
@@ -349,7 +341,7 @@ export default function FuelDeliveryPage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014",                   body: "A dispatcher answers 24/7. Tell them you have run out of fuel." },
                     { step: "2", title: "Location and fuel type confirmed",       body: "We confirm your exact location and the fuel type your vehicle needs before arranging anything." },
-                    { step: "3", title: "Upfront quote provided",                 body: "A flat rate price is confirmed before any driver is dispatched. No surprises on arrival." },
+                    { step: "3", title: "Quote provided, wherever possible",      body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
                     { step: "4", title: "Driver dispatched",                      body: "The nearest available driver with the confirmed fuel type is sent to your location." },
                     { step: "5", title: "Fuel delivered",                         body: "The driver delivers fuel, confirms the correct amount has been added, and assists with priming if the engine requires it after running dry." },
                     { step: "6", title: "Further assistance if needed",           body: "If the vehicle does not start after fuelling, or if another issue is discovered, we discuss the options, including towing if required." },
@@ -404,7 +396,7 @@ export default function FuelDeliveryPage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Out of Fuel?</h3>
                 <p className="text-slate-300 text-sm mb-5">
-                  24/7 fuel delivery across Surrey and the Lower Mainland. Free upfront quote before dispatch.
+                  24/7 fuel delivery across Surrey and the Lower Mainland. Free quote wherever possible, before dispatch.
                 </p>
                 <a
                   href="tel:+17788380014"
@@ -419,10 +411,10 @@ export default function FuelDeliveryPage() {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Gasoline &amp; diesel available</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Highway &amp; roadside delivery</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
                 </ul>
               </div>
 

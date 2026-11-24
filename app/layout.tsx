@@ -14,76 +14,6 @@ const outfit = Outfit({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
-const SEO_KEYWORDS = [
-  // Core "near me" + brand queries (highest impressions)
-  "towing near me",
-  "tow truck near me",
-  "tow truck surrey",
-  "towing company near me",
-  "car towing near me",
-  "vehicle towing near me",
-  "24/7 towing",
-  "24/7 tow truck",
-  "tow truck now",
-  "tow truck",
-  "towing company",
-  "towing surrey",
-  "surrey towing",
-  "towing services surrey",
-  "towing services in surrey",
-  // Roadside assistance (strong demand, incl. membership-alternative intent)
-  "roadside assistance",
-  "roadside assistance near me",
-  "24 hour roadside assistance",
-  "emergency roadside assistance",
-  "roadside assistance surrey",
-  "emergency towing surrey",
-  "lower mainland towing",
-  // Jump start / battery (high query volume: "free jump start car service near me")
-  "jump start car service near me",
-  "free jump start car service near me",
-  "jumpstart car service",
-  "jump start car",
-  "battery boost service",
-  "battery services near me",
-  "car battery jump start",
-  // Lockout ("keys locked in car")
-  "car lockout service",
-  "keys locked in car",
-  "unlock car service near me",
-  // Other services
-  "flat tire roadside assistance",
-  "flat tire change near me",
-  "fuel delivery roadside",
-  "out of gas fuel delivery",
-  "winching and recovery",
-  "vehicle recovery near me",
-  "heavy duty towing",
-  "big rig towing surrey",
-  "truck towing",
-  "auto transport",
-  "vehicle transport",
-  // City + neighbourhood queries with real impressions
-  "tow truck langley",
-  "towing langley bc",
-  "cheap towing langley",
-  "langley towing company",
-  "cloverdale towing",
-  "tow truck cloverdale",
-  "south surrey towing",
-  "aldergrove towing",
-  "coquitlam towing",
-  "port coquitlam towing",
-  "burnaby towing",
-  "burnaby tow company",
-  "north vancouver towing",
-  "richmond towing",
-  "vancouver towing",
-  "white rock tow truck",
-  "delta towing",
-  "maple ridge towing",
-];
-
 // Google Search Console verification token, supplied via the environment.
 // When unset/empty the verification meta tag is omitted entirely so no
 // placeholder is ever emitted into the document <head>.
@@ -96,8 +26,7 @@ export const metadata: Metadata = {
     template: "%s | TowingNo.1",
   },
   description:
-    "Need a tow truck near you in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 emergency towing, roadside help, and a free quote before dispatch. Call (778) 838-0014.",
-  keywords: SEO_KEYWORDS,
+    "Need a tow truck in Surrey, BC? TowingNo.1 offers 24/7 emergency towing and roadside help. Call (778) 838-0014 any time, day or night.",
   authors: [{ name: "TowingNo.1" }],
   alternates: {
     canonical: "https://www.towingno1.com",
@@ -116,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "TowingNo.1",
     title: "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
     description:
-      "24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured. Call (778) 838-0014.",
+      "24/7 emergency towing and roadside assistance from TowingNo.1 in Surrey, BC. Call (778) 838-0014 any time, day or night.",
     images: [
       {
         url: "https://www.towingno1.com/preview.jpg",
@@ -130,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tow Truck Surrey | 24/7 Emergency Towing & Roadside Help | TowingNo.1",
     description:
-      "24/7 emergency towing and roadside assistance across Surrey and the Lower Mainland. Free quote before dispatch. Call (778) 838-0014.",
+      "24/7 emergency towing and roadside assistance from TowingNo.1 in Surrey, BC. Call (778) 838-0014 any time, day or night.",
     images: ["https://www.towingno1.com/preview.jpg"],
   },
   robots: {

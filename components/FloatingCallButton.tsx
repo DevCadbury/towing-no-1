@@ -12,7 +12,7 @@ export default function FloatingCallButton() {
       <a
         href={`tel:${phone}`}
         data-call-location="floating_button"
-        aria-label="Call now for a free quote"
+        aria-label="Call TowingNo.1 now, 24/7"
         className="btn-call-highlight inline-flex items-center gap-2 rounded-full py-3 pl-3 pr-4 shadow-2xl"
       >
         <span className="w-9 h-9 rounded-full bg-gray-900/15 flex items-center justify-center shrink-0">
@@ -26,7 +26,7 @@ export default function FloatingCallButton() {
         </span>
         <span className="text-left leading-tight">
           <span className="block text-[12px] sm:text-[13px] font-extrabold">Call Now</span>
-          <span className="block text-[10px] sm:text-[11px] font-semibold opacity-80">Free Quote</span>
+          <span className="block text-[10px] sm:text-[11px] font-semibold opacity-80">24/7 Dispatch</span>
         </span>
       </a>
     </div>

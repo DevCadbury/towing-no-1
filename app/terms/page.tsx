@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Read the service terms for TowingNo.1 emergency towing and roadside assistance across Surrey and the Lower Mainland.",
+    "Read the service terms for TowingNo.1 emergency towing and roadside assistance in Surrey, BC: dispatch, quotes, payment and cancellations.",
   alternates: {
     canonical: "https://www.towingno1.com/terms",
   },
@@ -13,12 +13,22 @@ export const metadata: Metadata = {
     title: "Terms of Service | TowingNo.1",
     description:
       "Service terms, dispatch conditions, and customer responsibilities for TowingNo.1 roadside services.",
+    locale: "en_CA",
+    images: [
+      {
+        url: "https://www.towingno1.com/preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TowingNo.1 | Towing & Roadside Assistance in BC",
+      },
+    ],
   },
   twitter: {
     card: "summary",
     title: "Terms of Service | TowingNo.1",
     description:
       "Service terms and dispatch conditions for TowingNo.1 towing and roadside assistance.",
+    images: ["https://www.towingno1.com/preview.jpg"],
   },
 };
 
@@ -109,8 +119,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-xl font-bold text-navy-900 mb-2">Vehicle Handling and Insurance</h2>
             <p>
-              TowingNo.1 is licensed and insured, and our drivers are trained to load, secure, and transport
-              vehicles with care. We take reasonable steps to avoid damage, but normal towing of a vehicle that is
+              Our drivers load, secure, and transport vehicles with care. We take reasonable steps to avoid damage, but normal towing of a vehicle that is
               already damaged, nonstandard, or improperly maintained carries inherent risk. Any concern about the
               condition of your vehicle should be raised with the driver at pickup and reported to us promptly so we
               can document and review it.

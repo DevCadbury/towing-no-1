@@ -8,30 +8,22 @@ export const metadata: Metadata = {
     absolute: "Car Lockout Service | 24/7 Roadside Help | TowingNo.1",
   },
   description:
-    "Locked out of your car in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 vehicle lockout assistance and opens your vehicle safely. Call 778-838-0014.",
+    "Locked out of your car in Surrey, BC? TowingNo.1 provides 24/7 vehicle lockout assistance using careful entry techniques. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/lockout-service" },
-  keywords: [
-    "car lockout service Surrey",
-    "locked keys in car Surrey BC",
-    "car lockout Surrey",
-    "unlock car service Surrey",
-    "locked out of car Surrey",
-    "car lockout near me Surrey",
-    "vehicle lockout service Lower Mainland",
-  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/lockout-service",
     title: "Car Lockout Service | 24/7 Roadside Help | TowingNo.1",
     description:
-      "24/7 car lockout assistance in Surrey and the Lower Mainland. Professional tools, no damage to your vehicle. Call 778-838-0014.",
+      "24/7 car lockout assistance in Surrey, BC, using careful entry techniques. Call 778-838-0014.",
+    locale: "en_CA",
     images: [{ url: "/image/Lockout_Servic.png", alt: "Car lockout service: technician helping a driver locked out of their vehicle" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Car Lockout Service | 24/7 Roadside Help | TowingNo.1",
     description:
-      "24/7 car lockout assistance across Surrey and the Lower Mainland. Professional tools, no damage. Call 778-838-0014.",
+      "24/7 car lockout assistance in Surrey, BC, using careful entry techniques. Call 778-838-0014.",
     images: ["/image/Lockout_Servic.png"],
   },
 };
@@ -42,11 +34,11 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Can you help if I locked my keys in my car?",
-    a: "Yes. We provide vehicle lockout assistance 24/7 across Surrey and the Lower Mainland. Call (778) 838-0014, tell the dispatcher your location and vehicle make, and we arrange to send a technician with the appropriate tools to open your vehicle safely.",
+    a: "Yes. We provide vehicle lockout assistance 24/7. Call (778) 838-0014, tell the dispatcher your location and vehicle make, and we arrange to send a technician with the appropriate tools to open your vehicle with care.",
   },
   {
     q: "Do you provide 24/7 lockout assistance?",
-    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Whether you are locked out at midday in a Guildford parking lot or late at night on a Surrey residential street, call (778) 838-0014 and we will answer.",
+    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week, including evenings and weekends. Whether you are locked out at midday in a Guildford parking lot or late at night on a Surrey residential street, call (778) 838-0014 and we will answer.",
   },
   {
     q: "What should I do if I lost my car keys?",
@@ -58,7 +50,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What areas do you serve for lockout assistance?",
-    a: "Our lockout service is available across the Lower Mainland, including the parkades and curbside spots where lockouts happen most. Call (778) 838-0014 and a dispatcher will confirm coverage for your exact location before a technician is sent.",
+    a: "We are based in Surrey, BC and help in parkades, parking lots, and at the curb. Call (778) 838-0014 and a dispatcher will confirm coverage for your exact location before a technician is sent.",
   },
   {
     q: "When would I need towing instead of lockout assistance?",
@@ -129,8 +121,8 @@ export default function LockoutServicePage() {
           </h1>
           <p className="text-white/80 text-lg max-w-xl mb-8">
             Locked out of your vehicle? TowingNo.1 provides professional car lockout assistance across
-            Surrey and the Lower Mainland around the clock. We open your vehicle using professional
-            tools without causing damage to the door, lock, or window.
+            Surrey and the Lower Mainland around the clock. We use careful entry techniques
+            designed to protect the door, lock, and window.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -165,7 +157,7 @@ export default function LockoutServicePage() {
                   A vehicle lockout is one of the most stressful roadside situations, especially late at
                   night, in an unfamiliar location, or when a child or pet is inside the car. The good
                   news is that most lockouts can be resolved on the spot with the right tools and
-                  without any damage to the vehicle.
+                  careful entry techniques.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Common situations that lead to a lockout call include:
@@ -209,14 +201,14 @@ export default function LockoutServicePage() {
                   {[
                     {
                       title: "Door opening on site",
-                      body: "We use a cushioned door wedge and long reach tools to create a safe gap and operate the interior handle or unlock button, exactly as the door is designed to be opened from inside. The weatherstripping remains undamaged, no glass is under pressure, and nothing is forced.",
+                      body: "We use a cushioned door wedge and long reach tools to create a safe gap and operate the interior handle or unlock button, exactly as the door is designed to be opened from inside. The method is designed to keep stress off the weatherstripping and glass, and nothing is forced.",
                     },
                     {
                       title: "Keyless and push button vehicles",
                       body: "Most vehicles with keyless entry have a mechanical backup: a key blade inside the fob and a concealed keyhole on the door handle. We know where these are located on common makes. If the fob is dead, we use the mechanical override to open the door.",
                     },
                     {
-                      title: "All makes and models",
+                      title: "Common makes and models",
                       body: "We handle standard key cylinder vehicles, transponder key cars, push button starters, and keyless entry systems. For rare or unusual vehicles where our standard approach is not viable, we will tell you before attempting anything.",
                     },
                     {
@@ -236,9 +228,9 @@ export default function LockoutServicePage() {
                     "Keys locked inside the car",
                     "Keys locked in the trunk",
                     "Dead key fob battery",
-                    "All makes and models",
+                    "Common makes and models",
                     "Keyless entry vehicles",
-                    "Available 24/7 including holidays",
+                    "Available 24/7",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm text-slate-700">
                       <Check /> {item}
@@ -275,9 +267,9 @@ export default function LockoutServicePage() {
                 </ol>
               </div>
 
-              {/* H2: How We Open a Car Without Damage */}
+              {/* H2: How We Open a Car With Care */}
               <div>
-                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">How We Open a Car Without Damage</h2>
+                <h2 className="text-2xl font-extrabold text-navy-900 mb-4">How We Open a Car With Care</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   The improvised methods people remember, such as a coat hanger gouging the window seal, a
                   screwdriver levering the door frame, cause expensive damage because they use
@@ -288,8 +280,8 @@ export default function LockoutServicePage() {
                   We use a cushioned door wedge to create a small controlled gap at the top of the door
                   frame (a few millimetres, applied gradually) and a long reach tool to operate the
                   interior handle, lock button, or unlock switch directly. The door opens the same way
-                  it would from inside. The weatherstripping stays intact, no glass is placed under
-                  pressure, and nothing is forced. If a particular vehicle design makes this approach
+                  it would from inside. The method is designed to keep stress off the weatherstripping
+                  and glass, and nothing is forced. If a particular vehicle design makes this approach
                   unsafe, we say so before attempting anything.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
@@ -358,9 +350,9 @@ export default function LockoutServicePage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014",                   body: "A dispatcher answers 24/7. Tell them you are locked out and give your location." },
                     { step: "2", title: "Location and vehicle confirmed",         body: "We ask for your exact location and your vehicle make and model so the technician can come prepared for your specific entry system." },
-                    { step: "3", title: "Upfront quote provided",                 body: "We give you a flat rate price for the lockout service before anyone is dispatched. No surprises on arrival." },
+                    { step: "3", title: "Quote provided, wherever possible",      body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
                     { step: "4", title: "Technician dispatched",                  body: "We send the nearest available technician with the appropriate lockout tools for your vehicle." },
-                    { step: "5", title: "Vehicle access restored",                body: "The technician opens your vehicle using professional tools without damaging the door, lock, or window, and confirms you are safely back inside." },
+                    { step: "5", title: "Vehicle access restored",                body: "The technician opens your vehicle with careful entry techniques designed to protect the door, lock, and window, and confirms you are safely back inside." },
                     { step: "6", title: "Further assistance arranged if needed",  body: "If a secondary problem is discovered (a flat tyre, dead battery, or empty tank), we can arrange the appropriate roadside service or a tow." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
@@ -414,7 +406,7 @@ export default function LockoutServicePage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Locked Out?</h3>
                 <p className="text-slate-300 text-sm mb-5">
-                  24/7 car lockout assistance across Surrey and the Lower Mainland. Free upfront quote before dispatch.
+                  24/7 car lockout assistance across Surrey and the Lower Mainland. Free quote wherever possible, before dispatch.
                 </p>
                 <a
                   href="tel:+17788380014"
@@ -429,10 +421,10 @@ export default function LockoutServicePage() {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> No damage to your vehicle</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> All makes and models</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Careful entry techniques</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
                 </ul>
               </div>
 

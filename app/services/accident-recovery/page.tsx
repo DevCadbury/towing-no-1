@@ -9,30 +9,22 @@ export const metadata: Metadata = {
     absolute: "Accident Recovery & Towing | 24/7 Service | TowingNo.1",
   },
   description:
-    "24/7 accident recovery and towing in Surrey and the Lower Mainland. TowingNo.1 transports collision damaged vehicles safely. Call 778-838-0014.",
+    "24/7 accident recovery and towing in Surrey, BC. TowingNo.1 transports collision damaged vehicles with care. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/accident-recovery" },
-  keywords: [
-    "accident recovery towing Surrey",
-    "collision towing Surrey BC",
-    "accident towing Lower Mainland",
-    "post-accident towing Surrey",
-    "damaged vehicle towing Surrey",
-    "collision recovery BC",
-    "ICBC towing Surrey",
-  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/accident-recovery",
     title: "Accident Recovery & Towing | 24/7 Service | TowingNo.1",
     description:
-      "24/7 accident recovery and towing in Surrey and the Lower Mainland. Safe transport of damaged vehicles to any shop or facility. Call 778-838-0014.",
+      "24/7 accident recovery and towing in Surrey, BC. Transport of damaged vehicles to the shop or facility you choose. Call 778-838-0014.",
+    locale: "en_CA",
     images: [{ url: "/image/Accident_Recover.png", alt: "Accident recovery towing: damaged vehicle being loaded onto a flatbed" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Accident Recovery & Towing | 24/7 Service | TowingNo.1",
     description:
-      "24/7 accident recovery and towing across Surrey and the Lower Mainland. Safe vehicle transport to your chosen destination. Call 778-838-0014.",
+      "24/7 accident recovery and towing in Surrey, BC. Vehicle transport to your chosen destination. Call 778-838-0014.",
     images: ["/image/Accident_Recover.png"],
   },
 };
@@ -43,15 +35,15 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide towing after an accident?",
-    a: "Yes. TowingNo.1 provides accident recovery and towing 24 hours a day, 7 days a week across Surrey and the Lower Mainland. Call (778) 838-0014, describe the situation and your location, and we will arrange the appropriate vehicle.",
+    a: "Yes. TowingNo.1 provides accident recovery and towing 24 hours a day, 7 days a week. Call (778) 838-0014, describe the situation and your location, and we will arrange the appropriate vehicle.",
   },
   {
     q: "Can you tow a vehicle that cannot be driven after a collision?",
-    a: "Yes. A vehicle that will not roll, steer, or start after a collision is loaded onto a flatbed using our onboard winch, so it does not need to move under its own power. We assess the vehicle on site to determine the safest loading method based on the damage.",
+    a: "Yes. A vehicle that will not roll, steer, or start after a collision can be winched onto the truck, so it does not need to move under its own power. We assess the vehicle on site to choose the safest loading method for the damage.",
   },
   {
     q: "Can you recover a vehicle from a roadside accident location?",
-    a: "Yes. We respond to accident recovery calls on highway shoulders, at intersections, in parking lots, and at other roadside locations across the Lower Mainland. We position the recovery vehicle safely to shield the accident scene from traffic where possible.",
+    a: "Yes. We respond to accident recovery calls on highway shoulders, at intersections, in parking lots, and at other roadside locations. We position the recovery vehicle to shield the accident scene from traffic where possible.",
   },
   {
     q: "What should I do before arranging an accident tow?",
@@ -59,15 +51,15 @@ const faq: FaqItem[] = [
   },
   {
     q: "Do you provide accident recovery 24/7?",
-    a: "Yes. We operate around the clock including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour for accident towing and recovery.",
+    a: "Yes. We operate around the clock, 7 days a week, including evenings and weekends. Call (778) 838-0014 at any hour for accident towing and recovery.",
   },
   {
     q: "What areas do you serve for accident recovery?",
-    a: "Accident recovery and collision towing is available across the Lower Mainland, including the highway corridors and major arterials where most collisions happen. Call (778) 838-0014 to confirm coverage for your exact location before a truck is dispatched.",
+    a: "We are based in Surrey, BC and respond on highway corridors, major arterials, and local streets. Call (778) 838-0014 to confirm coverage for your exact location.",
   },
   {
     q: "Can you transport a damaged vehicle to a specific destination?",
-    a: "Yes. We deliver to the repair shop, body shop, dealership, ICBC facility, or storage yard you choose. If you have not yet decided on a destination, we can hold the vehicle securely until you and your insurer agree on next steps. We provide documentation of the recovery and delivery.",
+    a: "Yes. We deliver to the repair shop, body shop, dealership, or address you choose.",
   },
 ];
 const faqSchema = faqPageSchema(faq);
@@ -210,11 +202,11 @@ export default function AccidentRecoveryPage() {
                   {[
                     {
                       title: "Collision towing",
-                      body: "Towing of damaged vehicles from the accident scene to the repair shop, body shop, dealership, ICBC facility, or storage yard of your choice. We provide documentation of the recovery and delivery.",
+                      body: "Towing of damaged vehicles from the accident scene to the repair shop, body shop, dealership, ICBC facility, or storage facility of your choice, with coordination with your insurer where needed.",
                     },
                     {
                       title: "Recovery for vehicles that can't be driven",
-                      body: "Vehicles that will not roll, steer, or start after a collision are loaded onto a flatbed using our onboard winch from rated attachment points on the frame, never from damaged body panels, to avoid causing further damage during loading.",
+                      body: "Vehicles that will not roll, steer, or start after a collision are winched onto a flatbed from rated attachment points on the frame, not from damaged body panels, to reduce the risk of further damage during loading.",
                     },
                     {
                       title: "Safe loading of damaged vehicles",
@@ -222,7 +214,7 @@ export default function AccidentRecoveryPage() {
                     },
                     {
                       title: "Transport to your chosen destination",
-                      body: "We deliver to any body shop, dealership, repair facility, ICBC location, or private address across the Lower Mainland. If you have not decided on a destination, we can secure the vehicle until you have.",
+                      body: "We deliver to a body shop, dealership, repair facility, ICBC facility, storage facility, or private address across the Lower Mainland.",
                     },
                   ].map((item) => (
                     <div key={item.title} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
@@ -237,8 +229,8 @@ export default function AccidentRecoveryPage() {
                     "Vehicles that won't run or steer",
                     "Loading from frame points, not body panels",
                     "Delivery to any shop or facility",
-                    "Recovery documentation provided",
-                    "Available 24/7 including holidays",
+                    "Coordination with your insurer",
+                    "Available 24/7",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm text-slate-700">
                       <Check /> {item}
@@ -355,10 +347,10 @@ export default function AccidentRecoveryPage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014",                   body: "A dispatcher answers 24/7. Tell them you need accident recovery and give your location." },
                     { step: "2", title: "Location and situation confirmed",       body: "We ask for your exact location, a brief description of the collision and vehicle damage, and whether the vehicle is blocking traffic." },
-                    { step: "3", title: "Upfront quote provided",                 body: "We give you a flat rate price for the recovery before any truck is dispatched. You know the cost before we send anyone." },
+                    { step: "3", title: "Quote provided, wherever possible",      body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
                     { step: "4", title: "Appropriate recovery vehicle dispatched", body: "We send the nearest available driver with equipment suited to your vehicle and the collision damage described." },
                     { step: "5", title: "Vehicle assessed and loaded",            body: "The technician assesses the damage on site to determine the safest loading method, then loads the vehicle onto the flatbed using frame attachment points." },
-                    { step: "6", title: "Vehicle transported to your destination", body: "We deliver to the body shop, dealership, ICBC facility, or address you specify. We provide documentation of the recovery and delivery." },
+                    { step: "6", title: "Vehicle transported to your destination", body: "We deliver to the body shop, dealership, ICBC facility, storage facility, or address you specify." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
                       <span className="w-8 h-8 rounded-full bg-amber-400 text-gray-900 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">
@@ -409,7 +401,7 @@ export default function AccidentRecoveryPage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Been in an Accident?</h3>
                 <p className="text-slate-300 text-sm mb-5">
-                  24/7 accident recovery and towing across Surrey and the Lower Mainland. Free upfront quote before dispatch.
+                  24/7 accident recovery and towing across Surrey and the Lower Mainland. Free quote wherever possible, before dispatch.
                 </p>
                 <a
                   href="tel:+17788380014"
@@ -424,10 +416,10 @@ export default function AccidentRecoveryPage() {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed for damaged vehicles</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured in BC</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed towing for damaged vehicles</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
                 </ul>
               </div>
 

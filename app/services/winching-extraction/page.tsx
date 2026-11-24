@@ -9,30 +9,22 @@ export const metadata: Metadata = {
     absolute: "Winching & Vehicle Extraction | 24/7 | TowingNo.1",
   },
   description:
-    "Vehicle stuck in a ditch, mud, or snow in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 winching and vehicle extraction. Call 778-838-0014.",
+    "Vehicle stuck in a ditch, mud, or snow in Surrey, BC? TowingNo.1 provides 24/7 winching and vehicle extraction. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/winching-extraction" },
-  keywords: [
-    "winching service Surrey",
-    "vehicle extraction Surrey BC",
-    "car stuck in ditch Surrey",
-    "winch out service Lower Mainland",
-    "vehicle recovery Surrey",
-    "stuck in snow towing Surrey",
-    "off-road recovery BC",
-  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/winching-extraction",
     title: "Winching & Vehicle Extraction | 24/7 | TowingNo.1",
     description:
-      "24/7 winching and vehicle extraction across Surrey and the Lower Mainland. Vehicle stuck in a ditch, mud, or snow? We can help. Call 778-838-0014.",
+      "24/7 winching and vehicle extraction from TowingNo.1 in Surrey, BC. Vehicle stuck in a ditch, mud, or snow? We can help. Call 778-838-0014.",
+    locale: "en_CA",
     images: [{ url: "/image/Winching_Extractio.png", alt: "Winching and vehicle extraction service: vehicle being recovered from a ditch" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Winching & Vehicle Extraction | 24/7 | TowingNo.1",
     description:
-      "24/7 winching and vehicle extraction in Surrey and the Lower Mainland. Stuck in mud, a ditch, or snow? Call 778-838-0014.",
+      "24/7 winching and vehicle extraction in Surrey, BC. Stuck in mud, a ditch, or snow? Call 778-838-0014.",
     images: ["/image/Winching_Extractio.png"],
   },
 };
@@ -47,7 +39,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "Do you provide vehicle winching?",
-    a: "Yes. We provide winching and vehicle extraction for cars, SUVs, trucks, and other vehicles across Surrey and the Lower Mainland. Call (778) 838-0014, describe the situation, and we will arrange the appropriate recovery.",
+    a: "Yes. We provide winching and vehicle extraction for cars, SUVs, trucks, and other vehicles. Call (778) 838-0014, describe the situation, and we will arrange the appropriate recovery.",
   },
   {
     q: "What should I do if my vehicle is stuck?",
@@ -63,7 +55,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What areas do you serve for winching and extraction?",
-    a: "Winching and extraction is available across the Lower Mainland, including the rural, hillside, and back road locations where vehicles most often slide into a ditch, mud, or snow. Call (778) 838-0014 to confirm coverage for your location and the terrain involved.",
+    a: "We are based in Surrey, BC and help on rural, hillside, and back road locations where vehicles often slide into a ditch, mud, or snow. Call (778) 838-0014 to confirm coverage for your location and the terrain involved.",
   },
   {
     q: "When would another recovery method be needed?",
@@ -241,7 +233,7 @@ export default function WinchingExtractionPage() {
                     "Stuck in snow or ice",
                     "Recovery after an incident",
                     "Recovery before towing",
-                    "Available 24/7 including holidays",
+                    "Available 24/7",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm text-slate-700">
                       <Check /> {item}
@@ -265,7 +257,7 @@ export default function WinchingExtractionPage() {
                     },
                     {
                       title: "Mud and soft ground",
-                      body: "Mud and soft farmland shoulders are about traction and suction. Spinning the wheels only digs deeper. We stop the digging, rig to firm anchor points, and use steady, controlled tension so the vehicle comes free without causing additional damage.",
+                      body: "Mud and soft farmland shoulders are about traction and suction. Spinning the wheels only digs deeper. We stop the digging, rig to firm anchor points, and use steady, controlled tension so the vehicle comes free with less risk of additional damage.",
                     },
                     {
                       title: "Snow and ice",
@@ -397,7 +389,7 @@ export default function WinchingExtractionPage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014",                       body: "A dispatcher answers 24/7. Tell them your vehicle is stuck and give your location." },
                     { step: "2", title: "Location and vehicle condition confirmed",   body: "We ask for your exact location (nearest road, intersection, or landmark) and a brief description of how the vehicle is stuck." },
-                    { step: "3", title: "Upfront quote provided",                    body: "We give you a flat rate price for the extraction before a truck is dispatched. You know the cost before anyone is sent." },
+                    { step: "3", title: "Quote provided, wherever possible",         body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
                     { step: "4", title: "Recovery vehicle dispatched",               body: "We send the nearest available driver with appropriate winching and recovery equipment for your situation." },
                     { step: "5", title: "Vehicle extracted",                         body: "The driver assesses the position, rigs to appropriate anchor points, and uses controlled winch tension to bring the vehicle back onto solid ground." },
                     { step: "6", title: "Assessment and onward assistance if needed", body: "We assess the vehicle after extraction. If it can be driven safely, you are free to go. If a tow or further assistance is needed, we arrange it." },
@@ -453,7 +445,7 @@ export default function WinchingExtractionPage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Vehicle Stuck?</h3>
                 <p className="text-slate-300 text-sm mb-5">
-                  24/7 winching and vehicle extraction across Surrey and the Lower Mainland. Free upfront quote before dispatch.
+                  24/7 winching and vehicle extraction across Surrey and the Lower Mainland. Free quote wherever possible, before dispatch.
                 </p>
                 <a
                   href="tel:+17788380014"
@@ -468,10 +460,10 @@ export default function WinchingExtractionPage() {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Professional equipment</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Assessment after extraction</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
                 </ul>
               </div>
 

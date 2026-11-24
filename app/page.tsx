@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Tow Truck Surrey | 24/7 Emergency Towing | TowingNo.1",
   description:
-    "Need a tow truck near you in Surrey or the Lower Mainland? TowingNo.1 offers 24/7 emergency towing & roadside assistance. Free quote. Call (778) 838-0014.",
+    "Tow truck in Surrey, BC, 24/7. TowingNo.1 provides emergency towing and roadside assistance day and night. Call (778) 838-0014 for help now.",
   // keywords meta intentionally omitted — Google ignores it for ranking and
   // a large list is dead weight / stuffing signal in the raw HTML source.
   alternates: {
@@ -19,14 +19,24 @@ export const metadata: Metadata = {
     title:
       "Tow Truck Surrey | 24/7 Emergency Towing | TowingNo.1",
     description:
-      "24/7 tow truck and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured. Call (778) 838-0014.",
+      "24/7 tow truck and roadside assistance in Surrey, BC. Call TowingNo.1 at (778) 838-0014 any time, day or night.",
+    locale: "en_CA",
+    images: [
+      {
+        url: "https://www.towingno1.com/preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "24/7 Emergency Towing BC | TowingNo.1: We Are Coming To You",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title:
       "Tow Truck Surrey | 24/7 Emergency Towing | TowingNo.1",
     description:
-      "Call TowingNo.1 for fast 24/7 towing in Surrey and the Lower Mainland. Free quote before dispatch at (778) 838-0014.",
+      "Call TowingNo.1 for 24/7 towing and roadside help in Surrey, BC at (778) 838-0014.",
+    images: ["https://www.towingno1.com/preview.jpg"],
   },
 };
 
@@ -41,39 +51,35 @@ export const metadata: Metadata = {
 const homeFaq: FaqItem[] = [
   {
     q: "How fast can your tow truck reach me in Surrey?",
-    a: "We dispatch the nearest available driver the moment you call (778) 838-0014, and give you a live ETA up front so you know the wait before you commit. We stage drivers across Surrey and the Lower Mainland, so help is usually close by.",
+    a: "We dispatch the nearest available driver when you call (778) 838-0014. Fast local dispatch; arrival times vary by location and road conditions.",
   },
   {
     q: "How much does towing cost in Surrey?",
-    a: "We use flat rate pricing with no hidden fees. The cost depends on vehicle type and distance. Call (778) 838-0014 for an instant quote, and we will give you a firm price before we dispatch.",
-  },
-  {
-    q: "Do you provide a quote before dispatch?",
-    a: "Yes. We provide an upfront quote before dispatch so you know the exact price before service starts. No surprises.",
+    a: "Prices are not listed on this site because every call is different. Call (778) 838-0014, tell the dispatcher your location, your vehicle, and the help you need, and ask about the cost before anyone is sent.",
   },
   {
     q: "What roadside services do you offer besides towing?",
-    a: "We provide battery boosts, flat tire changes, lockout service, fuel delivery, and winching and extraction across the Lower Mainland, often solving the problem on the spot without a tow.",
+    a: "We provide battery boosts, spare-tire changes, lockout service, fuel delivery, and winching and extraction, often solving the problem on the spot without a tow.",
   },
   {
-    q: "What areas of the Lower Mainland do you serve?",
-    a: "We serve Surrey and the wider Lower Mainland, including Langley, Burnaby, Richmond, Coquitlam, Delta, White Rock, Vancouver, Maple Ridge, and surrounding communities.",
+    q: "Which areas do you serve?",
+    a: "We are based in Surrey, BC and answer calls 24/7. To confirm that we cover your location, call (778) 838-0014 before you book.",
   },
   {
     q: "Do you tow electric vehicles?",
-    a: "Yes. Electric vehicles must be transported on a flatbed and never towed with wheels down. We have flatbed trucks available 24/7 for EVs including Tesla, Rivian, and all other makes.",
+    a: "Yes. Electric vehicles should not be towed with their drive wheels on the ground, so tell the dispatcher the make and model when you call (778) 838-0014.",
   },
   {
     q: "Do you provide roadside assistance without towing?",
-    a: "Yes. If your issue can be solved on the spot (a flat tire, dead battery, empty tank, or lockout), we fix it right there. A tow is only arranged when the vehicle genuinely can't be driven.",
+    a: "Yes. If your issue can be solved on the spot (a flat tire you can swap for the spare, a dead battery, an empty tank, or a lockout), we handle it right there. A tow is only arranged when the vehicle can't be driven.",
   },
   {
-    q: "Are you available on holidays and weekends?",
-    a: "We operate 24 hours a day, 7 days a week, including all statutory holidays. Emergencies don't follow business hours, and neither do we.",
+    q: "Are you available at night and on weekends?",
+    a: "Yes. We operate 24 hours a day, 7 days a week. Emergencies don't follow business hours, so call (778) 838-0014 whenever you need help.",
   },
   {
     q: "Can you help if I'm stuck in a ditch or snow?",
-    a: "Yes. Our winching and extraction service pulls vehicles out of ditches, mud, and snow banks safely using professional equipment across the Lower Mainland.",
+    a: "Yes. Our winching and extraction service pulls vehicles out of ditches, mud, and snow banks. Call (778) 838-0014 and describe where the vehicle is stuck.",
   },
 ];
 const homeFaqSchema = faqPageSchema(homeFaq);

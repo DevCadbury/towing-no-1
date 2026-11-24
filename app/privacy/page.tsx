@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Read how TowingNo.1 collects, uses, and protects personal information for towing and roadside assistance requests across Surrey and the Lower Mainland.",
+    "Read how TowingNo.1 in Surrey, BC collects, uses, and protects personal information for towing and roadside assistance requests.",
   alternates: {
     canonical: "https://www.towingno1.com/privacy",
   },
@@ -13,12 +13,22 @@ export const metadata: Metadata = {
     title: "Privacy Policy | TowingNo.1",
     description:
       "How TowingNo.1 collects and protects customer information for 24/7 towing and roadside service dispatch.",
+    locale: "en_CA",
+    images: [
+      {
+        url: "https://www.towingno1.com/preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TowingNo.1 | Towing & Roadside Assistance in BC",
+      },
+    ],
   },
   twitter: {
     card: "summary",
     title: "Privacy Policy | TowingNo.1",
     description:
       "How TowingNo.1 collects and protects customer information for dispatch and roadside service.",
+    images: ["https://www.towingno1.com/preview.jpg"],
   },
 };
 
@@ -80,8 +90,8 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-bold text-navy-900 mb-2">How We Use Your Information</h2>
             <p>
               The information you give us is used to dispatch a tow truck or roadside technician to your location,
-              to call or text you with an estimated arrival time, to prepare a flat rate quote before we send a
-              driver, and to follow up after the job if there is an outstanding question, an invoice, or a request
+              to call or text you with an estimated arrival time, to prepare a flat rate quote wherever possible
+              before we send a driver, and to follow up after the job if there is an outstanding question, an invoice, or a request
               for feedback. We may also use your contact details to respond to general inquiries, to keep a basic
               service record for warranty or dispute purposes, and to meet our legal, tax, and insurance
               obligations. We do not use your personal details to send unrelated marketing, and we will not add

@@ -5,30 +5,32 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Towing & Roadside Services Surrey BC | 24/7",
   description:
-    "Towing and roadside help in Surrey and the Lower Mainland: emergency towing, battery boost, flat tire, lockout, fuel delivery, and winching. 24/7 dispatch.",
+    "Towing and roadside help in Surrey, BC: emergency towing, battery boost, flat tire, lockout, fuel delivery, and winching. 24/7 dispatch at (778) 838-0014.",
   alternates: {
     canonical: "https://www.towingno1.com/services",
   },
-  keywords: [
-    "towing services Surrey BC",
-    "roadside assistance Surrey",
-    "tow truck services Lower Mainland",
-    "emergency towing services BC",
-    "24/7 towing and roadside Surrey",
-    "battery boost flat tire lockout Surrey",
-  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services",
     title: "Towing & Roadside Services Surrey BC | 24/7",
     description:
-      "24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.",
+      "24/7 towing and roadside assistance from TowingNo.1 in Surrey, BC. Call (778) 838-0014 any time, day or night.",
+    locale: "en_CA",
+    images: [
+      {
+        url: "https://www.towingno1.com/preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TowingNo.1 | Towing & Roadside Assistance in BC",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Towing & Roadside Services Surrey BC | 24/7",
     description:
-      "24/7 towing and roadside assistance in Surrey and the Lower Mainland. Fast dispatch, upfront pricing, licensed & insured.",
+      "24/7 towing and roadside assistance from TowingNo.1 in Surrey, BC. Call (778) 838-0014 any time, day or night.",
+    images: ["https://www.towingno1.com/preview.jpg"],
   },
 };
 
@@ -55,8 +57,8 @@ const allServices = [
     alt: "Emergency towing service in Surrey: TowingNo.1 tow truck loading a car",
     title: "Emergency Towing",
     badge: "24/7",
-    desc: "Fast dispatch for breakdowns, collisions, and stalled vehicles. Wheel lift trucks available for all vehicle types including EVs.",
-    bullets: ["Immediate dispatch", "Wheel lift trucks", "All vehicle types including EVs", "Tow to any destination"],
+    desc: "Towing for breakdowns, collisions, and stalled vehicles, by flatbed or wheel-lift tow depending on the vehicle.",
+    bullets: ["Nearest available driver", "Flatbed and wheel-lift towing", "Cars, SUVs, light trucks, and EVs", "Tow to the destination you choose"],
   },
   {
     id: "flat-tire",
@@ -66,7 +68,7 @@ const allServices = [
     title: "Flat Tire Help",
     badge: "Fast",
     desc: "Spare tire installation on site or a tow to the nearest tire shop. We respond to flat tires on highways and parking lots across the Lower Mainland.",
-    bullets: ["Tire change on site", "Tow to tire shop if needed", "Highway & parking lot response", "All vehicle types"],
+    bullets: ["Spare tire installed on site", "Tow to tire shop if needed", "Highway & parking lot response", "Cars, SUVs, and light trucks"],
   },
   {
     id: "battery-boost",
@@ -75,8 +77,8 @@ const allServices = [
     alt: "Battery boost and jump start service in Surrey for a dead car battery",
     title: "Battery Boost",
     badge: "Quick",
-    desc: "Professional jump start service with free battery and charging system test across Surrey and the Lower Mainland.",
-    bullets: ["Professional jump start", "Free battery test included", "Safe boosting procedures", "Available 24/7"],
+    desc: "Professional jump start service across Surrey and the Lower Mainland, with a check of the battery and charging system after the boost.",
+    bullets: ["Professional jump start", "Battery and charging check", "Safe boosting procedures", "Available 24/7"],
   },
   {
     id: "roadside-assistance",
@@ -94,7 +96,7 @@ const allServices = [
     img: "/image/Accident_Recover.png",
     alt: "Accident recovery towing in Surrey: damaged vehicle being loaded on a truck",
     title: "Accident Recovery",
-    badge: "Expert",
+    badge: "Collision",
     desc: "Professional collision scene handling and safe transport of damaged vehicles to any repair shop or storage facility.",
     bullets: ["Professional recovery crew", "Damaged vehicle transport", "Safe securing techniques", "Insurance coordination available"],
   },
@@ -104,9 +106,9 @@ const allServices = [
     img: "/image/Lockout_Servic.png",
     alt: "Car lockout service in Surrey: keys locked inside the vehicle",
     title: "Lockout Service",
-    badge: "No damage",
-    desc: "We open your vehicle safely without causing damage to the lock, door, or window. All makes and models, available 24/7.",
-    bullets: ["Fast lockout response", "Entry tools that leave no damage", "All makes and models", "Available day or night"],
+    badge: "Careful entry",
+    desc: "We use careful entry techniques designed to protect the lock, door, and window when you are locked out. Available 24/7.",
+    bullets: ["Fast lockout response", "Careful entry techniques", "Keys locked in the car or trunk", "Available day or night"],
   },
   {
     id: "vehicle-transport",
@@ -115,8 +117,8 @@ const allServices = [
     alt: "Vehicle transport service in the Lower Mainland: car on a truck",
     title: "Vehicle Transport",
     badge: "Secure",
-    desc: "Secure, punctual vehicle transport across Surrey and the Lower Mainland. We move vehicles whether or not they run, with wheel lift trucks available.",
-    bullets: ["Wheel lift trucks", "Vehicles that run or don't", "Pickup & delivery on time", "Licensed & insured"],
+    desc: "Vehicle transport across Surrey and the Lower Mainland, for vehicles that run and vehicles that don't, by flatbed or wheel-lift tow.",
+    bullets: ["Flatbed or wheel-lift towing", "Vehicles that run or don't", "Pickup and delivery addresses you choose", "Call to arrange the move"],
   },
   {
     id: "fuel-delivery",
@@ -134,9 +136,9 @@ const allServices = [
     img: "/image/Winching_Extractio.png",
     alt: "Winching and extraction service in BC: vehicle stuck in a ditch being pulled out",
     title: "Winching & Extraction",
-    badge: "Heavy duty",
-    desc: "Professional winching and extraction for vehicles stuck in ditches, mud, snow, or off road. We pull your vehicle out safely without causing additional damage.",
-    bullets: ["Safe winching techniques", "Ditch, mud & snow recovery", "Professional equipment", "Controlled, careful recovery"],
+    badge: "Recovery",
+    desc: "Professional winching and extraction for vehicles stuck in ditches, mud, snow, or off road. We pull your vehicle out with a controlled, careful recovery.",
+    bullets: ["Safe winching techniques", "Ditch, mud & snow recovery", "Off-road and roadside recovery", "Controlled, careful recovery"],
   },
   {
     id: "cross-border-towing",
@@ -173,7 +175,7 @@ export default function Services() {
             Towing &amp; Roadside Assistance Services in Surrey, BC
           </h1>
           <p className="text-white/85 text-lg md:text-xl max-w-xl [text-shadow:0_1px_10px_rgba(0,0,0,0.5)]">
-            Comprehensive towing and roadside solutions, available 24/7 across Surrey and the Lower Mainland. Licensed &amp; insured.
+            Comprehensive towing and roadside solutions, available 24/7 across Surrey and the Lower Mainland.
           </p>
         </div>
       </section>
@@ -183,9 +185,9 @@ export default function Services() {
         <div className="container-custom text-center">
           <p className="text-sm font-semibold text-amber-800 leading-relaxed">
             <svg className="w-4 h-4 text-amber-600 inline-block align-middle mr-1.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"/></svg>
-            <strong>Flat rate pricing</strong> with no hidden fees and no meter running. Call{" "}
+            <strong>A flat rate quote wherever possible</strong>, based on the location, vehicle, and service you describe. Call{" "}
             <a href="tel:+17788380014" className="underline hover:text-amber-900 whitespace-nowrap">(778) 838-0014</a>{" "}
-            for an instant quote before we dispatch.
+            and ask for a quote before we dispatch.
           </p>
         </div>
       </div>
@@ -203,10 +205,10 @@ export default function Services() {
                 TowingNo.1 brings every roadside service under one phone number for drivers across Surrey, Langley, Coquitlam, Burnaby, Richmond, White Rock, Delta, Maple Ridge, Vancouver, and the surrounding communities. Whether your car has died in a parkade, you have a flat on a highway shoulder, or your vehicle has slid into a ditch on a back road, the same local team handles the call from the first ring to the moment you are moving again.
               </p>
               <p>
-                Each service listed below runs 24 hours a day, 7 days a week, including statutory holidays and overnight hours when most shops are closed. We dispatch the nearest available driver immediately, give you a firm flat rate quote before any truck leaves, and stay on the line to confirm your exact location so help is already on the way while we talk.
+                Each service listed below is available 24 hours a day, 7 days a week, including overnight hours when most shops are closed. We dispatch the nearest available driver; arrival times vary by location and road conditions. Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe, and the driver explains any change before going ahead if conditions on site differ materially.
               </p>
               <p>
-                Our fleet runs both wheel lift and flatbed trucks, which lets us match the right method to your vehicle instead of forcing one approach onto every job. Flatbeds carry all wheel drive cars, electric vehicles, and low clearance models that must never be dragged on their wheels, while wheel lift trucks handle quick, economical moves. Every operator is licensed and insured in British Columbia and trained to work safely on live highway shoulders, inside tight underground parkades, and on the steep, icy grades that catch drivers out each winter.
+                We provide both wheel-lift and flatbed towing, so the method can match your vehicle instead of forcing one approach onto every job. A flatbed is the usual choice for all wheel drive cars, electric vehicles, and low clearance models that should not be dragged on their wheels, while a wheel-lift tow suits quick moves of conventional vehicles. Tell the dispatcher your vehicle type when you call so the right kind of tow is arranged for a highway shoulder, a tight underground parkade, or an icy grade.
               </p>
               <p>
                 Wherever possible we aim to fix the problem on the spot with a boost, a tire change, a lockout, or a splash of fuel, so you avoid a tow altogether. When your vehicle genuinely cannot be driven, we transport it carefully to the shop, dealership, or address you choose. Explore the full range of services below, or call <a href="tel:+17788380014" className="font-semibold text-amber-600 hover:text-amber-700">(778) 838-0014</a> and tell us what has gone wrong.
@@ -275,7 +277,7 @@ export default function Services() {
               Need Any of These Services?
             </h2>
             <p className="text-white/60 mb-10 text-base">
-              We&apos;re dispatching 24/7, including nights, weekends, and holidays. Free quote before dispatch.
+              We&apos;re dispatching 24/7, including nights and weekends. Free quote wherever possible, before dispatch.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:+17788380014" className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-gray-900 font-bold py-4 px-10 rounded-xl text-base transition-all duration-200 hover:-translate-y-0.5 shadow-lg hover:shadow-xl">

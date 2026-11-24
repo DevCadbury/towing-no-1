@@ -8,29 +8,22 @@ export const metadata: Metadata = {
     absolute: "Vehicle Transport | Car Transport Service | TowingNo.1",
   },
   description:
-    "Vehicle transport and car transport service in Surrey and the Lower Mainland. TowingNo.1 safely moves vehicles whether or not they run. Call 778-838-0014.",
+    "Vehicle transport and car transport service in Surrey, BC. TowingNo.1 moves vehicles whether or not they run. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/vehicle-transport" },
-  keywords: [
-    "vehicle transport Surrey",
-    "car transport Lower Mainland BC",
-    "flatbed vehicle transport Surrey",
-    "non-running car transport Surrey",
-    "vehicle transport service BC",
-    "car shipping Surrey Lower Mainland",
-  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/vehicle-transport",
     title: "Vehicle Transport | Car Transport Service | TowingNo.1",
     description:
-      "Vehicle transport and car transport across Surrey and the Lower Mainland, whether or not the vehicle runs. Call 778-838-0014.",
+      "Vehicle transport and car transport from TowingNo.1 in Surrey, BC, whether or not the vehicle runs. Call 778-838-0014.",
+    locale: "en_CA",
     images: [{ url: "/image/Vehicle_Transpor.png", alt: "Vehicle transport service: car being loaded for transport" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vehicle Transport | Car Transport Service | TowingNo.1",
     description:
-      "Vehicle transport and car transport across Surrey and the Lower Mainland, whether or not the vehicle runs. Call 778-838-0014.",
+      "Vehicle transport and car transport from TowingNo.1 in Surrey, BC, whether or not the vehicle runs. Call 778-838-0014.",
     images: ["/image/Vehicle_Transpor.png"],
   },
 };
@@ -41,19 +34,19 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Can you transport a vehicle that does not run?",
-    a: "Yes. Vehicles that don't run are loaded onto a flatbed using our onboard winch, so the car does not need to start, steer, or brake. Let us know the vehicle's condition when you call so we can bring the right equipment.",
+    a: "Yes. Vehicles that don't run can be winched onto the truck, so the car does not need to start, steer, or brake. Let us know the vehicle's condition when you call so the right kind of tow is arranged.",
   },
   {
     q: "Can you transport a damaged vehicle after an accident?",
-    a: "Yes. We transport collision damaged vehicles and vehicles that can't be driven to the repair shop, body shop, dealership, or storage facility of your choice across the Lower Mainland. See our accident recovery service for more detail.",
+    a: "Yes. We transport collision damaged vehicles and vehicles that can't be driven to the repair shop, body shop, dealership, or address of your choice. See our accident recovery service for more detail.",
   },
   {
     q: "Where can you transport my vehicle?",
-    a: "We transport vehicles to any destination across Surrey and the Lower Mainland, including repair shops, dealerships, body shops, storage facilities, private addresses, and auction lots within our service area. Call (778) 838-0014 to confirm coverage for your specific pickup and delivery locations.",
+    a: "We transport vehicles to repair shops, dealerships, body shops, private addresses, and auction lots within our service area. Call (778) 838-0014 to confirm coverage for your specific pickup and delivery locations.",
   },
   {
     q: "Do you provide local vehicle transport?",
-    a: "Yes. Many transport requests are short local moves: a vehicle from a driveway to a nearby shop, a car that doesn't run from a parking lot to a mechanic, or a purchased vehicle from a seller's address to your home. We handle transport scheduled for the same day or booked in advance within the Lower Mainland.",
+    a: "Yes. Many transport requests are short local moves: a vehicle from a driveway to a nearby shop, a car that doesn't run from a parking lot to a mechanic, or a purchased vehicle from a seller's address to your home. Call (778) 838-0014 to ask about timing for your move.",
   },
   {
     q: "What information do you need for a vehicle transport request?",
@@ -127,7 +120,7 @@ export default function VehicleTransportPage() {
             Vehicle Transport Service
           </h1>
           <p className="text-white/80 text-lg max-w-xl mb-8">
-            Need a vehicle moved across Surrey or the Lower Mainland? TowingNo.1 safely transports vehicles that run
+            Need a vehicle moved across Surrey or the Lower Mainland? TowingNo.1 transports vehicles that run
             and vehicles that don't to the destination you choose, including repair shops, dealerships,
             private addresses, and more.
           </p>
@@ -169,9 +162,9 @@ export default function VehicleTransportPage() {
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   TowingNo.1 provides vehicle transport across Surrey and the Lower Mainland for a
-                  range of vehicle types and situations. We use flatbed trucks as the primary transport
-                  method, which keeps the vehicle fully off the ground and is suitable for vehicles whether
-                  or not they run.
+                  range of vehicle types and situations. Flatbed towing keeps the vehicle fully off the ground
+                  and suits vehicles whether or not they run; wheel-lift towing is also available for
+                  straightforward moves.
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {[
@@ -256,7 +249,7 @@ export default function VehicleTransportPage() {
                   </div>
                 </div>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Both services use similar equipment (flatbed trucks), and both are available by
+                  Both services are available by
                   calling (778) 838-0014. If you are uncertain which applies to your situation, describe
                   what you need and the dispatcher will direct you to the appropriate service.
                 </p>
@@ -297,7 +290,7 @@ export default function VehicleTransportPage() {
                     { step: "1", title: "Call (778) 838-0014",                   body: "A dispatcher answers 24/7. Tell them you need vehicle transport and give the basic details." },
                     { step: "2", title: "Provide vehicle location and destination", body: "We need the full address or location of the pickup and the delivery destination so we can confirm coverage and quote the transport." },
                     { step: "3", title: "Describe the vehicle and its condition", body: "Let us know the make, model, whether the vehicle runs and can steer and brake, and any access limitations at pickup or delivery. This determines the right truck and equipment." },
-                    { step: "4", title: "Upfront quote confirmed",               body: "We provide a flat rate price based on the vehicle and the distance involved, confirmed before dispatch. No meter, no surprise charges on arrival." },
+                    { step: "4", title: "Quote, wherever possible",              body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
                     { step: "5", title: "Transport arranged",                    body: "We dispatch the appropriate truck, load the vehicle safely using the correct method for its condition, and transport it to the agreed destination." },
                     { step: "6", title: "Vehicle delivered",                     body: "The vehicle is delivered to the destination, secured until unloading, and handed over. If plans change en route, let the driver know." },
                   ].map((item) => (
@@ -404,7 +397,7 @@ export default function VehicleTransportPage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Get a Quote</p>
                 <h3 className="text-xl font-extrabold mb-3">Need Vehicle Transport?</h3>
                 <p className="text-slate-300 text-sm mb-5">
-                  Call for an upfront flat rate quote. We transport vehicles 24/7 across the Lower Mainland.
+                  Call for a free quote wherever possible, before dispatch. We take transport calls 24/7.
                 </p>
                 <a
                   href="tel:+17788380014"
@@ -419,10 +412,10 @@ export default function VehicleTransportPage() {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed trucks</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed &amp; wheel-lift towing</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Whether or not it runs</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Upfront flat rate pricing</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured in BC</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 availability</li>
                 </ul>
               </div>

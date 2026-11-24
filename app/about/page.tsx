@@ -4,7 +4,7 @@ import AboutContent from "@/components/AboutContent";
 export const metadata: Metadata = {
   title: "About TowingNo.1 | 24/7 Towing & Roadside Assistance in BC",
   description:
-    "TowingNo.1 is a 24/7 towing and roadside assistance company serving Surrey and the Lower Mainland with flat rate pricing and professional drivers.",
+    "About TowingNo.1, a 24/7 towing and roadside assistance company in Surrey, BC. How we take your call and what to expect. Call (778) 838-0014.",
   alternates: {
     canonical: "https://www.towingno1.com/about",
   },
@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     url: "https://www.towingno1.com/about",
     title: "About TowingNo.1 | 24/7 Towing & Roadside Assistance in BC",
     description:
-      "24/7 towing and roadside assistance across Surrey and the Lower Mainland. Flat rate pricing, professional drivers, and local dispatch.",
+      "24/7 towing and roadside assistance from TowingNo.1 in Surrey, BC. Call (778) 838-0014 any time of day or night.",
+    locale: "en_CA",
     images: [
       {
         url: "https://www.towingno1.com/preview.jpg",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About TowingNo.1 | 24/7 Towing & Roadside Assistance in BC",
     description:
-      "24/7 towing and roadside assistance across Surrey and the Lower Mainland. Flat rate pricing, professional drivers, and local dispatch.",
+      "24/7 towing and roadside assistance from TowingNo.1 in Surrey, BC. Call (778) 838-0014 any time of day or night.",
     images: ["https://www.towingno1.com/preview.jpg"],
   },
 };

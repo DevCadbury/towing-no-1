@@ -8,30 +8,22 @@ export const metadata: Metadata = {
     absolute: "Flat Tire Help | 24/7 Roadside Assistance | TowingNo.1",
   },
   description:
-    "Flat tire in Surrey or the Lower Mainland? TowingNo.1 provides 24/7 flat tire assistance: spare change on site or a tow to the nearest shop. Call 778-838-0014.",
+    "Flat tire in Surrey, BC? TowingNo.1 provides 24/7 flat tire help: spare-tire installation on site or a tow to a tire shop. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/flat-tire-help" },
-  keywords: [
-    "flat tire help Surrey",
-    "flat tire roadside assistance Surrey BC",
-    "tire change roadside Surrey",
-    "flat tire service near me Surrey",
-    "spare tire change Surrey",
-    "flat tire help Lower Mainland",
-    "roadside tire change BC",
-  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/flat-tire-help",
     title: "Flat Tire Help | 24/7 Roadside Assistance | TowingNo.1",
     description:
-      "24/7 flat tire assistance in Surrey and the Lower Mainland. Spare change on site or a tow to the nearest shop. Call 778-838-0014.",
+      "24/7 flat tire help in Surrey, BC. Spare-tire installation on site or a tow to a tire shop. Call 778-838-0014.",
+    locale: "en_CA",
     images: [{ url: "/image/Flat_Tire_Hel.png", alt: "Flat tire roadside assistance: technician helping a stranded driver" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Flat Tire Help | 24/7 Roadside Assistance | TowingNo.1",
     description:
-      "24/7 flat tire assistance across Surrey and the Lower Mainland. Help on site or a tow to a shop. Call 778-838-0014.",
+      "24/7 flat tire help in Surrey, BC. Spare-tire installation on site or a tow to a tire shop. Call 778-838-0014.",
     images: ["/image/Flat_Tire_Hel.png"],
   },
 };
@@ -42,11 +34,11 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide flat tire assistance 24/7?",
-    a: "Yes. TowingNo.1 provides flat tire assistance 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange the appropriate help.",
+    a: "Yes. TowingNo.1 provides flat tire assistance 24 hours a day, 7 days a week, including evenings and weekends. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange the appropriate help.",
   },
   {
     q: "Can you help if I have a flat tire on the highway?",
-    a: "Yes. We respond to flat tires on Highway 1 (Trans-Canada), Highway 99, the Fraser Highway, King George Boulevard, and all major Lower Mainland corridors. If the shoulder is too narrow or the position is unsafe for a roadside change, we tow the vehicle to safety rather than attempting a change in a hazardous spot.",
+    a: "Yes. We respond to flat tires on Highway 1 (Trans-Canada), Highway 99, the Fraser Highway, King George Boulevard, and other major highway corridors. If the shoulder is too narrow or the position is unsafe for a roadside change, we tow the vehicle to safety rather than attempting a change in a hazardous spot.",
   },
   {
     q: "Can you change a flat tire?",
@@ -58,11 +50,11 @@ const faq: FaqItem[] = [
   },
   {
     q: "What if the tire or wheel is damaged?",
-    a: "If the wheel is bent, cracked, or the tire has a sidewall tear or blowout that cannot be addressed with a spare, we tow the vehicle to a tire shop. We will explain what we find and give you an upfront quote for the tow before any truck is dispatched.",
+    a: "If the wheel is bent, cracked, or the tire has a sidewall tear or blowout that cannot be addressed with a spare, we tow the vehicle to a tire shop. We will explain what we find and arrange the tow with your agreement.",
   },
   {
     q: "What areas do you serve for flat tire help?",
-    a: "Flat tire help covers the whole Lower Mainland, from live highway shoulders to quiet parkades. If you are stranded on a road we cover, we change the spare on the spot or tow you to the nearest open tire shop. Call (778) 838-0014 to confirm coverage for your location.",
+    a: "We are based in Surrey, BC and help on highway shoulders, streets, and parkades. On a road we cover, we fit your spare on the spot or tow you to the nearest open tire shop. Call (778) 838-0014 to confirm coverage for your location.",
   },
   {
     q: "When would I need a tow instead of a roadside tire change?",
@@ -216,7 +208,7 @@ export default function FlatTireHelpPage() {
                     },
                     {
                       title: "Towing to a tyre shop",
-                      body: "When a roadside change is not possible because of no spare, a damaged wheel, an unsafe location, or severe tyre damage, we tow the vehicle to the nearest open tyre shop. You receive an upfront flat rate quote before the tow is dispatched.",
+                      body: "When a roadside change is not possible because of no spare, a damaged wheel, an unsafe location, or severe tyre damage, we tow the vehicle to the nearest open tyre shop. Wherever possible you get a flat rate quote before we dispatch, based on the location, vehicle, and service you describe.",
                     },
                     {
                       title: "Roadside safety positioning",
@@ -235,8 +227,8 @@ export default function FlatTireHelpPage() {
                     "Tow to nearest tyre shop",
                     "Highway and parking lot response",
                     "All vehicle types",
-                    "Upfront flat rate pricing",
-                    "Available 24/7 including holidays",
+                    "Free quote wherever possible",
+                    "Available 24/7",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm text-slate-700">
                       <Check /> {item}
@@ -358,7 +350,7 @@ export default function FlatTireHelpPage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014",                body: "A dispatcher answers 24/7. Tell them you have a flat tyre and give your location." },
                     { step: "2", title: "Location and situation confirmed",    body: "We ask for your exact location (nearest intersection, exit number, or address) and whether you have a usable spare. This determines what we send." },
-                    { step: "3", title: "Upfront quote provided",              body: "We give you a flat rate price before anyone is dispatched. You know the cost before the truck leaves." },
+                    { step: "3", title: "Quote provided, wherever possible",   body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
                     { step: "4", title: "Appropriate help dispatched",         body: "We send the nearest available technician with the right equipment for your situation." },
                     { step: "5", title: "Tyre situation assessed on site",     body: "The technician assesses the tyre and wheel damage, determines whether a spare change on site is feasible and safe, and carries it out if so." },
                     { step: "6", title: "Tow arranged if needed",              body: "If a roadside change is not possible, we arrange a tow to the nearest open tyre shop, with your agreement and a confirmed quote." },
@@ -411,7 +403,7 @@ export default function FlatTireHelpPage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Flat Tire?</h3>
                 <p className="text-slate-300 text-sm mb-5">
-                  24/7 flat tire assistance across Surrey and the Lower Mainland. Free upfront quote before dispatch.
+                  24/7 flat tire assistance across Surrey and the Lower Mainland. Free quote wherever possible, before dispatch.
                 </p>
                 <a
                   href="tel:+17788380014"
@@ -426,10 +418,10 @@ export default function FlatTireHelpPage() {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Help on site or a tow to a shop</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> All vehicle types</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
                 </ul>
               </div>
 

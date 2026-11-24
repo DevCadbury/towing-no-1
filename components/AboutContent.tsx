@@ -49,30 +49,27 @@ export default function AboutContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">Licensed &amp; Insured</span>
+              <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">Surrey, BC</span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-navy-900">Our Story</h2>
               <div className="w-16 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mb-8 rounded-full" />
               <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  TowingNo.1 began with a single truck and a clear mission: to provide the most reliable and honest towing service in the Lower Mainland. We saw too many people stranded and stressed, dealing with hidden fees and long wait times.
+                  TowingNo.1 is a towing and roadside assistance company in Surrey, BC. Our aim is simple: honest, careful help for drivers who are stranded and stressed, with a clear answer, wherever possible, on price and what happens next before anyone is sent.
                 </p>
                 <p>
-                  Over the years, we&apos;ve grown into a full fleet operation, but our core values haven&apos;t changed. We treat every customer like family, understanding that when you call us, you&apos;re likely in a stressful situation.
+                  We treat every customer like family, because when you call us you are likely having a bad day.
                 </p>
                 <p>
-                  What started as one operator answering the phone at all hours has become a coordinated team of professional drivers, dispatchers, and roadside technicians who cover Surrey, Delta, White Rock, Langley, Burnaby, Richmond, Coquitlam, Vancouver, and Maple Ridge. We invested early in proper flatbeds, wheel lift trucks, and recovery gear so we could handle everything from a simple battery boost to a complicated winch out without sending someone else to finish the job.
+                  We take calls for Surrey, Delta, White Rock, Langley, Burnaby, Richmond, Coquitlam, Vancouver, and Maple Ridge. The work ranges from flatbed and wheel-lift towing to roadside jobs such as a battery boost, a spare-tire change, or winching a vehicle out of a ditch.
                 </p>
                 <p>
-                  Being licensed and fully insured is not a marketing line for us, it is the foundation of how we work. Every driver is trained to secure your vehicle correctly, to operate safely around live traffic, and to treat your car as carefully as their own. We carry the coverage that protects you and your vehicle from the moment we hook up to the moment we set down at the destination.
+                  When you call, the dispatcher takes your location, your vehicle details, and the problem. Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially from what was described, the price may be adjusted, and the driver explains any change before going ahead. Our drivers accept major credit cards, debit, and cash through terminals at the job.
                 </p>
                 <p>
-                  Today, we are proud to be a trusted towing service across the Lower Mainland, known for professional drivers and transparent pricing.
+                  We send the nearest available driver. Arrival times vary by location and road conditions, so ask the dispatcher for a current estimate when you call.
                 </p>
                 <p>
-                  Our process is built to take the stress out of a bad day. When you call, a real dispatcher gathers your location, your vehicle details, and the problem, then gives you a flat rate quote and an honest arrival estimate before a truck rolls. You get a callback or text as the driver approaches, the driver confirms the price on site before any work begins, and payment is simple with card, debit, or cash. No upselling, no surprise extras, no inflated storage games, just the help you called for at the price we quoted.
-                </p>
-                <p>
-                  Experience across the Lower Mainland has taught us that reputation is earned one call at a time. The drivers who have trusted us came back, and recommended us to friends and family, because we showed up when we said we would and charged what we promised. That is the standard we hold every member of our team to, and it is the difference we want you to feel the moment we answer the phone.
+                  Reputation is earned one call at a time. We aim to be clear about price, honest about timing, and careful with your vehicle on every job.
                 </p>
               </div>
             </motion.div>
@@ -86,7 +83,7 @@ export default function AboutContent() {
             >
               <Image
                 src="/assets/about-fleet.jpg"
-                alt="TowingNo.1 tow truck fleet in British Columbia"
+                alt="TowingNo.1 tow truck in British Columbia"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -116,19 +113,19 @@ export default function AboutContent() {
                 imageSrc: "/assets/Safety_First.png",
                 imageAlt: "Safety First",
                 title: "Safety First",
-                desc: "We never compromise on safety. Our drivers are trained to handle every situation with the utmost care for you, your vehicle, and other road users.",
+                desc: "We never compromise on safety. Every call is handled with care for you, your vehicle, and other road users.",
               },
               {
                 imageSrc: "/assets/Rapid_Response.png",
                 imageAlt: "Rapid Response",
                 title: "Rapid Response",
-                desc: "We understand that time is of the essence. We invest in dispatch technology and strategic fleet positioning to get to you as fast as possible.",
+                desc: "We know time matters when you are stuck. We send the nearest available driver; arrival times vary by location and road conditions.",
               },
               {
                 imageSrc: "/assets/Integrity.png",
                 imageAlt: "Integrity",
                 title: "Integrity",
-                desc: "Honest pricing and transparent communication. No hidden fees or surprise charges. We treat you with the respect you deserve.",
+                desc: "Honest pricing and clear communication. Your quote is based on your location, your vehicle, and the service you need, and we explain any change before going ahead.",
               },
             ].map((value, i) => (
               <motion.div
@@ -160,37 +157,37 @@ export default function AboutContent() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">Why Drivers Trust Us</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy-900">Licensed, Insured &amp; Accountable</h2>
+            <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">How We Work</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy-900">What to Expect When You Call</h2>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-              Every tow truck and operator is fully licensed under British Columbia&apos;s commercial vehicle regulations.
+              The same steps apply whether you need a tow or help at the roadside.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                title: "BC Licensed & Insured",
-                body: "Operating across British Columbia with commercially licensed vehicles maintained to provincial standards.",
+                title: "24/7 Dispatch",
+                body: "Call (778) 838-0014 at any hour, any day of the week. Tell the dispatcher where you are, what you drive, and what has gone wrong.",
               },
               {
-                title: "Fully Insured",
-                body: "All vehicles carry comprehensive commercial insurance and cargo coverage. Your vehicle is protected from the moment we attach to the moment we set it down.",
+                title: "A Quote Before Dispatch, Wherever Possible",
+                body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead.",
               },
               {
-                title: "Flat Rate Pricing",
-                body: "You receive an upfront flat rate quote before any truck rolls. No metered charges, no hidden fees, no surprise invoices at the destination.",
+                title: "Nearest Available Driver",
+                body: "We send the nearest available driver. Arrival times vary by location and road conditions.",
               },
               {
-                title: "24/7 Live Dispatch",
-                body: "A real dispatcher answers every call, not a voicemail or a callback queue. Night shifts, weekends, and statutory holidays are staffed the same as any weekday.",
+                title: "Flatbed and Wheel-Lift Towing",
+                body: "Tell the dispatcher your vehicle type, and whether it is electric, all-wheel drive, or damaged, so the right kind of tow is arranged.",
               },
               {
-                title: "Professional Trained Drivers",
-                body: "Our operators are trained in safe load securement, live traffic highway protocols, and proper handling of EVs, AWD vehicles, and cars damaged in accidents.",
+                title: "Payment at the Job",
+                body: "Our drivers accept major credit cards, debit, and cash through terminals at the job.",
               },
               {
-                title: "ICBC Compatible Documentation",
-                body: "We provide recovery and delivery documentation that aligns with ICBC claims. For accident tows, ask for your paperwork when the vehicle is dropped off.",
+                title: "Accident Tows",
+                body: "After a collision we can transport your vehicle to an ICBC facility or a storage facility, and coordinate with your insurer on where it should go.",
               },
             ].map((item) => (
               <div key={item.title} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
@@ -310,9 +307,9 @@ export default function AboutContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-8">Join the thousands who trust us</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-8">Need a tow or roadside help?</h2>
             <p className="text-lg mb-10 max-w-2xl mx-auto text-slate-300">
-              Experience the difference of a towing service that puts you first.
+              Call any time, 24/7, and we will send the nearest available driver.
             </p>
             <a
               href="tel:+17788380014"

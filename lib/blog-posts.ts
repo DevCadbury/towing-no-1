@@ -47,7 +47,7 @@ If you carry emergency triangles or flares, place them 30 to 60 metres behind yo
 
 ## Step 4: Call for Help
 
-In BC, dial **#77** on your cell to reach RCMP and highway patrol, or call us directly at **(778) 838-0014** for immediate 24/7 towing and roadside assistance. Share your exact location, the highway number, and the nearest kilometre marker if visible.
+If anyone is hurt, if you are in danger, or if your vehicle is blocking a live lane, call **911**. For a tow or roadside help, call us at **(778) 838-0014**, 24/7. Share your exact location, the highway number, and the nearest kilometre marker if visible.
 
 ## Step 5: Wait Safely
 
@@ -63,7 +63,22 @@ Knowing what tends to go wrong helps you respond calmly. Overheating is common o
 
 ## Protecting Yourself While You Wait
 
-If you must remain near the vehicle, position yourself well away from the traffic side, ideally up an embankment or behind a barrier. Keep children and pets with you rather than letting them wander, and never stand directly behind the car where you are most exposed. Note nearby landmarks, exit numbers, or kilometre markers so you can describe your location precisely when you call for help. That one detail often shaves several minutes off the response time and gets a tow truck to you faster.
+If you must remain near the vehicle, position yourself well away from the traffic side, ideally up an embankment or behind a barrier. Keep children and pets with you rather than letting them wander, and never stand directly behind the car where you are most exposed. Note nearby landmarks, exit numbers, or kilometre markers so you can describe your location precisely when you call for help. A precise location helps the tow truck find you without searching.
+
+## What to Tell the Dispatcher
+
+Having these details ready keeps the call short and helps the right kind of tow get to you:
+
+- The highway number and your direction of travel
+- The nearest kilometre marker, exit number, or overpass
+- Whether you are on the shoulder, in a pullout, or still in a live lane
+- The make, model, and drive type of the vehicle (front wheel, rear wheel, all wheel drive, or electric)
+- What happened: a noise, smoke, a warning light, a flat, or a stall
+- How many people and pets are with the vehicle
+
+## Breaking Down at Night or in Bad Weather
+
+Darkness, rain, and snow make a stopped car much harder to see. Leave your hazard lights on and switch on the interior light so the cabin is visible. If you stay inside, keep your seatbelt on and keep everyone in their seats. In snow, check that the exhaust pipe is clear before you run the engine for heat, because a blocked tailpipe can push carbon monoxide into the cabin. Run the engine in short periods with a window opened slightly rather than continuously.
 
 ---
 
@@ -84,11 +99,11 @@ British Columbia winters can be unpredictable, from icy roads in the Lower Mainl
 
 ## 1. Switch to Winter Tires
 
-BC law requires winter tires (or chains) on many highways from October 1 to April 30. But even in Metro Vancouver, all season tires lose grip below 7°C. Winter tires improve stopping distance by up to 40% on snow and ice. Look for the mountain/snowflake symbol.
+Many BC highways have posted winter tire and chain signs during the colder months, so check DriveBC for the routes you plan to drive before you travel. Even in Metro Vancouver, all season tires lose grip as temperatures drop toward freezing, and winter tires stop shorter on snow and ice. Look for the mountain/snowflake symbol.
 
 ## 2. Check Your Battery
 
-Cold weather significantly reduces battery capacity. If your battery is more than three years old, have it tested before winter. A weak battery is the leading cause of breakdowns in cold weather, and our drivers provide free battery tests during any roadside call.
+Cold weather significantly reduces battery capacity. If your battery is more than three years old, have it tested before winter. A weak battery is a common cause of cold weather breakdowns, and many auto parts stores and repair shops can test it for you.
 
 ## 3. Top Up Antifreeze
 
@@ -112,7 +127,23 @@ If your winter plans include the Coquihalla, the Sea-to-Sky to Whistler, or the 
 
 ## Don't Ignore the Small Stuff
 
-A frozen door lock, a sticky parking brake, or a washer system spraying plain water can each turn a routine morning into a frustrating one. Use a washer fluid rated for winter, keep a small deicer in your bag rather than locked inside the car, and give the cabin and glass a few minutes to warm before you drive. Clearing every window fully, not just a porthole in the frost, is both safer and required under BC's rules of the road.
+A frozen door lock, a sticky parking brake, or a washer system spraying plain water can each turn a routine morning into a frustrating one. Use a washer fluid rated for winter, keep a small deicer in your bag rather than locked inside the car, and give the cabin and glass a few minutes to warm before you drive. Clearing every window fully, not just a porthole in the frost, gives you a far safer view of the road.
+
+---
+
+## A Quick Pre-Winter Checklist
+
+- Winter tires fitted, with tread above the wear bars, and pressures checked on a cold morning
+- Battery more than three years old? Have it tested
+- Coolant mixture checked and topped up
+- Wiper blades replaced and washer fluid rated for freezing temperatures
+- All lights working, including brake lights and the rear licence plate light
+- Emergency kit in the trunk: scraper, brush, blanket, shovel, traction sand, jumper cables or a jump pack, phone charger
+- Fuel tank kept at least half full
+
+## If You Get Stuck in Snow
+
+Stop spinning the wheels as soon as they lose grip, because spinning polishes the snow into ice and digs the tires in deeper. Straighten the front wheels, clear snow away from the tires and from under the front of the car, and spread sand or kitty litter in front of the drive wheels. Ease forward gently in the lowest gear. If the car still will not move, or it is stuck in a ditch or on a slope, call for winching instead of rocking it harder. While you wait with the engine running for heat, keep the exhaust pipe clear of snow.
 
 ---
 
@@ -149,7 +180,7 @@ A rapid clicking when you turn the ignition (without the engine cranking) typica
 
 ## 5. Battery Age Over 4 Years
 
-Car batteries typically last 3 to 5 years in the Lower Mainland climate. If yours is approaching or past that mark, have it tested proactively, especially before winter. A free battery test takes less than 5 minutes.
+Car batteries typically last 3 to 5 years in the Lower Mainland climate. If yours is approaching or past that mark, have it tested proactively, especially before winter. A load test checks whether the battery can still deliver current under demand.
 
 ## What Shortens Battery Life in the Lower Mainland
 
@@ -162,6 +193,21 @@ A few simple habits genuinely extend battery life. Take your car for a longer dr
 ## When a Boost Isn't Enough
 
 A jump start will usually get you moving again, but it treats the symptom rather than the cause. If your battery is more than four years old, repeatedly goes flat, or fails a load test, replacement is the only reliable fix. Faults in the charging system are a separate issue: if the alternator isn't keeping up, even a brand new battery will soon die, which is why a proper test of both the battery and the charging output matters before you spend money on parts.
+
+## How to Find Your Battery's Age
+
+Most batteries carry a date code on a sticker or stamped into the case, often on the top or the side. Some show the month and year plainly; others use a letter for the month and a number for the year. If you cannot read it, a receipt or service record from the last replacement will tell you. Knowing the age helps you decide whether a slow start is a warning or simply a cold morning.
+
+## Battery or Alternator?
+
+The two problems can look alike, but a few clues help tell them apart:
+
+- **Likely the battery:** the car is slow to crank or will not start after sitting overnight, but runs normally once started
+- **Likely the alternator or charging system:** the battery warning light comes on while you drive, lights dim or flicker while driving, or the car starts after a jump and then dies again a short time later
+
+## Before You Boost
+
+Turn off the headlights, heater fan, and accessories before a jump start. Look at the battery first: if the case is cracked, bulging, or leaking, or the battery may be frozen, do not try to boost it, because a damaged battery can fail suddenly. Keep sparks and flames away from the battery, and connect and disconnect cables in the order your owner's manual gives.
 
 ---
 
@@ -184,7 +230,7 @@ Whether you're driving through the Lower Mainland or heading up to Whistler, a r
 
 **Safety First:**
 - Reflective warning triangles (×3) or LED road flares
-- High visibility vest (required by law if you exit your vehicle on a BC highway)
+- High visibility vest, to wear if you have to get out on a highway shoulder
 - Work gloves to protect your hands during any roadside task
 
 **Jump Start Gear:**
@@ -276,7 +322,7 @@ If the fix is quick, you have the right tools, and you are somewhere safe, a car
 
 ---
 
-**TowingNo.1 is available 24/7 at (778) 838-0014. We serve Delta, Surrey, Langley, Burnaby, White Rock, and all of Metro Vancouver.**
+**TowingNo.1 is available 24/7 at (778) 838-0014. We serve Delta, Surrey, Langley, Burnaby, White Rock, and the other communities listed on our service areas page.**
     `,
   },
   {
@@ -332,7 +378,7 @@ Before you agree to a tow, it is fair to ask whether the company is licensed and
 
 ---
 
-**TowingNo.1 operates flatbed, wheel lift, and heavy duty trucks across the Lower Mainland. Call (778) 838-0014 for fast, professional service any time of day.**
+**TowingNo.1 provides flatbed and wheel-lift towing across the Lower Mainland. Call (778) 838-0014 any time of day.**
     `,
   },
   {
@@ -351,7 +397,7 @@ A collision is disorienting even when nobody is seriously hurt. Knowing the sequ
 
 Before anything else, check whether anyone in your vehicle or the other vehicle is injured. If anyone is hurt, unconscious, or trapped, call **911 immediately**. Do not attempt to move an injured person unless they are in immediate danger from fire or traffic.
 
-If the vehicles are driveable and the collision is minor, BC law requires you to move them out of traffic before exchanging information. Turn on your hazard lights and pull to the shoulder or a nearby parking lot. Leaving vehicles in a live lane creates a secondary hazard.
+If the vehicles are driveable and the collision is minor, it is usually safer to move them out of traffic before exchanging information. Turn on your hazard lights and pull to the shoulder or a nearby parking lot. Leaving vehicles in a live lane creates a secondary hazard.
 
 ## Step 2: Decide Whether to Call 911
 
@@ -366,7 +412,7 @@ For collisions with only property damage, where everyone is uninjured and cooper
 
 ## Step 3: Exchange Information at the Scene
 
-BC law requires both drivers to exchange:
+Make sure both drivers exchange:
 - Full name and address
 - Driver's licence number
 - Vehicle plate number
@@ -387,7 +433,7 @@ Before the vehicles move, photograph:
 
 Even a quick set of photos on your phone takes under two minutes and gives ICBC the visual record they need.
 
-## Step 5: Report to ICBC Within 24 Hours
+## Step 5: Report the Collision to ICBC Promptly
 
 Since May 1, 2021, BC operates under Enhanced Care, a no fault insurance system. You report your claim to ICBC regardless of who caused the collision, and ICBC covers injury benefits and vehicle repair based on the facts of the incident.
 
@@ -417,7 +463,7 @@ Follow up with your body shop or ICBC repair facility within a day or two. Keep 
 
 ---
 
-**Need an accident tow in Surrey or the Lower Mainland? TowingNo.1 dispatches 24/7. Call (778) 838-0014 for an upfront quote before we move your vehicle.**
+**Need an accident tow in Surrey or the Lower Mainland? TowingNo.1 dispatches 24/7. Call (778) 838-0014 and ask for a quote before we move your vehicle.**
     `,
   },
   {
@@ -460,7 +506,7 @@ BC winters vary from icy highway corridors on the Coquihalla to wet but mild com
 ## Emergency Kit: Keep This in the Vehicle All Winter
 
 **Safety and Signalling**
-- [ ] High visibility vest (required by law if you exit your vehicle on a BC highway)
+- [ ] High visibility vest, to wear if you have to get out on a highway shoulder
 - [ ] LED road flares or reflective triangles (×3)
 - [ ] Flashlight and spare batteries
 
@@ -481,8 +527,8 @@ BC winters vary from icy highway corridors on the Coquihalla to wet but mild com
 - [ ] Portable phone charger / power bank
 
 **Navigation**
-- [ ] DriveBC saved in your phone bookmarks: **drivebc.ca** or call **511**
-- [ ] BC highway patrol number saved: **#77** from any BC cell
+- [ ] DriveBC saved in your phone bookmarks: **drivebc.ca** or call **1-800-550-4997**
+- [ ] Emergency reminder: **911** if anyone is hurt or a vehicle is blocking a live lane
 
 ## Advice for Specific Highways
 
@@ -505,7 +551,7 @@ BC winters vary from icy highway corridors on the Coquihalla to wet but mild com
 
 ## Before Any Mountain Route
 
-- Check DriveBC (drivebc.ca or 511) for chain requirements and closures
+- Check DriveBC (drivebc.ca or 1-800-550-4997) for chain requirements and closures
 - Tell someone your route and expected arrival time
 - Carry more food, water, and warm clothing than you think you will need
 - Keep the fuel tank above half
@@ -580,14 +626,14 @@ If you are a tow operator, the key points are:
 
 ---
 
-**TowingNo.1 dispatches flatbed trucks for EVs across Surrey, Langley, Burnaby, Richmond, White Rock, and the wider Lower Mainland. When you call, tell us it's an EV and we will send the right truck. (778) 838-0014, available 24/7.**
+**TowingNo.1 provides flatbed towing for EVs across Surrey, Langley, Burnaby, Richmond, White Rock, and the wider Lower Mainland. When you call, tell us it's an EV so the right kind of tow is arranged. (778) 838-0014, available 24/7.**
     `,
   },
   {
     id: 10,
     category: "Road Safety",
     title: "Highway 1 and Highway 99 Breakdown Guide for Lower Mainland Drivers",
-    excerpt: "What to do when your vehicle breaks down on BC's two busiest highway corridors: how to pull off safely, how to report your location, RCMP and roadside contacts, and what to expect from a highway tow.",
+    excerpt: "What to do when your vehicle breaks down on BC's two busiest highway corridors: how to pull off safely, how to report your location, who to call, and what to expect from a highway tow.",
     date: "September 10, 2026",
     image: "/blog/highway-breakdown-bc.jpg",
     slug: "highway-breakdown-guide-bc",
@@ -625,13 +671,12 @@ If you cannot see a marker, use the nearest interchange number, a visible overpa
 
 | Contact | How to reach |
 |---|---|
-| BC RCMP / highway patrol | **#77** from any BC cell phone |
-| Emergency (injuries, criminal behaviour) | **911** |
+| Emergency (injuries, danger, a vehicle in a live lane) | **911** |
 | TowingNo.1 (24/7 Lower Mainland towing) | **(778) 838-0014** |
-| ICBC claims | 604-520-8222 |
-| DriveBC road conditions | **511** or drivebc.ca |
+| ICBC claims | 604-520-8222 (Lower Mainland) or 1-800-910-4222 |
+| DriveBC road conditions | drivebc.ca or 1-800-550-4997 |
 
-**#77 from your cell** connects you to BC RCMP dispatch for highway incidents such as road debris, stalled vehicles blocking lanes, and collisions. They will coordinate traffic control and, if needed, request a tow through operators licensed by CVSE.
+**Call 911** if anyone is injured, if you feel unsafe, or if a vehicle is stopped in a live lane. For a breakdown where everyone is safely off the road, call a tow company directly.
 
 ## Safe Breakdown Procedure on a BC Highway
 
@@ -640,7 +685,7 @@ If you cannot see a marker, use the nearest interchange number, a visible overpa
 3. **Do not stop on a bridge, overpass, or in a tunnel.** Exit the structure first if at all possible
 4. **Stay in the vehicle with your seatbelt on** if the shoulder is narrow or traffic is fast. Being inside the vehicle is often safer than standing beside it
 5. **Exit from the passenger side** if you must leave the vehicle, so you step away from traffic
-6. **Put on your high visibility vest** before exiting. BC law requires this if you exit your vehicle on a highway
+6. **Put on your high visibility vest** before exiting, so approaching drivers can see you
 7. **Place warning triangles** 30 to 60 metres behind your vehicle if you carry them and it is safe to deploy them
 
 ## BC's Move Over Law
@@ -655,7 +700,7 @@ A tow operator on a live highway shoulder will:
 - Load your vehicle onto a flatbed (most highway tows use flatbeds for stability and speed)
 - Confirm a destination with you before leaving the scene
 
-You will be given an upfront quote before the tow begins. If you are unsure where to take the vehicle, we can deliver it to any repair shop, dealership, or address you specify, or to a safe storage location while you arrange repairs.
+Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If you are unsure where to take the vehicle, we can deliver it to a repair shop, dealership, or address you specify, or to a storage facility.
 
 ## Coquihalla and Sea-to-Sky Appendix
 
@@ -667,7 +712,7 @@ These two major mountain routes deserve special mention:
 
 ---
 
-**TowingNo.1 responds to highway breakdowns on Highway 1 and Highway 99 across the Lower Mainland. Call (778) 838-0014, 24/7, for an upfront quote before we dispatch.**
+**TowingNo.1 responds to highway breakdowns on Highway 1 and Highway 99 across the Lower Mainland. Call (778) 838-0014, 24/7, and ask for a quote before we dispatch.**
     `,
   },
   {
@@ -689,12 +734,9 @@ Save these in your phone before you need them:
 | Situation | Contact |
 |---|---|
 | Injuries, fire, or immediate danger | **911** |
-| Highway breakdown (RCMP / highway patrol) | **#77** (any BC cell) |
-| Surrey RCMP (not for emergencies) | 604-599-0502 |
-| ICBC claims (accident or towing) | 604-520-8222 |
+| ICBC claims (collisions) | 604-520-8222 (Lower Mainland) or 1-800-910-4222 |
 | TowingNo.1 (24/7 towing and roadside) | **(778) 838-0014** |
-| DriveBC road conditions | **511** or drivebc.ca |
-| Surrey Emergency Program (not for emergencies) | 604-591-4370 |
+| DriveBC road conditions | drivebc.ca or 1-800-550-4997 |
 
 ## What to Know About Surrey's Major Road Corridors
 
@@ -716,7 +758,7 @@ These arterials connect the Highway 10 corridor to Guildford and are primarily r
 ## Common Surrey Breakdown Scenarios
 
 **Parkade lockouts at Guildford Town Centre and Central City**
-Mall and retail parkade lockouts are among our most frequent calls in Surrey. Underground parkades with low clearance require a compact wheel lift or a slim jim entry kit, and we carry that equipment specifically for these locations. We open the vehicle without touching the paint or weatherstripping.
+Mall and retail parkade lockouts are common in Surrey. Underground parkades have low clearance, so tell the dispatcher you are in a parkade and give the level and stall number. Lockouts are handled with careful entry techniques.
 
 **Highway 99 and Highway 10 stalls**
 A vehicle stalling on either of these corridors at speed needs both a fast response and a careful setup. The tow operator positions the truck to shield your vehicle from passing traffic before loading. Tell us your exact kilometre marker or the name of the nearest interchange.
@@ -736,7 +778,7 @@ ICBC covers some towing costs after a collision (accident tow), but not for mech
 - Your location at the time of the accident
 - Photos from the scene if available
 
-ICBC will confirm your towing entitlement and advise on your repair shop options. If you are not sure whether your policy covers a tow, call us first. We provide an upfront quote and you can verify your ICBC coverage while we are en route.
+ICBC will confirm your towing entitlement and advise on your repair shop options. If you are not sure whether your policy covers a tow, ask us for a quote before we dispatch and check your coverage with ICBC.
 
 ## Surrey Emergency Preparedness Resources
 
@@ -748,7 +790,7 @@ For broader local emergency information beyond roadside incidents:
 
 ---
 
-**TowingNo.1 covers all of Surrey 24 hours a day, including Cloverdale, Fleetwood, Guildford, Newton, South Surrey, Whalley, and the highways connecting them. Call (778) 838-0014 for an upfront quote before we dispatch.**
+**TowingNo.1 covers all of Surrey 24 hours a day, including Cloverdale, Fleetwood, Guildford, Newton, South Surrey, Whalley, and the highways connecting them. Call (778) 838-0014 and ask for a quote before we dispatch.**
     `,
   },
   {
@@ -765,13 +807,13 @@ Most towing calls are straightforward: a driver calls, a truck arrives, a quote 
 
 ## Your Right to a Quote Before Dispatch
 
-In BC, you are entitled to know the price before you authorize a tow. A reputable towing company provides an upfront price, typically a flat rate based on your vehicle type and the distance to your chosen destination. You are not obligated to accept a verbal quote that is vague ("it depends on how long it takes"), so ask for a firm number.
+Ask for the price before you authorize a tow. A reputable towing company tells you how the price is worked out, usually from your vehicle, your location, and the service and destination you need. If a verbal quote is vague ("it depends on how long it takes"), ask for a clearer number before you agree.
 
 If a tow operator refuses to give you a price before they begin loading your vehicle, you can decline the service. Do not let a tow begin under the assumption you will "sort it out" at the destination.
 
 ## Your Right to Choose Your Destination
 
-You can direct a tow operator to take your vehicle to any licensed repair facility, dealership, or private address you choose, within reasonable distance. A tow operator cannot compel you to use a specific repair shop, and they cannot increase the quote because you choose a destination they prefer not to go to.
+When you arrange a tow yourself, tell the operator where you want the vehicle to go: a repair facility, dealership, or private address you choose. Be wary of an operator who pushes you toward a specific repair shop, and confirm the quote for your chosen destination before loading begins.
 
 If you are not sure where to take the vehicle, you can have it towed to your home or a storage location while you decide. You do not have to commit to a repair shop at the roadside.
 
@@ -818,11 +860,11 @@ If you believe you have been overcharged or treated unfairly by a towing company
 
 ## ICBC and Towing Charges
 
-ICBC's Basic Autoplan covers towing costs in some circumstances. The specifics depend on your policy and whether the tow follows an accident or a mechanical breakdown. If you have the Roadside Plus optional coverage, that extends to mechanical breakdowns. Check your policy details or call ICBC at 604-520-8222 to confirm what your coverage includes before you call a tow for a situation that doesn't involve an accident.
+Your insurance or a roadside membership may cover some towing costs, depending on your policy and on whether the tow follows a collision or a mechanical breakdown. Check your policy details or ask your insurer what your coverage includes before you call a tow for a situation that doesn't involve an accident.
 
 ---
 
-**TowingNo.1 gives you an upfront quote before we dispatch. No hidden charges, no pressure, no surprises. Call (778) 838-0014, 24/7 across the Lower Mainland.**
+**Wherever possible, TowingNo.1 gives you a free quote before we dispatch. No pressure. Call (778) 838-0014, 24/7 across the Lower Mainland.**
     `,
   },
   {
@@ -912,7 +954,7 @@ Straps used to secure a vehicle to a flatbed platform at multiple points, preven
 
 ---
 
-**Now that you know the terms, you know what to ask for. TowingNo.1 dispatches flatbed, wheel lift, and winch trucks across the Lower Mainland. Call (778) 838-0014, 24/7.**
+**Now that you know the terms, you know what to ask for. TowingNo.1 provides flatbed and wheel-lift towing and winching across the Lower Mainland. Call (778) 838-0014, 24/7.**
     `,
   },
 ];

@@ -8,34 +8,23 @@ export const metadata: Metadata = {
     absolute: "Emergency Towing | 24/7 Tow Truck | TowingNo.1",
   },
   description:
-    "24/7 emergency towing in Surrey and the Lower Mainland. TowingNo.1 dispatches tow trucks for breakdowns, accidents, and disabled vehicles. Call 778-838-0014.",
+    "24/7 emergency towing in Surrey, BC. TowingNo.1 dispatches tow trucks for breakdowns, accidents, and disabled vehicles. Call 778-838-0014.",
   alternates: {
     canonical: "https://www.towingno1.com/services/emergency-towing",
   },
-  keywords: [
-    "emergency towing Surrey",
-    "emergency towing Surrey BC",
-    "24 hour towing Surrey",
-    "24/7 tow truck Surrey",
-    "tow truck near me Surrey",
-    "emergency tow truck Lower Mainland",
-    "accident towing Surrey",
-    "breakdown towing Surrey BC",
-    "flatbed towing Surrey",
-    "tow truck Surrey BC",
-  ],
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/emergency-towing",
     title: "Emergency Towing | 24/7 Tow Truck | TowingNo.1",
     description:
-      "24/7 emergency towing in Surrey and the Lower Mainland. Flatbed and wheel lift tow trucks for all vehicles. Call 778-838-0014.",
+      "24/7 emergency towing in Surrey, BC for breakdowns, accidents, and disabled vehicles. Call 778-838-0014.",
+    locale: "en_CA",
     images: [{ url: "/image/Emergency_Towin.png", alt: "Emergency towing service: TowingNo.1 tow truck" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Emergency Towing | 24/7 Tow Truck | TowingNo.1",
-    description: "24/7 emergency towing across Surrey and the Lower Mainland. Upfront pricing, immediate dispatch. Call 778-838-0014.",
+    description: "24/7 emergency towing in Surrey, BC. Call TowingNo.1 at 778-838-0014 any time, day or night.",
     images: ["/image/Emergency_Towin.png"],
   },
 };
@@ -46,27 +35,27 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide emergency towing 24/7?",
-    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week, including evenings, weekends, and all statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and send the nearest available driver.",
+    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week, including evenings and weekends. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and send the nearest available driver.",
   },
   {
     q: "Can you tow a vehicle after an accident?",
-    a: "Yes. We handle accident and collision recovery across Surrey and the Lower Mainland. Our drivers use proper securing techniques to prevent additional damage to your vehicle during transport. We can deliver to any repair shop, ICBC facility, or storage yard you choose, and we provide documentation that supports insurance claims.",
+    a: "Yes. We handle accident and collision recovery. Our drivers use proper securing techniques to protect your vehicle during transport. We can deliver it to the repair shop or address you choose.",
   },
   {
     q: "Can you tow a vehicle that will not start?",
-    a: "Yes. A vehicle that won't run or steer is loaded onto a flatbed using our onboard winch, so the car does not need to move under its own power. Let the dispatcher know the vehicle cannot start or steer so they send the correct truck.",
+    a: "Yes. A vehicle that won't run or steer can be winched onto the truck, so it does not need to move under its own power. Let the dispatcher know the vehicle cannot start or steer so the right kind of tow is arranged.",
   },
   {
     q: "Do you provide towing on highways?",
-    a: "Yes. We respond to breakdowns on Highway 1 (Trans-Canada), Highway 99, the Fraser Highway, and all major Lower Mainland corridors. When you call, share your direction of travel and the nearest exit number or kilometre marker. That information helps us route the closest available driver directly to you.",
+    a: "Yes. We respond to breakdowns on Highway 1 (Trans-Canada), Highway 99, the Fraser Highway, and other major highway corridors. When you call, share your direction of travel and the nearest exit number or kilometre marker. That information helps us route the nearest available driver directly to you.",
   },
   {
     q: "What areas do you serve?",
-    a: "We serve Surrey and the wider Lower Mainland, including Langley, Burnaby, Richmond, Coquitlam, Delta, White Rock, Maple Ridge, Vancouver, and surrounding communities. See our full list of service areas for more detail.",
+    a: "We are based in Surrey, BC. See our service areas page for the communities listed on this site, and call (778) 838-0014 to confirm coverage for your location.",
   },
   {
     q: "How do I request an emergency tow?",
-    a: "Call (778) 838-0014. A dispatcher will confirm your location and vehicle situation, give you a flat rate quote, and dispatch the appropriate truck. You can also submit a request through our online contact form if the situation is not urgent.",
+    a: "Call (778) 838-0014. A dispatcher will confirm your location and vehicle situation and send the nearest available driver. You can also submit a request through our online contact form if the situation is not urgent.",
   },
 ];
 const faqSchema = faqPageSchema(faq);
@@ -115,7 +104,7 @@ export default function EmergencyTowingPage() {
           </h1>
           <p className="text-white/80 text-lg max-w-xl mb-8">
             TowingNo.1 dispatches tow trucks across Surrey and the Lower Mainland around the clock.
-            Flatbed and wheel lift towing for all vehicles, including cars, SUVs, trucks, and EVs. Upfront pricing, immediate dispatch.
+            Flatbed and wheel-lift towing for cars, SUVs, trucks, and EVs. We send the nearest available driver, with a free quote wherever possible before dispatch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -154,11 +143,10 @@ export default function EmergencyTowingPage() {
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   TowingNo.1 handles emergency towing calls across Surrey and the Lower Mainland 24 hours a
-                  day. Our fleet includes flatbed tow trucks, wheel lift wreckers, and rigs equipped with winches, so
-                  we can match the right equipment to your vehicle and situation on the first trip.
-                  When you call (778) 838-0014, a dispatcher confirms your location, assesses your
-                  vehicle's condition, and sends the correct truck immediately. You receive an upfront flat rate
-                  quote before any truck is dispatched.
+                  day. We provide flatbed and wheel-lift towing, so the method can match your vehicle and
+                  situation. When you call (778) 838-0014, a dispatcher confirms your location, asks about your
+                  vehicle's condition, and sends the nearest available driver. Wherever possible we give you a
+                  flat rate quote before we dispatch, based on the location, vehicle, and service you describe.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   If you are on a busy road or highway, stay in your vehicle with hazard lights on until help
@@ -171,8 +159,8 @@ export default function EmergencyTowingPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Emergency Towing Services We Provide</h2>
                 <p className="text-slate-600 leading-relaxed mb-5">
-                  Our emergency towing covers a wide range of situations. Every job uses the same process:
-                  upfront quote, immediate dispatch, professional handling.
+                  Our emergency towing covers a wide range of situations. Every job follows the same process:
+                  a quote wherever possible before dispatch, the nearest available driver, and careful handling.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
@@ -182,23 +170,23 @@ export default function EmergencyTowingPage() {
                     },
                     {
                       title: "Accident & Collision Towing",
-                      body: "Recovery and transport of damaged vehicles from collision scenes. We secure the vehicle correctly to prevent further damage and coordinate with your insurance documentation needs.",
+                      body: "Recovery and transport of damaged vehicles from collision scenes. We secure the vehicle correctly for transport and coordinate with your insurer on where the vehicle goes.",
                     },
                     {
                       title: "Disabled Vehicle Towing",
-                      body: "Vehicles that won't run or steer are loaded onto a flatbed with the onboard winch, so the car never needs to move under its own power.",
+                      body: "Vehicles that won't run or steer are winched onto a flatbed, so the car never needs to move under its own power.",
                     },
                     {
                       title: "Highway & Roadside Recovery",
-                      body: "Fast response to breakdowns on Highway 1, Highway 99, the Fraser Highway, and other major Lower Mainland corridors. We position safely to shield you from traffic.",
+                      body: "Response to breakdowns on Highway 1, Highway 99, the Fraser Highway, and other major Lower Mainland corridors. The driver positions the truck to work safely around traffic.",
                     },
                     {
                       title: "Electric Vehicle Towing",
-                      body: "EVs must always be transported on a flatbed and never towed with wheels rolling. We carry flatbed trucks 24/7 for Tesla, Rivian, and all EV makes.",
+                      body: "EVs should be transported on a flatbed and not towed with their wheels rolling. Tell the dispatcher your EV's make and model when you call.",
                     },
                     {
                       title: "Vehicle Transport",
-                      body: "Scheduled or same day transport of vehicles, whether or not they run, to any repair shop, dealership, or address across the Lower Mainland.",
+                      body: "Transport of vehicles, whether or not they run, to a repair shop, dealership, or address across the Lower Mainland.",
                     },
                   ].map((item) => (
                     <div key={item.title} className="bg-slate-50 rounded-xl p-5 border border-slate-200">
@@ -297,9 +285,9 @@ export default function EmergencyTowingPage() {
                 </p>
                 <ol className="space-y-4">
                   {[
-                    { step: "1", title: "You call (778) 838-0014", body: "A dispatcher answers 24/7. No automated menus. A person takes your call immediately." },
+                    { step: "1", title: "You call (778) 838-0014", body: "A dispatcher answers 24/7." },
                     { step: "2", title: "Location and situation are confirmed", body: "We ask for your exact location (nearest intersection, exit number, or kilometre marker), vehicle make and model, drive type, and a brief description of what has happened." },
-                    { step: "3", title: "You receive an upfront quote", body: "We give you a flat rate price based on your vehicle type and the distance involved before any truck is dispatched. No surprises on arrival." },
+                    { step: "3", title: "You receive a quote, wherever possible", body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
                     { step: "4", title: "The right truck is dispatched", body: "We send the nearest available driver with the appropriate equipment: a flatbed for EVs, AWD, and damaged vehicles, or a wheel lift for straightforward moves." },
                     { step: "5", title: "Driver arrives and assists", body: "The driver confirms your identity, loads the vehicle safely using the correct method and tie down points, and keeps you informed throughout." },
                     { step: "6", title: "Vehicle is delivered", body: "Your vehicle is transported to the repair shop, dealership, or address you specified. If your plans change en route, let the driver know." },
@@ -323,14 +311,14 @@ export default function EmergencyTowingPage() {
                 <p className="text-slate-600 leading-relaxed mb-4">
                   If your vehicle can be fixed where it is (a dead battery, a flat tire with a usable spare,
                   a lockout, or an empty fuel tank), we handle those on the spot so you avoid the cost and delay
-                  of a full tow. We carry the equipment to assess and fix the most common roadside problems
-                  before recommending a tow.
+                  of a full tow. We try to fix the most common roadside problems on the spot before
+                  recommending a tow.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
                     { href: "/services/battery-boost",      label: "Battery Boost & Jump Start", desc: "Dead battery? We jump start and test on the spot." },
                     { href: "/services/flat-tire-help",      label: "Flat Tire Help",              desc: "Spare fitted on site or a tow to the nearest shop." },
-                    { href: "/services/lockout-service",     label: "Car Lockout Service",         desc: "Keys locked in? We open without damage." },
+                    { href: "/services/lockout-service",     label: "Car Lockout Service",         desc: "Keys locked in? We use careful entry techniques." },
                     { href: "/services/fuel-delivery",       label: "Fuel Delivery",               desc: "Gas or diesel delivered to your location." },
                     { href: "/services/winching-extraction", label: "Winching & Extraction",       desc: "Stuck in a ditch, mud, or snow? We pull you out." },
                     { href: "/services/accident-recovery",   label: "Accident Recovery",           desc: "Collision scene handling and safe transport." },
@@ -381,7 +369,7 @@ export default function EmergencyTowingPage() {
               <div className="bg-navy-950 rounded-2xl p-6 text-white sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Available Now</p>
                 <h3 className="text-xl font-extrabold mb-3">Need a Tow Right Now?</h3>
-                <p className="text-slate-300 text-sm mb-5">Call for 24/7 emergency towing. Free upfront quote before dispatch.</p>
+                <p className="text-slate-300 text-sm mb-5">Call for 24/7 emergency towing. Free quote wherever possible, before dispatch.</p>
                 <a
                   href="tel:+17788380014"
                   className="btn-call-highlight flex items-center justify-center gap-2 w-full rounded-xl py-3.5 px-5 text-sm font-bold"
@@ -395,11 +383,11 @@ export default function EmergencyTowingPage() {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free upfront quote</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flat rate, no hidden fees</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Licensed &amp; insured in BC</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 including holidays</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed &amp; wheel lift trucks</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Card, debit &amp; cash at the job</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed &amp; wheel-lift towing</li>
                 </ul>
               </div>
 

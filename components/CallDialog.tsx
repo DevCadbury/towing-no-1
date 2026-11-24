@@ -48,7 +48,7 @@ export default function CallDialog({ open, onClose }: CallDialogProps) {
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-amber-500 mb-0.5">TowingNo.1</p>
             <h2 className="text-lg font-bold text-slate-900 leading-tight">Call Dispatch for Immediate Help</h2>
-            <p className="text-xs text-slate-500 mt-1">Free quote before dispatch</p>
+            <p className="text-xs text-slate-500 mt-1">Free quote wherever possible, before dispatch</p>
           </div>
           <button
             onClick={onClose}
@@ -75,7 +75,7 @@ export default function CallDialog({ open, onClose }: CallDialogProps) {
               </svg>
             </span>
             <div className="text-left">
-              <p className="text-[11px] font-semibold uppercase tracking-widest opacity-70 mb-0.5">Main Line · 24/7 · Free Quote</p>
+              <p className="text-[11px] font-semibold uppercase tracking-widest opacity-70 mb-0.5">Main Line · 24/7 Dispatch</p>
               <p className="text-xl font-extrabold tracking-tight">(778) 838-0014</p>
             </div>
           </a>

@@ -5,7 +5,7 @@ import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
   title: "Blog: Towing Tips & Road Safety in BC",
-  description: "Read helpful articles about vehicle maintenance, road safety, and towing tips from the experts at TowingNo.1 in BC.",
+  description: "Practical articles on vehicle maintenance, road safety, and towing for BC drivers, from TowingNo.1, a 24/7 towing company in Surrey, BC.",
   alternates: {
     canonical: "https://www.towingno1.com/blog",
   },
@@ -13,12 +13,22 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.towingno1.com/blog",
     title: "Blog: Towing Tips & Road Safety | TowingNo.1 BC",
-    description: "Expert advice on vehicle maintenance, road safety, and emergency preparedness from BC's trusted towing company.",
+    description: "Practical advice on vehicle maintenance, road safety, and emergency preparedness for BC drivers, from TowingNo.1 in Surrey, BC.",
+    locale: "en_CA",
+    images: [
+      {
+        url: "https://www.towingno1.com/preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TowingNo.1 | Towing & Roadside Assistance in BC",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog: Towing Tips & Road Safety | TowingNo.1 BC",
-    description: "Expert advice on vehicle maintenance, road safety, and emergency preparedness from BC's trusted towing company.",
+    description: "Practical advice on vehicle maintenance, road safety, and emergency preparedness for BC drivers, from TowingNo.1 in Surrey, BC.",
+    images: ["https://www.towingno1.com/preview.jpg"],
   },
 };
 
@@ -73,7 +83,7 @@ export default function Blog() {
             Tips, Advice & <span className="text-gradient-gold">Insights</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-xl mb-8">
-            Expert road safety knowledge for BC drivers.
+            Practical road safety knowledge for BC drivers.
           </p>
           {featured && (
             <Link
@@ -97,22 +107,22 @@ export default function Blog() {
             </h2>
             <div className="space-y-4 text-slate-600 text-base leading-relaxed">
               <p>
-                The TowingNo.1 blog is where we share what we have learned from thousands of roadside calls across the Lower Mainland. Every article is written for real situations BC drivers actually face: a breakdown on a busy stretch of Highway 1, a battery that will not turn over on a frosty Surrey morning, or a tire that lets go far from the nearest shop. The goal is simple: help you stay safe, make good decisions under pressure, and avoid the small mistakes that turn a minor problem into an expensive one.
+                The TowingNo.1 blog is where we share practical advice for drivers in Surrey and across BC. Every article is written for real situations BC drivers actually face: a breakdown on a busy stretch of Highway 1, a battery that will not turn over on a frosty Surrey morning, or a tire that lets go far from the nearest shop. The goal is simple: help you stay safe, make good decisions under pressure, and avoid the small mistakes that turn a minor problem into an expensive one.
               </p>
               <p>
                 You will find safety guides that take you through highway breakdowns step by step, seasonal maintenance checklists tailored to British Columbia&apos;s wet winters and mountain routes, and clear explanations of how to recognise warning signs before they leave you stranded. We cover the everyday essentials too: what belongs in a vehicle emergency kit, how to tell when a battery is on its way out, and when a roadside fix is safe to attempt yourself versus when it is smarter to call a professional.
               </p>
               <p>
-                We also demystify the towing itself. Knowing the difference between flatbed, wheel lift, and heavy duty towing, and why electric and all wheel drive vehicles need special handling, helps you ask the right questions and protect your vehicle when you do need help. Browse the articles below, and keep our number, (778) 838-0014, saved for the moment you need fast, local assistance.
+                We also demystify the towing itself. Knowing the difference between flatbed, wheel lift, and heavy duty towing, and why electric and all wheel drive vehicles need special handling, helps you ask the right questions and protect your vehicle when you do need help. Browse the articles below, and keep our number, (778) 838-0014, saved for the moment you need help, 24/7.
               </p>
               <p>
                 Much of what we write is shaped by the geography we work in. Driving in the Lower Mainland means dealing with the Trans-Canada climbing toward the SFU exit, the long rural section lines past Aldergrove, the underpasses around Richmond that are prone to flooding, and the steep, switchback hills of Coquitlam and the North Shore that turn treacherous the moment temperatures drop. Each of these settings creates its own kind of breakdown, and our guides reflect the conditions you are most likely to meet rather than generic advice written for nowhere in particular.
               </p>
               <p>
-                Seasonality matters here too. A wet October brings hydroplaning and dead wipers; the first cold snap of winter floods our lines with batteries that won&apos;t start and cars stuck in snow banks; spring road trips to the Interior expose cooling systems that limped through the winter. Reading ahead of the season is the cheapest insurance a driver can buy: fit winter tires before the law requires them, test a battery that is three years old before November, and pack an emergency kit before the long weekend. Most of it takes only a few minutes in the driveway.
+                Seasonality matters here too. A wet October brings hydroplaning and dead wipers; the first cold snap of winter brings batteries that won&apos;t start and cars stuck in snow banks; spring road trips to the Interior expose cooling systems that limped through the winter. Reading ahead of the season is the cheapest insurance a driver can buy: fit winter tires before the law requires them, test a battery that is three years old before November, and pack an emergency kit before the long weekend. Most of it takes only a few minutes in the driveway.
               </p>
               <p>
-                If you are new here, a good place to start is our guide to what to do when your car breaks down on the highway, followed by the articles on seasonal maintenance and emergency kits. Together they cover the situations that account for the overwhelming majority of the roadside calls we answer every week. We update these posts as conditions, vehicles, and BC regulations change, so the advice stays accurate and genuinely useful for the way people actually drive across the region.
+                If you are new here, a good place to start is our guide to what to do when your car breaks down on the highway, followed by the articles on seasonal maintenance and emergency kits. Together they cover the most common roadside situations drivers face across the region. Rules and vehicle technology change, so check official sources such as ICBC and DriveBC for current requirements before you travel.
               </p>
             </div>
           </div>
