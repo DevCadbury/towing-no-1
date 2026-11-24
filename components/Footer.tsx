@@ -50,6 +50,7 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-5 text-white">Services</h4>
             <ul className="space-y-3">
               <FooterLink href="/services/emergency-towing">Emergency Towing</FooterLink>
+              <FooterLink href="/services/roadside-assistance">Roadside Assistance</FooterLink>
               <FooterLink href="/services/accident-recovery">Accident Recovery</FooterLink>
               <FooterLink href="/services/flat-tire-help">Flat Tire Help</FooterLink>
               <FooterLink href="/services/battery-boost">Battery Boost</FooterLink>

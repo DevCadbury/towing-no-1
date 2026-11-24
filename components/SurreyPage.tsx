@@ -298,6 +298,10 @@ export default function SurreyPage() {
                 <p className="text-slate-600 text-sm leading-relaxed mb-2">
                   <strong>Major routes we cover:</strong> Highway 99, King George Boulevard, 152nd Street, Fraser Highway, Highway 10
                 </p>
+                <p className="text-slate-600 text-sm leading-relaxed mb-2">
+                  For local emergency contacts, ICBC reporting steps and advice for each of these roads, see our{" "}
+                  <Link href="/blog/surrey-emergency-towing-roadside-guide" className="text-amber-600 hover:text-amber-700 font-semibold">Surrey emergency towing and roadside resource guide</Link>.
+                </p>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   We also dispatch to neighbouring communities, including{" "}
                   <Link href="/locations/langley" className="text-amber-600 hover:text-amber-700 font-semibold">Langley</Link>,{" "}

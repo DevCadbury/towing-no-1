@@ -9,6 +9,10 @@ import { postDateISO } from "@/lib/post-dates";
  * sitemap no longer reports the build time on every deploy. Update the date
  * of a route when its content changes.
  *
+ * Dates refreshed 2026-11-25 for the routes changed on the SEO branch
+ * (A-050): `git log -1 --format=%cs` at f109b27; `/services/accident-recovery`
+ * and `/services/winching-extraction` carry the wave-4 linking commit date.
+ *
  * Source files per route (read 2026-11-24 at 96c9dd9):
  * - `/` app/page.tsx, components/HomeContent.tsx
  * - `/about` app/about/page.tsx, components/AboutContent.tsx
@@ -20,36 +24,36 @@ import { postDateISO } from "@/lib/post-dates";
  *   for langley)
  */
 const ROUTE_LASTMOD: Record<string, string> = {
-  "/": "2026-10-29",
-  "/services": "2026-10-29",
-  "/about": "2026-10-29",
-  "/contact": "2026-10-29",
-  "/blog": "2026-10-29",
-  "/locations": "2026-10-29",
-  "/privacy": "2026-10-29",
-  "/terms": "2026-10-29",
-  "/services/emergency-towing": "2026-10-29",
-  "/services/battery-boost": "2026-10-29",
-  "/services/lockout-service": "2026-10-29",
-  "/services/flat-tire-help": "2026-10-29",
-  "/services/fuel-delivery": "2026-10-29",
-  "/services/winching-extraction": "2026-10-29",
-  "/services/vehicle-transport": "2026-10-29",
-  "/services/accident-recovery": "2026-10-29",
-  "/services/roadside-assistance": "2026-10-29",
-  "/services/cross-border-towing": "2026-10-29",
-  "/locations/surrey": "2026-10-29",
-  "/locations/langley": "2026-10-29",
-  "/locations/burnaby": "2026-10-29",
-  "/locations/coquitlam": "2026-10-29",
-  "/locations/richmond": "2026-10-29",
-  "/locations/white-rock": "2026-10-29",
-  "/locations/vancouver": "2026-10-29",
-  "/locations/delta": "2026-10-29",
-  "/locations/maple-ridge": "2026-10-29",
-  "/locations/cloverdale": "2026-10-29",
-  "/locations/south-surrey": "2026-10-29",
-  "/locations/aldergrove": "2026-10-29",
+  "/": "2026-11-24",
+  "/services": "2026-11-24",
+  "/about": "2026-11-24",
+  "/contact": "2026-11-24",
+  "/blog": "2026-11-24",
+  "/locations": "2026-11-25",
+  "/privacy": "2026-11-24",
+  "/terms": "2026-11-24",
+  "/services/emergency-towing": "2026-11-24",
+  "/services/battery-boost": "2026-11-24",
+  "/services/lockout-service": "2026-11-24",
+  "/services/flat-tire-help": "2026-11-24",
+  "/services/fuel-delivery": "2026-11-24",
+  "/services/winching-extraction": "2026-11-25",
+  "/services/vehicle-transport": "2026-11-24",
+  "/services/accident-recovery": "2026-11-25",
+  "/services/roadside-assistance": "2026-11-24",
+  "/services/cross-border-towing": "2026-11-24",
+  "/locations/surrey": "2026-11-25",
+  "/locations/langley": "2026-11-25",
+  "/locations/burnaby": "2026-11-25",
+  "/locations/coquitlam": "2026-11-25",
+  "/locations/richmond": "2026-11-25",
+  "/locations/white-rock": "2026-11-25",
+  "/locations/vancouver": "2026-11-25",
+  "/locations/delta": "2026-11-25",
+  "/locations/maple-ridge": "2026-11-25",
+  "/locations/cloverdale": "2026-11-25",
+  "/locations/south-surrey": "2026-11-25",
+  "/locations/aldergrove": "2026-11-25",
 };
 
 // Used only for a route missing from ROUTE_LASTMOD: the latest date in the

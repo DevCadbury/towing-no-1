@@ -405,6 +405,10 @@ export default function WinchingExtractionPage() {
                     </li>
                   ))}
                 </ol>
+                <p className="mt-5 text-sm text-slate-500">
+                  Before you agree to any tow or recovery, it helps to know what to ask about price and destination. See{" "}
+                  <Link href="/blog/towing-consumer-rights-bc" className="text-amber-600 hover:underline">towing and roadside consumer rights in BC</Link>.
+                </p>
               </div>
 
               {/* H2: FAQ */}

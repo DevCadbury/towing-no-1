@@ -237,6 +237,10 @@ export default function AccidentRecoveryPage() {
                     </li>
                   ))}
                 </ul>
+                <p className="mt-4 text-sm text-slate-500">
+                  Terms such as flatbed, wheel lift, winching and recovery point are explained in our{" "}
+                  <Link href="/blog/towing-vehicle-recovery-terminology" className="text-amber-600 hover:underline">plain-language guide to towing and vehicle recovery terminology</Link>.
+                </p>
                 <div className="mt-4 flex flex-wrap gap-3 text-sm">
                   <Link href="/services/vehicle-transport" className="font-semibold text-amber-600 hover:text-amber-700">Vehicle transport →</Link>
                   <Link href="/services/winching-extraction" className="font-semibold text-amber-600 hover:text-amber-700">Winching & extraction →</Link>
