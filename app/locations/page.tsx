@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { serviceAreas } from "@/lib/service-areas";
+import { isVerified, serviceArea } from "@/lib/business-facts";
+
+// Register F-06 VERIFIED: the 15 owner-confirmed places, as "A, B, ... and O"
+// (ACTION-PLAN A-240). Pitt Meadows is covered on the Maple Ridge page and
+// Ladner and Tsawwassen on the Delta page; no extra /locations route.
+const servedPlaces = serviceArea.filter(isVerified).map((f) => f.value);
+const servedPlacesText = `${servedPlaces.slice(0, -1).join(", ")} and ${servedPlaces[servedPlaces.length - 1]}`;
 
 export const metadata: Metadata = {
   title: "Tow Truck Service Areas | Lower Mainland BC",
@@ -76,7 +83,9 @@ export default function LocationsPage() {
               24/7 Tow Truck Coverage Across Surrey and the Lower Mainland
             </h1>
             <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-              Looking for towing near you? Choose your city below to see local service coverage, common response zones, major highways covered, and direct dispatch support. We serve 12 communities across the Lower Mainland with the same 24/7 dispatch.
+              Looking for towing near you? Choose your city below to see local service coverage, common response zones, major highways covered, and direct dispatch support. We serve {servedPlacesText} with the same 24/7 dispatch, including statutory holidays. Pitt Meadows is covered on the{" "}
+              <Link href="/locations/maple-ridge" className="font-semibold text-amber-600 hover:text-amber-700">Maple Ridge page</Link>, and Ladner and Tsawwassen on the{" "}
+              <Link href="/locations/delta" className="font-semibold text-amber-600 hover:text-amber-700">Delta page</Link>.
             </p>
           </div>
 

@@ -50,7 +50,7 @@ const faq = [
   },
   {
     q: "Do you provide 24/7 towing in Langley?",
-    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week across Langley, including evenings and weekends. Whether you're stranded on Highway 1 at midnight or in a Willoughby parkade on a Sunday morning, we answer.",
+    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week across Langley, including evenings, weekends and statutory holidays. Whether you're stranded on Highway 1 at midnight or in a Willoughby parkade on a Sunday morning, we answer.",
   },
   {
     q: "Do you cover all of Langley including Aldergrove and Fort Langley?",
@@ -121,7 +121,7 @@ export default function LangleyPage() {
               "Available 24/7",
               "Free quote wherever possible",
               "Nearest available driver",
-              "All vehicle types including EVs",
+              "Cars, SUVs and light trucks",
             ].map((item) => (
               <li key={item} className="flex items-center gap-1.5">
                 <span className="text-amber-400" aria-hidden="true">✓</span> {item}
@@ -162,7 +162,7 @@ export default function LangleyPage() {
                 <p className="text-slate-600 leading-relaxed mb-4">
                   When your vehicle breaks down on Highway 1, the Fraser Highway, or anywhere across Langley,
                   we dispatch the nearest available driver. Dispatch runs 24 hours a day, 7 days a week, we
-                  provide flatbed and wheel-lift towing, and wherever possible we give you a flat rate quote
+                  provide light-duty wheel-lift towing, and wherever possible we give you a flat rate quote
                   before we dispatch, based on the location, vehicle, and service you describe. If conditions on
                   site differ materially, the price may be adjusted, and the driver explains any change before proceeding.
                 </p>
@@ -172,12 +172,12 @@ export default function LangleyPage() {
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-3 mt-4">
                   {[
-                    "Cars, SUVs, trucks & light commercial",
-                    "Electric vehicles (flatbed only)",
-                    "All wheel drive & 4×4",
+                    "Cars, SUVs, light trucks & light commercial",
+                    "Ditch and soft shoulder winching",
+                    "Long distance tows within BC",
                     "Vehicles that are damaged or won't run",
                     "Tow to any shop, dealership, or home",
-                    "Flatbed and wheel-lift towing",
+                    "Light-duty wheel-lift towing",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700">
                       <Check />
@@ -196,11 +196,12 @@ export default function LangleyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Tow Truck Services in Langley</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  We provide both wheel-lift and flatbed towing across Langley, which lets us match the right
-                  method to your vehicle. Flatbeds are the safe choice for all wheel drive cars, electric
-                  vehicles, low clearance models, and anything with crash or drivetrain damage, because the vehicle
-                  rides fully off the ground rather than on its drive wheels. Wheel lift trucks handle quick,
-                  economical moves for standard front wheel drive or rear wheel drive vehicles.
+                  Across Langley we tow with a light-duty wheel-lift truck, which raises one pair of wheels and
+                  suits most front wheel drive and rear wheel drive cars, SUVs and light trucks. Many all wheel
+                  drive cars and electric vehicles should not roll on their drive wheels during a tow, and lowered
+                  vehicles or anything with crash damage need a careful plan, so give the dispatcher the make, drive type and
+                  whether the vehicle still rolls and steers. If the job does not suit a wheel-lift truck, the
+                  dispatcher tells you before anyone is sent.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   Langley's rural roads also present situations urban operators aren't built for: a vehicle
@@ -220,12 +221,12 @@ export default function LangleyPage() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
-                    { href: "/services/battery-boost",      label: "Battery Boost & Jump Start", desc: "Dead battery? We jump start and test on the spot." },
+                    { href: "/services/battery-boost",      label: "Battery Boost & Jump Start", desc: "Dead battery? We jump start it where you are." },
                     { href: "/services/flat-tire-help",      label: "Flat Tire Help",              desc: "We fit your spare or tow you to the nearest shop." },
-                    { href: "/services/lockout-service",     label: "Car Lockout Service",         desc: "Keys locked in? We use careful entry techniques." },
+                    { href: "/services/lockout-service",     label: "Car Lockout Service",         desc: "Keys locked in? Damage-free lockout guarantee." },
                     { href: "/services/fuel-delivery",       label: "Fuel Delivery",               desc: "Gas or diesel delivered to your location." },
                     { href: "/services/winching-extraction", label: "Winching & Extraction",       desc: "Stuck in a ditch, mud, or snow? We pull you out." },
-                    { href: "/services/emergency-towing",    label: "Emergency Towing",            desc: "Flatbed and wheel-lift towing." },
+                    { href: "/services/emergency-towing",    label: "Emergency Towing",            desc: "Light-duty wheel-lift towing." },
                   ].map((svc) => (
                     <Link
                       key={svc.href}
@@ -253,9 +254,9 @@ export default function LangleyPage() {
                   point where they'll start.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  We dispatch a technician immediately, boost your vehicle on the spot, and then
-                  test the battery and charging system to tell you honestly whether you're good for the season
-                  or due for a replacement before the next cold spell.
+                  We dispatch a technician immediately and boost your vehicle on the spot. If it still won&apos;t
+                  start, we can tow it to a shop or your home, and a battery that has drained once is worth
+                  showing to a shop before the next cold spell.
                 </p>
                 <p className="mt-4 text-sm">
                   <Link href="/services/battery-boost" className="font-semibold text-amber-600 hover:text-amber-700">
@@ -331,13 +332,13 @@ export default function LangleyPage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Accident Towing &amp; Vehicle Recovery</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   After a collision on Highway 1, the Fraser Highway, or anywhere in Langley, your priority
-                  is safety first. Once everyone is clear, call us and we dispatch a trained recovery crew to
+                  is safety first. Once everyone is clear, call us and we send a driver to
                   handle the scene and transport your damaged vehicle to the repair shop, ICBC facility, or
                   storage facility you choose across the Lower Mainland.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  We secure the vehicle at the frame rather than damaged body panels and can coordinate
-                  with your insurer on where the vehicle goes.
+                  We take the vehicle wherever you choose and give you the tow bill. What happens with the
+                  claim after that is between you and your insurance provider.
                 </p>
                 <p className="mt-4 text-sm">
                   <Link href="/services/accident-recovery" className="font-semibold text-amber-600 hover:text-amber-700">
@@ -396,12 +397,12 @@ export default function LangleyPage() {
                       body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the price may be adjusted, and the driver explains any change before proceeding.",
                     },
                     {
-                      title: "The right truck for the job",
-                      body: "We provide both wheel-lift and flatbed towing, plus winching for rural recoveries. EVs, AWD cars, and vehicles damaged in accidents go on a flatbed. We aim to send the correct equipment on the first trip.",
+                      title: "Wheel-lift towing and rural winching",
+                      body: "Our light-duty wheel-lift truck tows cars, SUVs and light trucks, and we winch vehicles out of ditches and soft shoulders on Langley's rural roads. Describe the vehicle and any damage when you call so the driver can plan the job.",
                     },
                     {
                       title: "Available every hour of every day",
-                      body: "We operate 24 hours a day, 7 days a week in Langley. Evenings, weekends, and nights are all covered the same way.",
+                      body: "We operate 24 hours a day, 7 days a week in Langley, including statutory holidays. Evenings, weekends, nights and holidays are all covered the same way.",
                     },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
@@ -485,7 +486,7 @@ export default function LangleyPage() {
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Available 24/7</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> All vehicle types</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Cars, SUVs and light trucks</li>
                 </ul>
               </div>
 

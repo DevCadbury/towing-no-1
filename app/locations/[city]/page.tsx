@@ -86,14 +86,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         url: canonical,
         title: "Towing Langley BC | 24/7 Tow Truck & Roadside Assistance",
         description:
-          "24/7 towing in Langley, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+          "24/7 towing in Langley, BC. Emergency towing, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
         ...ogShared,
       },
       twitter: {
         card: "summary_large_image",
         title: "Towing Langley BC | 24/7 Tow Truck & Roadside Assistance",
         description:
-          "24/7 towing in Langley, BC. Emergency tow trucks, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
+          "24/7 towing in Langley, BC. Emergency towing, roadside assistance, battery boost, lockout, flat tire and vehicle recovery. Call 778-838-0014.",
         ...twitterShared,
       },
     };
@@ -340,9 +340,9 @@ export default async function ServiceAreaPage({ params }: Props) {
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
                     { href: "/services/emergency-towing", label: "24/7 Emergency Towing", desc: "Breakdown & collision towing" },
-                    { href: "/services/battery-boost", label: "Battery Boost", desc: "Jump start with battery test" },
+                    { href: "/services/battery-boost", label: "Battery Boost", desc: "Jump start where you are" },
                     { href: "/services/flat-tire-help", label: "Flat Tire Help", desc: "Tire change or shop tow" },
-                    { href: "/services/lockout-service", label: "Lockout Service", desc: "Careful entry techniques" },
+                    { href: "/services/lockout-service", label: "Lockout Service", desc: "Damage-free lockout guarantee" },
                     { href: "/services/fuel-delivery", label: "Fuel Delivery", desc: "Gas or diesel delivered" },
                     { href: "/services/winching-extraction", label: "Winching & Extraction", desc: "Ditch, mud & snow recovery" },
                     { href: "/services/accident-recovery", label: "Accident Recovery", desc: "Towing after a collision" },

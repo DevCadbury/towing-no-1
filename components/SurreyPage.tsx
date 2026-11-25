@@ -40,7 +40,7 @@ const faq = [
   },
   {
     q: "Do you provide 24/7 towing in Surrey?",
-    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week in Surrey, including evenings and weekends. Emergencies don't follow business hours, and neither do we.",
+    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week in Surrey, including evenings, weekends and statutory holidays. Emergencies don't follow business hours, and neither do we.",
   },
   {
     q: "Do you provide roadside assistance in Surrey?",
@@ -105,7 +105,7 @@ export default function SurreyPage() {
 
           {/* Quick trust signals */}
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-300">
-            {["Available 24/7", "Free quote wherever possible", "Nearest available driver", "All vehicle types including EVs"].map((item) => (
+            {["Available 24/7", "Free quote wherever possible", "Nearest available driver", "Cars, SUVs and light trucks"].map((item) => (
               <li key={item} className="flex items-center gap-1.5">
                 <span className="text-amber-400" aria-hidden="true">✓</span> {item}
               </li>
@@ -136,19 +136,19 @@ export default function SurreyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Emergency Towing in Surrey</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  When your vehicle breaks down on Highway 99, King George Boulevard, Fraser Highway, or anywhere in Surrey, we dispatch the nearest available driver. Dispatch runs 24/7, we provide flatbed and wheel-lift towing, and wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the price may be adjusted, and the driver explains any change before proceeding.
+                  When your vehicle breaks down on Highway 99, King George Boulevard, Fraser Highway, or anywhere in Surrey, we dispatch the nearest available driver. Dispatch runs 24/7, we provide light-duty wheel-lift towing, and wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the price may be adjusted, and the driver explains any change before proceeding.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Our drivers are trained to work safely on live highway shoulders, in underground parkades, and on the steep grades of South Surrey. Whether your car has died in a parkade at Guildford Town Centre, stalled on the Highway 99 shoulder, or needs a tow after a collision, we get there fast and handle your vehicle with professional care from pickup to delivery.
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-3 mt-4">
                   {[
-                    "Cars, SUVs, trucks & light commercial",
-                    "Electric vehicles (flatbed only)",
-                    "All wheel drive & 4×4",
+                    "Cars, SUVs, light trucks & light commercial",
+                    "Underground parkades & low-clearance garages",
+                    "Long distance tows within BC",
                     "Vehicles that are damaged or won't run",
                     "Tow to any shop, dealership, or home",
-                    "Wheel-lift and flatbed towing",
+                    "Light-duty wheel-lift towing",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700">
                       <Check />
@@ -167,10 +167,10 @@ export default function SurreyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Tow Truck Services in Surrey</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  We provide both wheel-lift and flatbed towing across Surrey, which lets us match the right method to your vehicle rather than forcing a single approach onto every job. Flatbeds carry all wheel drive cars, electric vehicles, low clearance models, and anything with crash or drivetrain damage. Wheel lift trucks handle quick, economical moves for standard front wheel drive or rear wheel drive vehicles.
+                  Surrey calls are handled with our light-duty wheel-lift tow truck. It lifts the front or rear wheels of most front wheel drive and rear wheel drive cars, SUVs and light trucks, and its low clearance height lets it reach most low-clearance parkades and parking garages where standard tow trucks can&apos;t fit.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  When you call, tell the dispatcher your vehicle's make, drive type, and whether it still rolls and steers. That one detail lets us send the correct truck on the first trip, which protects your transmission and bumpers and keeps your wait short.
+                  When you call, tell the dispatcher your vehicle&apos;s make, drive type, any damage, and whether it still rolls and steers. Many all wheel drive cars and EVs should not be towed on their drive wheels, so those details help the driver plan the tow, and the dispatcher will say so plainly if the job does not suit a wheel-lift truck.
                 </p>
               </div>
 
@@ -182,12 +182,12 @@ export default function SurreyPage() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
-                    { href: "/services/battery-boost",       label: "Battery Boost & Jump Start",  desc: "Dead battery? We jump start and test on the spot." },
+                    { href: "/services/battery-boost",       label: "Battery Boost & Jump Start",  desc: "Dead battery? We jump start it on the spot." },
                     { href: "/services/flat-tire-help",       label: "Flat Tire Help",               desc: "We fit your spare or tow you to the nearest shop." },
-                    { href: "/services/lockout-service",      label: "Car Lockout Service",          desc: "Keys locked in? We use careful entry techniques." },
+                    { href: "/services/lockout-service",      label: "Car Lockout Service",          desc: "Keys locked in? Damage-free lockout guarantee." },
                     { href: "/services/fuel-delivery",        label: "Fuel Delivery",                desc: "Gas or diesel delivered to your location." },
                     { href: "/services/winching-extraction",  label: "Winching & Extraction",        desc: "Stuck in a ditch, mud, or snow? We pull you out." },
-                    { href: "/services/emergency-towing",     label: "Emergency Towing",             desc: "Flatbed and wheel-lift towing." },
+                    { href: "/services/emergency-towing",     label: "Emergency Towing",             desc: "Light-duty wheel-lift towing." },
                   ].map((svc) => (
                     <Link
                       key={svc.href}
@@ -211,7 +211,7 @@ export default function SurreyPage() {
                   A dead battery is one of the most common roadside calls we handle in Surrey, especially through the damp coastal winters when short city trips never give the alternator enough time to fully recharge. Whether you left the lights on overnight in Newton, your battery has finally given up in a Fleetwood parkade, or cold weather has drained it after sitting at the airport, we immediately dispatch a technician to jump start your vehicle.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  After the boost, we test your battery and charging system on the spot and give you an honest assessment of whether you are good for the season or due for a replacement before the next cold snap leaves you stranded again.
+                  Once the engine is running, you can drive on to a shop of your choice before the next cold snap leaves you stranded again. If the vehicle still won&apos;t start after the boost, we can tow it to the shop or to your home.
                 </p>
                 <p className="mt-4 text-sm">
                   <Link href="/services/battery-boost" className="font-semibold text-amber-600 hover:text-amber-700">
@@ -256,13 +256,13 @@ export default function SurreyPage() {
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Accident Towing &amp; Vehicle Recovery</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  After a collision in Surrey, your priority is safety. Once everyone is clear, call us and we dispatch a trained recovery crew to handle the scene professionally and transport your damaged vehicle to the repair shop, ICBC facility, or storage facility you choose across the Lower Mainland.
+                  After a collision in Surrey, your priority is safety. Once everyone is clear, call us and we send a driver to handle the scene professionally and transport your damaged vehicle to the repair shop, ICBC facility, or storage facility you choose across the Lower Mainland.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   We use proper securing techniques and equipment to prevent additional damage during transport. Skids and recovery boards protect the undercarriage, and we secure at the frame rather than damaged body panels. Even if your car appears driveable after an accident, hidden structural damage can make it unsafe, and we will tell you plainly what we observe.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  We can coordinate with your insurer on where the vehicle goes.
+                  The vehicle goes wherever you choose, and you receive the tow bill for your records. Any claim after that is between you and your insurer.
                 </p>
                 <p className="mt-4 text-sm">
                   <Link href="/services/accident-recovery" className="font-semibold text-amber-600 hover:text-amber-700">
@@ -325,12 +325,12 @@ export default function SurreyPage() {
                       body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the price may be adjusted, and the driver explains any change before proceeding.",
                     },
                     {
-                      title: "The right truck for your vehicle",
-                      body: "We provide wheel-lift and flatbed towing. Flatbeds for EVs, all wheel drive cars, and vehicles damaged in accidents; wheel-lift towing for quick economical moves. We aim to send the right equipment on the first trip.",
+                      title: "How we tow your vehicle",
+                      body: "We tow with a light-duty wheel-lift truck, suited to most cars, SUVs and light trucks. Tell us the make, drive type and any damage when you call, so the driver can plan the tow before arriving.",
                     },
                     {
                       title: "Available every hour of every day",
-                      body: "We operate 24 hours a day, 7 days a week. Evenings and weekends are covered the same way as a weekday afternoon.",
+                      body: "We operate 24 hours a day, 7 days a week, including statutory holidays. Evenings, weekends and holidays are covered the same way as a weekday afternoon.",
                     },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
@@ -410,7 +410,7 @@ export default function SurreyPage() {
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Available 24/7</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> All vehicle types</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Cars, SUVs and light trucks</li>
                 </ul>
               </div>
 

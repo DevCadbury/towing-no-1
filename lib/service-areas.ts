@@ -29,7 +29,7 @@ const serviceAreaData: ServiceArea[] = [
     ],
     whyChooseUs: [
       "Local Surrey drivers know the difference between the Guildford slip lanes and the Newton Exchange bus loops, so they do not waste time circling for an address the way an operator from out of town might. That familiarity matters most during rush hour on King George Boulevard or when a collision closes a lane on the Highway 99 approach to the Massey corridor.",
-      "We provide both wheel-lift and flatbed towing, and we answer 3 a.m. calls the same way we handle a Tuesday afternoon.",
+      "We provide light-duty wheel-lift towing for cars, SUVs and light trucks, and we answer 3 a.m. calls the same way we handle a Tuesday afternoon.",
     ],
     commonScenarios: [
       {
@@ -42,7 +42,7 @@ const serviceAreaData: ServiceArea[] = [
       },
       {
         title: "Winter starts in Newton and Fleetwood",
-        body: "Cold snaps drain weak batteries across Newton and Fleetwood every January. We test the battery and charging system after every boost so you know whether you are good to go or due for a replacement before the next freeze leaves you stranded again.",
+        body: "Cold snaps drain weak batteries across Newton and Fleetwood every January. We boost the battery where the car sits, and if it still won't start, we tow it to a shop or your home so the next freeze does not leave you stranded again.",
       },
     ],
     nearbyCities: ["Delta", "White Rock", "Langley", "Burnaby"],
@@ -56,7 +56,7 @@ const serviceAreaData: ServiceArea[] = [
       },
       {
         q: "Do you provide 24/7 towing in Surrey?",
-        a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week in Surrey, including evenings and weekends. Emergencies don't follow business hours, and neither do we.",
+        a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week in Surrey, including evenings, weekends and statutory holidays. Emergencies don't follow business hours, and neither do we.",
       },
       {
         q: "Do you provide roadside assistance in Surrey?",
@@ -89,12 +89,12 @@ const serviceAreaData: ServiceArea[] = [
     ],
     whyChooseUs: [
       "Township roads are long and lightly lit, so a vague address can cost a stranded driver significant extra time with the wrong company. Our dispatchers ask for the nearest cross street or a landmark like the Langley Events Centre or Willowbrook so the nearest available driver heads straight to you instead of hunting down a rural route number in the dark.",
-      "We provide wheel-lift and flatbed towing for everything from a lowered import in Willoughby to a work van on Highway 1. Available 24/7, we treat a midnight breakdown near Aldergrove the same as a midday call in town.",
+      "Our light-duty wheel-lift truck handles cars, SUVs and light trucks, from a commuter car in Willoughby to a light work van on Highway 1. Available 24/7, we treat a midnight breakdown near Aldergrove the same as a midday call in town.",
     ],
     commonScenarios: [
       {
         title: "Trans-Canada breakdowns near 200th Street",
-        body: "The Highway 1 corridor through Langley sees heavy commuter volume, and the 200th Street and 232nd Street interchanges are common stall points. We reach the shoulder, shield the vehicle from passing traffic, and load onto a flatbed so you clear the live lane safely.",
+        body: "The Highway 1 corridor through Langley sees heavy commuter volume, and the 200th Street and 232nd Street interchanges are common stall points. We reach the shoulder, shield the vehicle from passing traffic, and hook up quickly so you clear the live lane safely.",
       },
       {
         title: "Rural recoveries around Aldergrove and Otter",
@@ -116,7 +116,7 @@ const serviceAreaData: ServiceArea[] = [
       },
       {
         q: "Do you provide 24/7 towing in Langley?",
-        a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week across Langley, including evenings and weekends. Whether you're stranded on Highway 1 at midnight or in a Willoughby parkade on a Sunday morning, we answer.",
+        a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week across Langley, including evenings, weekends and statutory holidays. Whether you're stranded on Highway 1 at midnight or in a Willoughby parkade on a Sunday morning, we answer.",
       },
       {
         q: "Do you cover all of Langley including Aldergrove and Fort Langley?",
@@ -148,17 +148,17 @@ const serviceAreaData: ServiceArea[] = [
       "Lougheed Highway and Canada Way carry steady traffic between New Westminster and the Tri-Cities, and we field regular calls on both whenever a radiator lets go in summer heat. Knowing the quickest legal turnaround near Burnaby Lake or the Edmonds interchange lets the nearest available driver reach you without adding a frustrating loop through one way arterials.",
     ],
     whyChooseUs: [
-      "Burnaby's parkades and tower lots demand a driver who can manoeuvre a wheel lift truck in tight quarters without clipping a pillar, and that is everyday work for our crews around Metrotown and Brentwood. We also provide flatbed towing for the all wheel drive crossovers and EVs that fill these neighbourhoods, since those should not be dragged on their drive wheels.",
+      "Burnaby's parkades and tower lots demand a driver who can manoeuvre a tow truck in tight quarters without clipping a pillar. Our light-duty wheel-lift truck has a low clearance height, so it can reach most low-clearance parkades around Metrotown and Brentwood where standard tow trucks can't fit. Many of the all wheel drive crossovers and EVs in these towers should not be towed on their drive wheels, so give the dispatcher the make and drive type when you call.",
       "Whether you are stuck on Highway 1 below Capitol Hill or in a Lougheed Town Centre stall, we dispatch the nearest available driver around the clock.",
     ],
     commonScenarios: [
       {
         title: "Tower parkade boosts at Metrotown and Brentwood",
-        body: "Residents of the towers around Metrotown and Brentwood often find a flat battery after a car sits unused in the parkade for a week. We bring the boost pack down to your stall, test the charging system, and tell you honestly whether the battery will last the winter.",
+        body: "Residents of the towers around Metrotown and Brentwood often find a flat battery after a car sits unused in the parkade for a week. We bring the boost pack down to your stall and get the car started, and if it still won't turn over, we can tow it to the shop of your choice.",
       },
       {
         title: "Trans-Canada stalls near the SFU climb",
-        body: "The Highway 1 grade up toward the Burnaby Mountain and SFU exits is hard on cooling systems. We respond quickly to overheated and stalled vehicles on that stretch, load onto a flatbed, and deliver to your shop of choice across the city.",
+        body: "The Highway 1 grade up toward the Burnaby Mountain and SFU exits is hard on cooling systems. We respond quickly to overheated and stalled vehicles on that stretch, hook up on the shoulder, and deliver to your shop of choice across the city.",
       },
       {
         title: "Lougheed and Kingsway lockouts",
@@ -197,7 +197,7 @@ const serviceAreaData: ServiceArea[] = [
     cardText: "From the Maillardville flats and United Boulevard up the grades of Westwood Plateau and Burke Mountain.",
     intro: [
       "Coquitlam climbs from the flats of Maillardville and the United Boulevard industrial strip up the steep grades of Westwood Plateau and Burke Mountain, and that elevation shapes most of our calls here. Winter brings the toughest work: cars that handle the valley fine suddenly lose traction on the plateau switchbacks, and we spend snowy nights winching vehicles back onto the road above Town Centre Park.",
-      "Down on the level, the Lougheed and Barnet Highway corridors funnel commuter traffic past Coquitlam Centre and the Lincoln SkyTrain station, where summer heat and stop and go driving expose tired cooling systems. Telling our dispatcher whether you are up the hill or down near Lafarge Lake lets us send a truck geared for the conditions you are actually in.",
+      "Down on the level, the Lougheed and Barnet Highway corridors funnel commuter traffic past Coquitlam Centre and the Lincoln SkyTrain station, where summer heat and stop and go driving expose tired cooling systems. Telling our dispatcher whether you are up the hill or down near Lafarge Lake lets the driver plan for the conditions you are actually in.",
     ],
     whyChooseUs: [
       "The Burke Mountain and Westwood Plateau grades are unforgiving when there is ice or a stalled vehicle on a blind curve, so we send drivers who know how to set up a recovery safely on a slope rather than improvising. That experience protects both your vehicle and the traffic coming up behind it.",
@@ -210,7 +210,7 @@ const serviceAreaData: ServiceArea[] = [
       },
       {
         title: "Lougheed and Barnet Highway stalls",
-        body: "Commuter traffic on Lougheed and Barnet Highway near Coquitlam Centre is hard on aging radiators. We reach stalled vehicles quickly on these arterials, load onto a flatbed, and run you to a nearby shop or your driveway.",
+        body: "Commuter traffic on Lougheed and Barnet Highway near Coquitlam Centre is hard on aging radiators. We reach stalled vehicles quickly on these arterials, lift the front or rear onto the wheel lift, and run you to a nearby shop or your driveway.",
       },
       {
         title: "Maillardville and Austin Heights roadside help",
@@ -245,11 +245,11 @@ const serviceAreaData: ServiceArea[] = [
     cardText: "The No. 3 Road grid, Steveston's cannery streets, and the Sea Island roads around YVR and Bridgeport.",
     intro: [
       "Richmond sits on the flat delta islands of the Fraser, laced with long straight arterials like No. 3 Road and Steveston Highway and bordered by the Highway 99 tunnel approach. The geography is kind to our response times because the grid is easy to navigate, but the bridges and the YVR airport lands add their own quirks, with frequent calls near Bridgeport and the Sea Island terminals where rental returns and rideshare cars give out.",
-      "From the historic cannery streets of Steveston to the dense Brighouse core around Richmond Centre, parking is tight and ground clearance is low, so we lean on flatbeds for the imports and EVs that are common here. Give our dispatcher a nearby cross street such as No. 3 Road and Westminster Highway and the nearest available driver is on the way.",
+      "From the historic cannery streets of Steveston to the dense Brighouse core around Richmond Centre, parking is tight and ground clearance is low, so mention a lowered import or an EV when you call; many of them should not be towed on their drive wheels. Give our dispatcher a nearby cross street such as No. 3 Road and Westminster Highway and the nearest available driver is on the way.",
     ],
     whyChooseUs: [
       "Richmond's low clearance ramps and the underpasses near the dykes that tend to flood call for a driver who knows which routes stay open after a heavy rain. We plan the approach so a stalled car under the Knight Street Bridge does not turn into a longer wait while a truck reroutes around standing water.",
-      "We provide flatbed towing for airport rentals and EVs that should stay off their wheels. Our dispatch runs 24/7, which matters when the highways to the ferries and the border are at their busiest.",
+      "For an airport rental or an EV, tell the dispatcher the make and drive type so the driver can plan the tow. Our dispatch runs 24/7, including statutory holidays, which matters when the highways to the ferries and the border are at their busiest.",
     ],
     commonScenarios: [
       {
@@ -314,7 +314,7 @@ const serviceAreaData: ServiceArea[] = [
       },
       {
         title: "Uptown and Five Corners battery calls",
-        body: "Short trips and cold nights around Uptown and Five Corners leave a lot of weak batteries that will not turn over in the morning. We boost on the spot and test the charging system so one failed start does not become a daily ritual.",
+        body: "Short trips and cold nights around Uptown and Five Corners leave a lot of weak batteries that will not turn over in the morning. We boost on the spot, and if the battery keeps going flat, have a shop look at it before one failed start becomes a daily ritual.",
       },
     ],
     nearbyCities: ["Surrey", "Langley", "Delta"],
@@ -352,17 +352,17 @@ const serviceAreaData: ServiceArea[] = [
       "Across the bridges into East Vancouver and along Broadway and Knight Street, the calls shift toward older vehicles and longer commercial runs. Whether you are circling for the Granville Island entrance or stuck near Strathcona, the closest cross street and which floor of the parkade you are on are all our dispatcher needs to get a truck to you quickly.",
     ],
     whyChooseUs: [
-      "Tight downtown parkades and one way West End streets defeat operators who do not work them daily; ours do. We know the clearance heights at the major tower lots and the legal spots to set up a load on Broadway so a recovery does not become a traffic jam or a scraped roof.",
-      "We provide flatbed towing for the EVs and all wheel drive cars that fill these neighbourhoods, and we dispatch around the clock through downtown gridlock and quiet 4 a.m. side streets alike.",
+      "Tight downtown parkades and one way West End streets slow down operators who do not know them. Our tow truck has a low clearance height, so it can reach most low-clearance parkades and parking garages where standard tow trucks can't fit, and our drivers look for a legal spot to set up on Broadway so a recovery does not become a traffic jam or a scraped roof.",
+      "Many of the EVs and all wheel drive cars in these neighbourhoods should not be towed on their drive wheels, so tell the dispatcher the make and drive type when you call. We dispatch around the clock, through downtown gridlock and quiet 4 a.m. side streets alike.",
     ],
     commonScenarios: [
       {
         title: "Downtown parkade recoveries",
-        body: "Underground tower parkades downtown and in the West End have strict clearance heights that rule out the wrong truck entirely. We arrive with equipment sized for the space, manoeuvre out of the stall cleanly, and avoid the pillars and low beams.",
+        body: "Underground tower parkades downtown and in the West End have low clearances that keep many tow trucks out. Our truck's low clearance height lets it reach most of them, manoeuvre out of the stall cleanly, and avoid the pillars and low beams. Tell the dispatcher the parkade level and any posted clearance sign.",
       },
       {
         title: "Bridge and Broadway corridor stalls",
-        body: "Vehicles that die on the bridge approaches or along the Broadway and Knight Street corridors need a quick clear to keep traffic flowing. We reach these arterials fast and load onto a flatbed so the lane reopens and you get to your shop.",
+        body: "Vehicles that die on the bridge approaches or along the Broadway and Knight Street corridors need a quick clear to keep traffic flowing. We reach these arterials fast and hook up without delay so the lane reopens and you get to your shop.",
       },
       {
         title: "Kitsilano and East Van lockouts",
@@ -376,7 +376,7 @@ const serviceAreaData: ServiceArea[] = [
     faq: [
       {
         q: "How fast can a tow truck reach me in Vancouver?",
-        a: "We dispatch the nearest available driver when you call and ask for your nearest cross street and parkade level, because downtown one way streets and tower lots need a driver who knows the clearances. Fast local dispatch; arrival times vary by location and road conditions.",
+        a: "We dispatch the nearest available driver when you call and ask for your nearest cross street and parkade level, because downtown one way streets and low tower parkades take some planning to reach. Fast local dispatch; arrival times vary by location and road conditions.",
       },
       {
         q: "Do you tow in Downtown Vancouver?",
@@ -405,7 +405,7 @@ const serviceAreaData: ServiceArea[] = [
     ],
     whyChooseUs: [
       "Missing a ferry because a stalled car blocked the lane is a real risk in Tsawwassen, so we treat calls near the terminal with the urgency they deserve and load quickly to keep the queue moving. That same sense of timing helps when a vehicle dies on the long, exposed stretches of Highway 17.",
-      "With wheel-lift and flatbed towing, we cover Ladner, Tsawwassen, and North Delta 24/7, even with the long distances between them.",
+      "With our light-duty wheel-lift truck, we cover Ladner, Tsawwassen, and North Delta 24/7, even with the long distances between them.",
     ],
     commonScenarios: [
       {
@@ -466,7 +466,7 @@ const serviceAreaData: ServiceArea[] = [
       },
       {
         title: "Lougheed Highway and Golden Ears Way stalls",
-        body: "Breakdowns on Lougheed Highway, Dewdney Trunk Road, and the Golden Ears Way bridge approach need a quick clear to keep traffic moving. We respond fast, load onto a flatbed, and run you to a shop or home.",
+        body: "Breakdowns on Lougheed Highway, Dewdney Trunk Road, and the Golden Ears Way bridge approach need a quick clear to keep traffic moving. We respond fast, get the vehicle on the wheel lift, and run you to a shop or home.",
       },
       {
         title: "Haney and Albion roadside fixes",
@@ -504,21 +504,21 @@ const serviceAreaData: ServiceArea[] = [
       "Fast tow truck dispatch across Cloverdale for breakdowns, lockouts, battery boosts, and flat tires. We cover the historic town centre, the fairgrounds, Clayton Heights, and the Highway 10 corridor with quick local response.",
     cardText: "Heritage streets around 176th Street, the fairgrounds, Clayton Heights, and the Highway 10 and 15 truck routes.",
     intro: [
-      "Cloverdale sits at the eastern edge of Surrey where the suburban grid opens toward Langley farmland, and that mix shapes our calls here. Around the historic town centre and the Cloverdale Fairgrounds we handle everyday parkade boosts and curbside lockouts, while the newer Clayton Heights subdivisions and the industrial blocks off the Highway 15 truck route bring heavier work.",
+      "Cloverdale sits at the eastern edge of Surrey where the suburban grid opens toward Langley farmland, and that mix shapes our calls here. Around the historic town centre and the Cloverdale Fairgrounds we handle everyday parkade boosts and curbside lockouts, while the newer Clayton Heights subdivisions and the industrial blocks off the Highway 15 truck route bring more highway and work van calls.",
       "The Cloverdale Rodeo and the fairgrounds events pack the area on peak weekends, and a dead battery or flat in an overflow lot is a common call when the crowds arrive. Whether you are near the Museum of Surrey, the athletic park, or out toward the 64th Avenue industrial strip, give our dispatcher the nearest cross street and the nearest available driver heads straight to you.",
     ],
     whyChooseUs: [
       "Cloverdale drivers know the difference between the tight heritage streets around 176th and the fast traffic on the Highway 10 and 15 corridors, so we set up safely whether you are curbside downtown or stranded beside a truck route. That local knowledge matters most during Rodeo weekend or rush hour when the usual routes are jammed.",
-      "We provide wheel-lift and flatbed towing for everything from a lowered import to a work van, and we answer 3 a.m. calls the same way we handle a Saturday afternoon.",
+      "Our light-duty wheel-lift truck handles cars, SUVs and light trucks, including the light work vans that come off the industrial blocks, and we answer 3 a.m. calls the same way we handle a Saturday afternoon.",
     ],
     commonScenarios: [
       {
         title: "Fairgrounds and Rodeo weekend battery calls",
-        body: "Overflow parking around the Cloverdale Fairgrounds fills fast on event weekends, and cars left with lights or accessories on come back to a dead battery. We bring the boost pack right to your stall, test the charging system, and get you out ahead of the traffic.",
+        body: "Overflow parking around the Cloverdale Fairgrounds fills fast on event weekends, and cars left with lights or accessories on come back to a dead battery. We bring the boost pack right to your stall, get the engine running, and get you out ahead of the traffic.",
       },
       {
         title: "Highway 10 and Highway 15 breakdowns",
-        body: "The Highway 10 and Highway 15 (176th Street) corridors carry heavy commuter and truck traffic through Cloverdale. We reach the shoulder safely, shield your vehicle from passing lanes, and load onto a flatbed so you clear the live route quickly.",
+        body: "The Highway 10 and Highway 15 (176th Street) corridors carry heavy commuter and truck traffic through Cloverdale. We reach the shoulder safely, shield your vehicle from passing lanes, and hook up fast so you clear the live route quickly.",
       },
       {
         title: "Clayton Heights lockouts and flats",
@@ -561,7 +561,7 @@ const serviceAreaData: ServiceArea[] = [
     ],
     whyChooseUs: [
       "South Surrey's mix of fast Highway 99 traffic and quiet residential bluffs calls for a driver who can work both safely, shielding a stalled car on a live shoulder one minute and easing a wheel lift truck down a tight Ocean Park lane the next. We come equipped for either.",
-      "We provide flatbed towing for the EVs and all wheel drive vehicles common in the area's newer neighbourhoods, and we dispatch around the clock.",
+      "If you drive one of the EVs or all wheel drive vehicles common in the area's newer neighbourhoods, mention it when you call so the driver can plan the tow. We dispatch around the clock, including statutory holidays.",
     ],
     commonScenarios: [
       {
@@ -622,7 +622,7 @@ const serviceAreaData: ServiceArea[] = [
       },
       {
         title: "Fraser Highway and 264th Street breakdowns",
-        body: "Commuter and truck traffic on Fraser Highway and the Highway 13 (264th Street) connector to the border makes for common stall points. We reach the shoulder, protect you from passing lanes, and load onto a flatbed so you clear the route quickly.",
+        body: "Commuter and truck traffic on Fraser Highway and the Highway 13 (264th Street) connector to the border makes for common stall points. We reach the shoulder, protect you from passing lanes, and lift the vehicle onto the wheel lift so you clear the route quickly.",
       },
       {
         title: "Town centre boosts and lockouts",
