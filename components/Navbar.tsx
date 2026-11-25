@@ -20,6 +20,7 @@ const serviceItems = [
   { href: "/services/fuel-delivery",      label: "Fuel Delivery",         desc: "Emergency fuel brought to you" },
   { href: "/services/winching-extraction", label: "Winching & Extraction", desc: "Stuck in mud, snow, or ditch" },
   { href: "/services/cross-border-towing", label: "Cross Border Towing",  desc: "Canada and U.S. vehicle moves" },
+  { href: "/services/underground-parking-towing", label: "Underground Parking Towing", desc: "Parkades and low-clearance garages" },
 ];
 
 const navLinks = [

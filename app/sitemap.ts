@@ -13,6 +13,12 @@ import { postDateISO } from "@/lib/post-dates";
  * (A-050): `git log -1 --format=%cs` at f109b27; `/services/accident-recovery`
  * and `/services/winching-extraction` carry the wave-4 linking commit date.
  *
+ * Dates refreshed 2026-11-25 for wave 5 (A-247): `git log -1 --format=%cs`
+ * at 1f74d44. `/`, `/services`, `/about`, `/contact`, `/terms` and the 11
+ * service routes (incl. the new `/services/underground-parking-towing`)
+ * → 51fb838; `/locations` and the 12 location routes → 1f74d44. `/blog` and
+ * `/privacy` unchanged (5e00eff).
+ *
  * Source files per route (read 2026-11-24 at 96c9dd9):
  * - `/` app/page.tsx, components/HomeContent.tsx
  * - `/about` app/about/page.tsx, components/AboutContent.tsx
@@ -24,24 +30,25 @@ import { postDateISO } from "@/lib/post-dates";
  *   for langley)
  */
 const ROUTE_LASTMOD: Record<string, string> = {
-  "/": "2026-11-24",
-  "/services": "2026-11-24",
-  "/about": "2026-11-24",
-  "/contact": "2026-11-24",
+  "/": "2026-11-25",
+  "/services": "2026-11-25",
+  "/about": "2026-11-25",
+  "/contact": "2026-11-25",
   "/blog": "2026-11-24",
   "/locations": "2026-11-25",
   "/privacy": "2026-11-24",
-  "/terms": "2026-11-24",
-  "/services/emergency-towing": "2026-11-24",
-  "/services/battery-boost": "2026-11-24",
-  "/services/lockout-service": "2026-11-24",
-  "/services/flat-tire-help": "2026-11-24",
-  "/services/fuel-delivery": "2026-11-24",
+  "/terms": "2026-11-25",
+  "/services/emergency-towing": "2026-11-25",
+  "/services/battery-boost": "2026-11-25",
+  "/services/lockout-service": "2026-11-25",
+  "/services/flat-tire-help": "2026-11-25",
+  "/services/fuel-delivery": "2026-11-25",
   "/services/winching-extraction": "2026-11-25",
-  "/services/vehicle-transport": "2026-11-24",
+  "/services/vehicle-transport": "2026-11-25",
   "/services/accident-recovery": "2026-11-25",
-  "/services/roadside-assistance": "2026-11-24",
-  "/services/cross-border-towing": "2026-11-24",
+  "/services/roadside-assistance": "2026-11-25",
+  "/services/cross-border-towing": "2026-11-25",
+  "/services/underground-parking-towing": "2026-11-25",
   "/locations/surrey": "2026-11-25",
   "/locations/langley": "2026-11-25",
   "/locations/burnaby": "2026-11-25",
@@ -130,6 +137,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "accident-recovery",
     "roadside-assistance",
     "cross-border-towing",
+    "underground-parking-towing",
   ].map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
     lastModified: lastmodFor(`/services/${slug}`),

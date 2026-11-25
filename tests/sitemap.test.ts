@@ -18,6 +18,7 @@ const EXISTING_SERVICE_SLUGS = [
   "vehicle-transport",
   "accident-recovery",
   "roadside-assistance",
+  "underground-parking-towing",
 ];
 
 describe("sitemap", () => {

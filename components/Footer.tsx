@@ -1,7 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { serviceAreas } from "@/lib/service-areas";
-import { mapsSearchUrl } from "@/lib/business-facts";
+import { mapsSearchUrl, social, isVerified } from "@/lib/business-facts";
+
+// Icon paths reused from the footer before A-048 (5e00eff).
+const socialLinks = [
+  { label: "Facebook", fact: social.facebook, path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" },
+  { label: "Instagram", fact: social.instagram, path: "M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01M6.5 2h11A4.5 4.5 0 0122 6.5v11a4.5 4.5 0 01-4.5 4.5h-11A4.5 4.5 0 012 17.5v-11A4.5 4.5 0 016.5 2z" },
+]
+  .filter((item) => isVerified(item.fact))
+  .map(({ label, fact, path }) => ({ label, href: fact.value, path }));
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -28,8 +36,25 @@ export default function Footer() {
             <p className="text-slate-400 leading-relaxed text-sm">
               Your trusted partner for 24/7 emergency towing and roadside assistance in BC. Fast, professional, and affordable.
             </p>
-            {/* Social icons removed: F-12 UNVERIFIED, accounts not established as the
-                business's own (ACTION-PLAN A-048, D-076). `social` stays in business-facts. */}
+            {/* Social icons: rendered only for verified `social` facts (F-12, A-245). */}
+            {socialLinks.length > 0 && (
+              <div className="flex space-x-3">
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Towing No. 1 on ${item.label} (opens in a new tab)`}
+                    className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-amber-500 hover:text-navy-900 hover:border-amber-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 transition-all duration-300"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d={item.path} />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Quick Links */}
@@ -59,6 +84,7 @@ export default function Footer() {
               <FooterLink href="/services/winching-extraction">Winching &amp; Extraction</FooterLink>
               <FooterLink href="/services/vehicle-transport">Vehicle Transport</FooterLink>
               <FooterLink href="/services/cross-border-towing">Cross Border Towing</FooterLink>
+              <FooterLink href="/services/underground-parking-towing">Underground Parking Towing</FooterLink>
             </ul>
           </div>
 
@@ -75,10 +101,10 @@ export default function Footer() {
                   href={mapsSearchUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="View our Lower Mainland service area on Google Maps (opens in a new tab)"
+                  aria-label="Surrey, BC, serving the Lower Mainland: view the service area on Google Maps (opens in a new tab)"
                   className="text-sm hover:text-amber-400 focus-visible:text-amber-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 rounded transition-colors"
                 >
-                  British Columbia, Canada<br />Serving the Lower Mainland
+                  Surrey, BC<br />Serving the Lower Mainland
                 </a>
               </li>
               <li className="flex items-center gap-3">
