@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { blogPosts, getPostBySlug } from "@/lib/blog-posts";
 import { postDateISO } from "@/lib/post-dates";
+import { contact } from "@/lib/business-facts";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -250,16 +251,17 @@ export default async function BlogPostPage({ params }: Props) {
     image: `https://www.towingno1.com${post.image}`,
     datePublished: published,
     dateModified: modified,
+    // Same `name` as the global #organization node (register F-01, A-217).
     author: {
       "@type": "Organization",
       "@id": "https://www.towingno1.com/#organization",
-      name: "TowingNo.1",
+      name: contact.name.value,
       url: "https://www.towingno1.com",
     },
     publisher: {
       "@type": "Organization",
       "@id": "https://www.towingno1.com/#organization",
-      name: "TowingNo.1",
+      name: contact.name.value,
       logo: {
         "@type": "ImageObject",
         url: "https://www.towingno1.com/logo.png",

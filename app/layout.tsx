@@ -7,7 +7,16 @@ import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import CallTracking from "@/components/CallTracking";
 import TawkWidget from "@/components/TawkWidget";
-import { address } from "@/lib/business-facts";
+import {
+  address,
+  claims,
+  contact,
+  geo,
+  isVerified,
+  payment,
+  serviceArea,
+  social,
+} from "@/lib/business-facts";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -74,13 +83,51 @@ export const metadata: Metadata = {
   },
 };
 
+// JSON-LD values below are read from lib/business-facts.ts and emitted only
+// when the fact is "verified" (register SEO-FACT-REGISTER.md). Never add a
+// street address, postal code, coordinates, map link, rating, review, licence,
+// insurer or response time here (D-099).
+const verifiedName = isVerified(contact.name) ? { name: contact.name.value } : {};
+const verifiedAlternateName = isVerified(contact.alternateName)
+  ? { alternateName: contact.alternateName.value }
+  : {};
+const verifiedSameAs = [social.facebook, social.instagram]
+  .filter(isVerified)
+  .map((f) => f.value);
+
+// Register F-06: the 15 owner-confirmed places. These five are communities or
+// neighbourhoods rather than incorporated cities, so they are typed `Place`.
+const NON_CITY_PLACES = new Set(["Aldergrove", "Cloverdale", "South Surrey", "Ladner", "Tsawwassen"]);
+const areaServed = serviceArea.filter(isVerified).map((f) => ({
+  "@type": NON_CITY_PLACES.has(f.value) ? "Place" : "City",
+  name: f.value,
+  containedInPlace: { "@type": "AdministrativeArea", name: geo.province.value },
+}));
+
+// Register F-07, F-14, F-34: owner-confirmed services, named as on the site.
+// Names only: no price, area, description or URL (A-216).
+const SERVICE_NAMES = [
+  "Emergency Towing",
+  "Roadside Assistance",
+  "Flat Tire Help",
+  "Battery Boost",
+  "Accident Recovery",
+  "Lockout Service",
+  "Fuel Delivery",
+  "Winching & Extraction",
+  "Vehicle Transport",
+  "Cross Border Towing",
+  "Underground Parking Towing",
+];
+
 const globalSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "@id": "https://www.towingno1.com/#organization",
-      name: "TowingNo.1",
+      ...verifiedName,
+      ...verifiedAlternateName,
       url: "https://www.towingno1.com",
       logo: {
         "@type": "ImageObject",
@@ -88,11 +135,13 @@ const globalSchema = {
         width: 684,
         height: 365,
       },
-      // `sameAs` removed: register F-12 UNVERIFIED (D-076, A-004). Re-add only
-      // profiles the register marks VERIFIED, read from lib/business-facts.ts.
+      // Register F-12 VERIFIED (owner confirmed 2026-11-25).
+      ...(verifiedSameAs.length ? { sameAs: verifiedSameAs } : {}),
+      // Register F-27 VERIFIED: founded 2026.
+      ...(isVerified(claims.foundingYear) ? { foundingDate: claims.foundingYear.value } : {}),
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+1-778-838-0014",
+        telephone: contact.phoneE164.value,
         contactType: "customer service",
         // availableLanguage removed: no register row (D-014, A-004).
         hoursAvailable: {
@@ -114,21 +163,33 @@ const globalSchema = {
     {
       "@type": ["LocalBusiness", "AutomotiveBusiness"],
       "@id": "https://www.towingno1.com/#localbusiness",
-      name: "TowingNo.1",
-      // Built only from VERIFIED register facts: F-04 (24/7) and F-05 (Surrey,
-      // BC). Service list and region wording removed until F-06/F-07 are
-      // VERIFIED (D-016, D-063, A-004).
-      description: "TowingNo.1 in Surrey, BC is open 24 hours a day, 7 days a week.",
+      ...verifiedName,
+      ...verifiedAlternateName,
+      // Built only from VERIFIED register facts: F-01 (name), F-04 (24/7),
+      // F-05 (Surrey, BC) and F-23 (statutory holidays). No region phrase.
+      description: `${contact.name.value} in ${address.city.value}, ${address.region.value} is open 24 hours a day, 7 days a week, including statutory holidays.`,
       url: "https://www.towingno1.com",
-      telephone: "+1-778-838-0014",
-      // email removed: register F-03 UNVERIFIED (D-071, A-004). The visible
-      // mailto: link on the site is unchanged.
+      telephone: contact.phoneE164.value,
+      // Register F-03 VERIFIED (owner confirmed 2026-11-25).
+      ...(isVerified(contact.email) ? { email: contact.email.value } : {}),
       image: "https://www.towingno1.com/preview.jpg",
       logo: "https://www.towingno1.com/logo.png",
       // priceRange removed — no fixed pricing is published on the site.
       openingHours: "Mo-Su 00:00-23:59",
-      // currenciesAccepted and paymentAccepted removed: F-13 is CONFLICT and
-      // currency has no register row (D-014, A-004). Do not add a new value.
+      // Register F-13/F-19 VERIFIED. currenciesAccepted stays out: no register
+      // row (D-014, D-099).
+      ...(isVerified(payment.methods) ? { paymentAccepted: payment.methods.value } : {}),
+      // Register F-06 VERIFIED: exactly the 15 owner-confirmed places.
+      ...(areaServed.length ? { areaServed } : {}),
+      // Register F-07, F-14, F-34 VERIFIED: service names only.
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Towing and roadside services",
+        itemListElement: SERVICE_NAMES.map((serviceName) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: serviceName },
+        })),
+      },
       address: {
         "@type": "PostalAddress",
         // streetAddress and postalCode are populated from lib/business-facts.ts
@@ -154,11 +215,9 @@ const globalSchema = {
       // reviews/ratings from other sites. Genuine reviews may be shown to users
       // on-page without necessarily being eligible for review rich results.
       //
-      // knowsAbout and hasOfferCatalog removed: no service is VERIFIED in the
-      // register (F-07, F-14 UNVERIFIED; D-016, A-006). areaServed removed:
-      // the city list F-06 is UNVERIFIED (D-013, A-005). When the owner
-      // confirms them, rebuild these from lib/service-areas.ts and the service
-      // pages (one derived list, VERIFIED entries only).
+      // knowsAbout is not restored (A-216). streetAddress, postalCode, geo and
+      // hasMap stay out: the owner has no customer-facing location (F-05,
+      // CR-01a, D-099).
     },
   ],
 };

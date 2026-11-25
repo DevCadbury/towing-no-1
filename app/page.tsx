@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import HomeContent from "@/components/HomeContent";
 import { serviceAreas } from "@/lib/service-areas";
 import { faqPageSchema, type FaqItem } from "@/lib/faq";
+import { contact, isVerified, serviceArea } from "@/lib/business-facts";
+
+// Register F-06 VERIFIED: the 15 owner-confirmed places, as "A, B, ... and O".
+const servedPlaces = serviceArea.filter(isVerified).map((f) => f.value);
+const servedPlacesText = `${servedPlaces.slice(0, -1).join(", ")} and ${servedPlaces[servedPlaces.length - 1]}`;
 
 export const metadata: Metadata = {
   title:
@@ -63,11 +68,11 @@ const homeFaq: FaqItem[] = [
   },
   {
     q: "Which areas do you serve?",
-    a: "We are based in Surrey, BC and answer calls 24/7. To confirm that we cover your location, call (778) 838-0014 before you book.",
+    a: `We serve ${servedPlacesText}, BC, and answer calls 24/7. Call (778) 838-0014 and tell the dispatcher where you are.`,
   },
   {
     q: "Do you tow electric vehicles?",
-    a: "Yes. Electric vehicles should not be towed with their drive wheels on the ground, so tell the dispatcher the make and model when you call (778) 838-0014.",
+    a: "It depends on the vehicle. Many electric vehicles must not be towed with their drive wheels on the ground, so tell the dispatcher the make and model when you call (778) 838-0014 and ask whether the job can be done.",
   },
   {
     q: "Do you provide roadside assistance without towing?",
@@ -75,7 +80,7 @@ const homeFaq: FaqItem[] = [
   },
   {
     q: "Are you available at night and on weekends?",
-    a: "Yes. We operate 24 hours a day, 7 days a week. Emergencies don't follow business hours, so call (778) 838-0014 whenever you need help.",
+    a: "Yes. We operate 24 hours a day, 7 days a week, including statutory holidays. Emergencies don't follow business hours, so call (778) 838-0014 whenever you need help.",
   },
   {
     q: "Can you help if I'm stuck in a ditch or snow?",
@@ -108,7 +113,11 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://www.towingno1.com/#website",
-  name: "TowingNo.1",
+  // Site name stays the visible brand "TowingNo.1" (equals og:site_name and
+  // the title suffix); the owner-confirmed business name is the alternate
+  // (register F-01, D-099, Google "Site names" guidance).
+  name: contact.alternateName.value,
+  alternateName: [contact.name.value],
   url: "https://www.towingno1.com",
   publisher: {
     "@id": "https://www.towingno1.com/#organization",
