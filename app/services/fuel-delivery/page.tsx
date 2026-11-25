@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide emergency fuel delivery 24/7?",
-    a: "Yes. TowingNo.1 provides fuel delivery assistance 24 hours a day, 7 days a week, including evenings and weekends. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange fuel delivery.",
+    a: "Yes. TowingNo.1 provides fuel delivery assistance 24 hours a day, 7 days a week, including evenings, weekends and statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange fuel delivery.",
   },
   {
     q: "What should I do if I run out of fuel on the highway?",

@@ -47,7 +47,7 @@ const services = [
   },
   {
     src: "/image/Vehicle_Transpor.png",
-    alt: "Vehicle transport service in the Lower Mainland: car on a flatbed truck",
+    alt: "Vehicle transport service in the Lower Mainland: an SUV strapped down for transport",
     title: "Vehicle Transport",
     desc: "Secure vehicle moves between locations across the Lower Mainland.",
     href: "/services/vehicle-transport",
@@ -97,7 +97,7 @@ const howItWorks = [
   {
     step: "1",
     title: "Call or Request Online",
-    desc: "Call (778) 838-0014 or submit a request online. We answer 24/7, including nights and weekends.",
+    desc: "Call (778) 838-0014 or submit a request online. We answer 24/7, including nights, weekends and statutory holidays.",
   },
   {
     step: "2",
@@ -215,7 +215,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
                 </span>
                 <span className="flex items-center gap-1.5">
                   <svg className="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"/></svg>
-                  Card, debit or cash
+                  Cash, card, tap, Apple Pay &amp; Google Pay
                 </span>
                 <span className="flex items-center gap-1.5">
                   <svg className="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
@@ -389,7 +389,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
               [
               { display: statText(stats.alwaysAvailable), label: "Always Available", sub: "Around the clock, 7 days a week", delay: 0.1 },
               { fact: stats.responseTime, label: "Rapid Response", sub: "We dispatch the nearest available driver the moment you call", delay: 0.2 },
-              { fact: stats.yearsInBusiness, label: "Local Experience", sub: "Drivers who know Surrey and the Lower Mainland", delay: 0.3 },
+              { display: "Light-duty", label: "Wheel-Lift Towing", sub: "Wheel-lift towing for cars, SUVs and light trucks", delay: 0.3 },
               { display: "Quote", label: "Before Dispatch", sub: "A free quote wherever possible, based on your location, vehicle, and the service you need", delay: 0.4 },
               ] as Array<{ display?: string; fact?: StatFact; label: string; sub: string; delay: number }>
             ).map((item) => (
@@ -420,10 +420,10 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
           >
             {[
               { label: "24/7 Dispatch" },
-              { label: "Flatbed & Wheel-Lift Towing" },
-              { label: "EV Friendly Towing" },
+              { label: "Light-Duty Wheel-Lift Towing" },
+              { label: "Licensed & Insured" },
               { label: "Free Quote Wherever Possible" },
-              { label: "Card, Debit & Cash" },
+              { label: "Cash, Card, Tap, Apple Pay & Google Pay" },
             ].map((badge) => (
               <span key={badge.label} className="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-4 py-2">
                 <svg className="w-3.5 h-3.5 text-amber-500 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -511,7 +511,7 @@ export default function HomeContent({ faq }: { faq: FaqItem[] }) {
                 The fastest tow is the one that already knows where it is going. Across the Lower Mainland, a lot of the wait on the shoulder comes down to local knowledge: knowing that the Highway 1 climb toward the SFU exit punishes tired cooling systems, that Surrey&apos;s King George corridor backs up at rush hour, and which Richmond underpasses flood after a hard rain. When you give our dispatcher a cross street or a kilometre marker, the nearest available driver heads straight to you instead of circling for an address. Arrival times still vary by location and road conditions.
               </p>
               <p>
-                That local focus also shapes how we handle each call. A breakdown in a downtown Vancouver tower parkade raises questions about low clearances and tight pillars; a vehicle stuck on a snowy Coquitlam switchback needs a winch and a recovery set up safely on a slope; an all wheel drive crossover or an EV should be moved on a flatbed so its drivetrain is never dragged. Tell the dispatcher where the vehicle is and what it is, so the right kind of tow, wheel-lift or flatbed, is arranged.
+                That local focus also shapes how we handle each call. A breakdown in a downtown Vancouver tower parkade raises questions about low clearances and tight pillars, and our tow truck has a low clearance height, so it can reach most low-clearance parkades and parking garages where standard tow trucks can&apos;t fit. A vehicle stuck on a snowy Coquitlam switchback needs a winch and a recovery set up safely on a slope. Many all wheel drive crossovers and EVs should not be towed with any wheels on the road, so tell the dispatcher where the vehicle is, its make and drive type, and what has happened. Those details help the driver plan the tow.
               </p>
               <p>
                 Most of all, we try to solve your problem without a tow whenever it is safe to do so. Dead batteries, flats you can swap for the spare, lockouts, and empty tanks can often be handled at the roadside, with your own vehicle back on the road rather than loaded onto a truck. When a tow is the right call, wherever possible you get a flat rate quote before we dispatch, based on the location, vehicle, and service you describe.

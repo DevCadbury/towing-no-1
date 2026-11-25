@@ -62,7 +62,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-xl font-bold text-navy-900 mb-2">Scope of Services</h2>
             <p>
-              TowingNo.1 offers light and medium duty towing, battery boosts, flat tire changes, fuel delivery,
+              TowingNo.1 offers light-duty towing, battery boosts, flat tire changes, fuel delivery,
               lockout assistance, winching and extraction, accident recovery, and vehicle transport. The specific
               service provided depends on what you request and on what our driver can safely perform once on site.
               Some situations, such as a vehicle trapped in an unsafe position or a job requiring heavy duty
@@ -76,7 +76,7 @@ export default function TermsPage() {
             <p>
               Our dispatch line operates around the clock, and we work hard to reach you quickly. Any arrival window
               we give you is a good faith estimate, not a guarantee. Real world conditions such as traffic, weather,
-              road closures, distance, and how busy the fleet is can change how long it takes a driver to reach you.
+              road closures, distance, and driver availability can change how long it takes a driver to reach you.
               We will keep you informed if an estimate changes, but we are not liable for losses caused by a delay
               that is outside our reasonable control.
             </p>
@@ -90,8 +90,8 @@ export default function TermsPage() {
               differ materially, for example the vehicle is heavier than described, located somewhere that needs
               winching, or requires additional time or equipment, the final price may be adjusted, and our driver
               will explain any change before proceeding. Payment is due on completion of the job unless we have
-              agreed otherwise in writing. Our drivers accept major credit cards, debit, and cash through terminals at the job
-              site.
+              agreed otherwise in writing. Pay the driver directly by cash, credit card, debit card, contactless,
+              Apple Pay or Google Pay.
             </p>
           </div>
 

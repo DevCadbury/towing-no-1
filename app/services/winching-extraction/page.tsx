@@ -39,7 +39,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "Do you provide vehicle winching?",
-    a: "Yes. We provide winching and vehicle extraction for cars, SUVs, trucks, and other vehicles. Call (778) 838-0014, describe the situation, and we will arrange the appropriate recovery.",
+    a: "Yes. We provide winching and vehicle extraction for cars, SUVs and light trucks. Call (778) 838-0014, describe the situation, and we will arrange the appropriate recovery.",
   },
   {
     q: "What should I do if my vehicle is stuck?",

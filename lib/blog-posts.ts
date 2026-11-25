@@ -302,7 +302,7 @@ Not every breakdown needs a tow truck, but knowing the difference can save you m
 
 **Warning lights for oil, coolant, or transmission:** Driving with these illuminated can cause thousands of dollars in engine damage.
 
-**Vehicle stuck in mud, snow, or a ditch:** Improper extraction attempts can worsen damage. Our winching crews use the right equipment.
+**Vehicle stuck in mud, snow, or a ditch:** Improper extraction attempts can worsen damage. We use the right equipment.
 
 **Accident damage:** Even if the car appears driveable, internal damage may make it unsafe. A professional assessment before driving is essential.
 
@@ -366,11 +366,11 @@ Winching is not technically a tow. It uses a cable and pulley system to drag a s
 
 ## How the Right Method Protects Your Vehicle
 
-Choosing the correct tow is about more than convenience: it prevents avoidable damage. All wheel drive and four wheel drive vehicles can suffer expensive drivetrain harm if towed with wheels turning, which is why a flatbed is the safe default. Electric vehicles add another layer: their motors can generate current when the wheels spin, so manufacturers insist on full flatbed transport. Telling the dispatcher your exact make, drive type, and whether the car still rolls lets us send the right truck the first time.
+Choosing the correct tow is about more than convenience: it prevents avoidable damage. All wheel drive and four wheel drive vehicles can suffer expensive drivetrain harm if towed with wheels turning, which is why a flatbed is the safe default. Electric vehicles add another layer: their motors can generate current when the wheels spin, so manufacturers insist on full flatbed transport. When you call, tell the dispatcher your exact make, drive type, and whether the car still rolls.
 
 ## What to Expect When the Truck Arrives
 
-A professional operator will confirm the destination, give you a clear price before loading, and check that the vehicle is secured at rated points rather than fragile body panels. Loading takes only a few minutes once the right equipment shows up, and you can usually ride along to the shop or your home. Knowing this in advance makes a stressful moment feel routine rather than overwhelming.
+A professional operator will confirm the destination, give you a clear price before loading, and check that the vehicle is secured at rated points rather than fragile body panels. Loading takes only a few minutes once the right equipment shows up, and riding along to the shop or your home may be possible depending on the situation; ask the dispatcher. Knowing this in advance makes a stressful moment feel routine rather than overwhelming.
 
 ## Questions Worth Asking First
 
@@ -378,7 +378,7 @@ Before you agree to a tow, it is fair to ask whether the company is licensed and
 
 ---
 
-**TowingNo.1 provides flatbed and wheel-lift towing across the Lower Mainland. Call (778) 838-0014 any time of day.**
+**TowingNo.1 provides light-duty wheel-lift towing for cars, SUVs and light trucks across the Lower Mainland. Call (778) 838-0014 any time of day.**
     `,
   },
   {
@@ -608,7 +608,7 @@ Unlike a gas vehicle where a fuel delivery gets you moving in minutes, an EV tha
 
 In the Lower Mainland, DC fast chargers are available at many major retail centres, transit park and ride lots, and along the major highway corridors. Tesla Supercharger stations are concentrated in shopping areas in Surrey, Langley, Burnaby, and Vancouver. Other brands use the CCS or CHAdeMO standards available at ChargePoint, FLO, and BC Hydro EV fast charger stations.
 
-If you are stranded on a BC highway without charge, call us at **(778) 838-0014** and let us know it is an EV and where you need to be taken. We will send a flatbed and transport you safely to the nearest appropriate charger.
+If you are stranded on a BC highway without charge, call us at **(778) 838-0014** and tell the dispatcher it is an EV, its make and model, and where you need to be taken. The dispatcher will tell you plainly whether the job suits a light-duty wheel-lift tow truck.
 
 ## A Note on Hybrid Vehicles
 
@@ -620,13 +620,13 @@ When in doubt, treat any hybrid with an electric drive motor on either axle as r
 
 If you are a tow operator, the key points are:
 - Always ask whether the disabled vehicle is an EV or hybrid before dispatch
-- Send a flatbed to all EV calls
+- Dispatch flatbed equipment to every EV call
 - Ask the owner or driver to activate Transport Mode before loading when possible
 - Never use a wheel lift on an EV, not even for a short distance or a simple repositioning
 
 ---
 
-**TowingNo.1 provides flatbed towing for EVs across Surrey, Langley, Burnaby, Richmond, White Rock, and the wider Lower Mainland. When you call, tell us it's an EV so the right kind of tow is arranged. (778) 838-0014, available 24/7.**
+**TowingNo.1 provides light-duty towing and roadside help across Surrey, Langley, Burnaby, Richmond, White Rock, and the wider Lower Mainland. When you call, tell the dispatcher it's an EV and give the make and model. (778) 838-0014, available 24/7.**
     `,
   },
   {
@@ -764,10 +764,10 @@ Mall and retail parkade lockouts are common in Surrey. Underground parkades have
 A vehicle stalling on either of these corridors at speed needs both a fast response and a careful setup. The tow operator positions the truck to shield your vehicle from passing traffic before loading. Tell us your exact kilometre marker or the name of the nearest interchange.
 
 **Battery failures in cold weather (Newton, Fleetwood, Whalley)**
-Newton and Fleetwood see the highest volume of winter battery calls in Surrey because of their density and the number of vehicles that sit unused in driveways through the cold months. We test the battery and charging system after every boost so you know whether it will hold or whether replacement is overdue.
+Newton and Fleetwood see the highest volume of winter battery calls in Surrey because of their density and the number of vehicles that sit unused in driveways through the cold months. If the vehicle will not start after a boost, we can tow it to the shop of your choice.
 
 **Recoveries on Cloverdale farm roads**
-The rural roads east of Cloverdale have soft, muddy shoulders in wet weather. A vehicle that slides into a ditch here is a winching job, not a standard tow. Our winch trucks pull the vehicle back onto firm ground without the bumper damage that improvised recovery attempts often cause.
+The rural roads east of Cloverdale have soft, muddy shoulders in wet weather. A vehicle that slides into a ditch here is a winching job, not a standard tow. Our winching service pulls the vehicle back onto firm ground without the bumper damage that improvised recovery attempts often cause.
 
 ## ICBC and Towing in Surrey
 
@@ -954,7 +954,7 @@ Straps used to secure a vehicle to a flatbed platform at multiple points, preven
 
 ---
 
-**Now that you know the terms, you know what to ask for. TowingNo.1 provides flatbed and wheel-lift towing and winching across the Lower Mainland. Call (778) 838-0014, 24/7.**
+**Now that you know the terms, you know what to ask for. TowingNo.1 provides light-duty wheel-lift towing and winching across the Lower Mainland. Call (778) 838-0014, 24/7.**
     `,
   },
 ];

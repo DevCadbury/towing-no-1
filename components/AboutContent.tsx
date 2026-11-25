@@ -2,6 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { isVerified, serviceArea } from "@/lib/business-facts";
+
+// Register F-06 VERIFIED: the 15 owner-confirmed places (A-227).
+const serviceAreaNames = serviceArea.filter(isVerified).map((p) => p.value);
+const serviceAreaList = `${serviceAreaNames.slice(0, -1).join(", ")} and ${serviceAreaNames[serviceAreaNames.length - 1]}`;
 
 export default function AboutContent() {
   return (
@@ -60,10 +65,10 @@ export default function AboutContent() {
                   We treat every customer like family, because when you call us you are likely having a bad day.
                 </p>
                 <p>
-                  We take calls for Surrey, Delta, White Rock, Langley, Burnaby, Richmond, Coquitlam, Vancouver, and Maple Ridge. The work ranges from flatbed and wheel-lift towing to roadside jobs such as a battery boost, a spare-tire change, or winching a vehicle out of a ditch.
+                  We take calls for {serviceAreaList}. The work ranges from light-duty wheel-lift towing for cars, SUVs and light trucks to roadside jobs such as a battery boost, a spare-tire change, or winching a vehicle out of a ditch. TowingNo.1 is licensed and insured.
                 </p>
                 <p>
-                  When you call, the dispatcher takes your location, your vehicle details, and the problem. Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially from what was described, the price may be adjusted, and the driver explains any change before going ahead. Our drivers accept major credit cards, debit, and cash through terminals at the job.
+                  When you call, the dispatcher takes your location, your vehicle details, and the problem. Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially from what was described, the price may be adjusted, and the driver explains any change before going ahead. Pay the driver directly by cash, credit card, debit card, contactless, Apple Pay or Google Pay.
                 </p>
                 <p>
                   We send the nearest available driver. Arrival times vary by location and road conditions, so ask the dispatcher for a current estimate when you call.
@@ -178,16 +183,16 @@ export default function AboutContent() {
                 body: "We send the nearest available driver. Arrival times vary by location and road conditions.",
               },
               {
-                title: "Flatbed and Wheel-Lift Towing",
-                body: "Tell the dispatcher your vehicle type, and whether it is electric, all-wheel drive, or damaged, so the right kind of tow is arranged.",
+                title: "Light-Duty Wheel-Lift Towing",
+                body: "Tell the dispatcher your vehicle type, and whether it is electric, all-wheel drive, or damaged. Those details help the driver plan the tow.",
               },
               {
                 title: "Payment at the Job",
-                body: "Our drivers accept major credit cards, debit, and cash through terminals at the job.",
+                body: "Pay the driver directly by cash, credit card, debit card, contactless, Apple Pay or Google Pay.",
               },
               {
                 title: "Accident Tows",
-                body: "After a collision we can transport your vehicle to an ICBC facility or a storage facility, and coordinate with your insurer on where it should go.",
+                body: "After a collision we take your vehicle where you choose, such as a repair shop, your home, or an ICBC or storage facility you pick, and give you a tow bill. What happens after that is between you and your insurer.",
               },
             ].map((item) => (
               <div key={item.title} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
@@ -206,7 +211,7 @@ export default function AboutContent() {
             <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4 block">Where We Work</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy-900">Lower Mainland Service Areas</h2>
             <p className="text-lg text-slate-500 max-w-xl mx-auto">
-              We dispatch tow trucks and roadside help across Surrey, Langley, and the wider Lower Mainland.
+              We provide towing and roadside help across Surrey, Langley, and the wider Lower Mainland.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-8">

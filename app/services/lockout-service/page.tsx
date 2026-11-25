@@ -8,14 +8,14 @@ export const metadata: Metadata = {
     absolute: "Car Lockout Service | 24/7 Roadside Help | TowingNo.1",
   },
   description:
-    "Locked out of your car in Surrey, BC? TowingNo.1 provides 24/7 vehicle lockout assistance using careful entry techniques. Call 778-838-0014.",
+    "Locked out of your car in Surrey, BC? TowingNo.1 provides 24/7 lockout help, and we guarantee damage-free lockout service. Call 778-838-0014.",
   alternates: { canonical: "https://www.towingno1.com/services/lockout-service" },
   openGraph: {
     type: "website",
     url: "https://www.towingno1.com/services/lockout-service",
     title: "Car Lockout Service | 24/7 Roadside Help | TowingNo.1",
     description:
-      "24/7 car lockout assistance in Surrey, BC, using careful entry techniques. Call 778-838-0014.",
+      "24/7 car lockout assistance in Surrey, BC, with our damage-free lockout guarantee. Call 778-838-0014.",
     locale: "en_CA",
     images: [{ url: "/image/Lockout_Servic.png", alt: "Car lockout service: technician helping a driver locked out of their vehicle" }],
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Car Lockout Service | 24/7 Roadside Help | TowingNo.1",
     description:
-      "24/7 car lockout assistance in Surrey, BC, using careful entry techniques. Call 778-838-0014.",
+      "24/7 car lockout assistance in Surrey, BC, with our damage-free lockout guarantee. Call 778-838-0014.",
     images: ["/image/Lockout_Servic.png"],
   },
 };
@@ -38,7 +38,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "Do you provide 24/7 lockout assistance?",
-    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week, including evenings and weekends. Whether you are locked out at midday in a Guildford parking lot or late at night on a Surrey residential street, call (778) 838-0014 and we will answer.",
+    a: "Yes. TowingNo.1 operates 24 hours a day, 7 days a week, including evenings, weekends and statutory holidays. Whether you are locked out at midday in a Guildford parking lot or late at night on a Surrey residential street, call (778) 838-0014 and we will answer.",
   },
   {
     q: "What should I do if I lost my car keys?",
@@ -121,8 +121,8 @@ export default function LockoutServicePage() {
           </h1>
           <p className="text-white/80 text-lg max-w-xl mb-8">
             Locked out of your vehicle? TowingNo.1 provides professional car lockout assistance across
-            Surrey and the Lower Mainland around the clock. We use careful entry techniques
-            designed to protect the door, lock, and window.
+            Surrey and the Lower Mainland around the clock. We guarantee damage-free lockout service,
+            using careful entry techniques designed to protect the door, lock, and window.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -422,7 +422,7 @@ export default function LockoutServicePage() {
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Careful entry techniques</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Damage-free lockout guarantee</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
                 </ul>

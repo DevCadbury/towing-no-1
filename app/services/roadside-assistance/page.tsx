@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide 24/7 roadside assistance?",
-    a: "Yes. TowingNo.1 provides roadside assistance 24 hours a day, 7 days a week, including evenings and weekends. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your situation, and send the appropriate help.",
+    a: "Yes. TowingNo.1 provides roadside assistance 24 hours a day, 7 days a week, including evenings, weekends and statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your situation, and send the appropriate help.",
   },
   {
     q: "Can you help with a dead battery?",
@@ -44,7 +44,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "Can you help if I lock my keys in my car?",
-    a: "Yes. Our lockout technicians use careful entry techniques designed to protect the door, lock, and window, including on modern vehicles with keyless entry.",
+    a: "Yes. We guarantee damage-free lockout service. We use careful entry techniques designed to protect the door, lock, and window, including on modern vehicles with keyless entry.",
   },
   {
     q: "Do you provide flat tire assistance?",
@@ -156,7 +156,7 @@ export default function RoadsideAssistancePage() {
                 </p>
                 <p className="text-slate-600 leading-relaxed">
                   We provide roadside assistance 24 hours a day across Surrey and the Lower Mainland,
-                  including evenings and weekends. Call{" "}
+                  including evenings, weekends and statutory holidays. Call{" "}
                   <a href="tel:+17788380014" className="font-semibold text-amber-600 hover:text-amber-700">(778) 838-0014</a>{" "}
                   and we will tell you exactly what we can do for your situation before we send anyone.
                 </p>
@@ -175,7 +175,7 @@ export default function RoadsideAssistancePage() {
                     {
                       href: "/services/battery-boost",
                       title: "Battery Boost & Jump Start",
-                      body: "A dead battery is one of the most common roadside calls we handle. We jump start your vehicle using professional equipment and then test the battery and charging system. If the battery is failing, we tell you plainly so you can plan a replacement on your own schedule. If the vehicle still won't start after a boost, we arrange a tow.",
+                      body: "A dead battery is one of the most common roadside calls we handle. We jump start your vehicle using professional equipment. If it still won't start after the boost, we can tow it to the shop of your choice.",
                     },
                     {
                       href: "/services/flat-tire-help",
@@ -246,7 +246,7 @@ export default function RoadsideAssistancePage() {
                   {[
                     {
                       title: "Dead or weak battery",
-                      body: "A common roadside call. Symptoms include a slow or clicking engine, dim lights, or a vehicle that simply will not respond. A professional boost and system test can usually resolve this on the spot.",
+                      body: "A common roadside call. Symptoms include a slow or clicking engine, dim lights, or a vehicle that simply will not respond. A professional boost can usually resolve this on the spot.",
                     },
                     {
                       title: "Flat tire",
@@ -293,7 +293,7 @@ export default function RoadsideAssistancePage() {
                     { step: "1", title: "Call (778) 838-0014", body: "A dispatcher answers 24/7. No automated menus. A person takes your call and listens to what has happened." },
                     { step: "2", title: "Location and situation confirmed", body: "We ask where you are (the nearest intersection, parking lot, or highway exit) and what has happened with the vehicle. This determines what we send." },
                     { step: "3", title: "Quote provided, wherever possible", body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
-                    { step: "4", title: "Appropriate help is dispatched", body: "We send the right technician and equipment for your specific situation: a battery technician, tire specialist, lockout operative, fuel delivery driver, or tow truck, depending on what you need." },
+                    { step: "4", title: "Appropriate help is dispatched", body: "We send help for your specific situation: a battery boost, a spare-tire change, lockout service, fuel delivery, or a tow, depending on what you need." },
                     { step: "5", title: "Assistance is provided on site", body: "The technician arrives, handles the service, and keeps you informed throughout. If the fix on site is successful, you are back on the road. If additional help is required, we discuss the options with you directly." },
                     { step: "6", title: "Towing arranged if needed", body: "If the vehicle cannot be made safe to drive at the roadside (after an honest assessment, not a guess), we arrange a tow to the repair shop, dealership, or location of your choice." },
                   ].map((item) => (
@@ -363,7 +363,7 @@ export default function RoadsideAssistancePage() {
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Card, debit &amp; cash at the job</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Cash, card, tap, Apple Pay &amp; Google Pay</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Fixed on the spot whenever possible</li>

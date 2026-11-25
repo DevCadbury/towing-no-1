@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Can you transport a vehicle that does not run?",
-    a: "Yes. Vehicles that don't run can be winched onto the truck, so the car does not need to start, steer, or brake. Let us know the vehicle's condition when you call so the right kind of tow is arranged.",
+    a: "Yes. Vehicles that don't run can be lifted with the wheel lift and towed, so the car does not need to start or drive. Let us know the vehicle's condition when you call so the right kind of tow is arranged.",
   },
   {
     q: "Can you transport a damaged vehicle after an accident?",
@@ -42,7 +42,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "Where can you transport my vehicle?",
-    a: "We transport vehicles to repair shops, dealerships, body shops, private addresses, and auction lots within our service area. Call (778) 838-0014 to confirm coverage for your specific pickup and delivery locations.",
+    a: "We transport vehicles to repair shops, dealerships, body shops, private addresses, and auction lots within our service area, and we provide long-distance towing within British Columbia. Call (778) 838-0014 with the pickup and destination addresses to arrange the move.",
   },
   {
     q: "Do you provide local vehicle transport?",
@@ -50,7 +50,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "What information do you need for a vehicle transport request?",
-    a: "When you call, let us know the pickup location, the delivery destination, the vehicle's make and model, whether the vehicle runs and can steer and brake, and any known access limitations at pickup or delivery. This helps us send the correct truck with the appropriate equipment.",
+    a: "When you call, let us know the pickup location, the delivery destination, the vehicle's make and model, whether the vehicle runs and can steer and brake, and any known access limitations at pickup or delivery. This helps the driver plan the tow.",
   },
   {
     q: "When should I request vehicle transport instead of roadside assistance?",
@@ -162,15 +162,15 @@ export default function VehicleTransportPage() {
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   TowingNo.1 provides vehicle transport across Surrey and the Lower Mainland for a
-                  range of vehicle types and situations. Flatbed towing keeps the vehicle fully off the ground
-                  and suits vehicles whether or not they run; wheel-lift towing is also available for
-                  straightforward moves.
+                  range of vehicles and situations, using a light-duty wheel-lift tow truck for cars, SUVs
+                  and light trucks, whether or not they run. We also provide long-distance towing within
+                  British Columbia: call with the pickup address and the destination.
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {[
                     "Vehicles that run or don't",
-                    "Cars, SUVs, and trucks",
-                    "Electric vehicles",
+                    "Cars, SUVs and light trucks",
+                    "Long-distance towing within BC",
                     "Classic and collector cars",
                     "Dealership and auction transfers",
                     "Light commercial vehicles",
@@ -192,7 +192,7 @@ export default function VehicleTransportPage() {
                   {[
                     {
                       title: "Vehicle that doesn't run",
-                      body: "A vehicle that will not start, cannot steer, or cannot roll under its own power needs to be loaded using a winch and transported on a flatbed. We move these vehicles from driveways, parking lots, and other accessible locations.",
+                      body: "A vehicle that will not start, cannot steer, or cannot roll under its own power needs to be lifted and towed rather than driven. We move these vehicles from driveways, parking lots, and other accessible locations.",
                     },
                     {
                       title: "Vehicle recovered after an accident",
@@ -264,18 +264,18 @@ export default function VehicleTransportPage() {
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Secure Loading and Strapping</h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   How a vehicle is secured for transport matters as much as the distance travelled.
-                  We load onto a flatbed so the vehicle rides level rather than nose down, then anchor
-                  it with wheel straps that hold the tyres to the deck rather than putting tension
-                  through the suspension or body panels. This approach protects lowered cars, electric
-                  vehicles with sensitive battery trays, and classic vehicles with older paint and trim
-                  alike.
+                  Our wheel lift cradles one pair of wheels and lifts that end of the vehicle, and wheel
+                  straps hold the tyres in the cradle rather than putting tension through the suspension
+                  or body panels. Some vehicles need extra care: many all wheel drive cars and electric
+                  vehicles should not be towed with any wheels turning on the road, and lowered or
+                  classic cars may need a careful plan. Tell the dispatcher the make, drive type and
+                  condition, and you will be told plainly if the move does not suit a light-duty
+                  wheel-lift truck.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  Before the truck moves, we walk the load, check every strap, and confirm nothing can
-                  shift. Secure strapping is the most important factor in delivering a vehicle in the
-                  same condition it was picked up. Vehicles that don&apos;t run and cannot roll onto the deck
-                  are loaded using the onboard winch, attaching to rated frame points rather than
-                  bumpers or tow eyes that may not be designed for recovery loads.
+                  Before the truck moves, the driver checks every strap and confirms nothing can shift.
+                  Secure strapping is the most important factor in delivering a vehicle in the same
+                  condition it was picked up.
                 </p>
                 <p className="mt-4 text-sm text-slate-500">
                   See: <Link href="/blog/electric-vehicle-towing-bc" className="text-amber-600 hover:underline">EV and hybrid vehicle towing: why flatbed transport is required and how Transport Mode works</Link>
@@ -289,9 +289,9 @@ export default function VehicleTransportPage() {
                   {[
                     { step: "1", title: "Call (778) 838-0014",                   body: "A dispatcher answers 24/7. Tell them you need vehicle transport and give the basic details." },
                     { step: "2", title: "Provide vehicle location and destination", body: "We need the full address or location of the pickup and the delivery destination so we can confirm coverage and quote the transport." },
-                    { step: "3", title: "Describe the vehicle and its condition", body: "Let us know the make, model, whether the vehicle runs and can steer and brake, and any access limitations at pickup or delivery. This determines the right truck and equipment." },
+                    { step: "3", title: "Describe the vehicle and its condition", body: "Let us know the make, model, whether the vehicle runs and can steer and brake, and any access limitations at pickup or delivery. This helps the driver plan the tow." },
                     { step: "4", title: "Quote, wherever possible",              body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
-                    { step: "5", title: "Transport arranged",                    body: "We dispatch the appropriate truck, load the vehicle safely using the correct method for its condition, and transport it to the agreed destination." },
+                    { step: "5", title: "Transport arranged",                    body: "The driver loads the vehicle safely using the correct method for its condition and transports it to the agreed destination." },
                     { step: "6", title: "Vehicle delivered",                     body: "The vehicle is delivered to the destination, secured until unloading, and handed over. If plans change en route, let the driver know." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
@@ -344,10 +344,10 @@ export default function VehicleTransportPage() {
                   {[
                     { title: "Pickup location",                    body: "The full address or location where the vehicle currently is, including any access limitations (narrow driveway, underground parking, gated property)." },
                     { title: "Delivery destination",               body: "The full address of where the vehicle needs to go, such as a repair shop, dealership, private address, or storage facility." },
-                    { title: "Vehicle make and model",             body: "This helps us determine the right truck and equipment and check for any specific handling requirements." },
-                    { title: "Whether the vehicle runs",           body: "Can the engine start? Can the vehicle steer and brake? A vehicle that doesn't run must be loaded with a winch rather than driven onto the flatbed." },
+                    { title: "Vehicle make and model",             body: "This helps the driver plan the tow and check for any specific handling requirements." },
+                    { title: "Whether the vehicle runs",           body: "Can the engine start? Can the vehicle steer and brake? A vehicle that doesn't run is lifted and towed rather than driven." },
                     { title: "Any known damage or access issues",  body: "Collision damage, missing wheels, a seized steering column, or other conditions that affect how the vehicle can be loaded." },
-                    { title: "Preferred pickup window",            body: "For planned transport, a preferred date and time window helps us schedule the appropriate truck." },
+                    { title: "Preferred pickup window",            body: "For planned transport, a preferred date and time window helps us schedule the pickup." },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
                       <Check />
@@ -412,7 +412,7 @@ export default function VehicleTransportPage() {
                   Request Online
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed &amp; wheel-lift towing</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Light-duty wheel-lift towing</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Whether or not it runs</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>

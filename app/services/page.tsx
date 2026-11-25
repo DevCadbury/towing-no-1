@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
+import { isVerified, serviceArea } from "@/lib/business-facts";
+
+// Register F-06 VERIFIED: the 15 owner-confirmed places, read from the single
+// source in lib/business-facts.ts (A-227).
+const serviceAreaNames = serviceArea.filter(isVerified).map((p) => p.value);
+const serviceAreaList = `${serviceAreaNames.slice(0, -1).join(", ")} and ${serviceAreaNames[serviceAreaNames.length - 1]}`;
+
 export const metadata: Metadata = {
   title: "Towing & Roadside Services Surrey BC | 24/7",
   description:
@@ -57,8 +64,8 @@ const allServices = [
     alt: "Emergency towing service in Surrey: TowingNo.1 tow truck loading a car",
     title: "Emergency Towing",
     badge: "24/7",
-    desc: "Towing for breakdowns, collisions, and stalled vehicles, by flatbed or wheel-lift tow depending on the vehicle.",
-    bullets: ["Nearest available driver", "Flatbed and wheel-lift towing", "Cars, SUVs, light trucks, and EVs", "Tow to the destination you choose"],
+    desc: "Light-duty wheel-lift towing for breakdowns, collisions, and stalled vehicles.",
+    bullets: ["Nearest available driver", "Light-duty wheel-lift towing", "Cars, SUVs and light trucks", "Tow to the destination you choose"],
   },
   {
     id: "flat-tire",
@@ -77,8 +84,8 @@ const allServices = [
     alt: "Battery boost and jump start service in Surrey for a dead car battery",
     title: "Battery Boost",
     badge: "Quick",
-    desc: "Professional jump start service across Surrey and the Lower Mainland, with a check of the battery and charging system after the boost.",
-    bullets: ["Professional jump start", "Battery and charging check", "Safe boosting procedures", "Available 24/7"],
+    desc: "Professional jump start service across Surrey and the Lower Mainland, with a tow to a shop if the vehicle still won't start.",
+    bullets: ["Professional jump start", "Tow if it still won't start", "Safe boosting procedures", "Available 24/7"],
   },
   {
     id: "roadside-assistance",
@@ -97,8 +104,8 @@ const allServices = [
     alt: "Accident recovery towing in Surrey: damaged vehicle being loaded on a truck",
     title: "Accident Recovery",
     badge: "Collision",
-    desc: "Professional collision scene handling and safe transport of damaged vehicles to any repair shop or storage facility.",
-    bullets: ["Professional recovery crew", "Damaged vehicle transport", "Safe securing techniques", "Insurance coordination available"],
+    desc: "Professional collision scene handling and safe transport of damaged vehicles to the repair shop, home or storage facility you choose.",
+    bullets: ["Professional recovery driver", "Damaged vehicle transport", "Safe securing techniques", "Tow bill provided for your records"],
   },
   {
     id: "lockout",
@@ -106,9 +113,9 @@ const allServices = [
     img: "/image/Lockout_Servic.png",
     alt: "Car lockout service in Surrey: keys locked inside the vehicle",
     title: "Lockout Service",
-    badge: "Careful entry",
-    desc: "We use careful entry techniques designed to protect the lock, door, and window when you are locked out. Available 24/7.",
-    bullets: ["Fast lockout response", "Careful entry techniques", "Keys locked in the car or trunk", "Available day or night"],
+    badge: "Damage-free",
+    desc: "We guarantee damage-free lockout service. Careful entry techniques protect the lock, door, and window when you are locked out. Available 24/7.",
+    bullets: ["Damage-free lockout guarantee", "Careful entry techniques", "Keys locked in the car or trunk", "Available day or night"],
   },
   {
     id: "vehicle-transport",
@@ -117,8 +124,8 @@ const allServices = [
     alt: "Vehicle transport service in the Lower Mainland: car on a truck",
     title: "Vehicle Transport",
     badge: "Secure",
-    desc: "Vehicle transport across Surrey and the Lower Mainland, for vehicles that run and vehicles that don't, by flatbed or wheel-lift tow.",
-    bullets: ["Flatbed or wheel-lift towing", "Vehicles that run or don't", "Pickup and delivery addresses you choose", "Call to arrange the move"],
+    desc: "Vehicle transport across Surrey and the Lower Mainland, and long-distance towing within BC, for vehicles that run and vehicles that don't, by light-duty wheel-lift tow.",
+    bullets: ["Light-duty wheel-lift towing", "Vehicles that run or don't", "Pickup and delivery addresses you choose", "Call to arrange the move"],
   },
   {
     id: "fuel-delivery",
@@ -149,6 +156,16 @@ const allServices = [
     badge: "Canada & U.S.",
     desc: "Towing and vehicle transportation between Canada and the United States. Share your pickup and destination, and our team confirms the route, vehicle, and quote before anything is booked.",
     bullets: ["Canada to U.S. and U.S. to Canada requests", "Route and vehicle confirmed first", "Quote to review before booking", "Border paperwork stays separate from the tow"],
+  },
+  {
+    id: "underground-parking-towing",
+    href: "/services/underground-parking-towing",
+    img: "/preview.jpg",
+    alt: "TowingNo.1 wheel-lift tow truck towing a black SUV on a road",
+    title: "Underground Parking Towing",
+    badge: "Low clearance",
+    desc: "Stuck in an underground parkade? We specialize in it. Our tow truck has a low clearance height, so it can reach most low-clearance parkades and parking garages where standard tow trucks can't fit.",
+    bullets: ["Underground parkades & parking garages", "Low-clearance tow truck", "Cars, SUVs and light trucks", "Tow to the destination you choose"],
   },
 ];
 
@@ -202,13 +219,13 @@ export default function Services() {
             </h2>
             <div className="space-y-4 text-slate-600 text-base leading-relaxed">
               <p>
-                TowingNo.1 brings every roadside service under one phone number for drivers across Surrey, Langley, Coquitlam, Burnaby, Richmond, White Rock, Delta, Maple Ridge, Vancouver, and the surrounding communities. Whether your car has died in a parkade, you have a flat on a highway shoulder, or your vehicle has slid into a ditch on a back road, the same local team handles the call from the first ring to the moment you are moving again.
+                TowingNo.1 brings every roadside service under one phone number for drivers in {serviceAreaList}. Whether your car has died in a parkade, you have a flat on a highway shoulder, or your vehicle has slid into a ditch on a back road, the same local team handles the call from the first ring to the moment you are moving again.
               </p>
               <p>
-                Each service listed below is available 24 hours a day, 7 days a week, including overnight hours when most shops are closed. We dispatch the nearest available driver; arrival times vary by location and road conditions. Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe, and the driver explains any change before going ahead if conditions on site differ materially.
+                Each service listed below is available 24 hours a day, 7 days a week, including statutory holidays and overnight hours when most shops are closed. We dispatch the nearest available driver; arrival times vary by location and road conditions. Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe, and the driver explains any change before going ahead if conditions on site differ materially.
               </p>
               <p>
-                We provide both wheel-lift and flatbed towing, so the method can match your vehicle instead of forcing one approach onto every job. A flatbed is the usual choice for all wheel drive cars, electric vehicles, and low clearance models that should not be dragged on their wheels, while a wheel-lift tow suits quick moves of conventional vehicles. Tell the dispatcher your vehicle type when you call so the right kind of tow is arranged for a highway shoulder, a tight underground parkade, or an icy grade.
+                We provide light-duty wheel-lift towing for cars, SUVs and light trucks. Our tow truck has a low clearance height, so it can reach most low-clearance parkades and parking garages where standard tow trucks can&apos;t fit. Many all wheel drive cars and electric vehicles should not be towed with any wheels on the road, so tell the dispatcher your vehicle&apos;s make, drive type and condition when you call. Those details help the driver plan the tow for a highway shoulder, a tight underground parkade, or an icy grade.
               </p>
               <p>
                 Wherever possible we aim to fix the problem on the spot with a boost, a tire change, a lockout, or a splash of fuel, so you avoid a tow altogether. When your vehicle genuinely cannot be driven, we transport it carefully to the shop, dealership, or address you choose. Explore the full range of services below, or call <a href="tel:+17788380014" className="font-semibold text-amber-600 hover:text-amber-700">(778) 838-0014</a> and tell us what has gone wrong.
@@ -277,7 +294,7 @@ export default function Services() {
               Need Any of These Services?
             </h2>
             <p className="text-white/60 mb-10 text-base">
-              We&apos;re dispatching 24/7, including nights and weekends. Free quote wherever possible, before dispatch.
+              We&apos;re dispatching 24/7, including nights, weekends and statutory holidays. Free quote wherever possible, before dispatch.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:+17788380014" className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-gray-900 font-bold py-4 px-10 rounded-xl text-base transition-all duration-200 hover:-translate-y-0.5 shadow-lg hover:shadow-xl">

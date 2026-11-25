@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "24/7 accident recovery and towing in Surrey, BC. Transport of damaged vehicles to the shop or facility you choose. Call 778-838-0014.",
     locale: "en_CA",
-    images: [{ url: "/image/Accident_Recover.png", alt: "Accident recovery towing: damaged vehicle being loaded onto a flatbed" }],
+    images: [{ url: "/image/Accident_Recover.png", alt: "Accident recovery towing: a damaged vehicle being prepared for a tow" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -35,11 +35,11 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide towing after an accident?",
-    a: "Yes. TowingNo.1 provides accident recovery and towing 24 hours a day, 7 days a week. Call (778) 838-0014, describe the situation and your location, and we will arrange the appropriate vehicle.",
+    a: "Yes. TowingNo.1 provides accident recovery and towing 24 hours a day, 7 days a week, including statutory holidays. Call (778) 838-0014, describe the situation and your location, and we will send the driver.",
   },
   {
     q: "Can you tow a vehicle that cannot be driven after a collision?",
-    a: "Yes. A vehicle that will not roll, steer, or start after a collision can be winched onto the truck, so it does not need to move under its own power. We assess the vehicle on site to choose the safest loading method for the damage.",
+    a: "Yes. A vehicle that will not roll, steer, or start after a collision can be lifted with the wheel lift and towed, so it does not need to move under its own power. We assess the vehicle on site to decide the safest way to lift it for the damage, and tell you plainly if the job does not suit a light-duty wheel-lift truck.",
   },
   {
     q: "Can you recover a vehicle from a roadside accident location?",
@@ -51,7 +51,7 @@ const faq: FaqItem[] = [
   },
   {
     q: "Do you provide accident recovery 24/7?",
-    a: "Yes. We operate around the clock, 7 days a week, including evenings and weekends. Call (778) 838-0014 at any hour for accident towing and recovery.",
+    a: "Yes. We operate around the clock, 7 days a week, including evenings, weekends and statutory holidays. Call (778) 838-0014 at any hour for accident towing and recovery.",
   },
   {
     q: "What areas do you serve for accident recovery?",
@@ -102,7 +102,7 @@ export default function AccidentRecoveryPage() {
       <section className="relative overflow-hidden bg-navy-950 pt-[76px]">
         <Image
           src="/image/Accident_Recover.png"
-          alt="Accident recovery towing: damaged vehicle being loaded safely onto a flatbed"
+          alt="Accident recovery towing: a damaged vehicle being prepared for a tow"
           fill
           className="object-cover opacity-30"
           loading="eager"
@@ -188,7 +188,7 @@ export default function AccidentRecoveryPage() {
                 <p className="text-slate-600 leading-relaxed">
                   Call <a href="tel:+17788380014" className="font-semibold text-amber-600 hover:text-amber-700">(778) 838-0014</a> and
                   describe the situation. The dispatcher will ask about your location and the vehicle
-                  condition and arrange the appropriate recovery vehicle.
+                  condition and send the driver.
                 </p>
               </div>
 
@@ -202,11 +202,11 @@ export default function AccidentRecoveryPage() {
                   {[
                     {
                       title: "Collision towing",
-                      body: "Towing of damaged vehicles from the accident scene to the repair shop, body shop, dealership, ICBC facility, or storage facility of your choice, with coordination with your insurer where needed.",
+                      body: "Towing of damaged vehicles from the accident scene to the repair shop, body shop, dealership, ICBC facility, or storage facility of your choice. You receive a tow bill; what happens after that is between you and your insurer.",
                     },
                     {
                       title: "Recovery for vehicles that can't be driven",
-                      body: "Vehicles that will not roll, steer, or start after a collision are winched onto a flatbed from rated attachment points on the frame, not from damaged body panels, to reduce the risk of further damage during loading.",
+                      body: "Vehicles that will not roll, steer, or start after a collision are lifted from secure points such as the wheels or frame, not from damaged body panels, to reduce the risk of further damage during loading. Tell the dispatcher how badly the vehicle is damaged so the driver can plan the tow.",
                     },
                     {
                       title: "Safe loading of damaged vehicles",
@@ -227,9 +227,9 @@ export default function AccidentRecoveryPage() {
                   {[
                     "Towing for collision damaged vehicles",
                     "Vehicles that won't run or steer",
-                    "Loading from frame points, not body panels",
+                    "Lifting from secure points, not body panels",
                     "Delivery to any shop or facility",
-                    "Coordination with your insurer",
+                    "Tow bill provided for your records",
                     "Available 24/7",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm text-slate-700">
@@ -352,8 +352,8 @@ export default function AccidentRecoveryPage() {
                     { step: "1", title: "Call (778) 838-0014",                   body: "A dispatcher answers 24/7. Tell them you need accident recovery and give your location." },
                     { step: "2", title: "Location and situation confirmed",       body: "We ask for your exact location, a brief description of the collision and vehicle damage, and whether the vehicle is blocking traffic." },
                     { step: "3", title: "Quote provided, wherever possible",      body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
-                    { step: "4", title: "Appropriate recovery vehicle dispatched", body: "We send the nearest available driver with equipment suited to your vehicle and the collision damage described." },
-                    { step: "5", title: "Vehicle assessed and loaded",            body: "The technician assesses the damage on site to determine the safest loading method, then loads the vehicle onto the flatbed using frame attachment points." },
+                    { step: "4", title: "Driver dispatched",                       body: "We send the driver and tow truck to the location you gave." },
+                    { step: "5", title: "Vehicle assessed and loaded",            body: "The technician assesses the damage on site to determine the safest way to lift it, then secures the vehicle on the wheel lift for the tow." },
                     { step: "6", title: "Vehicle transported to your destination", body: "We deliver to the body shop, dealership, ICBC facility, storage facility, or address you specify." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
@@ -421,7 +421,7 @@ export default function AccidentRecoveryPage() {
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Flatbed towing for damaged vehicles</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Tow bill for your records</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
                 </ul>

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Can you provide a battery boost 24/7?",
-    a: "Yes. TowingNo.1 provides battery boost and jump start service 24 hours a day, 7 days a week, including evenings and weekends. Call (778) 838-0014 at any hour and a dispatcher will answer and send a technician.",
+    a: "Yes. TowingNo.1 provides battery boost and jump start service 24 hours a day, 7 days a week, including evenings, weekends and statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer and send a technician.",
   },
   {
     q: "Can you jump start a car with a completely dead battery?",
@@ -108,8 +108,8 @@ export default function BatteryBoostPage() {
             24/7 Battery Boost &amp; Jump Start Service
           </h1>
           <p className="text-white/80 text-lg max-w-xl mb-8">
-            Dead battery? TowingNo.1 dispatches a technician to jump start your vehicle on the spot and test
-            your battery and charging system. Available 24/7 across Surrey and the Lower Mainland.
+            Dead battery? TowingNo.1 sends a technician to jump start your vehicle on the spot, and a tow
+            to a shop if it still won&apos;t start. Available 24/7 across Surrey and the Lower Mainland.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -180,18 +180,15 @@ export default function BatteryBoostPage() {
                   the correct sequence to protect the vehicle&apos;s electronics.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Getting the engine running is only the first step. Once started, the technician tests
-                  the battery voltage and checks the charging output with the engine running. This tells
-                  you whether the battery is healthy enough to hold a charge on its own, or whether the
-                  alternator is failing to replenish it. If the numbers indicate a problem, we will
-                  explain what we found honestly, so you can make an informed decision about next steps
-                  rather than being left to guess.
+                  A boost gets the engine running; it does not repair the battery. Once the vehicle
+                  starts, let it run or drive it for a while so the alternator can recharge the battery,
+                  and have the battery and alternator checked at a shop if the problem comes back. If the
+                  vehicle will not start after the boost, we can tow it to the shop of your choice.
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {[
                     "Professional jump start",
-                    "Battery voltage test",
-                    "Charging system check",
+                    "Tow if it still won't start",
                     "Safe boosting procedures",
                     "All vehicle makes and models",
                     "Available 24/7",
@@ -271,7 +268,7 @@ export default function BatteryBoostPage() {
                     { step: "3", title: "Quote provided, wherever possible", body: "Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If conditions on site differ materially, the driver explains any change before going ahead." },
                     { step: "4", title: "Technician dispatched",          body: "We send the nearest available technician with appropriate equipment for the job." },
                     { step: "5", title: "Jump start performed on site",   body: "The technician safely boosts your battery and starts the engine using professional equipment." },
-                    { step: "6", title: "Battery and charging system tested", body: "After starting, the technician tests the battery voltage and charging output and tells you honestly whether the battery and alternator are in good condition or whether further action is needed." },
+                    { step: "6", title: "Tow if it still won't start", body: "If the engine will not run after the boost, we can tow the vehicle to the shop, dealership, or address you choose." },
                   ].map((item) => (
                     <li key={item.step} className="flex items-start gap-4">
                       <span className="w-8 h-8 rounded-full bg-amber-400 text-gray-900 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">
@@ -293,14 +290,13 @@ export default function BatteryBoostPage() {
                   A jump start resolves the immediate problem if the battery has enough residual capacity
                   to accept a charge and hold it. But a boost is not a permanent fix for a battery that
                   has reached the end of its service life, nor for a fault in the charging system. If
-                  the battery test after the boost reveals a serious fault (a cell that will not hold
-                  charge, an alternator that is not charging, or a parasitic drain that is killing the
-                  battery overnight), you will need a repair shop to address the underlying issue.
+                  the battery keeps going flat (a cell that will not hold charge, an alternator that is
+                  not charging, or a parasitic drain that is killing the battery overnight), you will
+                  need a repair shop to find and fix the underlying issue.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  If the vehicle still cannot be started after a boost, or if the technician identifies
-                  a fault that makes the vehicle unsafe to drive, we can arrange a tow to the shop or
-                  dealership of your choice.
+                  If the vehicle still cannot be started after a boost, or is unsafe to drive, we can
+                  arrange a tow to the shop or dealership of your choice.
                 </p>
                 <div className="flex flex-wrap gap-3 text-sm">
                   <Link href="/services/emergency-towing" className="font-semibold text-amber-600 hover:text-amber-700">
@@ -384,7 +380,7 @@ export default function BatteryBoostPage() {
                 </Link>
                 <ul className="mt-5 space-y-2 text-xs text-slate-400">
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Free quote wherever possible</li>
-                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Battery and charging check</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Tow if it still won&apos;t start</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> Nearest available driver</li>
                   <li className="flex items-center gap-2"><span className="text-amber-400" aria-hidden="true">✓</span> 24/7 dispatch</li>
                 </ul>

@@ -118,7 +118,7 @@ const situations = [
 const quoteDetails = [
   { title: "Pickup location",                  body: "The address or nearest intersection where the vehicle is sitting right now." },
   { title: "Destination",                      body: "Where the vehicle needs to end up, on either side of the border." },
-  { title: "Vehicle make and model",           body: "The year, make, and model help us choose a suitable truck for the trip." },
+  { title: "Vehicle make and model",           body: "The year, make, and model help the driver plan the tow." },
   { title: "Vehicle condition",                body: "Whether it starts, rolls, steers, and brakes, along with any damage we should know about." },
   { title: "Preferred transportation timing",  body: "The date you have in mind and how flexible that date is." },
   { title: "Your contact details",             body: "A phone number or email address so our team can reach you with questions." },

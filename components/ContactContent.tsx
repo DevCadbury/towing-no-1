@@ -104,7 +104,7 @@ export default function ContactContent() {
 
   const faqs = [
     { q: "How fast can you get to me?", a: "We dispatch the nearest available driver as soon as you call. Fast local dispatch; arrival times vary by location and road conditions. Call (778) 838-0014 and ask the dispatcher for a current estimate." },
-    { q: "Do you accept credit cards?", a: "Yes. Our drivers accept major credit cards, debit, and cash through terminals at the job." },
+    { q: "Do you accept credit cards?", a: "Yes. Pay the driver directly by cash, credit card, debit card, contactless, Apple Pay or Google Pay." },
     { q: "What details should I have ready when I call?", a: "Your location or a nearby cross street, the make and model of your vehicle, and a short description of the problem. If the vehicle is electric, all-wheel drive, or damaged, say so." },
   ];
 
@@ -397,7 +397,7 @@ export default function ContactContent() {
             <h2 className="text-3xl md:text-4xl font-bold text-navy-900">Reach Us Any Time, Day or Night</h2>
             <p>
               Vehicle trouble rarely waits for a convenient moment, so neither do we. Our dispatch line is staffed
-              24 hours a day, 7 days a week, including weekends. Whether your battery died in a parking
+              24 hours a day, 7 days a week, including weekends and statutory holidays. Whether your battery died in a parking
               lot at 2 a.m., you locked your keys inside on the school run, or you slid off an icy shoulder on the
               highway, a real person answers, gathers your details, and gets a driver moving. For anything urgent,
               calling <a href="tel:+17788380014" className="text-amber-600 font-semibold hover:text-amber-700">(778) 838-0014</a> is

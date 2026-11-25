@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const faq: FaqItem[] = [
   {
     q: "Do you provide flat tire assistance 24/7?",
-    a: "Yes. TowingNo.1 provides flat tire assistance 24 hours a day, 7 days a week, including evenings and weekends. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange the appropriate help.",
+    a: "Yes. TowingNo.1 provides flat tire assistance 24 hours a day, 7 days a week, including evenings, weekends and statutory holidays. Call (778) 838-0014 at any hour and a dispatcher will answer, confirm your location, and arrange the appropriate help.",
   },
   {
     q: "Can you help if I have a flat tire on the highway?",
@@ -226,7 +226,7 @@ export default function FlatTireHelpPage() {
                     "Spare tyre installation on site",
                     "Tow to nearest tyre shop",
                     "Highway and parking lot response",
-                    "All vehicle types",
+                    "Cars, SUVs and light trucks",
                     "Free quote wherever possible",
                     "Available 24/7",
                   ].map((item) => (
