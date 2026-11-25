@@ -202,7 +202,7 @@ export function statText(s: StatFact): string {
 
 /* ─── Inputs we are explicitly waiting on from the business (pending) ─── */
 export const pendingInputs = {
-  googleAdsConversionLabel: fact("", "pending", "Provide the conversion label from Google Ads account AW-17934610144"),
+  googleAdsConversionLabel: fact("AmFPCKK__74dEODd8edC", "verified", "Google Ads website conversion action 'Website lead (call click or form)', Secondary, created 2026-11-25 (workflow 05d, D-097); label read from the tag setup snippet", "2026-11-25"),
   blogPublishDates: fact("", "pending", "Provide real article publish dates (current dates are placeholders)"),
   reviewData: fact("", "pending", "Provide Google Business Profile link / real reviews before ANY review markup"),
   licenceNumber: fact("", "pending", "Provide BC business licence number + insurer if licensing is to be substantiated on-site"),

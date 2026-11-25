@@ -40,3 +40,23 @@ describe("sendContactWhatsAppNotification", () => {
     ).resolves.toBeUndefined();
   });
 });
+
+// T-082 (D-101): the Google Ads conversion fires on call clicks and form leads.
+describe("Google Ads conversion (lib/analytics)", () => {
+  it("trackCall and trackLead send the conversion to AW-17934610144/<label>", async () => {
+    const gtag = vi.fn();
+    vi.stubGlobal("window", { gtag });
+    try {
+      const { trackCall, trackLead } = await import("../lib/analytics");
+      trackCall("test_call");
+      trackLead("test_form");
+      const conversions = gtag.mock.calls.filter((c) => c[0] === "event" && c[1] === "conversion");
+      expect(conversions).toEqual([
+        ["event", "conversion", { send_to: "AW-17934610144/AmFPCKK__74dEODd8edC" }],
+        ["event", "conversion", { send_to: "AW-17934610144/AmFPCKK__74dEODd8edC" }],
+      ]);
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
+});
