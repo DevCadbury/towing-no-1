@@ -110,8 +110,9 @@ export default function UndergroundParkingTowingPage() {
         <Image
           src="/background_home.png"
           alt="TowingNo.1 wheel-lift tow truck towing a black SUV on a road"
-          fill
-          className="object-cover opacity-30"
+          width={1500}
+          height={837}
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
           loading="eager"
           fetchPriority="high"
           sizes="100vw"

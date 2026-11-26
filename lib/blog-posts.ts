@@ -282,6 +282,7 @@ Phones die, and a low battery drains even faster in freezing weather, so a power
     title: "When to Call for a Tow vs. Fix it Yourself",
     excerpt: "Some roadside issues can be handled yourself, while others require professional help. Learn when it's safe to DIY and when to call for assistance.",
     date: "January 12, 2026",
+    updatedDate: "November 25, 2026",
     image: "/blog/when-to-call-tow.jpg",
     slug: "when-call-tow-vs-fix-yourself",
     keywords: ["when to call tow truck", "roadside DIY vs tow", "tow truck BC", "towing services BC"],
@@ -331,6 +332,7 @@ If the fix is quick, you have the right tools, and you are somewhere safe, a car
     title: "Types of Towing Services Explained",
     excerpt: "Not all towing is the same. Explore the different types of towing services available and when each one is appropriate for your situation.",
     date: "January 5, 2026",
+    updatedDate: "November 25, 2026",
     image: "/blog/types-of-towing.jpg",
     slug: "understanding-towing-services",
     keywords: ["types of towing services", "flatbed tow truck", "emergency towing BC", "towing services explained", "towing services BC"],
@@ -567,6 +569,7 @@ BC winters vary from icy highway corridors on the Coquihalla to wet but mild com
     title: "EV and Hybrid Vehicle Towing: What BC Drivers Need to Know",
     excerpt: "Electric and hybrid vehicles cannot be towed the same way as conventional cars. Learn why flatbed transport is required, how Transport Mode works on major EV brands, and what to do when your EV runs out of charge in BC.",
     date: "September 17, 2026",
+    updatedDate: "November 25, 2026",
     image: "/blog/electric-vehicle-towing.jpg",
     slug: "electric-vehicle-towing-bc",
     keywords: ["ev towing bc", "electric vehicle towing", "tesla towing bc", "hybrid towing lower mainland", "ev breakdown bc"],
@@ -697,10 +700,10 @@ BC drivers are legally required to slow down and move over one lane (or as far r
 A tow operator on a live highway shoulder will:
 - Position their truck to shield your vehicle from passing traffic
 - Work as quickly as safety allows, since they are exposed to highway traffic during the whole operation
-- Load your vehicle onto a flatbed (most highway tows use flatbeds for stability and speed)
+- Secure your vehicle for transport, either with a wheel lift or on a flatbed, depending on the truck and the vehicle
 - Confirm a destination with you before leaving the scene
 
-Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If you are unsure where to take the vehicle, we can deliver it to a repair shop, dealership, or address you specify, or to a storage facility.
+TowingNo.1 runs a light-duty wheel-lift tow truck for cars, SUVs and light trucks. When you call, give the dispatcher the make, model and drive type: many all wheel drive cars and electric vehicles should not be towed with any wheels on the ground, and the dispatcher will tell you plainly whether the job suits a wheel-lift truck. Wherever possible we give you a flat rate quote before we dispatch, based on the location, vehicle, and service you describe. If you are unsure where to take the vehicle, we can deliver it to a repair shop, dealership, or address you specify, or to a storage facility.
 
 ## Coquihalla and Sea-to-Sky Appendix
 
@@ -721,6 +724,7 @@ These two major mountain routes deserve special mention:
     title: "Surrey Emergency Towing and Roadside Resource Guide",
     excerpt: "A practical reference for Surrey drivers: key road corridors, local emergency contacts, ICBC reporting, and what to do in every common roadside situation across the city.",
     date: "September 3, 2026",
+    updatedDate: "November 25, 2026",
     image: "/blog/surrey-emergency-guide.jpg",
     slug: "surrey-emergency-towing-roadside-guide",
     keywords: ["surrey emergency towing", "surrey roadside assistance", "surrey breakdown guide", "emergency contacts surrey bc", "towing surrey bc"],
@@ -873,6 +877,7 @@ Your insurance or a roadside membership may cover some towing costs, depending o
     title: "Towing and Vehicle Recovery Terminology: A Plain Language Guide",
     excerpt: "A clear explanation of the terms tow operators use, from flatbed and winching to snatch block and recovery point, so you understand exactly what is happening to your vehicle at the roadside.",
     date: "August 20, 2026",
+    updatedDate: "November 25, 2026",
     image: "/blog/towing-terminology.jpg",
     slug: "towing-vehicle-recovery-terminology",
     keywords: ["towing terminology", "vehicle recovery terms", "flatbed towing explained", "winching terms", "tow truck types bc"],

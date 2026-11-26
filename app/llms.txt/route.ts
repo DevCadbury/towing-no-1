@@ -35,6 +35,18 @@ const services = [
   { name: "Underground Parking Towing", path: "/services/underground-parking-towing", desc: "Towing out of underground parkades and parking garages with a low-clearance tow truck." },
 ];
 
+// GEO-03 (F-17, F-28): two post excerpts name flatbed transport as consumer
+// information. In this business summary they could be read as a claim about
+// the owner's equipment (one light-duty wheel-lift truck, no flatbed), so
+// /llms.txt uses a neutral summary for those posts. The posts and the excerpts
+// shown on the site are unchanged.
+const llmsExcerpts: Record<string, string> = {
+  "electric-vehicle-towing-bc":
+    "Why electric and hybrid vehicles cannot be towed the same way as conventional cars, how Transport Mode works on major EV brands, and what to do when your EV runs out of charge in BC.",
+  "towing-vehicle-recovery-terminology":
+    "A clear explanation of the terms tow operators use, from winching and snatch blocks to recovery points, so you understand exactly what is happening to your vehicle at the roadside.",
+};
+
 export const dynamic = "force-static";
 
 export function GET() {
@@ -73,7 +85,7 @@ export function GET() {
 
   lines.push("## Guides & articles");
   for (const p of blogPosts) {
-    lines.push(`- [${p.title}](${baseUrl}/blog/${p.slug}): ${p.excerpt}`);
+    lines.push(`- [${p.title}](${baseUrl}/blog/${p.slug}): ${llmsExcerpts[p.slug] ?? p.excerpt}`);
   }
   lines.push("");
 
@@ -96,8 +108,9 @@ export function GET() {
   if (isVerified(payment.methods)) {
     lines.push(`- Payment: ${payment.methods.value}, paid to the driver directly`);
   }
-  if (isVerified(social.facebook)) lines.push(`- Facebook: ${social.facebook.value}`);
-  if (isVerified(social.instagram)) lines.push(`- Instagram: ${social.instagram.value}`);
+  // SCH-18: social profiles as Markdown links.
+  if (isVerified(social.facebook)) lines.push(`- [Facebook](${social.facebook.value})`);
+  if (isVerified(social.instagram)) lines.push(`- [Instagram](${social.instagram.value})`);
   lines.push("");
 
   return new Response(lines.join("\n"), {
