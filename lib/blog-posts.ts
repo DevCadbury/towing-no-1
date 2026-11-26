@@ -13,6 +13,11 @@ export interface BlogPost {
    */
   updatedDate?: string;
   image: string;
+  /**
+   * Optional illustrative hero shown only at the top of the post page.
+   * `image` stays the Open Graph / BlogPosting / card image.
+   */
+  heroImage?: { src: string; alt: string; width: number; height: number };
   slug: string;
   featured?: boolean;
   keywords: string[];
@@ -157,6 +162,7 @@ Stop spinning the wheels as soon as they lose grip, because spinning polishes th
     excerpt: "Don't get caught with a dead battery. Learn to recognize the warning signs that your car battery needs replacement before it fails.",
     date: "January 28, 2026",
     image: "/blog/car-battery-dying.jpg",
+    heroImage: { src: "/image/generated/blog-car-battery-jumper-cables.webp", alt: "Jumper cables clamped to the terminals of a car battery in an open engine bay", width: 1600, height: 900 },
     slug: "signs-car-battery-dying",
     keywords: ["car battery dying signs", "dead battery symptoms", "battery replacement BC"],
     content: `
@@ -221,6 +227,7 @@ Turn off the headlights, heater fan, and accessories before a jump start. Look a
     excerpt: "Be prepared for any roadside emergency with these essential items. A properly stocked emergency kit can make all the difference.",
     date: "January 20, 2026",
     image: "/blog/emergency-kit-essentials.jpg",
+    heroImage: { src: "/image/generated/blog-emergency-kit-trunk.webp", alt: "Roadside emergency kit in a car trunk with a flashlight, blanket, jumper cables, warning triangle and first-aid pouch", width: 1600, height: 900 },
     slug: "emergency-kit-essentials",
     keywords: ["car emergency kit", "roadside emergency supplies", "car breakdown kit BC"],
     content: `
@@ -334,6 +341,7 @@ If the fix is quick, you have the right tools, and you are somewhere safe, a car
     date: "January 5, 2026",
     updatedDate: "November 25, 2026",
     image: "/blog/types-of-towing.jpg",
+    heroImage: { src: "/image/generated/blog-wheel-lift-closeup.webp", alt: "Wheel-lift arm of a tow truck lifting the front wheels of a sedan off the road", width: 1600, height: 900 },
     slug: "understanding-towing-services",
     keywords: ["types of towing services", "flatbed tow truck", "emergency towing BC", "towing services explained", "towing services BC"],
     content: `
@@ -390,6 +398,7 @@ Before you agree to a tow, it is fair to ask whether the company is licensed and
     excerpt: "Step by step, this guide covers what BC drivers should do at the scene, how to report to ICBC, when to call police, and how to arrange a safe tow after a collision.",
     date: "October 1, 2026",
     image: "/blog/car-accident-bc.jpg",
+    heroImage: { src: "/image/generated/blog-car-accident-bc.webp", alt: "Two cars stopped on the side of a wet road with hazard lights on after a minor collision", width: 1440, height: 810 },
     slug: "what-to-do-after-car-accident-bc",
     keywords: ["car accident bc", "what to do after accident bc", "icbc claims", "accident towing surrey", "car accident lower mainland"],
     content: `
@@ -475,6 +484,7 @@ Follow up with your body shop or ICBC repair facility within a day or two. Keep 
     excerpt: "A practical preseason checklist for Lower Mainland and BC drivers: vehicle preparation, emergency kit, advice for specific highways, and what to do if you get stranded in winter conditions.",
     date: "September 24, 2026",
     image: "/blog/winter-safety-checklist.jpg",
+    heroImage: { src: "/image/generated/blog-winter-windshield-scraper.webp", alt: "Gloved hand scraping snow off a car windshield on a snowy street", width: 1600, height: 900 },
     slug: "bc-winter-roadside-safety-checklist",
     featured: true,
     keywords: ["bc winter driving checklist", "winter roadside safety bc", "winter car kit bc", "winter tires bc", "lower mainland winter driving"],
@@ -571,6 +581,7 @@ BC winters vary from icy highway corridors on the Coquihalla to wet but mild com
     date: "September 17, 2026",
     updatedDate: "November 25, 2026",
     image: "/blog/electric-vehicle-towing.jpg",
+    heroImage: { src: "/image/generated/blog-ev-roadside.webp", alt: "Electric car parked on a road shoulder at dusk with hazard lights on and its charging port open", width: 1600, height: 900 },
     slug: "electric-vehicle-towing-bc",
     keywords: ["ev towing bc", "electric vehicle towing", "tesla towing bc", "hybrid towing lower mainland", "ev breakdown bc"],
     content: `
@@ -639,6 +650,7 @@ If you are a tow operator, the key points are:
     excerpt: "What to do when your vehicle breaks down on BC's two busiest highway corridors: how to pull off safely, how to report your location, who to call, and what to expect from a highway tow.",
     date: "September 10, 2026",
     image: "/blog/highway-breakdown-bc.jpg",
+    heroImage: { src: "/image/generated/blog-highway-shoulder-breakdown.webp", alt: "Car stopped on a highway shoulder at dusk with hazard lights on and a warning triangle behind it", width: 1600, height: 900 },
     slug: "highway-breakdown-guide-bc",
     keywords: ["highway breakdown bc", "highway 1 breakdown", "highway 99 breakdown", "bc highway towing", "lower mainland highway safety"],
     content: `
@@ -726,6 +738,7 @@ These two major mountain routes deserve special mention:
     date: "September 3, 2026",
     updatedDate: "November 25, 2026",
     image: "/blog/surrey-emergency-guide.jpg",
+    heroImage: { src: "/image/generated/blog-flat-tire-night-road.webp", alt: "Car stopped at the curb of a wet city road at night with its headlights on", width: 1600, height: 900 },
     slug: "surrey-emergency-towing-roadside-guide",
     keywords: ["surrey emergency towing", "surrey roadside assistance", "surrey breakdown guide", "emergency contacts surrey bc", "towing surrey bc"],
     content: `
@@ -804,6 +817,7 @@ For broader local emergency information beyond roadside incidents:
     excerpt: "What BC drivers have the right to expect from a towing company: quotes before dispatch, destination choice, storage rights, and how to handle predatory towing practices and overcharging.",
     date: "August 27, 2026",
     image: "/blog/towing-consumer-rights.jpg",
+    heroImage: { src: "/image/generated/blog-wheel-lift-tow-distance.webp", alt: "Wheel-lift tow truck towing a sedan by its front wheels on a city street at dusk, seen from a distance", width: 1600, height: 900 },
     slug: "towing-consumer-rights-bc",
     keywords: ["towing consumer rights bc", "bc towing laws", "predatory towing bc", "towing overcharge bc", "tow truck rights bc"],
     content: `
@@ -879,6 +893,7 @@ Your insurance or a roadside membership may cover some towing costs, depending o
     date: "August 20, 2026",
     updatedDate: "November 25, 2026",
     image: "/blog/towing-terminology.jpg",
+    heroImage: { src: "/image/generated/blog-winch-hook-tow-point.webp", alt: "Winch cable hook attached to the front tow point of a car", width: 1600, height: 900 },
     slug: "towing-vehicle-recovery-terminology",
     keywords: ["towing terminology", "vehicle recovery terms", "flatbed towing explained", "winching terms", "tow truck types bc"],
     content: `

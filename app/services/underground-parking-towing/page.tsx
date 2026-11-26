@@ -179,6 +179,18 @@ export default function UndergroundParkingTowingPage() {
                 </p>
               </div>
 
+              {/* Illustrative image (img-02) */}
+              <figure className="rounded-2xl overflow-hidden">
+                <Image
+                  src="/image/generated/underground-parkade-entrance.webp"
+                  alt="Entrance ramp to an underground parkade with a low overhead clearance bar"
+                  width={1600}
+                  height={900}
+                  className="w-full h-auto"
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                />
+              </figure>
+
               {/* H2: Why standard trucks can't get in */}
               <div>
                 <h2 className="text-2xl font-extrabold text-navy-900 mb-4">Why Standard Tow Trucks Can&apos;t Get In</h2>

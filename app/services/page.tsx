@@ -160,8 +160,8 @@ const allServices = [
   {
     id: "underground-parking-towing",
     href: "/services/underground-parking-towing",
-    img: "/preview.jpg",
-    alt: "TowingNo.1 wheel-lift tow truck towing a black SUV on a road",
+    img: "/image/generated/underground-parkade-entrance.webp",
+    alt: "Entrance ramp to an underground parkade with a low overhead clearance bar",
     title: "Underground Parking Towing",
     badge: "Low clearance",
     desc: "Stuck in an underground parkade? We specialize in it. Our tow truck has a low clearance height, so it can reach most low-clearance parkades and parking garages where standard tow trucks can't fit.",

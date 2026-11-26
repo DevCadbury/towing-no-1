@@ -299,15 +299,28 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Hero */}
       <section className="relative min-h-[340px] md:min-h-[420px] flex items-end bg-navy-950 overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            className="object-cover opacity-40"
-            loading="eager"
-            fetchPriority="high"
-            sizes="100vw"
-          />
+          {post.heroImage ? (
+            <Image
+              src={post.heroImage.src}
+              alt={post.heroImage.alt}
+              width={post.heroImage.width}
+              height={post.heroImage.height}
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
+              loading="eager"
+              fetchPriority="high"
+              sizes="100vw"
+            />
+          ) : (
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover opacity-40"
+              loading="eager"
+              fetchPriority="high"
+              sizes="100vw"
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent" />
         </div>
         <div className="relative z-10 container-custom pb-10 md:pb-14">
