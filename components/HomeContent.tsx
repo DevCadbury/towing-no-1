@@ -74,6 +74,13 @@ const services = [
     href: "/services/cross-border-towing",
     badge: "Canada & U.S.",
   },
+  {
+    src: "/image/generated/underground-parkade-entrance.webp",
+    alt: "Entrance ramp to an underground parkade with a low overhead clearance bar",
+    title: "Underground Parking & Low-Clearance Towing",
+    desc: "Stuck in an underground parkade or parking garage? Our low-clearance tow truck reaches most low-clearance locations.",
+    href: "/services/underground-parking-towing",
+  },
 ];
 
 // Featured service areas, ordered by the owner's city priority (highest first).
